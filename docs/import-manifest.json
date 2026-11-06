@@ -1,0 +1,227 @@
+{
+  "schema": "cmachine-source-import-v1",
+  "recorded_at_utc": "2026-11-06T22:02:25+00:00",
+  "source_repository": "JHollenb/saturn",
+  "source_path": "cmachine",
+  "source_git_head_context_only": "ec5fe5176b57b3b944ba4b88d9bdb2232cc7b54b",
+  "source_files_tracked_in_parent": false,
+  "source_bytes_unchanged_before_and_after_copy": true,
+  "original_working_directory_preserved": true,
+  "files": [
+    {
+      "path": "Makefile",
+      "bytes": 3060,
+      "sha256": "417e2c1c2e6bc2e9b45509885fbae4108bcfed74df90f998a823f5a8e3627469"
+    },
+    {
+      "path": "src/gpu.h",
+      "bytes": 2015,
+      "sha256": "2d27b64e87e87a982009d0107233e2241efb5add7237f50e85e736b9a65dc090"
+    },
+    {
+      "path": "src/isa.c",
+      "bytes": 14027,
+      "sha256": "03b37b1cb2e51aa9be04ce6b0302ef4ccd133fa1eb32e73f6a30b2e1c1306759"
+    },
+    {
+      "path": "src/machine.h",
+      "bytes": 3137,
+      "sha256": "d99a79648bf9ad07ef44d879377641e5482ea8958acd55dfbdc88614c05029cb"
+    },
+    {
+      "path": "src/main.c",
+      "bytes": 7840,
+      "sha256": "037b99c0f2448f3918b64771b0c30c33336928acbe443c3be850a7197e098888"
+    },
+    {
+      "path": "src/model.c",
+      "bytes": 6178,
+      "sha256": "bbd2902e5464e4f44d80b82557597540447f4e4f9a0c8fa60d15a17aa1f6a16d"
+    },
+    {
+      "path": "src/qwen.c",
+      "bytes": 39358,
+      "sha256": "af62cf7a4bf968c103e4059600c662ea64baf8a432970afa87162fa7d4e270b0"
+    },
+    {
+      "path": "src/qwen.h",
+      "bytes": 6875,
+      "sha256": "91b08d11694d3229aad62b04299d761027c995c6726f95edc484ac5f688420da"
+    },
+    {
+      "path": "src/qwen_cuda.cu",
+      "bytes": 12358,
+      "sha256": "cf750562bc5021132cae0f59c3e3455fd8eb9ce38c232cd895d924f2fa2cb7ca"
+    },
+    {
+      "path": "src/qwen_serve.c",
+      "bytes": 5636,
+      "sha256": "8b1612833c52d8ab72ce7c56a2293fa01f58d93143bd830c6aecfefab74e4443"
+    },
+    {
+      "path": "tests/assay_io.h",
+      "bytes": 3762,
+      "sha256": "f1dd5729c6da4507be1d70ad644b96f099708ebe5a52e26a1f743793e98f19bd"
+    },
+    {
+      "path": "tests/formation_io.h",
+      "bytes": 1980,
+      "sha256": "05b0dde12ab3bc2fe2ba6e5ee52d985389ffa990a89898004a5e9efdace16f1b"
+    },
+    {
+      "path": "tests/gate_mechanics.h",
+      "bytes": 2399,
+      "sha256": "b23822138e6970c9f32d3ef304df97e2d8b4be738474d4283f0ab3c660a6cafb"
+    },
+    {
+      "path": "tests/gpu_mechanics.c",
+      "bytes": 3252,
+      "sha256": "3b355f70b07dccc21ee6ec0ae3780422796d500461e1597bd94370b87a550223"
+    },
+    {
+      "path": "tests/gpu_stub.c",
+      "bytes": 4570,
+      "sha256": "9f09b297b4102ae54dfe77e8d7bd0c26181c541ae07db5c4675a46b5217a1a5c"
+    },
+    {
+      "path": "tests/plane_experiment.c",
+      "bytes": 9158,
+      "sha256": "efc38ec09b8931ad9e9ef9169560c0e17319df91b2538cbcef48b0a00730b05e"
+    },
+    {
+      "path": "tests/reuse_experiment.c",
+      "bytes": 17297,
+      "sha256": "2329adfc07cc9b7cd240a942f0a1a4ae227e4d6973b6062427b1d0f29b37d0ef"
+    },
+    {
+      "path": "tests/state_mechanics.c",
+      "bytes": 19573,
+      "sha256": "18eef6d89610517400c9b50a9020f963001203231f71fd6e700243d54e4032e4"
+    },
+    {
+      "path": "tests/test_consumer_contrasts.py",
+      "bytes": 3134,
+      "sha256": "7c5fd5506fd692d1f10c0ce52269f4220f13b263853cc9f136fc1f7136e9a566"
+    },
+    {
+      "path": "tests/test_formation_analysis.py",
+      "bytes": 1677,
+      "sha256": "ff6befece80b44f34f8b56010c97ea33a33e86f10ffc9027cb61f5c2b23370d0"
+    },
+    {
+      "path": "tests/test_mechanics.py",
+      "bytes": 3347,
+      "sha256": "0d0c732b2a9b4dd22afc667103ca1b78a41df8fa8dd66902f31af01814cf0ae5"
+    },
+    {
+      "path": "tests/test_writer_analysis.py",
+      "bytes": 1848,
+      "sha256": "d772317762982f1835e16ad6e3ba7db35c929491f5eeb21a93f8ad469870f030"
+    },
+    {
+      "path": "tests/writer_io.h",
+      "bytes": 3491,
+      "sha256": "985b1825f942cbd5cd8ac01a686a8daa091e5e5436f16ca2abf6204d85e8cc09"
+    },
+    {
+      "path": "tests/writer_mechanics.h",
+      "bytes": 5856,
+      "sha256": "6bcf6df0ba467b7dd1f010befc122e9ab7afb60c5cfa893c38ad3851f154082a"
+    },
+    {
+      "path": "tools/bundle.py",
+      "bytes": 9915,
+      "sha256": "69ab26595551e67b8c559622916585ca05cffdc10e77254cc0283ef6f527ecfb"
+    },
+    {
+      "path": "tools/chat.py",
+      "bytes": 5584,
+      "sha256": "47246c9daf1ab09d88d43fe1157a2a81e8d842ea202dba9b2d5d50751791d851"
+    },
+    {
+      "path": "tools/component_algebra.py",
+      "bytes": 5457,
+      "sha256": "29e52bac25f31c0377eff954afd56a667eaf8f5ea01360b3c7723db87d3328ca"
+    },
+    {
+      "path": "tools/consumer_contrasts.py",
+      "bytes": 14748,
+      "sha256": "4c3485f5669f443211fe39aa9923fc8412e4f6f9d310b3edceb72cb230e908e6"
+    },
+    {
+      "path": "tools/diagnose_reuse.py",
+      "bytes": 1863,
+      "sha256": "711c76d8d38a4041779b47f96ffc4f7909384293b380805d33834b1aef08d4ef"
+    },
+    {
+      "path": "tools/fleet.py",
+      "bytes": 14835,
+      "sha256": "c34547319d78a9ffab9e69154386db87583980eca6324c8364fc5546d6a9910e"
+    },
+    {
+      "path": "tools/formation_analysis.py",
+      "bytes": 8130,
+      "sha256": "d381d7e72159f8f4c442700bd02cef1c06ab2900efc24de9eedce271ee3aaadf"
+    },
+    {
+      "path": "tools/plane_analysis.py",
+      "bytes": 5599,
+      "sha256": "bb9f16b8bb2753d5b1ba402dfbb7642d8da87c570bcbef395cd32f0d01f79d82"
+    },
+    {
+      "path": "tools/plane_frontier.py",
+      "bytes": 2571,
+      "sha256": "82c234187f8cde88dc1cb93c8dfa4732fa600636587c5dfdea8a38b788f585cc"
+    },
+    {
+      "path": "tools/plot_components.py",
+      "bytes": 2645,
+      "sha256": "7ec0a292e26c68c26dafe85a7219de59ad0161082f3baab26d89b009ce0dd295"
+    },
+    {
+      "path": "tools/plot_formation.py",
+      "bytes": 2451,
+      "sha256": "df3c8375d6c5023afdefa5ef206c867e2b1346253755a817340ad1a5ec1566b3"
+    },
+    {
+      "path": "tools/plot_plane.py",
+      "bytes": 3146,
+      "sha256": "888a031bd104bb757b4713e7e9e3e58366c9c8b2e07982967858c7429ca1a733"
+    },
+    {
+      "path": "tools/plot_reuse.py",
+      "bytes": 2552,
+      "sha256": "32c6dec972918fe233fa8606818f684dfa6c2520123cb508101341f2c84977f5"
+    },
+    {
+      "path": "tools/reuse_analysis.py",
+      "bytes": 16144,
+      "sha256": "acc3c3c1d94b8ee661ec12b9c446fc24398148e84411e8e3ff53a2b6031cd549"
+    },
+    {
+      "path": "tools/reuse_components.py",
+      "bytes": 2634,
+      "sha256": "f5a4b3559a81e2ee0d750147a5525c60c97562a7cad4982ff22f128fa847a0f0"
+    },
+    {
+      "path": "tools/saturn_bridge.py",
+      "bytes": 3896,
+      "sha256": "89232bfbc1c6317d4054aabb7756e42845543c48153b6a4db81cd18239789828"
+    },
+    {
+      "path": "tools/verify.py",
+      "bytes": 18840,
+      "sha256": "204f968f3d6d45a4060422179136c063c4c66b748245371f0098e059ba4c54bd"
+    },
+    {
+      "path": "tools/worker.py",
+      "bytes": 61688,
+      "sha256": "e431fa6894d21ee0f209cb6984df149ad9f0937b2b6650a3a8da52895834bd5d"
+    },
+    {
+      "path": "tools/writer_analysis.py",
+      "bytes": 13637,
+      "sha256": "ee01bce9ae8429d16777d211e24ef493eab69039944ae522501686ca8b771478"
+    }
+  ]
+}

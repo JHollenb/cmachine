@@ -1,0 +1,12 @@
+/build/
+/models/
+/results/
+/artifacts/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.tcm
+*.safetensors
+.DS_Store
