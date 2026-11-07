@@ -1,0 +1,23 @@
+{
+  "schema_version": "cmachine-model-intake-mechanics-v1",
+  "date": "2026-11-06",
+  "command": "rtk proxy common/bin/common exec python -m unittest discover -s cmachine/research/model_intake -p 'test_intake.py' -v",
+  "exit_code": 0,
+  "tests_run": 9,
+  "reported_test_seconds": 4.118,
+  "scope": "Tiny synthetic Qwen2/Qwen3 declarative source and IR integrity mechanics only",
+  "pretrained_model_loaded": false,
+  "numerical_forward_executed": false,
+  "c_execution_qualified": false,
+  "semantic_claim": false,
+  "cli_smoke": {
+    "synthetic_source_exit_code": 0,
+    "unknown_family_exit_code": 2,
+    "refusal_retained": true,
+    "model_forwards": 0
+  },
+  "source_sha256": {
+    "intake.py": "56ce7d375e510c3e43588f2d9119e6c55a10219c0764a45fe62f85870b531e72",
+    "test_intake.py": "e27946ab21d19559afc24fa280e235460d7ef645de639b1b0b4fed11e105c67b"
+  }
+}

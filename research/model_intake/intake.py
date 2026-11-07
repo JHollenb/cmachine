@@ -9,8 +9,10 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
+import tempfile
 
 
 SCHEMA = "cmachine-model-intake-v1"
@@ -27,6 +29,21 @@ def sealed(value):
 def write_json(path, value):
     with Path(path).open("xb") as handle:
         handle.write(canonical(value) + b"\n")
+
+
+def publish_json(path, value):
+    """Expose the complete report atomically, without replacing an existing one."""
+    path = Path(path)
+    descriptor, name = tempfile.mkstemp(prefix=".intake-", dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(descriptor, "wb") as handle:
+            handle.write(canonical(value) + b"\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.link(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def inventory(bundle):
@@ -123,7 +140,9 @@ def intake(*, output, source=None, ir=None, source_id=None, revision=None):
             imported["artifacts"] = {name: artifacts[name] for name in imported["artifacts"]}
         else:
             imported = None
-        if frozen_source is not None:
+        # A canonical mutation refusal is evidence to retain, not another
+        # successful import whose source should be checked again.
+        if frozen_source is not None and bundle is not None:
             frozen_source.assert_unchanged()
         report = sealed({
             "schema_version": SCHEMA,
@@ -149,7 +168,7 @@ def intake(*, output, source=None, ir=None, source_id=None, revision=None):
         with (destination / "REPORT.md").open("x") as handle:
             handle.write(_markdown(report))
         # Published last: its presence is the complete-intake marker.
-        write_json(destination / "intake.json", report)
+        publish_json(destination / "intake.json", report)
         return report
     except BaseException:
         shutil.rmtree(destination)
@@ -168,7 +187,7 @@ def main(argv=None):
     try:
         report = intake(output=args.output, source=args.source, ir=args.ir,
                         source_id=args.source_id, revision=args.revision)
-    except (ValueError, OSError, ImportError) as exc:
+    except (ValueError, OSError, ImportError, RuntimeError) as exc:
         parser.exit(2, f"intake refused: {exc}\n")
     print(json.dumps({"status": report["status"], "output": str(args.output),
                       "bundle_fingerprint": report["bundle_fingerprint"],
