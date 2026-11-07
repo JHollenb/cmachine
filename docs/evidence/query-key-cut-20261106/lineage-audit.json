@@ -1,0 +1,31 @@
+{
+  "schema": "qk18-cut-lineage-audit-v1",
+  "report_sha256": "bb0ed9af950ea22f13f675918d4085f76b4fc102f5ce309cccd97e5659652ec1",
+  "prior_report_sha256": "d97a8dedb3a3e187e958c56ecf81bf59d8f2b45f3b69c4c27a76925507d9e9e2",
+  "binding_clock_joins": [
+    {
+      "context": 128,
+      "cut_position": 143,
+      "prior_metrics_sha256": "24f66df1ba9c2ffbab265cd67427b289a8c1a99e315016d13bd9dee6f9b0594e",
+      "original_compiled_cut_logits_sha256": "f0d9bbcec47c20563020f9bbd6cdbd2e6322732aba3fa9f930ecea9f5c639c58",
+      "exact_current_bad_baseline_join": true,
+      "original_full_native_shadow_top": 14961,
+      "compiled_top": 67605,
+      "lower_prototype_parent_byte_exact": true
+    },
+    {
+      "context": 1024,
+      "cut_position": 1039,
+      "prior_metrics_sha256": "b489ab94e6d92d4de75cb0923524ff77d6d9abaf3fd2294cbbbe299cde290f42",
+      "original_compiled_cut_logits_sha256": "2d13f3d7121a6cd7c747488e78df527d415f84e22bd843cef6b91f0a7c4ea163",
+      "exact_current_bad_baseline_join": true,
+      "original_full_native_shadow_top": 14961,
+      "compiled_top": 67605,
+      "lower_prototype_parent_byte_exact": true
+    }
+  ],
+  "greedy_boundary_choices_verified": 128,
+  "exact_parent_groups": 4,
+  "new_model_calls": 0,
+  "scope": "Independent immutable prior/current joins, lower parent identity, supplied shared prefix and retained native greedy choices. The first compass clause was already in the supplied prefix; it is not a fresh collateral outcome."
+}

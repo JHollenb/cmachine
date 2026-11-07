@@ -1,0 +1,14 @@
+{
+  "schema": "qk18-cut-verification-v1",
+  "report_sha256": "bb0ed9af950ea22f13f675918d4085f76b4fc102f5ce309cccd97e5659652ec1",
+  "source_files": 81,
+  "raw_files": 277,
+  "exact_sham_pairs": 4,
+  "parent_replayed_branches": 32,
+  "logical_rows": 36,
+  "native_current_layer18_closed_contexts": 2,
+  "maximum_reader_arithmetic_remainder": 5.971550058261251e-07,
+  "analysis_recomputed": true,
+  "new_model_calls": 0,
+  "terminal_status": "not-requested"
+}

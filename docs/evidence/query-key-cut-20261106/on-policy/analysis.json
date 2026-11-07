@@ -1,0 +1,212 @@
+{
+  "schema": "qk18-on-policy-analysis-v1",
+  "observations": [
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p0-c0-n128",
+      "policy": "query-only18",
+      "context_tokens": 128,
+      "task": 0,
+      "future_kl": 0.013235645817846439,
+      "per_turn_kl": [
+        0.00533758460882722,
+        0.021133707026865657
+      ],
+      "prior_updated17_kl": 0.020889357266673587,
+      "prior_both18_kl": 0.036365891942782926,
+      "texts": [
+        "The compass is now in the violet box, and the whistle is in the silver box.",
+        "The compass is now in the violet box, and the whistle is now in the amber box."
+      ],
+      "stopped": [
+        true,
+        true
+      ],
+      "selected_linear_macs_per_token": 1998848,
+      "nominal_whole_token_linear_macs": 1539276800
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p0-c1-n128",
+      "policy": "query-only18",
+      "context_tokens": 128,
+      "task": 1,
+      "future_kl": 0.03849797425676188,
+      "per_turn_kl": [
+        0.01928207291435422,
+        0.05771387559916954
+      ],
+      "prior_updated17_kl": 0.022193893119043944,
+      "prior_both18_kl": 0.04547816385304851,
+      "texts": [
+        "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+        "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water to evaporate from the towel's surface."
+      ],
+      "stopped": [
+        false,
+        true
+      ],
+      "selected_linear_macs_per_token": 1998848,
+      "nominal_whole_token_linear_macs": 1539276800
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p0-c0-n1024",
+      "policy": "query-only18",
+      "context_tokens": 1024,
+      "task": 0,
+      "future_kl": 0.016384632279156625,
+      "per_turn_kl": [
+        0.005356928009414252,
+        0.027412336548898998
+      ],
+      "prior_updated17_kl": 0.024241611867910823,
+      "prior_both18_kl": 0.06378876010214089,
+      "texts": [
+        "The compass is now in the violet box, and the whistle is in the silver box.",
+        "The compass is now in the violet box, and the whistle is now in the amber box."
+      ],
+      "stopped": [
+        true,
+        true
+      ],
+      "selected_linear_macs_per_token": 1998848,
+      "nominal_whole_token_linear_macs": 1539276800
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p0-c1-n1024",
+      "policy": "query-only18",
+      "context_tokens": 1024,
+      "task": 1,
+      "future_kl": 0.04488919218553133,
+      "per_turn_kl": [
+        0.02410425441070214,
+        0.06567412996036051
+      ],
+      "prior_updated17_kl": 0.026362420018375837,
+      "prior_both18_kl": 0.051927473079753664,
+      "texts": [
+        "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+        "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water to evaporate from the towel's surface."
+      ],
+      "stopped": [
+        false,
+        true
+      ],
+      "selected_linear_macs_per_token": 1998848,
+      "nominal_whole_token_linear_macs": 1539276800
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p1-c0-n128",
+      "policy": "key-only18",
+      "context_tokens": 128,
+      "task": 0,
+      "future_kl": 0.04911522782157206,
+      "per_turn_kl": [
+        0.057644814449866785,
+        0.04058564119327732
+      ],
+      "prior_updated17_kl": 0.020889357266673587,
+      "prior_both18_kl": 0.036365891942782926,
+      "texts": [
+        "The compass is now in the violet box, and the whistle is still in the amber box.",
+        "The compass is in the violet box, and the whistle is now in the amber box."
+      ],
+      "stopped": [
+        true,
+        true
+      ],
+      "selected_linear_macs_per_token": 3801088,
+      "nominal_whole_token_linear_macs": 1541079040
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p1-c1-n128",
+      "policy": "key-only18",
+      "context_tokens": 128,
+      "task": 1,
+      "future_kl": 0.032683662713236555,
+      "per_turn_kl": [
+        0.017572885989010384,
+        0.04779443943746273
+      ],
+      "prior_updated17_kl": 0.022193893119043944,
+      "prior_both18_kl": 0.04547816385304851,
+      "texts": [
+        "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+        "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water on the towel to evaporate."
+      ],
+      "stopped": [
+        false,
+        true
+      ],
+      "selected_linear_macs_per_token": 3801088,
+      "nominal_whole_token_linear_macs": 1541079040
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p1-c0-n1024",
+      "policy": "key-only18",
+      "context_tokens": 1024,
+      "task": 0,
+      "future_kl": 0.0641640644485391,
+      "per_turn_kl": [
+        0.09165409927248994,
+        0.03667402962458827
+      ],
+      "prior_updated17_kl": 0.024241611867910823,
+      "prior_both18_kl": 0.06378876010214089,
+      "texts": [
+        "The compass is now in the violet box, and the whistle is still in the amber box.",
+        "The compass is now in the violet box, and the whistle is now in the amber box."
+      ],
+      "stopped": [
+        true,
+        true
+      ],
+      "selected_linear_macs_per_token": 3801088,
+      "nominal_whole_token_linear_macs": 1541079040
+    },
+    {
+      "schema": "qk18-on-policy-observation-v1",
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "p1-c1-n1024",
+      "policy": "key-only18",
+      "context_tokens": 1024,
+      "task": 1,
+      "future_kl": 0.03798914651623199,
+      "per_turn_kl": [
+        0.02327763645531651,
+        0.05270065657714746
+      ],
+      "prior_updated17_kl": 0.026362420018375837,
+      "prior_both18_kl": 0.051927473079753664,
+      "texts": [
+        "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+        "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water on the towel to evaporate."
+      ],
+      "stopped": [
+        false,
+        true
+      ],
+      "selected_linear_macs_per_token": 3801088,
+      "nominal_whole_token_linear_macs": 1541079040
+    }
+  ],
+  "means": {
+    "query-only18": 0.02825186113482407,
+    "key-only18": 0.04598802537489492
+  },
+  "retained_logit_pairs": 32,
+  "max_retained_kl_discrepancy": 3.332750742046642e-13,
+  "scope": "Known development conversations, frozen source images/masks, no fit/selection/new heldout. Each policy has its own history and corresponding native same-ID shadow, so mean changes are policy trends, not isolated same-state effects."
+}

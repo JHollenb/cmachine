@@ -1,0 +1,2305 @@
+{
+  "exact_sham_pairs": 4,
+  "groups": [
+    {
+      "context": 128,
+      "history": 0,
+      "interaction_by_layer": [
+        {
+          "attention": 3.019172728564886,
+          "attention_write": 3.2814672893297607,
+          "input": 0.0,
+          "layer": 18,
+          "mlp_input": 1.9072144997087876,
+          "mlp_write": 2.4035490472099763,
+          "output": 3.6092914395054816,
+          "receiver": 3.281467185825004
+        },
+        {
+          "attention": 2.010101155412664,
+          "attention_write": 1.936780969770523,
+          "input": 3.6092914395054816,
+          "layer": 19,
+          "mlp_input": 1.5538103035405828,
+          "mlp_write": 2.3282184317907446,
+          "output": 2.9089152259667332,
+          "receiver": 3.027125316540702
+        },
+        {
+          "attention": 1.2320890926773918,
+          "attention_write": 1.4420865704234243,
+          "input": 2.9089152259667332,
+          "layer": 20,
+          "mlp_input": 1.391199524007258,
+          "mlp_write": 1.795069155759745,
+          "output": 2.9897505163648583,
+          "receiver": 3.0912004290982744
+        },
+        {
+          "attention": 1.3489146540876416,
+          "attention_write": 1.5609498191285218,
+          "input": 2.9897505163648583,
+          "layer": 21,
+          "mlp_input": 1.4546366621529248,
+          "mlp_write": 2.1137316881670576,
+          "output": 3.257895060447268,
+          "receiver": 3.2730683744039486
+        },
+        {
+          "attention": 0.8101209190937416,
+          "attention_write": 1.011619832021281,
+          "input": 3.257895060447268,
+          "layer": 22,
+          "mlp_input": 1.2258463305343512,
+          "mlp_write": 1.7176013720948395,
+          "output": 3.1056213895905596,
+          "receiver": 3.128449772595247
+        },
+        {
+          "attention": 1.0417980611949116,
+          "attention_write": 1.4884102680267333,
+          "input": 3.1056213895905596,
+          "layer": 23,
+          "mlp_input": 1.0782212150955104,
+          "mlp_write": 1.5425387655339862,
+          "output": 3.4915651134446666,
+          "receiver": 3.3867542165629247
+        },
+        {
+          "attention": 0.9726409415093751,
+          "attention_write": 1.378303401519682,
+          "input": 3.4915651134446666,
+          "layer": 24,
+          "mlp_input": 1.0424111920477588,
+          "mlp_write": 1.242101340654909,
+          "output": 4.1581071798841425,
+          "receiver": 3.849233749446607
+        },
+        {
+          "attention": 1.444039643992634,
+          "attention_write": 1.004879627724734,
+          "input": 4.1581071798841425,
+          "layer": 25,
+          "mlp_input": 0.930180976345423,
+          "mlp_write": 1.3439518190371942,
+          "output": 4.228696305991151,
+          "receiver": 3.8842536124889517
+        },
+        {
+          "attention": 1.0466003758135574,
+          "attention_write": 1.124807709911054,
+          "input": 4.228696305991151,
+          "layer": 26,
+          "mlp_input": 0.8879212623163787,
+          "mlp_write": 1.7931257162778378,
+          "output": 4.665232122603447,
+          "receiver": 4.405713202582141
+        },
+        {
+          "attention": 1.3091358429610478,
+          "attention_write": 1.1374961510806618,
+          "input": 4.665232122603447,
+          "layer": 27,
+          "mlp_input": 0.9973853727633258,
+          "mlp_write": 3.1404029026348024,
+          "output": 5.819658287506737,
+          "receiver": 4.900466635283179
+        }
+      ],
+      "logit_interaction_l2": 43.791974227748725,
+      "margin_interaction": 0.1272430419921875,
+      "parent_hash": "1072029471cf1b60a2b507a595dc491370de2b5f0070f26d7e2683b95436a226",
+      "rows": [
+        {
+          "actual_name": "case128-h0-arm0",
+          "alias": false,
+          "arm": 0,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.01900298509084924,
+          "silver_minus_amber_logit": -2.2724437713623047,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm1",
+          "alias": false,
+          "arm": 1,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.01900298509084924,
+          "silver_minus_amber_logit": -2.2724437713623047,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm0",
+          "alias": true,
+          "arm": 2,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.01900298509084924,
+          "silver_minus_amber_logit": -2.2724437713623047,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm3",
+          "alias": false,
+          "arm": 3,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.03374373115358362,
+          "silver_minus_amber_logit": -2.4849166870117188,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm4",
+          "alias": false,
+          "arm": 4,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.0007573407553825165,
+          "silver_minus_amber_logit": -1.613067626953125,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm5",
+          "alias": false,
+          "arm": 5,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": -1.6982975006103516,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm6",
+          "alias": false,
+          "arm": 6,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.08107445185585978,
+          "silver_minus_amber_logit": -2.992298126220703,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm7",
+          "alias": false,
+          "arm": 7,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.028219934426139178,
+          "silver_minus_amber_logit": -2.3849868774414062,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h0-arm8",
+          "alias": false,
+          "arm": 8,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.06280357034301826,
+          "silver_minus_amber_logit": -2.8002243041992188,
+          "stopped": [
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "context": 128,
+      "history": 1,
+      "interaction_by_layer": [
+        {
+          "attention": 3.019172728564886,
+          "attention_write": 3.2814672893297607,
+          "input": 0.0,
+          "layer": 18,
+          "mlp_input": 1.9072144997087876,
+          "mlp_write": 2.4035490472099763,
+          "output": 3.6092914395054816,
+          "receiver": 3.281467185825004
+        },
+        {
+          "attention": 1.9817077745582963,
+          "attention_write": 1.8889941148953762,
+          "input": 3.6092914395054816,
+          "layer": 19,
+          "mlp_input": 1.547751534286207,
+          "mlp_write": 2.3056467722198155,
+          "output": 2.9201395330571143,
+          "receiver": 3.049789626934261
+        },
+        {
+          "attention": 1.262191254782175,
+          "attention_write": 1.414524630615493,
+          "input": 2.9201395330571143,
+          "layer": 20,
+          "mlp_input": 1.3905912262082816,
+          "mlp_write": 1.7828667796538662,
+          "output": 2.9727953165218213,
+          "receiver": 3.0825371968851485
+        },
+        {
+          "attention": 1.3489937492069868,
+          "attention_write": 1.5681510388162658,
+          "input": 2.9727953165218213,
+          "layer": 21,
+          "mlp_input": 1.4419508063788375,
+          "mlp_write": 2.1096054195904745,
+          "output": 3.2217572973787343,
+          "receiver": 3.2375073485520356
+        },
+        {
+          "attention": 0.8213553048565898,
+          "attention_write": 1.0166573781986556,
+          "input": 3.2217572973787343,
+          "layer": 22,
+          "mlp_input": 1.215686879284159,
+          "mlp_write": 1.6864003305142925,
+          "output": 3.0978137802351915,
+          "receiver": 3.0968222046773133
+        },
+        {
+          "attention": 1.1090400363149513,
+          "attention_write": 1.5633841466601355,
+          "input": 3.0978137802351915,
+          "layer": 23,
+          "mlp_input": 1.0661487217518706,
+          "mlp_write": 1.5617512453345785,
+          "output": 3.540282570285351,
+          "receiver": 3.4003255402914925
+        },
+        {
+          "attention": 0.9379838325326603,
+          "attention_write": 1.2929931039151905,
+          "input": 3.540282570285351,
+          "layer": 24,
+          "mlp_input": 1.027375018456705,
+          "mlp_write": 1.2169824505225133,
+          "output": 4.122174215997557,
+          "receiver": 3.8317661293391545
+        },
+        {
+          "attention": 1.4061630489383476,
+          "attention_write": 0.9449093825783583,
+          "input": 4.122174215997557,
+          "layer": 25,
+          "mlp_input": 0.926191080737184,
+          "mlp_write": 1.345696515531878,
+          "output": 4.235016733135277,
+          "receiver": 3.9005019293139287
+        },
+        {
+          "attention": 0.9946005182757927,
+          "attention_write": 1.050514618959203,
+          "input": 4.235016733135277,
+          "layer": 26,
+          "mlp_input": 0.8772652421570786,
+          "mlp_write": 1.718957090348286,
+          "output": 4.674673821463418,
+          "receiver": 4.387416461031721
+        },
+        {
+          "attention": 1.228013981247891,
+          "attention_write": 1.1266660962744481,
+          "input": 4.674673821463418,
+          "layer": 27,
+          "mlp_input": 0.9844759094795755,
+          "mlp_write": 3.5347567326221903,
+          "output": 5.948947596490161,
+          "receiver": 4.890566629387031
+        }
+      ],
+      "logit_interaction_l2": 46.71094404787156,
+      "margin_interaction": 0.08480072021484375,
+      "parent_hash": "7e1da3fab2917a588414fe1a6bba5b7841a20bece6e4fb18b9d30f1b8256b3a5",
+      "rows": [
+        {
+          "actual_name": "case128-h1-arm0",
+          "alias": false,
+          "arm": 0,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": -1.150634765625,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm1",
+          "alias": false,
+          "arm": 1,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": -1.150634765625,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm2",
+          "alias": false,
+          "arm": 2,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.03270960855309269,
+          "silver_minus_amber_logit": -1.7854061126708984,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm3",
+          "alias": false,
+          "arm": 3,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.05937746011570594,
+          "silver_minus_amber_logit": -2.0266685485839844,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm4",
+          "alias": false,
+          "arm": 4,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.002389817491868696,
+          "silver_minus_amber_logit": -0.9941730499267578,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm0",
+          "alias": true,
+          "arm": 5,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": -1.150634765625,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm6",
+          "alias": false,
+          "arm": 6,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.10595675543303196,
+          "silver_minus_amber_logit": -2.3608436584472656,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm7",
+          "alias": false,
+          "arm": 7,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.03229216497155548,
+          "silver_minus_amber_logit": -1.7634925842285156,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case128-h1-arm8",
+          "alias": false,
+          "arm": 8,
+          "context": 128,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.02744888320406315,
+          "silver_minus_amber_logit": -1.7056922912597656,
+          "stopped": [
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "context": 1024,
+      "history": 0,
+      "interaction_by_layer": [
+        {
+          "attention": 3.3731578382430496,
+          "attention_write": 3.622632774651093,
+          "input": 0.0,
+          "layer": 18,
+          "mlp_input": 2.1357207637730635,
+          "mlp_write": 3.0603378618238772,
+          "output": 4.173358110771003,
+          "receiver": 3.622632772824251
+        },
+        {
+          "attention": 2.303554001101131,
+          "attention_write": 2.277864075914037,
+          "input": 4.173358110771003,
+          "layer": 19,
+          "mlp_input": 1.826819718560353,
+          "mlp_write": 2.7027666052884833,
+          "output": 3.23114328216811,
+          "receiver": 3.531192297250121
+        },
+        {
+          "attention": 1.3238068950925672,
+          "attention_write": 1.3628567615140963,
+          "input": 3.23114328216811,
+          "layer": 20,
+          "mlp_input": 1.5437608064264647,
+          "mlp_write": 1.9755901678379015,
+          "output": 3.1776085557058065,
+          "receiver": 3.330525597724299
+        },
+        {
+          "attention": 1.2224163341666006,
+          "attention_write": 1.4525151145945128,
+          "input": 3.1776085557058065,
+          "layer": 21,
+          "mlp_input": 1.5484124137695767,
+          "mlp_write": 2.268686462000031,
+          "output": 3.362716813398705,
+          "receiver": 3.3837205594589497
+        },
+        {
+          "attention": 2.4406735538540976,
+          "attention_write": 2.3514291685906814,
+          "input": 3.362716813398705,
+          "layer": 22,
+          "mlp_input": 1.58426573740637,
+          "mlp_write": 2.2868530076743343,
+          "output": 3.979194034346376,
+          "receiver": 3.877661301809583
+        },
+        {
+          "attention": 0.9530746575005683,
+          "attention_write": 1.064689944115003,
+          "input": 3.979194034346376,
+          "layer": 23,
+          "mlp_input": 1.3175636133207438,
+          "mlp_write": 2.0363082243750297,
+          "output": 4.264946154277,
+          "receiver": 3.9292649375238224
+        },
+        {
+          "attention": 1.102759023877,
+          "attention_write": 1.386921803058805,
+          "input": 4.264946154277,
+          "layer": 24,
+          "mlp_input": 1.2657458745548635,
+          "mlp_write": 1.452012743213821,
+          "output": 4.746995007731645,
+          "receiver": 4.521197768081728
+        },
+        {
+          "attention": 0.7600661350660136,
+          "attention_write": 0.75666298687859,
+          "input": 4.746995007731645,
+          "layer": 25,
+          "mlp_input": 1.1394880321133674,
+          "mlp_write": 1.5184967543723036,
+          "output": 4.901579155707438,
+          "receiver": 4.619292025131278
+        },
+        {
+          "attention": 1.5329516825682497,
+          "attention_write": 1.634839814890175,
+          "input": 4.901579155707438,
+          "layer": 26,
+          "mlp_input": 1.0968974019681115,
+          "mlp_write": 2.0617737184800577,
+          "output": 5.6468539132725555,
+          "receiver": 5.218027934049362
+        },
+        {
+          "attention": 1.7989062707134467,
+          "attention_write": 1.7619072831269489,
+          "input": 5.6468539132725555,
+          "layer": 27,
+          "mlp_input": 1.2537185652260925,
+          "mlp_write": 5.346200689634925,
+          "output": 7.851002544931137,
+          "receiver": 5.878943762098011
+        }
+      ],
+      "logit_interaction_l2": 49.79791808948739,
+      "margin_interaction": 0.3134193420410156,
+      "parent_hash": "c76e92f6b3d40d67506d8666fe385c3caabe45933841fdb1eefc3b1318e6eab0",
+      "rows": [
+        {
+          "actual_name": "case1024-h0-arm0",
+          "alias": false,
+          "arm": 0,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.15220401139183856,
+          "silver_minus_amber_logit": -2.566303253173828,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm1",
+          "alias": false,
+          "arm": 1,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.15220401139183856,
+          "silver_minus_amber_logit": -2.566303253173828,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm0",
+          "alias": true,
+          "arm": 2,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.15220401139183856,
+          "silver_minus_amber_logit": -2.566303253173828,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm3",
+          "alias": false,
+          "arm": 3,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.11008326851685526,
+          "silver_minus_amber_logit": -2.3176746368408203,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm4",
+          "alias": false,
+          "arm": 4,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.027023820371866854,
+          "silver_minus_amber_logit": -1.6637153625488281,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm5",
+          "alias": false,
+          "arm": 5,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": -1.1016674041748047,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm6",
+          "alias": false,
+          "arm": 6,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.34711758029570494,
+          "silver_minus_amber_logit": -3.5305023193359375,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm7",
+          "alias": false,
+          "arm": 7,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.11327307255504271,
+          "silver_minus_amber_logit": -2.320150375366211,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h0-arm8",
+          "alias": false,
+          "arm": 8,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 0,
+          "kl_to_same_parent_native_qk": 0.3299637921592551,
+          "silver_minus_amber_logit": -3.4490299224853516,
+          "stopped": [
+            true,
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "context": 1024,
+      "history": 1,
+      "interaction_by_layer": [
+        {
+          "attention": 3.3731578382430496,
+          "attention_write": 3.622632774651093,
+          "input": 0.0,
+          "layer": 18,
+          "mlp_input": 2.1357207637730635,
+          "mlp_write": 3.0603378618238772,
+          "output": 4.173358110771003,
+          "receiver": 3.622632772824251
+        },
+        {
+          "attention": 2.299320481635426,
+          "attention_write": 2.2475376670899276,
+          "input": 4.173358110771003,
+          "layer": 19,
+          "mlp_input": 1.8096693152570933,
+          "mlp_write": 2.6649883225742323,
+          "output": 3.172735435287808,
+          "receiver": 3.5399360890935543
+        },
+        {
+          "attention": 1.2065071415251045,
+          "attention_write": 1.2578198361723951,
+          "input": 3.172735435287808,
+          "layer": 20,
+          "mlp_input": 1.5120500595403654,
+          "mlp_write": 1.959099826786683,
+          "output": 3.074402831736028,
+          "receiver": 3.234149524081937
+        },
+        {
+          "attention": 1.1425581324896208,
+          "attention_write": 1.335062439034478,
+          "input": 3.074402831736028,
+          "layer": 21,
+          "mlp_input": 1.4967888979576147,
+          "mlp_write": 2.2005077057725653,
+          "output": 3.2290056759138186,
+          "receiver": 3.264897361742059
+        },
+        {
+          "attention": 0.824548911477344,
+          "attention_write": 1.127875466091544,
+          "input": 3.2290056759138186,
+          "layer": 22,
+          "mlp_input": 1.242295098614274,
+          "mlp_write": 1.7030503596559894,
+          "output": 3.075621421661498,
+          "receiver": 3.110993606739497
+        },
+        {
+          "attention": 0.7748592573953703,
+          "attention_write": 0.8625724138906545,
+          "input": 3.075621421661498,
+          "layer": 23,
+          "mlp_input": 1.0209912751295689,
+          "mlp_write": 1.478099494957992,
+          "output": 3.323287505273275,
+          "receiver": 3.161775145052106
+        },
+        {
+          "attention": 0.8182969222021899,
+          "attention_write": 0.8368290129161435,
+          "input": 3.323287505273275,
+          "layer": 24,
+          "mlp_input": 0.9470579573479737,
+          "mlp_write": 1.0678852466430084,
+          "output": 3.682461156361193,
+          "receiver": 3.4807220613003644
+        },
+        {
+          "attention": 0.5418327779954161,
+          "attention_write": 0.5225861604147745,
+          "input": 3.682461156361193,
+          "layer": 25,
+          "mlp_input": 0.868659565446075,
+          "mlp_write": 1.1808736831139863,
+          "output": 3.816216611581953,
+          "receiver": 3.5892987263005702
+        },
+        {
+          "attention": 0.9740080169792683,
+          "attention_write": 0.9847481546876948,
+          "input": 3.816216611581953,
+          "layer": 26,
+          "mlp_input": 0.8113214757788831,
+          "mlp_write": 1.4856609584874307,
+          "output": 4.332467589626374,
+          "receiver": 3.9568913092110662
+        },
+        {
+          "attention": 1.1765769101867696,
+          "attention_write": 1.1193203135842689,
+          "input": 4.332467589626374,
+          "layer": 27,
+          "mlp_input": 0.9621362338896489,
+          "mlp_write": 5.7151208218226195,
+          "output": 7.10632276568643,
+          "receiver": 4.491359740343059
+        }
+      ],
+      "logit_interaction_l2": 48.7875646772084,
+      "margin_interaction": -0.022016525268554688,
+      "parent_hash": "72ce2adfd453cc5e8aa4068106cb37fed559f8bc335a99195fdeafffb83f069e",
+      "rows": [
+        {
+          "actual_name": "case1024-h1-arm0",
+          "alias": false,
+          "arm": 0,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "silver",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": 0.1933307647705078,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm1",
+          "alias": false,
+          "arm": 1,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "silver",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": 0.1933307647705078,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm2",
+          "alias": false,
+          "arm": 2,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.15485957578703963,
+          "silver_minus_amber_logit": -0.9338397979736328,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm3",
+          "alias": false,
+          "arm": 3,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.10347484499543792,
+          "silver_minus_amber_logit": -0.7234649658203125,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm4",
+          "alias": false,
+          "arm": 4,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "silver",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.004536331878095991,
+          "silver_minus_amber_logit": 0.0049724578857421875,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm0",
+          "alias": true,
+          "arm": 5,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "silver",
+          "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.0,
+          "silver_minus_amber_logit": 0.1933307647705078,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm6",
+          "alias": false,
+          "arm": 6,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.5543622599536346,
+          "silver_minus_amber_logit": -2.046651840209961,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm7",
+          "alias": false,
+          "arm": 7,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.09602954037305425,
+          "silver_minus_amber_logit": -0.6829452514648438,
+          "stopped": [
+            true,
+            true
+          ]
+        },
+        {
+          "actual_name": "case1024-h1-arm8",
+          "alias": false,
+          "arm": 8,
+          "context": 1024,
+          "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "first_compass_location": "violet",
+          "first_whistle_location": "amber",
+          "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+          "followup_whistle_location": "amber",
+          "history": 1,
+          "kl_to_same_parent_native_qk": 0.3647052034453557,
+          "silver_minus_amber_logit": -1.5778465270996094,
+          "stopped": [
+            true,
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "historical_native_current_contrasts": [
+    {
+      "changes": [
+        {
+          "attention": 0.0,
+          "attention_write": 0.0,
+          "input": 0.0,
+          "layer": 18,
+          "mlp_input": 0.0,
+          "mlp_write": 0.0,
+          "output": 0.0,
+          "receiver": 0.0
+        },
+        {
+          "attention": 4.369137783186977,
+          "attention_write": 3.827326265387613,
+          "input": 0.0,
+          "layer": 19,
+          "mlp_input": 2.0388421318445076,
+          "mlp_write": 3.6442023989012666,
+          "output": 4.588233614513321,
+          "receiver": 3.8273262330389963
+        },
+        {
+          "attention": 2.3402937809070754,
+          "attention_write": 2.49743745800494,
+          "input": 4.588233614513321,
+          "layer": 20,
+          "mlp_input": 2.089882140525958,
+          "mlp_write": 2.713230688102834,
+          "output": 5.055609509694895,
+          "receiver": 5.135516042081625
+        },
+        {
+          "attention": 1.6395947912869295,
+          "attention_write": 1.9357703436107176,
+          "input": 5.055609509694895,
+          "layer": 21,
+          "mlp_input": 2.1217935580069494,
+          "mlp_write": 2.869910704506586,
+          "output": 5.526173261955552,
+          "receiver": 5.261794123409268
+        },
+        {
+          "attention": 2.81214270635135,
+          "attention_write": 2.7639702721202983,
+          "input": 5.526173261955552,
+          "layer": 22,
+          "mlp_input": 2.1770399763523907,
+          "mlp_write": 3.006923991362584,
+          "output": 6.1772606410965745,
+          "receiver": 5.9012421356559415
+        },
+        {
+          "attention": 2.339246526489422,
+          "attention_write": 3.038879613973159,
+          "input": 6.1772606410965745,
+          "layer": 23,
+          "mlp_input": 2.1661667847636132,
+          "mlp_write": 3.105911952747823,
+          "output": 7.329948725371425,
+          "receiver": 7.093103676321762
+        },
+        {
+          "attention": 2.599760648671882,
+          "attention_write": 3.255080375556458,
+          "input": 7.329948725371425,
+          "layer": 24,
+          "mlp_input": 2.191615688786923,
+          "mlp_write": 2.6768537145317324,
+          "output": 8.872663512890375,
+          "receiver": 8.295204887540153
+        },
+        {
+          "attention": 2.5672170884042504,
+          "attention_write": 1.8306852638156126,
+          "input": 8.872663512890375,
+          "layer": 25,
+          "mlp_input": 1.9753261727634188,
+          "mlp_write": 2.6075507311819575,
+          "output": 9.107498909533819,
+          "receiver": 8.460071144093112
+        },
+        {
+          "attention": 3.0739253946614395,
+          "attention_write": 3.3511733715652197,
+          "input": 9.107498909533819,
+          "layer": 26,
+          "mlp_input": 1.984891560634982,
+          "mlp_write": 3.4805304175229907,
+          "output": 10.72042149587973,
+          "receiver": 9.82492033417945
+        },
+        {
+          "attention": 3.1980213203271335,
+          "attention_write": 3.436014370992645,
+          "input": 10.72042149587973,
+          "layer": 27,
+          "mlp_input": 2.2948452779896606,
+          "mlp_write": 9.514214656399114,
+          "output": 14.682234612504937,
+          "receiver": 11.462492836052625
+        }
+      ],
+      "context": 128,
+      "first_nonzero_field": {
+        "field": "attention",
+        "l2": 4.369137783186977,
+        "layer": 19
+      },
+      "native_current_layer18_byte_exact": true,
+      "native_current_layer19_input_byte_exact": true
+    },
+    {
+      "changes": [
+        {
+          "attention": 0.0,
+          "attention_write": 0.0,
+          "input": 0.0,
+          "layer": 18,
+          "mlp_input": 0.0,
+          "mlp_write": 0.0,
+          "output": 0.0,
+          "receiver": 0.0
+        },
+        {
+          "attention": 5.287907669251192,
+          "attention_write": 4.827504436879522,
+          "input": 0.0,
+          "layer": 19,
+          "mlp_input": 2.567189672106075,
+          "mlp_write": 4.41707424662793,
+          "output": 5.478232953461595,
+          "receiver": 4.827504783440326
+        },
+        {
+          "attention": 2.7500699867781817,
+          "attention_write": 2.8414663164106964,
+          "input": 5.478232953461595,
+          "layer": 20,
+          "mlp_input": 2.565156518526558,
+          "mlp_write": 3.354020126902945,
+          "output": 6.050898769281417,
+          "receiver": 6.087282862411519
+        },
+        {
+          "attention": 1.9729487203000995,
+          "attention_write": 2.236653317767353,
+          "input": 6.050898769281417,
+          "layer": 21,
+          "mlp_input": 2.5893941361377437,
+          "mlp_write": 3.635356256237618,
+          "output": 6.806927214475988,
+          "receiver": 6.302375902934747
+        },
+        {
+          "attention": 5.914199071961938,
+          "attention_write": 5.771734948673063,
+          "input": 6.806927214475988,
+          "layer": 22,
+          "mlp_input": 3.3201400413050184,
+          "mlp_write": 4.6545619457682665,
+          "output": 9.23947135382048,
+          "receiver": 8.533772120645963
+        },
+        {
+          "attention": 2.8194262884846752,
+          "attention_write": 3.5977713821535544,
+          "input": 9.23947135382048,
+          "layer": 23,
+          "mlp_input": 3.2387359586269313,
+          "mlp_write": 4.9708603750936495,
+          "output": 11.306938439541586,
+          "receiver": 10.147469119030943
+        },
+        {
+          "attention": 2.8265281315625628,
+          "attention_write": 3.7533855240050973,
+          "input": 11.306938439541586,
+          "layer": 24,
+          "mlp_input": 3.244474588824195,
+          "mlp_write": 3.655878508529294,
+          "output": 12.48649692313845,
+          "receiver": 11.9131831338428
+        },
+        {
+          "attention": 3.4507459110768295,
+          "attention_write": 2.521069103267986,
+          "input": 12.48649692313845,
+          "layer": 25,
+          "mlp_input": 2.866135798202622,
+          "mlp_write": 3.6508678467139433,
+          "output": 12.68763059836356,
+          "receiver": 11.982180493192319
+        },
+        {
+          "attention": 3.544184586354287,
+          "attention_write": 4.182504021143275,
+          "input": 12.68763059836356,
+          "layer": 26,
+          "mlp_input": 2.7908304630983847,
+          "mlp_write": 5.4852922329540545,
+          "output": 14.779596016033631,
+          "receiver": 13.553950457413263
+        },
+        {
+          "attention": 3.6858110164890983,
+          "attention_write": 3.8922060463688406,
+          "input": 14.779596016033631,
+          "layer": 27,
+          "mlp_input": 3.155566183397844,
+          "mlp_write": 17.342905010832386,
+          "output": 22.36622204955546,
+          "receiver": 15.038899263708087
+        }
+      ],
+      "context": 1024,
+      "first_nonzero_field": {
+        "field": "attention",
+        "l2": 5.287907669251192,
+        "layer": 19
+      },
+      "native_current_layer18_byte_exact": true,
+      "native_current_layer19_input_byte_exact": true
+    }
+  ],
+  "logical_branches": 36,
+  "max_relative_cpu64_reader_remainder": 5.971550058261251e-07,
+  "maximum_fp32_residual_add_remainder": 0.0,
+  "observations": [
+    {
+      "actual_name": "case128-h0-arm0",
+      "alias": false,
+      "arm": 0,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.01900298509084924,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.2724437713623047,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm1",
+      "alias": false,
+      "arm": 1,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.01900298509084924,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.2724437713623047,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm0",
+      "alias": true,
+      "arm": 2,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.01900298509084924,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.2724437713623047,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm3",
+      "alias": false,
+      "arm": 3,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.03374373115358362,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.4849166870117188,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm4",
+      "alias": false,
+      "arm": 4,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.0007573407553825165,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.613067626953125,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm5",
+      "alias": false,
+      "arm": 5,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.6982975006103516,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm6",
+      "alias": false,
+      "arm": 6,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.08107445185585978,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.992298126220703,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm7",
+      "alias": false,
+      "arm": 7,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.028219934426139178,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.3849868774414062,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h0-arm8",
+      "alias": false,
+      "arm": 8,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.06280357034301826,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.8002243041992188,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm0",
+      "alias": false,
+      "arm": 0,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.150634765625,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm1",
+      "alias": false,
+      "arm": 1,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.150634765625,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm2",
+      "alias": false,
+      "arm": 2,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.03270960855309269,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.7854061126708984,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm3",
+      "alias": false,
+      "arm": 3,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.05937746011570594,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.0266685485839844,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm4",
+      "alias": false,
+      "arm": 4,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.002389817491868696,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -0.9941730499267578,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm0",
+      "alias": true,
+      "arm": 5,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.150634765625,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm6",
+      "alias": false,
+      "arm": 6,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.10595675543303196,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.3608436584472656,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm7",
+      "alias": false,
+      "arm": 7,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.03229216497155548,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.7634925842285156,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case128-h1-arm8",
+      "alias": false,
+      "arm": 8,
+      "context": 128,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.02744888320406315,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.7056922912597656,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm0",
+      "alias": false,
+      "arm": 0,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.15220401139183856,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.566303253173828,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm1",
+      "alias": false,
+      "arm": 1,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.15220401139183856,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.566303253173828,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm0",
+      "alias": true,
+      "arm": 2,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.15220401139183856,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.566303253173828,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm3",
+      "alias": false,
+      "arm": 3,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.11008326851685526,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.3176746368408203,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm4",
+      "alias": false,
+      "arm": 4,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.027023820371866854,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.6637153625488281,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm5",
+      "alias": false,
+      "arm": 5,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.1016674041748047,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm6",
+      "alias": false,
+      "arm": 6,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.34711758029570494,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -3.5305023193359375,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm7",
+      "alias": false,
+      "arm": 7,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.11327307255504271,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.320150375366211,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h0-arm8",
+      "alias": false,
+      "arm": 8,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is now in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 0,
+      "kl_to_same_parent_native_qk": 0.3299637921592551,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -3.4490299224853516,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm0",
+      "alias": false,
+      "arm": 0,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "silver",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": 0.1933307647705078,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm1",
+      "alias": false,
+      "arm": 1,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "silver",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": 0.1933307647705078,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm2",
+      "alias": false,
+      "arm": 2,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.15485957578703963,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -0.9338397979736328,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm3",
+      "alias": false,
+      "arm": 3,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.10347484499543792,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -0.7234649658203125,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm4",
+      "alias": false,
+      "arm": 4,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "silver",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.004536331878095991,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": 0.0049724578857421875,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm0",
+      "alias": true,
+      "arm": 5,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the silver box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "silver",
+      "followup_answer": "The compass is in the violet box, and the whistle is now in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": 0.1933307647705078,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm6",
+      "alias": false,
+      "arm": 6,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.5543622599536346,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -2.046651840209961,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm7",
+      "alias": false,
+      "arm": 7,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.09602954037305425,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -0.6829452514648438,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "actual_name": "case1024-h1-arm8",
+      "alias": false,
+      "arm": 8,
+      "context": 1024,
+      "first_answer": "The compass is now in the violet box, and the whistle is still in the amber box.",
+      "first_compass_location": "violet",
+      "first_whistle_location": "amber",
+      "followup_answer": "The compass is in the violet box, and the whistle is in the amber box.",
+      "followup_whistle_location": "amber",
+      "history": 1,
+      "kl_to_same_parent_native_qk": 0.3647052034453557,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "schema": "qk18-cut-observation-v1",
+      "silver_minus_amber_logit": -1.5778465270996094,
+      "stopped": [
+        true,
+        true
+      ]
+    }
+  ],
+  "physical_branches": 32,
+  "reader_arithmetic": [
+    {
+      "arm": 0,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 4.803075661641287e-07,
+      "relative_cpu64_attention_remainder": 3.4152716821805144e-07
+    },
+    {
+      "arm": 1,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 4.803075661641287e-07,
+      "relative_cpu64_attention_remainder": 3.4152716821805144e-07
+    },
+    {
+      "arm": 2,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 4.803075661641287e-07,
+      "relative_cpu64_attention_remainder": 3.4152716821805144e-07
+    },
+    {
+      "arm": 3,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 4.473985785735657e-07,
+      "relative_cpu64_attention_remainder": 3.025810789810144e-07
+    },
+    {
+      "arm": 4,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 7.178942227348273e-07,
+      "relative_cpu64_attention_remainder": 4.523869411639837e-07
+    },
+    {
+      "arm": 5,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 3.0342306257556565e-07
+    },
+    {
+      "arm": 6,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 6.167444451254944e-07,
+      "relative_cpu64_attention_remainder": 4.047825225567406e-07
+    },
+    {
+      "arm": 7,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 4.803075661641287e-07,
+      "relative_cpu64_attention_remainder": 3.4152716821805144e-07
+    },
+    {
+      "arm": 8,
+      "context": 128,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 4.75772536192702e-07
+    },
+    {
+      "arm": 0,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 3.0342306257556565e-07
+    },
+    {
+      "arm": 1,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 3.0342306257556565e-07
+    },
+    {
+      "arm": 2,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 4.803075661641287e-07,
+      "relative_cpu64_attention_remainder": 3.4152716821805144e-07
+    },
+    {
+      "arm": 3,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 4.473985785735657e-07,
+      "relative_cpu64_attention_remainder": 3.025810789810144e-07
+    },
+    {
+      "arm": 4,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 7.178942227348273e-07,
+      "relative_cpu64_attention_remainder": 4.523869411639837e-07
+    },
+    {
+      "arm": 5,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 3.0342306257556565e-07
+    },
+    {
+      "arm": 6,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 6.167444451254944e-07,
+      "relative_cpu64_attention_remainder": 4.047825225567406e-07
+    },
+    {
+      "arm": 7,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 3.0342306257556565e-07
+    },
+    {
+      "arm": 8,
+      "context": 128,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 5.456742883103161e-07,
+      "relative_cpu64_attention_remainder": 4.75772536192702e-07
+    },
+    {
+      "arm": 0,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 3.4866569800784397e-07,
+      "relative_cpu64_attention_remainder": 3.2343158158257036e-07
+    },
+    {
+      "arm": 1,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 3.4866569800784397e-07,
+      "relative_cpu64_attention_remainder": 3.2343158158257036e-07
+    },
+    {
+      "arm": 2,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 3.4866569800784397e-07,
+      "relative_cpu64_attention_remainder": 3.2343158158257036e-07
+    },
+    {
+      "arm": 3,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 8.680747074496509e-07,
+      "relative_cpu64_attention_remainder": 4.188450165882663e-07
+    },
+    {
+      "arm": 4,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 5.211636905644301e-07,
+      "relative_cpu64_attention_remainder": 3.2362342508193553e-07
+    },
+    {
+      "arm": 5,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 3.827864307048344e-07
+    },
+    {
+      "arm": 6,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 2.3562343431926536e-07,
+      "relative_cpu64_attention_remainder": 2.605047525505393e-07
+    },
+    {
+      "arm": 7,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 3.4866569800784397e-07,
+      "relative_cpu64_attention_remainder": 3.2343158158257036e-07
+    },
+    {
+      "arm": 8,
+      "context": 1024,
+      "history": 0,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 5.971550058261251e-07
+    },
+    {
+      "arm": 0,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 3.827864307048344e-07
+    },
+    {
+      "arm": 1,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 3.827864307048344e-07
+    },
+    {
+      "arm": 2,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 3.4866569800784397e-07,
+      "relative_cpu64_attention_remainder": 3.2343158158257036e-07
+    },
+    {
+      "arm": 3,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 8.680747074496509e-07,
+      "relative_cpu64_attention_remainder": 4.188450165882663e-07
+    },
+    {
+      "arm": 4,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 5.211636905644301e-07,
+      "relative_cpu64_attention_remainder": 3.2362342508193553e-07
+    },
+    {
+      "arm": 5,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 3.827864307048344e-07
+    },
+    {
+      "arm": 6,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 2.3562343431926536e-07,
+      "relative_cpu64_attention_remainder": 2.605047525505393e-07
+    },
+    {
+      "arm": 7,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 3.827864307048344e-07
+    },
+    {
+      "arm": 8,
+      "context": 1024,
+      "history": 1,
+      "maximum_cpu64_probability_remainder": 6.820541859076101e-07,
+      "relative_cpu64_attention_remainder": 5.971550058261251e-07
+    }
+  ],
+  "schema": "qk18-cut-analysis-v1",
+  "scope": "Known-failure diagnosis, single current read followed by original policy. Paid same-receiver native operands and full memory; no fitted producer, new generalization or speed claim. First-token margin and completed location are separate observations."
+}

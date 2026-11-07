@@ -1,0 +1,7 @@
+# Frozen query-only and key-only layer18 from token zero
+
+The causal cross found a useful native-key replacement only with compatible prior history. Test its constructive implication without fitting: keep the existing source-derived layer18basis/images, but compile only Q with native K/V, versus only K with native Q/V. Layer17stays the selected frozen query/compact-memory program. Start each conversation empty and use each policy's own first answer and followup. These four conversations were already used in the prior panel; they are now known development diagnostics, not fresh heldout evidence or a promotion set.
+
+Reuse the authenticated context-query C executor unchanged except its top-level program loading and finite8-path main: two frozen policies x four original128/1024inventory/explanation conversations. Each uses32+32own-token budgets and an independently allocated full-native shadow on those actual IDs, after candidate destruction. Reuse its full C/Python sampled-distribution audit and retain boundary logits. No previous full policies are rerun; immutable earlier reports supply the comparison. No target gradients, fitted coefficients, rank changes, oracle tokens or cache refresh.
+
+One guarded C CUDA FP32 resident model, CPU1/batch1, no retries, fixed8paths,180seconds expected,480second lease. Source policy identities seal before execution. Read this as an on-policy ablation of which maps are economical, not a terminal claim about unrestricted prompts. Count selected program calls/MACs, original retained maps and native shadows separately.

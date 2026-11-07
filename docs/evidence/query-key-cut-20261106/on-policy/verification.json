@@ -1,0 +1,12 @@
+{
+  "schema": "qk18-on-policy-verification-v1",
+  "report_sha256": "a4d62b4f7adf55bff53e4728400bff3aca8e0c27054a781d8137afe4ffc5b4fa",
+  "source_files": 72,
+  "raw_files": 123,
+  "own_token_paths": 8,
+  "retained_logit_pairs": 32,
+  "max_retained_kl_discrepancy": 3.332750742046642e-13,
+  "work_counters_exact": true,
+  "new_model_calls": 0,
+  "terminal_status": "not-requested"
+}
