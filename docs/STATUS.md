@@ -14,6 +14,19 @@ The bounded policy retains 9,279,620 tracked GPU state bytes at 112 physical row
 
 The tested version is installed at `/mnt/big/cmachine/current`; both old current aliases resolve to it. No background service was started. The [proof bundle](evidence/integration-7a6824d/README.md) joins 120 shipped source files, 36 raw artifacts, sealed scheduler payload, installed binary and commit. An independent Astra saved-evidence audit found no material blocker. Offline evidence run/verify both return 0 with `target-streams-only` coverage; they do not certify semantic claims. The model-free lane also passes 18 Python tests and the sanitizer/lifecycle fixtures.
 
+## PAN and instruction-Mamba graph intake
+
+The [supported-model inventory](SUPPORTED-MODELS.md) includes the two graph profiles from [model intake](../research/model_intake/README.md). Both use the same 14-op C dispatcher, with generated source/symbol maps, parameter bindings and recurrent state layouts. Real-model jobs ran sequentially through guarded Beast CPU leases, with native FP32 reference execution followed by independently initialized C execution. All dense learned computations remain.
+
+| Final job and specimen | Comparison | Maximum absolute logit error |
+| --- | --- | ---: |
+| `job-0143a2072cce`, PAN P113 seed 0 | All 12,769 source/C argmax predictions agree; both answer 7,382 pairs correctly (57.8119%). | `9.1552734375e-5` |
+| `job-1b568233159e`, MambaSan-130m-instruct | Same 18 generated tokens across two Japanese prompts; all 86 comparable rows agree on argmax; both C baselines and the zero-writer arm replay exactly. | `1.430511474609375e-5` |
+
+PAN's mean absolute logit error is `4.77931e-6`. The Mamba capital/addition panels have mean errors `1.80386e-6` / `1.92780e-6`; final state comparisons cover all 48 slots when consumed histories agree. The Mamba question asking Japan's capital produces `1990年`; its 7+5 response is incorrect and repetitive. Zeroing the supplied PAN gate or mapped first-layer Mamba writer changes downstream behavior. These are bounded execution and dependency observations, without semantic-role discovery, improved answers or speedup.
+
+The [receipts](../research/model_intake/evidence/README.md) retain exact executed-source hashes, scheduler/payload identity, source maps, symbol tables and raw verification outputs. Large raw arrays and staged sources remain in ignored local result directories. Historical failed/cancelled acquisition attempts remain preserved, including the larger English Mamba-Chat downloads that never reached a forward. The graph executor is available in this source tree; these jobs do not update the separately installed Qwen release described above.
+
 ## Contextual operand programs and a later-layer gap
 
 The [operand interfaces](QUERY-PROGRAMS.md) now support immutable Q/K/V programs at several model-qualified layers, finite first-layer token tables, and the shared prototype-reader law/covariance pullback. Native remains the default. These newer sources were tested by guarded job `job-fe51e7f4f0ee`; they have not replaced the separately installed `7a6824d` release.

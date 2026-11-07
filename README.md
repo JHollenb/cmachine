@@ -17,6 +17,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 **Verified integration:** source commit `7a6824dd9b640cfa785fa56cc4e7cfae14193f1c` passed guarded Beast job `job-f645fcd76a75`. The [tracked proof bundle](docs/evidence/integration-7a6824d/README.md) contains the exact executed sources, raw results and receipts, with an offline verifier. All 84 native/reference protocol entries agree, compressed profiles reproduce historical behavior, and real overwrite/abort/retry checks pass. The tested build is installed at `/mnt/big/cmachine/current`; bounded delayed-recall failures remain.
 
 - [Architecture and state contracts](docs/ARCHITECTURE.md)
+- [Supported models, numerical profiles and measured logit error](docs/SUPPORTED-MODELS.md)
 - [Supported capabilities and model computations](docs/CAPABILITIES.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)
 - [Current evidence and limitations](docs/STATUS.md)
@@ -24,6 +25,17 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 - [Import provenance](docs/PROVENANCE.md)
 - [Optional Saturn/mrun integration](docs/INTEGRATION.md)
 - [Automated model intake, C programs and execution evidence](research/model_intake/README.md)
+
+## Supported models
+
+| Tested model profile | C execution | Measured source/C comparison |
+| --- | --- | --- |
+| R3 direct-effect ISA Mamba | CPU FP32 C/libm; architectural instruction commits | 16 matching commits; maximum head-value error `6.10e-5`. |
+| Qwen2.5-1.5B-Instruct | FP32 C/CUDA/cuBLAS; persistent chat and owned K/V | Three matching own-token trajectories against native FP32; maximum first-readout logit error about `2.67e-4`. |
+| PAN P113 seed 0 | CPU FP32; trusted FX graph compiled to `tcm program` | All 12,769 predictions match; maximum absolute logit error `9.15527e-5`. |
+| MambaSan-130m-instruct | CPU FP32/OpenBLAS; canonical Mamba1 graph compiled to `tcm program` | All 18 generated tokens match across two Japanese prompts; maximum absolute logit error `1.43051e-5`; exact C suffix replay. |
+
+These are bounded comparisons for the recorded checkpoints, inputs and numerical profiles. The [model reference](docs/SUPPORTED-MODELS.md) gives import routes, mean and maximum logit errors, evidence and limits. PAN accuracy remains 57.8119%, and the instruction Mamba answers both tested questions incorrectly. Execution fidelity and answer quality are separate results.
 
 ## What works
 

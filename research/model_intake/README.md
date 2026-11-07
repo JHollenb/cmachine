@@ -2,6 +2,8 @@
 
 This directory contains the structural intake tool, a working graph-to-C path, and the [architecture plan](PLAN.md) for connecting model execution to computation discovery.
 
+The repository's [supported-model inventory](../../docs/SUPPORTED-MODELS.md) lists dedicated and compiled graph profiles, measured maximum/mean logit errors and their execution boundaries.
+
 `intake.py` imports local declarative checkpoint sources through `mrun.decompiler`, validates coordinated IR, and uses `manalysis.decompiler_bridge` to produce an exact graph with stable source-bound references. Mathematical role priors remain a separate hypothesis-only artifact. That structural command performs no numerical execution. The new `tools/program.py` compiler and `tcm program` executor implement the next boundary; existing ISA and Qwen protocols retain their behavior.
 
 ## Use the prototype
@@ -41,15 +43,15 @@ All nine passed in the configured shared environment on November 6, 2026. A sepa
 
 ## Compile and execute a graph
 
-From a cmachine checkout:
+From a cmachine checkout, using an already normalized MambaSan source (EOS ID 31999):
 
 ```sh
 rtk proxy make
 rtk proxy ../common/bin/common exec python tools/program.py \
-  /path/to/canonical-mamba-checkpoint /path/to/new/model.tcm \
+  /path/to/normalized-mambasan-source /path/to/new/model.tcm \
   --retain-ir /path/to/new/source-ir.json
 rtk proxy ./build/tcm program /path/to/new/model.tcm \
-  --input tokens.f32 --output logits.f32 --generate 12 --eos 0 --replay
+  --input tokens.f32 --output logits.f32 --generate 12 --eos 31999 --replay
 ```
 
 The input file contains little-endian FP32 rows. A token-model row is one exactly representable integer ID. The C executable verifies the bundle digest, instruction table, vector shapes, def-use order, parameter bindings, state extents and token domain. C consumes the prompt, selects its own greedy outputs, advances its own recurrence, and leaves the final delivered token pending. `--replay` restores the prompt-boundary recurrent state and logits and compares the continuation exactly within that executable/profile. `--state-file FILE` exports recurrent floats; the JSON receipt separately reports consumed rows and pending token.

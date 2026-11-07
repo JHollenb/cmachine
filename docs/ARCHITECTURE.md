@@ -8,6 +8,7 @@
 | --- | --- |
 | [model.c](../src/model.c) | mmap bundle loading, SHA256, descriptor extents and profile checks. |
 | [isa.c](../src/isa.c) | ISA model equations, row advancement, checkpoints and architectural commits. |
+| [program.c](../src/program.c) | Shared vector-graph dispatcher, owned convolution/scan state, greedy continuation, suffix replay and explicit trace/intervention controls. |
 | [qwen.c](../src/qwen.c) | Qwen layers, token clock, K/V ownership, experimental operations and greedy readout. |
 | [qwen_cuda.cu](../src/qwen_cuda.cu) | cuBLAS maps, RMSNorm, RoPE, attention, SwiGLU, cache and top-two primitives. |
 | [qwen_serve.c](../src/qwen_serve.c) | Persistent single-session token protocol. |
@@ -15,7 +16,14 @@
 | [qwen_operands.inc](../src/qwen_operands.inc) | Explicit model/layer-qualified Q/K/V programs and finite token-local first-layer tables. |
 | [prototype_attention.h](../src/prototype_attention.h) | Experimental bounded-memory law and streaming query-response pullback; caller owns rewind. |
 | [bundle.py](../tools/bundle.py) | Offline authenticated bundle export. |
+| [program.py](../tools/program.py) | Trusted FX or canonical Mamba1 lowering, parameter/state allocation and sealed source maps. |
+| [inspect_program.py](../tools/inspect_program.py) | Derived producer/consumer symbols and optional trace-row joins. |
 | [chat.py](../tools/chat.py) | Tokenization, transcript bookkeeping and prefix reuse outside numerical execution. |
+| [program_chat.py](../tools/program_chat.py) | Source-bound native tokenization and a fresh C graph process per request. |
+
+The [supported-model inventory](SUPPORTED-MODELS.md) distinguishes the dedicated ISA/Qwen paths from the graph path. The latter compiles PAN and canonical Mamba1 operations to one 14-op schedule. Its bundle digest covers the schedule, vector descriptors, parameters and numerical configuration. A source map joins each instruction and recurrent slot to an exact source reference; semantic roles remain separate hypotheses. Unsupported operations or shapes refuse.
+
+Graph execution advances one input row at a time. C owns the recurrent floats and greedy readout, leaving the last selected token pending. Suffix replay restores prompt-boundary state and logits and compares the resulting state, logits and tokens exactly within C. Consumed rows and pending-token ownership are reported separately; this is not the complete canonical StateIR transaction API or Qwen's persistent conversation protocol. [Measured source/C logit error](SUPPORTED-MODELS.md#measured-logit-error) qualifies numerical fidelity separately from replay.
 
 ## Two clocks and one causal history
 

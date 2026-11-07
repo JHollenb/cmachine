@@ -4,7 +4,7 @@ Assessed November 6, 2026, with an independent Astra review of the source and ex
 
 The subsequent [model-intake implementation and receipts](../research/model_intake/README.md) add the bounded PAN/Mamba1 graph path described below. Those fleet jobs bind their own exact payload hashes; the earlier Qwen assessment remains scoped to its recorded sources.
 
-`cmachine` is an explicit model state machine. C owns the numerical computation, mutable state, output selection and continuation. It directly executes two nominated model profiles: the R3 direct-effect ISA Mamba specimen on CPU and Qwen2.5-1.5B-Instruct on CUDA. It also exposes opt-in replacement operations and owns the relocated research programs under [research/](../research/README.md).
+`cmachine` is an explicit model state machine. C owns the numerical computation, mutable state, output selection and continuation. The [supported-model inventory](SUPPORTED-MODELS.md) now covers four tested profiles: R3 direct-effect ISA Mamba, Qwen2.5-1.5B-Instruct, PAN P113 and MambaSan-130m-instruct. The first two have dedicated executors; PAN and MambaSan use the shared graph dispatcher. The inventory records each import route, numerical backend, measured logit error and evidence scope. Cmachine also exposes opt-in replacement operations and owns the relocated research programs under [research/](../research/README.md).
 
 For these qualified native paths, the major numerical computations are explicit, including the computations that obtain operands and advance state. This is stronger than observing tensors or predicting from a supplied final activation. It is distinct from recovering a general semantic instruction set or a substantially cheaper implementation. Ordinary Qwen serving still evaluates the dense learned model.
 
@@ -219,6 +219,8 @@ There are distinct qualifications:
 | [Installed integration](evidence/integration-7a6824d/README.md), source `7a6824d`, `job-f645fcd76a75` | 84 original/integrated C protocol entries agree exactly; compressed-policy behavior, actual clients and overwrite/abort/retry recovery pass in the declared panel |
 | [Context-query source record](evidence/context-query-20261106/README.md), `job-fe51e7f4f0ee` | New public interfaces replay 420 historical source clocks; lexical subset and source-derived query transfer have dedicated numerical audits |
 | [Query/key causal records](evidence/query-key-cut-20261106/README.md), `job-1555c27c080f` and `job-1335a953cd08` | Same-parent branch closure and known-context from-zero mask comparisons under their frozen source manifests |
+| [PAN graph intake](../research/model_intake/evidence/pan/report.json), `job-0143a2072cce` | All 12,769 source/C argmax predictions agree; maximum absolute logit error `9.15527e-5`; both models remain 57.8119% correct |
+| [Instruction-Mamba graph intake](../research/model_intake/evidence/mamba/report.json), `job-1b568233159e` | Same 18 generated tokens across two Japanese prompts, maximum absolute logit error `1.43051e-5` and exact C suffix replay; both answers remain incorrect |
 
 The installed integration proof is for `7a6824d`; it does not certify every later operand API. Later experiments bind their actual executed sources separately, and do not change the installed serving default by virtue of a successful run.
 
