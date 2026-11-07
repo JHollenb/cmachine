@@ -1,0 +1,373 @@
+{
+  "goal": "ordered-matrix",
+  "domain": "matrix2-noncommutative",
+  "expression": [
+    "add",
+    [
+      "add",
+      [
+        "mul",
+        "A",
+        "C"
+      ],
+      [
+        "mul",
+        "B",
+        "C"
+      ]
+    ],
+    [
+      "add",
+      [
+        "mul",
+        "A",
+        "D"
+      ],
+      [
+        "mul",
+        "B",
+        "D"
+      ]
+    ]
+  ],
+  "context": "17cf2469b6ffd5abe067e08aea58d7eb76f326c28b46664a11855dd01048e414",
+  "baselines": {
+    "v1": {
+      "applications": 10,
+      "context": "17cf2469b6ffd5abe067e08aea58d7eb76f326c28b46664a11855dd01048e414",
+      "cost": 20,
+      "decisions": [
+        {
+          "choice": [
+            "ff5bc34f38f983dbe4ecebbc2dec368e7a8da66b7b16cefb169a4c1053f15a72",
+            "f47a38dd5bee4bf9759dbc57f8166235984156fed460a8b61665a215c57715ee",
+            "14c7737d409bb5eed7b51959134a4ede3ac524e9ca5096653b004732ddd1ff01",
+            "756c29ce805783ef62ca1366836d6e79508b1506fd8cfb026268418322c0b7a8"
+          ],
+          "frontier": "e0d85961659c42a5e4b2109c32e2c6eb2fc01bbcf5623377a7d4b034d2f51aab"
+        },
+        {
+          "choice": [
+            "aa1637f4130802c44c68ddf0f4ac0a2d6f7ea9d9f5232b721096360a4867d01e",
+            "c3dc19b8781247e89723cf16153f7e339b5fe7212fc6a773eadc6c5c21850e68",
+            "9ad32c3c248379b3194e87b92cc6d07666664e4068aaccc11cc559a9d67830a3",
+            "4874a86bb912cee14f05efdc8232b88f2faf382e3ce54165750a92f87a53eeda"
+          ],
+          "frontier": "775d9fa265990146807eba9fba3410c60984ff8a9925c5ec373cf09d890a6440"
+        },
+        {
+          "choice": [
+            "f12105ad93d2b5766f5e1743d9f01ccf729f2f910e55ed67c21158389630e182",
+            "78a1f371ea6d1e7a32e975610200c1d12537fd18b453a0f9803aa311f93658a9"
+          ],
+          "frontier": "59117dfa721284433b1e1ef8df303cf4c3c1fb282637784b72b58858ecce2f08"
+        }
+      ],
+      "exact_polynomial": true,
+      "expression": [
+        "prod",
+        [
+          "sum",
+          "A",
+          "B"
+        ],
+        [
+          "sum",
+          "C",
+          "D"
+        ]
+      ],
+      "graph_before_extract": "901448d0a23f9125ba3cf8e01e278c4593c51aea88017154c7742a2492104ab2",
+      "numerical": {
+        "C_reference_max_abs": 0.0,
+        "operations": 10,
+        "program": "499b344df64a4a514fd241a02d3e3fe26214c608e1591e793cfe756e24beec4a",
+        "reference": "70a24f25691e9a585c402fe497dace7230cb48a74e00470296da7038eb4f310a",
+        "source_c_max_abs": 0.0
+      },
+      "ops": {
+        "add": 2,
+        "mul": 1
+      },
+      "search_status": "saturated",
+      "selection_budget_used": 10,
+      "trace": [
+        {
+          "applied": 4,
+          "classes": 15,
+          "dag_cost": 48,
+          "fresh": 4,
+          "iteration": 1,
+          "match_capped": false,
+          "matches": 4,
+          "nodes": 19,
+          "unions": 4
+        },
+        {
+          "applied": 4,
+          "classes": 15,
+          "dag_cost": 32,
+          "fresh": 4,
+          "iteration": 2,
+          "match_capped": false,
+          "matches": 8,
+          "nodes": 21,
+          "unions": 2
+        },
+        {
+          "applied": 2,
+          "classes": 15,
+          "dag_cost": 20,
+          "fresh": 2,
+          "iteration": 3,
+          "match_capped": false,
+          "matches": 10,
+          "nodes": 22,
+          "unions": 1
+        },
+        {
+          "applied": 0,
+          "classes": 15,
+          "dag_cost": 20,
+          "fresh": 0,
+          "iteration": 4,
+          "match_capped": false,
+          "matches": 10,
+          "nodes": 22,
+          "unions": 0
+        }
+      ]
+    },
+    "v2a": {
+      "applications": 10,
+      "context": "17cf2469b6ffd5abe067e08aea58d7eb76f326c28b46664a11855dd01048e414",
+      "cost": 20,
+      "decisions": [
+        {
+          "choice": [
+            "ff5bc34f38f983dbe4ecebbc2dec368e7a8da66b7b16cefb169a4c1053f15a72",
+            "f47a38dd5bee4bf9759dbc57f8166235984156fed460a8b61665a215c57715ee",
+            "14c7737d409bb5eed7b51959134a4ede3ac524e9ca5096653b004732ddd1ff01",
+            "756c29ce805783ef62ca1366836d6e79508b1506fd8cfb026268418322c0b7a8"
+          ],
+          "frontier": "e0d85961659c42a5e4b2109c32e2c6eb2fc01bbcf5623377a7d4b034d2f51aab"
+        },
+        {
+          "choice": [
+            "aa1637f4130802c44c68ddf0f4ac0a2d6f7ea9d9f5232b721096360a4867d01e",
+            "c3dc19b8781247e89723cf16153f7e339b5fe7212fc6a773eadc6c5c21850e68",
+            "9ad32c3c248379b3194e87b92cc6d07666664e4068aaccc11cc559a9d67830a3",
+            "4874a86bb912cee14f05efdc8232b88f2faf382e3ce54165750a92f87a53eeda"
+          ],
+          "frontier": "775d9fa265990146807eba9fba3410c60984ff8a9925c5ec373cf09d890a6440"
+        },
+        {
+          "choice": [
+            "78a1f371ea6d1e7a32e975610200c1d12537fd18b453a0f9803aa311f93658a9",
+            "f12105ad93d2b5766f5e1743d9f01ccf729f2f910e55ed67c21158389630e182"
+          ],
+          "frontier": "59117dfa721284433b1e1ef8df303cf4c3c1fb282637784b72b58858ecce2f08"
+        }
+      ],
+      "exact_polynomial": true,
+      "expression": [
+        "prod",
+        [
+          "sum",
+          "A",
+          "B"
+        ],
+        [
+          "sum",
+          "C",
+          "D"
+        ]
+      ],
+      "graph_before_extract": "901448d0a23f9125ba3cf8e01e278c4593c51aea88017154c7742a2492104ab2",
+      "numerical": {
+        "C_reference_max_abs": 0.0,
+        "operations": 10,
+        "program": "499b344df64a4a514fd241a02d3e3fe26214c608e1591e793cfe756e24beec4a",
+        "reference": "70a24f25691e9a585c402fe497dace7230cb48a74e00470296da7038eb4f310a",
+        "source_c_max_abs": 0.0
+      },
+      "ops": {
+        "add": 2,
+        "mul": 1
+      },
+      "search_status": "saturated",
+      "selection_budget_used": 10,
+      "trace": [
+        {
+          "applied": 4,
+          "classes": 15,
+          "dag_cost": 48,
+          "fresh": 4,
+          "iteration": 1,
+          "match_capped": false,
+          "matches": 4,
+          "nodes": 19,
+          "unions": 4
+        },
+        {
+          "applied": 4,
+          "classes": 15,
+          "dag_cost": 32,
+          "fresh": 4,
+          "iteration": 2,
+          "match_capped": false,
+          "matches": 8,
+          "nodes": 21,
+          "unions": 2
+        },
+        {
+          "applied": 2,
+          "classes": 15,
+          "dag_cost": 20,
+          "fresh": 2,
+          "iteration": 3,
+          "match_capped": false,
+          "matches": 10,
+          "nodes": 22,
+          "unions": 1
+        },
+        {
+          "applied": 0,
+          "classes": 15,
+          "dag_cost": 20,
+          "fresh": 0,
+          "iteration": 4,
+          "match_capped": false,
+          "matches": 10,
+          "nodes": 22,
+          "unions": 0
+        }
+      ]
+    }
+  },
+  "cuts": [
+    {
+      "round": 0,
+      "cut": "c87e2f5212a2010e6b162bf6a2e9d69941f1118a48ed4673fa51feb142f6b17e",
+      "frontier": "e0d85961659c42a5e4b2109c32e2c6eb2fc01bbcf5623377a7d4b034d2f51aab"
+    },
+    {
+      "round": 1,
+      "cut": "2e8d94d5cc3ddaab438b7872f4daaef3e6164289aa2cea1486a7b026bf2fbb5f",
+      "frontier": "775d9fa265990146807eba9fba3410c60984ff8a9925c5ec373cf09d890a6440"
+    },
+    {
+      "round": 2,
+      "cut": "0c6d5e03794a7844e58187ed98e2ce922f9c75706aabc4bb23fad6dd95c671ac",
+      "frontier": "59117dfa721284433b1e1ef8df303cf4c3c1fb282637784b72b58858ecce2f08"
+    }
+  ],
+  "batch_swaps": [
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 0,
+      "endpoint": "f88c84923e0096c6ef551a0d20ae196d88815e17d0e70f884d408dc0fbcfefc9",
+      "cost": 20,
+      "cost_reduction": 0,
+      "receipts": "a11e71d557d81d94ab1b9ec0c5f167d7787d2359119805e3f2bfd317f41b069e",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "f88c84923e0096c6ef551a0d20ae196d88815e17d0e70f884d408dc0fbcfefc9",
+        "search_wall_seconds": 0.059038080275058746,
+        "extraction_wall_seconds": 0.00040659913793206215,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "ff5bc34f38f983dbe4ecebbc2dec368e7a8da66b7b16cefb169a4c1053f15a72",
+        "f47a38dd5bee4bf9759dbc57f8166235984156fed460a8b61665a215c57715ee",
+        "14c7737d409bb5eed7b51959134a4ede3ac524e9ca5096653b004732ddd1ff01",
+        "756c29ce805783ef62ca1366836d6e79508b1506fd8cfb026268418322c0b7a8"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 1,
+      "endpoint": "f88c84923e0096c6ef551a0d20ae196d88815e17d0e70f884d408dc0fbcfefc9",
+      "cost": 20,
+      "cost_reduction": 0,
+      "receipts": "3856f3bca221a074445d9d69000ecebe97b90968509370400acd8bd68918ecca",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "f88c84923e0096c6ef551a0d20ae196d88815e17d0e70f884d408dc0fbcfefc9",
+        "search_wall_seconds": 0.059145532082766294,
+        "extraction_wall_seconds": 0.0003996170125901699,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "aa1637f4130802c44c68ddf0f4ac0a2d6f7ea9d9f5232b721096360a4867d01e",
+        "c3dc19b8781247e89723cf16153f7e339b5fe7212fc6a773eadc6c5c21850e68",
+        "9ad32c3c248379b3194e87b92cc6d07666664e4068aaccc11cc559a9d67830a3",
+        "4874a86bb912cee14f05efdc8232b88f2faf382e3ce54165750a92f87a53eeda"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 2,
+      "endpoint": "1be78c8719eab406f20cde57fbf4820c7f49299103434864c9712fe54ebf4610",
+      "cost": 20,
+      "cost_reduction": 0,
+      "receipts": "f82c78b975e9e1f1279c87000fc93afc38f58e30f460227d503cc3260b742c86",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "1be78c8719eab406f20cde57fbf4820c7f49299103434864c9712fe54ebf4610",
+        "search_wall_seconds": 0.05503757018595934,
+        "extraction_wall_seconds": 0.0003982940688729286,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 2,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "f12105ad93d2b5766f5e1743d9f01ccf729f2f910e55ed67c21158389630e182",
+        "78a1f371ea6d1e7a32e975610200c1d12537fd18b453a0f9803aa311f93658a9"
+      ]
+    }
+  ],
+  "batch_summary": {
+    "completed": 3,
+    "errors": 0,
+    "improved": 0,
+    "equal": 3,
+    "worse": 0,
+    "earliest_observed_cost_reduction_round": null,
+    "qualified_repairs": 0,
+    "earliest_tested_repairable_round": null,
+    "minimum_observed_cost": 20
+  },
+  "controls": [],
+  "single_exchanges": [],
+  "exchange_summary": {
+    "completed": 0,
+    "errors": 0,
+    "improved": 0,
+    "equal": 0,
+    "worse": 0,
+    "earliest_observed_cost_reduction_round": null,
+    "qualified_repairs": 0,
+    "earliest_tested_repairable_round": null,
+    "minimum_observed_cost": null
+  },
+  "doses": [],
+  "refusals": [],
+  "reciprocal": []
+}

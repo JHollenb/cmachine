@@ -1,0 +1,383 @@
+{
+  "schema": "tcm-math-causal-verification-v1",
+  "mechanics_status": "verified",
+  "instrument_status": "applicable-at-recorded-boundaries",
+  "terminal_status": "bounded causal observations only; no promotion or generalization",
+  "raw_files": 2790,
+  "raw_bytes": 139368671,
+  "programs": 299,
+  "witnesses": 960,
+  "verified_endpoint_consumptions": 123,
+  "restoration_controls": 18,
+  "branch_errors": [],
+  "potentially_clock_confounded_attempts": 0,
+  "physical_C_calls": 64840,
+  "logical_C_calls": 142672,
+  "unique_field_queries": 64196,
+  "field_logical_reads": 558535,
+  "field_native_disagreements": 0,
+  "scorer_batches": 616,
+  "scorer_max_abs": 4.57763671875e-05,
+  "selection_order_changes": [
+    {
+      "frontier": "b5efc6eb030eb39d881c213387152d1325b47a83004c29b12f4f2a68ed2dff77",
+      "version": "v2a",
+      "round": 5,
+      "same_selected_set": true,
+      "native": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        31,
+        33,
+        32
+      ],
+      "c": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "frontier": "d4a0448f7c65123e887bd09713db1b61de495fa6550789ec8cdb71c74fe20b9e",
+      "version": "v2a",
+      "round": 0,
+      "same_selected_set": true,
+      "native": [
+        4,
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "c": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "selection_set_changes": 0,
+  "observations": [
+    {
+      "goal": "ordered-matrix",
+      "baseline_costs": {
+        "v1": 20,
+        "v2a": 20
+      },
+      "batch_swaps": [
+        {
+          "round": 0,
+          "cost": 20,
+          "status": "completed"
+        },
+        {
+          "round": 1,
+          "cost": 20,
+          "status": "completed"
+        },
+        {
+          "round": 2,
+          "cost": 20,
+          "status": "completed"
+        }
+      ],
+      "single_exchange_costs": {},
+      "batch_summary": {
+        "completed": 3,
+        "errors": 0,
+        "improved": 0,
+        "equal": 3,
+        "worse": 0,
+        "earliest_observed_cost_reduction_round": null,
+        "qualified_repairs": 0,
+        "earliest_tested_repairable_round": null,
+        "minimum_observed_cost": 20
+      },
+      "exchange_summary": {
+        "completed": 0,
+        "errors": 0,
+        "improved": 0,
+        "equal": 0,
+        "worse": 0,
+        "earliest_observed_cost_reduction_round": null,
+        "qualified_repairs": 0,
+        "earliest_tested_repairable_round": null,
+        "minimum_observed_cost": null
+      },
+      "alternative_membership_controls": []
+    },
+    {
+      "goal": "scalar-planted",
+      "baseline_costs": {
+        "v1": 3,
+        "v2a": 3
+      },
+      "batch_swaps": [
+        {
+          "round": 0,
+          "cost": 3,
+          "status": "completed"
+        },
+        {
+          "round": 1,
+          "cost": 3,
+          "status": "completed"
+        },
+        {
+          "round": 2,
+          "cost": 3,
+          "status": "completed"
+        },
+        {
+          "round": 3,
+          "cost": 3,
+          "status": "completed"
+        },
+        {
+          "round": 4,
+          "cost": 3,
+          "status": "completed"
+        },
+        {
+          "round": 5,
+          "cost": 3,
+          "status": "completed"
+        }
+      ],
+      "single_exchange_costs": {},
+      "batch_summary": {
+        "completed": 6,
+        "errors": 0,
+        "improved": 0,
+        "equal": 6,
+        "worse": 0,
+        "earliest_observed_cost_reduction_round": null,
+        "qualified_repairs": 0,
+        "earliest_tested_repairable_round": null,
+        "minimum_observed_cost": 3
+      },
+      "exchange_summary": {
+        "completed": 0,
+        "errors": 0,
+        "improved": 0,
+        "equal": 0,
+        "worse": 0,
+        "earliest_observed_cost_reduction_round": null,
+        "qualified_repairs": 0,
+        "earliest_tested_repairable_round": null,
+        "minimum_observed_cost": null
+      },
+      "alternative_membership_controls": []
+    },
+    {
+      "goal": "scalar-product",
+      "baseline_costs": {
+        "v1": 5,
+        "v2a": 9
+      },
+      "batch_swaps": [
+        {
+          "round": 0,
+          "cost": 9,
+          "status": "completed"
+        },
+        {
+          "round": 1,
+          "cost": 5,
+          "status": "completed"
+        },
+        {
+          "round": 2,
+          "cost": 6,
+          "status": "completed"
+        },
+        {
+          "round": 3,
+          "cost": 11,
+          "status": "completed"
+        },
+        {
+          "round": 4,
+          "cost": 11,
+          "status": "completed"
+        },
+        {
+          "round": 5,
+          "cost": 11,
+          "status": "completed"
+        }
+      ],
+      "single_exchange_costs": {
+        "5": 48,
+        "7": 14,
+        "9": 2
+      },
+      "batch_summary": {
+        "completed": 6,
+        "errors": 0,
+        "improved": 2,
+        "equal": 1,
+        "worse": 3,
+        "earliest_observed_cost_reduction_round": 1,
+        "qualified_repairs": 2,
+        "earliest_tested_repairable_round": 1,
+        "minimum_observed_cost": 5
+      },
+      "exchange_summary": {
+        "completed": 64,
+        "errors": 0,
+        "improved": 62,
+        "equal": 2,
+        "worse": 0,
+        "earliest_observed_cost_reduction_round": 1,
+        "qualified_repairs": 62,
+        "earliest_tested_repairable_round": 1,
+        "minimum_observed_cost": 5
+      },
+      "alternative_membership_controls": [
+        {
+          "label": "alternative-membership-batch",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-0",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-1",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-2",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-3",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-4",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-5",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-6",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        },
+        {
+          "label": "alternative-single-7",
+          "cost": 9,
+          "cost_reduction": 0,
+          "status": "completed"
+        }
+      ],
+      "exchanges_by_inserted_candidate": [
+        {
+          "ordinal": 2,
+          "rule": "factor",
+          "group": 4,
+          "cost_counts": {
+            "5": 8
+          }
+        },
+        {
+          "ordinal": 6,
+          "rule": "factor",
+          "group": 4,
+          "cost_counts": {
+            "5": 8
+          }
+        },
+        {
+          "ordinal": 10,
+          "rule": "factor",
+          "group": 4,
+          "cost_counts": {
+            "5": 8
+          }
+        },
+        {
+          "ordinal": 17,
+          "rule": "factor",
+          "group": 4,
+          "cost_counts": {
+            "5": 8
+          }
+        },
+        {
+          "ordinal": 22,
+          "rule": "factor",
+          "group": 4,
+          "cost_counts": {
+            "5": 8
+          }
+        },
+        {
+          "ordinal": 27,
+          "rule": "factor",
+          "group": 4,
+          "cost_counts": {
+            "5": 8
+          }
+        },
+        {
+          "ordinal": 34,
+          "rule": "factor",
+          "group": 2,
+          "cost_counts": {
+            "7": 7,
+            "9": 1
+          }
+        },
+        {
+          "ordinal": 35,
+          "rule": "factor",
+          "group": 2,
+          "cost_counts": {
+            "7": 7,
+            "9": 1
+          }
+        }
+      ],
+      "choice_suffix_cross": {
+        "round": 1,
+        "same_parent_frontier": true,
+        "v1_choice_v1_suffix": 5,
+        "v1_choice_v2a_suffix": 5,
+        "v2a_choice_v1_suffix": 5,
+        "v2a_choice_v2a_suffix": 9
+      }
+    }
+  ]
+}

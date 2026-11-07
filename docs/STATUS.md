@@ -16,7 +16,7 @@ The tested version is installed at `/mnt/big/cmachine/current`; both old current
 
 ## PAN and instruction-Mamba graph intake
 
-The [supported-model inventory](SUPPORTED-MODELS.md) includes the two graph profiles from [model intake](../research/model_intake/README.md). Both use the same 14-op C dispatcher, with generated source/symbol maps, parameter bindings and recurrent state layouts. Real-model jobs ran sequentially through guarded Beast CPU leases, with native FP32 reference execution followed by independently initialized C execution. All dense learned computations remain.
+The [supported-model inventory](SUPPORTED-MODELS.md) includes the two graph profiles from [model intake](../research/model_intake/README.md). Both used the original 14-op version of the shared C dispatcher, with generated source/symbol maps, parameter bindings and recurrent state layouts. Real-model jobs ran sequentially through guarded Beast CPU leases, with native FP32 reference execution followed by independently initialized C execution. All dense learned computations remain in these profiles.
 
 | Final job and specimen | Comparison | Maximum absolute logit error |
 | --- | --- | ---: |
@@ -26,6 +26,14 @@ The [supported-model inventory](SUPPORTED-MODELS.md) includes the two graph prof
 PAN's mean absolute logit error is `4.77931e-6`. The Mamba capital/addition panels have mean errors `1.80386e-6` / `1.92780e-6`; final state comparisons cover all 48 slots when consumed histories agree. The Mamba question asking Japan's capital produces `1990年`; its 7+5 response is incorrect and repetitive. Zeroing the supplied PAN gate or mapped first-layer Mamba writer changes downstream behavior. These are bounded execution and dependency observations, without semantic-role discovery, improved answers or speedup.
 
 The [receipts](../research/model_intake/evidence/README.md) retain exact executed-source hashes, scheduler/payload identity, source maps, symbol tables and raw verification outputs. Large raw arrays and staged sources remain in ignored local result directories. Historical failed/cancelled acquisition attempts remain preserved, including the larger English Mamba-Chat downloads that never reached a forward. The graph executor is available in this source tree; these jobs do not update the separately installed Qwen release described above.
+
+## Math intake and host reasoning consumers
+
+The [math extension](../research/model_intake/MATH.md) adds ReLU, vector division and projected record matching to the shared dispatcher, now 17 operations. Guarded CPU job `job-2a7aae82cec8` imports two exact matrix2 circuits, three approximate FP64 exports explicitly deployed in FP32, and the frozen V1/V2a rewrite scorers. Its 127 retained programs and 4,359 C invocations pass the [independent artifact audit](../research/model_intake/evidence/math-20261106/verification.json), including binary/map agreement, all 64 polynomial coefficients, numeric rows, score rankings, C continuation chains and work counts.
+
+All 16,241 actual projected FieldLM reads match native. Two learned concepts, three supplied primitives and 13 law bodies reach original host consumers and emitted C numerical programs. The matrix expression falls from four cell calls to one, `23→10` instructions and `336→84` nominal linear MACs, with zero tested output difference. Every scheduler reaches it. On one scalar goal C V1 beats schedule-matched random/enumeration but ties the heuristic; V2a is weaker. Scorer error reaches `4.57763671875e-5`, with one order difference inside an unchanged selected set. Approximate cell source/C errors reach `9.059906005859375e-6`.
+
+Parsing, domains, rules, features, graph mutation and extraction remain supplied host computation. Formal identity is distinct from unrestricted FP32 correctness. C-assisted arms take longer in this harness, whose times include compilation and auditing as well as C subprocesses. General reasoning improvement and speedup remain open. The final panel uses fixed Python hash order and matched round budgets. Earlier completed receipts retain their different settings and weaker audit coverage; they are not rewritten as the final protocol.
 
 ## Contextual operand programs and a later-layer gap
 

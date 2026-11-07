@@ -271,23 +271,25 @@ def mamba_chat():
     result["intervention"]=optional_arm("mamba",result,intervene)
     return result
 
-def main():
+def main(experiments=None,*,retain_bundles=False,evidence_budget_bytes=64*1024**2):
+    if type(evidence_budget_bytes) is not int or not 0<evidence_budget_bytes<=256*1024**2:
+        raise ValueError('invalid bounded evidence budget')
     threads="2" if sys.argv[1]=="mamba-chat" else "1"
     os.environ["OMP_NUM_THREADS"]=threads;os.environ["OPENBLAS_NUM_THREADS"]=threads
     RAW.mkdir(exist_ok=False);start=time.time();report={"schema":"tcm-model-intake-experiment-v1","mode":sys.argv[1]}
     try:
         command(["make"])
-        report["result"]={"pan":pan,"mamba-chat":mamba_chat}[sys.argv[1]]()
+        report["result"]=(experiments or {"pan":pan,"mamba-chat":mamba_chat})[sys.argv[1]]()
         report["status"]="completed"
     except BaseException:
         report["status"]="error";report["error"]=traceback.format_exc();print(report["error"],flush=True)
     report["wall_seconds"]=time.time()-start
     report["executed_sources"]={str(p):sha(p) for p in sorted(Path("src").glob("*")) if p.is_file()}
-    report["raw"]={str(p):{"sha256":sha(p),"bytes":p.stat().st_size} for p in sorted(RAW.rglob("*")) if p.is_file() and p.suffix!=".tcm"}
+    report["raw"]={str(p):{"sha256":sha(p),"bytes":p.stat().st_size} for p in sorted(RAW.rglob("*")) if p.is_file() and (retain_bundles or p.suffix!=".tcm")}
     (RAW/"report.json").write_text(json.dumps(report,indent=2)+"\n")
     print("TCM_RESULT_GZIP_B64="+base64.b64encode(gzip.compress(json.dumps(report).encode())).decode(),flush=True)
-    files=[p for p in sorted(RAW.rglob("*")) if p.is_file() and p.suffix!=".tcm"]
-    if sum(p.stat().st_size for p in files)>64*1024**2:raise ValueError("expanded evidence exceeds64MiB budget")
+    files=[p for p in sorted(RAW.rglob("*")) if p.is_file() and (retain_bundles or p.suffix!=".tcm")]
+    if sum(p.stat().st_size for p in files)>evidence_budget_bytes:raise ValueError("expanded evidence exceeds declared budget")
     # Separate bounded archives avoid one giant log line and keep all raw
     # comparisons. The collector enforces the combined expanded-byte budget.
     groups=[];group=[];size=0

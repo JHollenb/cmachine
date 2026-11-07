@@ -1,0 +1,5560 @@
+{
+  "boundaries": [
+    {
+      "offset": 0,
+      "rows": 4,
+      "goal": "discovery-binomial-2-0",
+      "family": "binomial",
+      "round": 0,
+      "score": "0a79d1ece4409b2618be1beed0146855b65058577a070831bc1c3a0b9bcb2438",
+      "count": 4
+    },
+    {
+      "offset": 4,
+      "rows": 4,
+      "goal": "discovery-binomial-2-0",
+      "family": "binomial",
+      "round": 1,
+      "score": "89d8794eb4ff7abf19ba5960a8b546b980e314550555d4ddfcfe2deb0ba276e2",
+      "count": 4
+    },
+    {
+      "offset": 8,
+      "rows": 2,
+      "goal": "discovery-binomial-2-0",
+      "family": "binomial",
+      "round": 2,
+      "score": "0954b5334d49b8ba88b6095b9f39f996ec04ba73929e6cc3a2782eff5e9517e2",
+      "count": 2
+    },
+    {
+      "offset": 10,
+      "rows": 4,
+      "goal": "discovery-binomial-2-1",
+      "family": "binomial",
+      "round": 0,
+      "score": "0a79d1ece4409b2618be1beed0146855b65058577a070831bc1c3a0b9bcb2438",
+      "count": 4
+    },
+    {
+      "offset": 14,
+      "rows": 4,
+      "goal": "discovery-binomial-2-1",
+      "family": "binomial",
+      "round": 1,
+      "score": "89d8794eb4ff7abf19ba5960a8b546b980e314550555d4ddfcfe2deb0ba276e2",
+      "count": 4
+    },
+    {
+      "offset": 18,
+      "rows": 2,
+      "goal": "discovery-binomial-2-1",
+      "family": "binomial",
+      "round": 2,
+      "score": "0954b5334d49b8ba88b6095b9f39f996ec04ba73929e6cc3a2782eff5e9517e2",
+      "count": 2
+    },
+    {
+      "offset": 20,
+      "rows": 6,
+      "goal": "discovery-binomial-3-0",
+      "family": "binomial",
+      "round": 0,
+      "score": "d0c5e08622d53ee8014568955a0ee196e09a993d663d36dea7efb2fc1b62bcdd",
+      "count": 6
+    },
+    {
+      "offset": 26,
+      "rows": 42,
+      "goal": "discovery-binomial-3-0",
+      "family": "binomial",
+      "round": 1,
+      "score": "61b0ce30cc3494ff58996f9c88495ace364a8b63d90265ccfebe999b367c6cf2",
+      "count": 8
+    },
+    {
+      "offset": 68,
+      "rows": 39,
+      "goal": "discovery-binomial-3-0",
+      "family": "binomial",
+      "round": 2,
+      "score": "13c50a0ea1e3b90e8471f872889a0d37e062536031c58104c641d2455994caeb",
+      "count": 8
+    },
+    {
+      "offset": 107,
+      "rows": 36,
+      "goal": "discovery-binomial-3-0",
+      "family": "binomial",
+      "round": 3,
+      "score": "43d9211a7bda4e7558c47e60f134f06d69d235c2441a478f9f2b6bcbb481412c",
+      "count": 8
+    },
+    {
+      "offset": 143,
+      "rows": 35,
+      "goal": "discovery-binomial-3-0",
+      "family": "binomial",
+      "round": 4,
+      "score": "1a13d8d0ea48aa431cc0e2f938f072a9f5541e38f46845379f8a12878d121ef3",
+      "count": 8
+    },
+    {
+      "offset": 178,
+      "rows": 34,
+      "goal": "discovery-binomial-3-0",
+      "family": "binomial",
+      "round": 5,
+      "score": "3d75c31ecc3a1584b4e3c8ebca8ad02900f912ca32e6ef0b7cb138eadfb1b656",
+      "count": 8
+    },
+    {
+      "offset": 212,
+      "rows": 6,
+      "goal": "discovery-binomial-3-1",
+      "family": "binomial",
+      "round": 0,
+      "score": "d0c5e08622d53ee8014568955a0ee196e09a993d663d36dea7efb2fc1b62bcdd",
+      "count": 6
+    },
+    {
+      "offset": 218,
+      "rows": 42,
+      "goal": "discovery-binomial-3-1",
+      "family": "binomial",
+      "round": 1,
+      "score": "fa20a84b212050289eaec90f782692ebefd6cf949e9c5151f69f1f6a0740f456",
+      "count": 8
+    },
+    {
+      "offset": 260,
+      "rows": 39,
+      "goal": "discovery-binomial-3-1",
+      "family": "binomial",
+      "round": 2,
+      "score": "15530214e849f6453217d1daab8eaf2994bdc29cf51e803e8e224d6dd9ce60d1",
+      "count": 8
+    },
+    {
+      "offset": 299,
+      "rows": 36,
+      "goal": "discovery-binomial-3-1",
+      "family": "binomial",
+      "round": 3,
+      "score": "55a1f8be451f35deaad0c1fe0b8657eaeb8f1b1cd2b91a0eea6758a0f749d225",
+      "count": 8
+    },
+    {
+      "offset": 335,
+      "rows": 35,
+      "goal": "discovery-binomial-3-1",
+      "family": "binomial",
+      "round": 4,
+      "score": "1a13d8d0ea48aa431cc0e2f938f072a9f5541e38f46845379f8a12878d121ef3",
+      "count": 8
+    },
+    {
+      "offset": 370,
+      "rows": 34,
+      "goal": "discovery-binomial-3-1",
+      "family": "binomial",
+      "round": 5,
+      "score": "3d75c31ecc3a1584b4e3c8ebca8ad02900f912ca32e6ef0b7cb138eadfb1b656",
+      "count": 8
+    },
+    {
+      "offset": 404,
+      "rows": 8,
+      "goal": "discovery-binomial-4-0",
+      "family": "binomial",
+      "round": 0,
+      "score": "ed2c542e02f932ed75cae4deb11fd18f659cefce9704e143fc48d41727109827",
+      "count": 8
+    },
+    {
+      "offset": 412,
+      "rows": 80,
+      "goal": "discovery-binomial-4-0",
+      "family": "binomial",
+      "round": 1,
+      "score": "46da4b7201dafff797b4c125ac243abd838a2d9c63c1fc34b0b4605a2a366d09",
+      "count": 8
+    },
+    {
+      "offset": 492,
+      "rows": 76,
+      "goal": "discovery-binomial-4-0",
+      "family": "binomial",
+      "round": 2,
+      "score": "a5d9f1b5488d72364cfd0dba9d80d54bb697d05ef7d3c03c39899ef0cfb65075",
+      "count": 8
+    },
+    {
+      "offset": 568,
+      "rows": 100,
+      "goal": "discovery-binomial-4-0",
+      "family": "binomial",
+      "round": 3,
+      "score": "2b8cf7c36da88cc296099f9c3c78a459f1670997c0701c602773818bf0da8ca7",
+      "count": 8
+    },
+    {
+      "offset": 668,
+      "rows": 99,
+      "goal": "discovery-binomial-4-0",
+      "family": "binomial",
+      "round": 4,
+      "score": "c72477b7da3e96517fe1e69578929d0cb46b705f0fdb040b71f4f7eb9541ac9e",
+      "count": 8
+    },
+    {
+      "offset": 767,
+      "rows": 103,
+      "goal": "discovery-binomial-4-0",
+      "family": "binomial",
+      "round": 5,
+      "score": "faf6eff08dc31c1de7a5b6a6dbfe5c9fe11cbf44ded77dda10edb5c7fd276d7c",
+      "count": 8
+    },
+    {
+      "offset": 870,
+      "rows": 8,
+      "goal": "discovery-binomial-4-1",
+      "family": "binomial",
+      "round": 0,
+      "score": "ed2c542e02f932ed75cae4deb11fd18f659cefce9704e143fc48d41727109827",
+      "count": 8
+    },
+    {
+      "offset": 878,
+      "rows": 80,
+      "goal": "discovery-binomial-4-1",
+      "family": "binomial",
+      "round": 1,
+      "score": "28321afa8759fb8193ea021180804dcb8084bdce24e8268ac705cbb6e628cd34",
+      "count": 8
+    },
+    {
+      "offset": 958,
+      "rows": 76,
+      "goal": "discovery-binomial-4-1",
+      "family": "binomial",
+      "round": 2,
+      "score": "2e5467a46c8e0fbeea8a0d1349682ff21a6cb4d3cf2c06980f8f6ad93235c8c7",
+      "count": 8
+    },
+    {
+      "offset": 1034,
+      "rows": 100,
+      "goal": "discovery-binomial-4-1",
+      "family": "binomial",
+      "round": 3,
+      "score": "a334eca5107e3fd462b0317e1dfb1a79e3c79706b3341cbc80e6885ea633eef9",
+      "count": 8
+    },
+    {
+      "offset": 1134,
+      "rows": 99,
+      "goal": "discovery-binomial-4-1",
+      "family": "binomial",
+      "round": 4,
+      "score": "5e95bfa7324a09865d05446763d6296b19be8ec0b24c334a02c126b5328dbd5d",
+      "count": 8
+    },
+    {
+      "offset": 1233,
+      "rows": 103,
+      "goal": "discovery-binomial-4-1",
+      "family": "binomial",
+      "round": 5,
+      "score": "f61f64c9302145f6816db6e01025a33b1f6bb101b25157ba75cd1a81d429ffa0",
+      "count": 8
+    },
+    {
+      "offset": 1336,
+      "rows": 7,
+      "goal": "discovery-planted-1",
+      "family": "planted",
+      "round": 0,
+      "score": "a580480a2fd0ce13b9cb399569a30b4bd3567a082e07e38a60446d5dd2c4c2d9",
+      "count": 7
+    },
+    {
+      "offset": 1343,
+      "rows": 64,
+      "goal": "discovery-planted-1",
+      "family": "planted",
+      "round": 1,
+      "score": "e56e3f5d489c44ace3dc860e72ce186d579fd20439532b9f9fc30b7eba87294f",
+      "count": 8
+    },
+    {
+      "offset": 1407,
+      "rows": 121,
+      "goal": "discovery-planted-1",
+      "family": "planted",
+      "round": 2,
+      "score": "bc0480f635ada2ebb5e66f9922f399e4af8f52e27604402127379308fdf55ed9",
+      "count": 8
+    },
+    {
+      "offset": 1528,
+      "rows": 170,
+      "goal": "discovery-planted-1",
+      "family": "planted",
+      "round": 3,
+      "score": "514697765e57661946e7fe6499777c473760966f3a34588cf035fe4f40478ecd",
+      "count": 8
+    },
+    {
+      "offset": 1698,
+      "rows": 202,
+      "goal": "discovery-planted-1",
+      "family": "planted",
+      "round": 4,
+      "score": "0db42f42b5871216c1604a4fe627f9a0b37b4e30365c7aa5217f348579c1ac99",
+      "count": 8
+    },
+    {
+      "offset": 1900,
+      "rows": 203,
+      "goal": "discovery-planted-1",
+      "family": "planted",
+      "round": 5,
+      "score": "a9cb00ccadd9acc87787805530044a32d228d979f998fd509d62288b74b16b0e",
+      "count": 8
+    },
+    {
+      "offset": 2103,
+      "rows": 3,
+      "goal": "discovery-planted-2",
+      "family": "planted",
+      "round": 0,
+      "score": "4bdff1c1bb6ffa70743e08c70eb63378448a0cc8795c70fd81aef41b0808a96f",
+      "count": 3
+    },
+    {
+      "offset": 2106,
+      "rows": 5,
+      "goal": "discovery-planted-2",
+      "family": "planted",
+      "round": 1,
+      "score": "c12cc93f1495f36906b98c8182ea3c0f2ac68613f2ba4ba845c57ffe5d5e2d8e",
+      "count": 5
+    },
+    {
+      "offset": 2111,
+      "rows": 5,
+      "goal": "discovery-planted-2",
+      "family": "planted",
+      "round": 2,
+      "score": "5b421046f26502be37a76394daa11485b1fcabc86ed45ea4fdb34b88cb959b01",
+      "count": 5
+    },
+    {
+      "offset": 2116,
+      "rows": 4,
+      "goal": "discovery-planted-2",
+      "family": "planted",
+      "round": 3,
+      "score": "a23e1ed36f544501a81b33baf609b9a6da839c9224e22e61e44f4d0c46bbade2",
+      "count": 4
+    },
+    {
+      "offset": 2120,
+      "rows": 5,
+      "goal": "discovery-planted-3",
+      "family": "planted",
+      "round": 0,
+      "score": "2b4905de440951c09eeb7ba4ecc08a216e6bb4e4ce6f98479ef60b526446a8b0",
+      "count": 5
+    },
+    {
+      "offset": 2125,
+      "rows": 20,
+      "goal": "discovery-planted-3",
+      "family": "planted",
+      "round": 1,
+      "score": "ab86501b170801bb89cedf9c4876de9e2359319aa09ce6e966663e13ebf8a000",
+      "count": 8
+    },
+    {
+      "offset": 2145,
+      "rows": 44,
+      "goal": "discovery-planted-3",
+      "family": "planted",
+      "round": 2,
+      "score": "b6d7de0609e9a5c260fe8925bd16dcd208d70f97e1585ded9202f888463dcda4",
+      "count": 8
+    },
+    {
+      "offset": 2189,
+      "rows": 52,
+      "goal": "discovery-planted-3",
+      "family": "planted",
+      "round": 3,
+      "score": "53a2bd887e2f3086750f36ee100de539f209a36991bae00b96b00d72cc9dd69f",
+      "count": 8
+    },
+    {
+      "offset": 2241,
+      "rows": 50,
+      "goal": "discovery-planted-3",
+      "family": "planted",
+      "round": 4,
+      "score": "43a89242a5b2405a055e99d11625a423a213a4ad9db726274340c06e3a2f7b9a",
+      "count": 8
+    },
+    {
+      "offset": 2291,
+      "rows": 49,
+      "goal": "discovery-planted-3",
+      "family": "planted",
+      "round": 5,
+      "score": "a013c9c338560de4719f9cd967be0197744dbaa198bf9774078a9403c88fae2e",
+      "count": 8
+    },
+    {
+      "offset": 2340,
+      "rows": 1,
+      "goal": "discovery-planted-4",
+      "family": "planted",
+      "round": 0,
+      "score": "4c7e8470b176de1e2398c615571769b5fe371f4c2ee4553ef6d518f189532aba",
+      "count": 1
+    },
+    {
+      "offset": 2341,
+      "rows": 3,
+      "goal": "discovery-planted-4",
+      "family": "planted",
+      "round": 1,
+      "score": "7ba9a0994c20fa7064bb4eb973256320a9e0ad4ed4f23c24ee3f976fbf60fde4",
+      "count": 3
+    },
+    {
+      "offset": 2344,
+      "rows": 2,
+      "goal": "discovery-planted-4",
+      "family": "planted",
+      "round": 2,
+      "score": "2f334c6abf5101f17dad792c46fbef8c9ce839da2f2057137cff1e896a7e0d58",
+      "count": 2
+    },
+    {
+      "offset": 2346,
+      "rows": 1,
+      "goal": "discovery-planted-5",
+      "family": "planted",
+      "round": 0,
+      "score": "d8526f0372ddd6c677151df7388ef5b02f3b8f3c1893b96ad18362710be9a888",
+      "count": 1
+    }
+  ],
+  "rankings": {
+    "all": [
+      26,
+      18,
+      15,
+      2,
+      29,
+      7,
+      17,
+      6,
+      0,
+      1,
+      24,
+      5,
+      30,
+      20,
+      4,
+      25
+    ],
+    "binomial": [
+      2,
+      4,
+      18,
+      17,
+      6,
+      0,
+      7,
+      15,
+      24,
+      14,
+      1,
+      29,
+      12,
+      19,
+      20,
+      31
+    ],
+    "planted": [
+      26,
+      8,
+      24,
+      29,
+      7,
+      30,
+      2,
+      25,
+      17,
+      20,
+      4,
+      6,
+      5,
+      13,
+      0,
+      3
+    ]
+  },
+  "traces": {
+    "all": [
+      {
+        "step": 1,
+        "added": 26,
+        "loss": 1.4225958039823405,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 1.568199757701205
+          },
+          {
+            "unit": 1,
+            "loss": 1.649800678038639
+          },
+          {
+            "unit": 2,
+            "loss": 1.5899146899139107
+          },
+          {
+            "unit": 3,
+            "loss": 1.6673719095110409
+          },
+          {
+            "unit": 4,
+            "loss": 1.521136132985651
+          },
+          {
+            "unit": 5,
+            "loss": 1.6889072580673972
+          },
+          {
+            "unit": 6,
+            "loss": 1.6343954793624542
+          },
+          {
+            "unit": 7,
+            "loss": 1.7988433628267138
+          },
+          {
+            "unit": 8,
+            "loss": 1.5956268823127913
+          },
+          {
+            "unit": 9,
+            "loss": 1.691965076907828
+          },
+          {
+            "unit": 10,
+            "loss": 1.6745948263175414
+          },
+          {
+            "unit": 11,
+            "loss": 1.641577992695408
+          },
+          {
+            "unit": 12,
+            "loss": 1.9675244723571814
+          },
+          {
+            "unit": 13,
+            "loss": 1.6793407343754765
+          },
+          {
+            "unit": 14,
+            "loss": 2.3937394857834287
+          },
+          {
+            "unit": 15,
+            "loss": 1.512338433428887
+          },
+          {
+            "unit": 16,
+            "loss": 1.756851469731686
+          },
+          {
+            "unit": 17,
+            "loss": 1.5167174406714028
+          },
+          {
+            "unit": 18,
+            "loss": 1.5472496302588659
+          },
+          {
+            "unit": 19,
+            "loss": 1.6715713579330838
+          },
+          {
+            "unit": 20,
+            "loss": 1.6918709936331207
+          },
+          {
+            "unit": 21,
+            "loss": 1.7244042506855861
+          },
+          {
+            "unit": 22,
+            "loss": 1.8081727296868133
+          },
+          {
+            "unit": 23,
+            "loss": 1.8762282585632548
+          },
+          {
+            "unit": 24,
+            "loss": 1.6998348739526183
+          },
+          {
+            "unit": 25,
+            "loss": 1.7309133433538924
+          },
+          {
+            "unit": 26,
+            "loss": 1.4225958039823405
+          },
+          {
+            "unit": 27,
+            "loss": 1.7471005326414089
+          },
+          {
+            "unit": 28,
+            "loss": 1.8823031417127412
+          },
+          {
+            "unit": 29,
+            "loss": 1.4244697367987098
+          },
+          {
+            "unit": 30,
+            "loss": 1.6789591629693843
+          },
+          {
+            "unit": 31,
+            "loss": 1.5625828416636813
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "added": 18,
+        "loss": 1.2221483016600607,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 1.2672110169245911
+          },
+          {
+            "unit": 1,
+            "loss": 1.3354026281598244
+          },
+          {
+            "unit": 2,
+            "loss": 1.311468370318695
+          },
+          {
+            "unit": 3,
+            "loss": 1.384543255800152
+          },
+          {
+            "unit": 4,
+            "loss": 1.2494430932171543
+          },
+          {
+            "unit": 5,
+            "loss": 1.4047489714963282
+          },
+          {
+            "unit": 6,
+            "loss": 1.3228804691340235
+          },
+          {
+            "unit": 7,
+            "loss": 1.4858489272810713
+          },
+          {
+            "unit": 8,
+            "loss": 1.3131798511368755
+          },
+          {
+            "unit": 9,
+            "loss": 1.3707435357250461
+          },
+          {
+            "unit": 10,
+            "loss": 1.4075561732967334
+          },
+          {
+            "unit": 11,
+            "loss": 1.3258252825084007
+          },
+          {
+            "unit": 12,
+            "loss": 1.6310569315976267
+          },
+          {
+            "unit": 13,
+            "loss": 1.403059306177783
+          },
+          {
+            "unit": 14,
+            "loss": 2.1722427026453133
+          },
+          {
+            "unit": 15,
+            "loss": 1.2731595683245367
+          },
+          {
+            "unit": 16,
+            "loss": 1.4774887271587547
+          },
+          {
+            "unit": 17,
+            "loss": 1.2234409713895675
+          },
+          {
+            "unit": 18,
+            "loss": 1.2221483016600607
+          },
+          {
+            "unit": 19,
+            "loss": 1.3618355640734665
+          },
+          {
+            "unit": 20,
+            "loss": 1.4285447386353844
+          },
+          {
+            "unit": 21,
+            "loss": 1.4527033083754641
+          },
+          {
+            "unit": 22,
+            "loss": 1.5333914897292324
+          },
+          {
+            "unit": 23,
+            "loss": 1.5141349790300476
+          },
+          {
+            "unit": 24,
+            "loss": 1.4558850682888216
+          },
+          {
+            "unit": 25,
+            "loss": 1.4271076005874672
+          },
+          {
+            "unit": 27,
+            "loss": 1.4661531506911771
+          },
+          {
+            "unit": 28,
+            "loss": 1.561874227287656
+          },
+          {
+            "unit": 29,
+            "loss": 1.2328016948892646
+          },
+          {
+            "unit": 30,
+            "loss": 1.3718478828472365
+          },
+          {
+            "unit": 31,
+            "loss": 1.3095275203395271
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "added": 15,
+        "loss": 0.9889213742036517,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 1.1014565241834418
+          },
+          {
+            "unit": 1,
+            "loss": 1.2213856497650004
+          },
+          {
+            "unit": 2,
+            "loss": 1.1672069216369612
+          },
+          {
+            "unit": 3,
+            "loss": 1.161516441998235
+          },
+          {
+            "unit": 4,
+            "loss": 1.0537077305979374
+          },
+          {
+            "unit": 5,
+            "loss": 1.2517619272852785
+          },
+          {
+            "unit": 6,
+            "loss": 1.1212956359694521
+          },
+          {
+            "unit": 7,
+            "loss": 1.2195808738393907
+          },
+          {
+            "unit": 8,
+            "loss": 1.4724711495879035
+          },
+          {
+            "unit": 9,
+            "loss": 1.3171642402673607
+          },
+          {
+            "unit": 10,
+            "loss": 1.103891175698701
+          },
+          {
+            "unit": 11,
+            "loss": 1.2610810038954003
+          },
+          {
+            "unit": 12,
+            "loss": 1.4424343547613274
+          },
+          {
+            "unit": 13,
+            "loss": 1.1980837845237384
+          },
+          {
+            "unit": 14,
+            "loss": 1.6093728300094483
+          },
+          {
+            "unit": 15,
+            "loss": 0.9889213742036517
+          },
+          {
+            "unit": 16,
+            "loss": 1.2004809732971893
+          },
+          {
+            "unit": 17,
+            "loss": 1.056356806863498
+          },
+          {
+            "unit": 19,
+            "loss": 1.1584431539258184
+          },
+          {
+            "unit": 20,
+            "loss": 1.2046063525361315
+          },
+          {
+            "unit": 21,
+            "loss": 1.1517888025321312
+          },
+          {
+            "unit": 22,
+            "loss": 1.2218717053347317
+          },
+          {
+            "unit": 23,
+            "loss": 1.643372604098265
+          },
+          {
+            "unit": 24,
+            "loss": 1.088990142448597
+          },
+          {
+            "unit": 25,
+            "loss": 1.1893083548533152
+          },
+          {
+            "unit": 27,
+            "loss": 1.1852010163621964
+          },
+          {
+            "unit": 28,
+            "loss": 1.3798249594418937
+          },
+          {
+            "unit": 29,
+            "loss": 1.0403967041957
+          },
+          {
+            "unit": 30,
+            "loss": 1.2135865266031463
+          },
+          {
+            "unit": 31,
+            "loss": 1.0899479418084854
+          }
+        ]
+      },
+      {
+        "step": 4,
+        "added": 2,
+        "loss": 0.8423128376560476,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.8725590934469795
+          },
+          {
+            "unit": 1,
+            "loss": 0.9780714037291212
+          },
+          {
+            "unit": 2,
+            "loss": 0.8423128376560476
+          },
+          {
+            "unit": 3,
+            "loss": 0.993442166560585
+          },
+          {
+            "unit": 4,
+            "loss": 0.8841177911727987
+          },
+          {
+            "unit": 5,
+            "loss": 0.9983380840723299
+          },
+          {
+            "unit": 6,
+            "loss": 0.9062733949735059
+          },
+          {
+            "unit": 7,
+            "loss": 0.98645502955591
+          },
+          {
+            "unit": 8,
+            "loss": 1.2725624073391568
+          },
+          {
+            "unit": 9,
+            "loss": 1.090730731336344
+          },
+          {
+            "unit": 10,
+            "loss": 1.0257817859103453
+          },
+          {
+            "unit": 11,
+            "loss": 1.0224600195068696
+          },
+          {
+            "unit": 12,
+            "loss": 1.0485145510443818
+          },
+          {
+            "unit": 13,
+            "loss": 0.9551624323820721
+          },
+          {
+            "unit": 14,
+            "loss": 1.3015989856448076
+          },
+          {
+            "unit": 16,
+            "loss": 0.9935368860027479
+          },
+          {
+            "unit": 17,
+            "loss": 0.8845277682366648
+          },
+          {
+            "unit": 19,
+            "loss": 0.9431232944862236
+          },
+          {
+            "unit": 20,
+            "loss": 0.9400468154690862
+          },
+          {
+            "unit": 21,
+            "loss": 0.9887735698391391
+          },
+          {
+            "unit": 22,
+            "loss": 0.983746371383612
+          },
+          {
+            "unit": 23,
+            "loss": 1.1539381416070849
+          },
+          {
+            "unit": 24,
+            "loss": 0.9540717963701171
+          },
+          {
+            "unit": 25,
+            "loss": 0.9795877035269797
+          },
+          {
+            "unit": 27,
+            "loss": 0.9852648835256309
+          },
+          {
+            "unit": 28,
+            "loss": 1.0183206994933844
+          },
+          {
+            "unit": 29,
+            "loss": 0.8518018879081106
+          },
+          {
+            "unit": 30,
+            "loss": 0.9701515106808951
+          },
+          {
+            "unit": 31,
+            "loss": 1.0616155395776903
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "added": 29,
+        "loss": 0.7348992942021206,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.7570598083862736
+          },
+          {
+            "unit": 1,
+            "loss": 0.8018077160640802
+          },
+          {
+            "unit": 3,
+            "loss": 0.8081832974034047
+          },
+          {
+            "unit": 4,
+            "loss": 0.7699277756708875
+          },
+          {
+            "unit": 5,
+            "loss": 0.8543497014738246
+          },
+          {
+            "unit": 6,
+            "loss": 0.7677579042936362
+          },
+          {
+            "unit": 7,
+            "loss": 0.7930514330799282
+          },
+          {
+            "unit": 8,
+            "loss": 1.0375433457784415
+          },
+          {
+            "unit": 9,
+            "loss": 0.8886146768344232
+          },
+          {
+            "unit": 10,
+            "loss": 0.8058364990571363
+          },
+          {
+            "unit": 11,
+            "loss": 0.8459950941873038
+          },
+          {
+            "unit": 12,
+            "loss": 0.9717473736020731
+          },
+          {
+            "unit": 13,
+            "loss": 0.8209524602781832
+          },
+          {
+            "unit": 14,
+            "loss": 1.3020647724940577
+          },
+          {
+            "unit": 16,
+            "loss": 0.8449689556558304
+          },
+          {
+            "unit": 17,
+            "loss": 0.746523572103919
+          },
+          {
+            "unit": 19,
+            "loss": 0.8027472560648037
+          },
+          {
+            "unit": 20,
+            "loss": 0.8073301899813461
+          },
+          {
+            "unit": 21,
+            "loss": 0.822893668484352
+          },
+          {
+            "unit": 22,
+            "loss": 0.8898007465437596
+          },
+          {
+            "unit": 23,
+            "loss": 1.1548159078033926
+          },
+          {
+            "unit": 24,
+            "loss": 0.7999655115437245
+          },
+          {
+            "unit": 25,
+            "loss": 0.811338550546161
+          },
+          {
+            "unit": 27,
+            "loss": 0.8399673373580403
+          },
+          {
+            "unit": 28,
+            "loss": 0.9357312084448202
+          },
+          {
+            "unit": 29,
+            "loss": 0.7348992942021206
+          },
+          {
+            "unit": 30,
+            "loss": 0.8133345452304912
+          },
+          {
+            "unit": 31,
+            "loss": 0.7865668257749676
+          }
+        ]
+      },
+      {
+        "step": 6,
+        "added": 7,
+        "loss": 0.6326181770927096,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.6669251105904103
+          },
+          {
+            "unit": 1,
+            "loss": 0.6727224994394498
+          },
+          {
+            "unit": 3,
+            "loss": 0.7077935158895459
+          },
+          {
+            "unit": 4,
+            "loss": 0.7203649808529039
+          },
+          {
+            "unit": 5,
+            "loss": 0.7511270806399103
+          },
+          {
+            "unit": 6,
+            "loss": 0.6589992531552603
+          },
+          {
+            "unit": 7,
+            "loss": 0.6326181770927096
+          },
+          {
+            "unit": 8,
+            "loss": 0.9224873202995849
+          },
+          {
+            "unit": 9,
+            "loss": 0.751381126132948
+          },
+          {
+            "unit": 10,
+            "loss": 0.7219382705749847
+          },
+          {
+            "unit": 11,
+            "loss": 0.719779247437354
+          },
+          {
+            "unit": 12,
+            "loss": 0.814829375683282
+          },
+          {
+            "unit": 13,
+            "loss": 0.72353270134125
+          },
+          {
+            "unit": 14,
+            "loss": 1.2411421686215234
+          },
+          {
+            "unit": 16,
+            "loss": 0.7469972577350403
+          },
+          {
+            "unit": 17,
+            "loss": 0.632968450905472
+          },
+          {
+            "unit": 19,
+            "loss": 0.6957169207640248
+          },
+          {
+            "unit": 20,
+            "loss": 0.7043041978143719
+          },
+          {
+            "unit": 21,
+            "loss": 0.737970143211151
+          },
+          {
+            "unit": 22,
+            "loss": 0.811047328448836
+          },
+          {
+            "unit": 23,
+            "loss": 1.0177953005548264
+          },
+          {
+            "unit": 24,
+            "loss": 0.7373598575500935
+          },
+          {
+            "unit": 25,
+            "loss": 0.6904684139333825
+          },
+          {
+            "unit": 27,
+            "loss": 0.7449109441241961
+          },
+          {
+            "unit": 28,
+            "loss": 0.7979385822299764
+          },
+          {
+            "unit": 30,
+            "loss": 0.692932323274366
+          },
+          {
+            "unit": 31,
+            "loss": 0.7125708092680781
+          }
+        ]
+      },
+      {
+        "step": 7,
+        "added": 17,
+        "loss": 0.5189324544441417,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.5459860157620725
+          },
+          {
+            "unit": 1,
+            "loss": 0.5921644247175101
+          },
+          {
+            "unit": 3,
+            "loss": 0.6118791226255167
+          },
+          {
+            "unit": 4,
+            "loss": 0.5507645133054881
+          },
+          {
+            "unit": 5,
+            "loss": 0.635266877040922
+          },
+          {
+            "unit": 6,
+            "loss": 0.5451230697024083
+          },
+          {
+            "unit": 8,
+            "loss": 0.8135916875215548
+          },
+          {
+            "unit": 9,
+            "loss": 0.6450557398479686
+          },
+          {
+            "unit": 10,
+            "loss": 0.6359370752535676
+          },
+          {
+            "unit": 11,
+            "loss": 0.6122209058715897
+          },
+          {
+            "unit": 12,
+            "loss": 0.7721543662392667
+          },
+          {
+            "unit": 13,
+            "loss": 0.6269162637470402
+          },
+          {
+            "unit": 14,
+            "loss": 1.1619683620844319
+          },
+          {
+            "unit": 16,
+            "loss": 0.6545084414929754
+          },
+          {
+            "unit": 17,
+            "loss": 0.5189324544441417
+          },
+          {
+            "unit": 19,
+            "loss": 0.5708261461586068
+          },
+          {
+            "unit": 20,
+            "loss": 0.6387177210218191
+          },
+          {
+            "unit": 21,
+            "loss": 0.6440875364320678
+          },
+          {
+            "unit": 22,
+            "loss": 0.6972940997606609
+          },
+          {
+            "unit": 23,
+            "loss": 0.8470883517449251
+          },
+          {
+            "unit": 24,
+            "loss": 0.6467898468616173
+          },
+          {
+            "unit": 25,
+            "loss": 0.613166656814033
+          },
+          {
+            "unit": 27,
+            "loss": 0.6494398429666302
+          },
+          {
+            "unit": 28,
+            "loss": 0.7241808409821511
+          },
+          {
+            "unit": 30,
+            "loss": 0.597254148257639
+          },
+          {
+            "unit": 31,
+            "loss": 0.6195780904007546
+          }
+        ]
+      },
+      {
+        "step": 8,
+        "added": 6,
+        "loss": 0.4317460612482902,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.4374300021680554
+          },
+          {
+            "unit": 1,
+            "loss": 0.49312336273052104
+          },
+          {
+            "unit": 3,
+            "loss": 0.5143292300483131
+          },
+          {
+            "unit": 4,
+            "loss": 0.46041900420694726
+          },
+          {
+            "unit": 5,
+            "loss": 0.5139369016279387
+          },
+          {
+            "unit": 6,
+            "loss": 0.4317460612482902
+          },
+          {
+            "unit": 8,
+            "loss": 0.7705679979482567
+          },
+          {
+            "unit": 9,
+            "loss": 0.5790372441102689
+          },
+          {
+            "unit": 10,
+            "loss": 0.5567914935081356
+          },
+          {
+            "unit": 11,
+            "loss": 0.5243991141612075
+          },
+          {
+            "unit": 12,
+            "loss": 0.603625268165322
+          },
+          {
+            "unit": 13,
+            "loss": 0.5049171004647692
+          },
+          {
+            "unit": 14,
+            "loss": 0.963215465390382
+          },
+          {
+            "unit": 16,
+            "loss": 0.5351720201670687
+          },
+          {
+            "unit": 19,
+            "loss": 0.46314794568902845
+          },
+          {
+            "unit": 20,
+            "loss": 0.5065523900708188
+          },
+          {
+            "unit": 21,
+            "loss": 0.529558558302268
+          },
+          {
+            "unit": 22,
+            "loss": 0.5629066950449093
+          },
+          {
+            "unit": 23,
+            "loss": 0.716097710220211
+          },
+          {
+            "unit": 24,
+            "loss": 0.5282111867087704
+          },
+          {
+            "unit": 25,
+            "loss": 0.5193748928585356
+          },
+          {
+            "unit": 27,
+            "loss": 0.5343665588962747
+          },
+          {
+            "unit": 28,
+            "loss": 0.5718780603727589
+          },
+          {
+            "unit": 30,
+            "loss": 0.4903132496767047
+          },
+          {
+            "unit": 31,
+            "loss": 0.5535735455683946
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "added": 0,
+        "loss": 0.3679567772250498,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.3679567772250498
+          },
+          {
+            "unit": 1,
+            "loss": 0.40013392502387934
+          },
+          {
+            "unit": 3,
+            "loss": 0.4305630409622709
+          },
+          {
+            "unit": 4,
+            "loss": 0.39581384747570775
+          },
+          {
+            "unit": 5,
+            "loss": 0.4160005842258918
+          },
+          {
+            "unit": 8,
+            "loss": 0.6613820229028515
+          },
+          {
+            "unit": 9,
+            "loss": 0.4745938952881822
+          },
+          {
+            "unit": 10,
+            "loss": 0.482046288464301
+          },
+          {
+            "unit": 11,
+            "loss": 0.43137376133449445
+          },
+          {
+            "unit": 12,
+            "loss": 0.509486502200984
+          },
+          {
+            "unit": 13,
+            "loss": 0.415040470491914
+          },
+          {
+            "unit": 14,
+            "loss": 0.8807836626609815
+          },
+          {
+            "unit": 16,
+            "loss": 0.4499186995845792
+          },
+          {
+            "unit": 19,
+            "loss": 0.41723403800353814
+          },
+          {
+            "unit": 20,
+            "loss": 0.4098111383298704
+          },
+          {
+            "unit": 21,
+            "loss": 0.45209512994343637
+          },
+          {
+            "unit": 22,
+            "loss": 0.49117619797413636
+          },
+          {
+            "unit": 23,
+            "loss": 0.6160120815332332
+          },
+          {
+            "unit": 24,
+            "loss": 0.4544531166212017
+          },
+          {
+            "unit": 25,
+            "loss": 0.4392396115958199
+          },
+          {
+            "unit": 27,
+            "loss": 0.45319698820097576
+          },
+          {
+            "unit": 28,
+            "loss": 0.4774644434958516
+          },
+          {
+            "unit": 30,
+            "loss": 0.40043751153525375
+          },
+          {
+            "unit": 31,
+            "loss": 0.4739466166591234
+          }
+        ]
+      },
+      {
+        "step": 10,
+        "added": 1,
+        "loss": 0.3317150428357237,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.3317150428357237
+          },
+          {
+            "unit": 3,
+            "loss": 0.3651603890150315
+          },
+          {
+            "unit": 4,
+            "loss": 0.3710634965897437
+          },
+          {
+            "unit": 5,
+            "loss": 0.3482071160850986
+          },
+          {
+            "unit": 8,
+            "loss": 0.5897772776389371
+          },
+          {
+            "unit": 9,
+            "loss": 0.3956806260809517
+          },
+          {
+            "unit": 10,
+            "loss": 0.422245812173469
+          },
+          {
+            "unit": 11,
+            "loss": 0.3656415755073609
+          },
+          {
+            "unit": 12,
+            "loss": 0.4377733916147548
+          },
+          {
+            "unit": 13,
+            "loss": 0.3491621221167361
+          },
+          {
+            "unit": 14,
+            "loss": 0.8179591714388643
+          },
+          {
+            "unit": 16,
+            "loss": 0.38514874163677204
+          },
+          {
+            "unit": 19,
+            "loss": 0.3668880239562232
+          },
+          {
+            "unit": 20,
+            "loss": 0.3388968975129671
+          },
+          {
+            "unit": 21,
+            "loss": 0.39305331964040324
+          },
+          {
+            "unit": 22,
+            "loss": 0.43967517489962443
+          },
+          {
+            "unit": 23,
+            "loss": 0.5866026730950357
+          },
+          {
+            "unit": 24,
+            "loss": 0.3981994734981779
+          },
+          {
+            "unit": 25,
+            "loss": 0.3594724827320822
+          },
+          {
+            "unit": 27,
+            "loss": 0.3923552104462482
+          },
+          {
+            "unit": 28,
+            "loss": 0.4093819102439307
+          },
+          {
+            "unit": 30,
+            "loss": 0.3348102316581353
+          },
+          {
+            "unit": 31,
+            "loss": 0.41105596695087465
+          }
+        ]
+      },
+      {
+        "step": 11,
+        "added": 24,
+        "loss": 0.2941133269826052,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.33215543111180973
+          },
+          {
+            "unit": 4,
+            "loss": 0.3048496431673366
+          },
+          {
+            "unit": 5,
+            "loss": 0.32778683340269765
+          },
+          {
+            "unit": 8,
+            "loss": 0.7333951985758334
+          },
+          {
+            "unit": 9,
+            "loss": 0.446438435880413
+          },
+          {
+            "unit": 10,
+            "loss": 0.36613715787404216
+          },
+          {
+            "unit": 11,
+            "loss": 0.40047154926755185
+          },
+          {
+            "unit": 12,
+            "loss": 0.40468355096587466
+          },
+          {
+            "unit": 13,
+            "loss": 0.3093411577707357
+          },
+          {
+            "unit": 14,
+            "loss": 0.5926901972325125
+          },
+          {
+            "unit": 16,
+            "loss": 0.31948945940498713
+          },
+          {
+            "unit": 19,
+            "loss": 0.3220593388483579
+          },
+          {
+            "unit": 20,
+            "loss": 0.29990047281660037
+          },
+          {
+            "unit": 21,
+            "loss": 0.3200875812239915
+          },
+          {
+            "unit": 22,
+            "loss": 0.3357894093695035
+          },
+          {
+            "unit": 23,
+            "loss": 0.6263416479330872
+          },
+          {
+            "unit": 24,
+            "loss": 0.2941133269826052
+          },
+          {
+            "unit": 25,
+            "loss": 0.3214438428548038
+          },
+          {
+            "unit": 27,
+            "loss": 0.32285742023914044
+          },
+          {
+            "unit": 28,
+            "loss": 0.37249934391468587
+          },
+          {
+            "unit": 30,
+            "loss": 0.3300962148059436
+          },
+          {
+            "unit": 31,
+            "loss": 0.40392829866979985
+          }
+        ]
+      },
+      {
+        "step": 12,
+        "added": 5,
+        "loss": 0.2587201662822807,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.31681818157754305
+          },
+          {
+            "unit": 4,
+            "loss": 0.3200477962944056
+          },
+          {
+            "unit": 5,
+            "loss": 0.2587201662822807
+          },
+          {
+            "unit": 8,
+            "loss": 0.4594113293914196
+          },
+          {
+            "unit": 9,
+            "loss": 0.2957870611388614
+          },
+          {
+            "unit": 10,
+            "loss": 0.4204116853003609
+          },
+          {
+            "unit": 11,
+            "loss": 0.2686432025267473
+          },
+          {
+            "unit": 12,
+            "loss": 0.3204473828565645
+          },
+          {
+            "unit": 13,
+            "loss": 0.27527721173774955
+          },
+          {
+            "unit": 14,
+            "loss": 0.8003576340213033
+          },
+          {
+            "unit": 16,
+            "loss": 0.3361794757389044
+          },
+          {
+            "unit": 19,
+            "loss": 0.29821212079252085
+          },
+          {
+            "unit": 20,
+            "loss": 0.26795853922361357
+          },
+          {
+            "unit": 21,
+            "loss": 0.3647411778950951
+          },
+          {
+            "unit": 22,
+            "loss": 0.3870536631244026
+          },
+          {
+            "unit": 23,
+            "loss": 0.36872473862404315
+          },
+          {
+            "unit": 25,
+            "loss": 0.29677052737024634
+          },
+          {
+            "unit": 27,
+            "loss": 0.3462462996829257
+          },
+          {
+            "unit": 28,
+            "loss": 0.2969857182209579
+          },
+          {
+            "unit": 30,
+            "loss": 0.25937625598789804
+          },
+          {
+            "unit": 31,
+            "loss": 0.41209500125297593
+          }
+        ]
+      },
+      {
+        "step": 13,
+        "added": 30,
+        "loss": 0.23191813473035008,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.2753147061780797
+          },
+          {
+            "unit": 4,
+            "loss": 0.2747795280108648
+          },
+          {
+            "unit": 8,
+            "loss": 0.49814202850550204
+          },
+          {
+            "unit": 9,
+            "loss": 0.2953124837292542
+          },
+          {
+            "unit": 10,
+            "loss": 0.3532737539726375
+          },
+          {
+            "unit": 11,
+            "loss": 0.25943466123803804
+          },
+          {
+            "unit": 12,
+            "loss": 0.2915562902710794
+          },
+          {
+            "unit": 13,
+            "loss": 0.2408072384681659
+          },
+          {
+            "unit": 14,
+            "loss": 0.710802487473926
+          },
+          {
+            "unit": 16,
+            "loss": 0.2859031033532561
+          },
+          {
+            "unit": 19,
+            "loss": 0.2561460086330427
+          },
+          {
+            "unit": 20,
+            "loss": 0.23411809612620488
+          },
+          {
+            "unit": 21,
+            "loss": 0.30564654648877876
+          },
+          {
+            "unit": 22,
+            "loss": 0.3227237178575944
+          },
+          {
+            "unit": 23,
+            "loss": 0.4000361610615018
+          },
+          {
+            "unit": 25,
+            "loss": 0.2569527372164858
+          },
+          {
+            "unit": 27,
+            "loss": 0.2907285972528623
+          },
+          {
+            "unit": 28,
+            "loss": 0.2701752637112797
+          },
+          {
+            "unit": 30,
+            "loss": 0.23191813473035008
+          },
+          {
+            "unit": 31,
+            "loss": 0.37338612872201954
+          }
+        ]
+      },
+      {
+        "step": 14,
+        "added": 20,
+        "loss": 0.2048684556900901,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.24847764545480108
+          },
+          {
+            "unit": 4,
+            "loss": 0.23405382220620619
+          },
+          {
+            "unit": 8,
+            "loss": 0.5493990485385635
+          },
+          {
+            "unit": 9,
+            "loss": 0.31145186672021347
+          },
+          {
+            "unit": 10,
+            "loss": 0.31471456399747183
+          },
+          {
+            "unit": 11,
+            "loss": 0.26942019677079
+          },
+          {
+            "unit": 12,
+            "loss": 0.26711147703823845
+          },
+          {
+            "unit": 13,
+            "loss": 0.211949323254313
+          },
+          {
+            "unit": 14,
+            "loss": 0.5998851449863613
+          },
+          {
+            "unit": 16,
+            "loss": 0.24526454824220023
+          },
+          {
+            "unit": 19,
+            "loss": 0.22634678753550946
+          },
+          {
+            "unit": 20,
+            "loss": 0.2048684556900901
+          },
+          {
+            "unit": 21,
+            "loss": 0.26065304294837655
+          },
+          {
+            "unit": 22,
+            "loss": 0.26471865619877066
+          },
+          {
+            "unit": 23,
+            "loss": 0.41606114288253127
+          },
+          {
+            "unit": 25,
+            "loss": 0.22861638800327255
+          },
+          {
+            "unit": 27,
+            "loss": 0.24830724365190796
+          },
+          {
+            "unit": 28,
+            "loss": 0.2444749919027311
+          },
+          {
+            "unit": 31,
+            "loss": 0.35573523349467717
+          }
+        ]
+      },
+      {
+        "step": 15,
+        "added": 4,
+        "loss": 0.17890117695340127,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.21150432540349864
+          },
+          {
+            "unit": 4,
+            "loss": 0.17890117695340127
+          },
+          {
+            "unit": 8,
+            "loss": 0.49466916360673613
+          },
+          {
+            "unit": 9,
+            "loss": 0.26355965565835787
+          },
+          {
+            "unit": 10,
+            "loss": 0.26714002102774725
+          },
+          {
+            "unit": 11,
+            "loss": 0.22727116823229965
+          },
+          {
+            "unit": 12,
+            "loss": 0.2863684278361136
+          },
+          {
+            "unit": 13,
+            "loss": 0.19507037248186007
+          },
+          {
+            "unit": 14,
+            "loss": 0.6442621001739339
+          },
+          {
+            "unit": 16,
+            "loss": 0.2233213179956211
+          },
+          {
+            "unit": 19,
+            "loss": 0.1858020270849952
+          },
+          {
+            "unit": 21,
+            "loss": 0.23151314472506124
+          },
+          {
+            "unit": 22,
+            "loss": 0.24919260372210317
+          },
+          {
+            "unit": 23,
+            "loss": 0.3950618546327344
+          },
+          {
+            "unit": 25,
+            "loss": 0.19962465862269274
+          },
+          {
+            "unit": 27,
+            "loss": 0.22338593727296036
+          },
+          {
+            "unit": 28,
+            "loss": 0.25006069277737747
+          },
+          {
+            "unit": 31,
+            "loss": 0.2939707084051637
+          }
+        ]
+      },
+      {
+        "step": 16,
+        "added": 25,
+        "loss": 0.16113758370236453,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.1969587515870514
+          },
+          {
+            "unit": 8,
+            "loss": 0.4059201939597572
+          },
+          {
+            "unit": 9,
+            "loss": 0.19867878760858593
+          },
+          {
+            "unit": 10,
+            "loss": 0.2866051081126615
+          },
+          {
+            "unit": 11,
+            "loss": 0.1770005929495942
+          },
+          {
+            "unit": 12,
+            "loss": 0.1921295487495465
+          },
+          {
+            "unit": 13,
+            "loss": 0.1638620101153998
+          },
+          {
+            "unit": 14,
+            "loss": 0.6633394124106942
+          },
+          {
+            "unit": 16,
+            "loss": 0.21088218550193166
+          },
+          {
+            "unit": 19,
+            "loss": 0.18607935698475667
+          },
+          {
+            "unit": 21,
+            "loss": 0.23852174904704718
+          },
+          {
+            "unit": 22,
+            "loss": 0.26266901944346654
+          },
+          {
+            "unit": 23,
+            "loss": 0.3308885420627399
+          },
+          {
+            "unit": 25,
+            "loss": 0.16113758370236453
+          },
+          {
+            "unit": 27,
+            "loss": 0.21861780267751174
+          },
+          {
+            "unit": 28,
+            "loss": 0.17948563853577287
+          },
+          {
+            "unit": 31,
+            "loss": 0.30688823961034145
+          }
+        ]
+      }
+    ],
+    "binomial": [
+      {
+        "step": 1,
+        "added": 2,
+        "loss": 0.9224373568131954,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 1.0039896175250589
+          },
+          {
+            "unit": 1,
+            "loss": 1.282613111089908
+          },
+          {
+            "unit": 2,
+            "loss": 0.9224373568131954
+          },
+          {
+            "unit": 3,
+            "loss": 1.2754594031719084
+          },
+          {
+            "unit": 4,
+            "loss": 0.9573017243801909
+          },
+          {
+            "unit": 5,
+            "loss": 1.3006953853608214
+          },
+          {
+            "unit": 6,
+            "loss": 1.0929318027664787
+          },
+          {
+            "unit": 7,
+            "loss": 1.3765531573522654
+          },
+          {
+            "unit": 8,
+            "loss": 1.3102317797653487
+          },
+          {
+            "unit": 9,
+            "loss": 1.3551863339117758
+          },
+          {
+            "unit": 10,
+            "loss": 1.2267439886845959
+          },
+          {
+            "unit": 11,
+            "loss": 1.2692347113667373
+          },
+          {
+            "unit": 12,
+            "loss": 1.31351705519947
+          },
+          {
+            "unit": 13,
+            "loss": 1.2748465103285815
+          },
+          {
+            "unit": 14,
+            "loss": 1.1906825587417345
+          },
+          {
+            "unit": 15,
+            "loss": 1.1523016073215326
+          },
+          {
+            "unit": 16,
+            "loss": 1.2708938889409476
+          },
+          {
+            "unit": 17,
+            "loss": 1.049453285047988
+          },
+          {
+            "unit": 18,
+            "loss": 0.9888875947690228
+          },
+          {
+            "unit": 19,
+            "loss": 1.1289502823500257
+          },
+          {
+            "unit": 20,
+            "loss": 1.3141489373220818
+          },
+          {
+            "unit": 21,
+            "loss": 1.2327407823225787
+          },
+          {
+            "unit": 22,
+            "loss": 1.1626503756296902
+          },
+          {
+            "unit": 23,
+            "loss": 1.0118733404146962
+          },
+          {
+            "unit": 24,
+            "loss": 1.1674925383939847
+          },
+          {
+            "unit": 25,
+            "loss": 1.2921995023155284
+          },
+          {
+            "unit": 26,
+            "loss": 1.2981115560283847
+          },
+          {
+            "unit": 27,
+            "loss": 1.2376200428282678
+          },
+          {
+            "unit": 28,
+            "loss": 1.2842565178936134
+          },
+          {
+            "unit": 29,
+            "loss": 1.1384705759699352
+          },
+          {
+            "unit": 30,
+            "loss": 1.2704387157839085
+          },
+          {
+            "unit": 31,
+            "loss": 1.2550949331634693
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "added": 4,
+        "loss": 0.676524603437058,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.7110079585178373
+          },
+          {
+            "unit": 1,
+            "loss": 0.9304258124023566
+          },
+          {
+            "unit": 3,
+            "loss": 0.9289095731314237
+          },
+          {
+            "unit": 4,
+            "loss": 0.676524603437058
+          },
+          {
+            "unit": 5,
+            "loss": 0.9458660574889093
+          },
+          {
+            "unit": 6,
+            "loss": 0.7785249978746529
+          },
+          {
+            "unit": 7,
+            "loss": 1.0034138210530983
+          },
+          {
+            "unit": 8,
+            "loss": 0.9562579151574918
+          },
+          {
+            "unit": 9,
+            "loss": 0.9963949262513621
+          },
+          {
+            "unit": 10,
+            "loss": 0.8910877909781676
+          },
+          {
+            "unit": 11,
+            "loss": 0.9231765683277693
+          },
+          {
+            "unit": 12,
+            "loss": 0.9551849696235759
+          },
+          {
+            "unit": 13,
+            "loss": 0.9283428828792679
+          },
+          {
+            "unit": 14,
+            "loss": 0.8538223853574547
+          },
+          {
+            "unit": 15,
+            "loss": 0.8249108236082024
+          },
+          {
+            "unit": 16,
+            "loss": 0.925049447607863
+          },
+          {
+            "unit": 17,
+            "loss": 0.7622642197444703
+          },
+          {
+            "unit": 18,
+            "loss": 0.703444259849472
+          },
+          {
+            "unit": 19,
+            "loss": 0.8093687748148755
+          },
+          {
+            "unit": 20,
+            "loss": 0.9575825613393051
+          },
+          {
+            "unit": 21,
+            "loss": 0.8932303020689152
+          },
+          {
+            "unit": 22,
+            "loss": 0.8399994302132554
+          },
+          {
+            "unit": 23,
+            "loss": 0.7203146129675424
+          },
+          {
+            "unit": 24,
+            "loss": 0.8351785894210864
+          },
+          {
+            "unit": 25,
+            "loss": 0.9419563858184692
+          },
+          {
+            "unit": 26,
+            "loss": 0.9467333592569196
+          },
+          {
+            "unit": 27,
+            "loss": 0.899628326221988
+          },
+          {
+            "unit": 28,
+            "loss": 0.933073006925634
+          },
+          {
+            "unit": 29,
+            "loss": 0.8187115448851059
+          },
+          {
+            "unit": 30,
+            "loss": 0.9235479129616014
+          },
+          {
+            "unit": 31,
+            "loss": 0.9061710243563736
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "added": 18,
+        "loss": 0.5226198082359281,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.5241944796244438
+          },
+          {
+            "unit": 1,
+            "loss": 0.6713397337653242
+          },
+          {
+            "unit": 3,
+            "loss": 0.6803693153470541
+          },
+          {
+            "unit": 5,
+            "loss": 0.6992178389059998
+          },
+          {
+            "unit": 6,
+            "loss": 0.5639798661937862
+          },
+          {
+            "unit": 7,
+            "loss": 0.7115168185557129
+          },
+          {
+            "unit": 8,
+            "loss": 0.6976652369011347
+          },
+          {
+            "unit": 9,
+            "loss": 0.7287926508878498
+          },
+          {
+            "unit": 10,
+            "loss": 0.6517215245415091
+          },
+          {
+            "unit": 11,
+            "loss": 0.6739763696796404
+          },
+          {
+            "unit": 12,
+            "loss": 0.6861186117588118
+          },
+          {
+            "unit": 13,
+            "loss": 0.678623940969716
+          },
+          {
+            "unit": 14,
+            "loss": 0.6171534223244679
+          },
+          {
+            "unit": 15,
+            "loss": 0.5969938742605201
+          },
+          {
+            "unit": 16,
+            "loss": 0.6773376059090894
+          },
+          {
+            "unit": 17,
+            "loss": 0.5395586679324597
+          },
+          {
+            "unit": 18,
+            "loss": 0.5226198082359281
+          },
+          {
+            "unit": 19,
+            "loss": 0.5939448267861582
+          },
+          {
+            "unit": 20,
+            "loss": 0.6922864646253846
+          },
+          {
+            "unit": 21,
+            "loss": 0.6551588028283815
+          },
+          {
+            "unit": 22,
+            "loss": 0.6173866881126314
+          },
+          {
+            "unit": 23,
+            "loss": 0.5372602613710258
+          },
+          {
+            "unit": 24,
+            "loss": 0.6070339456736862
+          },
+          {
+            "unit": 25,
+            "loss": 0.6768442810480478
+          },
+          {
+            "unit": 26,
+            "loss": 0.6924632523812021
+          },
+          {
+            "unit": 27,
+            "loss": 0.6584330173076199
+          },
+          {
+            "unit": 28,
+            "loss": 0.6754516739246383
+          },
+          {
+            "unit": 29,
+            "loss": 0.6067770273857269
+          },
+          {
+            "unit": 30,
+            "loss": 0.6725965111750414
+          },
+          {
+            "unit": 31,
+            "loss": 0.6647867293982249
+          }
+        ]
+      },
+      {
+        "step": 4,
+        "added": 17,
+        "loss": 0.40506169464221864,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.42784451530624934
+          },
+          {
+            "unit": 1,
+            "loss": 0.5099913707613319
+          },
+          {
+            "unit": 3,
+            "loss": 0.5230223665575706
+          },
+          {
+            "unit": 5,
+            "loss": 0.5389481288320789
+          },
+          {
+            "unit": 6,
+            "loss": 0.4333835288642288
+          },
+          {
+            "unit": 7,
+            "loss": 0.5278389803850756
+          },
+          {
+            "unit": 8,
+            "loss": 0.5367178342387844
+          },
+          {
+            "unit": 9,
+            "loss": 0.553721079539027
+          },
+          {
+            "unit": 10,
+            "loss": 0.5033500049288181
+          },
+          {
+            "unit": 11,
+            "loss": 0.5183006342564208
+          },
+          {
+            "unit": 12,
+            "loss": 0.5190760046102356
+          },
+          {
+            "unit": 13,
+            "loss": 0.5224178302910474
+          },
+          {
+            "unit": 14,
+            "loss": 0.4638571657549696
+          },
+          {
+            "unit": 15,
+            "loss": 0.4493943389010203
+          },
+          {
+            "unit": 16,
+            "loss": 0.5211295480543284
+          },
+          {
+            "unit": 17,
+            "loss": 0.40506169464221864
+          },
+          {
+            "unit": 19,
+            "loss": 0.45957453088465083
+          },
+          {
+            "unit": 20,
+            "loss": 0.5270372195895956
+          },
+          {
+            "unit": 21,
+            "loss": 0.5072656088193518
+          },
+          {
+            "unit": 22,
+            "loss": 0.4833062710131106
+          },
+          {
+            "unit": 23,
+            "loss": 0.4444966845451654
+          },
+          {
+            "unit": 24,
+            "loss": 0.4640569526781557
+          },
+          {
+            "unit": 25,
+            "loss": 0.5009010573340722
+          },
+          {
+            "unit": 26,
+            "loss": 0.5312629651221924
+          },
+          {
+            "unit": 27,
+            "loss": 0.5090451040624288
+          },
+          {
+            "unit": 28,
+            "loss": 0.5149911231507358
+          },
+          {
+            "unit": 29,
+            "loss": 0.4861909001096513
+          },
+          {
+            "unit": 30,
+            "loss": 0.5160219814679158
+          },
+          {
+            "unit": 31,
+            "loss": 0.5100687064510021
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "added": 6,
+        "loss": 0.31672581557942914,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.3179132660308723
+          },
+          {
+            "unit": 1,
+            "loss": 0.3873265918697131
+          },
+          {
+            "unit": 3,
+            "loss": 0.40618410729776255
+          },
+          {
+            "unit": 5,
+            "loss": 0.4110092023442419
+          },
+          {
+            "unit": 6,
+            "loss": 0.31672581557942914
+          },
+          {
+            "unit": 7,
+            "loss": 0.40308673876889134
+          },
+          {
+            "unit": 8,
+            "loss": 0.4085566108765414
+          },
+          {
+            "unit": 9,
+            "loss": 0.44716666412027906
+          },
+          {
+            "unit": 10,
+            "loss": 0.39578929435488835
+          },
+          {
+            "unit": 11,
+            "loss": 0.3998540972818145
+          },
+          {
+            "unit": 12,
+            "loss": 0.3921468151279268
+          },
+          {
+            "unit": 13,
+            "loss": 0.40361335283630495
+          },
+          {
+            "unit": 14,
+            "loss": 0.3649520474213798
+          },
+          {
+            "unit": 15,
+            "loss": 0.35737310065239214
+          },
+          {
+            "unit": 16,
+            "loss": 0.4051038577298367
+          },
+          {
+            "unit": 19,
+            "loss": 0.34474240397266975
+          },
+          {
+            "unit": 20,
+            "loss": 0.4029859483414544
+          },
+          {
+            "unit": 21,
+            "loss": 0.3885542314570003
+          },
+          {
+            "unit": 22,
+            "loss": 0.3753128037921829
+          },
+          {
+            "unit": 23,
+            "loss": 0.3369671450746856
+          },
+          {
+            "unit": 24,
+            "loss": 0.3528580993227838
+          },
+          {
+            "unit": 25,
+            "loss": 0.40984483468304667
+          },
+          {
+            "unit": 26,
+            "loss": 0.4130532092700896
+          },
+          {
+            "unit": 27,
+            "loss": 0.3979167650365451
+          },
+          {
+            "unit": 28,
+            "loss": 0.3930862036487147
+          },
+          {
+            "unit": 29,
+            "loss": 0.3640577585443542
+          },
+          {
+            "unit": 30,
+            "loss": 0.39729708995471713
+          },
+          {
+            "unit": 31,
+            "loss": 0.3833613589398165
+          }
+        ]
+      },
+      {
+        "step": 6,
+        "added": 0,
+        "loss": 0.2571008755589002,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.2571008755589002
+          },
+          {
+            "unit": 1,
+            "loss": 0.2959219407766188
+          },
+          {
+            "unit": 3,
+            "loss": 0.3173892770541106
+          },
+          {
+            "unit": 5,
+            "loss": 0.3133337960683797
+          },
+          {
+            "unit": 7,
+            "loss": 0.29002344545568126
+          },
+          {
+            "unit": 8,
+            "loss": 0.31682837633822797
+          },
+          {
+            "unit": 9,
+            "loss": 0.34132864152338915
+          },
+          {
+            "unit": 10,
+            "loss": 0.3099857168660634
+          },
+          {
+            "unit": 11,
+            "loss": 0.31070229805026844
+          },
+          {
+            "unit": 12,
+            "loss": 0.2998347158799061
+          },
+          {
+            "unit": 13,
+            "loss": 0.31495071355365545
+          },
+          {
+            "unit": 14,
+            "loss": 0.27258988479227
+          },
+          {
+            "unit": 15,
+            "loss": 0.2786940791270415
+          },
+          {
+            "unit": 16,
+            "loss": 0.31419034792843603
+          },
+          {
+            "unit": 19,
+            "loss": 0.3070572631383501
+          },
+          {
+            "unit": 20,
+            "loss": 0.3068205158663424
+          },
+          {
+            "unit": 21,
+            "loss": 0.30459091781206776
+          },
+          {
+            "unit": 22,
+            "loss": 0.30458041359790966
+          },
+          {
+            "unit": 23,
+            "loss": 0.2655841210612852
+          },
+          {
+            "unit": 24,
+            "loss": 0.27105963359229435
+          },
+          {
+            "unit": 25,
+            "loss": 0.31859685245620795
+          },
+          {
+            "unit": 26,
+            "loss": 0.3174658257283438
+          },
+          {
+            "unit": 27,
+            "loss": 0.3118254698343625
+          },
+          {
+            "unit": 28,
+            "loss": 0.30238239253519805
+          },
+          {
+            "unit": 29,
+            "loss": 0.2858986573940214
+          },
+          {
+            "unit": 30,
+            "loss": 0.3076854989817175
+          },
+          {
+            "unit": 31,
+            "loss": 0.293106751841281
+          }
+        ]
+      },
+      {
+        "step": 7,
+        "added": 7,
+        "loss": 0.2038775371872622,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.23076190340583225
+          },
+          {
+            "unit": 3,
+            "loss": 0.25476463265166177
+          },
+          {
+            "unit": 5,
+            "loss": 0.2488736194812147
+          },
+          {
+            "unit": 7,
+            "loss": 0.2038775371872622
+          },
+          {
+            "unit": 8,
+            "loss": 0.2521404129630765
+          },
+          {
+            "unit": 9,
+            "loss": 0.260251849766275
+          },
+          {
+            "unit": 10,
+            "loss": 0.25458768260201803
+          },
+          {
+            "unit": 11,
+            "loss": 0.24977127412296507
+          },
+          {
+            "unit": 12,
+            "loss": 0.23043805232199524
+          },
+          {
+            "unit": 13,
+            "loss": 0.2534560258185714
+          },
+          {
+            "unit": 14,
+            "loss": 0.2129096656579083
+          },
+          {
+            "unit": 15,
+            "loss": 0.22459277535422184
+          },
+          {
+            "unit": 16,
+            "loss": 0.25224905874059556
+          },
+          {
+            "unit": 19,
+            "loss": 0.2667969659778525
+          },
+          {
+            "unit": 20,
+            "loss": 0.23888554666230521
+          },
+          {
+            "unit": 21,
+            "loss": 0.2509799507492121
+          },
+          {
+            "unit": 22,
+            "loss": 0.26268966582909314
+          },
+          {
+            "unit": 23,
+            "loss": 0.2645775772992115
+          },
+          {
+            "unit": 24,
+            "loss": 0.2221408494168134
+          },
+          {
+            "unit": 25,
+            "loss": 0.23385398474377508
+          },
+          {
+            "unit": 26,
+            "loss": 0.252442522121117
+          },
+          {
+            "unit": 27,
+            "loss": 0.2556992748577203
+          },
+          {
+            "unit": 28,
+            "loss": 0.23789230990213178
+          },
+          {
+            "unit": 29,
+            "loss": 0.2566387667272529
+          },
+          {
+            "unit": 30,
+            "loss": 0.2460975470286457
+          },
+          {
+            "unit": 31,
+            "loss": 0.23460021170668258
+          }
+        ]
+      },
+      {
+        "step": 8,
+        "added": 15,
+        "loss": 0.15856633160700354,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.19679945626009118
+          },
+          {
+            "unit": 3,
+            "loss": 0.20236044864871922
+          },
+          {
+            "unit": 5,
+            "loss": 0.19467017119933355
+          },
+          {
+            "unit": 8,
+            "loss": 0.21168080538561504
+          },
+          {
+            "unit": 9,
+            "loss": 0.2186197956032279
+          },
+          {
+            "unit": 10,
+            "loss": 0.19777033181620035
+          },
+          {
+            "unit": 11,
+            "loss": 0.2013444351622851
+          },
+          {
+            "unit": 12,
+            "loss": 0.20677226852414143
+          },
+          {
+            "unit": 13,
+            "loss": 0.2043035480064152
+          },
+          {
+            "unit": 14,
+            "loss": 0.15897252419870256
+          },
+          {
+            "unit": 15,
+            "loss": 0.15856633160700354
+          },
+          {
+            "unit": 16,
+            "loss": 0.20073609640202894
+          },
+          {
+            "unit": 19,
+            "loss": 0.1866740873294665
+          },
+          {
+            "unit": 20,
+            "loss": 0.20657137901017014
+          },
+          {
+            "unit": 21,
+            "loss": 0.19364252137443827
+          },
+          {
+            "unit": 22,
+            "loss": 0.19392304416933273
+          },
+          {
+            "unit": 23,
+            "loss": 0.184067733881906
+          },
+          {
+            "unit": 24,
+            "loss": 0.16052030735262793
+          },
+          {
+            "unit": 25,
+            "loss": 0.19254772301451561
+          },
+          {
+            "unit": 26,
+            "loss": 0.20463191400855357
+          },
+          {
+            "unit": 27,
+            "loss": 0.19994572361829166
+          },
+          {
+            "unit": 28,
+            "loss": 0.2005393604804926
+          },
+          {
+            "unit": 29,
+            "loss": 0.18506916927550562
+          },
+          {
+            "unit": 30,
+            "loss": 0.2002227443272176
+          },
+          {
+            "unit": 31,
+            "loss": 0.17983319646278856
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "added": 24,
+        "loss": 0.12556700656013603,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.14613374978148086
+          },
+          {
+            "unit": 3,
+            "loss": 0.15836389802303263
+          },
+          {
+            "unit": 5,
+            "loss": 0.15360029401826136
+          },
+          {
+            "unit": 8,
+            "loss": 0.16012631303519145
+          },
+          {
+            "unit": 9,
+            "loss": 0.17563731855589867
+          },
+          {
+            "unit": 10,
+            "loss": 0.15547710274582863
+          },
+          {
+            "unit": 11,
+            "loss": 0.1546510792991608
+          },
+          {
+            "unit": 12,
+            "loss": 0.15179447010091238
+          },
+          {
+            "unit": 13,
+            "loss": 0.15762504259553808
+          },
+          {
+            "unit": 14,
+            "loss": 0.12850244471338165
+          },
+          {
+            "unit": 16,
+            "loss": 0.15650402762981344
+          },
+          {
+            "unit": 19,
+            "loss": 0.1507462750256402
+          },
+          {
+            "unit": 20,
+            "loss": 0.15464753410533094
+          },
+          {
+            "unit": 21,
+            "loss": 0.1499278008403665
+          },
+          {
+            "unit": 22,
+            "loss": 0.1526918980928307
+          },
+          {
+            "unit": 23,
+            "loss": 0.14334011651003903
+          },
+          {
+            "unit": 24,
+            "loss": 0.12556700656013603
+          },
+          {
+            "unit": 25,
+            "loss": 0.15630193652851065
+          },
+          {
+            "unit": 26,
+            "loss": 0.15939608507781394
+          },
+          {
+            "unit": 27,
+            "loss": 0.15624547719578144
+          },
+          {
+            "unit": 28,
+            "loss": 0.1503514369895786
+          },
+          {
+            "unit": 29,
+            "loss": 0.14014040398482697
+          },
+          {
+            "unit": 30,
+            "loss": 0.15276939652759378
+          },
+          {
+            "unit": 31,
+            "loss": 0.13977723040293077
+          }
+        ]
+      },
+      {
+        "step": 10,
+        "added": 14,
+        "loss": 0.10446358754862493,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.10986474428305881
+          },
+          {
+            "unit": 3,
+            "loss": 0.12551547838021956
+          },
+          {
+            "unit": 5,
+            "loss": 0.125606358749983
+          },
+          {
+            "unit": 8,
+            "loss": 0.12338501372555621
+          },
+          {
+            "unit": 9,
+            "loss": 0.13954383237203088
+          },
+          {
+            "unit": 10,
+            "loss": 0.12341624771882842
+          },
+          {
+            "unit": 11,
+            "loss": 0.12083397411743743
+          },
+          {
+            "unit": 12,
+            "loss": 0.11280218848411436
+          },
+          {
+            "unit": 13,
+            "loss": 0.123591485744968
+          },
+          {
+            "unit": 14,
+            "loss": 0.10446358754862493
+          },
+          {
+            "unit": 16,
+            "loss": 0.12392897062808718
+          },
+          {
+            "unit": 19,
+            "loss": 0.12451105021533053
+          },
+          {
+            "unit": 20,
+            "loss": 0.11782508634121627
+          },
+          {
+            "unit": 21,
+            "loss": 0.1194209896191386
+          },
+          {
+            "unit": 22,
+            "loss": 0.12310068902184168
+          },
+          {
+            "unit": 23,
+            "loss": 0.12141723389176659
+          },
+          {
+            "unit": 25,
+            "loss": 0.12309970700999386
+          },
+          {
+            "unit": 26,
+            "loss": 0.12577044567344228
+          },
+          {
+            "unit": 27,
+            "loss": 0.12384439816375356
+          },
+          {
+            "unit": 28,
+            "loss": 0.11436946510908436
+          },
+          {
+            "unit": 29,
+            "loss": 0.11561580145189897
+          },
+          {
+            "unit": 30,
+            "loss": 0.11851560813401046
+          },
+          {
+            "unit": 31,
+            "loss": 0.11348952285182616
+          }
+        ]
+      },
+      {
+        "step": 11,
+        "added": 1,
+        "loss": 0.08670529207904132,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.08670529207904132
+          },
+          {
+            "unit": 3,
+            "loss": 0.10557254013975881
+          },
+          {
+            "unit": 5,
+            "loss": 0.11111772272143433
+          },
+          {
+            "unit": 8,
+            "loss": 0.09805539914616612
+          },
+          {
+            "unit": 9,
+            "loss": 0.12313283571596884
+          },
+          {
+            "unit": 10,
+            "loss": 0.10386877665795372
+          },
+          {
+            "unit": 11,
+            "loss": 0.09922150743261868
+          },
+          {
+            "unit": 12,
+            "loss": 0.08722138885664633
+          },
+          {
+            "unit": 13,
+            "loss": 0.10166894693431204
+          },
+          {
+            "unit": 16,
+            "loss": 0.10445476910415524
+          },
+          {
+            "unit": 19,
+            "loss": 0.10185100664103963
+          },
+          {
+            "unit": 20,
+            "loss": 0.09458130501535672
+          },
+          {
+            "unit": 21,
+            "loss": 0.09931838216259815
+          },
+          {
+            "unit": 22,
+            "loss": 0.10151748735364768
+          },
+          {
+            "unit": 23,
+            "loss": 0.10111023838672055
+          },
+          {
+            "unit": 25,
+            "loss": 0.10989449944510082
+          },
+          {
+            "unit": 26,
+            "loss": 0.10647795912464408
+          },
+          {
+            "unit": 27,
+            "loss": 0.10325037353326726
+          },
+          {
+            "unit": 28,
+            "loss": 0.0911838792566162
+          },
+          {
+            "unit": 29,
+            "loss": 0.09280039890970035
+          },
+          {
+            "unit": 30,
+            "loss": 0.09663371839716889
+          },
+          {
+            "unit": 31,
+            "loss": 0.09910559994486683
+          }
+        ]
+      },
+      {
+        "step": 12,
+        "added": 29,
+        "loss": 0.06992561616393442,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.08785453673960404
+          },
+          {
+            "unit": 5,
+            "loss": 0.09169558381097116
+          },
+          {
+            "unit": 8,
+            "loss": 0.08506576487714845
+          },
+          {
+            "unit": 9,
+            "loss": 0.10776550731443597
+          },
+          {
+            "unit": 10,
+            "loss": 0.08495875508128148
+          },
+          {
+            "unit": 11,
+            "loss": 0.08336975003294084
+          },
+          {
+            "unit": 12,
+            "loss": 0.08020030156221565
+          },
+          {
+            "unit": 13,
+            "loss": 0.08532688338787489
+          },
+          {
+            "unit": 16,
+            "loss": 0.08691875610122701
+          },
+          {
+            "unit": 19,
+            "loss": 0.07916619003132214
+          },
+          {
+            "unit": 20,
+            "loss": 0.08387038569216523
+          },
+          {
+            "unit": 21,
+            "loss": 0.08044094616675075
+          },
+          {
+            "unit": 22,
+            "loss": 0.07993795958075067
+          },
+          {
+            "unit": 23,
+            "loss": 0.0762924420175162
+          },
+          {
+            "unit": 25,
+            "loss": 0.09399166848245336
+          },
+          {
+            "unit": 26,
+            "loss": 0.09031537292833802
+          },
+          {
+            "unit": 27,
+            "loss": 0.08473090428703278
+          },
+          {
+            "unit": 28,
+            "loss": 0.07941659300298265
+          },
+          {
+            "unit": 29,
+            "loss": 0.06992561616393442
+          },
+          {
+            "unit": 30,
+            "loss": 0.0818042739012109
+          },
+          {
+            "unit": 31,
+            "loss": 0.08003250502781445
+          }
+        ]
+      },
+      {
+        "step": 13,
+        "added": 12,
+        "loss": 0.054455369091344075,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.06893196703766644
+          },
+          {
+            "unit": 5,
+            "loss": 0.07564135107380572
+          },
+          {
+            "unit": 8,
+            "loss": 0.06497703124831058
+          },
+          {
+            "unit": 9,
+            "loss": 0.07694701853947764
+          },
+          {
+            "unit": 10,
+            "loss": 0.0691984348060902
+          },
+          {
+            "unit": 11,
+            "loss": 0.06528950583126278
+          },
+          {
+            "unit": 12,
+            "loss": 0.054455369091344075
+          },
+          {
+            "unit": 13,
+            "loss": 0.06702320886978136
+          },
+          {
+            "unit": 16,
+            "loss": 0.06869237247841828
+          },
+          {
+            "unit": 19,
+            "loss": 0.07277331115904506
+          },
+          {
+            "unit": 20,
+            "loss": 0.060533514520428995
+          },
+          {
+            "unit": 21,
+            "loss": 0.06779562210775958
+          },
+          {
+            "unit": 22,
+            "loss": 0.0724262489337256
+          },
+          {
+            "unit": 23,
+            "loss": 0.09386183516988748
+          },
+          {
+            "unit": 25,
+            "loss": 0.06487436999204173
+          },
+          {
+            "unit": 26,
+            "loss": 0.06885872542211902
+          },
+          {
+            "unit": 27,
+            "loss": 0.06934446245649517
+          },
+          {
+            "unit": 28,
+            "loss": 0.05807914862052755
+          },
+          {
+            "unit": 30,
+            "loss": 0.06301931905802699
+          },
+          {
+            "unit": 31,
+            "loss": 0.06716324699045408
+          }
+        ]
+      },
+      {
+        "step": 14,
+        "added": 19,
+        "loss": 0.0489607486691868,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.0534357245448533
+          },
+          {
+            "unit": 5,
+            "loss": 0.05684460795169347
+          },
+          {
+            "unit": 8,
+            "loss": 0.05672418193328958
+          },
+          {
+            "unit": 9,
+            "loss": 0.0644876830911201
+          },
+          {
+            "unit": 10,
+            "loss": 0.05156738426325471
+          },
+          {
+            "unit": 11,
+            "loss": 0.05250544427132052
+          },
+          {
+            "unit": 13,
+            "loss": 0.053958938164808914
+          },
+          {
+            "unit": 16,
+            "loss": 0.053449931126143574
+          },
+          {
+            "unit": 19,
+            "loss": 0.0489607486691868
+          },
+          {
+            "unit": 20,
+            "loss": 0.05665686708396692
+          },
+          {
+            "unit": 21,
+            "loss": 0.050522332300940075
+          },
+          {
+            "unit": 22,
+            "loss": 0.050937270727802596
+          },
+          {
+            "unit": 23,
+            "loss": 0.06595971086293004
+          },
+          {
+            "unit": 25,
+            "loss": 0.05178764910656673
+          },
+          {
+            "unit": 26,
+            "loss": 0.05552627267415877
+          },
+          {
+            "unit": 27,
+            "loss": 0.05248872073522177
+          },
+          {
+            "unit": 28,
+            "loss": 0.05170356034629102
+          },
+          {
+            "unit": 30,
+            "loss": 0.05167055542612059
+          },
+          {
+            "unit": 31,
+            "loss": 0.04912989445537286
+          }
+        ]
+      },
+      {
+        "step": 15,
+        "added": 20,
+        "loss": 0.041334773437686156,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.04748676910143629
+          },
+          {
+            "unit": 5,
+            "loss": 0.04607418945822905
+          },
+          {
+            "unit": 8,
+            "loss": 0.04592905276296564
+          },
+          {
+            "unit": 9,
+            "loss": 0.0453550152811107
+          },
+          {
+            "unit": 10,
+            "loss": 0.04825866831248222
+          },
+          {
+            "unit": 11,
+            "loss": 0.0458019545065772
+          },
+          {
+            "unit": 13,
+            "loss": 0.0473827483650402
+          },
+          {
+            "unit": 16,
+            "loss": 0.04608223854172152
+          },
+          {
+            "unit": 20,
+            "loss": 0.041334773437686156
+          },
+          {
+            "unit": 21,
+            "loss": 0.049007335455643605
+          },
+          {
+            "unit": 22,
+            "loss": 0.06068880684962332
+          },
+          {
+            "unit": 23,
+            "loss": 0.0736225837330322
+          },
+          {
+            "unit": 25,
+            "loss": 0.04515031283796119
+          },
+          {
+            "unit": 26,
+            "loss": 0.04374645059914915
+          },
+          {
+            "unit": 27,
+            "loss": 0.04877142211830574
+          },
+          {
+            "unit": 28,
+            "loss": 0.04192872286815391
+          },
+          {
+            "unit": 30,
+            "loss": 0.04433421338283314
+          },
+          {
+            "unit": 31,
+            "loss": 0.04324817640730732
+          }
+        ]
+      },
+      {
+        "step": 16,
+        "added": 31,
+        "loss": 0.03494216783370544,
+        "candidates": [
+          {
+            "unit": 3,
+            "loss": 0.03993917364949326
+          },
+          {
+            "unit": 5,
+            "loss": 0.03765280081116289
+          },
+          {
+            "unit": 8,
+            "loss": 0.04295687138571747
+          },
+          {
+            "unit": 9,
+            "loss": 0.04123545474067836
+          },
+          {
+            "unit": 10,
+            "loss": 0.03876412095930481
+          },
+          {
+            "unit": 11,
+            "loss": 0.0400089289594482
+          },
+          {
+            "unit": 13,
+            "loss": 0.04133908639697996
+          },
+          {
+            "unit": 16,
+            "loss": 0.0389004095566267
+          },
+          {
+            "unit": 21,
+            "loss": 0.03986931695202362
+          },
+          {
+            "unit": 22,
+            "loss": 0.04716219624759349
+          },
+          {
+            "unit": 23,
+            "loss": 0.055641602346763075
+          },
+          {
+            "unit": 25,
+            "loss": 0.039003062786571084
+          },
+          {
+            "unit": 26,
+            "loss": 0.038965237670173805
+          },
+          {
+            "unit": 27,
+            "loss": 0.03982107951595261
+          },
+          {
+            "unit": 28,
+            "loss": 0.040400234927334105
+          },
+          {
+            "unit": 30,
+            "loss": 0.03955608312270574
+          },
+          {
+            "unit": 31,
+            "loss": 0.03494216783370544
+          }
+        ]
+      }
+    ],
+    "planted": [
+      {
+        "step": 1,
+        "added": 26,
+        "loss": 1.6093221759132736,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 2.4145149679654248
+          },
+          {
+            "unit": 1,
+            "loss": 2.2005820284617355
+          },
+          {
+            "unit": 2,
+            "loss": 2.591130689564984
+          },
+          {
+            "unit": 3,
+            "loss": 2.255240669019739
+          },
+          {
+            "unit": 4,
+            "loss": 2.366887745893841
+          },
+          {
+            "unit": 5,
+            "loss": 2.2712250671272605
+          },
+          {
+            "unit": 6,
+            "loss": 2.4465909942564172
+          },
+          {
+            "unit": 7,
+            "loss": 2.4322786710383864
+          },
+          {
+            "unit": 8,
+            "loss": 2.023719536133955
+          },
+          {
+            "unit": 9,
+            "loss": 2.1971331914019063
+          },
+          {
+            "unit": 10,
+            "loss": 2.34637108276696
+          },
+          {
+            "unit": 11,
+            "loss": 2.200092914688414
+          },
+          {
+            "unit": 12,
+            "loss": 2.9485355980937484
+          },
+          {
+            "unit": 13,
+            "loss": 2.2860820704458193
+          },
+          {
+            "unit": 14,
+            "loss": 4.198324876345969
+          },
+          {
+            "unit": 15,
+            "loss": 2.0523936725899183
+          },
+          {
+            "unit": 16,
+            "loss": 2.4857878409177934
+          },
+          {
+            "unit": 17,
+            "loss": 2.2176136741065244
+          },
+          {
+            "unit": 18,
+            "loss": 2.38479268349363
+          },
+          {
+            "unit": 19,
+            "loss": 2.4855029713076706
+          },
+          {
+            "unit": 20,
+            "loss": 2.2584540780996787
+          },
+          {
+            "unit": 21,
+            "loss": 2.461899453230097
+          },
+          {
+            "unit": 22,
+            "loss": 2.7764562607724974
+          },
+          {
+            "unit": 23,
+            "loss": 3.1727606357860925
+          },
+          {
+            "unit": 24,
+            "loss": 2.4983483772905686
+          },
+          {
+            "unit": 25,
+            "loss": 2.388984104911438
+          },
+          {
+            "unit": 26,
+            "loss": 1.6093221759132736
+          },
+          {
+            "unit": 27,
+            "loss": 2.51132126736112
+          },
+          {
+            "unit": 28,
+            "loss": 2.779373077441433
+          },
+          {
+            "unit": 29,
+            "loss": 1.853468478041871
+          },
+          {
+            "unit": 30,
+            "loss": 2.2917398337475987
+          },
+          {
+            "unit": 31,
+            "loss": 2.023814704414
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "added": 8,
+        "loss": 1.269291870239596,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 1.6230738297564862
+          },
+          {
+            "unit": 1,
+            "loss": 1.3651265082073318
+          },
+          {
+            "unit": 2,
+            "loss": 1.8585708869113575
+          },
+          {
+            "unit": 3,
+            "loss": 1.5004510912528408
+          },
+          {
+            "unit": 4,
+            "loss": 1.6531243450745186
+          },
+          {
+            "unit": 5,
+            "loss": 1.511138157028319
+          },
+          {
+            "unit": 6,
+            "loss": 1.6316138937563243
+          },
+          {
+            "unit": 7,
+            "loss": 1.5946066551382174
+          },
+          {
+            "unit": 8,
+            "loss": 1.269291870239596
+          },
+          {
+            "unit": 9,
+            "loss": 1.3409837219616882
+          },
+          {
+            "unit": 10,
+            "loss": 1.6326137312706908
+          },
+          {
+            "unit": 11,
+            "loss": 1.362894462431711
+          },
+          {
+            "unit": 12,
+            "loss": 2.0570932230604653
+          },
+          {
+            "unit": 13,
+            "loss": 1.547979138213328
+          },
+          {
+            "unit": 14,
+            "loss": 3.5947996881591617
+          },
+          {
+            "unit": 15,
+            "loss": 1.4072666132073137
+          },
+          {
+            "unit": 16,
+            "loss": 1.7394240138354653
+          },
+          {
+            "unit": 17,
+            "loss": 1.4383331326420756
+          },
+          {
+            "unit": 18,
+            "loss": 1.5359157684359865
+          },
+          {
+            "unit": 19,
+            "loss": 1.6735244574904553
+          },
+          {
+            "unit": 20,
+            "loss": 1.5488044655040993
+          },
+          {
+            "unit": 21,
+            "loss": 1.7368208461401027
+          },
+          {
+            "unit": 22,
+            "loss": 2.0476043619232613
+          },
+          {
+            "unit": 23,
+            "loss": 2.2297679992255084
+          },
+          {
+            "unit": 24,
+            "loss": 1.8423465030198818
+          },
+          {
+            "unit": 25,
+            "loss": 1.5806371084640598
+          },
+          {
+            "unit": 27,
+            "loss": 1.7627772648958757
+          },
+          {
+            "unit": 28,
+            "loss": 1.9293100242005208
+          },
+          {
+            "unit": 29,
+            "loss": 1.334246999007476
+          },
+          {
+            "unit": 30,
+            "loss": 1.4756690133891253
+          },
+          {
+            "unit": 31,
+            "loss": 1.3427601858703335
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "added": 24,
+        "loss": 0.9169737754121177,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 1.2710994060130574
+          },
+          {
+            "unit": 1,
+            "loss": 1.4675923490483618
+          },
+          {
+            "unit": 2,
+            "loss": 1.3120305984413543
+          },
+          {
+            "unit": 3,
+            "loss": 1.2294755509191793
+          },
+          {
+            "unit": 4,
+            "loss": 1.1751596994454458
+          },
+          {
+            "unit": 5,
+            "loss": 1.3582230190668967
+          },
+          {
+            "unit": 6,
+            "loss": 1.2416731666720486
+          },
+          {
+            "unit": 7,
+            "loss": 1.2188944641017267
+          },
+          {
+            "unit": 9,
+            "loss": 1.7745752847327487
+          },
+          {
+            "unit": 10,
+            "loss": 1.1692724622645674
+          },
+          {
+            "unit": 11,
+            "loss": 1.6590567697474152
+          },
+          {
+            "unit": 12,
+            "loss": 1.5115581145417787
+          },
+          {
+            "unit": 13,
+            "loss": 1.1905771207196254
+          },
+          {
+            "unit": 14,
+            "loss": 1.354105043250347
+          },
+          {
+            "unit": 15,
+            "loss": 1.1598967007080392
+          },
+          {
+            "unit": 16,
+            "loss": 1.1129710450189363
+          },
+          {
+            "unit": 17,
+            "loss": 1.2908625743093731
+          },
+          {
+            "unit": 18,
+            "loss": 2.105796375887408
+          },
+          {
+            "unit": 19,
+            "loss": 1.2681314773851229
+          },
+          {
+            "unit": 20,
+            "loss": 1.132592954320125
+          },
+          {
+            "unit": 21,
+            "loss": 1.0742446341548748
+          },
+          {
+            "unit": 22,
+            "loss": 1.0782864894437663
+          },
+          {
+            "unit": 23,
+            "loss": 2.571731624295068
+          },
+          {
+            "unit": 24,
+            "loss": 0.9169737754121177
+          },
+          {
+            "unit": 25,
+            "loss": 1.1797401326795394
+          },
+          {
+            "unit": 27,
+            "loss": 1.1067014471534287
+          },
+          {
+            "unit": 28,
+            "loss": 1.4289926782410824
+          },
+          {
+            "unit": 29,
+            "loss": 0.9800740748420708
+          },
+          {
+            "unit": 30,
+            "loss": 1.328221656131526
+          },
+          {
+            "unit": 31,
+            "loss": 1.4256071170568276
+          }
+        ]
+      },
+      {
+        "step": 4,
+        "added": 29,
+        "loss": 0.727063619894423,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.9215611796685482
+          },
+          {
+            "unit": 1,
+            "loss": 0.950567744582599
+          },
+          {
+            "unit": 2,
+            "loss": 0.9229945892009189
+          },
+          {
+            "unit": 3,
+            "loss": 0.9325922637827484
+          },
+          {
+            "unit": 4,
+            "loss": 0.9281891126253299
+          },
+          {
+            "unit": 5,
+            "loss": 0.919734461403288
+          },
+          {
+            "unit": 6,
+            "loss": 0.9131197596168272
+          },
+          {
+            "unit": 7,
+            "loss": 0.9084499408654065
+          },
+          {
+            "unit": 9,
+            "loss": 1.1442742843896878
+          },
+          {
+            "unit": 10,
+            "loss": 1.0452372706058806
+          },
+          {
+            "unit": 11,
+            "loss": 1.072398767903005
+          },
+          {
+            "unit": 12,
+            "loss": 1.0516433239287166
+          },
+          {
+            "unit": 13,
+            "loss": 0.8486547981480311
+          },
+          {
+            "unit": 14,
+            "loss": 1.6015191282044754
+          },
+          {
+            "unit": 15,
+            "loss": 1.037813202143734
+          },
+          {
+            "unit": 16,
+            "loss": 0.895745878591335
+          },
+          {
+            "unit": 17,
+            "loss": 0.916773245363691
+          },
+          {
+            "unit": 18,
+            "loss": 1.320968018956668
+          },
+          {
+            "unit": 19,
+            "loss": 0.9400534766960111
+          },
+          {
+            "unit": 20,
+            "loss": 0.800158999218846
+          },
+          {
+            "unit": 21,
+            "loss": 0.9238260498994922
+          },
+          {
+            "unit": 22,
+            "loss": 0.9430211446725139
+          },
+          {
+            "unit": 23,
+            "loss": 1.6527608821848825
+          },
+          {
+            "unit": 25,
+            "loss": 0.8600473954809371
+          },
+          {
+            "unit": 27,
+            "loss": 0.9059624715459501
+          },
+          {
+            "unit": 28,
+            "loss": 0.9863687790625201
+          },
+          {
+            "unit": 29,
+            "loss": 0.727063619894423
+          },
+          {
+            "unit": 30,
+            "loss": 0.8949896489118039
+          },
+          {
+            "unit": 31,
+            "loss": 1.177642642076441
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "added": 7,
+        "loss": 0.6135098926346467,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.7293005642653717
+          },
+          {
+            "unit": 1,
+            "loss": 0.7141531370524195
+          },
+          {
+            "unit": 2,
+            "loss": 0.7705433702391704
+          },
+          {
+            "unit": 3,
+            "loss": 0.7634558537954699
+          },
+          {
+            "unit": 4,
+            "loss": 0.8319384748823557
+          },
+          {
+            "unit": 5,
+            "loss": 0.7392134476687128
+          },
+          {
+            "unit": 6,
+            "loss": 0.7045816680193251
+          },
+          {
+            "unit": 7,
+            "loss": 0.6135098926346467
+          },
+          {
+            "unit": 9,
+            "loss": 0.9008723300428997
+          },
+          {
+            "unit": 10,
+            "loss": 0.9125863690577515
+          },
+          {
+            "unit": 11,
+            "loss": 0.8374337065751101
+          },
+          {
+            "unit": 12,
+            "loss": 0.751419917082509
+          },
+          {
+            "unit": 13,
+            "loss": 0.6860151018273011
+          },
+          {
+            "unit": 14,
+            "loss": 1.5304042969362932
+          },
+          {
+            "unit": 15,
+            "loss": 0.9589096641137188
+          },
+          {
+            "unit": 16,
+            "loss": 0.7316103984680351
+          },
+          {
+            "unit": 17,
+            "loss": 0.7183716874420784
+          },
+          {
+            "unit": 18,
+            "loss": 1.101186140623179
+          },
+          {
+            "unit": 19,
+            "loss": 0.7355211459969421
+          },
+          {
+            "unit": 20,
+            "loss": 0.6310535148034776
+          },
+          {
+            "unit": 21,
+            "loss": 0.7839394120494385
+          },
+          {
+            "unit": 22,
+            "loss": 0.8108593546502042
+          },
+          {
+            "unit": 23,
+            "loss": 1.3373094635793723
+          },
+          {
+            "unit": 25,
+            "loss": 0.655002190929071
+          },
+          {
+            "unit": 27,
+            "loss": 0.7448553404516083
+          },
+          {
+            "unit": 28,
+            "loss": 0.7273475693435558
+          },
+          {
+            "unit": 30,
+            "loss": 0.6756157155307294
+          },
+          {
+            "unit": 31,
+            "loss": 1.0654106771097203
+          }
+        ]
+      },
+      {
+        "step": 6,
+        "added": 30,
+        "loss": 0.567546539997348,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.6088833450801137
+          },
+          {
+            "unit": 1,
+            "loss": 0.6260156789224753
+          },
+          {
+            "unit": 2,
+            "loss": 0.5832665304318667
+          },
+          {
+            "unit": 3,
+            "loss": 0.664590204596105
+          },
+          {
+            "unit": 4,
+            "loss": 0.6190627452094399
+          },
+          {
+            "unit": 5,
+            "loss": 0.5931821690503578
+          },
+          {
+            "unit": 6,
+            "loss": 0.5991313962765767
+          },
+          {
+            "unit": 9,
+            "loss": 0.7598210035313157
+          },
+          {
+            "unit": 10,
+            "loss": 0.8451234648892288
+          },
+          {
+            "unit": 11,
+            "loss": 0.7034921690580136
+          },
+          {
+            "unit": 12,
+            "loss": 0.7425451271255454
+          },
+          {
+            "unit": 13,
+            "loss": 0.5805167825163047
+          },
+          {
+            "unit": 14,
+            "loss": 1.4756895507386671
+          },
+          {
+            "unit": 15,
+            "loss": 0.8648133028496344
+          },
+          {
+            "unit": 16,
+            "loss": 0.6399718593270167
+          },
+          {
+            "unit": 17,
+            "loss": 0.5862219538362157
+          },
+          {
+            "unit": 18,
+            "loss": 0.8677406000191605
+          },
+          {
+            "unit": 19,
+            "loss": 0.6057925854122699
+          },
+          {
+            "unit": 20,
+            "loss": 0.5778726322565921
+          },
+          {
+            "unit": 21,
+            "loss": 0.6975530971201855
+          },
+          {
+            "unit": 22,
+            "loss": 0.6919402733757012
+          },
+          {
+            "unit": 23,
+            "loss": 1.0936209146368714
+          },
+          {
+            "unit": 25,
+            "loss": 0.5860212486808802
+          },
+          {
+            "unit": 27,
+            "loss": 0.6521219723731305
+          },
+          {
+            "unit": 28,
+            "loss": 0.6612966983127454
+          },
+          {
+            "unit": 30,
+            "loss": 0.567546539997348
+          },
+          {
+            "unit": 31,
+            "loss": 0.9773934607635465
+          }
+        ]
+      },
+      {
+        "step": 7,
+        "added": 2,
+        "loss": 0.515673842595696,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.561269520706934
+          },
+          {
+            "unit": 1,
+            "loss": 0.6544783436675747
+          },
+          {
+            "unit": 2,
+            "loss": 0.515673842595696
+          },
+          {
+            "unit": 3,
+            "loss": 0.6185586134822028
+          },
+          {
+            "unit": 4,
+            "loss": 0.5458481795559551
+          },
+          {
+            "unit": 5,
+            "loss": 0.5681226705949652
+          },
+          {
+            "unit": 6,
+            "loss": 0.5483582491405946
+          },
+          {
+            "unit": 9,
+            "loss": 0.820031763587793
+          },
+          {
+            "unit": 10,
+            "loss": 0.7703741374109956
+          },
+          {
+            "unit": 11,
+            "loss": 0.7482179652348576
+          },
+          {
+            "unit": 12,
+            "loss": 0.6962925951249448
+          },
+          {
+            "unit": 13,
+            "loss": 0.5286726319319806
+          },
+          {
+            "unit": 14,
+            "loss": 1.2206056268502783
+          },
+          {
+            "unit": 15,
+            "loss": 0.7965429423767785
+          },
+          {
+            "unit": 16,
+            "loss": 0.5592877622199464
+          },
+          {
+            "unit": 17,
+            "loss": 0.5588708282472348
+          },
+          {
+            "unit": 18,
+            "loss": 0.9312472143363287
+          },
+          {
+            "unit": 19,
+            "loss": 0.5550988413426601
+          },
+          {
+            "unit": 20,
+            "loss": 0.5215184899517731
+          },
+          {
+            "unit": 21,
+            "loss": 0.6067500263530952
+          },
+          {
+            "unit": 22,
+            "loss": 0.5701264702088737
+          },
+          {
+            "unit": 23,
+            "loss": 1.1585747306011593
+          },
+          {
+            "unit": 25,
+            "loss": 0.5356763803617152
+          },
+          {
+            "unit": 27,
+            "loss": 0.5675033109854527
+          },
+          {
+            "unit": 28,
+            "loss": 0.6145227702409704
+          },
+          {
+            "unit": 31,
+            "loss": 0.955166367940814
+          }
+        ]
+      },
+      {
+        "step": 8,
+        "added": 25,
+        "loss": 0.4386223494472825,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.5101979733580266
+          },
+          {
+            "unit": 1,
+            "loss": 0.5403042493283241
+          },
+          {
+            "unit": 3,
+            "loss": 0.47344036244200427
+          },
+          {
+            "unit": 4,
+            "loss": 0.4797429990079013
+          },
+          {
+            "unit": 5,
+            "loss": 0.5385998826985952
+          },
+          {
+            "unit": 6,
+            "loss": 0.4718839065706839
+          },
+          {
+            "unit": 9,
+            "loss": 0.6511329156156367
+          },
+          {
+            "unit": 10,
+            "loss": 0.52219939362964
+          },
+          {
+            "unit": 11,
+            "loss": 0.6243470432864204
+          },
+          {
+            "unit": 12,
+            "loss": 0.8400769566750388
+          },
+          {
+            "unit": 13,
+            "loss": 0.5111073196382542
+          },
+          {
+            "unit": 14,
+            "loss": 1.5252645308418489
+          },
+          {
+            "unit": 15,
+            "loss": 0.49014406205852734
+          },
+          {
+            "unit": 16,
+            "loss": 0.5048387751443045
+          },
+          {
+            "unit": 17,
+            "loss": 0.44284811266267154
+          },
+          {
+            "unit": 18,
+            "loss": 0.9315601862400342
+          },
+          {
+            "unit": 19,
+            "loss": 0.48173518338386057
+          },
+          {
+            "unit": 20,
+            "loss": 0.5227806669986127
+          },
+          {
+            "unit": 21,
+            "loss": 0.4995201701386469
+          },
+          {
+            "unit": 22,
+            "loss": 0.6174430030259203
+          },
+          {
+            "unit": 23,
+            "loss": 1.3963114140546842
+          },
+          {
+            "unit": 25,
+            "loss": 0.4386223494472825
+          },
+          {
+            "unit": 27,
+            "loss": 0.5094511972679207
+          },
+          {
+            "unit": 28,
+            "loss": 0.7330284858635532
+          },
+          {
+            "unit": 31,
+            "loss": 0.589134623436676
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "added": 17,
+        "loss": 0.375778679832908,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.4308787596462255
+          },
+          {
+            "unit": 1,
+            "loss": 0.4560022956996263
+          },
+          {
+            "unit": 3,
+            "loss": 0.4106854880394712
+          },
+          {
+            "unit": 4,
+            "loss": 0.4001910424918155
+          },
+          {
+            "unit": 5,
+            "loss": 0.45009487088310274
+          },
+          {
+            "unit": 6,
+            "loss": 0.41682834800118423
+          },
+          {
+            "unit": 9,
+            "loss": 0.5760187613104426
+          },
+          {
+            "unit": 10,
+            "loss": 0.48616132786159716
+          },
+          {
+            "unit": 11,
+            "loss": 0.5303744297896273
+          },
+          {
+            "unit": 12,
+            "loss": 0.7501002549242155
+          },
+          {
+            "unit": 13,
+            "loss": 0.42627997348902963
+          },
+          {
+            "unit": 14,
+            "loss": 1.4801361133313333
+          },
+          {
+            "unit": 15,
+            "loss": 0.4582601305939178
+          },
+          {
+            "unit": 16,
+            "loss": 0.44199538391351756
+          },
+          {
+            "unit": 17,
+            "loss": 0.375778679832908
+          },
+          {
+            "unit": 18,
+            "loss": 0.7941869773312079
+          },
+          {
+            "unit": 19,
+            "loss": 0.4238032523965297
+          },
+          {
+            "unit": 20,
+            "loss": 0.43865596022923387
+          },
+          {
+            "unit": 21,
+            "loss": 0.44445400868888996
+          },
+          {
+            "unit": 22,
+            "loss": 0.5454427700688225
+          },
+          {
+            "unit": 23,
+            "loss": 1.233148226237374
+          },
+          {
+            "unit": 27,
+            "loss": 0.4482248974247648
+          },
+          {
+            "unit": 28,
+            "loss": 0.6384804556621685
+          },
+          {
+            "unit": 31,
+            "loss": 0.5490718787012523
+          }
+        ]
+      },
+      {
+        "step": 10,
+        "added": 20,
+        "loss": 0.3393530063404257,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.3694190661907293
+          },
+          {
+            "unit": 1,
+            "loss": 0.43743027568606313
+          },
+          {
+            "unit": 3,
+            "loss": 0.38710161210265526
+          },
+          {
+            "unit": 4,
+            "loss": 0.3608871044063183
+          },
+          {
+            "unit": 5,
+            "loss": 0.3837117886988808
+          },
+          {
+            "unit": 6,
+            "loss": 0.35340586340956975
+          },
+          {
+            "unit": 9,
+            "loss": 0.6158376117107965
+          },
+          {
+            "unit": 10,
+            "loss": 0.4946719059753929
+          },
+          {
+            "unit": 11,
+            "loss": 0.5335232225920623
+          },
+          {
+            "unit": 12,
+            "loss": 0.5642047605792978
+          },
+          {
+            "unit": 13,
+            "loss": 0.34452224808194637
+          },
+          {
+            "unit": 14,
+            "loss": 1.1766450157130746
+          },
+          {
+            "unit": 15,
+            "loss": 0.510605870035861
+          },
+          {
+            "unit": 16,
+            "loss": 0.36272633270196963
+          },
+          {
+            "unit": 18,
+            "loss": 0.7856399193410248
+          },
+          {
+            "unit": 19,
+            "loss": 0.37188940820703664
+          },
+          {
+            "unit": 20,
+            "loss": 0.3393530063404257
+          },
+          {
+            "unit": 21,
+            "loss": 0.3812320960243987
+          },
+          {
+            "unit": 22,
+            "loss": 0.41649792572731587
+          },
+          {
+            "unit": 23,
+            "loss": 1.1119993982477894
+          },
+          {
+            "unit": 27,
+            "loss": 0.3722676624041824
+          },
+          {
+            "unit": 28,
+            "loss": 0.4856143500082007
+          },
+          {
+            "unit": 31,
+            "loss": 0.6191550045036114
+          }
+        ]
+      },
+      {
+        "step": 11,
+        "added": 4,
+        "loss": 0.28327903038914826,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.32764604448935203
+          },
+          {
+            "unit": 1,
+            "loss": 0.3835468122063915
+          },
+          {
+            "unit": 3,
+            "loss": 0.3257492664132304
+          },
+          {
+            "unit": 4,
+            "loss": 0.28327903038914826
+          },
+          {
+            "unit": 5,
+            "loss": 0.3523610293370365
+          },
+          {
+            "unit": 6,
+            "loss": 0.3048373736728292
+          },
+          {
+            "unit": 9,
+            "loss": 0.5220459861277228
+          },
+          {
+            "unit": 10,
+            "loss": 0.4097369308417642
+          },
+          {
+            "unit": 11,
+            "loss": 0.4565997508274465
+          },
+          {
+            "unit": 12,
+            "loss": 0.6261552622279611
+          },
+          {
+            "unit": 13,
+            "loss": 0.33114992536382115
+          },
+          {
+            "unit": 14,
+            "loss": 1.3219964712616967
+          },
+          {
+            "unit": 15,
+            "loss": 0.40576763150365897
+          },
+          {
+            "unit": 16,
+            "loss": 0.3384005618240807
+          },
+          {
+            "unit": 18,
+            "loss": 0.707503711158098
+          },
+          {
+            "unit": 19,
+            "loss": 0.3164672410251039
+          },
+          {
+            "unit": 21,
+            "loss": 0.341848939482457
+          },
+          {
+            "unit": 22,
+            "loss": 0.41773227169960864
+          },
+          {
+            "unit": 23,
+            "loss": 1.1062322109636176
+          },
+          {
+            "unit": 27,
+            "loss": 0.34314947162125975
+          },
+          {
+            "unit": 28,
+            "loss": 0.521630895366963
+          },
+          {
+            "unit": 31,
+            "loss": 0.4969622659011471
+          }
+        ]
+      },
+      {
+        "step": 12,
+        "added": 6,
+        "loss": 0.2581650563401761,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.28052048965714965
+          },
+          {
+            "unit": 1,
+            "loss": 0.2723025265637546
+          },
+          {
+            "unit": 3,
+            "loss": 0.30217080937490515
+          },
+          {
+            "unit": 5,
+            "loss": 0.27270248223787696
+          },
+          {
+            "unit": 6,
+            "loss": 0.2581650563401761
+          },
+          {
+            "unit": 9,
+            "loss": 0.4012223198748
+          },
+          {
+            "unit": 10,
+            "loss": 0.45742413903527623
+          },
+          {
+            "unit": 11,
+            "loss": 0.34469870141911507
+          },
+          {
+            "unit": 12,
+            "loss": 0.4341326921349281
+          },
+          {
+            "unit": 13,
+            "loss": 0.2676825231382369
+          },
+          {
+            "unit": 14,
+            "loss": 1.3646682872293163
+          },
+          {
+            "unit": 15,
+            "loss": 0.4817924195878754
+          },
+          {
+            "unit": 16,
+            "loss": 0.3188455839642562
+          },
+          {
+            "unit": 18,
+            "loss": 0.5655776318205873
+          },
+          {
+            "unit": 19,
+            "loss": 0.2802715786438219
+          },
+          {
+            "unit": 21,
+            "loss": 0.35645278997446145
+          },
+          {
+            "unit": 22,
+            "loss": 0.42531751498019166
+          },
+          {
+            "unit": 23,
+            "loss": 0.860355547759645
+          },
+          {
+            "unit": 27,
+            "loss": 0.3329971893304291
+          },
+          {
+            "unit": 28,
+            "loss": 0.37160035009068365
+          },
+          {
+            "unit": 31,
+            "loss": 0.5313076271775532
+          }
+        ]
+      },
+      {
+        "step": 13,
+        "added": 5,
+        "loss": 0.23472298849302564,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.2584042033540662
+          },
+          {
+            "unit": 1,
+            "loss": 0.23728409928326402
+          },
+          {
+            "unit": 3,
+            "loss": 0.2862957723717502
+          },
+          {
+            "unit": 5,
+            "loss": 0.23472298849302564
+          },
+          {
+            "unit": 9,
+            "loss": 0.3592191720613904
+          },
+          {
+            "unit": 10,
+            "loss": 0.4596146830053997
+          },
+          {
+            "unit": 11,
+            "loss": 0.30621120854612377
+          },
+          {
+            "unit": 12,
+            "loss": 0.3976021164425866
+          },
+          {
+            "unit": 13,
+            "loss": 0.2363330974765457
+          },
+          {
+            "unit": 14,
+            "loss": 1.3574802146959517
+          },
+          {
+            "unit": 15,
+            "loss": 0.4877048753839025
+          },
+          {
+            "unit": 16,
+            "loss": 0.3024307375566059
+          },
+          {
+            "unit": 18,
+            "loss": 0.5026576438585264
+          },
+          {
+            "unit": 19,
+            "loss": 0.2823627110280479
+          },
+          {
+            "unit": 21,
+            "loss": 0.34908737989125344
+          },
+          {
+            "unit": 22,
+            "loss": 0.4124380479411418
+          },
+          {
+            "unit": 23,
+            "loss": 0.7775642024087736
+          },
+          {
+            "unit": 27,
+            "loss": 0.3195583957419281
+          },
+          {
+            "unit": 28,
+            "loss": 0.33197021491516293
+          },
+          {
+            "unit": 31,
+            "loss": 0.527970405898651
+          }
+        ]
+      },
+      {
+        "step": 14,
+        "added": 13,
+        "loss": 0.21615369548373853,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.2322045300629877
+          },
+          {
+            "unit": 1,
+            "loss": 0.25589142586474606
+          },
+          {
+            "unit": 3,
+            "loss": 0.24640207518321655
+          },
+          {
+            "unit": 9,
+            "loss": 0.41994704777592473
+          },
+          {
+            "unit": 10,
+            "loss": 0.35914743042676806
+          },
+          {
+            "unit": 11,
+            "loss": 0.3489082341526647
+          },
+          {
+            "unit": 12,
+            "loss": 0.3954049629568178
+          },
+          {
+            "unit": 13,
+            "loss": 0.21615369548373853
+          },
+          {
+            "unit": 14,
+            "loss": 1.1887110077567264
+          },
+          {
+            "unit": 15,
+            "loss": 0.407408525546624
+          },
+          {
+            "unit": 16,
+            "loss": 0.24030650930030314
+          },
+          {
+            "unit": 18,
+            "loss": 0.6074140935986367
+          },
+          {
+            "unit": 19,
+            "loss": 0.2501519616399742
+          },
+          {
+            "unit": 21,
+            "loss": 0.2652961624825144
+          },
+          {
+            "unit": 22,
+            "loss": 0.3227164552501728
+          },
+          {
+            "unit": 23,
+            "loss": 0.9263836342843685
+          },
+          {
+            "unit": 27,
+            "loss": 0.24789446610714766
+          },
+          {
+            "unit": 28,
+            "loss": 0.3324282085292144
+          },
+          {
+            "unit": 31,
+            "loss": 0.4844710191299265
+          }
+        ]
+      },
+      {
+        "step": 15,
+        "added": 0,
+        "loss": 0.21121719774568934,
+        "candidates": [
+          {
+            "unit": 0,
+            "loss": 0.21121719774568934
+          },
+          {
+            "unit": 1,
+            "loss": 0.22624971007905398
+          },
+          {
+            "unit": 3,
+            "loss": 0.21760745650554358
+          },
+          {
+            "unit": 9,
+            "loss": 0.37398601263222425
+          },
+          {
+            "unit": 10,
+            "loss": 0.31912182948810297
+          },
+          {
+            "unit": 11,
+            "loss": 0.313652973856516
+          },
+          {
+            "unit": 12,
+            "loss": 0.41024979024919483
+          },
+          {
+            "unit": 14,
+            "loss": 1.2456394969747118
+          },
+          {
+            "unit": 15,
+            "loss": 0.3666541205701217
+          },
+          {
+            "unit": 16,
+            "loss": 0.2256440387064974
+          },
+          {
+            "unit": 18,
+            "loss": 0.5809767254762453
+          },
+          {
+            "unit": 19,
+            "loss": 0.2187046634499052
+          },
+          {
+            "unit": 21,
+            "loss": 0.24551487174960474
+          },
+          {
+            "unit": 22,
+            "loss": 0.32548224127873804
+          },
+          {
+            "unit": 23,
+            "loss": 0.9266979548119927
+          },
+          {
+            "unit": 27,
+            "loss": 0.2323318024839602
+          },
+          {
+            "unit": 28,
+            "loss": 0.33920308874788296
+          },
+          {
+            "unit": 31,
+            "loss": 0.42883093896204916
+          }
+        ]
+      },
+      {
+        "step": 16,
+        "added": 3,
+        "loss": 0.21313709553037644,
+        "candidates": [
+          {
+            "unit": 1,
+            "loss": 0.21804186295410288
+          },
+          {
+            "unit": 3,
+            "loss": 0.21313709553037644
+          },
+          {
+            "unit": 9,
+            "loss": 0.36341732953907746
+          },
+          {
+            "unit": 10,
+            "loss": 0.3178169924463493
+          },
+          {
+            "unit": 11,
+            "loss": 0.30581834746889563
+          },
+          {
+            "unit": 12,
+            "loss": 0.4001613114097463
+          },
+          {
+            "unit": 14,
+            "loss": 1.2431978999102198
+          },
+          {
+            "unit": 15,
+            "loss": 0.36425591026037596
+          },
+          {
+            "unit": 16,
+            "loss": 0.22173037990799857
+          },
+          {
+            "unit": 18,
+            "loss": 0.5764405053666175
+          },
+          {
+            "unit": 19,
+            "loss": 0.21832937636162264
+          },
+          {
+            "unit": 21,
+            "loss": 0.24342609887556388
+          },
+          {
+            "unit": 22,
+            "loss": 0.3246651075349414
+          },
+          {
+            "unit": 23,
+            "loss": 0.9197835516488679
+          },
+          {
+            "unit": 27,
+            "loss": 0.22951595285136278
+          },
+          {
+            "unit": 28,
+            "loss": 0.3308311818569383
+          },
+          {
+            "unit": 31,
+            "loss": 0.424463427182583
+          }
+        ]
+      }
+    ]
+  },
+  "selection": "centered score-error forward coordinate search, FP64 diagnostic from actual C hidden states; no fitted coefficients or held-out outcomes",
+  "hidden_map": "28be94a87c7d175f7e0f2e82498fafc3a0773a1d3fe2d06704f9d16ebd385b71"
+}

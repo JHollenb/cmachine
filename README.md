@@ -2,7 +2,7 @@
 
 An explicit C model state machine for executing, inspecting and replacing neural computations.
 
-C owns the live state, the model equations, output selection and continuation. The prototype supports the R3 direct-effect ISA Mamba specimen on CPU and Qwen2.5-1.5B-Instruct through C, CUDA and cuBLAS. An [operator-driven intake path](research/model_intake/README.md) also compiles PAN and canonical Mamba1 graphs to CPU C programs with generated source maps. Python handles offline exports, optional tokenization and research analysis; it is outside the numerical serving executor.
+C owns the live state, the model equations, output selection and continuation. The prototype supports the R3 direct-effect ISA Mamba specimen on CPU and Qwen2.5-1.5B-Instruct through C, CUDA and cuBLAS. An [operator-driven intake path](research/model_intake/README.md) also compiles PAN, canonical Mamba1, learned matrix cells and neural rewrite scorers to CPU C programs with generated source maps. [FieldLM integration](research/model_intake/MATH.md) consumes C record selections and scores through supplied host reasoning components. Python handles offline exports, optional tokenization and research analysis; it is outside the numerical serving executor.
 
 The goal is to turn understood computations into executable programs that can form their own operands, update consequential state and continue at lower cost. The current Qwen implementation still evaluates the dense model. Avoiding a framework `forward()` call does not remove that computation.
 
@@ -25,6 +25,9 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 - [Import provenance](docs/PROVENANCE.md)
 - [Optional Saturn/mrun integration](docs/INTEGRATION.md)
 - [Automated model intake, C programs and execution evidence](research/model_intake/README.md)
+- [Math intake, polynomial analysis and FieldLM consumers](research/model_intake/MATH.md)
+- [Math choice cuts, causal repairs and unchanged search continuation](research/model_intake/MATH-CAUSAL.md)
+- [Math capability, scorer efficiency and tested unions](research/model_intake/MATH-CAPABILITY.md)
 
 ## Supported models
 
@@ -34,6 +37,8 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 | Qwen2.5-1.5B-Instruct | FP32 C/CUDA/cuBLAS; persistent chat and owned K/V | Three matching own-token trajectories against native FP32; maximum first-readout logit error about `2.67e-4`. |
 | PAN P113 seed 0 | CPU FP32; trusted FX graph compiled to `tcm program` | All 12,769 predictions match; maximum absolute logit error `9.15527e-5`. |
 | MambaSan-130m-instruct | CPU FP32/OpenBLAS; canonical Mamba1 graph compiled to `tcm program` | All 18 generated tokens match across two Japanese prompts; maximum absolute logit error `1.43051e-5`; exact C suffix replay. |
+| Learned 2×2 matrix cells | Five frozen cells through trusted FX and CPU FP32 C | Two exact polynomial identities and zero tested numerical error; three approximate cells retain source/C errors up to `9.05991e-6`. |
+| Concept Graph V1/V2a scorers | Frozen 21/23-feature networks; C scores feed host search | 987 live candidate rows; maximum score error `4.57764e-5`; no selected-set differences. |
 
 These are bounded comparisons for the recorded checkpoints, inputs and numerical profiles. The [model reference](docs/SUPPORTED-MODELS.md) gives import routes, mean and maximum logit errors, evidence and limits. PAN accuracy remains 57.8119%, and the instruction Mamba answers both tested questions incorrectly. Execution fidelity and answer quality are separate results.
 
@@ -49,7 +54,8 @@ These are bounded comparisons for the recorded checkpoints, inputs and numerical
 | Inspection | Selected read-only layer/token observations, including computed and consumed attention/MLP writes. |
 | Experimental operations | Anchored receiver-plane, live-receiver subspace, writer-projection and source-anchored gate-law APIs. |
 | ISA execution | Explicit Mamba equations, local state checkpoints and register/flag/instruction-length commits for the nominated specimen. |
-| Model intake | Trusted FX or canonical Mamba1 graph to a 14-op C program, source/consumer symbol table, owned recurrent state and bounded replay. |
+| Model intake | Trusted FX or canonical Mamba1 graph to a 17-op C program, source/consumer symbol table, owned recurrent state and bounded replay. |
+| Math consumers | Binary-bound polynomial analysis, scoped FieldLM projected reads, frozen neural scores and before/after arithmetic compilation; host-supplied rules and extraction. |
 
 These are prototype execution boundaries. Compact sufficient chat state, arbitrary model support, general answer correctness and whole-model forward-pass elimination remain open. Experimental laws are explicitly selected; ordinary serving does not enable them automatically.
 

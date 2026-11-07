@@ -6,6 +6,7 @@ No family names reach the C dispatcher. Unsupported graph operations fail closed
 """
 from __future__ import annotations
 import hashlib
+import builtins
 import json
 import math
 import operator
@@ -21,7 +22,7 @@ from bundle import write_bundle
 OPCODES = {"linear": 1, "add": 2, "multiply": 3, "remainder": 4,
            "cos": 5, "affine": 6, "concat": 7, "slice": 8, "rms": 9,
            "embedding": 10, "causal-conv-silu": 11, "selective-scan": 12,
-           "silu": 13, "constant": 14}
+           "silu": 13, "constant": 14, "relu": 15, "divide": 16, "match-rows": 17}
 
 
 def canonical(value):
@@ -122,7 +123,7 @@ class Program:
                    "state_slots": self.slots, "input_width": self.input_width,
                    "output_value": self.output, "token_mode": self.tokens,
                    "readout_domain": self.vocab or self.length(self.output),
-                   "arithmetic": "FP32; source floats widened offline; C libm; contraction disabled; selected scalar or BLAS reductions",
+                   "arithmetic": "FP32; source coefficients converted offline with original dtype retained; C libm; contraction disabled; selected scalar or BLAS reductions",
                    "authority": {"mechanics_status": "compiled-unexecuted", "instrument_status": "unmeasured",
                                  "trend_status": "unmeasured", "terminal_status": "no-parity-or-semantic-claim",
                                  "semantic_roles": "upstream-declarations-and-hypotheses"}}
@@ -144,12 +145,6 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
     from torch.fx.passes.shape_prop import ShapeProp
     with torch.no_grad():
         ShapeProp(graph).propagate(torch.zeros((1,input_width),dtype=torch.float32))
-    for node in graph.graph.nodes:
-        meta=node.meta.get("tensor_meta")
-        if meta is not None and node.op!="get_attr":
-            shape=tuple(meta.shape)
-            if not shape or len(shape)>2 or (len(shape)==2 and shape[0]!=1):
-                raise ValueError(f"tensor outside single-row vector ABI: {node.name}/{shape}")
     reference_identity=hashlib.sha256(canonical({"checkpoint":identity,"source":source_record,
                                                 "graph":str(graph.graph),"abi":"single-row-fp32-vector-v1"})).hexdigest()
     p = Program(identity, input_width, origin={"front_end": "trusted-torch-fx", "source": source_record,
@@ -169,6 +164,14 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
     def linear(node, x, w, bias=None):
         return p.emit("linear", p.weights[w].shape[0], a=value(x), w=w, bias=bias,
                       source=f"fx://{reference_identity}/{node.name}", name=node.name)
+    def matmul(node):
+        if len(node.args)!=2 or node.kwargs:
+            raise ValueError("matmul requires two positional arguments")
+        key=env[node.args[1]]
+        if not isinstance(key,str) or p.weights[key].ndim!=2:
+            raise ValueError("matmul requires a static right parameter")
+        weight=p.parameter(key+".linear",p.weights[key].T)
+        return linear(node,node.args[0],weight)
     for node in graph.graph.nodes:
         source = f"fx://{reference_identity}/{node.name}"
         target, args = node.target, node.args
@@ -178,22 +181,50 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
             env[node] = 0
         elif node.op == "get_attr":
             env[node] = p.parameter(str(target), attr(target))
-        elif node.op == "call_method" and target in ("float", "unsqueeze"):
+        elif node.op == "call_method" and target in ("float", "unsqueeze", "squeeze", "reshape", "view", "flatten"):
             if target == "unsqueeze" and args[1] not in (-1, 0):
                 raise ValueError("only row/vector unsqueeze supported")
-            env[node] = env[args[0]]
+            item=env[args[0]]
+            if isinstance(item,str):
+                tensor=getattr(p.weights[item],target)(*args[1:],**node.kwargs)
+                env[node]=p.parameter(item+"."+node.name,tensor)
+            else:env[node]=item
+        elif node.op == "call_method" and target in ("t", "transpose"):
+            key=env[args[0]]
+            if not isinstance(key,str) or p.weights[key].ndim!=2 or (target=="transpose" and tuple(args[1:]) not in ((0,1),(1,0))):
+                raise ValueError("only static matrix-parameter transpose supported")
+            env[node]=p.parameter(key+".transpose",p.weights[key].T)
+        elif node.op == "call_method" and target == "matmul":
+            env[node]=matmul(node)
         elif node.op == "call_module" and isinstance(attr(target), torch.nn.Linear):
             layer = attr(target)
             w = p.parameter(str(target)+".weight", layer.weight)
             bias = p.parameter(str(target)+".bias", layer.bias) if layer.bias is not None else None
             env[node] = linear(node, args[0], w, bias)
+        elif node.op=="call_module" and isinstance(attr(target),torch.nn.ReLU):
+            if attr(target).inplace:raise ValueError("in-place ReLU unsupported")
+            a=value(args[0]);env[node]=p.emit("relu",p.length(a),a=a,source=source,name=node.name)
         elif node.op == "call_function":
             kw = {"source": source, "name": node.name}
             if target is operator.getitem:
                 index = args[1]
-                if not (isinstance(index, tuple) and len(index) == 2 and index[0] == slice(None) and type(index[1]) is int):
-                    raise ValueError("only input column selection supported")
-                env[node] = p.emit("slice", 1, a=value(args[0]), offset=index[1], **kw)
+                if not (isinstance(index,tuple) and len(index)==2 and index[0]==slice(None)):
+                    raise ValueError("only static row-vector column selection supported")
+                a=value(args[0]);width=p.length(a);column=index[1]
+                if type(column) is int:
+                    start=column+width if column<0 else column;stop=start+1
+                    if not 0<=start<width:raise ValueError("column outside vector")
+                elif isinstance(column,slice):
+                    start,stop,stride=column.indices(width)
+                    if stride!=1 or stop<=start:raise ValueError("empty or strided vector slice unsupported")
+                else:raise ValueError("dynamic vector slice unsupported")
+                env[node]=p.emit("slice",stop-start,a=a,offset=start,**kw)
+            elif target is builtins.getattr and args[1]=="T":
+                key=env[args[0]]
+                if not isinstance(key,str) or p.weights[key].ndim!=2:raise ValueError("only matrix-parameter transpose supported")
+                env[node]=p.parameter(key+".transpose",p.weights[key].T)
+            elif target in (operator.matmul,torch.matmul):
+                env[node]=matmul(node)
             elif target in (torch._C._nn.linear, torch.nn.functional.linear):
                 if node.kwargs:
                     raise ValueError("keyword linear bindings require explicit lowering")
@@ -208,15 +239,21 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
                             raise ValueError("unsupported left-scalar arithmetic")
                         left, right = right, left
                     a = value(left)
-                    scale, shift = (float(right), 0) if target is operator.mul else (1, float(right)) if target is operator.add else (1, -float(right)) if target is operator.sub else (1/float(right), 0)
-                    env[node] = p.emit("affine", p.length(a), a=a, scale=scale, shift=shift, **kw)
+                    if target is operator.truediv:
+                        key=p.parameter(node.name+".divisor",torch.tensor([right],dtype=torch.float32))
+                        b=p.emit("constant",1,w=key,source=source)
+                        env[node]=p.emit("divide",p.length(a),a=a,b=b,**kw)
+                    else:
+                        scale, shift = (float(right), 0) if target is operator.mul else (1, float(right)) if target is operator.add else (1, -float(right))
+                        env[node] = p.emit("affine", p.length(a), a=a, scale=scale, shift=shift, **kw)
                 else:
                     a, b = value(left), value(right)
                     if target is operator.sub:
                         b = p.emit("affine", p.length(b), a=b, scale=-1, source=source)
-                    elif target is operator.truediv:
-                        raise ValueError("vector division unimplemented")
-                    env[node] = p.emit("multiply" if target is operator.mul else "add", max(p.length(a),p.length(b)), a=a,b=b, **kw)
+                    env[node] = p.emit("multiply" if target is operator.mul else "divide" if target is operator.truediv else "add", max(p.length(a),p.length(b)), a=a,b=b, **kw)
+            elif target in (torch.relu,torch.nn.functional.relu):
+                if node.kwargs.get("inplace",False):raise ValueError("in-place ReLU unsupported")
+                a=value(args[0]);env[node]=p.emit("relu",p.length(a),a=a,**kw)
             elif target is torch.cos:
                 a=value(args[0]);env[node]=p.emit("cos",p.length(a),a=a,**kw)
             elif target is torch.cat:
@@ -229,11 +266,17 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
             else:
                 raise ValueError(f"unimplemented FX operation: {node.format_node()}")
         elif node.op == "output":
+            shape=tuple(args[0].meta['tensor_meta'].shape)
+            if not shape or len(shape)>2 or (len(shape)==2 and shape[0]!=1):
+                raise ValueError(f"output outside single-row vector ABI: {shape}")
             p.output = value(args[0])
         else:
             raise ValueError(f"unimplemented FX node: {node.format_node()}")
         if node.op!="output" and isinstance(env.get(node),int) and node.meta.get("tensor_meta") is not None:
-            if math.prod(node.meta["tensor_meta"].shape)!=p.length(env[node]):
+            shape=tuple(node.meta["tensor_meta"].shape)
+            if not shape or len(shape)>2 or (len(shape)==2 and shape[0]!=1):
+                raise ValueError(f"tensor outside single-row vector ABI: {node.name}/{shape}")
+            if math.prod(shape)!=p.length(env[node]):
                 raise ValueError(f"flattened shape differs: {node.name}")
     return p.save(destination)
 

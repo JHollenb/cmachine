@@ -1,0 +1,53 @@
+{
+  "schema": "tcm-math-causal-mechanics-v1",
+  "specimens": "generated fixtures only; no archived model forward locally",
+  "unique_python_tests": 52,
+  "commands": [
+    "python -m unittest discover -s tests -v",
+    "python -m unittest discover -s research/model_intake -v"
+  ],
+  "overlap": "five choice mechanics are discovered in both lanes and counted once",
+  "coverage": [
+    "only choice writable",
+    "same-parent reconstruction",
+    "stale/frontier/feature refusal",
+    "A-B-A closure",
+    "irrelevant divergence versus useful repair",
+    "order-preserving singleton exchange",
+    "signed nonmonotone outcomes",
+    "clock/function qualification separate from observed reduction",
+    "local collector budget authority and ceiling",
+    "independent CSE and scalar/matrix work"
+  ],
+  "staged_runtime_sources_matching_current": {
+    "src/bounded_cache.h": true,
+    "src/byte_codec.h": true,
+    "src/gpu.h": true,
+    "src/isa.c": true,
+    "src/machine.h": true,
+    "src/main.c": true,
+    "src/model.c": true,
+    "src/program.c": true,
+    "src/program.h": true,
+    "src/prototype_attention.h": true,
+    "src/qwen.c": true,
+    "src/qwen.h": true,
+    "src/qwen_bounded_serve.c": true,
+    "src/qwen_cache.inc": true,
+    "src/qwen_cuda.cu": true,
+    "src/qwen_operands.inc": true,
+    "src/qwen_serve.c": true,
+    "src/qwen_weights.inc": true,
+    "tools/bundle.py": true,
+    "tools/inspect_program.py": true,
+    "tools/intake_worker.py": true,
+    "tools/mamba_chat_source.py": true,
+    "tools/math_causal_worker.py": true,
+    "tools/math_debugger.py": true,
+    "tools/math_program.py": true,
+    "tools/math_worker.py": true,
+    "tools/program.py": true,
+    "tools/program_chat.py": true
+  },
+  "learned_evidence": "independent offline verifier plus two guarded fleet panels"
+}

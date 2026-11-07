@@ -1,0 +1,122 @@
+{
+  "job_id": "job-4475f3386295",
+  "labels": [
+    [
+      "v1-full",
+      "Full V1"
+    ],
+    [
+      "v1-matched-global-union8",
+      "Global 14"
+    ],
+    [
+      "v1-union8",
+      "Specialist union 14"
+    ],
+    [
+      "v1-specialist-planted",
+      "Planted specialist 8"
+    ],
+    [
+      "v1-global14-proposal-union1",
+      "Global 14 + one proposal"
+    ],
+    [
+      "v2a-full",
+      "Full V2a"
+    ],
+    [
+      "v2a-proposal-union1",
+      "V2a + one proposal"
+    ],
+    [
+      "broad-only",
+      "Structural rule only"
+    ]
+  ],
+  "goals": [
+    [
+      "test-binomial-3-0",
+      "Binomial 3\nlayout A",
+      5
+    ],
+    [
+      "test-binomial-4-0",
+      "Binomial 4\nlayout A",
+      7
+    ],
+    [
+      "test-binomial-4-1",
+      "Binomial 4\nlayout B",
+      7
+    ],
+    [
+      "test-trinomial-3",
+      "Trinomial 3\noriginal",
+      8
+    ],
+    [
+      "replication-trinomial-3",
+      "Trinomial 3\nnew layout",
+      8
+    ]
+  ],
+  "costs": [
+    [
+      5,
+      7,
+      7,
+      60,
+      60
+    ],
+    [
+      5,
+      7,
+      7,
+      60,
+      60
+    ],
+    [
+      5,
+      18,
+      18,
+      60,
+      null
+    ],
+    [
+      5,
+      7,
+      7,
+      8,
+      8
+    ],
+    [
+      5,
+      7,
+      7,
+      8,
+      8
+    ],
+    [
+      9,
+      42,
+      45,
+      61,
+      61
+    ],
+    [
+      5,
+      16,
+      17,
+      8,
+      20
+    ],
+    [
+      9,
+      26,
+      26,
+      22,
+      22
+    ]
+  ]
+}

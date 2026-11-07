@@ -1,0 +1,223 @@
+{
+  "intervention": {
+    "status": "completed",
+    "label": "single-exchange-0-2",
+    "round": 1,
+    "endpoint": "4b6c8b45d6f766c84a8e319e224025e0607c59677bec46f536b36e623037ac4d",
+    "cost": 5,
+    "cost_reduction": 4,
+    "receipts": "3b9396d41f764c7e34fff5b70734814bc28fa7670104a5e6b04c6af04aee12fb",
+    "same_endpoint_as_target": false,
+    "exact_polynomial": true,
+    "timing": {
+      "endpoint": "4b6c8b45d6f766c84a8e319e224025e0607c59677bec46f536b36e623037ac4d",
+      "search_wall_seconds": 2.254716257099062,
+      "extraction_wall_seconds": 0.0034957178868353367,
+      "search_clock_proven_unhit": true,
+      "extraction_clock_proven_unhit": true
+    },
+    "causal_qualified": true,
+    "first_changed_choice_round": 1,
+    "first_changed_graph_boundary_round": 2,
+    "choice": [
+      "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+      "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+    ],
+    "slot": 0,
+    "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+    "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+  },
+  "endpoint": {
+    "applications": 46,
+    "context": "934f116a997fcb59c7377f1cdba229af75afe1bdbdd208ade53a434ed76c988b",
+    "cost": 5,
+    "decisions": [
+      {
+        "choice": [
+          "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+          "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+          "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+          "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+          "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+          "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+        ],
+        "frontier": "d4a0448f7c65123e887bd09713db1b61de495fa6550789ec8cdb71c74fe20b9e"
+      },
+      {
+        "choice": [
+          "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+          "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+          "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+          "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+          "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+          "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+          "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+          "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+        ],
+        "frontier": "f5924e89e03243257e4a552d40d302ba1f9cc35ec12996760b884053b7cf978c"
+      },
+      {
+        "choice": [
+          "c3edbd514d5bf27c9e6900509b0f628ea2ee8890f8b602997e9fe585536ff364",
+          "c49fd10c5459b3c85ee7e6b42cb1c8268b5de172c2e534d3035582bc7d14ae79",
+          "84ceb22b697ef75418a451b7ebdb771345131bd15e66bf56a0767acddd9da4ef",
+          "285b68fd34eae8f716994cc54458ceeca4865e766d32bf2e2d4bdad9717e3102",
+          "2ed3e71b5be83bd132c23061d49a6f049791e4bf0fda4ac2adbb42823c5a925e",
+          "32d76c7d4798708580fcc07e16b942ffdacdb89e22557766e3c539296004f593",
+          "3936cfc93e2f1741492ab39808478ed10cd88c8f46ab8b6b90c1c01db597bdde",
+          "c4362ff203fb970c343bf4774636bbba18c86273e999988f3d683efbcffb5bc4"
+        ],
+        "frontier": "83c0918a578bdb92ff64d3f24925e1683578cb6acf22f0579f32d4f2319d3da7"
+      },
+      {
+        "choice": [
+          "fda7ad5e5b0400051c54e9424567d0f60c17fd931bdcf0b084a3f816915c0225",
+          "3e45c691e370ded028ab5df3b9258cfe06e5a32292658c524c7df152825952e5",
+          "1c53c66c03765a8fca49bf3258db13c5eb07f150d19dfe911057e4302110105e",
+          "a95afc6eb4834634ddaa88e8a1d4e847934e743da34e0b19f2e09aa2f681db98",
+          "ef122b3dcb2758b21acdd7333f72286806eeda54ab109e94f9fb14b12c53c669",
+          "236fb5a4565f920d55a35c2ecc75e07d06f78b93c636c86fb3c568f9710a1ed6",
+          "8eee372819538a34ee8c46e05a9138549b6698650c572b45fcb5d9f7f1bc3314",
+          "9075bf37eb4baf0e3ccdf79f241e7fe937bac77bf7f8d7e94e8445bcb51138a2"
+        ],
+        "frontier": "d3daa67c62874814de29b23dab2d4562fba72a873ecda11fca91fef328b34856"
+      },
+      {
+        "choice": [
+          "a522a0b786cffb0d4f48804dd77b517ecebb8d91502aec92eb56918421aa031f",
+          "1cae989bf1466f26f5bb4dfe64647348caae330f4fa5218715b32f72a30c17f6",
+          "5fd739096c37170e40343335de426870c6aede5d0641f6e89db65aecded47c63",
+          "cdc83a4e64db3d5f5a7311ad913a6e917e6ab60a2990951d9f4eb2a8dab8da11",
+          "affb797ce15d64f865b45ec3a139a1c3509fa285f703acf41269929d564289ec",
+          "b36d5929b5be2936e8876fbd36a06232f01767987c7a2be16e15355d1275c2ec",
+          "d4f87a09f35e62043c0f35ab6a45006c4337d80bfec989d25791a44d3891cf66",
+          "5f90ecac6d9f74b9f46330ae984d5ef424290251a48908be6ea91875984b8c73"
+        ],
+        "frontier": "03557b6a14f6aceb123b53d360a5635314d806976d7095d9eefb4ca476b7067a"
+      },
+      {
+        "choice": [
+          "b374d04f281b08869775b373a3863a92c3ec550258cafa36d29d9d17a6cb59e3",
+          "3419e0926bc276e9eeb551e2cbb34b8a89695f32b99edeeae497404e4df9f5fc",
+          "8e70d3dcd3db04f7b95403e18b6aafdf71ab80344ff6deb1e8c3cb140bb8965b",
+          "0fd5c989e03365c3882885f4c7364c3ed01741fb6c09754d24419818d07bcff6",
+          "41720c57511bbd227b134927f6139079b454faacbe189898b9b67b8f2180b618",
+          "2f4299979ba8a7af6c326f11db19eb9aaff00f085f15cb921051413842e07c12",
+          "e72525f095f2229e8663ad291adb19f7cd77b3e6d9511aa878ef21d9bdef62b5",
+          "9eb6c3943993e7c563b6fcfc89204cf85379bdfd7e08bc3d05ae12b65251eaab"
+        ],
+        "frontier": "1ddbf26015798067bf5af2cbf6a25c726bbef9712dc6c8774ae10673e781878a"
+      }
+    ],
+    "exact_polynomial": true,
+    "expression": [
+      "prod",
+      [
+        "prod",
+        [
+          "sum",
+          "x2",
+          "y2"
+        ],
+        [
+          "sum",
+          "x1",
+          "y1"
+        ]
+      ],
+      [
+        "sum",
+        "x0",
+        "y0"
+      ]
+    ],
+    "graph_before_extract": "9270195efb52c11f0749245ae3f8850a1751ca555067f9b07e294d5cfcc96d96",
+    "numerical": {
+      "C_reference_max_abs": 0.0,
+      "operations": 11,
+      "program": "fda751206d7a3153fffa8d7a3514e86ce03c05031d0c4b849f9459ed66bdc247",
+      "reference": "aaffb7e8298832223d34e19d8f17e782f6a8ae7a9db1d702fec43d12ce1fbbb8",
+      "source_c_max_abs": 0.0
+    },
+    "ops": {
+      "add": 3,
+      "mul": 2
+    },
+    "search_status": "iter-cap",
+    "selection_budget_used": 46,
+    "trace": [
+      {
+        "applied": 6,
+        "classes": 36,
+        "dag_cost": 20,
+        "fresh": 6,
+        "iteration": 1,
+        "match_capped": false,
+        "matches": 6,
+        "nodes": 42,
+        "unions": 6
+      },
+      {
+        "applied": 8,
+        "classes": 47,
+        "dag_cost": 10,
+        "fresh": 42,
+        "iteration": 2,
+        "match_capped": false,
+        "matches": 48,
+        "nodes": 61,
+        "unions": 8
+      },
+      {
+        "applied": 8,
+        "classes": 51,
+        "dag_cost": 9,
+        "fresh": 57,
+        "iteration": 3,
+        "match_capped": false,
+        "matches": 71,
+        "nodes": 72,
+        "unions": 7
+      },
+      {
+        "applied": 8,
+        "classes": 62,
+        "dag_cost": 8,
+        "fresh": 54,
+        "iteration": 4,
+        "match_capped": false,
+        "matches": 76,
+        "nodes": 91,
+        "unions": 8
+      },
+      {
+        "applied": 8,
+        "classes": 66,
+        "dag_cost": 6,
+        "fresh": 55,
+        "iteration": 5,
+        "match_capped": false,
+        "matches": 85,
+        "nodes": 100,
+        "unions": 5
+      },
+      {
+        "applied": 8,
+        "classes": 72,
+        "dag_cost": 5,
+        "fresh": 54,
+        "iteration": 6,
+        "match_capped": false,
+        "matches": 92,
+        "nodes": 113,
+        "unions": 7
+      }
+    ]
+  }
+}
