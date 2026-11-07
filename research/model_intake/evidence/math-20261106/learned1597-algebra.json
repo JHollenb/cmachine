@@ -1,0 +1,1044 @@
+{
+  "deployed": {
+    "status": "exact-ordered-matrix2-polynomial",
+    "bilinearity_established": true,
+    "coefficient_identity": "0fb9c37109fc54c21fd4dde56110edf438e591f38466a7d41483699d0abaeb48",
+    "coefficients": [
+      {
+        "out": 0,
+        "left": 0,
+        "right": 0,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 0,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 2,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 1,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 3,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 0,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 2,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 1,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 3,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      }
+    ],
+    "nonzero_residuals": 0,
+    "max_abs_coefficient_residual": 0.0,
+    "specification": "supplied row-major ordered 2x2 multiplication; left input columns0:4, right4:8",
+    "numerical_scope": "formal rational polynomial of deployed FP32 coefficients; not an unrestricted floating execution or uint64 certificate"
+  },
+  "original": {
+    "coefficient_identity": "0fb9c37109fc54c21fd4dde56110edf438e591f38466a7d41483699d0abaeb48",
+    "nonzero_residuals": 0,
+    "max_abs_coefficient_residual": 0.0,
+    "coefficients": [
+      {
+        "out": 0,
+        "left": 0,
+        "right": 0,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 0,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 2,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 1,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 0,
+        "left": 3,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 1,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 1,
+        "right": 3,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 1,
+        "left": 3,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 1,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 0,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 2,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 2,
+        "left": 3,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 0,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 1,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 1,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 2,
+        "right": 3,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 0,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 1,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 2,
+        "actual": "0",
+        "expected": 0,
+        "residual": "0"
+      },
+      {
+        "out": 3,
+        "left": 3,
+        "right": 3,
+        "actual": "1",
+        "expected": 1,
+        "residual": "0"
+      }
+    ]
+  }
+}

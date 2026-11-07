@@ -1,0 +1,99 @@
+{
+  "schema": "tcm-math-mechanics-v1",
+  "timestamp": "2026-11-07T07:54:21.870179+00:00",
+  "scope": "generated tiny organisms; no frozen model forward on local host",
+  "commands": [
+    {
+      "name": "build",
+      "argv": [
+        "make"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.011092500062659383,
+      "test_count": null,
+      "output_sha256": "b61dee69c0243e72341bc664e8d4744e1eef51a7de662ed2d02b9edcede890b9"
+    },
+    {
+      "name": "sanitize-build",
+      "argv": [
+        "make",
+        "sanitize"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 0.007928165839985013,
+      "test_count": null,
+      "output_sha256": "720e9a6feaf3711de151c2d907d1dd91181c6c2a65204365976bc3035f059e2d"
+    },
+    {
+      "name": "runtime",
+      "argv": [
+        "/Users/jakeholl/domains/common/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 1.702353792032227,
+      "test_count": 18,
+      "output_sha256": "dd2aebfcbb90ebe607f56d6bcbc0f4a6c70b2ae41e565a02a23da2abd76b1c74"
+    },
+    {
+      "name": "intake",
+      "argv": [
+        "/Users/jakeholl/domains/common/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/model_intake",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "seconds": 5.328533249907196,
+      "test_count": 25,
+      "output_sha256": "bdb27e10eeb7493d12cb506ab5af5dafa761814324206371ff7f532bff121d20"
+    },
+    {
+      "name": "math-sanitize",
+      "argv": [
+        "/Users/jakeholl/domains/common/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/model_intake",
+        "-p",
+        "test_math.py",
+        "-v"
+      ],
+      "environment": {
+        "TCM_TEST_EXECUTABLE": "/Users/jakeholl/domains/cmachine-intake-pan-mamba/build/tcm-sanitize"
+      },
+      "exit_code": 0,
+      "seconds": 2.175702917156741,
+      "test_count": 7,
+      "output_sha256": "ad93d8c26c22ef60d6f66b1d170c55b33640d1e0b99921fba92a46ac51f1afea"
+    }
+  ],
+  "distinct_python_tests": 43,
+  "math_tests_repeated_under_sanitizers": 7,
+  "sources": {
+    "src/program.c": "1a98f19522fcaa33a5b2a010a091dcf8c7192cb63e1b8b3afb60214a4fdb58fc",
+    "src/program.h": "b2a1e55634d7723d52a4b00c0feaf8bdc0035e8b52a01ac89d9a140096e8d9fb",
+    "tools/program.py": "e0c7a8431ec91393bf1116fc024bd8c2c3f4a1114e9e0397bf534e5cc22f5000",
+    "tools/math_program.py": "f309508eb86497f561c317f4a167ae6109bcdca8f312af89602dc21c1f43b41c",
+    "tools/math_worker.py": "a70e58aac564dd93a995a359d89b58dc12b9f74dc0ba85a83408f97075832ae8",
+    "tools/math_fleet.py": "23f65f0cec4427b30dfeba3bd4ed9c467f7ab962fc5c986a70000db529e9b6be",
+    "tools/verify_math.py": "7ea0a31d9eff265b70aa7b043e4d3640fdf55c4b944dbc2492fc8b20f1f5e741",
+    "research/model_intake/test_math.py": "115fe6f3f3ca858419884df27a0b59d06e556dd5cb65dfbf1fbee7b812ff1408"
+  }
+}

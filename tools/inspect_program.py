@@ -13,7 +13,8 @@ from program import canonical
 ARITY={"constant":(),"linear":("a",),"add":("a","b"),"multiply":("a","b"),
        "remainder":("a",),"cos":("a",),"affine":("a",),"concat":("a","b"),
        "slice":("a",),"rms":("a",),"embedding":("a",),"causal-conv-silu":("a",),
-       "selective-scan":("a","b","c","d"),"silu":("a",)}
+       "selective-scan":("a","b","c","d"),"silu":("a",),"relu":("a",),
+       "divide":("a","b"),"match-rows":("a",)}
 
 def inspect(mapping, *, trace=None, row=0, job_id=None):
     body=dict(mapping);seal=body.pop("fingerprint")

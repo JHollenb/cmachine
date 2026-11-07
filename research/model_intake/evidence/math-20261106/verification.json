@@ -1,0 +1,861 @@
+{
+  "schema": "tcm-math-verification-v1",
+  "job_id": "job-2a7aae82cec8",
+  "payload_sha256": "8bf91a5a4826706b4da3a938f5876ab240f3a67024c54c4b5157289a3d56e7e8",
+  "raw_files_checked": 434,
+  "programs": 127,
+  "program_bundles_checked": 127,
+  "C_calls_checked": 4359,
+  "observations": {
+    "cells": [
+      {
+        "name": "learned811",
+        "rows": 272,
+        "source_fp32_c_max_abs": 0.0,
+        "source_fp64_c_max_abs": 0.0,
+        "math_truth_c_max_abs": 0.0,
+        "swapped_operand_changed_rows": 262,
+        "classification": "exact-ordered-matrix2-polynomial",
+        "coefficient_residuals": 0,
+        "own_output_continuation": [
+          {
+            "step": 1,
+            "C_chain_bound": true,
+            "source_c_max_abs": 0.0
+          },
+          {
+            "step": 2,
+            "C_chain_bound": true,
+            "source_c_max_abs": 0.0
+          },
+          {
+            "step": 3,
+            "C_chain_bound": true,
+            "source_c_max_abs": 0.0
+          }
+        ]
+      },
+      {
+        "name": "learned1597",
+        "rows": 272,
+        "source_fp32_c_max_abs": 0.0,
+        "source_fp64_c_max_abs": 0.0,
+        "math_truth_c_max_abs": 0.0,
+        "swapped_operand_changed_rows": 262,
+        "classification": "exact-ordered-matrix2-polynomial",
+        "coefficient_residuals": 0,
+        "own_output_continuation": [
+          {
+            "step": 1,
+            "C_chain_bound": true,
+            "source_c_max_abs": 0.0
+          },
+          {
+            "step": 2,
+            "C_chain_bound": true,
+            "source_c_max_abs": 0.0
+          },
+          {
+            "step": 3,
+            "C_chain_bound": true,
+            "source_c_max_abs": 0.0
+          }
+        ]
+      },
+      {
+        "name": "approx137",
+        "rows": 272,
+        "source_fp32_c_max_abs": 4.76837158203125e-06,
+        "source_fp64_c_max_abs": 5.729979221769099e-06,
+        "math_truth_c_max_abs": 5.7220458984375e-06,
+        "swapped_operand_changed_rows": 268,
+        "classification": "approximate-ordered-matrix2-polynomial",
+        "coefficient_residuals": 64,
+        "own_output_continuation": [
+          {
+            "step": 1,
+            "C_chain_bound": true,
+            "source_c_max_abs": 1.9073486328125e-06
+          },
+          {
+            "step": 2,
+            "C_chain_bound": true,
+            "source_c_max_abs": 1.9073486328125e-05
+          },
+          {
+            "step": 3,
+            "C_chain_bound": true,
+            "source_c_max_abs": 9.918212890625e-05
+          }
+        ]
+      },
+      {
+        "name": "approx149",
+        "rows": 272,
+        "source_fp32_c_max_abs": 9.059906005859375e-06,
+        "source_fp64_c_max_abs": 7.687797260125251e-06,
+        "math_truth_c_max_abs": 2.3126602172851562e-05,
+        "swapped_operand_changed_rows": 268,
+        "classification": "approximate-ordered-matrix2-polynomial",
+        "coefficient_residuals": 64,
+        "own_output_continuation": [
+          {
+            "step": 1,
+            "C_chain_bound": true,
+            "source_c_max_abs": 4.76837158203125e-06
+          },
+          {
+            "step": 2,
+            "C_chain_bound": true,
+            "source_c_max_abs": 1.33514404296875e-05
+          },
+          {
+            "step": 3,
+            "C_chain_bound": true,
+            "source_c_max_abs": 9.1552734375e-05
+          }
+        ]
+      },
+      {
+        "name": "approx163",
+        "rows": 272,
+        "source_fp32_c_max_abs": 8.106231689453125e-06,
+        "source_fp64_c_max_abs": 5.722045905542927e-06,
+        "math_truth_c_max_abs": 5.7220458984375e-06,
+        "swapped_operand_changed_rows": 268,
+        "classification": "approximate-ordered-matrix2-polynomial",
+        "coefficient_residuals": 64,
+        "own_output_continuation": [
+          {
+            "step": 1,
+            "C_chain_bound": true,
+            "source_c_max_abs": 2.384185791015625e-06
+          },
+          {
+            "step": 2,
+            "C_chain_bound": true,
+            "source_c_max_abs": 7.62939453125e-06
+          },
+          {
+            "step": 3,
+            "C_chain_bound": true,
+            "source_c_max_abs": 6.103515625e-05
+          }
+        ]
+      }
+    ],
+    "projected_reads": {
+      "logical_reads": 16241,
+      "unique_queries": 4217,
+      "native_disagreements": []
+    },
+    "scorers": {
+      "batches": 45,
+      "rows": 987,
+      "max_abs": 4.57763671875e-05,
+      "selection_order_disagreements": [
+        {
+          "goal": "scalar-product",
+          "arm": "c-v2a-base-library",
+          "round": 0,
+          "version": "v2a",
+          "rows": 6,
+          "max_abs": 4.76837158203125e-07,
+          "selected_order_equal": false,
+          "selected_set_equal": true,
+          "native_cutoff_margin": null,
+          "c_cutoff_margin": null
+        }
+      ],
+      "selection_set_disagreements": []
+    },
+    "compiled_consumers": [
+      {
+        "name": "concept-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          6,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "concept-1",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          7
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "concept-2",
+        "exact_polynomial": true,
+        "C_operations": [
+          3,
+          3
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "concept-3",
+        "exact_polynomial": true,
+        "C_operations": [
+          3,
+          3
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "concept-4",
+        "exact_polynomial": true,
+        "C_operations": [
+          4,
+          4
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-0-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          5,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-0-1",
+        "exact_polynomial": true,
+        "C_operations": [
+          6,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-0-2",
+        "exact_polynomial": true,
+        "C_operations": [
+          5,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-1-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          5,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-1-1",
+        "exact_polynomial": true,
+        "C_operations": [
+          5,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-2-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          7,
+          6
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-3-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          5,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-3-1",
+        "exact_polynomial": true,
+        "C_operations": [
+          12,
+          8
+        ],
+        "linear_macs": [
+          168,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-3-2",
+        "exact_polynomial": true,
+        "C_operations": [
+          5,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-3-3",
+        "exact_polynomial": true,
+        "C_operations": [
+          12,
+          8
+        ],
+        "linear_macs": [
+          168,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-4-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          11
+        ],
+        "linear_macs": [
+          168,
+          168
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-5-0",
+        "exact_polynomial": true,
+        "C_operations": [
+          13,
+          9
+        ],
+        "linear_macs": [
+          168,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "law-5-1",
+        "exact_polynomial": true,
+        "C_operations": [
+          13,
+          9
+        ],
+        "linear_macs": [
+          168,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-product-native-v1",
+        "exact_polynomial": true,
+        "C_operations": [
+          25,
+          11
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-product-c-v1",
+        "exact_polynomial": true,
+        "C_operations": [
+          25,
+          11
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-product-c-v2a-base-library",
+        "exact_polynomial": true,
+        "C_operations": [
+          25,
+          15
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-product-heuristic",
+        "exact_polynomial": true,
+        "C_operations": [
+          25,
+          11
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-product-random",
+        "exact_polynomial": true,
+        "C_operations": [
+          25,
+          15
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-product-enumeration",
+        "exact_polynomial": true,
+        "C_operations": [
+          25,
+          15
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-planted-native-v1",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-planted-c-v1",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-planted-c-v2a-base-library",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-planted-heuristic",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-planted-random",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "scalar-planted-enumeration",
+        "exact_polynomial": true,
+        "C_operations": [
+          11,
+          5
+        ],
+        "linear_macs": [
+          0,
+          0
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "ordered-matrix-native-v1",
+        "exact_polynomial": true,
+        "C_operations": [
+          23,
+          10
+        ],
+        "linear_macs": [
+          336,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "ordered-matrix-c-v1",
+        "exact_polynomial": true,
+        "C_operations": [
+          23,
+          10
+        ],
+        "linear_macs": [
+          336,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "ordered-matrix-c-v2a-base-library",
+        "exact_polynomial": true,
+        "C_operations": [
+          23,
+          10
+        ],
+        "linear_macs": [
+          336,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "ordered-matrix-heuristic",
+        "exact_polynomial": true,
+        "C_operations": [
+          23,
+          10
+        ],
+        "linear_macs": [
+          336,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "ordered-matrix-random",
+        "exact_polynomial": true,
+        "C_operations": [
+          23,
+          10
+        ],
+        "linear_macs": [
+          336,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      },
+      {
+        "name": "ordered-matrix-enumeration",
+        "exact_polynomial": true,
+        "C_operations": [
+          23,
+          10
+        ],
+        "linear_macs": [
+          336,
+          84
+        ],
+        "C_before_after_max_abs": 0.0,
+        "source_C_max_abs": 0.0
+      }
+    ],
+    "search": [
+      {
+        "goal": "scalar-product",
+        "arm": "native-v1",
+        "status": "iter-cap",
+        "final_cost": 5,
+        "applications": 46,
+        "wall_seconds_including_C_and_extraction": 0.034028931986540556,
+        "error": null
+      },
+      {
+        "goal": "scalar-product",
+        "arm": "c-v1",
+        "status": "iter-cap",
+        "final_cost": 5,
+        "applications": 46,
+        "wall_seconds_including_C_and_extraction": 3.076321561820805,
+        "error": null
+      },
+      {
+        "goal": "scalar-product",
+        "arm": "c-v2a-base-library",
+        "status": "iter-cap",
+        "final_cost": 9,
+        "applications": 46,
+        "wall_seconds_including_C_and_extraction": 2.1633221907541156,
+        "error": null
+      },
+      {
+        "goal": "scalar-product",
+        "arm": "heuristic",
+        "status": "iter-cap",
+        "final_cost": 5,
+        "applications": 46,
+        "wall_seconds_including_C_and_extraction": 0.024658240843564272,
+        "error": null
+      },
+      {
+        "goal": "scalar-product",
+        "arm": "random",
+        "status": "iter-cap",
+        "final_cost": 9,
+        "applications": 46,
+        "wall_seconds_including_C_and_extraction": 0.02686583437025547,
+        "error": null
+      },
+      {
+        "goal": "scalar-product",
+        "arm": "enumeration",
+        "status": "iter-cap",
+        "final_cost": 9,
+        "applications": 46,
+        "wall_seconds_including_C_and_extraction": 0.02650501998141408,
+        "error": null
+      },
+      {
+        "goal": "scalar-planted",
+        "arm": "native-v1",
+        "status": "iter-cap",
+        "final_cost": 3,
+        "applications": 44,
+        "wall_seconds_including_C_and_extraction": 0.0216875527985394,
+        "error": null
+      },
+      {
+        "goal": "scalar-planted",
+        "arm": "c-v1",
+        "status": "iter-cap",
+        "final_cost": 3,
+        "applications": 44,
+        "wall_seconds_including_C_and_extraction": 0.8270765729248524,
+        "error": null
+      },
+      {
+        "goal": "scalar-planted",
+        "arm": "c-v2a-base-library",
+        "status": "iter-cap",
+        "final_cost": 3,
+        "applications": 44,
+        "wall_seconds_including_C_and_extraction": 0.8307139561511576,
+        "error": null
+      },
+      {
+        "goal": "scalar-planted",
+        "arm": "heuristic",
+        "status": "iter-cap",
+        "final_cost": 3,
+        "applications": 44,
+        "wall_seconds_including_C_and_extraction": 0.01573743112385273,
+        "error": null
+      },
+      {
+        "goal": "scalar-planted",
+        "arm": "random",
+        "status": "iter-cap",
+        "final_cost": 3,
+        "applications": 44,
+        "wall_seconds_including_C_and_extraction": 0.01574490498751402,
+        "error": null
+      },
+      {
+        "goal": "scalar-planted",
+        "arm": "enumeration",
+        "status": "iter-cap",
+        "final_cost": 3,
+        "applications": 44,
+        "wall_seconds_including_C_and_extraction": 0.014602981973439455,
+        "error": null
+      },
+      {
+        "goal": "ordered-matrix",
+        "arm": "native-v1",
+        "status": "saturated",
+        "final_cost": 20,
+        "applications": 10,
+        "wall_seconds_including_C_and_extraction": 0.014084763824939728,
+        "error": null
+      },
+      {
+        "goal": "ordered-matrix",
+        "arm": "c-v1",
+        "status": "saturated",
+        "final_cost": 20,
+        "applications": 10,
+        "wall_seconds_including_C_and_extraction": 0.23128720792010427,
+        "error": null
+      },
+      {
+        "goal": "ordered-matrix",
+        "arm": "c-v2a-base-library",
+        "status": "saturated",
+        "final_cost": 20,
+        "applications": 10,
+        "wall_seconds_including_C_and_extraction": 0.23409066395834088,
+        "error": null
+      },
+      {
+        "goal": "ordered-matrix",
+        "arm": "heuristic",
+        "status": "saturated",
+        "final_cost": 20,
+        "applications": 10,
+        "wall_seconds_including_C_and_extraction": 0.08671377506107092,
+        "error": null
+      },
+      {
+        "goal": "ordered-matrix",
+        "arm": "random",
+        "status": "saturated",
+        "final_cost": 20,
+        "applications": 10,
+        "wall_seconds_including_C_and_extraction": 0.012778985779732466,
+        "error": null
+      },
+      {
+        "goal": "ordered-matrix",
+        "arm": "enumeration",
+        "status": "saturated",
+        "final_cost": 20,
+        "applications": 10,
+        "wall_seconds_including_C_and_extraction": 0.012961105909198523,
+        "error": null
+      }
+    ],
+    "fields": {
+      "concept_count": 5,
+      "learned_rewrites": 2,
+      "laws": 13,
+      "body_equality": true,
+      "concept_consumer_equal": true,
+      "law_catalog_equal": true,
+      "law_match_equal": true,
+      "namespace_scope_missing_controls": [
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "mechanics_status": "payload-and-raw-hashes-source-maps-and-C-invocations-verified",
+  "instrument_status": "raw-errors-rankings-projected-queries-work-counts-and-C-continuation-recomputed; binary-bound-polynomials-where-bundles-retained",
+  "trend_status": "per-case-observations-preserved-without-quality-threshold",
+  "terminal_status": "bounded integration; no general reasoning, unrestricted numeric-domain, or speedup claim"
+}

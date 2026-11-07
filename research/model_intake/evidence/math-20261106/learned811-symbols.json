@@ -1,0 +1,116 @@
+{
+  "schema": "tcm-program-symbol-table-v1",
+  "source_map_fingerprint": "ae93f70ace55b9522879b24f02c08d1b1c28418b01b6772350c22b4fd876a251",
+  "program_bundle_digest": "f44543152c013bccacfbab23de2e8ca689e92848a83f4b6ce6b42fc95a1c41e4",
+  "source_identity": "f15a9b58127c99d400a450d4030440d89156289a9f9b2f0e0a050a10d451ad52",
+  "symbols": [
+    {
+      "length": 8,
+      "name": "input",
+      "offset": 0,
+      "value_id": 0,
+      "producer": null,
+      "consumers": [
+        0,
+        1
+      ]
+    },
+    {
+      "length": 4,
+      "name": "getitem",
+      "offset": 8,
+      "value_id": 1,
+      "producer": {
+        "pc": 0,
+        "kind": "slice",
+        "source_ref": "fx://7f21eee074db743ceac2aa050547d5461fab62f9453745ae7d0bb0e371dec2e0/getitem"
+      },
+      "consumers": [
+        2
+      ]
+    },
+    {
+      "length": 4,
+      "name": "getitem_1",
+      "offset": 12,
+      "value_id": 2,
+      "producer": {
+        "pc": 1,
+        "kind": "slice",
+        "source_ref": "fx://7f21eee074db743ceac2aa050547d5461fab62f9453745ae7d0bb0e371dec2e0/getitem_1"
+      },
+      "consumers": [
+        3
+      ]
+    },
+    {
+      "length": 7,
+      "name": "matmul",
+      "offset": 16,
+      "value_id": 3,
+      "producer": {
+        "pc": 2,
+        "kind": "linear",
+        "source_ref": "fx://7f21eee074db743ceac2aa050547d5461fab62f9453745ae7d0bb0e371dec2e0/matmul"
+      },
+      "consumers": [
+        4
+      ]
+    },
+    {
+      "length": 7,
+      "name": "matmul_1",
+      "offset": 23,
+      "value_id": 4,
+      "producer": {
+        "pc": 3,
+        "kind": "linear",
+        "source_ref": "fx://7f21eee074db743ceac2aa050547d5461fab62f9453745ae7d0bb0e371dec2e0/matmul_1"
+      },
+      "consumers": [
+        4
+      ]
+    },
+    {
+      "length": 7,
+      "name": "mul",
+      "offset": 30,
+      "value_id": 5,
+      "producer": {
+        "pc": 4,
+        "kind": "multiply",
+        "source_ref": "fx://7f21eee074db743ceac2aa050547d5461fab62f9453745ae7d0bb0e371dec2e0/mul"
+      },
+      "consumers": [
+        5
+      ]
+    },
+    {
+      "length": 4,
+      "name": "matmul_2",
+      "offset": 37,
+      "value_id": 6,
+      "producer": {
+        "pc": 5,
+        "kind": "linear",
+        "source_ref": "fx://7f21eee074db743ceac2aa050547d5461fab62f9453745ae7d0bb0e371dec2e0/matmul_2"
+      },
+      "consumers": []
+    }
+  ],
+  "state_slots": [],
+  "occurrence_key_fields": [
+    "program_bundle_digest",
+    "job_id",
+    "input_row",
+    "pc",
+    "value_id"
+  ],
+  "authority": {
+    "mechanics_status": "source-map-validated",
+    "instrument_status": "no-trace-supplied",
+    "trend_status": "not-analyzed",
+    "terminal_status": "no-learned-mathematical-role-claim"
+  },
+  "fingerprint": "2ce653ad792de59341bc5d1202565040eb696090e58de72901772113e171d6ea"
+}

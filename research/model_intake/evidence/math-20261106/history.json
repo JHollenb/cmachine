@@ -1,0 +1,38 @@
+[
+  {
+    "job_id": "job-17e7c348dce5",
+    "state": "succeeded",
+    "report_status": "completed",
+    "worker_seconds": 13.97272515296936,
+    "report_sha256": "4e28f4046125f770590accb923418499053d336e0931a18703e20bc7dcf743ce",
+    "payload_sha256": "934f55a628994ac9a347af819715e3fe424fbb3330d8812bbebb0191f0b188d0",
+    "note": "Initial panel; bundles omitted; unseeded Python hash order; enumeration used48-at-once breadth schedule; original audit did not compare sidecar schedule to binary."
+  },
+  {
+    "job_id": "job-feda2ac78ce0",
+    "state": "succeeded",
+    "report_status": "completed",
+    "worker_seconds": 11.801014184951782,
+    "report_sha256": "3b13dafe6143d45d0b2b0b415b9b87d5cf4307245453bf35d9e9c14a50d008ec",
+    "payload_sha256": "b2a53ab44635b206247031118995d777d81a9fa15625e4e52b690490a6e95464",
+    "note": "Retains127 compiled bundles and source coordinate identity; unseeded hash order; earlier enumeration schedule and audit."
+  },
+  {
+    "job_id": "job-3bccdfc96d3f",
+    "state": "succeeded",
+    "report_status": "completed",
+    "worker_seconds": 11.277997970581055,
+    "report_sha256": "08bf970412dfc2150befb10e930690248111b8df884adfa879a93d377fbd2947",
+    "payload_sha256": "444d60cd065ff13b5322133fe12403bf2ae2844d5f2c42ba420125e8b51b823a",
+    "note": "Fixed Python hash seed and explicit thread environment; earlier enumeration schedule and audit."
+  },
+  {
+    "job_id": "job-2a7aae82cec8",
+    "state": "succeeded",
+    "report_status": "completed",
+    "worker_seconds": 12.87156343460083,
+    "report_sha256": "8c9c5499bfb2898bd3abc8d01fa630beaa7e81dda808db502f8f7b6355905e06",
+    "payload_sha256": "8bf91a5a4826706b4da3a938f5876ab240f3a67024c54c4b5157289a3d56e7e8",
+    "note": "Final matched8-per-round enumeration; binary-bound graph audit; retained native continuation observations; independent work and chain checks."
+  }
+]

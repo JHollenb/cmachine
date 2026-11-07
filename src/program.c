@@ -57,9 +57,13 @@ static int load(Program *p,const char *file){
         switch(o->code){
         case P_CONST: valid=w&&w->dtype==TCM_F32&&w->bytes/4==n;break;
         case P_LINEAR:valid=shape(w,n,a,0)&&bias_ok(p,o,n);break;
-        case P_ADD:case P_MUL:valid=n==(a>b?a:b)&&(a==b||a==1||b==1);break;
+        case P_ADD:case P_MUL:case P_DIV:valid=n==(a>b?a:b)&&(a==b||a==1||b==1);break;
         case P_REMAINDER:valid=n==a&&o->scale>0;break;
-        case P_COS:case P_AFFINE:case P_SILU:valid=n==a;break;
+        case P_COS:case P_AFFINE:case P_SILU:case P_RELU:valid=n==a;break;
+        case P_MATCH_ROWS:
+            valid=shape(w,n,a,0);
+            if(valid){const float *keys=w->data;for(size_t k=0;k<n*a;k++)if(!integer(keys[k],-2,16777216)||keys[k]==-1)valid=0;}
+            break;
         case P_CONCAT:valid=n==a+b;break;
         case P_SLICE:valid=o->offset<=a&&n<=a-o->offset;break;
         case P_RMS:valid=n==a&&o->scale>0&&shape(w,n,0,0);break;
@@ -79,6 +83,7 @@ static int load(Program *p,const char *file){
 static void unload(Program *p){free(p->values);free(p->ops);free(p->arena);free(p->state);tcm_unload(&p->model);}
 static float silu(float x){return x/(1.0f+expf(-x));}
 static int step(Program *p,const float *input,int zero,FILE *trace){
+    for(size_t i=0;i<p->input_width;i++)if(!isfinite(input[i]))return error("non-finite input");
     if(p->tokens&&(!isfinite(input[0])||input[0]<0||input[0]>=p->vocab||floorf(input[0])!=input[0]))return error("input outside semantic token domain");
     memcpy(p->arena,input,p->input_width*sizeof(float));
     for(size_t pc=0;pc<p->no;pc++){
@@ -98,6 +103,12 @@ static int step(Program *p,const float *input,int zero,FILE *trace){
             break;
         case P_ADD:for(size_t i=0;i<n;i++)y[i]=a[m==1?0:i]+b[nb==1?0:i];break;
         case P_MUL:for(size_t i=0;i<n;i++)y[i]=a[m==1?0:i]*b[nb==1?0:i];break;
+        case P_DIV:for(size_t i=0;i<n;i++)y[i]=a[m==1?0:i]/b[nb==1?0:i];break;
+        case P_RELU:for(size_t i=0;i<n;i++)y[i]=a[i]>0?a[i]:0;break;
+        case P_MATCH_ROWS:
+            for(size_t j=0;j<m;j++)if(!integer(a[j],-1,16777216))return error("invalid projected lookup key");
+            for(size_t i=0;i<n;i++){int match=1;for(size_t j=0;j<m;j++)if(a[j]!=-1&&a[j]!=w[i*m+j]){match=0;break;}y[i]=(float)match;}
+            break;
         case P_REMAINDER:for(size_t i=0;i<n;i++){float r=fmodf(a[i],o->scale);y[i]=r<0?r+o->scale:r;}break;
         case P_COS:for(size_t i=0;i<n;i++)y[i]=cosf(a[i]);break;
         case P_AFFINE:for(size_t i=0;i<n;i++)y[i]=a[i]*o->scale+o->shift;break;

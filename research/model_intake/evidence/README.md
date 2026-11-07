@@ -1,4 +1,6 @@
-# PAN and instruction-Mamba intake evidence
+# Model intake evidence
+
+The [math expansion](math-20261106/README.md), `job-2a7aae82cec8`, adds learned matrix cells, neural rewrite scorers and actual projected FieldLM read consumers. Its binary-bound audit verifies 127 programs, 4,359 C invocations and 16,241 native-equal reads. The [findings](../MATH.md) separate formal polynomial identity, numerical error, computation reduction and learned scheduler quality. The PAN/Mamba receipts below retain their original sources and scope.
 
 Both specimens execute through the shared C program dispatcher. PAN uses a trusted FX capture; Mamba uses the existing canonical Mamba1 grammar. Import produces the operation schedule, parameter bindings, state allocation and source map. The symbol table is derived automatically from that map. Numerical execution does not require semantic role labels.
 
