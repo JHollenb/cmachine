@@ -1,0 +1,187 @@
+src/isa.c: In function ‘mixer’:
+src/isa.c:108:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  108 |     for(unsigned i=0;i<48;i++)norm[i]=hidden[i]*scale;linear(&m->input,norm,p);
+      |     ^~~
+src/isa.c:108:55: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  108 |     for(unsigned i=0;i<48;i++)norm[i]=hidden[i]*scale;linear(&m->input,norm,p);
+      |                                                       ^~~~~~
+src/isa.c: In function ‘post’:
+src/isa.c:126:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  126 |     for(unsigned i=0;i<48;i++)mean+=x[i];mean/=48;
+      |     ^~~
+src/isa.c:126:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  126 |     for(unsigned i=0;i<48;i++)mean+=x[i];mean/=48;
+      |                                          ^~~~
+src/isa.c: In function ‘isa_advance’:
+src/isa.c:149:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  149 |     for(unsigned j=0;j<8;j++)input[n++]=v->before[j][r];input[n++]=v->a[r];input[n++]=v->s[r];input[n++]=v->imm[r][0];input[n++]=v->imm[r][1];
+      |     ^~~
+src/isa.c:149:57: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  149 |     for(unsigned j=0;j<8;j++)input[n++]=v->before[j][r];input[n++]=v->a[r];input[n++]=v->s[r];input[n++]=v->imm[r][0];input[n++]=v->imm[r][1];
+      |                                                         ^~~~~
+src/isa.c:152:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  152 |     if(n!=293)return -1;linear(&m->input,input,hidden);
+      |     ^~
+src/isa.c:152:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  152 |     if(n!=293)return -1;linear(&m->input,input,hidden);
+      |                         ^~~~~~
+src/isa.c: In function ‘isa_commit’:
+src/isa.c:178:5: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  178 |     for(unsigned i=0;i<8;i++)v->arch.registers[i]=isa_bits(v->output.regs[i]);for(unsigned i=0;i<4;i++)v->arch.flags[i]=v->output.flags[i]>0;
+      |     ^~~
+src/isa.c:178:79: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  178 |     for(unsigned i=0;i<8;i++)v->arch.registers[i]=isa_bits(v->output.regs[i]);for(unsigned i=0;i<4;i++)v->arch.flags[i]=v->output.flags[i]>0;
+      |                                                                               ^~~
+src/main.c: In function ‘main’:
+src/main.c:72:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   72 |         if(completed++)fputc(',',f);fprintf(f,"{\"before\":");arch(f,&before);fprintf(f,",\"after\":");arch(f,&session.state.arch);fprintf(f,",\"heads\":");heads(f,&session.state.output);
+      |         ^~
+src/main.c:72:37: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   72 |         if(completed++)fputc(',',f);fprintf(f,"{\"before\":");arch(f,&before);fprintf(f,",\"after\":");arch(f,&session.state.arch);fprintf(f,",\"heads\":");heads(f,&session.state.output);
+      |                                     ^~~~~~~
+src/main.c:77:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   77 |     if(output_path&&fclose(f))return 2;free(code);tcm_unload(&law_bundle);tcm_unload(&bundle);return exact_checkpoint?0:1;
+      |     ^~
+src/main.c:77:40: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   77 |     if(output_path&&fclose(f))return 2;free(code);tcm_unload(&law_bundle);tcm_unload(&bundle);return exact_checkpoint?0:1;
+      |                                        ^~~~
+In file included from src/qwen.c:14:
+src/qwen_operands.inc: In function ‘qwen_lexical_bind’:
+src/qwen_operands.inc:50:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   50 |     if(!operand_empty(s)||(p&&(!p->ready||p->model!=s->model||s->qkv_programs[0])))return -1;s->lexical_program=p;return 0;
+      |     ^~
+src/qwen_operands.inc:50:94: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   50 |     if(!operand_empty(s)||(p&&(!p->ready||p->model!=s->model||s->qkv_programs[0])))return -1;s->lexical_program=p;return 0;
+      |                                                                                              ^
+src/qwen_operands.inc: In function ‘qwen_lexical_save’:
+src/qwen_operands.inc:53:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   53 |     if(!p||!p->ready||!path)return -1;FILE *f=fopen(path,"wb");if(!f)return -1;const QwenModel *m=p->model;uint32_t meta[]={(uint32_t)m->hidden,(uint32_t)(m->kvheads*m->head),(uint32_t)m->vocab,(uint32_t)p->rows};size_t width=(size_t)meta[0]+2*(size_t)meta[1];
+      |     ^~
+src/qwen_operands.inc:53:39: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   53 |     if(!p||!p->ready||!path)return -1;FILE *f=fopen(path,"wb");if(!f)return -1;const QwenModel *m=p->model;uint32_t meta[]={(uint32_t)m->hidden,(uint32_t)(m->kvheads*m->head),(uint32_t)m->vocab,(uint32_t)p->rows};size_t width=(size_t)meta[0]+2*(size_t)meta[1];
+      |                                       ^~~~
+src/qwen_operands.inc: In function ‘qwen_lexical_load’:
+src/qwen_operands.inc:57:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   57 |     if(!p||!m||!path)return -1;FILE *f=fopen(path,"rb");if(!f)return -1;char magic[8],model[65],fingerprint[65];uint32_t meta[4];int bad=fread(magic,1,8,f)!=8||fread(model,1,65,f)!=65||fread(fingerprint,1,65,f)!=65||fread(meta,4,4,f)!=4;
+      |     ^~
+src/qwen_operands.inc:57:32: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   57 |     if(!p||!m||!path)return -1;FILE *f=fopen(path,"rb");if(!f)return -1;char magic[8],model[65],fingerprint[65];uint32_t meta[4];int bad=fread(magic,1,8,f)!=8||fread(model,1,65,f)!=65||fread(fingerprint,1,65,f)!=65||fread(meta,4,4,f)!=4;
+      |                                ^~~~
+src/qwen.c: In function ‘qwen_session_init_layout’:
+src/qwen.c:57:115: warning: ‘*’ in boolean context, suggest ‘&&’ instead [-Wint-in-bool-context]
+   57 |     ALLOC(keys,kv);ALLOC(values,kv);ALLOC(x,m->hidden);ALLOC(norm,m->hidden);ALLOC(q,m->hidden);ALLOC(k,m->kvheads*m->head);ALLOC(v,m->kvheads*m->head);ALLOC(attention,m->hidden);ALLOC(projected,m->hidden);ALLOC(gate,m->intermediate);ALLOC(up,m->intermediate);ALLOC(logits,m->vocab);ALLOC(scores,(size_t)m->qheads*capacity);
+      |                                                                                                                   ^
+src/qwen.c:56:42: note: in definition of macro ‘ALLOC’
+   56 | #define ALLOC(field,n) s->field=(size_t)(n)?gpu_alloc((size_t)(n)*sizeof(float)):NULL;s->allocated_bytes+=(size_t)(n)*sizeof(float)
+      |                                          ^
+src/qwen.c:57:143: warning: ‘*’ in boolean context, suggest ‘&&’ instead [-Wint-in-bool-context]
+   57 |     ALLOC(keys,kv);ALLOC(values,kv);ALLOC(x,m->hidden);ALLOC(norm,m->hidden);ALLOC(q,m->hidden);ALLOC(k,m->kvheads*m->head);ALLOC(v,m->kvheads*m->head);ALLOC(attention,m->hidden);ALLOC(projected,m->hidden);ALLOC(gate,m->intermediate);ALLOC(up,m->intermediate);ALLOC(logits,m->vocab);ALLOC(scores,(size_t)m->qheads*capacity);
+      |                                                                                                                                               ^
+src/qwen.c:56:42: note: in definition of macro ‘ALLOC’
+   56 | #define ALLOC(field,n) s->field=(size_t)(n)?gpu_alloc((size_t)(n)*sizeof(float)):NULL;s->allocated_bytes+=(size_t)(n)*sizeof(float)
+      |                                          ^
+src/qwen.c:56:33: warning: ‘*’ in boolean context, suggest ‘&&’ instead [-Wint-in-bool-context]
+   56 | #define ALLOC(field,n) s->field=(size_t)(n)?gpu_alloc((size_t)(n)*sizeof(float)):NULL;s->allocated_bytes+=(size_t)(n)*sizeof(float)
+      |                                 ^~~~~~~~~~~
+src/qwen.c:57:284: note: in expansion of macro ‘ALLOC’
+   57 |     ALLOC(keys,kv);ALLOC(values,kv);ALLOC(x,m->hidden);ALLOC(norm,m->hidden);ALLOC(q,m->hidden);ALLOC(k,m->kvheads*m->head);ALLOC(v,m->kvheads*m->head);ALLOC(attention,m->hidden);ALLOC(projected,m->hidden);ALLOC(gate,m->intermediate);ALLOC(up,m->intermediate);ALLOC(logits,m->vocab);ALLOC(scores,(size_t)m->qheads*capacity);
+      |                                                                                                                                                                                                                                                                                            ^~~~~
+src/qwen.c: In function ‘qwen_gate_law_free’:
+src/qwen.c:213:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  213 |     if(!p)return;gpu_free(p->source_gate);gpu_free(p->probability);gpu_free(p->first);gpu_free(p->second);gpu_free(p->source_silu);memset(p,0,sizeof(*p));
+      |     ^~
+src/qwen.c:213:18: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  213 |     if(!p)return;gpu_free(p->source_gate);gpu_free(p->probability);gpu_free(p->first);gpu_free(p->second);gpu_free(p->source_silu);memset(p,0,sizeof(*p));
+      |                  ^~~~~~~~
+src/qwen.c: In function ‘qwen_checkpoint’:
+src/qwen.c:409:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  409 |     if(!at_boundary(s))return -1;snapshot(s,c);c->serial=++s->checkpoint_serial;s->checkpoint_position=s->position;return 0;
+      |     ^~
+src/qwen.c:409:34: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  409 |     if(!at_boundary(s))return -1;snapshot(s,c);c->serial=++s->checkpoint_serial;s->checkpoint_position=s->position;return 0;
+      |                                  ^~~~~~~~
+src/qwen.c: In function ‘qwen_stack_commit’:
+src/qwen.c:431:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  431 |     if(!valid_top(s,id))return -1;s->depth--;return 0;
+      |     ^~
+src/qwen.c:431:35: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  431 |     if(!valid_top(s,id))return -1;s->depth--;return 0;
+      |                                   ^
+src/qwen.c: In function ‘qwen_reset’:
+src/qwen.c:436:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  436 |     if(s->cache_rewind)s->cache_rewind(s->cache_context,0,s->session_id,s->epoch);return 0;
+      |     ^~
+src/qwen.c:436:83: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  436 |     if(s->cache_rewind)s->cache_rewind(s->cache_context,0,s->session_id,s->epoch);return 0;
+      |                                                                                   ^~~~~~
+src/qwen.c: In function ‘qwen_main’:
+src/qwen.c:455:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  455 |     if(argc<3)return 2;const char *tokens_path=NULL,*output_path=NULL,*logits_path=NULL,*trace_prefix=NULL;int budget=32,capacity=4096,checkpoint_test=0,trace_layer=-1,trace_position=-1;
+      |     ^~
+src/qwen.c:455:24: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  455 |     if(argc<3)return 2;const char *tokens_path=NULL,*output_path=NULL,*logits_path=NULL,*trace_prefix=NULL;int budget=32,capacity=4096,checkpoint_test=0,trace_layer=-1,trace_position=-1;
+      |                        ^~~~~
+src/qwen.c:458:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  458 |         if(i+1>=argc)return 2;const char *value=argv[++i];
+      |         ^~
+src/qwen.c:458:31: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  458 |         if(i+1>=argc)return 2;const char *value=argv[++i];
+      |                               ^~~~~
+src/qwen.c:489:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  489 |         if(qwen_restore(&session,&checkpoint)||qwen_advance(&session))return 2;gpu_read(actual,session.logits,bytes);checkpoint_exact=expected==session.pending&&!memcmp(reference,actual,bytes);free(reference);free(actual);if(qwen_restore(&session,&checkpoint))return 2;
+      |         ^~
+src/qwen.c:489:80: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  489 |         if(qwen_restore(&session,&checkpoint)||qwen_advance(&session))return 2;gpu_read(actual,session.logits,bytes);checkpoint_exact=expected==session.pending&&!memcmp(reference,actual,bytes);free(reference);free(actual);if(qwen_restore(&session,&checkpoint))return 2;
+      |                                                                                ^~~~~~~~
+src/qwen.c:495:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  495 |         if(i)fputc(',',output);fprintf(output,"{\"id\":%d,\"position\":%d,\"logit\":%.9g,\"runner_up\":%d,\"margin\":%.9g}",session.pending,session.position,session.top.first_value,session.top.second,session.top.first_value-session.top.second_value);generated++;session.delivered=1;
+      |         ^~
+src/qwen.c:495:32: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  495 |         if(i)fputc(',',output);fprintf(output,"{\"id\":%d,\"position\":%d,\"logit\":%.9g,\"runner_up\":%d,\"margin\":%.9g}",session.pending,session.position,session.top.first_value,session.top.second,session.top.first_value-session.top.second_value);generated++;session.delivered=1;
+      |                                ^~~~~~~
+src/qwen.c:496:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  496 |         if(session.pending==model.eos||(model.eos_extra>0&&session.pending==model.eos_extra)||i+1==budget)break;if(qwen_advance(&session))return 2;
+      |         ^~
+src/qwen.c:496:113: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  496 |         if(session.pending==model.eos||(model.eos_extra>0&&session.pending==model.eos_extra)||i+1==budget)break;if(qwen_advance(&session))return 2;
+      |                                                                                                                 ^~
+src/qwen_serve.c: In function ‘frame_id’:
+src/qwen_serve.c:12:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+   12 |     while(*line==' '||*line=='\t')line++;if(*line<'0'||*line>'9')return -1;
+      |     ^~~~~
+src/qwen_serve.c:12:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   12 |     while(*line==' '||*line=='\t')line++;if(*line<'0'||*line>'9')return -1;
+      |                                          ^~
+src/qwen_serve.c:15:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   15 |     if(errno||*end||!value)return -1;*id=(uint64_t)value;return 0;
+      |     ^~
+src/qwen_serve.c:15:38: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   15 |     if(errno||*end||!value)return -1;*id=(uint64_t)value;return 0;
+      |                                      ^
+src/qwen_serve.c: In function ‘state_hashes’:
+src/qwen_serve.c:22:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   22 |         if(row)gpu_read(host+offset,(kind?s->values:s->keys)+address,row*4);offset+=row;
+      |         ^~
+src/qwen_serve.c:22:77: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   22 |         if(row)gpu_read(host+offset,(kind?s->values:s->keys)+address,row*4);offset+=row;
+      |                                                                             ^~~~~~
+src/qwen_serve.c: In function ‘qwen_serve_main’:
+src/qwen_serve.c:56:17: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   56 |                 if(count++)putchar(',');printf("%d",session.pending);session.delivered=1;
+      |                 ^~
+src/qwen_serve.c:56:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   56 |                 if(count++)putchar(',');printf("%d",session.pending);session.delivered=1;
+      |                                         ^~~~~~
+src/qwen_bounded_serve.c: In function ‘qwen_bounded_serve_main’:
+src/qwen_bounded_serve.c:51:17: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   51 |                 if(count++)putchar(',');printf("%d",session.pending);session.delivered=1;if(session.pending==model.eos||(model.eos_extra>0&&session.pending==model.eos_extra))break;
+      |                 ^~
+src/qwen_bounded_serve.c:51:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   51 |                 if(count++)putchar(',');printf("%d",session.pending);session.delivered=1;if(session.pending==model.eos||(model.eos_extra>0&&session.pending==model.eos_extra))break;
+      |                                         ^~~~~~
+src/qwen_bounded_serve.c:59:9: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+   59 |         else puts("{\"error\":\"unknown command\"}");fflush(stdout);
+      |         ^~~~
+src/qwen_bounded_serve.c:59:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+   59 |         else puts("{\"error\":\"unknown command\"}");fflush(stdout);
+      |                                                      ^~~~~~

@@ -1,0 +1,8 @@
+{
+  "schema": "compiled-operands-invocation-v1",
+  "driver_sha256": "ec1e8e636195389595d0c3a7d0399c327be3628adb04354a6dc0fd309cb3b3b8",
+  "binary_sha256": "48946659d1ed5e938c8a1aec48a29b0cd07c9377445ab90891ec974224801c9d",
+  "tokens_sha256": "cbfecbea0446fc838d6b9d099644390622c50a6a361ccd754e5f5e491c7c3de6",
+  "steps": 8,
+  "prompt_tokens": 36
+}

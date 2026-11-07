@@ -1,0 +1,74 @@
+{
+  "assigned_host": "beast",
+  "config": {
+    "backend": "hf",
+    "binary_sha256": "f2891d54fb109d741949505c878fc15462a6d07fe68c17bfbe8ccffd065dd719",
+    "device": "cuda",
+    "dtype": "fp32",
+    "max_retries": 0,
+    "model_digest": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc",
+    "operand_binary_sha256": "48946659d1ed5e938c8a1aec48a29b0cd07c9377445ab90891ec974224801c9d",
+    "schema": "cmachine-public-demos-v1",
+    "source_manifest_sha256": "53f81813b184fb282568279ffdb19090cbd1beec84d8c0463efc5a8030467fef"
+  },
+  "executed_command": [
+    "uv",
+    "run",
+    "--offline",
+    "--project",
+    "{env}",
+    "python",
+    "demos/fleet_worker.py"
+  ],
+  "job_id": "job-995c8e81e7ca",
+  "payload_custody": {
+    "declared": {
+      "sha256": "60b8fc00d229a2c57878e8119f171de8693e312ce4ea1e66b9aac113dda49520",
+      "size_bytes": 218806
+    },
+    "executed": {
+      "host": "beast",
+      "reported_ts": 1794031438.7246616,
+      "sha256": "60b8fc00d229a2c57878e8119f171de8693e312ce4ea1e66b9aac113dda49520",
+      "size_bytes": 218806
+    },
+    "required": true,
+    "sealed": {
+      "sealed_ts": 1794031438.6241443,
+      "sha256": "60b8fc00d229a2c57878e8119f171de8693e312ce4ea1e66b9aac113dda49520",
+      "size_bytes": 218806
+    }
+  },
+  "plan": {
+    "backend": "hf",
+    "device": "cuda",
+    "dtype": "float32",
+    "max_batch": 1,
+    "threads": 4
+  },
+  "redactions": [
+    "scheduler logs and opaque base64 exports",
+    "scheduler private admission/configuration fields"
+  ],
+  "result": {
+    "executed_payload": {
+      "host": "beast",
+      "sha256": "60b8fc00d229a2c57878e8119f171de8693e312ce4ea1e66b9aac113dda49520",
+      "size_bytes": 218806
+    },
+    "returncode": 0,
+    "status": "ok"
+  },
+  "schema": "cmachine-pretrained-demo-guard-public-v1",
+  "source_manifest_sha256": "53f81813b184fb282568279ffdb19090cbd1beec84d8c0463efc5a8030467fef",
+  "state": "succeeded",
+  "submitted_command": [
+    "uv",
+    "run",
+    "--offline",
+    "--project",
+    "{env}",
+    "python",
+    "demos/fleet_worker.py"
+  ]
+}

@@ -6,6 +6,10 @@ C owns the live state, the model equations, output selection and continuation. T
 
 The goal is to turn understood computations into executable programs that can form their own operands, update consequential state and continue at lower cost. The current Qwen implementation still evaluates the dense model. Avoiding a framework `forward()` call does not remove that computation.
 
+**See it work:** [interactive demo showcase](demos/showcase.html) · [runnable demos and results](demos/README.md). Start with `python3 demos/run.py tour` for a weight-free tour of state, replay, operand programs and a nonlinear closure/repair experiment.
+
+[![Reversible chat and exact operand-program continuation](demos/overview.svg)](demos/README.md)
+
 This is now the canonical working repository. The complete former `saturn/cmachine` research tree lives under [research/](research/README.md), including its local raw evidence. A compatibility link preserves the old workspace address. Research `src`, `tests`, `tools` and `Makefile` resolve to this repository's canonical runtime. Large raw/model archives remain local and ignored by Git; research sources, protocols and findings are tracked here.
 
 The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches, bounded anchors/recent/reservoir retention, overwritten-row recovery, source-BF16 weight tiling and persistent bounded chat to the existing writer/lineage core. Native remains the default. [Commit verification](validation/README.md) builds exact Git objects, compares the original and integrated native cores, and authenticates historical compressed-cache behavior through a guarded Beast lease.
