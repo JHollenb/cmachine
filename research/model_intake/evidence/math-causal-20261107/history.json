@@ -1,0 +1,54 @@
+[
+  {
+    "job_id": "job-a72757b03ba8",
+    "report_sha256": "9bb041cede92b5690acf8db0422144304412755598c07d6ef2577d0f4a242e07",
+    "source_manifest_sha256": "a9cf22e3dad78019e18b49ea26edd628190a9be8e6097f3ac980ebff9a8ff859",
+    "payload": {
+      "required": true,
+      "declared": {
+        "sha256": "c86b1dd29f61ee0fc2fa5071926bcf0c81b3fb4032b3b5f3c680399fa76fe53b",
+        "size_bytes": 202123
+      },
+      "sealed": {
+        "sha256": "c86b1dd29f61ee0fc2fa5071926bcf0c81b3fb4032b3b5f3c680399fa76fe53b",
+        "size_bytes": 202123,
+        "sealed_ts": 1794040660.1505928
+      },
+      "executed": {
+        "sha256": "c86b1dd29f61ee0fc2fa5071926bcf0c81b3fb4032b3b5f3c680399fa76fe53b",
+        "size_bytes": 202123,
+        "reported_ts": 1794040660.2521102,
+        "host": "beast"
+      }
+    },
+    "branches": 108,
+    "worker_wall_seconds": 179.35666728019714,
+    "protocol": "initial same-parent scan/exchanges; no alternative-membership panel or per-branch qualification fields"
+  },
+  {
+    "job_id": "job-a117c5a7b06c",
+    "report_sha256": "5932371f682a01267d8a57970c78a72e7f079685b612f3e9b56edf209096f9a5",
+    "source_manifest_sha256": "a98c65dc2e25e855a39634c76517da7e7b40ce73e03204d0b2cd954ba60dab57",
+    "payload": {
+      "required": true,
+      "declared": {
+        "sha256": "5954d99578e852f167ae0e91828f619b3819aa4c4d91295fef98002d98a88bb6",
+        "size_bytes": 202780
+      },
+      "sealed": {
+        "sha256": "5954d99578e852f167ae0e91828f619b3819aa4c4d91295fef98002d98a88bb6",
+        "size_bytes": 202780,
+        "sealed_ts": 1794040953.7982607
+      },
+      "executed": {
+        "sha256": "5954d99578e852f167ae0e91828f619b3819aa4c4d91295fef98002d98a88bb6",
+        "size_bytes": 202780,
+        "reported_ts": 1794040953.9656904,
+        "host": "beast"
+      }
+    },
+    "branches": 117,
+    "worker_wall_seconds": 196.49217653274536,
+    "protocol": "expanded alternatives; per-branch clock/function qualification; edge-control fixes"
+  }
+]

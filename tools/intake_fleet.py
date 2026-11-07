@@ -92,6 +92,11 @@ def collect(job):
     from mrun.client.api import Api
     api=Api();record=api.json("GET",f"/api/jobs/{job}")
     target=ROOT/"results"/job;target.mkdir(parents=True,exist_ok=True)
+    # Larger causal panels opt in through the locally retained submission. The
+    # remote report cannot increase the collector's extraction authority.
+    submission=target/'submission.json'
+    budget=json.loads(submission.read_text()).get('config',{}).get('evidence_budget_bytes',64*1024**2) if submission.exists() else 64*1024**2
+    if type(budget) is not int or not 0<budget<=256*1024**2:raise ValueError('invalid evidence budget')
     (target/"job.json").write_text(json.dumps(record,indent=2)+"\n")
     _,logs,_=api.request("GET",f"/api/jobs/{job}/logs?offset=0&wait_s=1",timeout_s=30)
     (target/"logs.txt").write_bytes(logs)
@@ -103,7 +108,7 @@ def collect(job):
             with tarfile.open(fileobj=io.BytesIO(base64.b64decode(line.split("=",1)[1])),mode="r:gz") as archive:
                 members=archive.getmembers()
                 expanded_bytes+=sum(m.size for m in members)
-                if expanded_bytes>64*1024**2:raise ValueError("evidence budget exceeded")
+                if expanded_bytes>budget:raise ValueError("evidence budget exceeded")
                 for m in members:
                     relative=Path(m.name)
                     # The first worker used absolute cwd paths in its tar member

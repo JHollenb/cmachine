@@ -26,6 +26,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 - [Optional Saturn/mrun integration](docs/INTEGRATION.md)
 - [Automated model intake, C programs and execution evidence](research/model_intake/README.md)
 - [Math intake, polynomial analysis and FieldLM consumers](research/model_intake/MATH.md)
+- [Math choice cuts, causal repairs and unchanged search continuation](research/model_intake/MATH-CAUSAL.md)
 
 ## Supported models
 

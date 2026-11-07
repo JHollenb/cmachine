@@ -1,0 +1,61 @@
+{
+  "job_id": "job-a117c5a7b06c",
+  "experiment": "cmachine-model-intake-math-causal",
+  "state": "succeeded",
+  "assigned_host": "beast",
+  "created_ts": 1794040953.732017,
+  "started_ts": 1794040954.0105991,
+  "finished_ts": 1794041160.0098581,
+  "cmd": [
+    "env",
+    "PYTHONHASHSEED=0",
+    "OMP_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "uv",
+    "run",
+    "--offline",
+    "--project",
+    "{env}",
+    "python",
+    "tools/math_causal_worker.py",
+    "math-causal"
+  ],
+  "timeout_s": 600.0,
+  "needs": {
+    "host": "beast",
+    "prefer_host": "beast",
+    "payload_custody_v2": true
+  },
+  "reservation": {
+    "ram_mb": 4096.0,
+    "vram_mb": 0.0,
+    "cpu_threads": 4,
+    "disk_gb": 1.0,
+    "est_wall_s": null,
+    "source": "probe-default"
+  },
+  "payload_custody": {
+    "required": true,
+    "declared": {
+      "sha256": "5954d99578e852f167ae0e91828f619b3819aa4c4d91295fef98002d98a88bb6",
+      "size_bytes": 202780
+    },
+    "sealed": {
+      "sha256": "5954d99578e852f167ae0e91828f619b3819aa4c4d91295fef98002d98a88bb6",
+      "size_bytes": 202780,
+      "sealed_ts": 1794040953.7982607
+    },
+    "executed": {
+      "sha256": "5954d99578e852f167ae0e91828f619b3819aa4c4d91295fef98002d98a88bb6",
+      "size_bytes": 202780,
+      "reported_ts": 1794040953.9656904,
+      "host": "beast"
+    }
+  },
+  "meta": {
+    "queue_note": "Frozen same-parent causal audit:3goals,2baselines,6round scans,<=64singleton exchanges,alternativebatch+8singletons,sham/A-B-A/permutation/dose/reciprocal controls;original consumer prefix recomputation+native audit+stateless C memo;1CPU thread,48selections/6rounds/768nodes,600s lease;no training/CUDA/retries;stop after panel",
+    "observed_peak_rss_mb": 822.7,
+    "observed_peak_rss_ts": 1794041157.8522813
+  }
+}

@@ -1,0 +1,4099 @@
+{
+  "goal": "scalar-product",
+  "domain": "integer-commutative",
+  "expression": [
+    "add",
+    [
+      "add",
+      [
+        "add",
+        [
+          "add",
+          [
+            "add",
+            [
+              "add",
+              [
+                "add",
+                [
+                  "mul",
+                  [
+                    "mul",
+                    "x0",
+                    "x1"
+                  ],
+                  "x2"
+                ],
+                [
+                  "mul",
+                  [
+                    "mul",
+                    "x0",
+                    "x1"
+                  ],
+                  "y2"
+                ]
+              ],
+              [
+                "mul",
+                [
+                  "mul",
+                  "x0",
+                  "y1"
+                ],
+                "x2"
+              ]
+            ],
+            [
+              "mul",
+              [
+                "mul",
+                "x0",
+                "y1"
+              ],
+              "y2"
+            ]
+          ],
+          [
+            "mul",
+            [
+              "mul",
+              "y0",
+              "x1"
+            ],
+            "x2"
+          ]
+        ],
+        [
+          "mul",
+          [
+            "mul",
+            "y0",
+            "x1"
+          ],
+          "y2"
+        ]
+      ],
+      [
+        "mul",
+        [
+          "mul",
+          "y0",
+          "y1"
+        ],
+        "x2"
+      ]
+    ],
+    [
+      "mul",
+      [
+        "mul",
+        "y0",
+        "y1"
+      ],
+      "y2"
+    ]
+  ],
+  "context": "934f116a997fcb59c7377f1cdba229af75afe1bdbdd208ade53a434ed76c988b",
+  "baselines": {
+    "v1": {
+      "applications": 46,
+      "context": "934f116a997fcb59c7377f1cdba229af75afe1bdbdd208ade53a434ed76c988b",
+      "cost": 5,
+      "decisions": [
+        {
+          "choice": [
+            "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+            "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+            "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+            "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+            "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+            "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+          ],
+          "frontier": "d4a0448f7c65123e887bd09713db1b61de495fa6550789ec8cdb71c74fe20b9e"
+        },
+        {
+          "choice": [
+            "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+            "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+            "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+            "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+            "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+            "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+            "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+            "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+          ],
+          "frontier": "f5924e89e03243257e4a552d40d302ba1f9cc35ec12996760b884053b7cf978c"
+        },
+        {
+          "choice": [
+            "fdb2c68a4afbc0ea747ad95e8cf6119f50acb2c36d0490d9b75e1f893168e63c",
+            "cb7d02fdbc3260212c5108a313d38c43f04bcf5853b9c86d9eed84c9e67781d7",
+            "51c2b7d10aa459e961710530cbdf3b858915256a1ef2b28a3fa0d9afe603cffb",
+            "3fa1f091ec1ff89ced88edb179cf069ca6fc9057821ef64b10083511adb31618",
+            "c5b4e865232a682104b7eac2b3f6748436755ac4aff47e040c9f97f01c5cb16d",
+            "942c5e80eabf1d2a603ea50c6e63db24798cee0d8770edab70550a136cb552b6",
+            "80e5bc406d8da0db050ad8f6324176fa0a944e8b42d743c0af4e695d17555fa1",
+            "48a0ef9756619657623129181771ccc53e109ce99268847cbe20668ed18aa702"
+          ],
+          "frontier": "d6caf9d911a363014a866b886aa59e94b483e59a98ca2bbc1c592034a14f44b2"
+        },
+        {
+          "choice": [
+            "87d843206df652e306edd66f62cc6038c870df940629dae8bccf7299f137c6c1",
+            "bea0d2de7bcff37e74ae4eef5a81f132a016b447c7f6f95447bbc62c7c2b0bd7",
+            "4c9f29a74ff366807d7fa65fad197a6bb5cf1ef6064c8b051c33894a18b94d39",
+            "7fe90e42ef31fb7a3f6d788b162cd4d951311d40e0833af5bccaa47ec135c8f9",
+            "8472ac2ea04214d8eaa22ad49df2116f26b889b77e047a2d20a8b0fd9b7e15d0",
+            "a8c16ad06bf87413505ca87ea9aee3302f5d0e5dfca463f1aca1fad8dd7cfca4",
+            "130c8833393b863beea3a27b8074b76e583c3e81ac9d03ab2000cedd59d0449a",
+            "ea6c9867526e23f4d175bf5fc4273c4bf27a87f07c81106bd5bfeca15385c17b"
+          ],
+          "frontier": "fcc945a9def030e7c609cb9fb27aa95ceaac298160beda8b803c021865699b6f"
+        },
+        {
+          "choice": [
+            "161ea2695b551290268fb0f3ddf5ead46d0f55aa213c29f6532faad8c6c67f63",
+            "25659346c1070904ad44a1bc9e9dd9967a5ef9515c48c87ff0804a2257293864",
+            "f0ab77f27d01efb8d22b9e58a5e172060dc694d7c3ccfb6ce4d969b8008c937a",
+            "08d242c173a359ee9469255edd4fa5cc446860197558029226634c3a33b35a4b",
+            "1e61430ebb9fed012010846e18e11332c56f467b69ba2c72a08cc4c3a21adff9",
+            "8a6b1a9fdd213367267c356f3b84f5fd51274ba431867769310c3662ea27879b",
+            "2274d3b8972f909909eb8267224176ffaa9dab666dc7992163c4ed63e5a07320",
+            "998e800729dec0415a50cb5ebfaec372e5127541b12e09ed668d5cc6a4ae99e3"
+          ],
+          "frontier": "73aa2bf3069d73362014c5e0e47f4abf9bf2cc691cae5bed8b12a3f0a279c7e1"
+        },
+        {
+          "choice": [
+            "ca1e6d9facfc8d78e62a36cd767c6ab6415ff08e66f29a14616742d68f95c8ac",
+            "33fd1ceb47bd8ccd51d8b68d3e53bfa5a06e9ac6b8c01400c876f11b095297e2",
+            "92ac3135d035b25d3e1120827d1907d9bda971607f89d9cb40356cf25be87f39",
+            "06539b145dcc02d74dfe6e1e120737f3b097ec6216a95a7c495240595b29a7e6",
+            "1a564067bfc79b820cef2132df03705a3d35990129b823ec4c722ebdf0ee701e",
+            "7c976a199bb740a2396b99096b764fac85febad97985036a7b59000333acad87",
+            "bf2070c59e5472a4a35f9cf9294d09463b0698882e1caed32e283da66d91b514",
+            "05c1174cda4f5507e175ce1aa7886f2d71216951bf1d596678f03b9f106cde61"
+          ],
+          "frontier": "b5efc6eb030eb39d881c213387152d1325b47a83004c29b12f4f2a68ed2dff77"
+        }
+      ],
+      "exact_polynomial": true,
+      "expression": [
+        "prod",
+        [
+          "sum",
+          "x2",
+          "y2"
+        ],
+        [
+          "sum",
+          "x0",
+          "y0"
+        ],
+        [
+          "sum",
+          "x1",
+          "y1"
+        ]
+      ],
+      "graph_before_extract": "71cf920006935ead2d56859a87d90632f282385a98b3f01a0779ded2cb50ff2e",
+      "numerical": {
+        "C_reference_max_abs": 0.0,
+        "operations": 11,
+        "program": "b8cfc659b581b0c4e119a7045bc3e9ce504e1b30a1f4f70569de92e43e5b333c",
+        "reference": "aaffb7e8298832223d34e19d8f17e782f6a8ae7a9db1d702fec43d12ce1fbbb8",
+        "source_c_max_abs": 0.0
+      },
+      "ops": {
+        "add": 3,
+        "mul": 2
+      },
+      "search_status": "iter-cap",
+      "selection_budget_used": 46,
+      "trace": [
+        {
+          "applied": 6,
+          "classes": 36,
+          "dag_cost": 20,
+          "fresh": 6,
+          "iteration": 1,
+          "match_capped": false,
+          "matches": 6,
+          "nodes": 42,
+          "unions": 6
+        },
+        {
+          "applied": 8,
+          "classes": 40,
+          "dag_cost": 9,
+          "fresh": 42,
+          "iteration": 2,
+          "match_capped": false,
+          "matches": 48,
+          "nodes": 51,
+          "unions": 5
+        },
+        {
+          "applied": 8,
+          "classes": 44,
+          "dag_cost": 6,
+          "fresh": 39,
+          "iteration": 3,
+          "match_capped": false,
+          "matches": 53,
+          "nodes": 63,
+          "unions": 8
+        },
+        {
+          "applied": 8,
+          "classes": 47,
+          "dag_cost": 5,
+          "fresh": 36,
+          "iteration": 4,
+          "match_capped": false,
+          "matches": 58,
+          "nodes": 71,
+          "unions": 5
+        },
+        {
+          "applied": 8,
+          "classes": 50,
+          "dag_cost": 5,
+          "fresh": 35,
+          "iteration": 5,
+          "match_capped": false,
+          "matches": 65,
+          "nodes": 80,
+          "unions": 6
+        },
+        {
+          "applied": 8,
+          "classes": 51,
+          "dag_cost": 5,
+          "fresh": 34,
+          "iteration": 6,
+          "match_capped": false,
+          "matches": 72,
+          "nodes": 86,
+          "unions": 5
+        }
+      ]
+    },
+    "v2a": {
+      "applications": 46,
+      "context": "934f116a997fcb59c7377f1cdba229af75afe1bdbdd208ade53a434ed76c988b",
+      "cost": 9,
+      "decisions": [
+        {
+          "choice": [
+            "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+            "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+            "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+            "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+            "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+            "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+          ],
+          "frontier": "d4a0448f7c65123e887bd09713db1b61de495fa6550789ec8cdb71c74fe20b9e"
+        },
+        {
+          "choice": [
+            "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+            "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+            "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+            "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+            "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+            "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+            "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+            "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+          ],
+          "frontier": "f5924e89e03243257e4a552d40d302ba1f9cc35ec12996760b884053b7cf978c"
+        },
+        {
+          "choice": [
+            "aa388d737f9103c7b02e6d22421e9738907793aefd5c5e14ec312d7bd25ed81f",
+            "62fdc4ba932ff1130d6ef3a75e10d50cb072c62cea4c2257a71399aa0f6d6158",
+            "d270f58b77c5886b198ed8461ba453134df4733ed309352abae793925e20d976",
+            "f88064641e1c2bb4a9929ab1bead00d6f3a9fdf67d4a6d57ff346e0cfbbc76e5",
+            "e1552dd82b4a88d9481187728c7caf8ae706d3bd0778a929deb329700d192377",
+            "8ae06c7924487452dfee3ecad03055da9dbebf40abd829ee6415ba62d21897a3",
+            "59493a0295e22d7f571aa2b82e2a960149d7814b1e87f37d7aa75095b05d58d9",
+            "e1c052891cf701f9bef0280a9d6909850e9f9210c89157c55ba5d8e89d9f44b9"
+          ],
+          "frontier": "e6daacb1aff4317247966b8a61bdfa8005a54800e7e818a3095fb996781867c1"
+        },
+        {
+          "choice": [
+            "c9453a8199849de77e53b9c00f99a21acffb505ed79d4853e6fc9f199e4a4982",
+            "c7701b267b53e96e4afd28d36c58ded52789e37db8d625be3d7bff663140937f",
+            "7d0241d141b7b6c48adef3979fa164d59e234a4a570d02018ea9faf9d2752511",
+            "eb0030fa8fc7fcb143e41e1035c7fa2441888f2e87eb24c33e28a058485083b2",
+            "f75cb344fadc39e72b07fa3a36a3508a3ae70edf39c6610e487cae40f9611f47",
+            "abfb042eabcb43fba40d304b19f12e5ed163e2592032799199b8cab05d71f663",
+            "83bc8af6943fa7b968dfdfe015c3da34ae8d7816b0401cc27504fcfaaefe01ff",
+            "04f954fa447903b8ac8e1edb99b6f69ee781e2cb1887c308b05aa231783d13b6"
+          ],
+          "frontier": "e3e71fe3e9960a59b3b3c1ae68f18d80e2e55f6d44069dd901380e3d075100d8"
+        },
+        {
+          "choice": [
+            "6bf7c60b74b528ffd2b7ebc93489888dcf105fea0fe53913332c964ea2c659af",
+            "38049c763d0f875dfb71587d5bf64a5a5bd15c0ba14e74af6b1dbc7dee79e0bf",
+            "b0999082d76b0b69b1e36b58700c6d14fcf7b6d1ea52beae67f8ff97cc819ed4",
+            "db8454382d26f4cd1ccb140fe9eb6234d0fca3d7472c84368684a22556bc01f2",
+            "cf647ca6ae0c10a3f065458c2d2e5b2e24aa7bce5f28f0bff8567fc1a55b3b08",
+            "be704272527c4fcc1f83b95591d8427766780c1420ba9fa5fea1668b28e63019",
+            "8eb00ddca8129418b3e8c61dd1630c079eb4795c18417b8e522b52e2307b9968",
+            "b44a4035c1ed331ce603020c13281a8d9d940c208aba9dd863d8695fbfe09150"
+          ],
+          "frontier": "da0b315875daab703190b8edb4402e057ddbf139ced0b35fef84d89b2915d6b2"
+        },
+        {
+          "choice": [
+            "e7131e31c782159904d58f8c0a32aef19c12addad33171575eb3ff8600cafe1f",
+            "288d4bcb8c044d92fb08d58f711c237235f5d76d26a5efdc665c2cb57198b318",
+            "bab1d176f924a412cfbf7d2fe1e2ac5b6fb3f716f9b50212078ac2ad7b22c976",
+            "7a836625d34d050d7c6d03d3a3951abd2d02a09369e29a39dcca04f37d26ca81",
+            "0b1cafce36f20b619109b88324652b0386f588a8c6733965f70de51dbf2f0a23",
+            "b5e5ac6bd06bdcd7729f3907f5b1b328da1b7057633bdb1dc4dc462e96a20b50",
+            "289885ef146390f44799ffa71fe2a8c1fa91af7b45ef34e5363378cffda96939",
+            "7a74f199e360d5a2186cadca375ea32fc4e35f16cd05db08971291e556420e51"
+          ],
+          "frontier": "8882606b318ef968b2863945ac65270ab474650b7e5c5ac52caa5a4e46b8381b"
+        }
+      ],
+      "exact_polynomial": true,
+      "expression": [
+        "sum",
+        [
+          "prod",
+          "x0",
+          [
+            "sum",
+            [
+              "prod",
+              "x1",
+              [
+                "sum",
+                "x2",
+                "y2"
+              ]
+            ],
+            [
+              "prod",
+              "y1",
+              [
+                "sum",
+                "x2",
+                "y2"
+              ]
+            ]
+          ]
+        ],
+        [
+          "prod",
+          [
+            "prod",
+            "y0",
+            [
+              "sum",
+              "x2",
+              "y2"
+            ]
+          ],
+          [
+            "sum",
+            "x1",
+            "y1"
+          ]
+        ]
+      ],
+      "graph_before_extract": "05b9eb750616cd57767cfba343fe043630728e11bb90d1aa82da3e4f7e0ba2c6",
+      "numerical": {
+        "C_reference_max_abs": 0.0,
+        "operations": 15,
+        "program": "61fbbc1d7a19cdf09bc017cad6258edbcf5360661421e50164c957a7907e3134",
+        "reference": "aaffb7e8298832223d34e19d8f17e782f6a8ae7a9db1d702fec43d12ce1fbbb8",
+        "source_c_max_abs": 0.0
+      },
+      "ops": {
+        "add": 4,
+        "mul": 5
+      },
+      "search_status": "iter-cap",
+      "selection_budget_used": 46,
+      "trace": [
+        {
+          "applied": 6,
+          "classes": 36,
+          "dag_cost": 20,
+          "fresh": 6,
+          "iteration": 1,
+          "match_capped": false,
+          "matches": 6,
+          "nodes": 42,
+          "unions": 6
+        },
+        {
+          "applied": 8,
+          "classes": 48,
+          "dag_cost": 19,
+          "fresh": 42,
+          "iteration": 2,
+          "match_capped": false,
+          "matches": 48,
+          "nodes": 62,
+          "unions": 8
+        },
+        {
+          "applied": 8,
+          "classes": 52,
+          "dag_cost": 15,
+          "fresh": 58,
+          "iteration": 3,
+          "match_capped": false,
+          "matches": 72,
+          "nodes": 73,
+          "unions": 7
+        },
+        {
+          "applied": 8,
+          "classes": 62,
+          "dag_cost": 14,
+          "fresh": 57,
+          "iteration": 4,
+          "match_capped": false,
+          "matches": 79,
+          "nodes": 89,
+          "unions": 6
+        },
+        {
+          "applied": 8,
+          "classes": 70,
+          "dag_cost": 11,
+          "fresh": 54,
+          "iteration": 5,
+          "match_capped": false,
+          "matches": 84,
+          "nodes": 104,
+          "unions": 7
+        },
+        {
+          "applied": 8,
+          "classes": 75,
+          "dag_cost": 9,
+          "fresh": 59,
+          "iteration": 6,
+          "match_capped": false,
+          "matches": 97,
+          "nodes": 116,
+          "unions": 7
+        }
+      ]
+    }
+  },
+  "cuts": [
+    {
+      "round": 0,
+      "cut": "17b60a4cfc3a9d32de0f3d92fa2018507846ae704de6c1bd96250045685c4e84",
+      "frontier": "d4a0448f7c65123e887bd09713db1b61de495fa6550789ec8cdb71c74fe20b9e"
+    },
+    {
+      "round": 1,
+      "cut": "d89dda6394da8639c18f4a6a528be323113dfd1eb66fdee4ca548f4646d903c3",
+      "frontier": "f5924e89e03243257e4a552d40d302ba1f9cc35ec12996760b884053b7cf978c"
+    },
+    {
+      "round": 2,
+      "cut": "bb7d5b3723d1daf0aeddde72dfdca1488c6ec686bea92e4aff19af8db2e62ea2",
+      "frontier": "e6daacb1aff4317247966b8a61bdfa8005a54800e7e818a3095fb996781867c1"
+    },
+    {
+      "round": 3,
+      "cut": "96dee2302e4a1e1e5eb651d8eb52b1ef827fde3de6e0325368724aa964b3b52c",
+      "frontier": "e3e71fe3e9960a59b3b3c1ae68f18d80e2e55f6d44069dd901380e3d075100d8"
+    },
+    {
+      "round": 4,
+      "cut": "fc5c846f814b807d4ae9d89d1af3ee8340e9213c7160c5a377b178e8091f47a4",
+      "frontier": "da0b315875daab703190b8edb4402e057ddbf139ced0b35fef84d89b2915d6b2"
+    },
+    {
+      "round": 5,
+      "cut": "4b8339e03d95d2e3281ae8beed7e3b98f406dfa4cab7e6da003317655eaca6a7",
+      "frontier": "8882606b318ef968b2863945ac65270ab474650b7e5c5ac52caa5a4e46b8381b"
+    }
+  ],
+  "batch_swaps": [
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 0,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "77f0a8a8afc5a2ecdb0d189499a57540ae1c07d2151e1b8593924de7f63838ed",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0487023880705237,
+        "extraction_wall_seconds": 0.003983649890869856,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+        "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+        "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+        "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+        "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+        "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 1,
+      "endpoint": "2f1610f7f13d26337d56fc67ff6d8bef5e26118a1c08e2d143661fe005bf6316",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "15852f45765255cd9e822a4f7b006b1f6578cb081d1a8e042e1fb0db539f3cae",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2f1610f7f13d26337d56fc67ff6d8bef5e26118a1c08e2d143661fe005bf6316",
+        "search_wall_seconds": 1.5615051509812474,
+        "extraction_wall_seconds": 0.002425859682261944,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 2,
+      "endpoint": "b62ea2ef7fe3b1a4898e5db21f5314d55535f19db40c9aee96847a127856f653",
+      "cost": 6,
+      "cost_reduction": 3,
+      "receipts": "a45324982a4c90d40ec47b72894099809664440799b23cbe9877e9d717117f1d",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "b62ea2ef7fe3b1a4898e5db21f5314d55535f19db40c9aee96847a127856f653",
+        "search_wall_seconds": 1.7767659472301602,
+        "extraction_wall_seconds": 0.0029548867605626583,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 2,
+      "first_changed_graph_boundary_round": 3,
+      "choice": [
+        "3381d0a96b98477a44b23f5f6a18fc74727b35c73b57b0cde8a28005ec122ec7",
+        "f9a396ea428442fc15556c9c598fc82becc2cb6b6d4f3a1c22dcb79e0113c890",
+        "7b110190f81ecc59712ddbf6c62d5a73a169bd9eebf6ef412153d541d71550d2",
+        "215883d102e0d6722d3612e4bdff9d24fb8330ac75e5b0095e5fb0ead0f0b438",
+        "87f652ab791b2bfe29846204082cfb7130b535b12bb69944aafb0243222214ec",
+        "62b46f38a9c66b431b99a4b34987cb1a3973875bb28705c5852d9b94e1c0e633",
+        "a092ee573beac1979ac9e2c663a8c66c0c78f98cd8fd1098cbb5c77183741f72",
+        "3ccaed0889abc64dc67f9e19cdefd0b9f3028d380f27dc8cf2852c61f2a25f76"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 3,
+      "endpoint": "e21e3dffa68a908dd1623c4d4c709ddba2a9560e0230663aa9e1fcc6bc3e91f8",
+      "cost": 11,
+      "cost_reduction": -2,
+      "receipts": "98906c4f901cca51a7734242269cb39868dbc05e0e4d184b5510d70f2015200d",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "e21e3dffa68a908dd1623c4d4c709ddba2a9560e0230663aa9e1fcc6bc3e91f8",
+        "search_wall_seconds": 1.6450452981516719,
+        "extraction_wall_seconds": 0.003602447919547558,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 3,
+      "first_changed_graph_boundary_round": 4,
+      "choice": [
+        "0d0133a624e6d2106fd979e58ac6a1c0fe200639172709bd532311839f3fb742",
+        "c9453a8199849de77e53b9c00f99a21acffb505ed79d4853e6fc9f199e4a4982",
+        "c7701b267b53e96e4afd28d36c58ded52789e37db8d625be3d7bff663140937f",
+        "7d0241d141b7b6c48adef3979fa164d59e234a4a570d02018ea9faf9d2752511",
+        "bfdc14a76c608c37ddc0e795d670ce97c98c876f316b6abf1226494b9e969af6",
+        "3f3b62d5a3457af2e774030982fbf94f03656cfd8ffd5f520b06ccd08d763e06",
+        "603bcc152976dc1ca68c40e9e410f213fcbd4a803c9cacbb6e3e10b979b2dfc6",
+        "f2caacdfbc918267a76b0e59e67da5e2c8816c1bf4e1e42657c60dcd1fcd8d69"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 4,
+      "endpoint": "f4ff42a7c0a34846ee9e14c8514c00189c170f880b322541750e45464596ff85",
+      "cost": 11,
+      "cost_reduction": -2,
+      "receipts": "49a05a7d16b92c046fa93d66a62a1dccb750190aa4e72bfe3bf6560a10eef70d",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "f4ff42a7c0a34846ee9e14c8514c00189c170f880b322541750e45464596ff85",
+        "search_wall_seconds": 1.3412210722453892,
+        "extraction_wall_seconds": 0.003464138600975275,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 4,
+      "first_changed_graph_boundary_round": 5,
+      "choice": [
+        "cf647ca6ae0c10a3f065458c2d2e5b2e24aa7bce5f28f0bff8567fc1a55b3b08",
+        "6bf7c60b74b528ffd2b7ebc93489888dcf105fea0fe53913332c964ea2c659af",
+        "4d03f404ff7982d76a20ffbb00dd2992d744beaed20549518d104207ba827e86",
+        "4773a10cf22d5375ed4ef2fae471b151fd57a129f45bf620a377a121e410c94a",
+        "5c6291cbfeb39aa1eb57fa1393edc35cd91b6f067ed67db7467b16eaa47623a9",
+        "f341852ba3d478e9bd540f3889bf70127b4f37ca459ef22a1faf8389d49f1f95",
+        "3fa143b20bcea8697353005a70a1958223fb6e9bef1aa8ddc5df9129fc209782",
+        "30c29b8d27b262b22df42486016bdb3c818ff8bab0027a12902236bf27419b08"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "coherent-v1-batch",
+      "round": 5,
+      "endpoint": "3dfbddd2af1250744359e1f6db32fa7313287949efaafc7d1cf32f6a594e67d3",
+      "cost": 11,
+      "cost_reduction": -2,
+      "receipts": "e52bb2f451a672df7248a02e1ed639378edfe6aec444d05a8ec62f841de6f3a5",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "3dfbddd2af1250744359e1f6db32fa7313287949efaafc7d1cf32f6a594e67d3",
+        "search_wall_seconds": 1.0737118110992014,
+        "extraction_wall_seconds": 0.003534880932420492,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 5,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "e7131e31c782159904d58f8c0a32aef19c12addad33171575eb3ff8600cafe1f",
+        "a985b80466a669f8b19fc1e6bb982bbffc4401af702d68263e8e200e073ea224",
+        "14d655578981f3851146950738e3905e0fac54c89172f7056f6349d006577073",
+        "6a6ec0f01ebfaf9e5114c7a657735ce5bb937cfc800d6b2686a725ac7ef34ca5",
+        "003f1fa950757b0f382e928e7ebeac97a88cea75c0906f5595ac61257769f124",
+        "11070bae8d271e2c03563a6a0de63118bcb1a1970b96feed3d17442449f53f73",
+        "cb2c09bc3c8f5553c2614159a5c2ec1fb289caaf4c72c03c64392f50f5788f2a",
+        "445b922dab41ab37aed19525a214710bd54865528c36255555d84fb95dd04c3d"
+      ]
+    }
+  ],
+  "batch_summary": {
+    "completed": 6,
+    "errors": 0,
+    "improved": 2,
+    "equal": 1,
+    "worse": 3,
+    "earliest_observed_cost_reduction_round": 1,
+    "qualified_repairs": 2,
+    "earliest_tested_repairable_round": 1,
+    "minimum_observed_cost": 5
+  },
+  "controls": [
+    {
+      "status": "completed",
+      "label": "untouched",
+      "round": 0,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "96b18e931cce86942638776b34c3fcefbecd8ec636c33e53baf7ea31cf469c4d",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0537882456555963,
+        "extraction_wall_seconds": 0.00399802578613162,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+        "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+        "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+        "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+        "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+        "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "sham",
+      "round": 0,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "9998e315c2a6704f21ad88fe5efd878b3355191d024778bfc0f0d069f114eaca",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0506594330072403,
+        "extraction_wall_seconds": 0.003912988118827343,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+        "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+        "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+        "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+        "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+        "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "A-B-A",
+      "round": 0,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "44f4107ff69a7a581b624ee7a5add61704cb861501d51c89f582c1945174d320",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.1056015039794147,
+        "extraction_wall_seconds": 0.003970433957874775,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591",
+        "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+        "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+        "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+        "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+        "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "same-membership-reversed",
+      "round": 0,
+      "endpoint": "6da39b5bf35a4f74cdb62126ac29ee77829f866406c4845e417732cfd09b62ee",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "f2db52fb22a0096e8fe19e73caaf3eccf26606831648f4773046b6b52d3de29a",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "6da39b5bf35a4f74cdb62126ac29ee77829f866406c4845e417732cfd09b62ee",
+        "search_wall_seconds": 2.359995050355792,
+        "extraction_wall_seconds": 0.003935819957405329,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 0,
+      "first_changed_graph_boundary_round": 1,
+      "choice": [
+        "556f5c0968b59ac2f5e98a64e1c8d57e2ee995e61fd5d447955fa81cb4392ff8",
+        "b404f346695a40ae515dd1e0d777ede914417c337fe6a5a0f3963415b7dabc12",
+        "1b20947ac4daf1287d717503a5845a5985707ca84dcb2428f4f65e3601b0c052",
+        "01c27e7a63b704367eaa71e660e2de89e643ebcf372e99876c39c755426f8cc9",
+        "ee7b707eab3a63c09202484575489f4c0f332db32c0d8afdcb20420d51a029b5",
+        "2d316b19de09de066e08a61f1750ceef3c8a23ca1748a1bc15b0940b7b6ac591"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "untouched",
+      "round": 1,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "b39a109a16010298a3f0674bbb0bd549fe42d015aa08b6c10c4739e85a981bd0",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0509059927426279,
+        "extraction_wall_seconds": 0.0039137681014835835,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "sham",
+      "round": 1,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "919a301551b45477e3dd702c08a9e2b9fb563b27c88198ab80fe356b280cf28d",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0547935226932168,
+        "extraction_wall_seconds": 0.003935780376195908,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "A-B-A",
+      "round": 1,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "7a29ae6e6da2ba2d8582e02c230615fc9ea889518841108d584a4227c02f8863",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0423249192535877,
+        "extraction_wall_seconds": 0.003996232058852911,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "same-membership-reversed",
+      "round": 1,
+      "endpoint": "6beb3c9581442e660eb9e1447479b3b2d23cdfa584bb36cae58afe18616539e9",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "e8fcf9942a882c81b1ae5daf2277da385a1ffa37fd2a9ba8253348feb3095ea6",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "6beb3c9581442e660eb9e1447479b3b2d23cdfa584bb36cae58afe18616539e9",
+        "search_wall_seconds": 2.1871151556260884,
+        "extraction_wall_seconds": 0.003956870175898075,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "untouched",
+      "round": 2,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "6a3242de0700a5c6baa074684d7f01017aa057cb948c05b1ad0225cb43b26ba4",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.11699592275545,
+        "extraction_wall_seconds": 0.003976406063884497,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "aa388d737f9103c7b02e6d22421e9738907793aefd5c5e14ec312d7bd25ed81f",
+        "62fdc4ba932ff1130d6ef3a75e10d50cb072c62cea4c2257a71399aa0f6d6158",
+        "d270f58b77c5886b198ed8461ba453134df4733ed309352abae793925e20d976",
+        "f88064641e1c2bb4a9929ab1bead00d6f3a9fdf67d4a6d57ff346e0cfbbc76e5",
+        "e1552dd82b4a88d9481187728c7caf8ae706d3bd0778a929deb329700d192377",
+        "8ae06c7924487452dfee3ecad03055da9dbebf40abd829ee6415ba62d21897a3",
+        "59493a0295e22d7f571aa2b82e2a960149d7814b1e87f37d7aa75095b05d58d9",
+        "e1c052891cf701f9bef0280a9d6909850e9f9210c89157c55ba5d8e89d9f44b9"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "sham",
+      "round": 2,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "b91cc9fcb406273d45a27026c566c4d38ae570b402464e230a1116b61b5b80b4",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0646226280368865,
+        "extraction_wall_seconds": 0.003989430144429207,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "aa388d737f9103c7b02e6d22421e9738907793aefd5c5e14ec312d7bd25ed81f",
+        "62fdc4ba932ff1130d6ef3a75e10d50cb072c62cea4c2257a71399aa0f6d6158",
+        "d270f58b77c5886b198ed8461ba453134df4733ed309352abae793925e20d976",
+        "f88064641e1c2bb4a9929ab1bead00d6f3a9fdf67d4a6d57ff346e0cfbbc76e5",
+        "e1552dd82b4a88d9481187728c7caf8ae706d3bd0778a929deb329700d192377",
+        "8ae06c7924487452dfee3ecad03055da9dbebf40abd829ee6415ba62d21897a3",
+        "59493a0295e22d7f571aa2b82e2a960149d7814b1e87f37d7aa75095b05d58d9",
+        "e1c052891cf701f9bef0280a9d6909850e9f9210c89157c55ba5d8e89d9f44b9"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "A-B-A",
+      "round": 2,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "99b92fd7ea36fa7d44056f2278ed236f225625d81965005b4c03df10e0e26088",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0589000517502427,
+        "extraction_wall_seconds": 0.004020176827907562,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "3381d0a96b98477a44b23f5f6a18fc74727b35c73b57b0cde8a28005ec122ec7",
+        "f9a396ea428442fc15556c9c598fc82becc2cb6b6d4f3a1c22dcb79e0113c890",
+        "7b110190f81ecc59712ddbf6c62d5a73a169bd9eebf6ef412153d541d71550d2",
+        "215883d102e0d6722d3612e4bdff9d24fb8330ac75e5b0095e5fb0ead0f0b438",
+        "87f652ab791b2bfe29846204082cfb7130b535b12bb69944aafb0243222214ec",
+        "62b46f38a9c66b431b99a4b34987cb1a3973875bb28705c5852d9b94e1c0e633",
+        "a092ee573beac1979ac9e2c663a8c66c0c78f98cd8fd1098cbb5c77183741f72",
+        "3ccaed0889abc64dc67f9e19cdefd0b9f3028d380f27dc8cf2852c61f2a25f76"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "same-membership-reversed",
+      "round": 2,
+      "endpoint": "4848e75fc7052df7eb28dc177a6909576991eef4988f2f427edf4919ae98eafe",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "6641c4746fe94ff0f38a748d8d40c8e275a636dee5fa11c00fa3a35bfd500133",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4848e75fc7052df7eb28dc177a6909576991eef4988f2f427edf4919ae98eafe",
+        "search_wall_seconds": 2.013165442738682,
+        "extraction_wall_seconds": 0.003965345211327076,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 2,
+      "first_changed_graph_boundary_round": 3,
+      "choice": [
+        "e1c052891cf701f9bef0280a9d6909850e9f9210c89157c55ba5d8e89d9f44b9",
+        "59493a0295e22d7f571aa2b82e2a960149d7814b1e87f37d7aa75095b05d58d9",
+        "8ae06c7924487452dfee3ecad03055da9dbebf40abd829ee6415ba62d21897a3",
+        "e1552dd82b4a88d9481187728c7caf8ae706d3bd0778a929deb329700d192377",
+        "f88064641e1c2bb4a9929ab1bead00d6f3a9fdf67d4a6d57ff346e0cfbbc76e5",
+        "d270f58b77c5886b198ed8461ba453134df4733ed309352abae793925e20d976",
+        "62fdc4ba932ff1130d6ef3a75e10d50cb072c62cea4c2257a71399aa0f6d6158",
+        "aa388d737f9103c7b02e6d22421e9738907793aefd5c5e14ec312d7bd25ed81f"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "untouched",
+      "round": 3,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "bd92e98fe4947aac468dd51c891067299c49ca3ca48e41f78b6317ac5dfe903c",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0612131915986538,
+        "extraction_wall_seconds": 0.003929648082703352,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "c9453a8199849de77e53b9c00f99a21acffb505ed79d4853e6fc9f199e4a4982",
+        "c7701b267b53e96e4afd28d36c58ded52789e37db8d625be3d7bff663140937f",
+        "7d0241d141b7b6c48adef3979fa164d59e234a4a570d02018ea9faf9d2752511",
+        "eb0030fa8fc7fcb143e41e1035c7fa2441888f2e87eb24c33e28a058485083b2",
+        "f75cb344fadc39e72b07fa3a36a3508a3ae70edf39c6610e487cae40f9611f47",
+        "abfb042eabcb43fba40d304b19f12e5ed163e2592032799199b8cab05d71f663",
+        "83bc8af6943fa7b968dfdfe015c3da34ae8d7816b0401cc27504fcfaaefe01ff",
+        "04f954fa447903b8ac8e1edb99b6f69ee781e2cb1887c308b05aa231783d13b6"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "sham",
+      "round": 3,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "5fe5d62d405398c392a0a6913680770990f59b6d6baf5e22becdd127f07b8fa9",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0528934351168573,
+        "extraction_wall_seconds": 0.0039499360136687756,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "c9453a8199849de77e53b9c00f99a21acffb505ed79d4853e6fc9f199e4a4982",
+        "c7701b267b53e96e4afd28d36c58ded52789e37db8d625be3d7bff663140937f",
+        "7d0241d141b7b6c48adef3979fa164d59e234a4a570d02018ea9faf9d2752511",
+        "eb0030fa8fc7fcb143e41e1035c7fa2441888f2e87eb24c33e28a058485083b2",
+        "f75cb344fadc39e72b07fa3a36a3508a3ae70edf39c6610e487cae40f9611f47",
+        "abfb042eabcb43fba40d304b19f12e5ed163e2592032799199b8cab05d71f663",
+        "83bc8af6943fa7b968dfdfe015c3da34ae8d7816b0401cc27504fcfaaefe01ff",
+        "04f954fa447903b8ac8e1edb99b6f69ee781e2cb1887c308b05aa231783d13b6"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "A-B-A",
+      "round": 3,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "3f4d102a7e8bdac3d9546711658088e67cc9c476e349c9a4b32205ec4df2b01e",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0498382789082825,
+        "extraction_wall_seconds": 0.003978440072387457,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "0d0133a624e6d2106fd979e58ac6a1c0fe200639172709bd532311839f3fb742",
+        "c9453a8199849de77e53b9c00f99a21acffb505ed79d4853e6fc9f199e4a4982",
+        "c7701b267b53e96e4afd28d36c58ded52789e37db8d625be3d7bff663140937f",
+        "7d0241d141b7b6c48adef3979fa164d59e234a4a570d02018ea9faf9d2752511",
+        "bfdc14a76c608c37ddc0e795d670ce97c98c876f316b6abf1226494b9e969af6",
+        "3f3b62d5a3457af2e774030982fbf94f03656cfd8ffd5f520b06ccd08d763e06",
+        "603bcc152976dc1ca68c40e9e410f213fcbd4a803c9cacbb6e3e10b979b2dfc6",
+        "f2caacdfbc918267a76b0e59e67da5e2c8816c1bf4e1e42657c60dcd1fcd8d69"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "same-membership-reversed",
+      "round": 3,
+      "endpoint": "56a4e726f310769463cfabbe1b9276c72323f267bab6dbecfe3202430fafe4ce",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "616102e8ee1771540a5611d271c2991c61e60f962208f19936ca4834723546ba",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "56a4e726f310769463cfabbe1b9276c72323f267bab6dbecfe3202430fafe4ce",
+        "search_wall_seconds": 1.7233718479983509,
+        "extraction_wall_seconds": 0.003961408045142889,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 3,
+      "first_changed_graph_boundary_round": 4,
+      "choice": [
+        "04f954fa447903b8ac8e1edb99b6f69ee781e2cb1887c308b05aa231783d13b6",
+        "83bc8af6943fa7b968dfdfe015c3da34ae8d7816b0401cc27504fcfaaefe01ff",
+        "abfb042eabcb43fba40d304b19f12e5ed163e2592032799199b8cab05d71f663",
+        "f75cb344fadc39e72b07fa3a36a3508a3ae70edf39c6610e487cae40f9611f47",
+        "eb0030fa8fc7fcb143e41e1035c7fa2441888f2e87eb24c33e28a058485083b2",
+        "7d0241d141b7b6c48adef3979fa164d59e234a4a570d02018ea9faf9d2752511",
+        "c7701b267b53e96e4afd28d36c58ded52789e37db8d625be3d7bff663140937f",
+        "c9453a8199849de77e53b9c00f99a21acffb505ed79d4853e6fc9f199e4a4982"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "untouched",
+      "round": 4,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "beae64c3ee0f6c4ad581e95dd10758f161e239f2f8ddd48d348f7d8391a128cc",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0474211759865284,
+        "extraction_wall_seconds": 0.003939325921237469,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "6bf7c60b74b528ffd2b7ebc93489888dcf105fea0fe53913332c964ea2c659af",
+        "38049c763d0f875dfb71587d5bf64a5a5bd15c0ba14e74af6b1dbc7dee79e0bf",
+        "b0999082d76b0b69b1e36b58700c6d14fcf7b6d1ea52beae67f8ff97cc819ed4",
+        "db8454382d26f4cd1ccb140fe9eb6234d0fca3d7472c84368684a22556bc01f2",
+        "cf647ca6ae0c10a3f065458c2d2e5b2e24aa7bce5f28f0bff8567fc1a55b3b08",
+        "be704272527c4fcc1f83b95591d8427766780c1420ba9fa5fea1668b28e63019",
+        "8eb00ddca8129418b3e8c61dd1630c079eb4795c18417b8e522b52e2307b9968",
+        "b44a4035c1ed331ce603020c13281a8d9d940c208aba9dd863d8695fbfe09150"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "sham",
+      "round": 4,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "f13ff494b269c952f5410748269fb72af8bb0efc8c834dda257df22a3d1347bf",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.063058357220143,
+        "extraction_wall_seconds": 0.00394726125523448,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "6bf7c60b74b528ffd2b7ebc93489888dcf105fea0fe53913332c964ea2c659af",
+        "38049c763d0f875dfb71587d5bf64a5a5bd15c0ba14e74af6b1dbc7dee79e0bf",
+        "b0999082d76b0b69b1e36b58700c6d14fcf7b6d1ea52beae67f8ff97cc819ed4",
+        "db8454382d26f4cd1ccb140fe9eb6234d0fca3d7472c84368684a22556bc01f2",
+        "cf647ca6ae0c10a3f065458c2d2e5b2e24aa7bce5f28f0bff8567fc1a55b3b08",
+        "be704272527c4fcc1f83b95591d8427766780c1420ba9fa5fea1668b28e63019",
+        "8eb00ddca8129418b3e8c61dd1630c079eb4795c18417b8e522b52e2307b9968",
+        "b44a4035c1ed331ce603020c13281a8d9d940c208aba9dd863d8695fbfe09150"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "A-B-A",
+      "round": 4,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "7ff5751c6c196eea2da5b1731d2d9d4ab2cdc17c3174ea13b66c0f813e9c5099",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0696998187340796,
+        "extraction_wall_seconds": 0.003978790249675512,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "cf647ca6ae0c10a3f065458c2d2e5b2e24aa7bce5f28f0bff8567fc1a55b3b08",
+        "6bf7c60b74b528ffd2b7ebc93489888dcf105fea0fe53913332c964ea2c659af",
+        "4d03f404ff7982d76a20ffbb00dd2992d744beaed20549518d104207ba827e86",
+        "4773a10cf22d5375ed4ef2fae471b151fd57a129f45bf620a377a121e410c94a",
+        "5c6291cbfeb39aa1eb57fa1393edc35cd91b6f067ed67db7467b16eaa47623a9",
+        "f341852ba3d478e9bd540f3889bf70127b4f37ca459ef22a1faf8389d49f1f95",
+        "3fa143b20bcea8697353005a70a1958223fb6e9bef1aa8ddc5df9129fc209782",
+        "30c29b8d27b262b22df42486016bdb3c818ff8bab0027a12902236bf27419b08"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "same-membership-reversed",
+      "round": 4,
+      "endpoint": "4e783859c2c1d8f0aa3f6c55e4e31385fea57835db4b46a19946aaddd52c0a1f",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "a1861cec9481496c054f2a762ef2f45d18b97ba55c47feb5f811f2f9753da57c",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4e783859c2c1d8f0aa3f6c55e4e31385fea57835db4b46a19946aaddd52c0a1f",
+        "search_wall_seconds": 1.4447401277720928,
+        "extraction_wall_seconds": 0.0039582508616149426,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 4,
+      "first_changed_graph_boundary_round": 5,
+      "choice": [
+        "b44a4035c1ed331ce603020c13281a8d9d940c208aba9dd863d8695fbfe09150",
+        "8eb00ddca8129418b3e8c61dd1630c079eb4795c18417b8e522b52e2307b9968",
+        "be704272527c4fcc1f83b95591d8427766780c1420ba9fa5fea1668b28e63019",
+        "cf647ca6ae0c10a3f065458c2d2e5b2e24aa7bce5f28f0bff8567fc1a55b3b08",
+        "db8454382d26f4cd1ccb140fe9eb6234d0fca3d7472c84368684a22556bc01f2",
+        "b0999082d76b0b69b1e36b58700c6d14fcf7b6d1ea52beae67f8ff97cc819ed4",
+        "38049c763d0f875dfb71587d5bf64a5a5bd15c0ba14e74af6b1dbc7dee79e0bf",
+        "6bf7c60b74b528ffd2b7ebc93489888dcf105fea0fe53913332c964ea2c659af"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "untouched",
+      "round": 5,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "d166c3329bd36d1677cbe33703c961a47dc522b1d74330fd96753f7922a0aedc",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0539506692439318,
+        "extraction_wall_seconds": 0.003945448435842991,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "e7131e31c782159904d58f8c0a32aef19c12addad33171575eb3ff8600cafe1f",
+        "288d4bcb8c044d92fb08d58f711c237235f5d76d26a5efdc665c2cb57198b318",
+        "bab1d176f924a412cfbf7d2fe1e2ac5b6fb3f716f9b50212078ac2ad7b22c976",
+        "7a836625d34d050d7c6d03d3a3951abd2d02a09369e29a39dcca04f37d26ca81",
+        "0b1cafce36f20b619109b88324652b0386f588a8c6733965f70de51dbf2f0a23",
+        "b5e5ac6bd06bdcd7729f3907f5b1b328da1b7057633bdb1dc4dc462e96a20b50",
+        "289885ef146390f44799ffa71fe2a8c1fa91af7b45ef34e5363378cffda96939",
+        "7a74f199e360d5a2186cadca375ea32fc4e35f16cd05db08971291e556420e51"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "sham",
+      "round": 5,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "f68b5c2dd6365e7d8c92799448539d964a9f9c683f5b444c767f1629e23c09cc",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0602524471469223,
+        "extraction_wall_seconds": 0.003999118227511644,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "e7131e31c782159904d58f8c0a32aef19c12addad33171575eb3ff8600cafe1f",
+        "288d4bcb8c044d92fb08d58f711c237235f5d76d26a5efdc665c2cb57198b318",
+        "bab1d176f924a412cfbf7d2fe1e2ac5b6fb3f716f9b50212078ac2ad7b22c976",
+        "7a836625d34d050d7c6d03d3a3951abd2d02a09369e29a39dcca04f37d26ca81",
+        "0b1cafce36f20b619109b88324652b0386f588a8c6733965f70de51dbf2f0a23",
+        "b5e5ac6bd06bdcd7729f3907f5b1b328da1b7057633bdb1dc4dc462e96a20b50",
+        "289885ef146390f44799ffa71fe2a8c1fa91af7b45ef34e5363378cffda96939",
+        "7a74f199e360d5a2186cadca375ea32fc4e35f16cd05db08971291e556420e51"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "A-B-A",
+      "round": 5,
+      "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "09c0b396083cf3e614bbdc59b9e9bb744a5d783af482f9a276069be2405eecce",
+      "same_endpoint_as_target": true,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e0c586ac20a744c5b12f032a98bfd7ce0232efea2482020a05b9aacc257e3f4",
+        "search_wall_seconds": 1.0461423369124532,
+        "extraction_wall_seconds": 0.0039742812514305115,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": null,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "e7131e31c782159904d58f8c0a32aef19c12addad33171575eb3ff8600cafe1f",
+        "a985b80466a669f8b19fc1e6bb982bbffc4401af702d68263e8e200e073ea224",
+        "14d655578981f3851146950738e3905e0fac54c89172f7056f6349d006577073",
+        "6a6ec0f01ebfaf9e5114c7a657735ce5bb937cfc800d6b2686a725ac7ef34ca5",
+        "003f1fa950757b0f382e928e7ebeac97a88cea75c0906f5595ac61257769f124",
+        "11070bae8d271e2c03563a6a0de63118bcb1a1970b96feed3d17442449f53f73",
+        "cb2c09bc3c8f5553c2614159a5c2ec1fb289caaf4c72c03c64392f50f5788f2a",
+        "445b922dab41ab37aed19525a214710bd54865528c36255555d84fb95dd04c3d"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "same-membership-reversed",
+      "round": 5,
+      "endpoint": "2808274eb6ac83704a87c8a7be2c886eb66955db079771aa98bcaa6f658a5079",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "d84a57989d7fe57d2576429dfd6e3b70b9a9c243abea0398ed77f836d1b6e845",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2808274eb6ac83704a87c8a7be2c886eb66955db079771aa98bcaa6f658a5079",
+        "search_wall_seconds": 1.058944835793227,
+        "extraction_wall_seconds": 0.004045004025101662,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 5,
+      "first_changed_graph_boundary_round": null,
+      "choice": [
+        "7a74f199e360d5a2186cadca375ea32fc4e35f16cd05db08971291e556420e51",
+        "289885ef146390f44799ffa71fe2a8c1fa91af7b45ef34e5363378cffda96939",
+        "b5e5ac6bd06bdcd7729f3907f5b1b328da1b7057633bdb1dc4dc462e96a20b50",
+        "0b1cafce36f20b619109b88324652b0386f588a8c6733965f70de51dbf2f0a23",
+        "7a836625d34d050d7c6d03d3a3951abd2d02a09369e29a39dcca04f37d26ca81",
+        "bab1d176f924a412cfbf7d2fe1e2ac5b6fb3f716f9b50212078ac2ad7b22c976",
+        "288d4bcb8c044d92fb08d58f711c237235f5d76d26a5efdc665c2cb57198b318",
+        "e7131e31c782159904d58f8c0a32aef19c12addad33171575eb3ff8600cafe1f"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-membership-batch",
+      "round": 1,
+      "endpoint": "e00e42f60742d8434192b6230378a43aa8143930a86005008a57a9cc0263d27c",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "dfe2dad860731aab1394f38bde06f1c0a1fae55ad7f1ef00400ef2153f39fc17",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "e00e42f60742d8434192b6230378a43aa8143930a86005008a57a9cc0263d27c",
+        "search_wall_seconds": 2.2452226881869137,
+        "extraction_wall_seconds": 0.0039068260230124,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "56c186f598ca182b7ac25d0f63cb6a84737a34f90dc29b5b21920cc6db96501a",
+        "0bb32774f99697732f9d4bffdfce51f2a1bae9186bea0ee914c04a8b04b47629",
+        "94bb3c61c32160d493a2a517f4b306c440be9802ea4946e60104478e59c09772",
+        "3f68894e7beac474b9cd7196a40dc05663e23d97c115149b29e28d258aaece36",
+        "2fb5281350d0361282f38df245d91107d2a5d3dc2264bcdc674a5f3e5cd73c50",
+        "2482ee7c26d7adbd3381549e169c83508e300f93eca1db317bd6f8c4f73b80e9",
+        "800ac54f6e44fc90b6d6210cd8e02f46922f3d7c7543256db0e4f0cdc076afab",
+        "7905d38fb3179c759eab48735be0c517c84b5d788152c3529e32b7672f6a98a1"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-0",
+      "round": 1,
+      "endpoint": "4f6904590f2c7251f1483950ee11a6eb9bc81f1060a8b0a4b635e8d2e6161818",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "6d4dd99c6699fb9fa76835db3e393deab417dd395fd8253e2f8ed05cfd3d00d1",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4f6904590f2c7251f1483950ee11a6eb9bc81f1060a8b0a4b635e8d2e6161818",
+        "search_wall_seconds": 2.346446759067476,
+        "extraction_wall_seconds": 0.004549855832010508,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "56c186f598ca182b7ac25d0f63cb6a84737a34f90dc29b5b21920cc6db96501a",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-1",
+      "round": 1,
+      "endpoint": "23c76e83cbdf5543078301aade7713f00fc59306e13b7595a78d9d9c855ab9d9",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "81dc8faae5c900a6bd3023751aea79badda1ea778e9d5e7fb45c7cb710849166",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "23c76e83cbdf5543078301aade7713f00fc59306e13b7595a78d9d9c855ab9d9",
+        "search_wall_seconds": 2.372578860260546,
+        "extraction_wall_seconds": 0.003930850885808468,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "0bb32774f99697732f9d4bffdfce51f2a1bae9186bea0ee914c04a8b04b47629",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-2",
+      "round": 1,
+      "endpoint": "269539d0b80bb28fbf07d00f271344db2402c3c156c2c7bc612b523956ae77c0",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "c1a8ebe737d41bf5d3dbef4e3da512955c115b33940d1fdde01b7d00c1b764c1",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "269539d0b80bb28fbf07d00f271344db2402c3c156c2c7bc612b523956ae77c0",
+        "search_wall_seconds": 2.376722717192024,
+        "extraction_wall_seconds": 0.003957952372729778,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "94bb3c61c32160d493a2a517f4b306c440be9802ea4946e60104478e59c09772",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-3",
+      "round": 1,
+      "endpoint": "50eb428130ad57785570644053d7f1c8efc7e3b6c202eb1a142819909462eb81",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "1ac9d8582bafeaf38c10214297c96987b101556178d45d2d0289b72bda8d710f",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "50eb428130ad57785570644053d7f1c8efc7e3b6c202eb1a142819909462eb81",
+        "search_wall_seconds": 2.3655828847549856,
+        "extraction_wall_seconds": 0.00401110015809536,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "3f68894e7beac474b9cd7196a40dc05663e23d97c115149b29e28d258aaece36",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-4",
+      "round": 1,
+      "endpoint": "d0a784c738da5b4a3e0903f92de2b639a9604b224103b12f3a437d3bb95bba95",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "dff175fa60a7fa74281fd09658b91e1e0aadf26665e8e96ebc7c88d14cbed019",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "d0a784c738da5b4a3e0903f92de2b639a9604b224103b12f3a437d3bb95bba95",
+        "search_wall_seconds": 2.249903690069914,
+        "extraction_wall_seconds": 0.004164277110248804,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "2fb5281350d0361282f38df245d91107d2a5d3dc2264bcdc674a5f3e5cd73c50",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-5",
+      "round": 1,
+      "endpoint": "860fc9a773d7f10320046ec0f1e2bba79306e38e45f6246b4a8f8c88805de07d",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "46a31c3d43c01a7bde3669063bfb30f1ea478257de903449b0f0b58bd5429353",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "860fc9a773d7f10320046ec0f1e2bba79306e38e45f6246b4a8f8c88805de07d",
+        "search_wall_seconds": 2.2738259439356625,
+        "extraction_wall_seconds": 0.004038772080093622,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "2482ee7c26d7adbd3381549e169c83508e300f93eca1db317bd6f8c4f73b80e9",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-6",
+      "round": 1,
+      "endpoint": "d7b75c647b19c47a618489be795ee8aee585fe9d83205872ee579efdcaa23feb",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "b9cde23b8b6328a42789b0430afae03f9fed2d434506e65603a4c90c392dc3ac",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "d7b75c647b19c47a618489be795ee8aee585fe9d83205872ee579efdcaa23feb",
+        "search_wall_seconds": 2.1959218019619584,
+        "extraction_wall_seconds": 0.003977587912231684,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "800ac54f6e44fc90b6d6210cd8e02f46922f3d7c7543256db0e4f0cdc076afab",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ]
+    },
+    {
+      "status": "completed",
+      "label": "alternative-single-7",
+      "round": 1,
+      "endpoint": "91c8817ada612c88f7207cb6d67aed66ad936ec19659372a9fc38a1def96ffb0",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "1a19fabc4d3e8b8a850271f984b1f4a605fcdecf76cf50d3b437eb2607bade72",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "91c8817ada612c88f7207cb6d67aed66ad936ec19659372a9fc38a1def96ffb0",
+        "search_wall_seconds": 2.3052985169924796,
+        "extraction_wall_seconds": 0.004241470247507095,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "7905d38fb3179c759eab48735be0c517c84b5d788152c3529e32b7672f6a98a1"
+      ]
+    }
+  ],
+  "single_exchanges": [
+    {
+      "status": "completed",
+      "label": "single-exchange-0-2",
+      "round": 1,
+      "endpoint": "4b6c8b45d6f766c84a8e319e224025e0607c59677bec46f536b36e623037ac4d",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "3b9396d41f764c7e34fff5b70734814bc28fa7670104a5e6b04c6af04aee12fb",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4b6c8b45d6f766c84a8e319e224025e0607c59677bec46f536b36e623037ac4d",
+        "search_wall_seconds": 2.254716257099062,
+        "extraction_wall_seconds": 0.0034957178868353367,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-6",
+      "round": 1,
+      "endpoint": "d48854a97ae62351f26df475b580214d6f2d6c020bf1b4b30d0b85dee2639a8e",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "6210dcb8027ff96c774463b219ab299cffa21000ea3cd6955075e5aeca5a42a1",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "d48854a97ae62351f26df475b580214d6f2d6c020bf1b4b30d0b85dee2639a8e",
+        "search_wall_seconds": 2.153715142980218,
+        "extraction_wall_seconds": 0.003493112977594137,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-10",
+      "round": 1,
+      "endpoint": "375c4b0f80326cada67d7ef07d56a9d5dfc7b789c2640b1f27c237a8f3aad6de",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "5075353688460d753f92e0d2a48c49e2bdb32da1057ca7190c183481a4b660a4",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "375c4b0f80326cada67d7ef07d56a9d5dfc7b789c2640b1f27c237a8f3aad6de",
+        "search_wall_seconds": 1.0403968770988286,
+        "extraction_wall_seconds": 0.0035187210887670517,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-17",
+      "round": 1,
+      "endpoint": "db9dde11227e90830759cb89840314b8526db8b04ebefa8718f700dbdb366990",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "764b6802b45895c72f099d379212e618a7c499b1fc5faf4d4265dedd7d1f97d8",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "db9dde11227e90830759cb89840314b8526db8b04ebefa8718f700dbdb366990",
+        "search_wall_seconds": 2.0265550767071545,
+        "extraction_wall_seconds": 0.0035312240943312645,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-22",
+      "round": 1,
+      "endpoint": "75f884180a4979b980840a5d1d11c6a52b7c75a6e6ce7e548cb6de21a2ec2370",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "6d4edb30efa7c0e6f5df30c3c7f9e3be98d4769fad1b151c371f9150fad2dd25",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "75f884180a4979b980840a5d1d11c6a52b7c75a6e6ce7e548cb6de21a2ec2370",
+        "search_wall_seconds": 1.0587930520996451,
+        "extraction_wall_seconds": 0.0035610501654446125,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-27",
+      "round": 1,
+      "endpoint": "f9738547483dab5c4561603db5734941dcfe173af20465665bfd0e41202bbcf3",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "6daaf60f029bc0dd62dbf10c3286d4e3bb64ffede7d005e20e5628dfd5aed612",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "f9738547483dab5c4561603db5734941dcfe173af20465665bfd0e41202bbcf3",
+        "search_wall_seconds": 1.0318715372122824,
+        "extraction_wall_seconds": 0.0034926729276776314,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-34",
+      "round": 1,
+      "endpoint": "760868c8d81ff02ee4ea47ffb90c0e3ed0478f99c8f9313afc9ae0e8ef68cab4",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "b6853b41e3df1ab2fdf942983f7fc7e713a203258f2d41e71df40eed91638f3d",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "760868c8d81ff02ee4ea47ffb90c0e3ed0478f99c8f9313afc9ae0e8ef68cab4",
+        "search_wall_seconds": 2.2249541180208325,
+        "extraction_wall_seconds": 0.0039313919842243195,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-0-35",
+      "round": 1,
+      "endpoint": "b3fe3acc771092cf0bb677c243b3e836de144451ad4eb1e352bc859e65b76510",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "07035d978649047481078f59537c5837ef4f0947e7251043e79fe9999bc4f486",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "b3fe3acc771092cf0bb677c243b3e836de144451ad4eb1e352bc859e65b76510",
+        "search_wall_seconds": 2.1648728791624308,
+        "extraction_wall_seconds": 0.003919719718396664,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 0,
+      "removed": "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-2",
+      "round": 1,
+      "endpoint": "4b39dd248c3fb8f6588654ab85a4f662ff207bf84cd1576300b39d23cc67c741",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "e92fd6fd8091f7c346a7aac0506ad4ba3d6408516dcb37bbf1ee0ae13e8da6ab",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4b39dd248c3fb8f6588654ab85a4f662ff207bf84cd1576300b39d23cc67c741",
+        "search_wall_seconds": 2.1323609352111816,
+        "extraction_wall_seconds": 0.0035007367841899395,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-6",
+      "round": 1,
+      "endpoint": "c46227e6e77f9d0128b70b42a6d5dab22b5bfa34399f7beced5c5bd583536f0d",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "3b73faee448b78ed35fcb09d274496e4360a15e8b5f144d803329084c1a1ded4",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "c46227e6e77f9d0128b70b42a6d5dab22b5bfa34399f7beced5c5bd583536f0d",
+        "search_wall_seconds": 2.0427592578344047,
+        "extraction_wall_seconds": 0.003452586941421032,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-10",
+      "round": 1,
+      "endpoint": "1dccf8537d7d927fb4a5ec9bcf437917912c3a32ed03ac19d70a54f592fbcb5c",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "4337f83d4eacd5705fa43d40bb3a2a50ae0bfe091758d95bbaf5dfe3989aa4e7",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "1dccf8537d7d927fb4a5ec9bcf437917912c3a32ed03ac19d70a54f592fbcb5c",
+        "search_wall_seconds": 1.0461753788404167,
+        "extraction_wall_seconds": 0.003484817687422037,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-17",
+      "round": 1,
+      "endpoint": "5cce019b31124b8f2ab5a60190d4eedf6d7a62b6670cbe66212f0161c999fc7a",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "3b1d204eb01073305b2f69a70395d06f1be12dbba11dcfc4ec71d7178297fcc4",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "5cce019b31124b8f2ab5a60190d4eedf6d7a62b6670cbe66212f0161c999fc7a",
+        "search_wall_seconds": 1.9478233400732279,
+        "extraction_wall_seconds": 0.003543316852301359,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-22",
+      "round": 1,
+      "endpoint": "567bf8c25e240b20f29102454ce6f7b09e3a331ba4974362f66b90ea1e30ef56",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "6835eccd801e5b6c7b3bef47a15dbe46721bac3dc171c82e4ffbb6821bd4cabd",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "567bf8c25e240b20f29102454ce6f7b09e3a331ba4974362f66b90ea1e30ef56",
+        "search_wall_seconds": 1.059207835700363,
+        "extraction_wall_seconds": 0.003572420682758093,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-27",
+      "round": 1,
+      "endpoint": "85015921b5be808589592bd69744ea06e23f495a04040c309dea2a4b3b22f945",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "220dfe3ff55ac885f0a1ec9439b6321b716e9138c59799eaadf7b2fd7cce6a3c",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "85015921b5be808589592bd69744ea06e23f495a04040c309dea2a4b3b22f945",
+        "search_wall_seconds": 1.067048879340291,
+        "extraction_wall_seconds": 0.003456585109233856,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-34",
+      "round": 1,
+      "endpoint": "35bee44fd477f1ed7f81887d08ac67286cf2d4323cdc968d418b62692a5198dc",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "951f482265eb1c8267c764743d8bb95cb6cb9c8b44e8078886514f6dfaec308d",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "35bee44fd477f1ed7f81887d08ac67286cf2d4323cdc968d418b62692a5198dc",
+        "search_wall_seconds": 2.474098061211407,
+        "extraction_wall_seconds": 0.003938264679163694,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-1-35",
+      "round": 1,
+      "endpoint": "ee2c9045a41edc7fda7f1f340bd75d6cb3858af35b982a73bf762213d0fbf3f2",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "5c4f53e778575c602a7fd2d3cbf801389dd740db2df87304e40f36600e796290",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "ee2c9045a41edc7fda7f1f340bd75d6cb3858af35b982a73bf762213d0fbf3f2",
+        "search_wall_seconds": 2.1122474940493703,
+        "extraction_wall_seconds": 0.0038896240293979645,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 1,
+      "removed": "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-2",
+      "round": 1,
+      "endpoint": "21c1de32f692d3bf24158a3f46fef6fdbf98543701112be918799b1910ae1ab9",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "e76c2ff118ec9f47686ca11c3bfbd58edf610ff5aa4c521ab02e9768eb9435de",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "21c1de32f692d3bf24158a3f46fef6fdbf98543701112be918799b1910ae1ab9",
+        "search_wall_seconds": 2.2761923829093575,
+        "extraction_wall_seconds": 0.0034882938489317894,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-6",
+      "round": 1,
+      "endpoint": "66e03ca74bbfb6eea664aae6450c8dfd654cacf35a0ac8a7c708d8cc10a21fd5",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "9b81d8f4a2c7e513972773fd7f1d0d0166cc08a7de0513ce8f52f65db7a09046",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "66e03ca74bbfb6eea664aae6450c8dfd654cacf35a0ac8a7c708d8cc10a21fd5",
+        "search_wall_seconds": 2.1210071318782866,
+        "extraction_wall_seconds": 0.003472764976322651,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-10",
+      "round": 1,
+      "endpoint": "80db5f3c47dd49d190faa9821990a66536b97bd7923b5774beb4c201441eccaa",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "663821915f4886288a9fd77c8aba479b0b57cc3092d9fa168b057388d966a707",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "80db5f3c47dd49d190faa9821990a66536b97bd7923b5774beb4c201441eccaa",
+        "search_wall_seconds": 1.0972594358026981,
+        "extraction_wall_seconds": 0.0035778419114649296,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-17",
+      "round": 1,
+      "endpoint": "15a027861afcfc047c7f98c6880401fc866deb6308d7413e899099f5819f03e8",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "c9d6822d927c2aae2d993dcbaba55819b9badaf9f95c1d053499b6f2bfd36342",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "15a027861afcfc047c7f98c6880401fc866deb6308d7413e899099f5819f03e8",
+        "search_wall_seconds": 2.189933237619698,
+        "extraction_wall_seconds": 0.0035129496827721596,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-22",
+      "round": 1,
+      "endpoint": "70825a5bfa093fbd61f0306f1261d9291725f020d795d08f903d4a28c63ad8ac",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "48b2ca89f5ef9bfeac6d560b77f173676b37dd8ca339ae39c6f47c0be4c66a8a",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "70825a5bfa093fbd61f0306f1261d9291725f020d795d08f903d4a28c63ad8ac",
+        "search_wall_seconds": 1.0674692639149725,
+        "extraction_wall_seconds": 0.0035433568991720676,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-27",
+      "round": 1,
+      "endpoint": "0ef48a81902057537da89e90c1359029f14c473ccad6aeb9ab25deb5410733a4",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "b6f7c1e2cd8c24a50e60b1fd2a8d028456fe6e8b663dc195958b526b8435ee25",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "0ef48a81902057537da89e90c1359029f14c473ccad6aeb9ab25deb5410733a4",
+        "search_wall_seconds": 1.0784372868947685,
+        "extraction_wall_seconds": 0.003421780187636614,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-34",
+      "round": 1,
+      "endpoint": "e1101ca843c72ec2c18fd602869ae5eb286a273cd56a4f4b087daaf7eab06705",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "7152b183688ebd0768c4706fb2a360668e55b9e37d030ef5aa3d28eec0959d49",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "e1101ca843c72ec2c18fd602869ae5eb286a273cd56a4f4b087daaf7eab06705",
+        "search_wall_seconds": 2.282296401914209,
+        "extraction_wall_seconds": 0.003932113293558359,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-2-35",
+      "round": 1,
+      "endpoint": "adf4e0a227b97796d69c0c6e66b5b7d1f6348b676d97bece6a41768c83d38694",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "06f1c0171bf4ca16e10ec16263c63933aae83697b58af80924c66e5810b63999",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "adf4e0a227b97796d69c0c6e66b5b7d1f6348b676d97bece6a41768c83d38694",
+        "search_wall_seconds": 2.1712694852612913,
+        "extraction_wall_seconds": 0.003898831084370613,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 2,
+      "removed": "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-2",
+      "round": 1,
+      "endpoint": "6a77d11c1910610c240eceb6d760dc93ca45ffebc68758e0ba9554f83b73b06a",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "93ccec2209cb1611e55e035e80dde8ae1c666a0363c73910f6ea0aef740da796",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "6a77d11c1910610c240eceb6d760dc93ca45ffebc68758e0ba9554f83b73b06a",
+        "search_wall_seconds": 2.199159156996757,
+        "extraction_wall_seconds": 0.003485308028757572,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-6",
+      "round": 1,
+      "endpoint": "f599d3775b6e5f2394a303146135cf79c79a78efd8860b6dcee0d3abcb2ad112",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "0a03c28208a002d1aca483c32ca774ad18640ededb7053d0864685836a35db26",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "f599d3775b6e5f2394a303146135cf79c79a78efd8860b6dcee0d3abcb2ad112",
+        "search_wall_seconds": 2.120334656909108,
+        "extraction_wall_seconds": 0.004058669321238995,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-10",
+      "round": 1,
+      "endpoint": "a8c6bf5867889699bd1064547fdc753f945ef6eb15ab4fec6f7d07a68c01a20c",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "98e98129e20093fae39efa2f579bb9e1ee1275fc9184d59e0b3e00a01d11d318",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "a8c6bf5867889699bd1064547fdc753f945ef6eb15ab4fec6f7d07a68c01a20c",
+        "search_wall_seconds": 1.099497654940933,
+        "extraction_wall_seconds": 0.0037056799046695232,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-17",
+      "round": 1,
+      "endpoint": "5ce64afc78b75aaa9c544910be6cd12c88a49ae7264c4a4092e9901537eb4081",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "86c4c964a2f504242709660f9b739940ec4eb8d42c1c425e939863002c208336",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "5ce64afc78b75aaa9c544910be6cd12c88a49ae7264c4a4092e9901537eb4081",
+        "search_wall_seconds": 2.140936989802867,
+        "extraction_wall_seconds": 0.003713614773005247,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-22",
+      "round": 1,
+      "endpoint": "2e99953aabd4739e3c498e54d9ee844c32c6226239198d3f78f23e1a8c74014a",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "f0b81745693e36dbc6f06427d74fa959565f19086bb48da6c4498eaa06ab4905",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2e99953aabd4739e3c498e54d9ee844c32c6226239198d3f78f23e1a8c74014a",
+        "search_wall_seconds": 1.0785124571993947,
+        "extraction_wall_seconds": 0.0038750460371375084,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-27",
+      "round": 1,
+      "endpoint": "c3ce867dd572ec59ec8b7dc502a7cc4766a8f8aeb14815a3bd05a8e4dd03d4cd",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "25c6f7014f16db12b49e9f95412b7bd93b2011a2c4984a1a2be52e6f76f36873",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "c3ce867dd572ec59ec8b7dc502a7cc4766a8f8aeb14815a3bd05a8e4dd03d4cd",
+        "search_wall_seconds": 1.0904014888219535,
+        "extraction_wall_seconds": 0.003830272238701582,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-34",
+      "round": 1,
+      "endpoint": "5ad9dc3d5123ddf3aa20ab272d24584744d13e5b3eb8930c809791adcf95d891",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "28238309a37fc241e38e7692fb2d8276aa6af58b4e268248e9ea96a095dc4ca2",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "5ad9dc3d5123ddf3aa20ab272d24584744d13e5b3eb8930c809791adcf95d891",
+        "search_wall_seconds": 2.3457958539947867,
+        "extraction_wall_seconds": 0.003855339251458645,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-3-35",
+      "round": 1,
+      "endpoint": "cf7d38ab4f5d7e6274e0204e48f434deba819c8b440682a3eb528942a376a006",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "8f0c82334c1988c066f3da22111f1ff766343679776b85d6c96a3497bd45034b",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "cf7d38ab4f5d7e6274e0204e48f434deba819c8b440682a3eb528942a376a006",
+        "search_wall_seconds": 2.1988380174152553,
+        "extraction_wall_seconds": 0.003911724779754877,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 3,
+      "removed": "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-2",
+      "round": 1,
+      "endpoint": "c81bd551c508b47390841f0b98342f8c56717ce9aa93f5e661f97d1e28cb3b33",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "f6f28e7bac897b3220c02be96c868f4e481dcf9417a1602a92555dcd4452e568",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "c81bd551c508b47390841f0b98342f8c56717ce9aa93f5e661f97d1e28cb3b33",
+        "search_wall_seconds": 2.235564851667732,
+        "extraction_wall_seconds": 0.003617506008595228,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-6",
+      "round": 1,
+      "endpoint": "efcd9b281378efc21c8e57012c309909cf9cd23bb8f30ebc868a8ff96cb70a17",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "f23a7b4a1ef26c3cf9f2f07bfc4bdcb4dd4a6e644673829ec4c0aa990f1a70dd",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "efcd9b281378efc21c8e57012c309909cf9cd23bb8f30ebc868a8ff96cb70a17",
+        "search_wall_seconds": 2.149100434035063,
+        "extraction_wall_seconds": 0.003597899340093136,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-10",
+      "round": 1,
+      "endpoint": "5a5518b0929944d8424ded4c07b98efc283e436ebd7baec0e16dae6f3adf3094",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "14352aed34863a3cb3763610dd5884bfa8a43a792186ce67e8aff42a42d72e38",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "5a5518b0929944d8424ded4c07b98efc283e436ebd7baec0e16dae6f3adf3094",
+        "search_wall_seconds": 1.1052775401622057,
+        "extraction_wall_seconds": 0.003617295064032078,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-17",
+      "round": 1,
+      "endpoint": "4d59666f86970362cb4d51b3b854ebd14b809caf4e4d75a6dd34cae7fb206258",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "cead9ed66b9872e726d060f140f7e960659571be1c0b08e5c5a0b7868bbe3769",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4d59666f86970362cb4d51b3b854ebd14b809caf4e4d75a6dd34cae7fb206258",
+        "search_wall_seconds": 2.2259021988138556,
+        "extraction_wall_seconds": 0.003715258091688156,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-22",
+      "round": 1,
+      "endpoint": "ae81f010354ca61c17cde2a86838fa9363d059a86c66a33ab5c3e4ab6b27a612",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "48b6991f2b807cf734956afb8124ec01889adfbacff7dbbc5faf78220355845f",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "ae81f010354ca61c17cde2a86838fa9363d059a86c66a33ab5c3e4ab6b27a612",
+        "search_wall_seconds": 1.1548238452523947,
+        "extraction_wall_seconds": 0.0037005203776061535,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-27",
+      "round": 1,
+      "endpoint": "3b5354bb12b8a66679130aac17806d0584402aec95946ce2f9a7731b370baf83",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "d15232a893b69762a1abda8b9e9afb3fa26f65d228bd0e95e6ae0e90140ba6e8",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "3b5354bb12b8a66679130aac17806d0584402aec95946ce2f9a7731b370baf83",
+        "search_wall_seconds": 1.1562088308855891,
+        "extraction_wall_seconds": 0.0036016558296978474,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-34",
+      "round": 1,
+      "endpoint": "1f34cbd90c8bc473a477faf2d65b8cbad466a0662bb915c79946d25431b938db",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "fc46ac6a7db04d9d243563e51597cd60eb42b5c77d4789f165b660962ad6f268",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "1f34cbd90c8bc473a477faf2d65b8cbad466a0662bb915c79946d25431b938db",
+        "search_wall_seconds": 2.4298671106807888,
+        "extraction_wall_seconds": 0.0038171480409801006,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-4-35",
+      "round": 1,
+      "endpoint": "da8d7b0d2e71bc3ffcda82c59155848567a2ca7e3cae1824bf7910b691ed6119",
+      "cost": 9,
+      "cost_reduction": 0,
+      "receipts": "26ad75d7bd78b18d99f149a8f277cd4fdab902bfa97e640b6e84585830161d8a",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "da8d7b0d2e71bc3ffcda82c59155848567a2ca7e3cae1824bf7910b691ed6119",
+        "search_wall_seconds": 2.2155421120114625,
+        "extraction_wall_seconds": 0.0036764652468264103,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 4,
+      "removed": "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-2",
+      "round": 1,
+      "endpoint": "dec97c800ae12169d74030d4c19c170608ea849f560f77096dfa925c912dd343",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "1c7b35196dea854d03f3bed693e2b96c14cd2b14a1b1f70203de3ff75da7f253",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "dec97c800ae12169d74030d4c19c170608ea849f560f77096dfa925c912dd343",
+        "search_wall_seconds": 1.9973729718476534,
+        "extraction_wall_seconds": 0.003457506187260151,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-6",
+      "round": 1,
+      "endpoint": "ba09b3f78982aad9b22d7c1a3d7d7be2aac5d58e3dffae93c8b82526b1e4b200",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "2f05072c55d26449f1a3a49cd4c4bf1fc386094d1040089315483c97795d5bcd",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "ba09b3f78982aad9b22d7c1a3d7d7be2aac5d58e3dffae93c8b82526b1e4b200",
+        "search_wall_seconds": 2.018890273757279,
+        "extraction_wall_seconds": 0.0034741871058940887,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-10",
+      "round": 1,
+      "endpoint": "863276174460b1a1fd60570e12ccae1642146ddc0f1651c089a13694c90a0531",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "e734613b8e92212e959d2afa6bb151cbbdcebc79696c2c535def904de611d686",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "863276174460b1a1fd60570e12ccae1642146ddc0f1651c089a13694c90a0531",
+        "search_wall_seconds": 1.046039274893701,
+        "extraction_wall_seconds": 0.0034180027432739735,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-17",
+      "round": 1,
+      "endpoint": "8fc351618fd4cf58a6027dbc0a64e08558b97f2c67c23de79669c73918a1a210",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "b1e484bc4231bbef7ac08e1895acab072e6a8bbcf7d16ced5a88826e63facbff",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "8fc351618fd4cf58a6027dbc0a64e08558b97f2c67c23de79669c73918a1a210",
+        "search_wall_seconds": 2.214756124187261,
+        "extraction_wall_seconds": 0.004009997937828302,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-22",
+      "round": 1,
+      "endpoint": "a3b97cb569b3de4ca3ca774d0234cf5585082892a4a9e4cea86b60901b366d60",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "cf183bbbd652072044055f7f114ef353c388ae3aeb2363bd8970d2f86f44e210",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "a3b97cb569b3de4ca3ca774d0234cf5585082892a4a9e4cea86b60901b366d60",
+        "search_wall_seconds": 1.0377599042840302,
+        "extraction_wall_seconds": 0.0035559101961553097,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-27",
+      "round": 1,
+      "endpoint": "5b20bdde10842f4dc2ef35eec3e0e59f6c9b33ac7fbc38bc97e9ea673392d090",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "3b1c762bf4e1f1402c80b27877f925d5a6b9fc1031ad7cc09eafdf737abff141",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "5b20bdde10842f4dc2ef35eec3e0e59f6c9b33ac7fbc38bc97e9ea673392d090",
+        "search_wall_seconds": 1.0671077598817647,
+        "extraction_wall_seconds": 0.0038924990221858025,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-34",
+      "round": 1,
+      "endpoint": "8204e6c6128ec8ca864ab9e57500c2d1fc0d738a2af495797dc728921aa33639",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "f5904e3fbcfbf869dbefc3d94faca920623c16e944f6bbcd5f71f0a772d499ab",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "8204e6c6128ec8ca864ab9e57500c2d1fc0d738a2af495797dc728921aa33639",
+        "search_wall_seconds": 2.2257542116567492,
+        "extraction_wall_seconds": 0.004172391723841429,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-5-35",
+      "round": 1,
+      "endpoint": "bb6659dc934896c68b1b994e1b6c80beec99d35b369d8334a2dcba6b89d0693a",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "a780565a2438874a497c6794d4a519f79c88ba9c2ca833527207005305408202",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "bb6659dc934896c68b1b994e1b6c80beec99d35b369d8334a2dcba6b89d0693a",
+        "search_wall_seconds": 2.1437397142872214,
+        "extraction_wall_seconds": 0.003867371939122677,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 5,
+      "removed": "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-2",
+      "round": 1,
+      "endpoint": "14015acb78e00ecafcf5a08b12b368a8ad48a94eb76fe95a7c3a71fbf2b961de",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "2174f57ead11cfef1d2027a39fbbb38376ef57dfddb454ae7a4fae9b3aa1800f",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "14015acb78e00ecafcf5a08b12b368a8ad48a94eb76fe95a7c3a71fbf2b961de",
+        "search_wall_seconds": 2.01851140614599,
+        "extraction_wall_seconds": 0.003326220903545618,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-6",
+      "round": 1,
+      "endpoint": "21b19876f568ffea701aa8ab6b525183ef769d7738098f8afcd32fde3e76b380",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "7fc07c33fff2a0a57262d69370d27ea27a62c905d29293947a4c3e1ad1cb121f",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "21b19876f568ffea701aa8ab6b525183ef769d7738098f8afcd32fde3e76b380",
+        "search_wall_seconds": 2.0451841768808663,
+        "extraction_wall_seconds": 0.004872298799455166,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-10",
+      "round": 1,
+      "endpoint": "80497ce67605669d212141e6e4731a2495d6f29454b40506d20ff03f8a0ce35a",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "e2bc6c4a7cc839a3e3899f31bed5f58be79394df8ab81616b3172eda7c8d3ae9",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "80497ce67605669d212141e6e4731a2495d6f29454b40506d20ff03f8a0ce35a",
+        "search_wall_seconds": 1.0183001039549708,
+        "extraction_wall_seconds": 0.003305413294583559,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-17",
+      "round": 1,
+      "endpoint": "1894b5971ea0d4e696b4eb3381a90414d0fa6ef20142b73b8dc01675bde2311e",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "2b6a190423c80a32d934dd21b67573881a4c8dce692dc840206d6d6137ed2592",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "1894b5971ea0d4e696b4eb3381a90414d0fa6ef20142b73b8dc01675bde2311e",
+        "search_wall_seconds": 1.8911695922724903,
+        "extraction_wall_seconds": 0.0033978549763560295,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-22",
+      "round": 1,
+      "endpoint": "ff1fb5d72c95680576d52042163f28520182f0667317d37e6f71cd67b4596be5",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "5bcc466e085d7bb3f61329e95a5df0e99bf8d9a768a02b06c43c1605ccb797b4",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "ff1fb5d72c95680576d52042163f28520182f0667317d37e6f71cd67b4596be5",
+        "search_wall_seconds": 1.0124615798704326,
+        "extraction_wall_seconds": 0.0033640023320913315,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-27",
+      "round": 1,
+      "endpoint": "c43ea76500903ba4716382b7e12956c699d9de6527177f10541b1fa7bae5e5c7",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "a013e870ce19a038e6d9fb851cc7f5382f592cd32d50db51213fa451b231cd61",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "c43ea76500903ba4716382b7e12956c699d9de6527177f10541b1fa7bae5e5c7",
+        "search_wall_seconds": 1.0209991740994155,
+        "extraction_wall_seconds": 0.0032856850884854794,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-34",
+      "round": 1,
+      "endpoint": "b3074c89bbcf4bb9e36c652450ab76412e0469e9e5e09967385dd14839da5540",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "13cd99245b62e28b42c2b3f6efbbf3f6d9309165433cb66a386c2815df3e3d47",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "b3074c89bbcf4bb9e36c652450ab76412e0469e9e5e09967385dd14839da5540",
+        "search_wall_seconds": 2.124328854959458,
+        "extraction_wall_seconds": 0.003921052906662226,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-6-35",
+      "round": 1,
+      "endpoint": "aade47ffb7562e98f57c24b07fc4c3a9df946987c2eb242c53d5460da702db66",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "9269f30bca8544de08722562fd4e0c0c80b3954918339de252b171bc71d64cf8",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "aade47ffb7562e98f57c24b07fc4c3a9df946987c2eb242c53d5460da702db66",
+        "search_wall_seconds": 2.2350370069034398,
+        "extraction_wall_seconds": 0.003956337925046682,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "slot": 6,
+      "removed": "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-2",
+      "round": 1,
+      "endpoint": "e276c50b27d96becd6209330cd2e0b8735d2f095d66e2f675bee42c5317a2580",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "fe4339a83c784ed7643fb0f9d616b9d152c6830a17ed05b974e3616c84b1d3bb",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "e276c50b27d96becd6209330cd2e0b8735d2f095d66e2f675bee42c5317a2580",
+        "search_wall_seconds": 1.982451577205211,
+        "extraction_wall_seconds": 0.0036538331769406796,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-6",
+      "round": 1,
+      "endpoint": "5bb486857b95a7291aeb0d077468811aacc1afb9218fefaaef5ce8ec8d1bebaf",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "7e19ab82cd605dd03a2f176cf8804a0b5de024fe5c927c83672ce94169a0e167",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "5bb486857b95a7291aeb0d077468811aacc1afb9218fefaaef5ce8ec8d1bebaf",
+        "search_wall_seconds": 2.010005821939558,
+        "extraction_wall_seconds": 0.0035407417453825474,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-10",
+      "round": 1,
+      "endpoint": "b58cdddd270d5d663af78fb5f4859064a2e8de1a33c111b2b5dacd8b4b3bf860",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "04ea1fcf5be6c4049cf4da2b81ae2b57926b400b08d916c305d256feabc9b94c",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "b58cdddd270d5d663af78fb5f4859064a2e8de1a33c111b2b5dacd8b4b3bf860",
+        "search_wall_seconds": 1.0814051991328597,
+        "extraction_wall_seconds": 0.0034974608570337296,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-17",
+      "round": 1,
+      "endpoint": "69c909110cfe8e91ad9ad4438de1e19d8875f7a4652e3648726428278c003376",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "adb610d02b3248d839a8d8ce480901d29e2d00776115906a14f84dfd5835a087",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "69c909110cfe8e91ad9ad4438de1e19d8875f7a4652e3648726428278c003376",
+        "search_wall_seconds": 2.0444851107895374,
+        "extraction_wall_seconds": 0.0034995763562619686,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-22",
+      "round": 1,
+      "endpoint": "e72071f409780e34935475331bbdb05d3497e1c3dc5b789c6a6a85361544a510",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "39f57a8198f2d60718df0963c09045225e4a02ec4b479e85777fa91c65399f4c",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "e72071f409780e34935475331bbdb05d3497e1c3dc5b789c6a6a85361544a510",
+        "search_wall_seconds": 1.094406208023429,
+        "extraction_wall_seconds": 0.0036291973665356636,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-27",
+      "round": 1,
+      "endpoint": "bb5f23361864c6d8c99ba76de2446cb42eb0472f480569bfcf02c464b0e7f886",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "190b53d1d2454e76e69d99002d80b1a47fa160a16ac19b794577c8f124ea4c01",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "bb5f23361864c6d8c99ba76de2446cb42eb0472f480569bfcf02c464b0e7f886",
+        "search_wall_seconds": 1.0498575349338353,
+        "extraction_wall_seconds": 0.0034827226772904396,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-34",
+      "round": 1,
+      "endpoint": "b75411958fecbcd02c347708aa8d3126b585f9653084427b4f82d1b3a13bc975",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "b37e1685484bd99d78e890b7e230d7acf30d0544e46cbe0a6066e3748dcbeb7d",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "b75411958fecbcd02c347708aa8d3126b585f9653084427b4f82d1b3a13bc975",
+        "search_wall_seconds": 2.1537696551531553,
+        "extraction_wall_seconds": 0.0038843140937387943,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3"
+    },
+    {
+      "status": "completed",
+      "label": "single-exchange-7-35",
+      "round": 1,
+      "endpoint": "e9dd304b684e508e724e417827fa4156a11b1362b975be40512b0d68d8375998",
+      "cost": 7,
+      "cost_reduction": 2,
+      "receipts": "ff5d4bf53b3b7c23add5c940d56b51923baf9a42da361ad9ceb1c7670981229b",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "e9dd304b684e508e724e417827fa4156a11b1362b975be40512b0d68d8375998",
+        "search_wall_seconds": 2.0837185881100595,
+        "extraction_wall_seconds": 0.004321720916777849,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "731239d951c95160fe7739543280da1645c79c86e06f26a20498b6b94704c112",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+      ],
+      "slot": 7,
+      "removed": "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21",
+      "inserted": "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+    }
+  ],
+  "exchange_summary": {
+    "completed": 64,
+    "errors": 0,
+    "improved": 62,
+    "equal": 2,
+    "worse": 0,
+    "earliest_observed_cost_reduction_round": 1,
+    "qualified_repairs": 62,
+    "earliest_tested_repairable_round": 1,
+    "minimum_observed_cost": 5
+  },
+  "doses": [
+    {
+      "status": "completed",
+      "label": "coherent-dose-1",
+      "round": 1,
+      "endpoint": "4b6c8b45d6f766c84a8e319e224025e0607c59677bec46f536b36e623037ac4d",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "db905eec718cc819112aa551f7b606d89ffcfc34823ba1667b39c3b603b2414f",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "4b6c8b45d6f766c84a8e319e224025e0607c59677bec46f536b36e623037ac4d",
+        "search_wall_seconds": 1.0781378471292555,
+        "extraction_wall_seconds": 0.0034699602983891964,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "3a21c722a7e4df72a46bbebce3295ecfad3ef46137cadc01f16483f20e17a52c",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "dose": 1
+    },
+    {
+      "status": "completed",
+      "label": "coherent-dose-2",
+      "round": 1,
+      "endpoint": "1eeaea0c964c42e5b1e1e6358d7b3296c112c97fd32996dbdb44aa2802d674ad",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "783c7289ed8fc6f768c1d9095f3765e4352184b3b37dd9ef3c01b969c792a645",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "1eeaea0c964c42e5b1e1e6358d7b3296c112c97fd32996dbdb44aa2802d674ad",
+        "search_wall_seconds": 1.9561081118881702,
+        "extraction_wall_seconds": 0.0034890850074589252,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "108ef61c7efd86961b2c3d1d023598a60a70cfd1831a8362b82db240bb3f93dc",
+        "10a699d346dedef3986458e6f1032ca263cb0298ad1f1b956ce633fee11907fd",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "dose": 2
+    },
+    {
+      "status": "completed",
+      "label": "coherent-dose-4",
+      "round": 1,
+      "endpoint": "828a909bde071dc022532bfbb00d0e39f08bc603a835905373692488efca4b71",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "15ee9276fbbefee5d1fbb6cdef5bd27d30e118e6538a428ccb97896d258535e6",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "828a909bde071dc022532bfbb00d0e39f08bc603a835905373692488efca4b71",
+        "search_wall_seconds": 1.731311626266688,
+        "extraction_wall_seconds": 0.0029301419854164124,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "34930e3f5875912f44dd6569234fb89b5b9d07bff9c74cf28b30786a7e607d7b",
+        "734d877aeb7b05db83f63aab3a722006e57c2892ab50538de53d8afe9da937e6",
+        "114ebc7442bebb355cb40f1e4d3064127889ddd889fedc3c06f4e2f3ca76eab3",
+        "089a29e4cef51d37cf1c768395b28a4e56937bbb80e75b6d013641bf3946dc21"
+      ],
+      "dose": 4
+    },
+    {
+      "status": "completed",
+      "label": "coherent-dose-8",
+      "round": 1,
+      "endpoint": "2f1610f7f13d26337d56fc67ff6d8bef5e26118a1c08e2d143661fe005bf6316",
+      "cost": 5,
+      "cost_reduction": 4,
+      "receipts": "a32bac6f5a7f9ccabeffaaf7236eb685d416c38c556d07cb8629f8267785a690",
+      "same_endpoint_as_target": false,
+      "exact_polynomial": true,
+      "timing": {
+        "endpoint": "2f1610f7f13d26337d56fc67ff6d8bef5e26118a1c08e2d143661fe005bf6316",
+        "search_wall_seconds": 0.8077497007325292,
+        "extraction_wall_seconds": 0.0018240860663354397,
+        "search_clock_proven_unhit": true,
+        "extraction_clock_proven_unhit": true
+      },
+      "causal_qualified": true,
+      "first_changed_choice_round": 1,
+      "first_changed_graph_boundary_round": 2,
+      "choice": [
+        "d5cd73a06979919d3fd695c3c13d0a35b5858a75829348490424d579629224d7",
+        "b22cfd55a1f67f39f660609a3ee2abb90e2952fe4086f454c6177b746c7f0799",
+        "151648ba5aa1b3ce595274358033f8a893506ffc7ac5f599522ec56d5b9ed6df",
+        "bc166e9a1d8f5000ed0ca446d80f87e38fd84f85e0067a694924e53852c4940f",
+        "b3b71e5bae34cf2fe02f5af3363a0fb5ec91ae59dbe2f208c5f048464b200cc9",
+        "b29d400af39a9420eff99232688a9289bcfe03bf016e1de8703b68d6b784a3c8",
+        "44e654817a7f00b5201ececa3dd8b564db72cc74bfd3f48c24497e266e7b93f3",
+        "423f83be4a5a6ec6618f4728f4c5a73efcba64ede29d9b77f4866fddc1ef684f"
+      ],
+      "dose": 8
+    }
+  ],
+  "refusals": [
+    {
+      "case": "wrong-length",
+      "refused": true,
+      "reason": "choice must be a unique, same-length list from this frontier"
+    },
+    {
+      "case": "wrong-type",
+      "refused": true,
+      "reason": "choice must be a unique, same-length list from this frontier"
+    },
+    {
+      "case": "wrong-parent",
+      "refused": true,
+      "reason": "choice must be a unique, same-length list from this frontier"
+    },
+    {
+      "case": "duplicate",
+      "refused": true,
+      "reason": "choice must be a unique, same-length list from this frontier"
+    },
+    {
+      "case": "wrong-prefix",
+      "refused": true,
+      "reason": "wrong prefix for frontier"
+    }
+  ],
+  "reciprocal": [
+    {
+      "status": "completed",
+      "suffix": "v1",
+      "round": 1,
+      "endpoint": "7a8dc52ea000f9d8805b0eba5e28e6fadf9604f548442e0dbb67dd11c866a2d6",
+      "cost": 5,
+      "baseline_cost": 5,
+      "cut": "93767b59bfb0b43c87b37e530aec99c02bb060ccc3b37af087d0561764bfa232",
+      "receipts": "de8342eba7f5ce1f5e8228f375b101eb98394170eaa2acdb78d8a18e069db0db"
+    }
+  ]
+}

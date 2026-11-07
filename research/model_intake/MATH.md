@@ -4,6 +4,8 @@ Frozen learned matrix cells and Concept Graph scorers now execute through the sh
 
 This establishes bounded execution and useful computation reduction. It does not establish general mathematical reasoning improvement. The strongest learned scheduler ties the heuristic on the informative scalar goal, and every scheduler reaches the matrix reduction.
 
+The subsequent [causal debugger](MATH-CAUSAL.md) localizes a useful repair to the second scalar rewrite round: one choice replacement can reduce final cost `9→5` through the unchanged V2a suffix, while preserving the exact function and C outputs. Its controls and later harmful swaps keep that conclusion local to the tested search context.
+
 ## Components and boundaries
 
 | Component | Imported artifact | Automated C work | Supplied host computation |
