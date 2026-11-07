@@ -1,0 +1,11 @@
+{
+  "source_steps": 44,
+  "candidate_steps": 44,
+  "all_steps_exact": true,
+  "missing_refusal_no_mutation": true,
+  "covered_ids": 33,
+  "compile_linear_macs": 103809024,
+  "table_host_bytes": 270468,
+  "candidate_transfer_bytes": 360448,
+  "candidate_original_first_layer_qkv_macs_omitted": 138412032
+}

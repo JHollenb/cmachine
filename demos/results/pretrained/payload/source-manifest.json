@@ -1,0 +1,297 @@
+{
+  "schema": "cmachine-demo-sources-v1",
+  "sources": {
+    "Makefile": {
+      "sha256": "ccbbd9f1e7a03867c8e03645efed6830ff178aac7ce870d2b21f10bb3873d0f0",
+      "bytes": 4657
+    },
+    "demos/chat_branch/chat_branch.py": {
+      "sha256": "ebae2d1087186fe71de2b2895cbfe49c598d9049fd2a42a2a386930fe5db8f65",
+      "bytes": 27624
+    },
+    "demos/chat_branch/test_chat_branch.py": {
+      "sha256": "db4d1e5584967c63f5e6d1031694fcd377e45de8f32c66497902eda897b7c488",
+      "bytes": 1813
+    },
+    "demos/compiled_operands/driver.c": {
+      "sha256": "ec1e8e636195389595d0c3a7d0399c327be3628adb04354a6dc0fd309cb3b3b8",
+      "bytes": 8682
+    },
+    "demos/compiled_operands/run.py": {
+      "sha256": "e42a3f1b246a1d06651fc12945f3fb49d71da6c68fcc6ae504c497b0b1139af9",
+      "bytes": 3116
+    },
+    "demos/fleet_worker.py": {
+      "sha256": "946dc5743c86c83e665f89df283d802307a14715d038d20eeb30bdb9e342fd4a",
+      "bytes": 6344
+    },
+    "src/bounded_cache.h": {
+      "sha256": "6a4d12b9b43a929bc6b142707327e73bb11aa58ddceead3ab2d419bb988222b9",
+      "bytes": 9922
+    },
+    "src/byte_codec.h": {
+      "sha256": "0cb77c293a384c131584dd919e68d4f15bf329f89dff46a25f5de72b95bc043f",
+      "bytes": 499
+    },
+    "src/gpu.h": {
+      "sha256": "c4a4db8cbf3915ea0a654fd539a35f76609b0d5dcffb0851b958c2c10aa72e8c",
+      "bytes": 2672
+    },
+    "src/isa.c": {
+      "sha256": "03b37b1cb2e51aa9be04ce6b0302ef4ccd133fa1eb32e73f6a30b2e1c1306759",
+      "bytes": 14027
+    },
+    "src/machine.h": {
+      "sha256": "d99a79648bf9ad07ef44d879377641e5482ea8958acd55dfbdc88614c05029cb",
+      "bytes": 3137
+    },
+    "src/main.c": {
+      "sha256": "037b99c0f2448f3918b64771b0c30c33336928acbe443c3be850a7197e098888",
+      "bytes": 7840
+    },
+    "src/model.c": {
+      "sha256": "bbd2902e5464e4f44d80b82557597540447f4e4f9a0c8fa60d15a17aa1f6a16d",
+      "bytes": 6178
+    },
+    "src/prototype_attention.h": {
+      "sha256": "c1932bc889cb2504e4e4d1d1e631429440535f76fb4c0520fa5ad1b9dd41f840",
+      "bytes": 4434
+    },
+    "src/qwen.c": {
+      "sha256": "9860c088ac9a40374a3c756db054a9b2b5cf8553bb9345b18b40aaa5e98f6e59",
+      "bytes": 41440
+    },
+    "src/qwen.h": {
+      "sha256": "939b7599da46fd52f358d013b0fb4a5ba4940e665aef7ee8f33bc0b4c577dbb0",
+      "bytes": 9588
+    },
+    "src/qwen_bounded_serve.c": {
+      "sha256": "2418098f0b913062111b4e342522a8859b3617e342a75f0d5b7d4885978f1ed8",
+      "bytes": 7709
+    },
+    "src/qwen_cache.inc": {
+      "sha256": "f179bf4df9f4063f8d6dcb7b9ad65514befb2ca472e5364a8c11373dfa781cef",
+      "bytes": 4489
+    },
+    "src/qwen_cuda.cu": {
+      "sha256": "2f348b02909b19bb6e41a6ec7ad05f88b93288ad2d83a5596f87dd03f4ddc6cf",
+      "bytes": 13165
+    },
+    "src/qwen_operands.inc": {
+      "sha256": "8c3a91d345eb3fe58f25df9fd691e5e8b34a1fab3acdc7ca95fe56e66981f9aa",
+      "bytes": 8423
+    },
+    "src/qwen_serve.c": {
+      "sha256": "5b878c35a4cd71b6d3e64ad7b3a455cd89acdfd7d8388f6ba38da40b6d02d665",
+      "bytes": 7165
+    },
+    "src/qwen_weights.inc": {
+      "sha256": "cf66580fef71689de32d3ff5f4500c328fe76923fabe2758689f3a5841abd229",
+      "bytes": 3559
+    },
+    "validation/saturn_bridge.py": {
+      "sha256": "89232bfbc1c6317d4054aabb7756e42845543c48153b6a4db81cd18239789828",
+      "bytes": 3896
+    },
+    "validation/vendor/saturn_pub/__init__.py": {
+      "sha256": "83fff0448d142402b55585bb0caf915dd6f290c3222e400582481a8327a85771",
+      "bytes": 543
+    },
+    "validation/vendor/saturn_pub/adapters/__init__.py": {
+      "sha256": "aa28620ad5aa7a66e6134e712dd925800b50d179b065bbd2e411b912124ccd6c",
+      "bytes": 2319
+    },
+    "validation/vendor/saturn_pub/adapters/_residency.py": {
+      "sha256": "6fb12515350aa3d36b70d2fdaf0de927b6e2cf44842bc8d6de4c62732d451b7a",
+      "bytes": 3916
+    },
+    "validation/vendor/saturn_pub/adapters/decoder.py": {
+      "sha256": "2a591ab3353c5515317155684db59a38760754422cb1c0c4e43b107bf5e013d1",
+      "bytes": 50030
+    },
+    "validation/vendor/saturn_pub/adapters/diffusion.py": {
+      "sha256": "60a109bfe96015f85dec8e3a575a85110e172185aa4e3946a234a336badf215f",
+      "bytes": 19119
+    },
+    "validation/vendor/saturn_pub/adapters/flux1.py": {
+      "sha256": "1dae2f9c96be2f2b032dc5cd7e933c2e07f0e2188fc5189bb32f24af11752167",
+      "bytes": 28784
+    },
+    "validation/vendor/saturn_pub/adapters/flux2.py": {
+      "sha256": "2004b81971a258f1ca6295fe69d24767dc6bb6b92e103fa30cf6ccb0249b5a86",
+      "bytes": 28091
+    },
+    "validation/vendor/saturn_pub/adapters/mamba.py": {
+      "sha256": "3c2aa1201cf1d5fbbe114f1c724c750a5a90e508eba7cb806399092273d8c2ca",
+      "bytes": 27222
+    },
+    "validation/vendor/saturn_pub/adapters/qwen.py": {
+      "sha256": "c0f45031d3bbe70423440be6df8a546090ec8928fec350a41019f0c9461b0862",
+      "bytes": 26396
+    },
+    "validation/vendor/saturn_pub/causal.py": {
+      "sha256": "2a35e9c0fcd451f4b08d71075517ac742b35870c38a587cd239d1c5f9c92c31b",
+      "bytes": 9093
+    },
+    "validation/vendor/saturn_pub/certificate/__init__.py": {
+      "sha256": "831a89024932442fb40160821083ba1f68feaaa4d6b4e7f751e9ad726241f5fb",
+      "bytes": 2649
+    },
+    "validation/vendor/saturn_pub/certificate/gate.py": {
+      "sha256": "aae19224c723d4dbbfff8277b7b33f2a454d781127b8dd8db9f1508e4af8613e",
+      "bytes": 14564
+    },
+    "validation/vendor/saturn_pub/certificate/panel.py": {
+      "sha256": "6fc6db971fc26b0ed142450821f14425b5a2c2c35a06578098e0ce2bfeb0d39d",
+      "bytes": 14779
+    },
+    "validation/vendor/saturn_pub/certificate/register.py": {
+      "sha256": "4880ea88e1449db1cba535e9c9e6f9f4eddd78642a20da49cbcf30b754c2b5cd",
+      "bytes": 2875
+    },
+    "validation/vendor/saturn_pub/certificate/workload.py": {
+      "sha256": "9ded7ff9500cf09c296281a602597380e10f9256af56820f3cb40d7ed9c43578",
+      "bytes": 5147
+    },
+    "validation/vendor/saturn_pub/cli.py": {
+      "sha256": "17743f62cb33a52f606420d658e4a42f0beec70672963595967832e2151c8c87",
+      "bytes": 17441
+    },
+    "validation/vendor/saturn_pub/contracts.py": {
+      "sha256": "a8b57906662d907d6881b936572901818fa04e950b7e43386d8879d3fed8a1ff",
+      "bytes": 6000
+    },
+    "validation/vendor/saturn_pub/core.py": {
+      "sha256": "38fea49e43c4e7059fd14e046d2d884e74bc19f9272e686b61a55b64e96019f9",
+      "bytes": 41725
+    },
+    "validation/vendor/saturn_pub/dependencies.py": {
+      "sha256": "a65287813431a81f4efc16f88933dbef4926723e2d9859a301b05c8843f0ce19",
+      "bytes": 2336
+    },
+    "validation/vendor/saturn_pub/evidence/__init__.py": {
+      "sha256": "94ecf5836c087a00fc753ab318a89e03d8fb1cbb230d35b048dd2d786c879390",
+      "bytes": 3054
+    },
+    "validation/vendor/saturn_pub/evidence/_canonical.py": {
+      "sha256": "5cbaa34455f89d76a1c56ebac9e7208c4cc37cb0fbc2b48cbd0194da78bdfc8c",
+      "bytes": 2548
+    },
+    "validation/vendor/saturn_pub/evidence/bisect.py": {
+      "sha256": "1010ae446af93e2bc3a82e29900bdbd0c35a7803ab93bb055dacaa1c77990d8a",
+      "bytes": 18007
+    },
+    "validation/vendor/saturn_pub/evidence/citations.py": {
+      "sha256": "96045f50684df7b15077c00f7331208bd04cc277bb593b1d05c4c64bae194214",
+      "bytes": 7525
+    },
+    "validation/vendor/saturn_pub/evidence/claims.py": {
+      "sha256": "cacdbdeceac2546c45dbfef52a1d6547aa083d9b0c2139b82c3e93cb528ae5c4",
+      "bytes": 42838
+    },
+    "validation/vendor/saturn_pub/evidence/cli.py": {
+      "sha256": "cd003fa6413ae9a73a669abf7299ed8361406b87a4c8087ebd15bc51a2713002",
+      "bytes": 1497
+    },
+    "validation/vendor/saturn_pub/evidence/xref.py": {
+      "sha256": "9ec3c1b898d0943cffa0bc6def29d766bba115a3d25fe85953e3ba985cb7b7da",
+      "bytes": 29618
+    },
+    "validation/vendor/saturn_pub/experimental/__init__.py": {
+      "sha256": "11ee3f598875237e213d939b11fdc115ad190bd56cae46d218ddcb4c18312cf1",
+      "bytes": 78
+    },
+    "validation/vendor/saturn_pub/experimental/memory.py": {
+      "sha256": "4e36c9345fa56c0e77483bed1aa160cfa646269d9d97922588a921dcde17011f",
+      "bytes": 28172
+    },
+    "validation/vendor/saturn_pub/experimental/phase.py": {
+      "sha256": "e71b06c870bce5422bc8f8aee76f3e5d4be0a8160ebb1cc0a47ff672e565167a",
+      "bytes": 11789
+    },
+    "validation/vendor/saturn_pub/interop/__init__.py": {
+      "sha256": "ee9a6b648e770da767a476ce3f965667b6c5ab80bb29121182fe7d9ca3f3cb2d",
+      "bytes": 1122
+    },
+    "validation/vendor/saturn_pub/interop/circuit_tracer.py": {
+      "sha256": "e91ba52b1ed2a0632dbeb2fd126e5441528c3d3dd479f7af4b4d8c012ef39e55",
+      "bytes": 49291
+    },
+    "validation/vendor/saturn_pub/investigation.py": {
+      "sha256": "926db559c8147c81a799a08a70d4867e9714c7da2e2b9c5a9354b3117436302c",
+      "bytes": 3605
+    },
+    "validation/vendor/saturn_pub/observers.py": {
+      "sha256": "174bcd19afbc12bd3ce3e2a7e71a5bb18ed60a99d1fc14d3fa3a4165a4f36bed",
+      "bytes": 10807
+    },
+    "validation/vendor/saturn_pub/paths.py": {
+      "sha256": "72368c8ef8eb8e4cba7e56526438fb5d89f47c4b5a2a3150dd70f491ec612dc1",
+      "bytes": 13347
+    },
+    "validation/vendor/saturn_pub/program.py": {
+      "sha256": "0972d6ba43ff9b01ccd412670cd7781e15a8cdcb05bc07e5fd23bf74f457c09a",
+      "bytes": 15142
+    },
+    "validation/vendor/saturn_pub/route.py": {
+      "sha256": "f36d49031f27da3783076c27d4086c174de9a5a4b7e4c84f943ac77dfcda7d35",
+      "bytes": 32246
+    },
+    "validation/vendor/saturn_pub/shared_store.py": {
+      "sha256": "2daad1dec46b6c5f5b8bd791c143099b8535a4571fbbf1972b13abf0313cdd4f",
+      "bytes": 8680
+    },
+    "validation/vendor/saturn_pub/store.py": {
+      "sha256": "1f97cfcbe7575e0e87813bde098ce15251f7fdb607d37246a95a42305a181140",
+      "bytes": 24132
+    },
+    "validation/vendor/saturn_pub/symbols.py": {
+      "sha256": "aa79d6a158d6a1e9e455a3020d22b1e10d401988e66459b4d7d997bfe8bbc60f",
+      "bytes": 15909
+    },
+    "validation/vendor/saturn_pub/training/__init__.py": {
+      "sha256": "3e71ec8bd17366ba996b46b7eb6ad7ac1dc824b5ed9d5bfb62ccff7823d1e5ef",
+      "bytes": 1817
+    },
+    "validation/vendor/saturn_pub/training/_checkpoint.py": {
+      "sha256": "05d9397f0ec3000152172b9acd333257ce9eae36faead869d7f6d9d0eacdf19e",
+      "bytes": 67661
+    },
+    "validation/vendor/saturn_pub/trial.py": {
+      "sha256": "f7a40ab2d8eee5efb238bd2476f1d3d422de4892a68b80753ebc823895c59a83",
+      "bytes": 31644
+    },
+    "validation/vendor/saturn_pub/values.py": {
+      "sha256": "8b4f9ac3eccf7b3c70657be6d90ec72fb21dca9c84659cf54b14ce08751fa508",
+      "bytes": 4207
+    },
+    "validation/vendor/saturn_pub/writers.py": {
+      "sha256": "eadc6de8258b70ea8a505607c6f01a86ee8740232660bee87fd7f0dddb0bdbab",
+      "bytes": 3422
+    }
+  },
+  "base_commit": "c6c1a9b3ee30c50c41fc2fcc03a6ba61caa689c4",
+  "model": {
+    "architecture": 2,
+    "bytes": 3087469344,
+    "content_sha256": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc",
+    "identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "native_eos_token_ids": [
+      151645,
+      151643
+    ],
+    "numerical_contract": "original tensor bytes; C widens BF16 to FP32 once on GPU; FP32 execution",
+    "path": "/mnt/big/llm-models/tcm/qwen25-1.5b-fp32-execution-v2.tcm",
+    "profile_version": "qwen25-fp32-execution-v2",
+    "source_weights_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "tensor_count": 338,
+    "tokenizer_files": {
+      "config.json": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    }
+  },
+  "tokenizer_path": "/mnt/big/llm-models/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "archive_limit_bytes": 12582912,
+  "scope": "Frozen canonical source plus demonstration programs; no model bytes in payload."
+}

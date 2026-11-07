@@ -1,0 +1,14 @@
+{
+  "schema": "cmachine-demo-record-pins-v1",
+  "scope": "Hashes pin already-published source records; no new model execution. Full experiment qualification lives in the linked evidence bundles.",
+  "files": {
+    "docs/evidence/integration-7a6824d/report.json": "82ec2e64dbcd41b40279dd8f1fe73765752b356028eecdcd5e4870bad91a27f9",
+    "docs/evidence/integration-7a6824d/raw/native-protocol.json": "a0718dc72540826d58e4341d961e9b5af22644ca780cfa0bc72e0a377c4cb177",
+    "docs/evidence/integration-7a6824d/raw/reference-native-protocol.json": "a0718dc72540826d58e4341d961e9b5af22644ca780cfa0bc72e0a377c4cb177",
+    "docs/evidence/integration-7a6824d/raw/native-demo.stdout.txt": "c8bee7aca0d898fc17f05dbb2617465e59ae3584fb708fea34ac3596cf4d91ce",
+    "docs/evidence/integration-7a6824d/raw/bounded-delayed.stdout.txt": "bf92f5d03e49ec976b9a8468ed248e787cbb3da29f4b0d90d765c77deceb1ee9",
+    "docs/evidence/integration-7a6824d/raw/full-byte-delayed.stdout.txt": "e3f84915604f24dc29bd94ea680955e2b4e017fc876855d3fca871c8d3204557",
+    "docs/evidence/context-query-20261106/integration.json": "9cc32e2d8b37c308d6be731cf75774cb7677dc0e02648faf317400bdb239fe18",
+    "docs/evidence/context-query-20261106/analysis.json": "b515dd01255012ae4df25ef1ff080b169b7a9dcf0849fbd212c57d5087f4462d"
+  }
+}

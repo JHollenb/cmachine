@@ -1,0 +1,10 @@
+mkdir -p build
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_WITH_CUDA -Isrc -c src/model.c -o build/model.o
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_WITH_CUDA -Isrc -c src/isa.c -o build/isa.o
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_WITH_CUDA -Isrc -c src/main.c -o build/main.o
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_WITH_CUDA -Isrc -c src/qwen.c -o build/qwen.o
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_WITH_CUDA -Isrc -c src/qwen_serve.c -o build/qwen_serve.o
+cc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_WITH_CUDA -Isrc -c src/qwen_bounded_serve.c -o build/qwen_bounded_serve.o
+/usr/local/cuda/bin/nvcc -O3 -std=c++17 --fmad=false -arch=sm_89 -Isrc -c src/qwen_cuda.cu -o build/qwen_cuda.o
+/usr/local/cuda/bin/nvcc build/model.o build/isa.o build/main.o build/qwen.o build/qwen_serve.o build/qwen_bounded_serve.o build/qwen_cuda.o -lcublas -lm -o build/tcm-cuda
+/mnt/hdd8tb/mrun-work/job-995c8e81e7ca/build/demo-compiled-operands

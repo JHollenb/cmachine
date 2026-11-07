@@ -1,0 +1,55 @@
+{
+  "claims": [
+    "The guarded C/CUDA demo completed with exact source and custody joins.",
+    "The chat branch/replay protocol checks passed for the recorded native run.",
+    "The lexical program reproduced its source-covered own-token rows with exact full-logit, cache, and token checks."
+  ],
+  "fresh_chat": {
+    "branch_a": {
+      "generated_tokens": 2,
+      "text": "Green"
+    },
+    "branch_b": {
+      "generated_tokens": 2,
+      "text": "Yellow"
+    },
+    "initial": {
+      "generated_tokens": 3,
+      "text": "OK."
+    },
+    "replay_exact": true
+  },
+  "job_id": "job-995c8e81e7ca",
+  "lexical": {
+    "bytes": {
+      "candidate_transfer": 360448,
+      "native_model_gpu": 6174857216,
+      "session": 3294832,
+      "table_host": 270468
+    },
+    "candidate_nominal_linear_macs": 67778641920,
+    "covered_ids": 33,
+    "generated_tokens_consumed": 8,
+    "linear_macs": 103809024,
+    "omitted_first_layer_qkv_macs": 138412032,
+    "omitted_linear_macs": 138412032,
+    "rows_full_logits_cache_token_exact": true,
+    "source_nominal_linear_macs": 67917053952,
+    "steps": 44
+  },
+  "limits": [
+    "Generated text is recorded; no semantic color, arithmetic, or prose truth claim is made.",
+    "Lexical coverage is source-derived own-token reuse, not held-out generalization.",
+    "Original dense weights and the remaining model computation remain paid.",
+    "No speedup, universal compact state, or forward-pass-free chat claim is certified.",
+    "The Saturn receipt covers the whole C invocation; internal CUDA operations are covered by the demo reports and raw hashes."
+  ],
+  "model": {
+    "content_sha256": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc",
+    "identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  },
+  "schema": "cmachine-pretrained-demo-summary-v1",
+  "source_manifest_sha256": "53f81813b184fb282568279ffdb19090cbd1beec84d8c0463efc5a8030467fef",
+  "terminal_status": "not_requested",
+  "verification_scope": "provenance and mechanics only; semantic outcomes remain observations"
+}

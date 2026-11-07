@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>cmachine / execution gallery</title>
+  <style>
+    :root {
+      --bg: #071316;
+      --panel: rgba(12, 32, 38, .82);
+      --panel-strong: #102a31;
+      --ink: #e9f7f4;
+      --muted: #91b3b1;
+      --faint: #527875;
+      --line: rgba(143, 219, 210, .16);
+      --teal: #72e2d4;
+      --teal-deep: #168c8b;
+      --purple: #b9a0ff;
+      --purple-deep: #7957c8;
+      --amber: #f5c776;
+      --red: #ff8b8b;
+      --green: #82e2a3;
+      --shadow: 0 22px 65px rgba(0, 0, 0, .25);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% -5%, rgba(27, 144, 143, .27), transparent 34rem),
+        radial-gradient(circle at 90% 8%, rgba(121, 87, 200, .24), transparent 32rem),
+        var(--bg);
+      font: 15px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(114, 226, 212, .35); }
+    a:hover { color: #c7fff5; border-bottom-color: currentColor; }
+    .shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; padding-bottom: 90px; }
+    .hero { min-height: 610px; padding: 72px 0 48px; display: grid; align-content: center; }
+    .eyebrow, .tag {
+      color: var(--teal); text-transform: uppercase; letter-spacing: .16em; font-size: 11px; font-weight: 750;
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--teal); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 820px; margin: 22px 0 20px; font-size: clamp(42px, 7vw, 86px); line-height: .98; letter-spacing: -.06em; font-weight: 720; }
+    h1 em { color: var(--teal); font-style: normal; }
+    h2 { margin-bottom: 12px; font-size: clamp(26px, 3.3vw, 42px); line-height: 1.08; letter-spacing: -.04em; }
+    h3 { margin-bottom: 8px; font-size: 18px; letter-spacing: -.015em; }
+    .lede { max-width: 680px; color: var(--muted); font-size: 19px; line-height: 1.55; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); gap: 28px; align-items: end; margin-top: 30px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .hero-badge { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.035); font-size: 11px; }
+    .quickstart { display: flex; flex-wrap: wrap; gap: 11px 15px; align-items: center; margin-top: 25px; padding: 14px 16px; border: 1px solid rgba(114,226,212,.2); border-radius: 13px; background: rgba(114,226,212,.06); }
+    .quickstart code { color: var(--ink); font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .quickstart span:last-child { color: var(--muted); font-size: 13px; }
+    .quote-card { position: relative; padding: 26px 28px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(145deg, rgba(24, 64, 68, .8), rgba(45, 29, 73, .8)); box-shadow: var(--shadow); }
+    .quote-card::before { content: "“"; position: absolute; top: 8px; right: 20px; color: rgba(114, 226, 212, .25); font-size: 80px; line-height: 1; }
+    .quote-label { color: var(--amber); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 750; }
+    blockquote { margin: 15px 0 18px; max-width: 520px; font-size: 21px; line-height: 1.4; }
+    .quote-meta { color: var(--muted); font-size: 12px; }
+    .section { padding: 72px 0 10px; }
+    .section-heading { max-width: 760px; margin-bottom: 28px; }
+    .section-heading p { color: var(--muted); font-size: 16px; }
+    .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .metric, .panel, .step, .memory-card, .link-card { border: 1px solid var(--line); background: var(--panel); box-shadow: 0 12px 34px rgba(0,0,0,.11); }
+    .metric { min-height: 132px; padding: 19px; border-radius: 16px; }
+    .metric-value { display: block; margin: 8px 0 3px; color: var(--teal); font-size: 38px; line-height: 1; letter-spacing: -.055em; font-weight: 720; }
+    .metric-label { color: var(--muted); font-size: 12px; }
+    .two-col { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 18px; margin-top: 18px; }
+    .panel { border-radius: 20px; padding: 25px; }
+    .panel p { color: var(--muted); }
+    .panel strong { color: var(--ink); }
+    .kicker-line { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; color: var(--muted); font-size: 12px; }
+    .kicker-line b { color: var(--teal); font-size: 20px; }
+    .trend-list { display: grid; gap: 15px; margin-top: 22px; }
+    .trend-row { display: grid; grid-template-columns: 126px 1fr; gap: 13px; align-items: center; }
+    .trend-label { color: var(--muted); font-size: 12px; }
+    .trend-label b { display: block; color: var(--ink); font-size: 13px; }
+    .bar-stack { display: grid; gap: 4px; }
+    .bar-line { display: grid; grid-template-columns: 66px 1fr 68px; gap: 8px; align-items: center; font-size: 10px; color: var(--faint); }
+    .bar-track { height: 7px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.07); }
+    .bar-fill { height: 100%; min-width: 2px; border-radius: inherit; }
+    .bar-fill.baseline { background: #668b8a; }
+    .bar-fill.updated { background: var(--teal); }
+    .bar-fill.later { background: var(--purple); }
+    .countertrend { margin-top: 17px; padding: 12px 14px; border-left: 2px solid var(--purple); color: #d5c9ff; background: rgba(121, 87, 200, .1); font-size: 13px; }
+    .callout { padding: 17px; border-radius: 13px; background: rgba(114, 226, 212, .075); border: 1px solid rgba(114, 226, 212, .18); }
+    .callout p:last-child { margin-bottom: 0; }
+    .program-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); gap: 18px; margin-top: 18px; }
+    .pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 20px 0 9px; }
+    .pipeline-node { padding: 10px 12px; border: 1px solid rgba(114,226,212,.25); border-radius: 10px; color: var(--ink); background: rgba(114,226,212,.08); font-size: 12px; }
+    .pipeline-node.purple { border-color: rgba(185,160,255,.28); background: rgba(121,87,200,.12); }
+    .pipeline-arrow { color: var(--faint); font: 17px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .program-note { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .program-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
+    .program-stat { padding: 13px; border-radius: 12px; background: rgba(255,255,255,.035); }
+    .program-stat b { display: block; color: var(--teal); font-size: 20px; }
+    .program-stat span { color: var(--muted); font-size: 11px; }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .step { position: relative; min-height: 170px; padding: 17px; border-radius: 16px; }
+    .step-num { color: var(--purple); font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .step h3 { margin-top: 22px; font-size: 16px; }
+    .step p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .code-panel { margin-top: 16px; padding: 20px; overflow: auto; border: 1px solid var(--line); border-radius: 16px; background: #061012; color: #b6e9df; }
+    pre { margin: 0; font: 13px/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; }
+    .memory-card { overflow: hidden; margin-top: 18px; border-radius: 20px; }
+    .memory-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; padding: 23px 25px 15px; }
+    .memory-head p { max-width: 620px; margin-bottom: 0; color: var(--muted); }
+    .memory-saving { color: var(--amber); font-size: 25px; font-weight: 720; white-space: nowrap; }
+    .memory-table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; }
+    th, td { padding: 12px 14px; text-align: left; border-top: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--faint); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    td { color: var(--muted); font-size: 13px; }
+    td.policy { color: var(--ink); font-weight: 700; }
+    .answer-chip { display: inline-block; margin: 2px 4px 2px 0; padding: 3px 7px; border-radius: 999px; border: 1px solid rgba(255,255,255,.13); font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .answer-chip.ok { color: var(--green); border-color: rgba(130,226,163,.35); background: rgba(130,226,163,.08); }
+    .answer-chip.miss { color: var(--red); border-color: rgba(255,139,139,.35); background: rgba(255,139,139,.08); }
+    .memory-foot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 18px 25px 23px; }
+    .mini-stat { padding: 13px; border-radius: 12px; background: rgba(255,255,255,.035); }
+    .mini-stat b { display: block; color: var(--ink); font-size: 15px; }
+    .mini-stat span { color: var(--muted); font-size: 11px; }
+    .plot-shell { overflow: hidden; margin-top: 18px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .plot-toolbar { display: flex; flex-wrap: wrap; gap: 15px 20px; align-items: center; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+    .control { display: inline-flex; gap: 8px; align-items: center; color: var(--muted); font-size: 12px; }
+    select, input[type=range] { accent-color: var(--teal); }
+    select { padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #0a2024; }
+    input[type=range] { width: min(300px, 44vw); }
+    .plot-time { margin-left: auto; color: var(--teal); font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .svg-wrap { padding: 10px 17px 0; }
+    #statePlot { display: block; width: 100%; height: auto; min-height: 300px; }
+    .plot-axis { fill: var(--faint); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .plot-grid { stroke: rgba(143,219,210,.12); stroke-width: 1; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 15px; padding: 10px 25px 21px; color: var(--muted); font-size: 12px; }
+    .legend-item { display: inline-flex; gap: 7px; align-items: center; }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .plot-note { padding: 0 25px 21px; color: var(--muted); font-size: 13px; }
+    .observations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+    .observation { padding: 17px; border-left: 2px solid var(--teal); border-radius: 0 13px 13px 0; background: rgba(114,226,212,.065); }
+    .observation b { display: block; margin-bottom: 5px; color: var(--ink); }
+    .observation span { color: var(--muted); font-size: 13px; }
+    .links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .link-card { padding: 19px; border-radius: 15px; }
+    .link-card p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .scope-strip { margin-top: 19px; padding: 18px 20px; border: 1px solid rgba(245,199,118,.25); border-radius: 14px; color: #e7d3a9; background: rgba(245,199,118,.075); }
+    .footer { padding-top: 58px; color: var(--faint); font-size: 12px; }
+    @media (max-width: 880px) {
+      .hero-grid, .two-col { grid-template-columns: 1fr; }
+      .program-grid { grid-template-columns: 1fr; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .links { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 24px, 1180px); }
+      .hero { min-height: auto; padding-top: 46px; }
+      .metric-grid, .steps, .memory-foot, .observations, .links { grid-template-columns: 1fr; }
+      .memory-head { display: block; }
+      .memory-saving { margin-top: 12px; }
+      .trend-row { grid-template-columns: 92px 1fr; }
+      .bar-line { grid-template-columns: 52px 1fr 58px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div class="eyebrow">cmachine / evidence gallery</div>
+      <h1>Execute. Inspect.<br><em>Branch. Replace.</em></h1>
+      <p class="lede">Generate text, save a conversation, rewind a branch, bind an alternative operand program, and inspect both the state and the result. This gallery connects a native Qwen session, a recorded first-layer replacement, a memory policy, and a finite nonlinear state lab.</p>
+      <div class="hero-badges"><span class="hero-badge">Pinned Qwen results</span><span class="hero-badge">Runnable C examples</span><span class="hero-badge">Weight-free CPU lab</span></div>
+      <div class="quickstart"><span class="tag">Start here</span><code>python3 demos/run.py tour</code><span>Run the local tour, then open this page to inspect the recorded boundaries.</span></div>
+      <div class="hero-grid">
+        <div>
+          <div class="tag">Scope at a glance</div>
+          <p class="lede" style="font-size:15px;max-width:560px;margin-top:10px">Historical pretrained records are pinned and verified; the closed-state experiment is freshly reproducible as a CPU fixture. The page keeps those scopes visibly separate.</p>
+        </div>
+        <div class="quote-card">
+          <div class="quote-label">Recorded native answer</div>
+          <blockquote id="nativeAnswer">Loading recorded response…</blockquote>
+          <div class="quote-meta" id="answerMeta"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="fresh-panel" style="display:none">
+        <div class="section-heading">
+          <div class="eyebrow">01 / fresh pretrained lease</div>
+          <h2>Save a conversation. Explore both futures.</h2>
+          <p>The public C/CUDA examples ran on a pretrained Qwen model. Branch A changes a badge to green; rollback restores the parent; regeneration reproduces A exactly; branch B changes it to yellow and commits.</p>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><span class="tag">job</span><strong class="metric-value" id="freshJob">—</strong><span class="metric-label">fresh lease identity</span></div>
+          <div class="metric"><span class="tag">chat replay</span><strong class="metric-value" id="freshReplay">—</strong><span class="metric-label">same-parent replay</span></div>
+          <div class="metric"><span class="tag">lexical</span><strong class="metric-value" id="freshLexical">—</strong><span class="metric-label">full-logit rows</span></div>
+          <div class="metric"><span class="tag">coverage</span><strong class="metric-value" id="freshIDs">—</strong><span class="metric-label">candidate IDs covered</span></div>
+        </div>
+        <div class="two-col">
+          <div class="panel"><h3>Model-generated answers</h3><div class="callout"><p><strong>Initial</strong></p><p class="fresh-answer" id="freshInitial">—</p><p><strong>Branch A</strong></p><p class="fresh-answer" id="freshBranchA">—</p><p><strong>Rollback → regenerate A</strong></p><p class="fresh-answer" id="freshReplayText">—</p><p><strong>Rollback → branch B → commit</strong></p><p class="fresh-answer" id="freshBranchB">—</p></div></div>
+          <div class="panel"><h3>Exact replacement, accountable cost</h3><p id="freshMeta">—</p><div class="scope-strip" id="freshLimits">—</div><p><a href="results/pretrained/README.md">Inspect the fresh results and source →</a></p><details><summary>Full claims and limits</summary><p id="freshDetails"></p></details></div>
+        </div>
+      </section>
+
+      <section class="section" id="signal">
+        <div class="section-heading">
+          <div class="eyebrow">02 / pinned readout</div>
+          <h2>The useful signal is a chain of exact boundaries.</h2>
+          <p>The gallery starts with what the records can certify mechanically, then lets you inspect where a compact state or learned replacement becomes conditional at the same full-logit consumer.</p>
+        </div>
+        <div class="metric-grid">
+          <div class="metric"><span class="tag">native trace</span><strong class="metric-value" id="protocolCount">—</strong><span class="metric-label">exact protocol entries</span></div>
+          <div class="metric"><span class="tag">operand readout</span><strong class="metric-value" id="lexicalCount">—</strong><span class="metric-label">exact full-logit steps</span></div>
+          <div class="metric"><span class="tag">conditional KL</span><strong class="metric-value" id="klMetric">—</strong><span class="metric-label">mean reduction, four cases</span></div>
+          <div class="metric"><span class="tag">memory</span><strong class="metric-value" id="memoryMetric">—</strong><span class="metric-label" id="memoryMetricLabel">tracked session state vs full-byte</span></div>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <div class="kicker-line"><b>Context update → future readout</b><span id="klRange">—</span></div>
+            <div class="trend-list" id="trendList"></div>
+            <div class="countertrend" id="countertrend">Loading countertrend…</div>
+          </div>
+          <div class="panel">
+            <h3>Read the number with its boundary.</h3>
+            <p id="klExplanation">Loading…</p>
+            <div class="callout">
+              <p><strong>13.59% is a trend in a finite conditional panel.</strong></p>
+              <p>The same records show a countertrend when a separately compiled layer-18 Q/K program is added after the updated layer-17 query: KL rises in every row. This is evidence about composition at a named consumer boundary, not a universal accuracy or speedup claim.</p>
+            </div>
+            <details><summary>Read the generated answers</summary><div id="answerCases"></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="protocol">
+        <div class="section-heading">
+          <div class="eyebrow">03 / protocol</div>
+          <h2>Conversation is a sequence of owned transitions.</h2>
+          <p>The server consumes token IDs, advances its cache, emits its own answer IDs, and exposes a state boundary. Branching is a reversible lifecycle operation around that boundary.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="step-num">01</span><h3>Tokenize</h3><p>The local chat template turns messages into the exact processed prefix.</p></div>
+          <div class="step"><span class="step-num">02</span><h3>Append</h3><p><code>A</code> transfers only the suffix the server has not consumed.</p></div>
+          <div class="step"><span class="step-num">03</span><h3>Generate</h3><p><code>G</code> returns model-owned IDs and leaves a pending token.</p></div>
+          <div class="step"><span class="step-num">04</span><h3>Branch</h3><p><code>P</code>, <code>B</code>, and <code>K</code> save, roll back, or adopt a continuation.</p></div>
+          <div class="step"><span class="step-num">05</span><h3>Inspect</h3><p><code>S</code> reports cache, pending token, position, and readout hashes.</p></div>
+        </div>
+        <div class="code-panel"><pre><code>A &lt;unconsumed token IDs&gt;
+G &lt;budget&gt;       # server-generated IDs; final one remains pending
+P                 # push a token-boundary frame
+B &lt;frame&gt;         # restore cache + pending state
+K &lt;frame&gt;         # commit the current branch
+S                 # inspect state and full-vocabulary hashes</code></pre></div>
+      </section>
+
+      <section class="section" id="program">
+        <div class="section-heading">
+          <div class="eyebrow">04 / operand program</div>
+          <h2>Replace one boundary, keep the consumer visible.</h2>
+          <p>The compiled lexical demo uses the public Qwen program API. It looks up first-layer Q/K/V atoms for consumed IDs, then leaves the remaining native computation in place so the replacement can be judged at the full-vocabulary consumer.</p>
+        </div>
+        <div class="program-grid">
+          <div class="panel">
+            <h3>Native path and replacement boundary</h3>
+            <div class="pipeline"><span class="pipeline-node">token IDs</span><span class="pipeline-arrow">→</span><span class="pipeline-node">first-layer Q/K/V lookup</span><span class="pipeline-arrow">→</span><span class="pipeline-node purple">RoPE + attention / MLP</span><span class="pipeline-arrow">→</span><span class="pipeline-node">27 native layers + head</span></div>
+            <p class="program-note">The table is compiled offline from a source-covered trajectory. Original weights remain resident; table construction, transfers, and the native reference pass are paid. This is an exact historical readout, not held-out generalization or a broad speedup claim.</p>
+            <div class="program-stats">
+              <div class="program-stat"><b id="lexicalExact">—</b><span>historical full-logit readouts</span></div>
+              <div class="program-stat"><b id="lexicalIDs">—</b><span>covered lexical IDs</span></div>
+              <div class="program-stat"><b id="lexicalCompile">—</b><span>offline compile MACs</span></div>
+              <div class="program-stat"><b id="lexicalHost">—</b><span>compiled table host bytes</span></div>
+              <div class="program-stat"><b id="lexicalTransfer">—</b><span>table transfer bytes</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>What the record binds</h3>
+            <div class="callout"><p><strong id="lexicalExactText">Loading…</strong></p><p>The historical integration compares the entire vocabulary vector at 16 steps. The fresh 44-step demo above also hashes every valid K/V row across all 28 layers.</p></div>
+            <p style="margin-top:16px">The compiled table is model-qualified and source-bound. It changes a named operand formation boundary; it does not erase the dense attention, MLP, normalization, or final head that consume that operand.</p>
+            <a href="compiled_operands/README.md">Open the compiled-operand README →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="memory">
+        <div class="section-heading">
+          <div class="eyebrow">05 / memory policy</div>
+          <h2>A smaller memory can replay and still answer differently.</h2>
+          <p>The recorded policies preserve exact replay mechanics while their delayed answers expose the consumer-facing limit. The expected answer sequence remains visible beside every actual answer.</p>
+        </div>
+        <div class="memory-card">
+          <div class="memory-head">
+            <div><h3>Delayed memory answers</h3><p>Green means the recorded answer matches the expected sequence; red is retained as evidence of a policy-specific miss.</p></div>
+            <div class="memory-saving" id="memorySaving">—</div>
+          </div>
+          <div class="memory-table-wrap"><table><thead><tr><th>Policy</th><th>Actual answer sequence</th><th>Expected sequence</th><th>Exact replay</th><th>Tracked state</th></tr></thead><tbody id="memoryRows"></tbody></table></div>
+          <div class="memory-foot">
+            <div class="mini-stat"><b id="fullByteState">—</b><span>full-byte tracked state</span></div>
+            <div class="mini-stat"><b id="boundedState">—</b><span>bounded tracked state</span></div>
+            <div class="mini-stat"><b id="memoryRecovery">—</b><span>bounded recovery mechanics</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="closed-state">
+        <div class="section-heading">
+          <div class="eyebrow">06 / closed-state laboratory</div>
+          <h2>Closure is a consumer contract, not a compression slogan.</h2>
+          <p>Scrub the supplied eight-dimensional organism through time. The closed compact path agrees with both hidden orientations; the escape writes an omitted coordinate and breaks the stale code; the repair adds that coordinate back.</p>
+        </div>
+        <div class="plot-shell">
+          <div class="plot-toolbar">
+            <label class="control">mode <select id="plotMode"><option value="closed">closed / 3 paths</option><option value="escape">escape / 3 paths</option><option value="repair">repair / 4 paths</option><option value="all">all / 8 paths</option></select></label>
+            <label class="control">coordinate <select id="plotCoordinate"><option value="0">state[0]</option><option value="1">state[1]</option><option value="2">state[2]</option></select></label>
+            <label class="control">time <input id="timeSlider" type="range" min="0" max="16" step="1" value="0"></label>
+            <span class="plot-time" id="plotTime">t = 0 / 16</span>
+          </div>
+          <div class="svg-wrap"><svg id="statePlot" viewBox="0 0 960 355" role="img" aria-label="Closed-state trajectories"></svg></div>
+          <div class="legend" id="closedLegend"></div>
+          <div class="plot-note" id="plotNote">Loading trajectory…</div>
+        </div>
+        <div class="observations">
+          <div class="observation"><b>Closed control</b><span id="closedObservation">Loading…</span></div>
+          <div class="observation"><b>Escape control</b><span id="escapeObservation">Loading…</span></div>
+          <div class="observation"><b>Repair</b><span id="repairObservation">Loading…</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="evidence">
+        <div class="section-heading">
+          <div class="eyebrow">07 / evidence trail</div>
+          <h2>Inspect the source, then choose the next cut.</h2>
+          <p>The links preserve the distinction between a runnable fixture, a pinned historical record, and the evidence bundle that explains its custody.</p>
+        </div>
+        <div class="links">
+          <div class="link-card"><a href="closed_state/README.md">Closed-state demo README</a><p>Fresh-clone CPU fixture, recurrence, exactness scope, and escape/repair interpretation.</p></div>
+          <div class="link-card"><a href="chat_branch/README.md">Reversible chat README</a><p>Public token-server client with explicit model, tokenizer, branch, rollback, and replay arguments.</p></div>
+          <div class="link-card"><a href="../README.md">cmachine README</a><p>Canonical runtime protocol, model boundary, build instructions, and numerical contract.</p></div>
+          <div class="link-card"><a href="../docs/evidence/integration-7a6824d/README.md">Integration evidence</a><p>Historical pretrained custody, native/reference joins, and memory-policy records.</p></div>
+          <div class="link-card"><a href="../docs/evidence/context-query-20261106/README.md">Context-query evidence</a><p>Conditional operand replacement, future readouts, and the KL panel represented above.</p></div>
+          <div class="link-card"><a href="recorded/build.py">Recorded gallery builder</a><p>Verifies pinned records and regenerates the compact historical summary without running a model.</p></div>
+        </div>
+        <div class="scope-strip" id="scopeStrip">Loading scope…</div>
+        <div class="scope-strip" id="pretrainedStrip" style="display:none"></div>
+      </section>
+    </main>
+    <footer class="footer">Generated from checked-in JSON records by <code>demos/render.py</code>. No network assets, fonts, or model execution are used to render this page.</footer>
+  </div>
+
+  <script id="payload" type="application/json">{"recorded":{"schema":"cmachine-recorded-demo-v1","execution_kind":"verified-historical-pretrained-records","models_executed_by_this_command":0,"source_files_verified":8,"source_manifest_sha256":"f2835d98f7002b00ebedcd79f9ef09ccb3988f8be5c1c7aef37e1741ef8e8625","jobs":["job-f645fcd76a75","job-fe51e7f4f0ee"],"model":{"identity":"dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee","content_sha256":"8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc","profile_version":"qwen25-fp32-execution-v2"},"chat":{"prompt":"Explain why bread rises when yeast is added. Use two short sentences.","answer":"When yeast is added to dough, it consumes the sugars present, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise.","native_reference_protocol_entries_exact":84,"native_mechanics":{"foreign_stale_handles":true,"host_marker_bytes":9216,"nested_replay":true,"overflow_atomic":true,"partial_reset":true,"pending_policy":true,"plane_guards_and_work_counts":true,"plane_max_write_relative_error":1.04737366e-06,"scope":"pretrained Qwen lifecycle; synthetic token inputs","stack_limit":64,"step_and_observation_parity":true,"subspace_arithmetic_control_max_relative_error":8.29462444e-07,"subspace_lifecycle_and_work_counts":true,"valid_kv_and_full_logits_exact":true,"writer_checks":true,"writer_parent_lineage_checks":true},"trace":[{"command":"S","reply":{"cache_sha256":"d4bfc92231a561778856f3bef32bd48a5b485eb4def9c93f6001a99f11149914","checkpoint_serial":0,"delivered":0,"epoch":1,"event":"state","logits_sha256":"e9b3ceddcab1f28aeca4f2962c5ccf7957b177d7c321c98f519dc07d2ef6fef6","logits_valid":true,"pending_token":3925,"position":76,"stack_depth":0,"top_frame":0}},{"command":"G 8","reply":{"count":2,"event":"generated","ids":[3925,151645],"pending_token":151645,"position":77}},{"command":"S","reply":{"cache_sha256":"7259054e4c72e99fe38d95efcc03bf33838f63a0135df83b53e103088e9cdda9","checkpoint_serial":0,"delivered":1,"epoch":1,"event":"state","logits_sha256":"8e481a6eae7431a69439548a7487395ab91f551841de6d37bef91f1754516237","logits_valid":true,"pending_token":151645,"position":77,"stack_depth":0,"top_frame":0}},{"command":"S","reply":{"cache_sha256":"0e60771fb823d887a4ddf3a2649557c4599a8fa82d3ac8322c39d6c00f767ae8","checkpoint_serial":0,"delivered":0,"epoch":1,"event":"state","logits_sha256":"eb0c96072488b896b49f07f1e02b5d656ef32d401d1de58bd1c6a8a18a56d37a","logits_valid":true,"pending_token":198,"position":78,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":1,"position":78}},{"command":"S","reply":{"cache_sha256":"30514c7e87caadbf7f59363ba03525d80d9e0b7f5a625d1fd7e08e8b497ad5f6","checkpoint_serial":0,"delivered":0,"epoch":1,"event":"state","logits_sha256":"a82c8a5cb8e243cc39d5de74532afa28b04845c68ccd3b54bc7fd68991e485bd","logits_valid":true,"pending_token":16,"position":105,"stack_depth":1,"top_frame":1}},{"command":"G 8","reply":{"count":3,"event":"generated","ids":[16,22,151645],"pending_token":151645,"position":107}},{"command":"S","reply":{"cache_sha256":"9d93af043ae817dbb1081bc8a1b3707866c132f2dd1a7211b735020b0363768d","checkpoint_serial":0,"delivered":1,"epoch":1,"event":"state","logits_sha256":"97ce8432f1fa60638b8ba3d9943ea124dc9b16347767ef7274bf89ac08aed799","logits_valid":true,"pending_token":151645,"position":107,"stack_depth":1,"top_frame":1}},{"command":"S","reply":{"cache_sha256":"dd81ae0321c5edc6b1d5a459ccedc7474b8c04ad71ce0309eb47c6ee1b26bba6","checkpoint_serial":0,"delivered":0,"epoch":1,"event":"state","logits_sha256":"f3c085db755918f4615ead2067079f774e1cee393946eab2e770c61b84c03920","logits_valid":true,"pending_token":198,"position":108,"stack_depth":1,"top_frame":1}},{"command":"B 1","reply":{"depth":0,"event":"rolled_back","frame":1,"pending_token":198,"position":78}},{"command":"S","reply":{"cache_sha256":"5b80a6bb9aeef1fc5de6b3c20995eecfc562cb2a66e3e7486e166a720a633b59","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"a67f954e017275ef875788b90680c020aa8385d654829ba7c11943931cc13297","logits_valid":true,"pending_token":3925,"position":110,"stack_depth":0,"top_frame":0}},{"command":"G 8","reply":{"count":2,"event":"generated","ids":[3925,151645],"pending_token":151645,"position":111}},{"command":"S","reply":{"cache_sha256":"6211dae27bda1a6e5e7ff442ecccc40d62dc797da1b774efa22a99ea26909f55","checkpoint_serial":1,"delivered":1,"epoch":1,"event":"state","logits_sha256":"91d02da438b03ce73f9efddd4394ee208077d56d911bfa8d044338aeee891723","logits_valid":true,"pending_token":151645,"position":111,"stack_depth":0,"top_frame":0}},{"command":"S","reply":{"cache_sha256":"a15e8da4ea5d5e25778e700ea72b8693bcadc856f0cec7d7813f74dca1198f16","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"417f9e38de440c30adeb0f5ec15f13e0818933ddd9766b4eda33511c96e6d96e","logits_valid":true,"pending_token":198,"position":112,"stack_depth":0,"top_frame":0}},{"command":"S","reply":{"cache_sha256":"ff30d09d1ea3173cc9d9e7ad84df6c4d12fb6763f5949d2dd56d01f8bbba3272","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"a4d9264a3dc673c5978cbb100ce6f39cac52ea7be31d3b7026074fecaeae6bc7","logits_valid":true,"pending_token":3925,"position":362,"stack_depth":0,"top_frame":0}},{"command":"G 8","reply":{"count":2,"event":"generated","ids":[3925,151645],"pending_token":151645,"position":363}},{"command":"S","reply":{"cache_sha256":"b65db3a4e81b0761ef447c498f58de85f6ef6586f67f9aa7174fc6d212462930","checkpoint_serial":1,"delivered":1,"epoch":1,"event":"state","logits_sha256":"36e0d10413f1e39505e40a998763525a0df9a3a04d6cf87c9e81dbf7ac06e343","logits_valid":true,"pending_token":151645,"position":363,"stack_depth":0,"top_frame":0}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"f10cd32f9107a3c6b62feda71cbb1416701d9fd6386f481551039ed8c077b5db","logits_valid":true,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"f10cd32f9107a3c6b62feda71cbb1416701d9fd6386f481551039ed8c077b5db","logits_valid":true,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":2,"position":364}},{"command":"S","reply":{"cache_sha256":"fbc700484e3673938820c26a5e1f61eb274fa7f9c5c4e6e8a3836146f7f10a71","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"1cc241d51ffcf43991d50495af331ed64da05c62154dabb5fa08566b5fab2425","logits_valid":true,"pending_token":16,"position":391,"stack_depth":1,"top_frame":2}},{"command":"G 8","reply":{"count":3,"event":"generated","ids":[16,22,151645],"pending_token":151645,"position":393}},{"command":"S","reply":{"cache_sha256":"00f21d2422103ba1b7121f1f93a1018867f2c2efaa93994b01a3ba36d36a6eaa","checkpoint_serial":1,"delivered":1,"epoch":1,"event":"state","logits_sha256":"668de1bfd5d7c62e4fef4eda34e3f3f694a2f40bee90566b625e94bd8d9f1361","logits_valid":true,"pending_token":151645,"position":393,"stack_depth":1,"top_frame":2}},{"command":"S","reply":{"cache_sha256":"975d195af4490b232c8850da9b598d1832176f21fd654f26960319d026b8519e","checkpoint_serial":1,"delivered":0,"epoch":1,"event":"state","logits_sha256":"9d841badb5e69012362d2f9086ecd2655d466ba61f19de8f8c7302dff527f95d","logits_valid":true,"pending_token":198,"position":394,"stack_depth":1,"top_frame":2}},{"command":"B 2","reply":{"depth":0,"event":"rolled_back","frame":2,"pending_token":198,"position":364}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":2,"delivered":0,"epoch":1,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":3,"position":364}},{"command":"S","reply":{"cache_sha256":"9afeb3dceeaf951e91c20f594008844b18410a8ca524444d49bdf7c07c20cca5","checkpoint_serial":2,"delivered":0,"epoch":1,"event":"state","logits_sha256":"690e3dba6e4df8cd7c3639d31809132d867aa20519e71a2997a6a292099a60d9","logits_valid":true,"pending_token":17,"position":392,"stack_depth":1,"top_frame":3}},{"command":"G 8","reply":{"count":3,"event":"generated","ids":[17,24,151645],"pending_token":151645,"position":394}},{"command":"S","reply":{"cache_sha256":"fa979af5a63d8818e861888a7b7698dde1c1edff2f3367a79b8f8144cca4281e","checkpoint_serial":2,"delivered":1,"epoch":1,"event":"state","logits_sha256":"3326debaf51c72eb4fadce810e92b78e9c91e711ae4b9aca87477828dbcb198d","logits_valid":true,"pending_token":151645,"position":394,"stack_depth":1,"top_frame":3}},{"command":"S","reply":{"cache_sha256":"9b3431a6cc885713348adae865711e20cc7d1f3cdd5ab007d73d176a0e2c9c15","checkpoint_serial":2,"delivered":0,"epoch":1,"event":"state","logits_sha256":"0153d074c2f88c0da8d712677e854fad62fb4b682178063388acec20831efc83","logits_valid":true,"pending_token":198,"position":395,"stack_depth":1,"top_frame":3}},{"command":"B 3","reply":{"depth":0,"event":"rolled_back","frame":3,"pending_token":198,"position":364}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":3,"delivered":0,"epoch":1,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":4,"position":364}},{"command":"S","reply":{"cache_sha256":"a167c73877c9d96c234d5d5ee94526c7f595bb7e8ebe6566f63249cd6d2d467f","checkpoint_serial":3,"delivered":0,"epoch":1,"event":"state","logits_sha256":"33883c9baa5b17891e2d4cc19618c10650847a16fcc0f58833d73bbc5b678c86","logits_valid":true,"pending_token":15221,"position":391,"stack_depth":1,"top_frame":4}},{"command":"G 8","reply":{"count":2,"event":"generated","ids":[15221,151645],"pending_token":151645,"position":392}},{"command":"S","reply":{"cache_sha256":"ae44c59f9f1b1f60a211c88c36dcbcf25c5e5fe1b6875320e2424692ac36cfd1","checkpoint_serial":3,"delivered":1,"epoch":1,"event":"state","logits_sha256":"ec37c2670f05151087c71c81592c66def6eaa8f69f2d92d931f29c09dc6009b7","logits_valid":true,"pending_token":151645,"position":392,"stack_depth":1,"top_frame":4}},{"command":"S","reply":{"cache_sha256":"7a7a01d19718421ec7ba6d89650c38f93e59e0ce135477fdc2795b14c65786eb","checkpoint_serial":3,"delivered":0,"epoch":1,"event":"state","logits_sha256":"3b5d5d87ace51c86407f9bde1916028f07eef2914005b78fd9c706ed7c8f3aa4","logits_valid":true,"pending_token":198,"position":393,"stack_depth":1,"top_frame":4}},{"command":"B 4","reply":{"depth":0,"event":"rolled_back","frame":4,"pending_token":198,"position":364}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":4,"delivered":0,"epoch":1,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":5,"position":364}},{"command":"S","reply":{"cache_sha256":"e966bedfd86e956839145efd69fa01acda3aa35589754f40fa2bea424eaa1db1","checkpoint_serial":4,"delivered":0,"epoch":1,"event":"state","logits_sha256":"8b46106844c5c4c28c723d145cc1bf40b8ca83d51f53ad969339611c8b33b8d5","logits_valid":true,"pending_token":19,"position":395,"stack_depth":1,"top_frame":5}},{"command":"G 16","reply":{"count":3,"event":"generated","ids":[19,15,151645],"pending_token":151645,"position":397}},{"command":"S","reply":{"cache_sha256":"8ee520a58e34bd10f3720542db489cad058afb8fe215b0762a6fe6245a9bb323","checkpoint_serial":4,"delivered":1,"epoch":1,"event":"state","logits_sha256":"e017aaee9e935ce37bc985d7c71e7342126d60e14bfa0c13ff1120a61a160ab0","logits_valid":true,"pending_token":151645,"position":397,"stack_depth":1,"top_frame":5}},{"command":"S","reply":{"cache_sha256":"a900a7567b79487cbd2e770ce6cdd5dfc021cc5c4f77404f6b435d5b4f1dcace","checkpoint_serial":4,"delivered":0,"epoch":1,"event":"state","logits_sha256":"4909b27cc12388c6a5e76874922f2e449107f292376addcd40156dd558f42e5b","logits_valid":true,"pending_token":198,"position":398,"stack_depth":1,"top_frame":5}},{"command":"B 5","reply":{"depth":0,"event":"rolled_back","frame":5,"pending_token":198,"position":364}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":5,"delivered":0,"epoch":1,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":6,"position":364}},{"command":"S","reply":{"cache_sha256":"fbc700484e3673938820c26a5e1f61eb274fa7f9c5c4e6e8a3836146f7f10a71","checkpoint_serial":5,"delivered":0,"epoch":1,"event":"state","logits_sha256":"1cc241d51ffcf43991d50495af331ed64da05c62154dabb5fa08566b5fab2425","logits_valid":true,"pending_token":16,"position":391,"stack_depth":1,"top_frame":6}},{"command":"G 8","reply":{"count":3,"event":"generated","ids":[16,22,151645],"pending_token":151645,"position":393}},{"command":"S","reply":{"cache_sha256":"00f21d2422103ba1b7121f1f93a1018867f2c2efaa93994b01a3ba36d36a6eaa","checkpoint_serial":5,"delivered":1,"epoch":1,"event":"state","logits_sha256":"668de1bfd5d7c62e4fef4eda34e3f3f694a2f40bee90566b625e94bd8d9f1361","logits_valid":true,"pending_token":151645,"position":393,"stack_depth":1,"top_frame":6}},{"command":"S","reply":{"cache_sha256":"975d195af4490b232c8850da9b598d1832176f21fd654f26960319d026b8519e","checkpoint_serial":5,"delivered":0,"epoch":1,"event":"state","logits_sha256":"9d841badb5e69012362d2f9086ecd2655d466ba61f19de8f8c7302dff527f95d","logits_valid":true,"pending_token":198,"position":394,"stack_depth":1,"top_frame":6}},{"command":"B 6","reply":{"depth":0,"event":"rolled_back","frame":6,"pending_token":198,"position":364}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":6,"delivered":0,"epoch":1,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"P","reply":{"depth":1,"event":"pushed","frame":7,"position":364}},{"command":"S","reply":{"cache_sha256":"fbc700484e3673938820c26a5e1f61eb274fa7f9c5c4e6e8a3836146f7f10a71","checkpoint_serial":6,"delivered":0,"epoch":1,"event":"state","logits_sha256":"1cc241d51ffcf43991d50495af331ed64da05c62154dabb5fa08566b5fab2425","logits_valid":true,"pending_token":16,"position":391,"stack_depth":1,"top_frame":7}},{"command":"G 8","reply":{"count":3,"event":"generated","ids":[16,22,151645],"pending_token":151645,"position":393}},{"command":"S","reply":{"cache_sha256":"00f21d2422103ba1b7121f1f93a1018867f2c2efaa93994b01a3ba36d36a6eaa","checkpoint_serial":6,"delivered":1,"epoch":1,"event":"state","logits_sha256":"668de1bfd5d7c62e4fef4eda34e3f3f694a2f40bee90566b625e94bd8d9f1361","logits_valid":true,"pending_token":151645,"position":393,"stack_depth":1,"top_frame":7}},{"command":"S","reply":{"cache_sha256":"975d195af4490b232c8850da9b598d1832176f21fd654f26960319d026b8519e","checkpoint_serial":6,"delivered":0,"epoch":1,"event":"state","logits_sha256":"9d841badb5e69012362d2f9086ecd2655d466ba61f19de8f8c7302dff527f95d","logits_valid":true,"pending_token":198,"position":394,"stack_depth":1,"top_frame":7}},{"command":"B 7","reply":{"depth":0,"event":"rolled_back","frame":7,"pending_token":198,"position":364}},{"command":"S","reply":{"cache_sha256":"ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a","checkpoint_serial":7,"delivered":0,"epoch":1,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":198,"position":364,"stack_depth":0,"top_frame":0}},{"command":"S","reply":{"cache_sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","checkpoint_serial":8,"delivered":0,"epoch":2,"event":"state","logits_sha256":"","logits_valid":false,"pending_token":-1,"position":0,"stack_depth":0,"top_frame":0}}],"dense_weight_bytes":6174857216},"operands":{"lexical":{"source_clock_reads_exact":420,"source_full_logits_top_ids_exact":420,"lexical_replayed_steps":16,"lexical_covered_ids":15,"lexical_full_logits_exact":true,"lexical_compile_linear_macs":47185920,"lexical_host_bytes":122940,"lexical_transfer_bytes":131072,"model_digest":"8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc","model_identity":"dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"},"fresh_case_count":4,"fresh_baseline_mean_kl":0.027104872427404156,"fresh_updated_mean_kl":0.02342182056800105,"relative_kl_reduction":0.135881541935589,"cases":[{"context_tokens":128,"kind":"update","baseline_kl":0.023875657911384792,"updated_kl":0.020889357266673587,"later_layer_kl":0.036365891942782926,"updated_answers":["The compass is now in the violet box, and the whistle is in the silver box.","The compass is in the violet box, and the whistle is now in the amber box."],"later_layer_answers":["The compass is now in the violet box, and the whistle is still in the amber box.","The compass is in the violet box, and the whistle is in the amber box."]},{"context_tokens":128,"kind":"explanation","baseline_kl":0.025253750171247615,"updated_kl":0.022193893119043944,"later_layer_kl":0.04547816385304851,"updated_answers":["A wet towel dries faster in moving air because the movement of air increases the rate of evaporation. The water vapor near the towel is carried away by the","Humid air slows the process because it contains more water vapor, which reduces the rate of evaporation by increasing the saturation point of the air."],"later_layer_answers":["A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel more quickly. As the towel dries,","Humid air slows the drying process because it contains more water vapor, which makes it harder for the water to evaporate from the towel."]},{"context_tokens":1024,"kind":"update","baseline_kl":0.02551361146460202,"updated_kl":0.024241611867910823,"later_layer_kl":0.06378876010214089,"updated_answers":["The compass is now in the violet box, and the whistle is in the silver box.","The compass is in the violet box, and the whistle is in the amber box."],"later_layer_answers":["The compass is now in the violet box, and the whistle is still in the amber box.","The compass is now in the violet box, and the whistle is now in the amber box."]},{"context_tokens":1024,"kind":"explanation","baseline_kl":0.0337764701623822,"updated_kl":0.026362420018375837,"later_layer_kl":0.051927473079753664,"updated_answers":["A wet towel dries faster in moving air because the air movement helps to carry away the water vapor from the towel's surface. As the towel dries,","Humid air slows the drying process because it contains more water vapor, which makes it harder for the towel to lose moisture."],"later_layer_answers":["A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the","Humid air slows the drying process because it holds more water vapor, which makes it harder for the water to evaporate from the towel's surface."]}],"scope":"Two task families at two lengths; policies visit their own histories. Most original work remains."},"memory":{"rows":[{"policy":"full-byte","answers":["17","29","amber","40"],"expected":["17","29","amber","46"],"correct":[true,true,true,false],"tracked_state_bytes":48781316,"tracked_model_and_state_bytes":3173216280,"exact_replay":true},{"policy":"bounded","answers":["3","1234567890","Green","15"],"expected":["17","29","amber","46"],"correct":[false,false,false,false],"tracked_state_bytes":9279620,"tracked_model_and_state_bytes":3133714584,"exact_replay":true}],"bounded_physical_rows":112,"logical_capacity":768,"state_saving_vs_full_byte":0.8097710197076274,"bounded_recovery":{"cache_logits_rng_lineage_restored":true,"exact_child_replay":true,"occupied_sample_abort":true,"position":311,"same_layer_retry_exact":true,"state_gpu_bytes":9279620},"scope":"Tracked GPU allocations, including recovery; host transcript and CUDA overhead additional. Both policies retain all learned maps."},"provenance":{"schema":"cmachine-demo-record-pins-v1","scope":"Hashes pin already-published source records; no new model execution. Full experiment qualification lives in the linked evidence bundles.","files":{"docs/evidence/integration-7a6824d/report.json":"82ec2e64dbcd41b40279dd8f1fe73765752b356028eecdcd5e4870bad91a27f9","docs/evidence/integration-7a6824d/raw/native-protocol.json":"a0718dc72540826d58e4341d961e9b5af22644ca780cfa0bc72e0a377c4cb177","docs/evidence/integration-7a6824d/raw/reference-native-protocol.json":"a0718dc72540826d58e4341d961e9b5af22644ca780cfa0bc72e0a377c4cb177","docs/evidence/integration-7a6824d/raw/native-demo.stdout.txt":"c8bee7aca0d898fc17f05dbb2617465e59ae3584fb708fea34ac3596cf4d91ce","docs/evidence/integration-7a6824d/raw/bounded-delayed.stdout.txt":"bf92f5d03e49ec976b9a8468ed248e787cbb3da29f4b0d90d765c77deceb1ee9","docs/evidence/integration-7a6824d/raw/full-byte-delayed.stdout.txt":"e3f84915604f24dc29bd94ea680955e2b4e017fc876855d3fca871c8d3204557","docs/evidence/context-query-20261106/integration.json":"9cc32e2d8b37c308d6be731cf75774cb7677dc0e02648faf317400bdb239fe18","docs/evidence/context-query-20261106/analysis.json":"b515dd01255012ae4df25ef1ff080b169b7a9dcf0849fbd212c57d5087f4462d"}},"scope":"Pinned records checked and report/raw joins verified. This command reruns no pretrained model and is not a new experimental reproduction."},"closed":{"calls":{"matvec":384,"rms":128,"swiglu":128},"escape_observation":{"full_final_declared_output_l2":0.437323869,"one_step_omitted_energy_minus":1.14726925,"one_step_omitted_energy_plus":0.862843036,"stale_max_state_error_vs_minus":0.135181129,"stale_max_state_error_vs_plus":0.194694519},"execution":{"compiler_command":["cc","-std=c11","-O2","-Wall","-Wextra","-Wpedantic","-Werror","-ffp-contract=off","-I","src","demos/closed_state/closed_state.c","tests/gpu_stub.c","-lm","-o","{temporary}/closed_state"],"compiler_stderr":"","cwd":".","program_stderr":"","program_stdout":"","schema":"tcm-closed-state-demo-execution-v1","temporary_binary":true},"mechanics":{"closed_vs_minus_byte_exact":true,"closed_vs_plus_byte_exact":true,"comparison_scope":"retained states and normalization coordinates, scales, gates, ups, products, and writes","escape_initial_omitted_energy_equal":true,"escape_initial_retained_code_equal":true,"repair_vs_escape_minus_byte_exact":true,"repair_vs_escape_plus_byte_exact":true,"stale_vs_escape_minus_first_state_difference":2,"stale_vs_escape_plus_first_state_difference":2},"nominal_costs":{"closed_affine_macs_per_update":24,"closed_state_bytes":12,"full_affine_macs_per_update":96,"full_state_bytes":32,"normalization_width_always":8,"repaired_affine_macs_per_update":36,"repaired_state_bytes":16},"organism":{"closed_writes":["coordinate0","coordinate1"],"dimension":8,"epsilon":9.99999997e-07,"escaping_write":"coordinate2","horizon":16,"initial_states":[[0.75,-0.5,1,0,0,0,0,0],[0.75,-0.5,-1,0,0,0,0,0]],"reads":["coordinate0","coordinate1"],"width":4},"paths":[{"affine_macs_per_step":24,"compact":true,"escape_write":false,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.755654335,0.835562646,0.377827168,-0.557041764],[0.721862495,0.884223342,0.360931247,-0.589482248],[0.686747134,0.933294415,0.343373567,-0.622196257],[0.65066731,0.982202291,0.325333655,-0.654801548],[0.614037812,1.03035975,0.307018906,-0.686906517],[0.577304423,1.0772047,0.288652211,-0.718136489],[0.540913403,1.12223732,0.270456702,-0.748158216],[0.505282402,1.1650486,0.252641201,-0.776699066],[0.470775962,1.20533776,0.235387981,-0.803558528],[0.437689066,1.24291658,0.218844533,-0.828611076],[0.406240046,1.27770185,0.203120023,-0.851801276],[0.376571417,1.30970013,0.188285708,-0.873133421],[0.348757565,1.33898902,0.174378783,-0.892659307],[0.322815299,1.36569691,0.16140765,-0.910464585],[0.298716366,1.38998532,0.149358183,-0.926656902]],"name":"closed-compact","normalization_width":8,"norms":[[1.5756737,-1.05044913,2.10089827,0,0,0,0,0],[1.51130867,-1.11408353,2.11535525,0,0,0,0,0],[1.44372499,-1.1789645,2.12736082,0,0,0,0,0],[1.37349427,-1.24439251,2.13657761,0,0,0,0,0],[1.30133462,-1.3096031,2.14276266,0,0,0,0,0],[1.22807562,-1.37381303,2.14579368,0,0,0,0,0],[1.15460885,-1.43627298,2.14568424,0,0,0,0,0],[1.08182681,-1.49631643,2.14258051,0,0,0,0,0],[1.0105648,-1.55339813,2.1367445,0,0,0,0,0],[0.941551924,-1.60711706,2.12852502,0,0,0,0,0],[0.875378132,-1.65722215,2.11832285,0,0,0,0,0],[0.812480092,-1.70360255,2.10655642,0,0,0,0,0],[0.753142834,-1.74626684,2.09363151,0,0,0,0,0],[0.69751513,-1.78531861,2.07992196,0,0,0,0,0],[0.645630598,-1.82092917,2.06575513,0,0,0,0,0],[0.597432733,-1.8533138,2.05140662,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.286405474,0.220208943,0.124879479,-0.153316647],[-0.286385655,0.225857034,0.125373706,-0.151807636],[-0.284252644,0.23001416,0.124984838,-0.149245277],[-0.279988587,0.23248224,0.123689637,-0.145672783],[-0.273681015,0.233137995,0.121507734,-0.141181082],[-0.265518636,0.231948391,0.118501633,-0.135901868],[-0.255773395,0.228974,0.114770763,-0.129995257],[-0.244772509,0.224359766,0.11044129,-0.123634957],[-0.232866719,0.218316421,0.105653688,-0.116993658],[-0.220400006,0.211095661,0.100550257,-0.110230714],[-0.207685828,0.202965125,0.0952647105,-0.103483789],[-0.194991767,0.194186658,0.0899149701,-0.0968645141],[-0.182532966,0.185000673,0.084599264,-0.0904580504],[-0.170471907,0.17561619,0.079395093,-0.084324725],[-0.158923179,0.166207016,0.074360244,-0.0785035789]],"rank":2,"retained_energy":1,"rho":[2.10089827,2.11535525,2.12736082,2.13657761,2.14276266,2.14579368,2.14568424,2.14258051,2.1367445,2.12852502,2.11832285,2.10655642,2.09363151,2.07992196,2.06575513,2.05140662],"role":"candidate","sign":1,"state_bytes":12,"states":[[0.75,-0.5],[0.714446723,-0.526664972],[0.678646028,-0.554191113],[0.642847836,-0.58242327],[0.607316256,-0.61117506],[0.57231766,-0.640235364],[0.538107514,-0.669377625],[0.504917681,-0.698371172],[0.472946018,-0.726992905],[0.442349464,-0.755037904],[0.413241118,-0.782327473],[0.385691106,-0.808714449],[0.359730363,-0.834085107],[0.335356385,-0.858358443],[0.312539756,-0.881483555],[0.291230768,-0.903435588],[0.271365374,-0.924211442]],"static_affine_bytes":96,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.557041764,0.377827168,0.557041764,0.755654335],[-0.589482248,0.360931247,0.589482248,0.721862495],[-0.622196257,0.343373567,0.622196257,0.686747134],[-0.654801548,0.325333655,0.654801548,0.65066731],[-0.686906517,0.307018906,0.686906517,0.614037812],[-0.718136489,0.288652211,0.718136489,0.577304423],[-0.748158216,0.270456702,0.748158216,0.540913403],[-0.776699066,0.252641201,0.776699066,0.505282402],[-0.803558528,0.235387981,0.803558528,0.470775962],[-0.828611076,0.218844533,0.828611076,0.437689066],[-0.851801276,0.203120023,0.851801276,0.406240046],[-0.873133421,0.188285708,0.873133421,0.376571417],[-0.892659307,0.174378783,0.892659307,0.348757565],[-0.910464585,0.16140765,0.910464585,0.322815299],[-0.926656902,0.149358183,0.926656902,0.298716366]],"writes":[[-0.0355532914,-0.0266649686],[-0.0358006842,-0.0275261179],[-0.0357982069,-0.0282321293],[-0.0355315804,-0.02875177],[-0.0349985734,-0.02906028],[-0.0342101268,-0.0291422494],[-0.0331898294,-0.0289935488],[-0.0319716744,-0.02862175],[-0.0305965636,-0.0280449707],[-0.0291083399,-0.0272895526],[-0.0275500007,-0.0263869576],[-0.0259607285,-0.0253706407],[-0.0243739709,-0.0242733322],[-0.0228166208,-0.0231250841],[-0.0213089883,-0.0219520237],[-0.0198653974,-0.0207758769]]},{"affine_macs_per_step":24,"compact":true,"escape_write":true,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.755654335,0.835562646,0.377827168,-0.557041764],[0.721862495,0.884223342,0.360931247,-0.589482248],[0.686747134,0.933294415,0.343373567,-0.622196257],[0.65066731,0.982202291,0.325333655,-0.654801548],[0.614037812,1.03035975,0.307018906,-0.686906517],[0.577304423,1.0772047,0.288652211,-0.718136489],[0.540913403,1.12223732,0.270456702,-0.748158216],[0.505282402,1.1650486,0.252641201,-0.776699066],[0.470775962,1.20533776,0.235387981,-0.803558528],[0.437689066,1.24291658,0.218844533,-0.828611076],[0.406240046,1.27770185,0.203120023,-0.851801276],[0.376571417,1.30970013,0.188285708,-0.873133421],[0.348757565,1.33898902,0.174378783,-0.892659307],[0.322815299,1.36569691,0.16140765,-0.910464585],[0.298716366,1.38998532,0.149358183,-0.926656902]],"name":"escape-stale","normalization_width":8,"norms":[[1.5756737,-1.05044913,2.10089827,0,0,0,0,0],[1.51130867,-1.11408353,2.11535525,0,0,0,0,0],[1.44372499,-1.1789645,2.12736082,0,0,0,0,0],[1.37349427,-1.24439251,2.13657761,0,0,0,0,0],[1.30133462,-1.3096031,2.14276266,0,0,0,0,0],[1.22807562,-1.37381303,2.14579368,0,0,0,0,0],[1.15460885,-1.43627298,2.14568424,0,0,0,0,0],[1.08182681,-1.49631643,2.14258051,0,0,0,0,0],[1.0105648,-1.55339813,2.1367445,0,0,0,0,0],[0.941551924,-1.60711706,2.12852502,0,0,0,0,0],[0.875378132,-1.65722215,2.11832285,0,0,0,0,0],[0.812480092,-1.70360255,2.10655642,0,0,0,0,0],[0.753142834,-1.74626684,2.09363151,0,0,0,0,0],[0.69751513,-1.78531861,2.07992196,0,0,0,0,0],[0.645630598,-1.82092917,2.06575513,0,0,0,0,0],[0.597432733,-1.8533138,2.05140662,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.286405474,0.220208943,0.124879479,-0.153316647],[-0.286385655,0.225857034,0.125373706,-0.151807636],[-0.284252644,0.23001416,0.124984838,-0.149245277],[-0.279988587,0.23248224,0.123689637,-0.145672783],[-0.273681015,0.233137995,0.121507734,-0.141181082],[-0.265518636,0.231948391,0.118501633,-0.135901868],[-0.255773395,0.228974,0.114770763,-0.129995257],[-0.244772509,0.224359766,0.11044129,-0.123634957],[-0.232866719,0.218316421,0.105653688,-0.116993658],[-0.220400006,0.211095661,0.100550257,-0.110230714],[-0.207685828,0.202965125,0.0952647105,-0.103483789],[-0.194991767,0.194186658,0.0899149701,-0.0968645141],[-0.182532966,0.185000673,0.084599264,-0.0904580504],[-0.170471907,0.17561619,0.079395093,-0.084324725],[-0.158923179,0.166207016,0.074360244,-0.0785035789]],"rank":2,"retained_energy":1,"rho":[2.10089827,2.11535525,2.12736082,2.13657761,2.14276266,2.14579368,2.14568424,2.14258051,2.1367445,2.12852502,2.11832285,2.10655642,2.09363151,2.07992196,2.06575513,2.05140662],"role":"candidate","sign":1,"state_bytes":12,"states":[[0.75,-0.5],[0.714446723,-0.526664972],[0.678646028,-0.554191113],[0.642847836,-0.58242327],[0.607316256,-0.61117506],[0.57231766,-0.640235364],[0.538107514,-0.669377625],[0.504917681,-0.698371172],[0.472946018,-0.726992905],[0.442349464,-0.755037904],[0.413241118,-0.782327473],[0.385691106,-0.808714449],[0.359730363,-0.834085107],[0.335356385,-0.858358443],[0.312539756,-0.881483555],[0.291230768,-0.903435588],[0.271365374,-0.924211442]],"static_affine_bytes":96,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.557041764,0.377827168,0.557041764,0.755654335],[-0.589482248,0.360931247,0.589482248,0.721862495],[-0.622196257,0.343373567,0.622196257,0.686747134],[-0.654801548,0.325333655,0.654801548,0.65066731],[-0.686906517,0.307018906,0.686906517,0.614037812],[-0.718136489,0.288652211,0.718136489,0.577304423],[-0.748158216,0.270456702,0.748158216,0.540913403],[-0.776699066,0.252641201,0.776699066,0.505282402],[-0.803558528,0.235387981,0.803558528,0.470775962],[-0.828611076,0.218844533,0.828611076,0.437689066],[-0.851801276,0.203120023,0.851801276,0.406240046],[-0.873133421,0.188285708,0.873133421,0.376571417],[-0.892659307,0.174378783,0.892659307,0.348757565],[-0.910464585,0.16140765,0.910464585,0.322815299],[-0.926656902,0.149358183,0.926656902,0.298716366]],"writes":[[-0.0355532914,-0.0266649686],[-0.0358006842,-0.0275261179],[-0.0357982069,-0.0282321293],[-0.0355315804,-0.02875177],[-0.0349985734,-0.02906028],[-0.0342101268,-0.0291422494],[-0.0331898294,-0.0289935488],[-0.0319716744,-0.02862175],[-0.0305965636,-0.0280449707],[-0.0291083399,-0.0272895526],[-0.0275500007,-0.0263869576],[-0.0259607285,-0.0253706407],[-0.0243739709,-0.0242733322],[-0.0228166208,-0.0231250841],[-0.0213089883,-0.0219520237],[-0.0198653974,-0.0207758769]]},{"affine_macs_per_step":36,"compact":true,"escape_write":true,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.786422431,0.869584441,0.393211216,-0.579722941],[0.782496333,0.967760444,0.391248167,-0.645173609],[0.774279654,1.08624446,0.387139827,-0.724162996],[0.758803904,1.22857225,0.379401952,-0.819048166],[0.731462955,1.39540696,0.365731478,-0.930271327],[0.686408043,1.5793345,0.343204021,-1.0528897],[0.619710624,1.75929642,0.309855312,-1.17286432],[0.535528421,1.90534294,0.267764211,-1.27022862],[0.447430789,1.99949789,0.223715395,-1.33299863],[0.368720174,2.04780769,0.184360087,-1.36520517],[0.304551363,2.06725788,0.152275681,-1.37817192],[0.253979206,2.07164717,0.126989603,-1.38109815],[0.214212641,2.06891108,0.107106321,-1.37927401],[0.182608679,2.06307411,0.0913043395,-1.37538266],[0.157126829,2.05609822,0.0785634145,-1.37073219]],"name":"repair-plus","normalization_width":8,"norms":[[1.5756737,-1.05044913,2.10089827,0,0,0,0,0],[1.57284486,-1.15944588,2.04494643,0,0,0,0,0],[1.56499267,-1.29034722,1.97123301,0,0,0,0,0],[1.54855931,-1.44832599,1.8719691,0,0,0,0,0],[1.51760781,-1.63809633,1.73593009,0,0,0,0,0],[1.46292591,-1.86054265,1.5486021,0,0,0,0,0],[1.37281609,-2.10577941,1.29653454,0,0,0,0,0],[1.23942125,-2.34572864,0.980469704,0,0,0,0,0],[1.07105684,-2.54045725,0.631539285,0,0,0,0,0],[0.894861579,-2.66599727,0.302673668,0,0,0,0,0],[0.737440348,-2.73041034,0.0312147103,0,0,0,0,0],[0.609102726,-2.75634384,-0.177481458,0,0,0,0,0],[0.507958412,-2.7621963,-0.334948957,0,0,0,0,0],[0.428425282,-2.75854802,-0.454763293,0,0,0,0,0],[0.365217358,-2.75076532,-0.547590554,0,0,0,0,0],[0.314253658,-2.74146438,-0.620941579,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.313236743,0.240944386,0.136100918,-0.16366899],[-0.346434355,0.274386138,0.150591299,-0.173706383],[-0.383772045,0.314418167,0.166976169,-0.183057144],[-0.423297793,0.360577881,0.184500337,-0.190156788],[-0.459395707,0.409017473,0.200880736,-0.192481205],[-0.480724424,0.449405909,0.211381912,-0.186944321],[-0.472554743,0.465059847,0.209637776,-0.171778828],[-0.429078341,0.444111437,0.192693934,-0.149121717],[-0.363835841,0.393973202,0.165715605,-0.124452218],[-0.297572166,0.334391654,0.137412295,-0.102385022],[-0.241574213,0.279435486,0.112904854,-0.0844916329],[-0.197538227,0.233643666,0.0932531059,-0.0704461262],[-0.163491443,0.196740553,0.0778163821,-0.0594241545],[-0.137012511,0.167131424,0.0656536818,-0.0506712869],[-0.116132483,0.143210053,0.0559587255,-0.043614544]],"rank":3,"retained_energy":0,"rho":[2.10089827,2.20148659,2.31750464,2.45029926,2.59857082,2.75449944,2.89819527,2.99674559,3.02114868,2.97409868,2.88733172,2.79137349,2.7017312,2.62322736,2.5560503,2.49889755],"role":"candidate","sign":1,"state_bytes":16,"states":[[0.75,-0.5,1],[0.714446723,-0.526664972,0.928893447],[0.675292134,-0.55678302,0.850584269],[0.63198781,-0.591081262,0.76397568],[0.584016323,-0.630383551,0.668032646],[0.531104088,-0.675455809,0.562208176],[0.473679632,-0.726583004,0.447359264],[0.41358909,-0.782758713,0.32717815],[0.354519755,-0.840891182,0.209039465],[0.300884962,-0.896405101,0.101769879],[0.255405486,-0.94565177,0.0108109191],[0.218208969,-0.987450719,-0.0635821223],[0.188012198,-1.02238011,-0.123975679],[0.163319916,-1.05158556,-0.173360229],[0.14288348,-1.07617807,-0.214233086],[0.125756919,-1.0970695,-0.248486221],[0.111240357,-1.1149708,-0.277519345]],"static_affine_bytes":144,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.579722941,0.393211216,0.579722941,0.786422431],[-0.645173609,0.391248167,0.645173609,0.782496333],[-0.724162996,0.387139827,0.724162996,0.774279654],[-0.819048166,0.379401952,0.819048166,0.758803904],[-0.930271327,0.365731478,0.930271327,0.731462955],[-1.0528897,0.343204021,1.0528897,0.686408043],[-1.17286432,0.309855312,1.17286432,0.619710624],[-1.27022862,0.267764211,1.27022862,0.535528421],[-1.33299863,0.223715395,1.33299863,0.447430789],[-1.36520517,0.184360087,1.36520517,0.368720174],[-1.37817192,0.152275681,1.37817192,0.304551363],[-1.38109815,0.126989603,1.38109815,0.253979206],[-1.37927401,0.107106321,1.37927401,0.214212641],[-1.37538266,0.0913043395,1.37538266,0.182608679],[-1.37073219,0.0785634145,1.37073219,0.157126829]],"writes":[[-0.0355532914,-0.0266649686,-0.0711065829],[-0.0391545929,-0.0301180482,-0.0783091858],[-0.0433042943,-0.0342982672,-0.0866085887],[-0.0479715057,-0.0393022709,-0.0959430113],[-0.0529122241,-0.0450722352,-0.105824448],[-0.0574244633,-0.0511271842,-0.114848927],[-0.060090553,-0.0561757386,-0.120181106],[-0.0590693429,-0.0581324808,-0.118138686],[-0.0536347926,-0.0555139296,-0.107269585],[-0.0454794802,-0.0492466502,-0.0909589604],[-0.0371965207,-0.0417989567,-0.0743930414],[-0.0301967766,-0.0349294357,-0.0603935532],[-0.0246922784,-0.0292054582,-0.0493845567],[-0.0204364303,-0.0245925691,-0.0408728607],[-0.0171265639,-0.020891428,-0.0342531279],[-0.0145165604,-0.0179012567,-0.0290331207]]},{"affine_macs_per_step":36,"compact":true,"escape_write":true,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.726330996,0.803138494,0.363165498,-0.535425663],[0.671490431,0.815392017,0.335745215,-0.543594658],[0.622781157,0.825315475,0.311390579,-0.550210297],[0.579521596,0.833458006,0.289760798,-0.555638671],[0.541019082,0.840230048,0.270509541,-0.560153365],[0.506633639,0.845937252,0.25331682,-0.563958168],[0.475800842,0.850807071,0.237900421,-0.567204714],[0.448034883,0.855010509,0.224017441,-0.570007026],[0.422922611,0.858676851,0.211461306,-0.572451234],[0.400114864,0.861905098,0.200057432,-0.574603379],[0.379316717,0.864772081,0.189658359,-0.576514721],[0.360278726,0.867337942,0.180139363,-0.578225315],[0.342789441,0.869650245,0.171394721,-0.57976681],[0.326669067,0.871747136,0.163334534,-0.581164777],[0.311763883,0.873659372,0.155881941,-0.582439601]],"name":"repair-minus","normalization_width":8,"norms":[[1.5756737,-1.05044913,-2.10089827,0,0,0,0,0],[1.45266199,-1.07085133,-2.17784715,0,0,0,0,0],[1.34298086,-1.08718932,-2.23928356,0,0,0,0,0],[1.24556231,-1.10042059,-2.28858447,0,0,0,0,0],[1.15904319,-1.11127734,-2.32844448,0,0,0,0,0],[1.08203816,-1.12030673,-2.36094856,0,0,0,0,0],[1.01326728,-1.12791634,-2.38769102,0,0,0,0,0],[0.951601684,-1.13440943,-2.40988469,0,0,0,0,0],[0.896069765,-1.14001405,-2.42845702,0,0,0,0,0],[0.845845222,-1.14490247,-2.44411993,0,0,0,0,0],[0.800229728,-1.14920676,-2.4574244,0,0,0,0,0],[0.758633435,-1.15302944,-2.46880102,0,0,0,0,0],[0.720557451,-1.15645063,-2.4785881,0,0,0,0,0],[0.685578883,-1.15953362,-2.48705506,0,0,0,0,0],[0.653338134,-1.16232955,-2.49441767,0,0,0,0,0],[0.623527765,-1.1648792,-2.50084996,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.262115926,0.201442063,0.114686765,-0.143600851],[-0.241582751,0.189788878,0.106431514,-0.13409023],[-0.223020941,0.17870526,0.0988960713,-0.125350609],[-0.206391215,0.168348581,0.0920832679,-0.11738909],[-0.19154489,0.158765361,0.0859487429,-0.110163637],[-0.178294256,0.149941862,0.0804291815,-0.103611313],[-0.166447878,0.141834199,0.0754569471,-0.0976634622],[-0.155827552,0.134385839,0.0709672868,-0.0922533423],[-0.14627412,0.127536744,0.0669013187,-0.0873194784],[-0.137649044,0.121228747,0.063207075,-0.0828069448],[-0.129833117,0.115407623,0.0598392859,-0.078667447],[-0.122724302,0.11002408,0.0567588061,-0.07485874],[-0.116235457,0.105033934,0.0539319217,-0.0713441819],[-0.110292271,0.100397952,0.0513296463,-0.0680919588],[-0.104831085,0.0960813388,0.0489269607,-0.0650743842]],"rank":3,"retained_energy":0,"rho":[2.10089827,2.03326845,1.97009814,1.91188359,1.8586123,1.81000996,1.76569021,1.72523522,1.68823862,1.65432417,1.62315357,1.59442711,1.56788123,1.54328513,1.5204376,1.4991622],"role":"candidate","sign":-1,"state_bytes":16,"states":[[0.75,-0.5,-1],[0.714446723,-0.526664972,-1.07110655],[0.681682229,-0.551845253,-1.13663554],[0.65148437,-0.575568855,-1.19703126],[0.623606741,-0.597907007,-1.25278652],[0.597807825,-0.618950605,-1.30438435],[0.573864698,-0.63879627,-1.3522706],[0.551577926,-0.65753901,-1.39684415],[0.530771971,-0.675268292,-1.43845606],[0.51129353,-0.69206655,-1.47741294],[0.493009269,-0.708008647,-1.51398146],[0.475803137,-0.723162234,-1.54839373],[0.459573984,-0.737588167,-1.58085203],[0.444233447,-0.751341164,-1.61153316],[0.42970401,-0.764470398,-1.64059198],[0.415917486,-0.777020156,-1.66816509],[0.402813613,-0.789030313,-1.69437289]],"static_affine_bytes":144,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.535425663,0.363165498,0.535425663,0.726330996],[-0.543594658,0.335745215,0.543594658,0.671490431],[-0.550210297,0.311390579,0.550210297,0.622781157],[-0.555638671,0.289760798,0.555638671,0.579521596],[-0.560153365,0.270509541,0.560153365,0.541019082],[-0.563958168,0.25331682,0.563958168,0.506633639],[-0.567204714,0.237900421,0.567204714,0.475800842],[-0.570007026,0.224017441,0.570007026,0.448034883],[-0.572451234,0.211461306,0.572451234,0.422922611],[-0.574603379,0.200057432,0.574603379,0.400114864],[-0.576514721,0.189658359,0.576514721,0.379316717],[-0.578225315,0.180139363,0.578225315,0.360278726],[-0.57976681,0.171394721,0.57976681,0.342789441],[-0.581164777,0.163334534,0.581164777,0.326669067],[-0.582439601,0.155881941,0.582439601,0.311763883]],"writes":[[-0.0355532914,-0.0266649686,-0.0711065829],[-0.0327644907,-0.0251802579,-0.0655289814],[-0.0301978439,-0.0237236097,-0.0603956878],[-0.0278776176,-0.0223381575,-0.0557552353],[-0.0257989019,-0.0210435726,-0.0515978038],[-0.0239431113,-0.0198456701,-0.0478862226],[-0.022286782,-0.0187427327,-0.0445735641],[-0.0208059847,-0.0177292749,-0.0416119695],[-0.019478444,-0.0167982299,-0.038956888],[-0.018284265,-0.015942093,-0.0365685299],[-0.0172061305,-0.0151535934,-0.0344122611],[-0.0162291396,-0.0144259529,-0.0324582793],[-0.0153405378,-0.01375301,-0.0306810755],[-0.0145294322,-0.0131292418,-0.0290588643],[-0.0137865338,-0.012549744,-0.0275730677],[-0.0131038856,-0.0120101674,-0.0262077712]]},{"affine_macs_per_step":96,"compact":false,"escape_write":false,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.755654335,0.835562646,0.377827168,-0.557041764],[0.721862495,0.884223342,0.360931247,-0.589482248],[0.686747134,0.933294415,0.343373567,-0.622196257],[0.65066731,0.982202291,0.325333655,-0.654801548],[0.614037812,1.03035975,0.307018906,-0.686906517],[0.577304423,1.0772047,0.288652211,-0.718136489],[0.540913403,1.12223732,0.270456702,-0.748158216],[0.505282402,1.1650486,0.252641201,-0.776699066],[0.470775962,1.20533776,0.235387981,-0.803558528],[0.437689066,1.24291658,0.218844533,-0.828611076],[0.406240046,1.27770185,0.203120023,-0.851801276],[0.376571417,1.30970013,0.188285708,-0.873133421],[0.348757565,1.33898902,0.174378783,-0.892659307],[0.322815299,1.36569691,0.16140765,-0.910464585],[0.298716366,1.38998532,0.149358183,-0.926656902]],"name":"closed-plus","normalization_width":8,"norms":[[1.5756737,-1.05044913,2.10089827,0,0,0,0,0],[1.51130867,-1.11408353,2.11535525,0,0,0,0,0],[1.44372499,-1.1789645,2.12736082,0,0,0,0,0],[1.37349427,-1.24439251,2.13657761,0,0,0,0,0],[1.30133462,-1.3096031,2.14276266,0,0,0,0,0],[1.22807562,-1.37381303,2.14579368,0,0,0,0,0],[1.15460885,-1.43627298,2.14568424,0,0,0,0,0],[1.08182681,-1.49631643,2.14258051,0,0,0,0,0],[1.0105648,-1.55339813,2.1367445,0,0,0,0,0],[0.941551924,-1.60711706,2.12852502,0,0,0,0,0],[0.875378132,-1.65722215,2.11832285,0,0,0,0,0],[0.812480092,-1.70360255,2.10655642,0,0,0,0,0],[0.753142834,-1.74626684,2.09363151,0,0,0,0,0],[0.69751513,-1.78531861,2.07992196,0,0,0,0,0],[0.645630598,-1.82092917,2.06575513,0,0,0,0,0],[0.597432733,-1.8533138,2.05140662,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.286405474,0.220208943,0.124879479,-0.153316647],[-0.286385655,0.225857034,0.125373706,-0.151807636],[-0.284252644,0.23001416,0.124984838,-0.149245277],[-0.279988587,0.23248224,0.123689637,-0.145672783],[-0.273681015,0.233137995,0.121507734,-0.141181082],[-0.265518636,0.231948391,0.118501633,-0.135901868],[-0.255773395,0.228974,0.114770763,-0.129995257],[-0.244772509,0.224359766,0.11044129,-0.123634957],[-0.232866719,0.218316421,0.105653688,-0.116993658],[-0.220400006,0.211095661,0.100550257,-0.110230714],[-0.207685828,0.202965125,0.0952647105,-0.103483789],[-0.194991767,0.194186658,0.0899149701,-0.0968645141],[-0.182532966,0.185000673,0.084599264,-0.0904580504],[-0.170471907,0.17561619,0.079395093,-0.084324725],[-0.158923179,0.166207016,0.074360244,-0.0785035789]],"rank":8,"retained_energy":0,"rho":[2.10089827,2.11535525,2.12736082,2.13657761,2.14276266,2.14579368,2.14568424,2.14258051,2.1367445,2.12852502,2.11832285,2.10655642,2.09363151,2.07992196,2.06575513,2.05140662],"role":"reference","sign":1,"state_bytes":32,"states":[[0.75,-0.5,1,0,0,0,0,0],[0.714446723,-0.526664972,1,0,0,0,0,0],[0.678646028,-0.554191113,1,0,0,0,0,0],[0.642847836,-0.58242327,1,0,0,0,0,0],[0.607316256,-0.61117506,1,0,0,0,0,0],[0.57231766,-0.640235364,1,0,0,0,0,0],[0.538107514,-0.669377625,1,0,0,0,0,0],[0.504917681,-0.698371172,1,0,0,0,0,0],[0.472946018,-0.726992905,1,0,0,0,0,0],[0.442349464,-0.755037904,1,0,0,0,0,0],[0.413241118,-0.782327473,1,0,0,0,0,0],[0.385691106,-0.808714449,1,0,0,0,0,0],[0.359730363,-0.834085107,1,0,0,0,0,0],[0.335356385,-0.858358443,1,0,0,0,0,0],[0.312539756,-0.881483555,1,0,0,0,0,0],[0.291230768,-0.903435588,1,0,0,0,0,0],[0.271365374,-0.924211442,1,0,0,0,0,0]],"static_affine_bytes":384,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.557041764,0.377827168,0.557041764,0.755654335],[-0.589482248,0.360931247,0.589482248,0.721862495],[-0.622196257,0.343373567,0.622196257,0.686747134],[-0.654801548,0.325333655,0.654801548,0.65066731],[-0.686906517,0.307018906,0.686906517,0.614037812],[-0.718136489,0.288652211,0.718136489,0.577304423],[-0.748158216,0.270456702,0.748158216,0.540913403],[-0.776699066,0.252641201,0.776699066,0.505282402],[-0.803558528,0.235387981,0.803558528,0.470775962],[-0.828611076,0.218844533,0.828611076,0.437689066],[-0.851801276,0.203120023,0.851801276,0.406240046],[-0.873133421,0.188285708,0.873133421,0.376571417],[-0.892659307,0.174378783,0.892659307,0.348757565],[-0.910464585,0.16140765,0.910464585,0.322815299],[-0.926656902,0.149358183,0.926656902,0.298716366]],"writes":[[-0.0355532914,-0.0266649686,0,0,0,0,0,0],[-0.0358006842,-0.0275261179,0,0,0,0,0,0],[-0.0357982069,-0.0282321293,0,0,0,0,0,0],[-0.0355315804,-0.02875177,0,0,0,0,0,0],[-0.0349985734,-0.02906028,0,0,0,0,0,0],[-0.0342101268,-0.0291422494,0,0,0,0,0,0],[-0.0331898294,-0.0289935488,0,0,0,0,0,0],[-0.0319716744,-0.02862175,0,0,0,0,0,0],[-0.0305965636,-0.0280449707,0,0,0,0,0,0],[-0.0291083399,-0.0272895526,0,0,0,0,0,0],[-0.0275500007,-0.0263869576,0,0,0,0,0,0],[-0.0259607285,-0.0253706407,0,0,0,0,0,0],[-0.0243739709,-0.0242733322,0,0,0,0,0,0],[-0.0228166208,-0.0231250841,0,0,0,0,0,0],[-0.0213089883,-0.0219520237,0,0,0,0,0,0],[-0.0198653974,-0.0207758769,0,0,0,0,0,0]]},{"affine_macs_per_step":96,"compact":false,"escape_write":false,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.755654335,0.835562646,0.377827168,-0.557041764],[0.721862495,0.884223342,0.360931247,-0.589482248],[0.686747134,0.933294415,0.343373567,-0.622196257],[0.65066731,0.982202291,0.325333655,-0.654801548],[0.614037812,1.03035975,0.307018906,-0.686906517],[0.577304423,1.0772047,0.288652211,-0.718136489],[0.540913403,1.12223732,0.270456702,-0.748158216],[0.505282402,1.1650486,0.252641201,-0.776699066],[0.470775962,1.20533776,0.235387981,-0.803558528],[0.437689066,1.24291658,0.218844533,-0.828611076],[0.406240046,1.27770185,0.203120023,-0.851801276],[0.376571417,1.30970013,0.188285708,-0.873133421],[0.348757565,1.33898902,0.174378783,-0.892659307],[0.322815299,1.36569691,0.16140765,-0.910464585],[0.298716366,1.38998532,0.149358183,-0.926656902]],"name":"closed-minus","normalization_width":8,"norms":[[1.5756737,-1.05044913,-2.10089827,0,0,0,0,0],[1.51130867,-1.11408353,-2.11535525,0,0,0,0,0],[1.44372499,-1.1789645,-2.12736082,0,0,0,0,0],[1.37349427,-1.24439251,-2.13657761,0,0,0,0,0],[1.30133462,-1.3096031,-2.14276266,0,0,0,0,0],[1.22807562,-1.37381303,-2.14579368,0,0,0,0,0],[1.15460885,-1.43627298,-2.14568424,0,0,0,0,0],[1.08182681,-1.49631643,-2.14258051,0,0,0,0,0],[1.0105648,-1.55339813,-2.1367445,0,0,0,0,0],[0.941551924,-1.60711706,-2.12852502,0,0,0,0,0],[0.875378132,-1.65722215,-2.11832285,0,0,0,0,0],[0.812480092,-1.70360255,-2.10655642,0,0,0,0,0],[0.753142834,-1.74626684,-2.09363151,0,0,0,0,0],[0.69751513,-1.78531861,-2.07992196,0,0,0,0,0],[0.645630598,-1.82092917,-2.06575513,0,0,0,0,0],[0.597432733,-1.8533138,-2.05140662,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.286405474,0.220208943,0.124879479,-0.153316647],[-0.286385655,0.225857034,0.125373706,-0.151807636],[-0.284252644,0.23001416,0.124984838,-0.149245277],[-0.279988587,0.23248224,0.123689637,-0.145672783],[-0.273681015,0.233137995,0.121507734,-0.141181082],[-0.265518636,0.231948391,0.118501633,-0.135901868],[-0.255773395,0.228974,0.114770763,-0.129995257],[-0.244772509,0.224359766,0.11044129,-0.123634957],[-0.232866719,0.218316421,0.105653688,-0.116993658],[-0.220400006,0.211095661,0.100550257,-0.110230714],[-0.207685828,0.202965125,0.0952647105,-0.103483789],[-0.194991767,0.194186658,0.0899149701,-0.0968645141],[-0.182532966,0.185000673,0.084599264,-0.0904580504],[-0.170471907,0.17561619,0.079395093,-0.084324725],[-0.158923179,0.166207016,0.074360244,-0.0785035789]],"rank":8,"retained_energy":0,"rho":[2.10089827,2.11535525,2.12736082,2.13657761,2.14276266,2.14579368,2.14568424,2.14258051,2.1367445,2.12852502,2.11832285,2.10655642,2.09363151,2.07992196,2.06575513,2.05140662],"role":"reference","sign":-1,"state_bytes":32,"states":[[0.75,-0.5,-1,0,0,0,0,0],[0.714446723,-0.526664972,-1,0,0,0,0,0],[0.678646028,-0.554191113,-1,0,0,0,0,0],[0.642847836,-0.58242327,-1,0,0,0,0,0],[0.607316256,-0.61117506,-1,0,0,0,0,0],[0.57231766,-0.640235364,-1,0,0,0,0,0],[0.538107514,-0.669377625,-1,0,0,0,0,0],[0.504917681,-0.698371172,-1,0,0,0,0,0],[0.472946018,-0.726992905,-1,0,0,0,0,0],[0.442349464,-0.755037904,-1,0,0,0,0,0],[0.413241118,-0.782327473,-1,0,0,0,0,0],[0.385691106,-0.808714449,-1,0,0,0,0,0],[0.359730363,-0.834085107,-1,0,0,0,0,0],[0.335356385,-0.858358443,-1,0,0,0,0,0],[0.312539756,-0.881483555,-1,0,0,0,0,0],[0.291230768,-0.903435588,-1,0,0,0,0,0],[0.271365374,-0.924211442,-1,0,0,0,0,0]],"static_affine_bytes":384,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.557041764,0.377827168,0.557041764,0.755654335],[-0.589482248,0.360931247,0.589482248,0.721862495],[-0.622196257,0.343373567,0.622196257,0.686747134],[-0.654801548,0.325333655,0.654801548,0.65066731],[-0.686906517,0.307018906,0.686906517,0.614037812],[-0.718136489,0.288652211,0.718136489,0.577304423],[-0.748158216,0.270456702,0.748158216,0.540913403],[-0.776699066,0.252641201,0.776699066,0.505282402],[-0.803558528,0.235387981,0.803558528,0.470775962],[-0.828611076,0.218844533,0.828611076,0.437689066],[-0.851801276,0.203120023,0.851801276,0.406240046],[-0.873133421,0.188285708,0.873133421,0.376571417],[-0.892659307,0.174378783,0.892659307,0.348757565],[-0.910464585,0.16140765,0.910464585,0.322815299],[-0.926656902,0.149358183,0.926656902,0.298716366]],"writes":[[-0.0355532914,-0.0266649686,0,0,0,0,0,0],[-0.0358006842,-0.0275261179,0,0,0,0,0,0],[-0.0357982069,-0.0282321293,0,0,0,0,0,0],[-0.0355315804,-0.02875177,0,0,0,0,0,0],[-0.0349985734,-0.02906028,0,0,0,0,0,0],[-0.0342101268,-0.0291422494,0,0,0,0,0,0],[-0.0331898294,-0.0289935488,0,0,0,0,0,0],[-0.0319716744,-0.02862175,0,0,0,0,0,0],[-0.0305965636,-0.0280449707,0,0,0,0,0,0],[-0.0291083399,-0.0272895526,0,0,0,0,0,0],[-0.0275500007,-0.0263869576,0,0,0,0,0,0],[-0.0259607285,-0.0253706407,0,0,0,0,0,0],[-0.0243739709,-0.0242733322,0,0,0,0,0,0],[-0.0228166208,-0.0231250841,0,0,0,0,0,0],[-0.0213089883,-0.0219520237,0,0,0,0,0,0],[-0.0198653974,-0.0207758769,0,0,0,0,0,0]]},{"affine_macs_per_step":96,"compact":false,"escape_write":true,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.786422431,0.869584441,0.393211216,-0.579722941],[0.782496333,0.967760444,0.391248167,-0.645173609],[0.774279654,1.08624446,0.387139827,-0.724162996],[0.758803904,1.22857225,0.379401952,-0.819048166],[0.731462955,1.39540696,0.365731478,-0.930271327],[0.686408043,1.5793345,0.343204021,-1.0528897],[0.619710624,1.75929642,0.309855312,-1.17286432],[0.535528421,1.90534294,0.267764211,-1.27022862],[0.447430789,1.99949789,0.223715395,-1.33299863],[0.368720174,2.04780769,0.184360087,-1.36520517],[0.304551363,2.06725788,0.152275681,-1.37817192],[0.253979206,2.07164717,0.126989603,-1.38109815],[0.214212641,2.06891108,0.107106321,-1.37927401],[0.182608679,2.06307411,0.0913043395,-1.37538266],[0.157126829,2.05609822,0.0785634145,-1.37073219]],"name":"escape-plus","normalization_width":8,"norms":[[1.5756737,-1.05044913,2.10089827,0,0,0,0,0],[1.57284486,-1.15944588,2.04494643,0,0,0,0,0],[1.56499267,-1.29034722,1.97123301,0,0,0,0,0],[1.54855931,-1.44832599,1.8719691,0,0,0,0,0],[1.51760781,-1.63809633,1.73593009,0,0,0,0,0],[1.46292591,-1.86054265,1.5486021,0,0,0,0,0],[1.37281609,-2.10577941,1.29653454,0,0,0,0,0],[1.23942125,-2.34572864,0.980469704,0,0,0,0,0],[1.07105684,-2.54045725,0.631539285,0,0,0,0,0],[0.894861579,-2.66599727,0.302673668,0,0,0,0,0],[0.737440348,-2.73041034,0.0312147103,0,0,0,0,0],[0.609102726,-2.75634384,-0.177481458,0,0,0,0,0],[0.507958412,-2.7621963,-0.334948957,0,0,0,0,0],[0.428425282,-2.75854802,-0.454763293,0,0,0,0,0],[0.365217358,-2.75076532,-0.547590554,0,0,0,0,0],[0.314253658,-2.74146438,-0.620941579,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.313236743,0.240944386,0.136100918,-0.16366899],[-0.346434355,0.274386138,0.150591299,-0.173706383],[-0.383772045,0.314418167,0.166976169,-0.183057144],[-0.423297793,0.360577881,0.184500337,-0.190156788],[-0.459395707,0.409017473,0.200880736,-0.192481205],[-0.480724424,0.449405909,0.211381912,-0.186944321],[-0.472554743,0.465059847,0.209637776,-0.171778828],[-0.429078341,0.444111437,0.192693934,-0.149121717],[-0.363835841,0.393973202,0.165715605,-0.124452218],[-0.297572166,0.334391654,0.137412295,-0.102385022],[-0.241574213,0.279435486,0.112904854,-0.0844916329],[-0.197538227,0.233643666,0.0932531059,-0.0704461262],[-0.163491443,0.196740553,0.0778163821,-0.0594241545],[-0.137012511,0.167131424,0.0656536818,-0.0506712869],[-0.116132483,0.143210053,0.0559587255,-0.043614544]],"rank":8,"retained_energy":0,"rho":[2.10089827,2.20148659,2.31750464,2.45029926,2.59857082,2.75449944,2.89819527,2.99674559,3.02114868,2.97409868,2.88733172,2.79137349,2.7017312,2.62322736,2.5560503,2.49889755],"role":"reference","sign":1,"state_bytes":32,"states":[[0.75,-0.5,1,0,0,0,0,0],[0.714446723,-0.526664972,0.928893447,0,0,0,0,0],[0.675292134,-0.55678302,0.850584269,0,0,0,0,0],[0.63198781,-0.591081262,0.76397568,0,0,0,0,0],[0.584016323,-0.630383551,0.668032646,0,0,0,0,0],[0.531104088,-0.675455809,0.562208176,0,0,0,0,0],[0.473679632,-0.726583004,0.447359264,0,0,0,0,0],[0.41358909,-0.782758713,0.32717815,0,0,0,0,0],[0.354519755,-0.840891182,0.209039465,0,0,0,0,0],[0.300884962,-0.896405101,0.101769879,0,0,0,0,0],[0.255405486,-0.94565177,0.0108109191,0,0,0,0,0],[0.218208969,-0.987450719,-0.0635821223,0,0,0,0,0],[0.188012198,-1.02238011,-0.123975679,0,0,0,0,0],[0.163319916,-1.05158556,-0.173360229,0,0,0,0,0],[0.14288348,-1.07617807,-0.214233086,0,0,0,0,0],[0.125756919,-1.0970695,-0.248486221,0,0,0,0,0],[0.111240357,-1.1149708,-0.277519345,0,0,0,0,0]],"static_affine_bytes":384,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.579722941,0.393211216,0.579722941,0.786422431],[-0.645173609,0.391248167,0.645173609,0.782496333],[-0.724162996,0.387139827,0.724162996,0.774279654],[-0.819048166,0.379401952,0.819048166,0.758803904],[-0.930271327,0.365731478,0.930271327,0.731462955],[-1.0528897,0.343204021,1.0528897,0.686408043],[-1.17286432,0.309855312,1.17286432,0.619710624],[-1.27022862,0.267764211,1.27022862,0.535528421],[-1.33299863,0.223715395,1.33299863,0.447430789],[-1.36520517,0.184360087,1.36520517,0.368720174],[-1.37817192,0.152275681,1.37817192,0.304551363],[-1.38109815,0.126989603,1.38109815,0.253979206],[-1.37927401,0.107106321,1.37927401,0.214212641],[-1.37538266,0.0913043395,1.37538266,0.182608679],[-1.37073219,0.0785634145,1.37073219,0.157126829]],"writes":[[-0.0355532914,-0.0266649686,-0.0711065829,0,0,0,0,0],[-0.0391545929,-0.0301180482,-0.0783091858,0,0,0,0,0],[-0.0433042943,-0.0342982672,-0.0866085887,0,0,0,0,0],[-0.0479715057,-0.0393022709,-0.0959430113,0,0,0,0,0],[-0.0529122241,-0.0450722352,-0.105824448,0,0,0,0,0],[-0.0574244633,-0.0511271842,-0.114848927,0,0,0,0,0],[-0.060090553,-0.0561757386,-0.120181106,0,0,0,0,0],[-0.0590693429,-0.0581324808,-0.118138686,0,0,0,0,0],[-0.0536347926,-0.0555139296,-0.107269585,0,0,0,0,0],[-0.0454794802,-0.0492466502,-0.0909589604,0,0,0,0,0],[-0.0371965207,-0.0417989567,-0.0743930414,0,0,0,0,0],[-0.0301967766,-0.0349294357,-0.0603935532,0,0,0,0,0],[-0.0246922784,-0.0292054582,-0.0493845567,0,0,0,0,0],[-0.0204364303,-0.0245925691,-0.0408728607,0,0,0,0,0],[-0.0171265639,-0.020891428,-0.0342531279,0,0,0,0,0],[-0.0145165604,-0.0179012567,-0.0290331207,0,0,0,0,0]]},{"affine_macs_per_step":96,"compact":false,"escape_write":true,"gates":[[0.78783685,0.78783685,0.393918425,-0.525224566],[0.726330996,0.803138494,0.363165498,-0.535425663],[0.671490431,0.815392017,0.335745215,-0.543594658],[0.622781157,0.825315475,0.311390579,-0.550210297],[0.579521596,0.833458006,0.289760798,-0.555638671],[0.541019082,0.840230048,0.270509541,-0.560153365],[0.506633639,0.845937252,0.25331682,-0.563958168],[0.475800842,0.850807071,0.237900421,-0.567204714],[0.448034883,0.855010509,0.224017441,-0.570007026],[0.422922611,0.858676851,0.211461306,-0.572451234],[0.400114864,0.861905098,0.200057432,-0.574603379],[0.379316717,0.864772081,0.189658359,-0.576514721],[0.360278726,0.867337942,0.180139363,-0.578225315],[0.342789441,0.869650245,0.171394721,-0.57976681],[0.326669067,0.871747136,0.163334534,-0.581164777],[0.311763883,0.873659372,0.155881941,-0.582439601]],"name":"escape-minus","normalization_width":8,"norms":[[1.5756737,-1.05044913,-2.10089827,0,0,0,0,0],[1.45266199,-1.07085133,-2.17784715,0,0,0,0,0],[1.34298086,-1.08718932,-2.23928356,0,0,0,0,0],[1.24556231,-1.10042059,-2.28858447,0,0,0,0,0],[1.15904319,-1.11127734,-2.32844448,0,0,0,0,0],[1.08203816,-1.12030673,-2.36094856,0,0,0,0,0],[1.01326728,-1.12791634,-2.38769102,0,0,0,0,0],[0.951601684,-1.13440943,-2.40988469,0,0,0,0,0],[0.896069765,-1.14001405,-2.42845702,0,0,0,0,0],[0.845845222,-1.14490247,-2.44411993,0,0,0,0,0],[0.800229728,-1.14920676,-2.4574244,0,0,0,0,0],[0.758633435,-1.15302944,-2.46880102,0,0,0,0,0],[0.720557451,-1.15645063,-2.4785881,0,0,0,0,0],[0.685578883,-1.15953362,-2.48705506,0,0,0,0,0],[0.653338134,-1.16232955,-2.49441767,0,0,0,0,0],[0.623527765,-1.1648792,-2.50084996,0,0,0,0,0]],"products":[[-0.284426332,0.213319749,0.123563364,-0.153777823],[-0.262115926,0.201442063,0.114686765,-0.143600851],[-0.241582751,0.189788878,0.106431514,-0.13409023],[-0.223020941,0.17870526,0.0988960713,-0.125350609],[-0.206391215,0.168348581,0.0920832679,-0.11738909],[-0.19154489,0.158765361,0.0859487429,-0.110163637],[-0.178294256,0.149941862,0.0804291815,-0.103611313],[-0.166447878,0.141834199,0.0754569471,-0.0976634622],[-0.155827552,0.134385839,0.0709672868,-0.0922533423],[-0.14627412,0.127536744,0.0669013187,-0.0873194784],[-0.137649044,0.121228747,0.063207075,-0.0828069448],[-0.129833117,0.115407623,0.0598392859,-0.078667447],[-0.122724302,0.11002408,0.0567588061,-0.07485874],[-0.116235457,0.105033934,0.0539319217,-0.0713441819],[-0.110292271,0.100397952,0.0513296463,-0.0680919588],[-0.104831085,0.0960813388,0.0489269607,-0.0650743842]],"rank":8,"retained_energy":0,"rho":[2.10089827,2.03326845,1.97009814,1.91188359,1.8586123,1.81000996,1.76569021,1.72523522,1.68823862,1.65432417,1.62315357,1.59442711,1.56788123,1.54328513,1.5204376,1.4991622],"role":"reference","sign":-1,"state_bytes":32,"states":[[0.75,-0.5,-1,0,0,0,0,0],[0.714446723,-0.526664972,-1.07110655,0,0,0,0,0],[0.681682229,-0.551845253,-1.13663554,0,0,0,0,0],[0.65148437,-0.575568855,-1.19703126,0,0,0,0,0],[0.623606741,-0.597907007,-1.25278652,0,0,0,0,0],[0.597807825,-0.618950605,-1.30438435,0,0,0,0,0],[0.573864698,-0.63879627,-1.3522706,0,0,0,0,0],[0.551577926,-0.65753901,-1.39684415,0,0,0,0,0],[0.530771971,-0.675268292,-1.43845606,0,0,0,0,0],[0.51129353,-0.69206655,-1.47741294,0,0,0,0,0],[0.493009269,-0.708008647,-1.51398146,0,0,0,0,0],[0.475803137,-0.723162234,-1.54839373,0,0,0,0,0],[0.459573984,-0.737588167,-1.58085203,0,0,0,0,0],[0.444233447,-0.751341164,-1.61153316,0,0,0,0,0],[0.42970401,-0.764470398,-1.64059198,0,0,0,0,0],[0.415917486,-0.777020156,-1.66816509,0,0,0,0,0],[0.402813613,-0.789030313,-1.69437289,0,0,0,0,0]],"static_affine_bytes":384,"steps":16,"ups":[[-0.525224566,0.393918425,0.525224566,0.78783685],[-0.535425663,0.363165498,0.535425663,0.726330996],[-0.543594658,0.335745215,0.543594658,0.671490431],[-0.550210297,0.311390579,0.550210297,0.622781157],[-0.555638671,0.289760798,0.555638671,0.579521596],[-0.560153365,0.270509541,0.560153365,0.541019082],[-0.563958168,0.25331682,0.563958168,0.506633639],[-0.567204714,0.237900421,0.567204714,0.475800842],[-0.570007026,0.224017441,0.570007026,0.448034883],[-0.572451234,0.211461306,0.572451234,0.422922611],[-0.574603379,0.200057432,0.574603379,0.400114864],[-0.576514721,0.189658359,0.576514721,0.379316717],[-0.578225315,0.180139363,0.578225315,0.360278726],[-0.57976681,0.171394721,0.57976681,0.342789441],[-0.581164777,0.163334534,0.581164777,0.326669067],[-0.582439601,0.155881941,0.582439601,0.311763883]],"writes":[[-0.0355532914,-0.0266649686,-0.0711065829,0,0,0,0,0],[-0.0327644907,-0.0251802579,-0.0655289814,0,0,0,0,0],[-0.0301978439,-0.0237236097,-0.0603956878,0,0,0,0,0],[-0.0278776176,-0.0223381575,-0.0557552353,0,0,0,0,0],[-0.0257989019,-0.0210435726,-0.0515978038,0,0,0,0,0],[-0.0239431113,-0.0198456701,-0.0478862226,0,0,0,0,0],[-0.022286782,-0.0187427327,-0.0445735641,0,0,0,0,0],[-0.0208059847,-0.0177292749,-0.0416119695,0,0,0,0,0],[-0.019478444,-0.0167982299,-0.038956888,0,0,0,0,0],[-0.018284265,-0.015942093,-0.0365685299,0,0,0,0,0],[-0.0172061305,-0.0151535934,-0.0344122611,0,0,0,0,0],[-0.0162291396,-0.0144259529,-0.0324582793,0,0,0,0,0],[-0.0153405378,-0.01375301,-0.0306810755,0,0,0,0,0],[-0.0145294322,-0.0131292418,-0.0290588643,0,0,0,0,0],[-0.0137865338,-0.012549744,-0.0275730677,0,0,0,0,0],[-0.0131038856,-0.0120101674,-0.0262077712,0,0,0,0,0]]}],"profile":{"backend":"cpu-gpu-stub","canonical_header":"src/gpu.h","canonical_primitives":["gpu_rms_scale","gpu_matvec","gpu_swiglu","gpu_add","gpu_weight"],"cuda_executed":false,"learned_model":false,"stub":"tests/gpu_stub.c"},"result_provenance":{"fresh_clone_rerunnable":true,"generated_by":"demos/closed_state/run.py","model_weights_supplied":false,"native_model_outcomes":false},"schema":"tcm-closed-state-demo-v1","scientific_scope":{"claim":"a supplied nonlinear recurrence demonstrates a closed compact code, an escaping write, and a repaired code","finite_profile":"FP32 CPU stub arithmetic; exactness is only for this checked-in fixture","not_claimed":["learned_model_compression","CUDA_numerical_parity","serving_speedup","general_chat_accuracy"],"status":"observation"},"source_files":{"demos/closed_state/README.md":{"bytes":2873,"sha256":"b694587c47835ea06d3b870fb2f6d54559d47096072f3c43ff542a2999dba4f7"},"demos/closed_state/closed_state.c":{"bytes":20636,"sha256":"096f054ec15c222cd3b94aafc47b77e3cf0229d7bea65fd07ffb442857837043"},"demos/closed_state/run.py":{"bytes":9558,"sha256":"8c861d2f3ca1917fb6dc7ca722ee2f7bd8928f5c9526db86a0b1070131b7c637"},"src/gpu.h":{"bytes":2672,"sha256":"c4a4db8cbf3915ea0a654fd539a35f76609b0d5dcffb0851b958c2c10aa72e8c"},"src/machine.h":{"bytes":3137,"sha256":"d99a79648bf9ad07ef44d879377641e5482ea8958acd55dfbdc88614c05029cb"},"tests/gpu_stub.c":{"bytes":4930,"sha256":"97f59a40db88a12f8c04f36f8a5a4a2301e00f38acf48ef63d2dae588a2cb547"}},"validation":{"c_bit_exact":true,"comparison_metrics":{"closed_vs_minus":{"decimal_reparse_within_1e-7":true,"gates_max_abs":0.0,"max_abs":0.0,"norms_retained_max_abs":0.0,"products_max_abs":0.0,"rho_max_abs":0.0,"states_max_abs":0.0,"ups_max_abs":0.0,"writes_max_abs":0.0},"closed_vs_plus":{"decimal_reparse_within_1e-7":true,"gates_max_abs":0.0,"max_abs":0.0,"norms_retained_max_abs":0.0,"products_max_abs":0.0,"rho_max_abs":0.0,"states_max_abs":0.0,"ups_max_abs":0.0,"writes_max_abs":0.0},"repair_vs_escape_minus":{"decimal_reparse_within_1e-7":true,"gates_max_abs":0.0,"max_abs":0.0,"norms_retained_max_abs":0.0,"products_max_abs":0.0,"rho_max_abs":0.0,"states_max_abs":0.0,"ups_max_abs":0.0,"writes_max_abs":0.0},"repair_vs_escape_plus":{"decimal_reparse_within_1e-7":true,"gates_max_abs":0.0,"max_abs":0.0,"norms_retained_max_abs":0.0,"products_max_abs":0.0,"rho_max_abs":0.0,"states_max_abs":0.0,"ups_max_abs":0.0,"writes_max_abs":0.0}},"decimal_reparse_tolerance":1e-07,"escape_control":{"stale_vs_escape_minus_first_state_difference":2,"stale_vs_escape_plus_first_state_difference":2},"expected_c_exactness":["closed_vs_plus_byte_exact","closed_vs_minus_byte_exact","repair_vs_escape_plus_byte_exact","repair_vs_escape_minus_byte_exact"],"interpretation":"C memcmp checks establish exactness for this CPU-stub fixture; Python decimal metrics are a readable reparse check."}},"pretrained":{"claims":["The guarded C/CUDA demo completed with exact source and custody joins.","The chat branch/replay protocol checks passed for the recorded native run.","The lexical program reproduced its source-covered own-token rows with exact full-logit, cache, and token checks."],"fresh_chat":{"branch_a":{"generated_tokens":2,"text":"Green"},"branch_b":{"generated_tokens":2,"text":"Yellow"},"initial":{"generated_tokens":3,"text":"OK."},"replay_exact":true},"job_id":"job-995c8e81e7ca","lexical":{"bytes":{"candidate_transfer":360448,"native_model_gpu":6174857216,"session":3294832,"table_host":270468},"candidate_nominal_linear_macs":67778641920,"covered_ids":33,"generated_tokens_consumed":8,"linear_macs":103809024,"omitted_first_layer_qkv_macs":138412032,"omitted_linear_macs":138412032,"rows_full_logits_cache_token_exact":true,"source_nominal_linear_macs":67917053952,"steps":44},"limits":["Generated text is recorded; no semantic color, arithmetic, or prose truth claim is made.","Lexical coverage is source-derived own-token reuse, not held-out generalization.","Original dense weights and the remaining model computation remain paid.","No speedup, universal compact state, or forward-pass-free chat claim is certified.","The Saturn receipt covers the whole C invocation; internal CUDA operations are covered by the demo reports and raw hashes."],"model":{"content_sha256":"8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc","identity":"dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"},"schema":"cmachine-pretrained-demo-summary-v1","source_manifest_sha256":"53f81813b184fb282568279ffdb19090cbd1beec84d8c0463efc5a8030467fef","terminal_status":"not_requested","verification_scope":"provenance and mechanics only; semantic outcomes remain observations"},"sources":{"recorded":"recorded/results.json","closed_state":"closed_state/results.json","pretrained":"results/pretrained/summary.json"}}</script>
+  <script>
+  (() => {
+    "use strict";
+    const data = JSON.parse(document.getElementById("payload").textContent);
+    const recorded = data.recorded;
+    const closed = data.closed;
+    const $ = (id) => document.getElementById(id);
+    const setText = (id, value) => { $(id).textContent = String(value); };
+    const number = (value, digits = 3) => Number(value).toLocaleString(undefined, {maximumFractionDigits: digits});
+    const bytes = (value) => {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "—";
+      if (n >= 1e9) return `${(n / 1e9).toFixed(2)} GB`;
+      if (n >= 1e6) return `${(n / 1e6).toFixed(2)} MB`;
+      if (n >= 1e3) return `${(n / 1e3).toFixed(1)} KB`;
+      return `${n} B`;
+    };
+    const pct = (value, digits = 2) => `${(Number(value) * 100).toFixed(digits)}%`;
+    const el = (tag, className, text) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = String(text);
+      return node;
+    };
+
+    const lexical = recorded.operands.lexical;
+    const memoryRows = recorded.memory.rows || [];
+    setText("nativeAnswer", recorded.chat.answer);
+    setText("answerMeta", `Qwen native record · ${recorded.model.profile_version} · ${recorded.chat.native_reference_protocol_entries_exact} protocol entries`);
+    setText("protocolCount", recorded.chat.native_reference_protocol_entries_exact);
+    setText("lexicalCount", lexical.lexical_replayed_steps);
+    setText("klMetric", pct(recorded.operands.relative_kl_reduction));
+    setText("memoryMetric", pct(recorded.memory.state_saving_vs_full_byte));
+    setText("memoryMetricLabel", `tracked session state vs full-byte · logical capacity ${recorded.memory.logical_capacity}`);
+    setText("klRange", `${number(recorded.operands.fresh_baseline_mean_kl, 4)} → ${number(recorded.operands.fresh_updated_mean_kl, 4)}`);
+    setText("klExplanation", `Across ${recorded.operands.fresh_case_count} recorded context cases, the mean conditional KL moves from ${number(recorded.operands.fresh_baseline_mean_kl, 5)} to ${number(recorded.operands.fresh_updated_mean_kl, 5)}. The lexical panel contains ${lexical.lexical_full_logits_exact ? "exact" : "non-exact"} full-logit readouts, while this page treats answer text as an observation.`);
+
+    const laterCounter = recorded.operands.cases.filter((row) => Number(row.later_layer_kl) > Number(row.updated_kl)).length;
+    setText("countertrend", `${laterCounter} / ${recorded.operands.cases.length} cases rise again when a separately compiled layer-18 Q/K program is added after the updated layer-17 query (${number(recorded.operands.cases[0].updated_kl, 4)} → ${number(recorded.operands.cases[0].later_layer_kl, 4)} in the first row). The improvement is therefore conditional on the composed program and its consumer boundary.`);
+    recorded.operands.cases.forEach((row) => {
+      $("answerCases").appendChild(el("h4", "", `${row.kind} · ${row.context_tokens} context tokens`));
+      [["Updated layer-17 query", row.updated_answers], ["Add layer-18 Q/K", row.later_layer_answers]].forEach(([label, answers]) => {
+        $("answerCases").appendChild(el("p", "", label));
+        const text = el("pre", "", answers.join("\n\n"));
+        text.style.whiteSpace = "pre-wrap";
+        text.style.overflowWrap = "anywhere";
+        $("answerCases").appendChild(text);
+      });
+    });
+
+    const trendList = $("trendList");
+    const trendMax = Math.max(...recorded.operands.cases.flatMap((row) => [row.baseline_kl, row.updated_kl, row.later_layer_kl]));
+    recorded.operands.cases.forEach((row, index) => {
+      const wrap = el("div", "trend-row");
+      const label = el("div", "trend-label");
+      const labelName = el("b", "", row.kind);
+      label.appendChild(labelName);
+      label.appendChild(document.createTextNode(`${row.context_tokens} context tokens`));
+      wrap.appendChild(label);
+      const stack = el("div", "bar-stack");
+      [["baseline", "baseline", row.baseline_kl], ["updated", "updated", row.updated_kl], ["later", "layer18 Q/K", row.later_layer_kl]].forEach(([className, labelText, value]) => {
+        const line = el("div", "bar-line");
+        line.appendChild(el("span", "", labelText));
+        const track = el("div", "bar-track");
+        const fill = el("div", `bar-fill ${className}`);
+        fill.style.width = `${Math.max(2, Number(value) / trendMax * 100)}%`;
+        track.appendChild(fill);
+        line.appendChild(track);
+        line.appendChild(el("span", "", number(value, 4)));
+        stack.appendChild(line);
+      });
+      wrap.appendChild(stack);
+      trendList.appendChild(wrap);
+    });
+
+    setText("memorySaving", `${pct(recorded.memory.state_saving_vs_full_byte)} less tracked state`);
+    const memoryBody = $("memoryRows");
+    memoryRows.forEach((row) => {
+      const tr = document.createElement("tr");
+      const policy = el("td", "policy", row.policy);
+      tr.appendChild(policy);
+      const actual = el("td", "");
+      row.answers.forEach((answer, index) => {
+        const ok = Boolean(row.correct[index]);
+        actual.appendChild(el("span", `answer-chip ${ok ? "ok" : "miss"}`, answer));
+      });
+      tr.appendChild(actual);
+      const expected = el("td", "", row.expected.join(" · "));
+      tr.appendChild(expected);
+      tr.appendChild(el("td", "", row.exact_replay ? "exact replay" : "replay differs"));
+      tr.appendChild(el("td", "", bytes(row.tracked_state_bytes)));
+      memoryBody.appendChild(tr);
+    });
+    setText("fullByteState", bytes((memoryRows.find((row) => row.policy === "full-byte") || {}).tracked_state_bytes));
+    setText("boundedState", bytes((memoryRows.find((row) => row.policy === "bounded") || {}).tracked_state_bytes));
+    setText("memoryRecovery", recorded.memory.bounded_recovery && recorded.memory.bounded_recovery.exact_child_replay ? "exact child replay" : "see record");
+
+    setText("lexicalExact", lexical.lexical_replayed_steps);
+    setText("lexicalIDs", lexical.lexical_covered_ids);
+    setText("lexicalCompile", number(lexical.lexical_compile_linear_macs, 0));
+    setText("lexicalHost", bytes(lexical.lexical_host_bytes));
+    setText("lexicalTransfer", bytes(lexical.lexical_transfer_bytes));
+    setText("lexicalExactText", lexical.lexical_full_logits_exact ? "Full-vocabulary comparisons are exact" : "Full-vocabulary comparisons are not exact");
+
+    const allPaths = closed.paths || [];
+    const groups = {
+      closed: allPaths.filter((path) => path.name.startsWith("closed-")),
+      escape: allPaths.filter((path) => path.name.startsWith("escape-")),
+      repair: allPaths.filter((path) => path.name.startsWith("repair-") || ["escape-plus", "escape-minus"].includes(path.name)),
+      all: allPaths,
+    };
+    const palette = ["#72e2d4", "#b9a0ff", "#f5c776", "#ff8b8b", "#82e2a3", "#8fc4ff", "#e58cff", "#f6a87e"];
+    const pathColor = (path, index) => palette[allPaths.indexOf(path) % palette.length] || palette[index % palette.length];
+    const svg = $("statePlot");
+    const plotMode = $("plotMode");
+    const plotCoordinate = $("plotCoordinate");
+    const timeSlider = $("timeSlider");
+    const NS = "http://www.w3.org/2000/svg";
+    const svgNode = (tag, attrs = {}, text) => {
+      const node = document.createElementNS(NS, tag);
+      Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, String(value)));
+      if (text !== undefined) node.textContent = String(text);
+      return node;
+    };
+    function drawPlot() {
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      const selected = groups[plotMode.value] || groups.closed;
+      const coordinate = Number(plotCoordinate.value);
+      const time = Number(timeSlider.value);
+      const width = 960, height = 355, left = 58, right = 18, top = 20, bottom = 42;
+      const available = selected.filter((path) => path.states.every((state) => Number.isFinite(Number(state[coordinate]))));
+      const omitted = selected.filter((path) => !available.includes(path));
+      if (!available.length) {
+        setText("plotTime", "no coordinate in selected paths");
+        setText("plotNote", `No selected path contains coordinate ${coordinate}.`);
+        return;
+      }
+      const values = available.flatMap((path) => path.states.map((state) => Number(state[coordinate])));
+      let min = Math.min(...values), max = Math.max(...values);
+      if (min === max) { min -= 1; max += 1; }
+      const pad = (max - min) * .12;
+      min -= pad; max += pad;
+      const steps = Math.max(...available.map((path) => path.states.length)) - 1;
+      const x = (t) => left + (steps ? t / steps : 0) * (width - left - right);
+      const y = (value) => top + (max - value) / (max - min) * (height - top - bottom);
+      [0, .25, .5, .75, 1].forEach((fraction) => {
+        const value = max - fraction * (max - min);
+        svg.appendChild(svgNode("line", {x1: left, x2: width - right, y1: y(value), y2: y(value), class: "plot-grid"}));
+        svg.appendChild(svgNode("text", {x: 5, y: y(value) + 4, class: "plot-axis"}, number(value, 2)));
+      });
+      svg.appendChild(svgNode("line", {x1: left, x2: width - right, y1: height - bottom, y2: height - bottom, class: "plot-grid"}));
+      svg.appendChild(svgNode("text", {x: left, y: height - 12, class: "plot-axis"}, "t=0"));
+      svg.appendChild(svgNode("text", {x: width - right - 30, y: height - 12, class: "plot-axis"}, `t=${steps}`));
+      available.forEach((path, index) => {
+        const points = path.states.map((state, t) => `${x(t)},${y(Number(state[coordinate]))}`).join(" ");
+        const color = pathColor(path, index);
+        svg.appendChild(svgNode("polyline", {points, fill: "none", stroke: color, "stroke-width": 2.4, "stroke-linecap": "round", "stroke-linejoin": "round", opacity: path.role === "reference" ? .62 : 1}));
+        const state = path.states[Math.min(time, path.states.length - 1)];
+        svg.appendChild(svgNode("circle", {cx: x(Math.min(time, path.states.length - 1)), cy: y(Number(state[coordinate])), r: 4.5, fill: color, stroke: "#071316", "stroke-width": 2}));
+      });
+      svg.appendChild(svgNode("line", {x1: x(time), x2: x(time), y1: top, y2: height - bottom, stroke: "#e9f7f4", "stroke-width": 1, "stroke-dasharray": "3 5", opacity: .45}));
+      setText("plotTime", `t = ${time} / ${steps}`);
+      const legend = $("closedLegend");
+      while (legend.firstChild) legend.removeChild(legend.firstChild);
+      selected.forEach((path, index) => {
+        const item = el("span", "legend-item");
+        const dot = el("span", "legend-dot");
+        dot.style.backgroundColor = pathColor(path, index);
+        item.appendChild(dot);
+        item.appendChild(document.createTextNode(path.name));
+        legend.appendChild(item);
+      });
+      const selectedValues = available.map((path) => Number(path.states[Math.min(time, path.states.length - 1)][coordinate]));
+      const omittedNote = omitted.length ? ` Omitted for this coordinate: ${omitted.map((path) => path.name).join(", ")}; their compact states do not carry it.` : "";
+      setText("plotNote", `${plotMode.options[plotMode.selectedIndex].text} · coordinate ${coordinate} · at t=${time}, retained values span ${number(Math.min(...selectedValues), 4)} to ${number(Math.max(...selectedValues), 4)}. Reference paths are dimmed; all values come from the checked-in FP32 fixture.${omittedNote}`);
+    }
+    timeSlider.max = String(Math.max(...allPaths.map((path) => path.states.length)) - 1);
+    [plotMode, plotCoordinate, timeSlider].forEach((control) => {
+      control.addEventListener("input", drawPlot);
+      control.addEventListener("change", drawPlot);
+    });
+    drawPlot();
+
+    const mechanics = closed.mechanics;
+    setText("closedObservation", mechanics.closed_vs_plus_byte_exact && mechanics.closed_vs_minus_byte_exact ? "compact retained trajectories match both hidden full references byte-for-byte." : "see mechanics record");
+    setText("escapeObservation", `omitted energy after the first update is ${number(closed.escape_observation.one_step_omitted_energy_plus, 3)} / ${number(closed.escape_observation.one_step_omitted_energy_minus, 3)}; visible retained state first differs at update ${mechanics.stale_vs_escape_plus_first_state_difference}; final declared output separation is ${number(closed.escape_observation.full_final_declared_output_l2, 3)} L2.`);
+    setText("repairObservation", mechanics.repair_vs_escape_plus_byte_exact && mechanics.repair_vs_escape_minus_byte_exact ? "adding the written coordinate restores both reference trajectories exactly." : "see mechanics record");
+
+    setText("scopeStrip", `Historical pretrained record: ${recorded.scope} The closed-state panel is ${closed.scientific_scope.finite_profile}; it is not a learned-model compression or serving-speed claim.`);
+    if (data.pretrained) {
+      const fresh = data.pretrained;
+      const freshChat = fresh.fresh_chat || {};
+      const freshLexical = fresh.lexical || {};
+      const freshBytes = freshLexical.bytes || {};
+      $("fresh-panel").style.display = "block";
+      setText("freshJob", fresh.job_id || "present");
+      setText("freshReplay", freshChat.replay_exact ? "exact" : "observe");
+      setText("freshLexical", freshLexical.steps ?? "—");
+      setText("freshIDs", freshLexical.covered_ids ?? "—");
+      setText("freshInitial", freshChat.initial && freshChat.initial.text || "—");
+      setText("freshBranchA", freshChat.branch_a && freshChat.branch_a.text || "—");
+      setText("freshReplayText", freshChat.replay_exact ? freshChat.branch_a.text : "See report");
+      setText("freshBranchB", freshChat.branch_b && freshChat.branch_b.text || "—");
+      const compileMacs = freshLexical.linear_macs && (freshLexical.linear_macs.compile ?? freshLexical.linear_macs) || "—";
+      const candidateTokens = freshLexical.candidate_generated_tokens_consumed ?? freshLexical.generated_tokens_consumed ?? "—";
+      const omittedMacs = freshLexical.omitted_linear_macs ?? freshLexical.omitted_first_layer_qkv_macs ?? "—";
+      setText("freshMeta", `The frozen lexical program advanced ${freshLexical.steps} tokens, consuming ${candidateTokens} of its own generated tokens. Every full-vocabulary vector, valid all-layer cache hash and selected token matched native execution. Offline compilation: ${number(compileMacs, 0)} linear MACs. Host table: ${bytes(freshBytes.table_host)}. Candidate transfers: ${bytes(freshBytes.candidate_transfer)}. Original Q/K/V work omitted online: ${number(omittedMacs, 0)} linear MACs.`);
+      const claims = Array.isArray(fresh.claims) ? fresh.claims : [];
+      const limits = Array.isArray(fresh.limits) ? fresh.limits : [];
+      setText("freshLimits", "Source-covered reuse: native discovery, compilation, transfers, original weights and remaining dense computation are paid. No held-out generalization or serving speedup is established.");
+      setText("freshDetails", `Claims: ${claims.length ? claims.join(" · ") : "see summary"} Limits: ${limits.length ? limits.join(" · ") : "see summary"}`);
+      const pretrained = $("pretrainedStrip");
+      pretrained.style.display = "block";
+      const status = data.pretrained.status || data.pretrained.schema || "summary loaded";
+      pretrained.textContent = `Optional fresh pretrained summary loaded: ${status}. It is displayed as a separate record and does not rewrite the pinned historical panels.`;
+    }
+  })();
+  </script>
+</body>
+</html>

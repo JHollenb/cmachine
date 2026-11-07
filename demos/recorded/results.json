@@ -1,0 +1,1079 @@
+{
+  "schema": "cmachine-recorded-demo-v1",
+  "execution_kind": "verified-historical-pretrained-records",
+  "models_executed_by_this_command": 0,
+  "source_files_verified": 8,
+  "source_manifest_sha256": "f2835d98f7002b00ebedcd79f9ef09ccb3988f8be5c1c7aef37e1741ef8e8625",
+  "jobs": [
+    "job-f645fcd76a75",
+    "job-fe51e7f4f0ee"
+  ],
+  "model": {
+    "identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "content_sha256": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc",
+    "profile_version": "qwen25-fp32-execution-v2"
+  },
+  "chat": {
+    "prompt": "Explain why bread rises when yeast is added. Use two short sentences.",
+    "answer": "When yeast is added to dough, it consumes the sugars present, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise.",
+    "native_reference_protocol_entries_exact": 84,
+    "native_mechanics": {
+      "foreign_stale_handles": true,
+      "host_marker_bytes": 9216,
+      "nested_replay": true,
+      "overflow_atomic": true,
+      "partial_reset": true,
+      "pending_policy": true,
+      "plane_guards_and_work_counts": true,
+      "plane_max_write_relative_error": 1.04737366e-06,
+      "scope": "pretrained Qwen lifecycle; synthetic token inputs",
+      "stack_limit": 64,
+      "step_and_observation_parity": true,
+      "subspace_arithmetic_control_max_relative_error": 8.29462444e-07,
+      "subspace_lifecycle_and_work_counts": true,
+      "valid_kv_and_full_logits_exact": true,
+      "writer_checks": true,
+      "writer_parent_lineage_checks": true
+    },
+    "trace": [
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "d4bfc92231a561778856f3bef32bd48a5b485eb4def9c93f6001a99f11149914",
+          "checkpoint_serial": 0,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "e9b3ceddcab1f28aeca4f2962c5ccf7957b177d7c321c98f519dc07d2ef6fef6",
+          "logits_valid": true,
+          "pending_token": 3925,
+          "position": 76,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 2,
+          "event": "generated",
+          "ids": [
+            3925,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 77
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "7259054e4c72e99fe38d95efcc03bf33838f63a0135df83b53e103088e9cdda9",
+          "checkpoint_serial": 0,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "8e481a6eae7431a69439548a7487395ab91f551841de6d37bef91f1754516237",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 77,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "0e60771fb823d887a4ddf3a2649557c4599a8fa82d3ac8322c39d6c00f767ae8",
+          "checkpoint_serial": 0,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "eb0c96072488b896b49f07f1e02b5d656ef32d401d1de58bd1c6a8a18a56d37a",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 78,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 1,
+          "position": 78
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "30514c7e87caadbf7f59363ba03525d80d9e0b7f5a625d1fd7e08e8b497ad5f6",
+          "checkpoint_serial": 0,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "a82c8a5cb8e243cc39d5de74532afa28b04845c68ccd3b54bc7fd68991e485bd",
+          "logits_valid": true,
+          "pending_token": 16,
+          "position": 105,
+          "stack_depth": 1,
+          "top_frame": 1
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 3,
+          "event": "generated",
+          "ids": [
+            16,
+            22,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 107
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "9d93af043ae817dbb1081bc8a1b3707866c132f2dd1a7211b735020b0363768d",
+          "checkpoint_serial": 0,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "97ce8432f1fa60638b8ba3d9943ea124dc9b16347767ef7274bf89ac08aed799",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 107,
+          "stack_depth": 1,
+          "top_frame": 1
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "dd81ae0321c5edc6b1d5a459ccedc7474b8c04ad71ce0309eb47c6ee1b26bba6",
+          "checkpoint_serial": 0,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "f3c085db755918f4615ead2067079f774e1cee393946eab2e770c61b84c03920",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 108,
+          "stack_depth": 1,
+          "top_frame": 1
+        }
+      },
+      {
+        "command": "B 1",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 1,
+          "pending_token": 198,
+          "position": 78
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "5b80a6bb9aeef1fc5de6b3c20995eecfc562cb2a66e3e7486e166a720a633b59",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "a67f954e017275ef875788b90680c020aa8385d654829ba7c11943931cc13297",
+          "logits_valid": true,
+          "pending_token": 3925,
+          "position": 110,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 2,
+          "event": "generated",
+          "ids": [
+            3925,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 111
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "6211dae27bda1a6e5e7ff442ecccc40d62dc797da1b774efa22a99ea26909f55",
+          "checkpoint_serial": 1,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "91d02da438b03ce73f9efddd4394ee208077d56d911bfa8d044338aeee891723",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 111,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "a15e8da4ea5d5e25778e700ea72b8693bcadc856f0cec7d7813f74dca1198f16",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "417f9e38de440c30adeb0f5ec15f13e0818933ddd9766b4eda33511c96e6d96e",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 112,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ff30d09d1ea3173cc9d9e7ad84df6c4d12fb6763f5949d2dd56d01f8bbba3272",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "a4d9264a3dc673c5978cbb100ce6f39cac52ea7be31d3b7026074fecaeae6bc7",
+          "logits_valid": true,
+          "pending_token": 3925,
+          "position": 362,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 2,
+          "event": "generated",
+          "ids": [
+            3925,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 363
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "b65db3a4e81b0761ef447c498f58de85f6ef6586f67f9aa7174fc6d212462930",
+          "checkpoint_serial": 1,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "36e0d10413f1e39505e40a998763525a0df9a3a04d6cf87c9e81dbf7ac06e343",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 363,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "f10cd32f9107a3c6b62feda71cbb1416701d9fd6386f481551039ed8c077b5db",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "f10cd32f9107a3c6b62feda71cbb1416701d9fd6386f481551039ed8c077b5db",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 2,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "fbc700484e3673938820c26a5e1f61eb274fa7f9c5c4e6e8a3836146f7f10a71",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "1cc241d51ffcf43991d50495af331ed64da05c62154dabb5fa08566b5fab2425",
+          "logits_valid": true,
+          "pending_token": 16,
+          "position": 391,
+          "stack_depth": 1,
+          "top_frame": 2
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 3,
+          "event": "generated",
+          "ids": [
+            16,
+            22,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 393
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "00f21d2422103ba1b7121f1f93a1018867f2c2efaa93994b01a3ba36d36a6eaa",
+          "checkpoint_serial": 1,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "668de1bfd5d7c62e4fef4eda34e3f3f694a2f40bee90566b625e94bd8d9f1361",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 393,
+          "stack_depth": 1,
+          "top_frame": 2
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "975d195af4490b232c8850da9b598d1832176f21fd654f26960319d026b8519e",
+          "checkpoint_serial": 1,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "9d841badb5e69012362d2f9086ecd2655d466ba61f19de8f8c7302dff527f95d",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 394,
+          "stack_depth": 1,
+          "top_frame": 2
+        }
+      },
+      {
+        "command": "B 2",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 2,
+          "pending_token": 198,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 2,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 3,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "9afeb3dceeaf951e91c20f594008844b18410a8ca524444d49bdf7c07c20cca5",
+          "checkpoint_serial": 2,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "690e3dba6e4df8cd7c3639d31809132d867aa20519e71a2997a6a292099a60d9",
+          "logits_valid": true,
+          "pending_token": 17,
+          "position": 392,
+          "stack_depth": 1,
+          "top_frame": 3
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 3,
+          "event": "generated",
+          "ids": [
+            17,
+            24,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 394
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "fa979af5a63d8818e861888a7b7698dde1c1edff2f3367a79b8f8144cca4281e",
+          "checkpoint_serial": 2,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "3326debaf51c72eb4fadce810e92b78e9c91e711ae4b9aca87477828dbcb198d",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 394,
+          "stack_depth": 1,
+          "top_frame": 3
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "9b3431a6cc885713348adae865711e20cc7d1f3cdd5ab007d73d176a0e2c9c15",
+          "checkpoint_serial": 2,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "0153d074c2f88c0da8d712677e854fad62fb4b682178063388acec20831efc83",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 395,
+          "stack_depth": 1,
+          "top_frame": 3
+        }
+      },
+      {
+        "command": "B 3",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 3,
+          "pending_token": 198,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 3,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 4,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "a167c73877c9d96c234d5d5ee94526c7f595bb7e8ebe6566f63249cd6d2d467f",
+          "checkpoint_serial": 3,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "33883c9baa5b17891e2d4cc19618c10650847a16fcc0f58833d73bbc5b678c86",
+          "logits_valid": true,
+          "pending_token": 15221,
+          "position": 391,
+          "stack_depth": 1,
+          "top_frame": 4
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 2,
+          "event": "generated",
+          "ids": [
+            15221,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 392
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ae44c59f9f1b1f60a211c88c36dcbcf25c5e5fe1b6875320e2424692ac36cfd1",
+          "checkpoint_serial": 3,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "ec37c2670f05151087c71c81592c66def6eaa8f69f2d92d931f29c09dc6009b7",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 392,
+          "stack_depth": 1,
+          "top_frame": 4
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "7a7a01d19718421ec7ba6d89650c38f93e59e0ce135477fdc2795b14c65786eb",
+          "checkpoint_serial": 3,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "3b5d5d87ace51c86407f9bde1916028f07eef2914005b78fd9c706ed7c8f3aa4",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 393,
+          "stack_depth": 1,
+          "top_frame": 4
+        }
+      },
+      {
+        "command": "B 4",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 4,
+          "pending_token": 198,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 4,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 5,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "e966bedfd86e956839145efd69fa01acda3aa35589754f40fa2bea424eaa1db1",
+          "checkpoint_serial": 4,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "8b46106844c5c4c28c723d145cc1bf40b8ca83d51f53ad969339611c8b33b8d5",
+          "logits_valid": true,
+          "pending_token": 19,
+          "position": 395,
+          "stack_depth": 1,
+          "top_frame": 5
+        }
+      },
+      {
+        "command": "G 16",
+        "reply": {
+          "count": 3,
+          "event": "generated",
+          "ids": [
+            19,
+            15,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 397
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "8ee520a58e34bd10f3720542db489cad058afb8fe215b0762a6fe6245a9bb323",
+          "checkpoint_serial": 4,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "e017aaee9e935ce37bc985d7c71e7342126d60e14bfa0c13ff1120a61a160ab0",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 397,
+          "stack_depth": 1,
+          "top_frame": 5
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "a900a7567b79487cbd2e770ce6cdd5dfc021cc5c4f77404f6b435d5b4f1dcace",
+          "checkpoint_serial": 4,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "4909b27cc12388c6a5e76874922f2e449107f292376addcd40156dd558f42e5b",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 398,
+          "stack_depth": 1,
+          "top_frame": 5
+        }
+      },
+      {
+        "command": "B 5",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 5,
+          "pending_token": 198,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 5,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 6,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "fbc700484e3673938820c26a5e1f61eb274fa7f9c5c4e6e8a3836146f7f10a71",
+          "checkpoint_serial": 5,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "1cc241d51ffcf43991d50495af331ed64da05c62154dabb5fa08566b5fab2425",
+          "logits_valid": true,
+          "pending_token": 16,
+          "position": 391,
+          "stack_depth": 1,
+          "top_frame": 6
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 3,
+          "event": "generated",
+          "ids": [
+            16,
+            22,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 393
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "00f21d2422103ba1b7121f1f93a1018867f2c2efaa93994b01a3ba36d36a6eaa",
+          "checkpoint_serial": 5,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "668de1bfd5d7c62e4fef4eda34e3f3f694a2f40bee90566b625e94bd8d9f1361",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 393,
+          "stack_depth": 1,
+          "top_frame": 6
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "975d195af4490b232c8850da9b598d1832176f21fd654f26960319d026b8519e",
+          "checkpoint_serial": 5,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "9d841badb5e69012362d2f9086ecd2655d466ba61f19de8f8c7302dff527f95d",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 394,
+          "stack_depth": 1,
+          "top_frame": 6
+        }
+      },
+      {
+        "command": "B 6",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 6,
+          "pending_token": 198,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 6,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "P",
+        "reply": {
+          "depth": 1,
+          "event": "pushed",
+          "frame": 7,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "fbc700484e3673938820c26a5e1f61eb274fa7f9c5c4e6e8a3836146f7f10a71",
+          "checkpoint_serial": 6,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "1cc241d51ffcf43991d50495af331ed64da05c62154dabb5fa08566b5fab2425",
+          "logits_valid": true,
+          "pending_token": 16,
+          "position": 391,
+          "stack_depth": 1,
+          "top_frame": 7
+        }
+      },
+      {
+        "command": "G 8",
+        "reply": {
+          "count": 3,
+          "event": "generated",
+          "ids": [
+            16,
+            22,
+            151645
+          ],
+          "pending_token": 151645,
+          "position": 393
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "00f21d2422103ba1b7121f1f93a1018867f2c2efaa93994b01a3ba36d36a6eaa",
+          "checkpoint_serial": 6,
+          "delivered": 1,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "668de1bfd5d7c62e4fef4eda34e3f3f694a2f40bee90566b625e94bd8d9f1361",
+          "logits_valid": true,
+          "pending_token": 151645,
+          "position": 393,
+          "stack_depth": 1,
+          "top_frame": 7
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "975d195af4490b232c8850da9b598d1832176f21fd654f26960319d026b8519e",
+          "checkpoint_serial": 6,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "9d841badb5e69012362d2f9086ecd2655d466ba61f19de8f8c7302dff527f95d",
+          "logits_valid": true,
+          "pending_token": 198,
+          "position": 394,
+          "stack_depth": 1,
+          "top_frame": 7
+        }
+      },
+      {
+        "command": "B 7",
+        "reply": {
+          "depth": 0,
+          "event": "rolled_back",
+          "frame": 7,
+          "pending_token": 198,
+          "position": 364
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "ee3cf1062f842ce584bb8b411b1985e7c1bd1dd7a7fa4760c8c6b7900e916d7a",
+          "checkpoint_serial": 7,
+          "delivered": 0,
+          "epoch": 1,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": 198,
+          "position": 364,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      },
+      {
+        "command": "S",
+        "reply": {
+          "cache_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "checkpoint_serial": 8,
+          "delivered": 0,
+          "epoch": 2,
+          "event": "state",
+          "logits_sha256": "",
+          "logits_valid": false,
+          "pending_token": -1,
+          "position": 0,
+          "stack_depth": 0,
+          "top_frame": 0
+        }
+      }
+    ],
+    "dense_weight_bytes": 6174857216
+  },
+  "operands": {
+    "lexical": {
+      "source_clock_reads_exact": 420,
+      "source_full_logits_top_ids_exact": 420,
+      "lexical_replayed_steps": 16,
+      "lexical_covered_ids": 15,
+      "lexical_full_logits_exact": true,
+      "lexical_compile_linear_macs": 47185920,
+      "lexical_host_bytes": 122940,
+      "lexical_transfer_bytes": 131072,
+      "model_digest": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc",
+      "model_identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+    },
+    "fresh_case_count": 4,
+    "fresh_baseline_mean_kl": 0.027104872427404156,
+    "fresh_updated_mean_kl": 0.02342182056800105,
+    "relative_kl_reduction": 0.135881541935589,
+    "cases": [
+      {
+        "context_tokens": 128,
+        "kind": "update",
+        "baseline_kl": 0.023875657911384792,
+        "updated_kl": 0.020889357266673587,
+        "later_layer_kl": 0.036365891942782926,
+        "updated_answers": [
+          "The compass is now in the violet box, and the whistle is in the silver box.",
+          "The compass is in the violet box, and the whistle is now in the amber box."
+        ],
+        "later_layer_answers": [
+          "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "The compass is in the violet box, and the whistle is in the amber box."
+        ]
+      },
+      {
+        "context_tokens": 128,
+        "kind": "explanation",
+        "baseline_kl": 0.025253750171247615,
+        "updated_kl": 0.022193893119043944,
+        "later_layer_kl": 0.04547816385304851,
+        "updated_answers": [
+          "A wet towel dries faster in moving air because the movement of air increases the rate of evaporation. The water vapor near the towel is carried away by the",
+          "Humid air slows the process because it contains more water vapor, which reduces the rate of evaporation by increasing the saturation point of the air."
+        ],
+        "later_layer_answers": [
+          "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel more quickly. As the towel dries,",
+          "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water to evaporate from the towel."
+        ]
+      },
+      {
+        "context_tokens": 1024,
+        "kind": "update",
+        "baseline_kl": 0.02551361146460202,
+        "updated_kl": 0.024241611867910823,
+        "later_layer_kl": 0.06378876010214089,
+        "updated_answers": [
+          "The compass is now in the violet box, and the whistle is in the silver box.",
+          "The compass is in the violet box, and the whistle is in the amber box."
+        ],
+        "later_layer_answers": [
+          "The compass is now in the violet box, and the whistle is still in the amber box.",
+          "The compass is now in the violet box, and the whistle is now in the amber box."
+        ]
+      },
+      {
+        "context_tokens": 1024,
+        "kind": "explanation",
+        "baseline_kl": 0.0337764701623822,
+        "updated_kl": 0.026362420018375837,
+        "later_layer_kl": 0.051927473079753664,
+        "updated_answers": [
+          "A wet towel dries faster in moving air because the air movement helps to carry away the water vapor from the towel's surface. As the towel dries,",
+          "Humid air slows the drying process because it contains more water vapor, which makes it harder for the towel to lose moisture."
+        ],
+        "later_layer_answers": [
+          "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+          "Humid air slows the drying process because it holds more water vapor, which makes it harder for the water to evaporate from the towel's surface."
+        ]
+      }
+    ],
+    "scope": "Two task families at two lengths; policies visit their own histories. Most original work remains."
+  },
+  "memory": {
+    "rows": [
+      {
+        "policy": "full-byte",
+        "answers": [
+          "17",
+          "29",
+          "amber",
+          "40"
+        ],
+        "expected": [
+          "17",
+          "29",
+          "amber",
+          "46"
+        ],
+        "correct": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "tracked_state_bytes": 48781316,
+        "tracked_model_and_state_bytes": 3173216280,
+        "exact_replay": true
+      },
+      {
+        "policy": "bounded",
+        "answers": [
+          "3",
+          "1234567890",
+          "Green",
+          "15"
+        ],
+        "expected": [
+          "17",
+          "29",
+          "amber",
+          "46"
+        ],
+        "correct": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "tracked_state_bytes": 9279620,
+        "tracked_model_and_state_bytes": 3133714584,
+        "exact_replay": true
+      }
+    ],
+    "bounded_physical_rows": 112,
+    "logical_capacity": 768,
+    "state_saving_vs_full_byte": 0.8097710197076274,
+    "bounded_recovery": {
+      "cache_logits_rng_lineage_restored": true,
+      "exact_child_replay": true,
+      "occupied_sample_abort": true,
+      "position": 311,
+      "same_layer_retry_exact": true,
+      "state_gpu_bytes": 9279620
+    },
+    "scope": "Tracked GPU allocations, including recovery; host transcript and CUDA overhead additional. Both policies retain all learned maps."
+  },
+  "provenance": {
+    "schema": "cmachine-demo-record-pins-v1",
+    "scope": "Hashes pin already-published source records; no new model execution. Full experiment qualification lives in the linked evidence bundles.",
+    "files": {
+      "docs/evidence/integration-7a6824d/report.json": "82ec2e64dbcd41b40279dd8f1fe73765752b356028eecdcd5e4870bad91a27f9",
+      "docs/evidence/integration-7a6824d/raw/native-protocol.json": "a0718dc72540826d58e4341d961e9b5af22644ca780cfa0bc72e0a377c4cb177",
+      "docs/evidence/integration-7a6824d/raw/reference-native-protocol.json": "a0718dc72540826d58e4341d961e9b5af22644ca780cfa0bc72e0a377c4cb177",
+      "docs/evidence/integration-7a6824d/raw/native-demo.stdout.txt": "c8bee7aca0d898fc17f05dbb2617465e59ae3584fb708fea34ac3596cf4d91ce",
+      "docs/evidence/integration-7a6824d/raw/bounded-delayed.stdout.txt": "bf92f5d03e49ec976b9a8468ed248e787cbb3da29f4b0d90d765c77deceb1ee9",
+      "docs/evidence/integration-7a6824d/raw/full-byte-delayed.stdout.txt": "e3f84915604f24dc29bd94ea680955e2b4e017fc876855d3fca871c8d3204557",
+      "docs/evidence/context-query-20261106/integration.json": "9cc32e2d8b37c308d6be731cf75774cb7677dc0e02648faf317400bdb239fe18",
+      "docs/evidence/context-query-20261106/analysis.json": "b515dd01255012ae4df25ef1ff080b169b7a9dcf0849fbd212c57d5087f4462d"
+    }
+  },
+  "scope": "Pinned records checked and report/raw joins verified. This command reruns no pretrained model and is not a new experimental reproduction."
+}
