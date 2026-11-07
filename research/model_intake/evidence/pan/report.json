@@ -1,0 +1,295 @@
+{
+  "schema": "tcm-model-intake-experiment-v1",
+  "mode": "pan",
+  "result": {
+    "specimen": "PAN",
+    "source": {
+      "checkpoint_sha256": "d7772cd708b9442d64c97288bf5be09fe28ea666dcd81ecc7e5ddfc206f917fb",
+      "config": {
+        "p": 113,
+        "task_kind": "mod_add",
+        "train_frac": 0.4,
+        "model_kind": "pan",
+        "k_freqs": 10,
+        "d_model": 128,
+        "n_heads": 4,
+        "d_mlp": 512,
+        "freq_init": "fourier",
+        "batch_size": 256,
+        "lr": 0.001,
+        "n_steps": 100000,
+        "weight_decay": 0.01,
+        "diversity_weight": 0.01,
+        "early_stop": true,
+        "grok_threshold": 0.99,
+        "log_every": 500,
+        "val_samples": null,
+        "seed": 0,
+        "label": "P113-s0",
+        "use_compile": false,
+        "record_checkpoints": false,
+        "output_dir": ".",
+        "dry_run": false,
+        "save_model": true
+      },
+      "source_files": {
+        "pan/__init__.py": "c6f967e7db26f6c783e303f695bd9f0f79c41194d768fc8ddd6652955c44a8a9",
+        "pan/__main__.py": "8539b5e565078a76d13563fb956cf2ab6c739e54d40bb5a8755a1b77347596be",
+        "pan/analysis.py": "1b293a7cd0e5df2074cea970d19cbd360c6a48e70ef3a1e4b0c0f56e8ee5953e",
+        "pan/attn_phase.py": "68af5a9edded2eecac3b41fd1fa671d1de0d009cdf678a8e99596331daf1219a",
+        "pan/cli.py": "4d76b786db2b424a0f29f9717ed00dcae8c29456b70a6e055c51224a14f48ca1",
+        "pan/config.py": "062e5ca648b3c4563de9a330d7edbd6d14e59d2a59f412767580103e4356a85e",
+        "pan/data.py": "962b27b7ecc98fb3022bf796cf3f277f0fac2d4083d0b89c598db71c3a9c294a",
+        "pan/decoder_analysis.py": "8fe73528f904b291bf9a0e74b2e0e911f25a1eff18dcb2ec7c6c7c0d60058605",
+        "pan/experiments.py": "1e85d6d4fc0a3bde148e741772290ad0e39feaab37ebb5d48fdc5a7d24d154f5",
+        "pan/gauge_search.py": "322c85daa4b9dfbaca9e8f124efa9e26275085600919017a827127ebff78c3c8",
+        "pan/grid_sweep.py": "fe1ff3f1d3e0f017cda6f70fa6aa2e07d1204b346949d5054a38a4ff20d95b06",
+        "pan/hidden_cache.py": "ad5e22a3e5217c2c0390c80cf6d0ae2c06c25baef093233f83a88df765808a41",
+        "pan/hooks.py": "42d9e315e9eb4f518a78d394bd0b0b29ee5b7313038599eee1937504b0bc8199",
+        "pan/interpbench_spftensor_adapter.py": "d4e194614b8c86d9025b61e561ba33f0468edc7f0453bcf02b33429c22e723ae",
+        "pan/lenses.py": "e031b1ccf6510bf4791858782b7b6e7819c34997091eec7f22ec888c93b0a5b5",
+        "pan/metrics.py": "df24b8eaff6cd074db3655a6a8c699cbb4f892c7d362c6d7cc22ebff6b022fb9",
+        "pan/mlx_pan.py": "f6dba9419cc72fc5839bfa04a4e6e44545baa8706825b0b127365815d8846959",
+        "pan/mlx_support.py": "38d807008c1cf71ab33f2d3912fd0afe0904fd5fd8d17f404524ca3b1673806c",
+        "pan/model_iq.py": "015322deec1f766af280c6ffd642822701c55d78524c13d11689fd199d82fc92",
+        "pan/models/__init__.py": "faa96bbb5b3aa7ab564d96021da7de2f5147118784509719dadc672fec115308",
+        "pan/models/multiplicative_pan.py": "9965184cc12d9374bbf0e5d9748264cf972c31170bf152f469cdf4092a8db124",
+        "pan/models/pan.py": "1d1e6a7493d8b38a3dba23d140d971ae9f96a1af5934c83385d211e1f1b461cd",
+        "pan/models/quantize.py": "171515963cd808b65d041ef75c567d6c49d9bb338cfbade9069c0ad7d950f3e5",
+        "pan/models/rsa_pan.py": "b5f4d81ed4eb658d3ba59cc912d5497496d0c1cca4a403e439f8f6ed80d3b3b5",
+        "pan/models/spf_multiplicative_pan.py": "636679fe3675f2d0680386c8f835065e6744e453c9743d415447c81867165e4a",
+        "pan/models/transformer.py": "0fe313f1a0ed992e694cf059895d546e764c3ce27ef5460502a12b2b7a55c14e",
+        "pan/models/wan.py": "ba5b7fc959c0c62c92d8e38063e846f65c3b494c3e4d37b5f6b60496ce3109ef",
+        "pan/native_affine.py": "a5a74c9f56ddba45d2937a59a242632732e609521bf47caeb5cad0ae86e1ab86",
+        "pan/phase_routing.py": "523c779ad3c8e47c4ebb113508abcb4207b0f58cdb106634b560febff9720617",
+        "pan/plots.py": "1d18542ccf408beae5e7593b56bd82d5485fc915597ed5790877a56864739b3d",
+        "pan/probe_log.py": "88e879eab059ccf2eb5bc13870b42850957fb4d5d1043ae027f048a725630723",
+        "pan/reporting.py": "eff96d9ac730ffc108c9c2ac2fc7a9dd692ff6325113a7c7da14d187fbb339b3",
+        "pan/spectral_patch/__init__.py": "94bda028fb79150669a4565c4abbf19cc4589bfd6e723fb1eba3ff42a53acf6e",
+        "pan/spectral_patch/analytic_modular.py": "f767959a4232cda0ef3e1893393b23b474171c2636d4e000bcecfed87c772b54",
+        "pan/spectral_patch/candidates.py": "92f9d7b376eb5cc67aeabafe74b87732e81f0a6e887d3482f9536859d5657af5",
+        "pan/spectral_patch/capture.py": "084339cd48f00058cab55ceb1f86f6ee7f40c16c5b7be6534fe12e114b802ba2",
+        "pan/spectral_patch/dynamic_hub_as_vm_program.py": "c7c87f7b92a81962bdcefba17b21fb46714c58b7162fc4ba9dcfb66a7b0ac718",
+        "pan/spectral_patch/evaluator.py": "ef6e4c5b5eff2acd47942eb3bc78244250cc36d758ad3b86f0c0c83e87d264dd",
+        "pan/spectral_patch/fitters.py": "53f67c150a64abc66e998a30c9f49861bce95b83a178c13561efb3b64101518b",
+        "pan/spectral_patch/gpt2_harness.py": "39a7ee43ecab8b81871851c892021b9341c63048f1cf9e42d225c61d0814002e",
+        "pan/spectral_patch/math_render.py": "7a10189898906c3135aebb96950ce1bf88b927b44dcdc2d92ea8eaefa939f874",
+        "pan/spectral_patch/model_capability.py": "e8471ccc428c22df7e297b46e817efe8fcbf8f3ea2f313046a95a8c24649be64",
+        "pan/spectral_patch/model_spectral_organization.py": "bf1d8ac0ff60cddb3c72c238256b8911e159119e74505e269fb54e4b24b71020",
+        "pan/spectral_patch/mythos_capability_study.py": "39a4cc382f93a5584e6ffb17e3c9b48b61be69839ea1c2bba26e4c6f21c3de26",
+        "pan/spectral_patch/mythos_finetune.py": "e386409b9b10ad3c3359dc2a24ea41aa687a0b7d5c9a0805bbffd6edd675dcdf",
+        "pan/spectral_patch/openmythos.py": "73ff44115096131fb4b9de08d16b2ca2a334f318bb259c890a58aac03fa7ecb5",
+        "pan/spectral_patch/operator_gaps.py": "2fa29f4545a99be0be636c681cea5a79f97e6535f547da1487af60dffe1a27f6",
+        "pan/spectral_patch/pan_as_vm_program.py": "a6521a67f6888951b97afc817abc4a676866f01285a1f63350cccb5c6e6a26d3",
+        "pan/spectral_patch/patch_module.py": "db4bd7640d60fe3304684a9ceb0b235a8febb649e7c6e1de18afe8cbf6784785",
+        "pan/spectral_patch/raw_models.py": "5d57ea4901e74ce56cb18dd9d58c5a90bfe63544e06303b6b94f06f9993540f3",
+        "pan/spectral_patch/reports.py": "4356359e0721c60433effb9160345e95a8cae12391cd398bc9bdc73622d20922",
+        "pan/spectral_patch/token_clock_store.py": "b752040d0dfca73d205cf27c06ff5f8e83270733601179fe0586801de734df6a",
+        "pan/spectral_patch/token_phase.py": "e3ad98fd937ee9843add86c2a9ed916a0d8a0d834f61c5eb628608b8d98e55c0",
+        "pan/spectral_patch/transformer_as_vm_program.py": "9ddce4d66f24f90438780c7092c483a2c0b973cf78532675375e811bc3c3ab64",
+        "pan/spectral_patch/vm_sensitivity.py": "71e94cf10a0f08e50b87e235a304f8677b7404f33c919f4abbe132c4897477ec",
+        "pan/spf_attention.py": "aa4ba7c567fc4a80a3a31562b365820563097aeeec06a8e8ae5377dbe453aecb",
+        "pan/spf_rope.py": "4824fb3874390dc967b320e4dcece3a678b4dbb5eb76b6aa71a00350325bd800",
+        "pan/spfmodel.py": "487973aafc4bcdc16f938532210e833990c09521434ee5a9c7139ce1a4a27554",
+        "pan/tools/__init__.py": "3d427957d2ad17664df8415243e3d081eba160bd7e910895af8ab66557fb9685",
+        "pan/tools/pan_decoder.py": "2ac2c20b4ba1a1db366cf4ed2b576d71bcf4a9597a83e21d2102efd0e315107a",
+        "pan/trainer.py": "2a0f55f67b58415a9b056b855a866aace6164ca38374279cf8c61fd3407c727e",
+        "pan/training_dynamics.py": "f9db88a588bc1d3d3eb50292d62831087977f88b70eb821ce473fb03d3d5202a"
+      }
+    },
+    "parameter_count": 1473,
+    "task_kind": "mod_add",
+    "modulus": 113,
+    "rows": 12769,
+    "operations": 19,
+    "state_slots": 0,
+    "native_accuracy": 0.5781188816665361,
+    "c_accuracy": 0.5781188816665361,
+    "top1_agreement": 1.0,
+    "max_abs_logit_error": 9.1552734375e-05,
+    "mean_abs_logit_error": 4.7793123485462274e-06,
+    "boundaries_first_row": [
+      {
+        "value": "getitem",
+        "max_abs": 0.0
+      },
+      {
+        "value": "unsqueeze_1",
+        "max_abs": 0.0
+      },
+      {
+        "value": "mul",
+        "max_abs": 0.0
+      },
+      {
+        "value": "mod",
+        "max_abs": 0.0
+      },
+      {
+        "value": "getitem_1",
+        "max_abs": 0.0
+      },
+      {
+        "value": "unsqueeze_3",
+        "max_abs": 0.0
+      },
+      {
+        "value": "mul_1",
+        "max_abs": 0.0
+      },
+      {
+        "value": "mod_1",
+        "max_abs": 0.0
+      },
+      {
+        "value": "cat",
+        "max_abs": 0.0
+      },
+      {
+        "value": "linear",
+        "max_abs": 0.0
+      },
+      {
+        "value": "mod_2",
+        "max_abs": 0.0
+      },
+      {
+        "value": "phase_gate_ref_phase",
+        "max_abs": 0.0
+      },
+      {
+        "value": "remainder",
+        "max_abs": 0.0
+      },
+      {
+        "value": "sub",
+        "max_abs": 0.0
+      },
+      {
+        "value": "cos",
+        "max_abs": 0.0
+      },
+      {
+        "value": "add",
+        "max_abs": 0.0
+      },
+      {
+        "value": "truediv",
+        "max_abs": 0.0
+      },
+      {
+        "value": "decoder",
+        "max_abs": 7.62939453125e-06
+      }
+    ],
+    "baseline": {
+      "schema": "tcm-program-run-v1",
+      "model_identity": "d7772cd708b9442d64c97288bf5be09fe28ea666dcd81ecc7e5ddfc206f917fb",
+      "bundle_digest": "7db8dbf91965bbf0a67cd49dc2c9c9cb12f66f3adcd4d53a2fc0677240cc23c6",
+      "profile": "fp32-sequential-c-no-contraction-libm",
+      "input_rows": 12769,
+      "ops_per_row": 19,
+      "state_floats": 0,
+      "state_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "generated_tokens": [],
+      "consumed_rows": 12769,
+      "pending_token": -1,
+      "checkpoint_replay": true,
+      "replay_exact": true,
+      "zero_operation": -1,
+      "compute_seconds": 0.02071469,
+      "framework_fallback": false
+    },
+    "authority": {
+      "mechanics_status": "executed",
+      "instrument_status": "source-and-C-compared",
+      "trend_status": "see-signed-task-and-intervention-observations",
+      "terminal_status": "bounded-specimen-results-only; no-general-math-or-speed-claim"
+    },
+    "intervention": {
+      "status": "completed",
+      "operation": 17,
+      "kind": "zero computed gate before decoder",
+      "accuracy": 0.008849557522123894,
+      "accuracy_delta": -0.5692693241444122,
+      "run": {
+        "schema": "tcm-program-run-v1",
+        "model_identity": "d7772cd708b9442d64c97288bf5be09fe28ea666dcd81ecc7e5ddfc206f917fb",
+        "bundle_digest": "7db8dbf91965bbf0a67cd49dc2c9c9cb12f66f3adcd4d53a2fc0677240cc23c6",
+        "profile": "fp32-sequential-c-no-contraction-libm",
+        "input_rows": 12769,
+        "ops_per_row": 19,
+        "state_floats": 0,
+        "state_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "generated_tokens": [],
+        "consumed_rows": 12769,
+        "pending_token": -1,
+        "checkpoint_replay": true,
+        "replay_exact": true,
+        "zero_operation": 17,
+        "compute_seconds": 0.0117871859,
+        "framework_fallback": false
+      }
+    }
+  },
+  "status": "completed",
+  "wall_seconds": 2.2357606887817383,
+  "executed_sources": {
+    "src/bounded_cache.h": "6a4d12b9b43a929bc6b142707327e73bb11aa58ddceead3ab2d419bb988222b9",
+    "src/byte_codec.h": "0cb77c293a384c131584dd919e68d4f15bf329f89dff46a25f5de72b95bc043f",
+    "src/gpu.h": "c4a4db8cbf3915ea0a654fd539a35f76609b0d5dcffb0851b958c2c10aa72e8c",
+    "src/isa.c": "03b37b1cb2e51aa9be04ce6b0302ef4ccd133fa1eb32e73f6a30b2e1c1306759",
+    "src/machine.h": "8adfd6800038b00732399efa2c8d94ba24603572580ec333c40c1e55d87ff16d",
+    "src/main.c": "63623de425261bfb1fa1bf77d23455b4f795dc04e8336f2b7af3fdd3306ffc13",
+    "src/model.c": "bbd2902e5464e4f44d80b82557597540447f4e4f9a0c8fa60d15a17aa1f6a16d",
+    "src/program.c": "01bb8d62b75e6f12f772f0ba18782729e792f65a7bc3263cf491c086843d17ac",
+    "src/program.h": "8f185a147485098b2412253461627d809cf23fc0ba6b895c24bedf507dd85a91",
+    "src/prototype_attention.h": "c1932bc889cb2504e4e4d1d1e631429440535f76fb4c0520fa5ad1b9dd41f840",
+    "src/qwen.c": "9860c088ac9a40374a3c756db054a9b2b5cf8553bb9345b18b40aaa5e98f6e59",
+    "src/qwen.h": "939b7599da46fd52f358d013b0fb4a5ba4940e665aef7ee8f33bc0b4c577dbb0",
+    "src/qwen_bounded_serve.c": "2418098f0b913062111b4e342522a8859b3617e342a75f0d5b7d4885978f1ed8",
+    "src/qwen_cache.inc": "f179bf4df9f4063f8d6dcb7b9ad65514befb2ca472e5364a8c11373dfa781cef",
+    "src/qwen_cuda.cu": "2f348b02909b19bb6e41a6ec7ad05f88b93288ad2d83a5596f87dd03f4ddc6cf",
+    "src/qwen_operands.inc": "8c3a91d345eb3fe58f25df9fd691e5e8b34a1fab3acdc7ca95fe56e66981f9aa",
+    "src/qwen_serve.c": "5b878c35a4cd71b6d3e64ad7b3a455cd89acdfd7d8388f6ba38da40b6d02d665",
+    "src/qwen_weights.inc": "cf66580fef71689de32d3ff5f4500c328fe76923fabe2758689f3a5841abd229"
+  },
+  "raw": {
+    "raw/pan-baseline-summary.json": {
+      "sha256": "fec9246134d73dd5b94ec3c7c26244d2ceaa359ac2a774d89d36bd3a0dbeda28",
+      "bytes": 9589
+    },
+    "raw/pan-baseline.input.f32": {
+      "sha256": "40c9ab74358f4e7f223a4375ccdced9bcbcf5d41658d1e59f3105d318eca9c83",
+      "bytes": 102152
+    },
+    "raw/pan-baseline.json": {
+      "sha256": "3aabc2a4c41e7d2ada23c9fc8cf78bfb6ed2950cce355c10324436f0a48e5b8e",
+      "bytes": 633
+    },
+    "raw/pan-evidence.npz": {
+      "sha256": "77708655af1da622b6a079c1ea56d9826ec98cf375bc322b04f76b7d20d6e67d",
+      "bytes": 10558742
+    },
+    "raw/pan-intervention-summary.json": {
+      "sha256": "69af3b020be20f0c3a64f28cfa664827b9de9adedb20faee66814ba4a6c8bdc3",
+      "bytes": 850
+    },
+    "raw/pan-intervention.npz": {
+      "sha256": "0e7fd34cf485faf50975fc20988257e22eccc7457cf62365e54db4926c656eb1",
+      "bytes": 47114
+    },
+    "raw/pan-zero-gate.input.f32": {
+      "sha256": "40c9ab74358f4e7f223a4375ccdced9bcbcf5d41658d1e59f3105d318eca9c83",
+      "bytes": 102152
+    },
+    "raw/pan-zero-gate.json": {
+      "sha256": "abf932cae3ca12b895673626477e76851f3175ab1a3441cdbabdfe843905b44b",
+      "bytes": 635
+    },
+    "raw/pan.map.json": {
+      "sha256": "b2a952cc5cb1d454ab48b9538c570a7137ac844f18305df39468d0ff5a30f991",
+      "bytes": 15920
+    }
+  }
+}

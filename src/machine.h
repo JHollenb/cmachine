@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-enum { TCM_ISA = 1, TCM_QWEN = 2, TCM_ISA_LAW = 3 };
+enum { TCM_ISA = 1, TCM_QWEN = 2, TCM_ISA_LAW = 3, TCM_PROGRAM = 4 };
 enum { TCM_F32 = 1, TCM_BF16 = 2, TCM_F64 = 3 };
 typedef struct {
     char name[65];

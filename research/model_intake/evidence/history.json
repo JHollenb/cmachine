@@ -1,0 +1,194 @@
+{
+  "schema": "tcm-intake-history-v1",
+  "jobs": [
+    {
+      "job_id": "job-0143a2072cce",
+      "mode": "pan",
+      "state": "succeeded",
+      "status_detail": null,
+      "meta": {
+        "queue_note": "PAN intake: one checkpoint load; one native all-pairs batch, two C all-pairs arms, first-row boundary capture; CPU FP32 one thread; stop after finite panel; no training/retries",
+        "observed_peak_rss_mb": 635.9,
+        "observed_peak_rss_ts": 1794034407.8055909
+      },
+      "created_ts": 1794034405.0568953,
+      "finished_ts": 1794034408.9813757,
+      "report_status": "completed",
+      "error": null,
+      "report_sha256": "dd1981dc27065170575b5a1018c4e17fdfef219b4b5348afe1b0dae8c46b9bad",
+      "evidence_interpretation": "completed bounded observations"
+    },
+    {
+      "job_id": "job-1b568233159e",
+      "mode": "mamba-chat",
+      "state": "succeeded",
+      "status_detail": null,
+      "meta": {
+        "queue_note": "MambaSan Japanese instruction checkpoint; boundedHTTP+normalization; two CPU FP32 native own<=12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 1849.0,
+        "observed_peak_rss_ts": 1794034478.8889067
+      },
+      "created_ts": 1794034432.1728435,
+      "finished_ts": 1794034492.0009403,
+      "report_status": "completed",
+      "error": null,
+      "report_sha256": "aab27b53295ed5c4c304910d68dceab9d2e6a03143f309c862cd3961dcda54c4",
+      "evidence_interpretation": "completed bounded observations"
+    },
+    {
+      "job_id": "job-35ab966d9a16",
+      "mode": "pan",
+      "state": "succeeded",
+      "status_detail": null,
+      "meta": {
+        "queue_note": "PAN intake: one checkpoint load; one native all-pairs batch, two C all-pairs arms, first-row boundary capture; CPU FP32 one thread; stop after finite panel; no training/retries",
+        "observed_peak_rss_mb": 661.4,
+        "observed_peak_rss_ts": 1794031411.441346
+      },
+      "created_ts": 1794031407.5670664,
+      "finished_ts": 1794031412.3819935,
+      "report_status": "completed",
+      "error": null,
+      "report_sha256": "96679b64bef43831b0a4cad2411ee17758e00274fa66b15f2eac3ab065fed63b",
+      "evidence_interpretation": "completed bounded observations"
+    },
+    {
+      "job_id": "job-372c21791726",
+      "mode": "mamba-chat",
+      "state": "cancelled",
+      "status_detail": "cancelled by server order",
+      "meta": {
+        "queue_note": "Mamba-Chat pinned acquisition+normalization; two CPU FP32 native own8/12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 1616.9,
+        "observed_peak_rss_ts": 1794033226.4685073,
+        "cancellation_reason": "Pinned Mamba-Chat Xet transfer stalled: shared-source probe job-fef5332cb959 observed16,811,291-byte incomplete file unchanged across15seconds, last write528seconds earlier after615seconds acquisition; no model forward began. Preserve partial and use bounded HTTP/no-Xet transport with byte-progress telemetry."
+      },
+      "created_ts": 1794032449.722027,
+      "finished_ts": 1794033236.9650564,
+      "report_status": null,
+      "error": null,
+      "report_sha256": null,
+      "evidence_interpretation": "incomplete mechanics/acquisition; no model capability inference"
+    },
+    {
+      "job_id": "job-68dec70f2ede",
+      "mode": "mamba-chat",
+      "state": "failed",
+      "status_detail": "child exited with return code 1",
+      "meta": {
+        "queue_note": "Mamba-Chat pinned acquisition+normalization; two CPU FP32 native own8/12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 48.9,
+        "observed_peak_rss_ts": 1794032281.1256475
+      },
+      "created_ts": 1794032268.4706202,
+      "finished_ts": 1794032295.4756885,
+      "report_status": null,
+      "error": null,
+      "report_sha256": null,
+      "evidence_interpretation": "incomplete mechanics/acquisition; no model capability inference"
+    },
+    {
+      "job_id": "job-7373b61f6362",
+      "mode": "mamba-chat",
+      "state": "failed",
+      "status_detail": "child exited with return code 1",
+      "meta": {
+        "queue_note": "Mamba-Chat pinned acquisition+normalization; two CPU FP32 native own8/12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 920.5,
+        "observed_peak_rss_ts": 1794032053.7613983
+      },
+      "created_ts": 1794032048.324675,
+      "finished_ts": 1794032055.832086,
+      "report_status": "error",
+      "error": "Traceback (most recent call last):\n  File \"/mnt/hdd8tb/mrun-work/job-7373b61f6362/tools/intake_worker.py\", line 243, in main\n    report[\"result\"]={\"pan\":pan,\"mamba-chat\":mamba_chat}[sys.argv[1]]()\n                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/mnt/hdd8tb/mrun-work/job-7373b61f6362/tools/intake_worker.py\", line 124, in mamba_chat\n    command([\"make\",\"program-blas\"])\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/hdd8tb/mrun-work/job-7373b61f6362/tools/intake_worker.py\", line 32, in command\n    raise RuntimeError(f\"command failed ({result.returncode}): {args}\\n{result.stdout[-2000:]}\\n{result.stderr[-4000:]}\")\nRuntimeError: command failed (2): ['make', 'program-blas']\nmkdir -p build\ncc -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -DTCM_USE_CBLAS -Isrc src/model.c src/isa.c src/program.c src/main.c -lopenblas -lm -o build/tcm-blas\n\nixer\u2019:\nsrc/isa.c:108:5: warning: this \u2018for\u2019 clause does not guard... [-Wmisleading-indentation]\n  108 |     for(unsigned i=0;i<48;i++)norm[i]=hidden[i]*scale;linear(&m->input,norm,p);\n      |     ^~~\nsrc/isa.c:108:55: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018for\u2019\n  108 |     for(unsigned i=0;i<48;i++)norm[i]=hidden[i]*scale;linear(&m->input,norm,p);\n      |                                                       ^~~~~~\nsrc/isa.c: In function \u2018post\u2019:\nsrc/isa.c:126:5: warning: this \u2018for\u2019 clause does not guard... [-Wmisleading-indentation]\n  126 |     for(unsigned i=0;i<48;i++)mean+=x[i];mean/=48;\n      |     ^~~\nsrc/isa.c:126:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018for\u2019\n  126 |     for(unsigned i=0;i<48;i++)mean+=x[i];mean/=48;\n      |                                          ^~~~\nsrc/isa.c: In function \u2018isa_advance\u2019:\nsrc/isa.c:149:5: warning: this \u2018for\u2019 clause does not guard... [-Wmisleading-indentation]\n  149 |     for(unsigned j=0;j<8;j++)input[n++]=v->before[j][r];input[n++]=v->a[r];input[n++]=v->s[r];input[n++]=v->imm[r][0];input[n++]=v->imm[r][1];\n      |     ^~~\nsrc/isa.c:149:57: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018for\u2019\n  149 |     for(unsigned j=0;j<8;j++)input[n++]=v->before[j][r];input[n++]=v->a[r];input[n++]=v->s[r];input[n++]=v->imm[r][0];input[n++]=v->imm[r][1];\n      |                                                         ^~~~~\nsrc/isa.c:152:5: warning: this \u2018if\u2019 clause does not guard... [-Wmisleading-indentation]\n  152 |     if(n!=293)return -1;linear(&m->input,input,hidden);\n      |     ^~\nsrc/isa.c:152:25: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\n  152 |     if(n!=293)return -1;linear(&m->input,input,hidden);\n      |                         ^~~~~~\nsrc/isa.c: In function \u2018isa_commit\u2019:\nsrc/isa.c:178:5: warning: this \u2018for\u2019 clause does not guard... [-Wmisleading-indentation]\n  178 |     for(unsigned i=0;i<8;i++)v->arch.registers[i]=isa_bits(v->output.regs[i]);for(unsigned i=0;i<4;i++)v->arch.flags[i]=v->output.flags[i]>0;\n      |     ^~~\nsrc/isa.c:178:79: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018for\u2019\n  178 |     for(unsigned i=0;i<8;i++)v->arch.registers[i]=isa_bits(v->output.regs[i]);for(unsigned i=0;i<4;i++)v->arch.flags[i]=v->output.flags[i]>0;\n      |                                                                               ^~~\nsrc/program.c:11:10: fatal error: cblas.h: No such file or directory\n   11 | #include <cblas.h>\n      |          ^~~~~~~~~\ncompilation terminated.\nsrc/main.c: In function \u2018main\u2019:\nsrc/main.c:74:9: warning: this \u2018if\u2019 clause does not guard... [-Wmisleading-indentation]\n   74 |         if(completed++)fputc(',',f);fprintf(f,\"{\\\"before\\\":\");arch(f,&before);fprintf(f,\",\\\"after\\\":\");arch(f,&session.state.arch);fprintf(f,\",\\\"heads\\\":\");heads(f,&session.state.output);\n      |         ^~\nsrc/main.c:74:37: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\n   74 |         if(completed++)fputc(',',f);fprintf(f,\"{\\\"before\\\":\");arch(f,&before);fprintf(f,\",\\\"after\\\":\");arch(f,&session.state.arch);fprintf(f,\",\\\"heads\\\":\");heads(f,&session.state.output);\n      |                                     ^~~~~~~\nsrc/main.c:79:5: warning: this \u2018if\u2019 clause does not guard... [-Wmisleading-indentation]\n   79 |     if(output_path&&fclose(f))return 2;free(code);tcm_unload(&law_bundle);tcm_unload(&bundle);return exact_checkpoint?0:1;\n      |     ^~\nsrc/main.c:79:40: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\n   79 |     if(output_path&&fclose(f))return 2;free(code);tcm_unload(&law_bundle);tcm_unload(&bundle);return exact_checkpoint?0:1;\n      |                                        ^~~~\nmake: *** [Makefile:43: build/tcm-blas] Error 1\n\n",
+      "report_sha256": "a87aad423350111353f005113305b10b31bf4d0662defcb2d8f168ecf1f5707b",
+      "evidence_interpretation": "incomplete mechanics/acquisition; no model capability inference"
+    },
+    {
+      "job_id": "job-8f28ea1fa041",
+      "mode": "pan",
+      "state": "succeeded",
+      "status_detail": null,
+      "meta": {
+        "queue_note": "PAN intake: one checkpoint load; one native all-pairs batch, two C all-pairs arms, first-row boundary capture; CPU FP32 one thread; stop after finite panel; no training/retries",
+        "observed_peak_rss_mb": 11.6,
+        "observed_peak_rss_ts": 1794032718.7772243
+      },
+      "created_ts": 1794032718.445948,
+      "finished_ts": 1794032723.3810682,
+      "report_status": "completed",
+      "error": null,
+      "report_sha256": "7ba7708fde8ed96bcf9a0789b904d39841ca3156ff4177b2b41bec480f1ea13a",
+      "evidence_interpretation": "completed bounded observations"
+    },
+    {
+      "job_id": "job-f101f8e24718",
+      "mode": "mamba-chat",
+      "state": "cancelled",
+      "status_detail": "cancelled by server order",
+      "meta": {
+        "queue_note": "Mamba-Chat pinned boundedHTTP acquisition+normalization; two CPU FP32 native own8/12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 1063.7,
+        "observed_peak_rss_ts": 1794033719.010263,
+        "cancellation_reason": "HTTP acquisition progresses about1MB/s: >5.5GB projects >90minutes, beyond declared1200second acquisition budget. Use metadata-qualified231MB Japanese MambaSan instruction checkpoint for smallest informative chat execution; retain HavenHQ partials and no model-evaluation claim."
+      },
+      "created_ts": 1794033263.976646,
+      "finished_ts": 1794033724.8191638,
+      "report_status": null,
+      "error": null,
+      "report_sha256": null,
+      "evidence_interpretation": "incomplete mechanics/acquisition; no model capability inference"
+    },
+    {
+      "job_id": "job-f50c0a243535",
+      "mode": "mamba-chat",
+      "state": "failed",
+      "status_detail": "child exited with return code 1",
+      "meta": {
+        "queue_note": "Mamba-Chat pinned acquisition+normalization; two CPU FP32 native own8/12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 1017.3,
+        "observed_peak_rss_ts": 1794032374.108945
+      },
+      "created_ts": 1794032351.7646692,
+      "finished_ts": 1794032374.512742,
+      "report_status": "error",
+      "error": "Traceback (most recent call last):\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/_snapshot_download.py\", line 258, in snapshot_download\n    repo_info = api.repo_info(repo_id=repo_id, repo_type=repo_type, revision=revision)\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py\", line 88, in _inner_fn\n    return fn(*args, **kwargs)\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/hf_api.py\", line 3630, in repo_info\n    return method(\n        repo_id,\n    ...<4 lines>...\n        files_metadata=files_metadata,\n    )\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py\", line 88, in _inner_fn\n    return fn(*args, **kwargs)\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/hf_api.py\", line 3309, in model_info\n    r = get_session().get(path, headers=headers, timeout=timeout, params=params)\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/httpx/_client.py\", line 1053, in get\n    return self.request(\n           ~~~~~~~~~~~~^\n        \"GET\",\n        ^^^^^^\n    ...<7 lines>...\n        extensions=extensions,\n        ^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/httpx/_client.py\", line 825, in request\n    return self.send(request, auth=auth, follow_redirects=follow_redirects)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/httpx/_client.py\", line 914, in send\n    response = self._send_handling_auth(\n        request,\n    ...<2 lines>...\n        history=[],\n    )\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/httpx/_client.py\", line 942, in _send_handling_auth\n    response = self._send_handling_redirects(\n        request,\n        follow_redirects=follow_redirects,\n        history=history,\n    )\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/httpx/_client.py\", line 977, in _send_handling_redirects\n    hook(request)\n    ~~~~^^^^^^^^^\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_http.py\", line 260, in hf_request_event_hook\n    raise OfflineModeIsEnabled(\n        f\"Cannot reach {request.url}: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.\"\n    )\nhuggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/havenhq/mamba-chat/revision/84fa8e355ece8f4f55cf0f2a8b81cf189b3eeee0: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/mnt/hdd8tb/mrun-work/job-f50c0a243535/tools/intake_worker.py\", line 248, in main\n    report[\"result\"]={\"pan\":pan,\"mamba-chat\":mamba_chat}[sys.argv[1]]()\n                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/mnt/hdd8tb/mrun-work/job-f50c0a243535/tools/intake_worker.py\", line 129, in mamba_chat\n    source,normalization=acquire()\n                         ~~~~~~~^^\n  File \"/mnt/hdd8tb/mrun-work/job-f50c0a243535/tools/mamba_chat_source.py\", line 30, in acquire\n    snapshot_download(REPO,revision=REVISION,local_dir=original,\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                      allow_patterns=[\"model.safetensors\",\"config.json\",\"tokenizer*\",\"special_tokens_map.json\",\"README.md\"],\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                      max_workers=2)\n                      ^^^^^^^^^^^^^^\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py\", line 88, in _inner_fn\n    return fn(*args, **kwargs)\n  File \"/home/beast/domains/mrun/.venv/lib/python3.14/site-packages/huggingface_hub/_snapshot_download.py\", line 351, in snapshot_download\n    raise LocalEntryNotFoundError(\n    ...<3 lines>...\n    ) from api_call_error\nhuggingface_hub.errors.LocalEntryNotFoundError: Cannot find an appropriate cached snapshot folder for the specified revision on the local disk and outgoing traffic has been disabled. To enable repo look-ups and downloads online, set 'HF_HUB_OFFLINE=0' as environment variable.\n",
+      "report_sha256": "e3c7b780ebd8c27f1d0cdf3f9dcb3f1f648a6921942bb00465b3fc4a6283b11d",
+      "evidence_interpretation": "incomplete mechanics/acquisition; no model capability inference"
+    },
+    {
+      "job_id": "job-fef5332cb959",
+      "mode": "probe",
+      "state": "succeeded",
+      "status_detail": null,
+      "meta": {
+        "queue_note": "PAN intake: one checkpoint load; one native all-pairs batch, two C all-pairs arms, first-row boundary capture; CPU FP32 one thread; stop after finite panel; no training/retries",
+        "observed_peak_rss_mb": 72.5,
+        "observed_peak_rss_ts": 1794033084.0751655
+      },
+      "created_ts": 1794033078.2543316,
+      "finished_ts": 1794033094.3416624,
+      "report_status": null,
+      "error": null,
+      "report_sha256": null,
+      "evidence_interpretation": "metadata-only probe"
+    },
+    {
+      "job_id": "job-ff786f975581",
+      "mode": "mamba-chat",
+      "state": "succeeded",
+      "status_detail": null,
+      "meta": {
+        "queue_note": "MambaSan Japanese instruction checkpoint; boundedHTTP+normalization; two CPU FP32 native own<=12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+        "observed_peak_rss_mb": 1857.8,
+        "observed_peak_rss_ts": 1794034185.43866
+      },
+      "created_ts": 1794033848.136919,
+      "finished_ts": 1794034196.7326555,
+      "report_status": "completed",
+      "error": null,
+      "report_sha256": "fbc673cf8a8cb21f80dc9b42d74b1b3b63e49532fdb6f3b5a5d22c1ec82883a9",
+      "evidence_interpretation": "completed bounded observations"
+    }
+  ]
+}

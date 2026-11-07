@@ -5,7 +5,9 @@ from pathlib import Path
 import struct
 import tempfile
 import unittest
+from unittest import mock
 
+import intake as module
 from intake import intake
 
 
@@ -145,6 +147,61 @@ class IntakeMechanics(unittest.TestCase):
         with self.assertRaises(ValueError):
             intake(source=source, output=source / "output")
         self.assertFalse((source / "output").exists())
+
+    def test_canonical_mutation_refusal_is_retained(self):
+        from mrun.decompiler import SafetensorsTensorIndexer
+
+        source = fixture(self.root / "source")
+        original = SafetensorsTensorIndexer.build
+
+        def mutate(indexer, frozen):
+            index = original(indexer, frozen)
+            config = source / "config.json"
+            config.write_text(config.read_text() + " ")
+            return index
+
+        with mock.patch.object(SafetensorsTensorIndexer, "build", mutate):
+            report = intake(source=source, output=self.root / "output")
+        self.assertEqual(report["status"], "rejected")
+        self.assertIsNone(report["bundle_fingerprint"])
+        self.assertTrue((self.root / "output" / "intake.json").exists())
+        self.assertTrue(report["source_report"]["failures"])
+
+    def test_late_source_mutation_cannot_publish_success(self):
+        source = fixture(self.root / "source")
+        original = module.inventory
+
+        def mutate(bundle):
+            result = original(bundle)
+            config = source / "config.json"
+            config.write_text(config.read_text() + " ")
+            return result
+
+        with mock.patch.object(module, "inventory", mutate):
+            with self.assertRaises(RuntimeError):
+                intake(source=source, output=self.root / "output")
+        self.assertFalse((self.root / "output").exists())
+
+    def test_completion_marker_is_published_from_complete_bytes(self):
+        source = fixture(self.root / "source")
+        output = self.root / "output"
+        original = module.os.link
+        checked = []
+
+        def link(temporary, target):
+            if Path(target).name == "intake.json":
+                self.assertFalse(Path(target).exists())
+                report = json.loads(Path(temporary).read_text())
+                fingerprint = report.pop("fingerprint")
+                self.assertEqual(module.sealed(report)["fingerprint"], fingerprint)
+                self.assertTrue((output / "REPORT.md").exists())
+                checked.append(True)
+            return original(temporary, target)
+
+        with mock.patch.object(module.os, "link", link):
+            intake(source=source, output=output)
+        self.assertEqual(checked, [True])
+        self.assertTrue((output / "intake.json").exists())
 
 
 if __name__ == "__main__":

@@ -1,0 +1,298 @@
+{
+  "schema": "tcm-program-symbol-table-v1",
+  "source_map_fingerprint": "587ebd197962ce71cddc05f934caa69a5292473dc4e147daa734ef86c6be9df9",
+  "program_bundle_digest": "7db8dbf91965bbf0a67cd49dc2c9c9cb12f66f3adcd4d53a2fc0677240cc23c6",
+  "source_identity": "d7772cd708b9442d64c97288bf5be09fe28ea666dcd81ecc7e5ddfc206f917fb",
+  "symbols": [
+    {
+      "length": 2,
+      "name": "input",
+      "offset": 0,
+      "value_id": 0,
+      "producer": null,
+      "consumers": [
+        0,
+        4
+      ]
+    },
+    {
+      "length": 1,
+      "name": "getitem",
+      "offset": 2,
+      "value_id": 1,
+      "producer": {
+        "pc": 0,
+        "kind": "slice",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/getitem"
+      },
+      "consumers": [
+        2
+      ]
+    },
+    {
+      "length": 10,
+      "name": "unsqueeze_1",
+      "offset": 3,
+      "value_id": 2,
+      "producer": {
+        "pc": 1,
+        "kind": "constant",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/unsqueeze_1"
+      },
+      "consumers": [
+        2
+      ]
+    },
+    {
+      "length": 10,
+      "name": "mul",
+      "offset": 13,
+      "value_id": 3,
+      "producer": {
+        "pc": 2,
+        "kind": "multiply",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/mul"
+      },
+      "consumers": [
+        3
+      ]
+    },
+    {
+      "length": 10,
+      "name": "mod",
+      "offset": 23,
+      "value_id": 4,
+      "producer": {
+        "pc": 3,
+        "kind": "remainder",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/mod"
+      },
+      "consumers": [
+        8
+      ]
+    },
+    {
+      "length": 1,
+      "name": "getitem_1",
+      "offset": 33,
+      "value_id": 5,
+      "producer": {
+        "pc": 4,
+        "kind": "slice",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/getitem_1"
+      },
+      "consumers": [
+        6
+      ]
+    },
+    {
+      "length": 10,
+      "name": "unsqueeze_3",
+      "offset": 34,
+      "value_id": 6,
+      "producer": {
+        "pc": 5,
+        "kind": "constant",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/unsqueeze_3"
+      },
+      "consumers": [
+        6
+      ]
+    },
+    {
+      "length": 10,
+      "name": "mul_1",
+      "offset": 44,
+      "value_id": 7,
+      "producer": {
+        "pc": 6,
+        "kind": "multiply",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/mul_1"
+      },
+      "consumers": [
+        7
+      ]
+    },
+    {
+      "length": 10,
+      "name": "mod_1",
+      "offset": 54,
+      "value_id": 8,
+      "producer": {
+        "pc": 7,
+        "kind": "remainder",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/mod_1"
+      },
+      "consumers": [
+        8
+      ]
+    },
+    {
+      "length": 20,
+      "name": "cat",
+      "offset": 64,
+      "value_id": 9,
+      "producer": {
+        "pc": 8,
+        "kind": "concat",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/cat"
+      },
+      "consumers": [
+        9
+      ]
+    },
+    {
+      "length": 10,
+      "name": "linear",
+      "offset": 84,
+      "value_id": 10,
+      "producer": {
+        "pc": 9,
+        "kind": "linear",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/linear"
+      },
+      "consumers": [
+        10
+      ]
+    },
+    {
+      "length": 10,
+      "name": "mod_2",
+      "offset": 94,
+      "value_id": 11,
+      "producer": {
+        "pc": 10,
+        "kind": "remainder",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/mod_2"
+      },
+      "consumers": [
+        14
+      ]
+    },
+    {
+      "length": 10,
+      "name": "phase_gate_ref_phase",
+      "offset": 104,
+      "value_id": 12,
+      "producer": {
+        "pc": 11,
+        "kind": "constant",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/phase_gate_ref_phase"
+      },
+      "consumers": [
+        12
+      ]
+    },
+    {
+      "length": 10,
+      "name": "remainder",
+      "offset": 114,
+      "value_id": 13,
+      "producer": {
+        "pc": 12,
+        "kind": "remainder",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/remainder"
+      },
+      "consumers": [
+        13
+      ]
+    },
+    {
+      "length": 10,
+      "name": "value.14",
+      "offset": 124,
+      "value_id": 14,
+      "producer": {
+        "pc": 13,
+        "kind": "affine",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/sub"
+      },
+      "consumers": [
+        14
+      ]
+    },
+    {
+      "length": 10,
+      "name": "sub",
+      "offset": 134,
+      "value_id": 15,
+      "producer": {
+        "pc": 14,
+        "kind": "add",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/sub"
+      },
+      "consumers": [
+        15
+      ]
+    },
+    {
+      "length": 10,
+      "name": "cos",
+      "offset": 144,
+      "value_id": 16,
+      "producer": {
+        "pc": 15,
+        "kind": "cos",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/cos"
+      },
+      "consumers": [
+        16
+      ]
+    },
+    {
+      "length": 10,
+      "name": "add",
+      "offset": 154,
+      "value_id": 17,
+      "producer": {
+        "pc": 16,
+        "kind": "affine",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/add"
+      },
+      "consumers": [
+        17
+      ]
+    },
+    {
+      "length": 10,
+      "name": "truediv",
+      "offset": 164,
+      "value_id": 18,
+      "producer": {
+        "pc": 17,
+        "kind": "affine",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/truediv"
+      },
+      "consumers": [
+        18
+      ]
+    },
+    {
+      "length": 113,
+      "name": "decoder",
+      "offset": 174,
+      "value_id": 19,
+      "producer": {
+        "pc": 18,
+        "kind": "linear",
+        "source_ref": "fx://ef2ccef032e7d6b0f3fd690fc8dcb7665fab2ab3fce5f97a9169e52ca20466e2/decoder"
+      },
+      "consumers": []
+    }
+  ],
+  "state_slots": [],
+  "occurrence_key_fields": [
+    "program_bundle_digest",
+    "job_id",
+    "input_row",
+    "pc",
+    "value_id"
+  ],
+  "authority": {
+    "mechanics_status": "source-map-validated",
+    "instrument_status": "no-trace-supplied",
+    "trend_status": "not-analyzed",
+    "terminal_status": "no-learned-mathematical-role-claim"
+  },
+  "fingerprint": "596b4cd0458b3b7b910e6ceb34dedef2a02f434a80de183e57565a98fff68a86"
+}

@@ -2,6 +2,8 @@
 
 Assessed November 6, 2026, with an independent Astra review of the source and experiment evidence. The reviewed checkout is `ae0fcd4`, including the operand APIs introduced in `5078b5d`. Each numerical qualification below retains its own executed source identity; this inventory does not extend an older receipt to newer code.
 
+The subsequent [model-intake implementation and receipts](../research/model_intake/README.md) add the bounded PAN/Mamba1 graph path described below. Those fleet jobs bind their own exact payload hashes; the earlier Qwen assessment remains scoped to its recorded sources.
+
 `cmachine` is an explicit model state machine. C owns the numerical computation, mutable state, output selection and continuation. It directly executes two nominated model profiles: the R3 direct-effect ISA Mamba specimen on CPU and Qwen2.5-1.5B-Instruct on CUDA. It also exposes opt-in replacement operations and owns the relocated research programs under [research/](../research/README.md).
 
 For these qualified native paths, the major numerical computations are explicit, including the computations that obtain operands and advance state. This is stronger than observing tensors or predicting from a supplied final activation. It is distinct from recovering a general semantic instruction set or a substantially cheaper implementation. Ordinary Qwen serving still evaluates the dense learned model.
@@ -12,6 +14,7 @@ For these qualified native paths, the major numerical computations are explicit,
 |---|---|---|
 | Native ISA execution | Instruction-byte decoding, contextual reads, three Mamba mixers, post MLPs, output heads and architectural commits | One R3 profile; CPU C/libm |
 | Native language execution | Prompt ingestion, all decoder layers, full vocabulary readout and greedy generation from owned K/V | Qwen2.5-1.5B-Instruct; C/CUDA/cuBLAS |
+| Compiled graph execution | Generic vector schedule, canonical parameter bindings, explicit convolution/scan state, own-token generation and suffix replay | PAN P113 through trusted FX; MambaSan-130m-instruct through canonical Mamba1 IR; CPU FP32 |
 | Persistent chat | Later user turns, exact token-prefix reuse, pending/delivered/consumed ownership, reset and continuation | Python tokenization outside numerical inference |
 | State control | ISA row checkpoints; Qwen token parents, nested rollback/commit and token abort | Profile/backend-specific recovery contracts |
 | Storage policies | Native FP32 cache, full byte cache, bounded retained rows and original BF16 weight storage with FP32 tiles | Explicit alternatives; approximation and storage changes remain separate |
@@ -22,6 +25,14 @@ For these qualified native paths, the major numerical computations are explicit,
 | Broader model understanding | FLUX, its Qwen3 conditioner/VAE, smaller-Qwen readout laws and learned multiplication | External workspace implementations, not additional C backends |
 
 The canonical runtime is this repository. `saturn/cmachine` is a workspace compatibility link to `cmachine/research`, whose live runtime aliases resolve back here. [Provenance](PROVENANCE.md) and [integration boundaries](INTEGRATION.md) describe the migration and external dependencies.
+
+## Operator-driven model intake
+
+[`tools/program.py`](../tools/program.py) lowers supported operations to the same 14-op dispatcher in [`src/program.c`](../src/program.c). It generates parameter banks, instruction/vector tables, state slots and exact source bindings. [`tools/inspect_program.py`](../tools/inspect_program.py) derives producers and consumers from that sealed map. An unsupported family or operation refuses; a new checkpoint within a supported grammar uses generated bindings. Trusted FX capture still needs a supplied source constructor. These are structural computations and dependencies, without inferred mathematical roles.
+
+The P113 PAN panel covers all 12,769 input pairs: source and C agree on every argmax, with maximum logit error `9.15527e-5`. Both answer 7,382 pairs correctly (57.8119%). The 24-layer Japanese instruction Mamba lowers to 363 instructions and 48 recurrent slots. Source and C generated the same 18 tokens across two prompts; maximum logit error was `1.43051e-5`, and each C suffix replay was exact. Both implementations gave incorrect answers to the two questions. Full observations, source identities and limitations are in the [intake evidence](../research/model_intake/evidence/).
+
+The graph executor owns recurrent floats and reports consumed rows/pending token separately. It does not implement the complete canonical StateIR transaction/lease API or the persistent Qwen chat protocol. Python performs verified native tokenization; C/libm and the explicitly selected native BLAS perform numerical inference. All learned dense maps remain. These results establish bounded execution fidelity, rather than improved reasoning, autonomous semantic discovery, native BF16 parity or speedup.
 
 ## Native Qwen computations
 

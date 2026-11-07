@@ -1,0 +1,5714 @@
+{
+  "schema": "tcm-program-symbol-table-v1",
+  "source_map_fingerprint": "96b25a3e8e865158436f923b151e1c05c7679d72de41119538d66a783ea1fa24",
+  "program_bundle_digest": "a607c66fd033071a844d0613c8e7da59cb7f6143b4e7234c5de4b8e6783d7dbc",
+  "source_identity": "adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b",
+  "symbols": [
+    {
+      "length": 1,
+      "name": "input",
+      "offset": 0,
+      "value_id": 0,
+      "producer": null,
+      "consumers": [
+        0
+      ]
+    },
+    {
+      "length": 768,
+      "name": "embedding.hidden",
+      "offset": 1,
+      "value_id": 1,
+      "producer": {
+        "pc": 0,
+        "kind": "embedding",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/embedding"
+      },
+      "consumers": [
+        1,
+        15
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.0.norm.hidden",
+      "offset": 769,
+      "value_id": 2,
+      "producer": {
+        "pc": 1,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.norm"
+      },
+      "consumers": [
+        2
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.0.mixer.packed_xz",
+      "offset": 1537,
+      "value_id": 3,
+      "producer": {
+        "pc": 2,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.in_proj"
+      },
+      "consumers": [
+        3,
+        4
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.x",
+      "offset": 4609,
+      "value_id": 4,
+      "producer": {
+        "pc": 3,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.split_xz"
+      },
+      "consumers": [
+        5
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.gate",
+      "offset": 6145,
+      "value_id": 5,
+      "producer": {
+        "pc": 4,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.split_xz"
+      },
+      "consumers": [
+        12
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.convolved",
+      "offset": 7681,
+      "value_id": 6,
+      "producer": {
+        "pc": 5,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.causal_conv"
+      },
+      "consumers": [
+        6,
+        11
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.0.mixer.packed_selection",
+      "offset": 9217,
+      "value_id": 7,
+      "producer": {
+        "pc": 6,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.x_proj"
+      },
+      "consumers": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.0.mixer.dt_input",
+      "offset": 9297,
+      "value_id": 8,
+      "producer": {
+        "pc": 7,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.split_selection"
+      },
+      "consumers": [
+        10
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.0.mixer.B",
+      "offset": 9345,
+      "value_id": 9,
+      "producer": {
+        "pc": 8,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.split_selection"
+      },
+      "consumers": [
+        11
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.0.mixer.C",
+      "offset": 9361,
+      "value_id": 10,
+      "producer": {
+        "pc": 9,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.split_selection"
+      },
+      "consumers": [
+        11
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.dt_pre_softplus",
+      "offset": 9377,
+      "value_id": 11,
+      "producer": {
+        "pc": 10,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.dt_proj"
+      },
+      "consumers": [
+        11
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.scan_output",
+      "offset": 10913,
+      "value_id": 12,
+      "producer": {
+        "pc": 11,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.selective_scan"
+      },
+      "consumers": [
+        13
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.activated_gate",
+      "offset": 12449,
+      "value_id": 13,
+      "producer": {
+        "pc": 12,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.gate_activation"
+      },
+      "consumers": [
+        13
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.0.mixer.gated_scan",
+      "offset": 13985,
+      "value_id": 14,
+      "producer": {
+        "pc": 13,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.gate_scan"
+      },
+      "consumers": [
+        14
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.0.mixer.output",
+      "offset": 15521,
+      "value_id": 15,
+      "producer": {
+        "pc": 14,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.mixer.out_proj"
+      },
+      "consumers": [
+        15
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.0.output",
+      "offset": 16289,
+      "value_id": 16,
+      "producer": {
+        "pc": 15,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.0.residual"
+      },
+      "consumers": [
+        16,
+        30
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.1.norm.hidden",
+      "offset": 17057,
+      "value_id": 17,
+      "producer": {
+        "pc": 16,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.norm"
+      },
+      "consumers": [
+        17
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.1.mixer.packed_xz",
+      "offset": 17825,
+      "value_id": 18,
+      "producer": {
+        "pc": 17,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.in_proj"
+      },
+      "consumers": [
+        18,
+        19
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.x",
+      "offset": 20897,
+      "value_id": 19,
+      "producer": {
+        "pc": 18,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.split_xz"
+      },
+      "consumers": [
+        20
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.gate",
+      "offset": 22433,
+      "value_id": 20,
+      "producer": {
+        "pc": 19,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.split_xz"
+      },
+      "consumers": [
+        27
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.convolved",
+      "offset": 23969,
+      "value_id": 21,
+      "producer": {
+        "pc": 20,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.causal_conv"
+      },
+      "consumers": [
+        21,
+        26
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.1.mixer.packed_selection",
+      "offset": 25505,
+      "value_id": 22,
+      "producer": {
+        "pc": 21,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.x_proj"
+      },
+      "consumers": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.1.mixer.dt_input",
+      "offset": 25585,
+      "value_id": 23,
+      "producer": {
+        "pc": 22,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.split_selection"
+      },
+      "consumers": [
+        25
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.1.mixer.B",
+      "offset": 25633,
+      "value_id": 24,
+      "producer": {
+        "pc": 23,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.split_selection"
+      },
+      "consumers": [
+        26
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.1.mixer.C",
+      "offset": 25649,
+      "value_id": 25,
+      "producer": {
+        "pc": 24,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.split_selection"
+      },
+      "consumers": [
+        26
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.dt_pre_softplus",
+      "offset": 25665,
+      "value_id": 26,
+      "producer": {
+        "pc": 25,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.dt_proj"
+      },
+      "consumers": [
+        26
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.scan_output",
+      "offset": 27201,
+      "value_id": 27,
+      "producer": {
+        "pc": 26,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.selective_scan"
+      },
+      "consumers": [
+        28
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.activated_gate",
+      "offset": 28737,
+      "value_id": 28,
+      "producer": {
+        "pc": 27,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.gate_activation"
+      },
+      "consumers": [
+        28
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.1.mixer.gated_scan",
+      "offset": 30273,
+      "value_id": 29,
+      "producer": {
+        "pc": 28,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.gate_scan"
+      },
+      "consumers": [
+        29
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.1.mixer.output",
+      "offset": 31809,
+      "value_id": 30,
+      "producer": {
+        "pc": 29,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.mixer.out_proj"
+      },
+      "consumers": [
+        30
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.1.output",
+      "offset": 32577,
+      "value_id": 31,
+      "producer": {
+        "pc": 30,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.1.residual"
+      },
+      "consumers": [
+        31,
+        45
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.2.norm.hidden",
+      "offset": 33345,
+      "value_id": 32,
+      "producer": {
+        "pc": 31,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.norm"
+      },
+      "consumers": [
+        32
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.2.mixer.packed_xz",
+      "offset": 34113,
+      "value_id": 33,
+      "producer": {
+        "pc": 32,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.in_proj"
+      },
+      "consumers": [
+        33,
+        34
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.x",
+      "offset": 37185,
+      "value_id": 34,
+      "producer": {
+        "pc": 33,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.split_xz"
+      },
+      "consumers": [
+        35
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.gate",
+      "offset": 38721,
+      "value_id": 35,
+      "producer": {
+        "pc": 34,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.split_xz"
+      },
+      "consumers": [
+        42
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.convolved",
+      "offset": 40257,
+      "value_id": 36,
+      "producer": {
+        "pc": 35,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.causal_conv"
+      },
+      "consumers": [
+        36,
+        41
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.2.mixer.packed_selection",
+      "offset": 41793,
+      "value_id": 37,
+      "producer": {
+        "pc": 36,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.x_proj"
+      },
+      "consumers": [
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.2.mixer.dt_input",
+      "offset": 41873,
+      "value_id": 38,
+      "producer": {
+        "pc": 37,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.split_selection"
+      },
+      "consumers": [
+        40
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.2.mixer.B",
+      "offset": 41921,
+      "value_id": 39,
+      "producer": {
+        "pc": 38,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.split_selection"
+      },
+      "consumers": [
+        41
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.2.mixer.C",
+      "offset": 41937,
+      "value_id": 40,
+      "producer": {
+        "pc": 39,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.split_selection"
+      },
+      "consumers": [
+        41
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.dt_pre_softplus",
+      "offset": 41953,
+      "value_id": 41,
+      "producer": {
+        "pc": 40,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.dt_proj"
+      },
+      "consumers": [
+        41
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.scan_output",
+      "offset": 43489,
+      "value_id": 42,
+      "producer": {
+        "pc": 41,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.selective_scan"
+      },
+      "consumers": [
+        43
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.activated_gate",
+      "offset": 45025,
+      "value_id": 43,
+      "producer": {
+        "pc": 42,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.gate_activation"
+      },
+      "consumers": [
+        43
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.2.mixer.gated_scan",
+      "offset": 46561,
+      "value_id": 44,
+      "producer": {
+        "pc": 43,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.gate_scan"
+      },
+      "consumers": [
+        44
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.2.mixer.output",
+      "offset": 48097,
+      "value_id": 45,
+      "producer": {
+        "pc": 44,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.mixer.out_proj"
+      },
+      "consumers": [
+        45
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.2.output",
+      "offset": 48865,
+      "value_id": 46,
+      "producer": {
+        "pc": 45,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.2.residual"
+      },
+      "consumers": [
+        46,
+        60
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.3.norm.hidden",
+      "offset": 49633,
+      "value_id": 47,
+      "producer": {
+        "pc": 46,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.norm"
+      },
+      "consumers": [
+        47
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.3.mixer.packed_xz",
+      "offset": 50401,
+      "value_id": 48,
+      "producer": {
+        "pc": 47,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.in_proj"
+      },
+      "consumers": [
+        48,
+        49
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.x",
+      "offset": 53473,
+      "value_id": 49,
+      "producer": {
+        "pc": 48,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.split_xz"
+      },
+      "consumers": [
+        50
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.gate",
+      "offset": 55009,
+      "value_id": 50,
+      "producer": {
+        "pc": 49,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.split_xz"
+      },
+      "consumers": [
+        57
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.convolved",
+      "offset": 56545,
+      "value_id": 51,
+      "producer": {
+        "pc": 50,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.causal_conv"
+      },
+      "consumers": [
+        51,
+        56
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.3.mixer.packed_selection",
+      "offset": 58081,
+      "value_id": 52,
+      "producer": {
+        "pc": 51,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.x_proj"
+      },
+      "consumers": [
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.3.mixer.dt_input",
+      "offset": 58161,
+      "value_id": 53,
+      "producer": {
+        "pc": 52,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.split_selection"
+      },
+      "consumers": [
+        55
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.3.mixer.B",
+      "offset": 58209,
+      "value_id": 54,
+      "producer": {
+        "pc": 53,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.split_selection"
+      },
+      "consumers": [
+        56
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.3.mixer.C",
+      "offset": 58225,
+      "value_id": 55,
+      "producer": {
+        "pc": 54,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.split_selection"
+      },
+      "consumers": [
+        56
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.dt_pre_softplus",
+      "offset": 58241,
+      "value_id": 56,
+      "producer": {
+        "pc": 55,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.dt_proj"
+      },
+      "consumers": [
+        56
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.scan_output",
+      "offset": 59777,
+      "value_id": 57,
+      "producer": {
+        "pc": 56,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.selective_scan"
+      },
+      "consumers": [
+        58
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.activated_gate",
+      "offset": 61313,
+      "value_id": 58,
+      "producer": {
+        "pc": 57,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.gate_activation"
+      },
+      "consumers": [
+        58
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.3.mixer.gated_scan",
+      "offset": 62849,
+      "value_id": 59,
+      "producer": {
+        "pc": 58,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.gate_scan"
+      },
+      "consumers": [
+        59
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.3.mixer.output",
+      "offset": 64385,
+      "value_id": 60,
+      "producer": {
+        "pc": 59,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.mixer.out_proj"
+      },
+      "consumers": [
+        60
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.3.output",
+      "offset": 65153,
+      "value_id": 61,
+      "producer": {
+        "pc": 60,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.3.residual"
+      },
+      "consumers": [
+        61,
+        75
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.4.norm.hidden",
+      "offset": 65921,
+      "value_id": 62,
+      "producer": {
+        "pc": 61,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.norm"
+      },
+      "consumers": [
+        62
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.4.mixer.packed_xz",
+      "offset": 66689,
+      "value_id": 63,
+      "producer": {
+        "pc": 62,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.in_proj"
+      },
+      "consumers": [
+        63,
+        64
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.x",
+      "offset": 69761,
+      "value_id": 64,
+      "producer": {
+        "pc": 63,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.split_xz"
+      },
+      "consumers": [
+        65
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.gate",
+      "offset": 71297,
+      "value_id": 65,
+      "producer": {
+        "pc": 64,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.split_xz"
+      },
+      "consumers": [
+        72
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.convolved",
+      "offset": 72833,
+      "value_id": 66,
+      "producer": {
+        "pc": 65,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.causal_conv"
+      },
+      "consumers": [
+        66,
+        71
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.4.mixer.packed_selection",
+      "offset": 74369,
+      "value_id": 67,
+      "producer": {
+        "pc": 66,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.x_proj"
+      },
+      "consumers": [
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.4.mixer.dt_input",
+      "offset": 74449,
+      "value_id": 68,
+      "producer": {
+        "pc": 67,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.split_selection"
+      },
+      "consumers": [
+        70
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.4.mixer.B",
+      "offset": 74497,
+      "value_id": 69,
+      "producer": {
+        "pc": 68,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.split_selection"
+      },
+      "consumers": [
+        71
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.4.mixer.C",
+      "offset": 74513,
+      "value_id": 70,
+      "producer": {
+        "pc": 69,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.split_selection"
+      },
+      "consumers": [
+        71
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.dt_pre_softplus",
+      "offset": 74529,
+      "value_id": 71,
+      "producer": {
+        "pc": 70,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.dt_proj"
+      },
+      "consumers": [
+        71
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.scan_output",
+      "offset": 76065,
+      "value_id": 72,
+      "producer": {
+        "pc": 71,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.selective_scan"
+      },
+      "consumers": [
+        73
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.activated_gate",
+      "offset": 77601,
+      "value_id": 73,
+      "producer": {
+        "pc": 72,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.gate_activation"
+      },
+      "consumers": [
+        73
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.4.mixer.gated_scan",
+      "offset": 79137,
+      "value_id": 74,
+      "producer": {
+        "pc": 73,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.gate_scan"
+      },
+      "consumers": [
+        74
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.4.mixer.output",
+      "offset": 80673,
+      "value_id": 75,
+      "producer": {
+        "pc": 74,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.mixer.out_proj"
+      },
+      "consumers": [
+        75
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.4.output",
+      "offset": 81441,
+      "value_id": 76,
+      "producer": {
+        "pc": 75,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.4.residual"
+      },
+      "consumers": [
+        76,
+        90
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.5.norm.hidden",
+      "offset": 82209,
+      "value_id": 77,
+      "producer": {
+        "pc": 76,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.norm"
+      },
+      "consumers": [
+        77
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.5.mixer.packed_xz",
+      "offset": 82977,
+      "value_id": 78,
+      "producer": {
+        "pc": 77,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.in_proj"
+      },
+      "consumers": [
+        78,
+        79
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.x",
+      "offset": 86049,
+      "value_id": 79,
+      "producer": {
+        "pc": 78,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.split_xz"
+      },
+      "consumers": [
+        80
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.gate",
+      "offset": 87585,
+      "value_id": 80,
+      "producer": {
+        "pc": 79,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.split_xz"
+      },
+      "consumers": [
+        87
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.convolved",
+      "offset": 89121,
+      "value_id": 81,
+      "producer": {
+        "pc": 80,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.causal_conv"
+      },
+      "consumers": [
+        81,
+        86
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.5.mixer.packed_selection",
+      "offset": 90657,
+      "value_id": 82,
+      "producer": {
+        "pc": 81,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.x_proj"
+      },
+      "consumers": [
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.5.mixer.dt_input",
+      "offset": 90737,
+      "value_id": 83,
+      "producer": {
+        "pc": 82,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.split_selection"
+      },
+      "consumers": [
+        85
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.5.mixer.B",
+      "offset": 90785,
+      "value_id": 84,
+      "producer": {
+        "pc": 83,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.split_selection"
+      },
+      "consumers": [
+        86
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.5.mixer.C",
+      "offset": 90801,
+      "value_id": 85,
+      "producer": {
+        "pc": 84,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.split_selection"
+      },
+      "consumers": [
+        86
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.dt_pre_softplus",
+      "offset": 90817,
+      "value_id": 86,
+      "producer": {
+        "pc": 85,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.dt_proj"
+      },
+      "consumers": [
+        86
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.scan_output",
+      "offset": 92353,
+      "value_id": 87,
+      "producer": {
+        "pc": 86,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.selective_scan"
+      },
+      "consumers": [
+        88
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.activated_gate",
+      "offset": 93889,
+      "value_id": 88,
+      "producer": {
+        "pc": 87,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.gate_activation"
+      },
+      "consumers": [
+        88
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.5.mixer.gated_scan",
+      "offset": 95425,
+      "value_id": 89,
+      "producer": {
+        "pc": 88,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.gate_scan"
+      },
+      "consumers": [
+        89
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.5.mixer.output",
+      "offset": 96961,
+      "value_id": 90,
+      "producer": {
+        "pc": 89,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.mixer.out_proj"
+      },
+      "consumers": [
+        90
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.5.output",
+      "offset": 97729,
+      "value_id": 91,
+      "producer": {
+        "pc": 90,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.5.residual"
+      },
+      "consumers": [
+        91,
+        105
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.6.norm.hidden",
+      "offset": 98497,
+      "value_id": 92,
+      "producer": {
+        "pc": 91,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.norm"
+      },
+      "consumers": [
+        92
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.6.mixer.packed_xz",
+      "offset": 99265,
+      "value_id": 93,
+      "producer": {
+        "pc": 92,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.in_proj"
+      },
+      "consumers": [
+        93,
+        94
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.x",
+      "offset": 102337,
+      "value_id": 94,
+      "producer": {
+        "pc": 93,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.split_xz"
+      },
+      "consumers": [
+        95
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.gate",
+      "offset": 103873,
+      "value_id": 95,
+      "producer": {
+        "pc": 94,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.split_xz"
+      },
+      "consumers": [
+        102
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.convolved",
+      "offset": 105409,
+      "value_id": 96,
+      "producer": {
+        "pc": 95,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.causal_conv"
+      },
+      "consumers": [
+        96,
+        101
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.6.mixer.packed_selection",
+      "offset": 106945,
+      "value_id": 97,
+      "producer": {
+        "pc": 96,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.x_proj"
+      },
+      "consumers": [
+        97,
+        98,
+        99
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.6.mixer.dt_input",
+      "offset": 107025,
+      "value_id": 98,
+      "producer": {
+        "pc": 97,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.split_selection"
+      },
+      "consumers": [
+        100
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.6.mixer.B",
+      "offset": 107073,
+      "value_id": 99,
+      "producer": {
+        "pc": 98,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.split_selection"
+      },
+      "consumers": [
+        101
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.6.mixer.C",
+      "offset": 107089,
+      "value_id": 100,
+      "producer": {
+        "pc": 99,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.split_selection"
+      },
+      "consumers": [
+        101
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.dt_pre_softplus",
+      "offset": 107105,
+      "value_id": 101,
+      "producer": {
+        "pc": 100,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.dt_proj"
+      },
+      "consumers": [
+        101
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.scan_output",
+      "offset": 108641,
+      "value_id": 102,
+      "producer": {
+        "pc": 101,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.selective_scan"
+      },
+      "consumers": [
+        103
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.activated_gate",
+      "offset": 110177,
+      "value_id": 103,
+      "producer": {
+        "pc": 102,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.gate_activation"
+      },
+      "consumers": [
+        103
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.6.mixer.gated_scan",
+      "offset": 111713,
+      "value_id": 104,
+      "producer": {
+        "pc": 103,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.gate_scan"
+      },
+      "consumers": [
+        104
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.6.mixer.output",
+      "offset": 113249,
+      "value_id": 105,
+      "producer": {
+        "pc": 104,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.mixer.out_proj"
+      },
+      "consumers": [
+        105
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.6.output",
+      "offset": 114017,
+      "value_id": 106,
+      "producer": {
+        "pc": 105,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.6.residual"
+      },
+      "consumers": [
+        106,
+        120
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.7.norm.hidden",
+      "offset": 114785,
+      "value_id": 107,
+      "producer": {
+        "pc": 106,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.norm"
+      },
+      "consumers": [
+        107
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.7.mixer.packed_xz",
+      "offset": 115553,
+      "value_id": 108,
+      "producer": {
+        "pc": 107,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.in_proj"
+      },
+      "consumers": [
+        108,
+        109
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.x",
+      "offset": 118625,
+      "value_id": 109,
+      "producer": {
+        "pc": 108,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.split_xz"
+      },
+      "consumers": [
+        110
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.gate",
+      "offset": 120161,
+      "value_id": 110,
+      "producer": {
+        "pc": 109,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.split_xz"
+      },
+      "consumers": [
+        117
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.convolved",
+      "offset": 121697,
+      "value_id": 111,
+      "producer": {
+        "pc": 110,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.causal_conv"
+      },
+      "consumers": [
+        111,
+        116
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.7.mixer.packed_selection",
+      "offset": 123233,
+      "value_id": 112,
+      "producer": {
+        "pc": 111,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.x_proj"
+      },
+      "consumers": [
+        112,
+        113,
+        114
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.7.mixer.dt_input",
+      "offset": 123313,
+      "value_id": 113,
+      "producer": {
+        "pc": 112,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.split_selection"
+      },
+      "consumers": [
+        115
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.7.mixer.B",
+      "offset": 123361,
+      "value_id": 114,
+      "producer": {
+        "pc": 113,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.split_selection"
+      },
+      "consumers": [
+        116
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.7.mixer.C",
+      "offset": 123377,
+      "value_id": 115,
+      "producer": {
+        "pc": 114,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.split_selection"
+      },
+      "consumers": [
+        116
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.dt_pre_softplus",
+      "offset": 123393,
+      "value_id": 116,
+      "producer": {
+        "pc": 115,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.dt_proj"
+      },
+      "consumers": [
+        116
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.scan_output",
+      "offset": 124929,
+      "value_id": 117,
+      "producer": {
+        "pc": 116,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.selective_scan"
+      },
+      "consumers": [
+        118
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.activated_gate",
+      "offset": 126465,
+      "value_id": 118,
+      "producer": {
+        "pc": 117,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.gate_activation"
+      },
+      "consumers": [
+        118
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.7.mixer.gated_scan",
+      "offset": 128001,
+      "value_id": 119,
+      "producer": {
+        "pc": 118,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.gate_scan"
+      },
+      "consumers": [
+        119
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.7.mixer.output",
+      "offset": 129537,
+      "value_id": 120,
+      "producer": {
+        "pc": 119,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.mixer.out_proj"
+      },
+      "consumers": [
+        120
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.7.output",
+      "offset": 130305,
+      "value_id": 121,
+      "producer": {
+        "pc": 120,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.7.residual"
+      },
+      "consumers": [
+        121,
+        135
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.8.norm.hidden",
+      "offset": 131073,
+      "value_id": 122,
+      "producer": {
+        "pc": 121,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.norm"
+      },
+      "consumers": [
+        122
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.8.mixer.packed_xz",
+      "offset": 131841,
+      "value_id": 123,
+      "producer": {
+        "pc": 122,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.in_proj"
+      },
+      "consumers": [
+        123,
+        124
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.x",
+      "offset": 134913,
+      "value_id": 124,
+      "producer": {
+        "pc": 123,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.split_xz"
+      },
+      "consumers": [
+        125
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.gate",
+      "offset": 136449,
+      "value_id": 125,
+      "producer": {
+        "pc": 124,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.split_xz"
+      },
+      "consumers": [
+        132
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.convolved",
+      "offset": 137985,
+      "value_id": 126,
+      "producer": {
+        "pc": 125,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.causal_conv"
+      },
+      "consumers": [
+        126,
+        131
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.8.mixer.packed_selection",
+      "offset": 139521,
+      "value_id": 127,
+      "producer": {
+        "pc": 126,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.x_proj"
+      },
+      "consumers": [
+        127,
+        128,
+        129
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.8.mixer.dt_input",
+      "offset": 139601,
+      "value_id": 128,
+      "producer": {
+        "pc": 127,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.split_selection"
+      },
+      "consumers": [
+        130
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.8.mixer.B",
+      "offset": 139649,
+      "value_id": 129,
+      "producer": {
+        "pc": 128,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.split_selection"
+      },
+      "consumers": [
+        131
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.8.mixer.C",
+      "offset": 139665,
+      "value_id": 130,
+      "producer": {
+        "pc": 129,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.split_selection"
+      },
+      "consumers": [
+        131
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.dt_pre_softplus",
+      "offset": 139681,
+      "value_id": 131,
+      "producer": {
+        "pc": 130,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.dt_proj"
+      },
+      "consumers": [
+        131
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.scan_output",
+      "offset": 141217,
+      "value_id": 132,
+      "producer": {
+        "pc": 131,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.selective_scan"
+      },
+      "consumers": [
+        133
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.activated_gate",
+      "offset": 142753,
+      "value_id": 133,
+      "producer": {
+        "pc": 132,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.gate_activation"
+      },
+      "consumers": [
+        133
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.8.mixer.gated_scan",
+      "offset": 144289,
+      "value_id": 134,
+      "producer": {
+        "pc": 133,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.gate_scan"
+      },
+      "consumers": [
+        134
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.8.mixer.output",
+      "offset": 145825,
+      "value_id": 135,
+      "producer": {
+        "pc": 134,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.mixer.out_proj"
+      },
+      "consumers": [
+        135
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.8.output",
+      "offset": 146593,
+      "value_id": 136,
+      "producer": {
+        "pc": 135,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.8.residual"
+      },
+      "consumers": [
+        136,
+        150
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.9.norm.hidden",
+      "offset": 147361,
+      "value_id": 137,
+      "producer": {
+        "pc": 136,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.norm"
+      },
+      "consumers": [
+        137
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.9.mixer.packed_xz",
+      "offset": 148129,
+      "value_id": 138,
+      "producer": {
+        "pc": 137,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.in_proj"
+      },
+      "consumers": [
+        138,
+        139
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.x",
+      "offset": 151201,
+      "value_id": 139,
+      "producer": {
+        "pc": 138,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.split_xz"
+      },
+      "consumers": [
+        140
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.gate",
+      "offset": 152737,
+      "value_id": 140,
+      "producer": {
+        "pc": 139,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.split_xz"
+      },
+      "consumers": [
+        147
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.convolved",
+      "offset": 154273,
+      "value_id": 141,
+      "producer": {
+        "pc": 140,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.causal_conv"
+      },
+      "consumers": [
+        141,
+        146
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.9.mixer.packed_selection",
+      "offset": 155809,
+      "value_id": 142,
+      "producer": {
+        "pc": 141,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.x_proj"
+      },
+      "consumers": [
+        142,
+        143,
+        144
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.9.mixer.dt_input",
+      "offset": 155889,
+      "value_id": 143,
+      "producer": {
+        "pc": 142,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.split_selection"
+      },
+      "consumers": [
+        145
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.9.mixer.B",
+      "offset": 155937,
+      "value_id": 144,
+      "producer": {
+        "pc": 143,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.split_selection"
+      },
+      "consumers": [
+        146
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.9.mixer.C",
+      "offset": 155953,
+      "value_id": 145,
+      "producer": {
+        "pc": 144,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.split_selection"
+      },
+      "consumers": [
+        146
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.dt_pre_softplus",
+      "offset": 155969,
+      "value_id": 146,
+      "producer": {
+        "pc": 145,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.dt_proj"
+      },
+      "consumers": [
+        146
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.scan_output",
+      "offset": 157505,
+      "value_id": 147,
+      "producer": {
+        "pc": 146,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.selective_scan"
+      },
+      "consumers": [
+        148
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.activated_gate",
+      "offset": 159041,
+      "value_id": 148,
+      "producer": {
+        "pc": 147,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.gate_activation"
+      },
+      "consumers": [
+        148
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.9.mixer.gated_scan",
+      "offset": 160577,
+      "value_id": 149,
+      "producer": {
+        "pc": 148,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.gate_scan"
+      },
+      "consumers": [
+        149
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.9.mixer.output",
+      "offset": 162113,
+      "value_id": 150,
+      "producer": {
+        "pc": 149,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.mixer.out_proj"
+      },
+      "consumers": [
+        150
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.9.output",
+      "offset": 162881,
+      "value_id": 151,
+      "producer": {
+        "pc": 150,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.9.residual"
+      },
+      "consumers": [
+        151,
+        165
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.10.norm.hidden",
+      "offset": 163649,
+      "value_id": 152,
+      "producer": {
+        "pc": 151,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.norm"
+      },
+      "consumers": [
+        152
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.10.mixer.packed_xz",
+      "offset": 164417,
+      "value_id": 153,
+      "producer": {
+        "pc": 152,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.in_proj"
+      },
+      "consumers": [
+        153,
+        154
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.x",
+      "offset": 167489,
+      "value_id": 154,
+      "producer": {
+        "pc": 153,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.split_xz"
+      },
+      "consumers": [
+        155
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.gate",
+      "offset": 169025,
+      "value_id": 155,
+      "producer": {
+        "pc": 154,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.split_xz"
+      },
+      "consumers": [
+        162
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.convolved",
+      "offset": 170561,
+      "value_id": 156,
+      "producer": {
+        "pc": 155,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.causal_conv"
+      },
+      "consumers": [
+        156,
+        161
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.10.mixer.packed_selection",
+      "offset": 172097,
+      "value_id": 157,
+      "producer": {
+        "pc": 156,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.x_proj"
+      },
+      "consumers": [
+        157,
+        158,
+        159
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.10.mixer.dt_input",
+      "offset": 172177,
+      "value_id": 158,
+      "producer": {
+        "pc": 157,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.split_selection"
+      },
+      "consumers": [
+        160
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.10.mixer.B",
+      "offset": 172225,
+      "value_id": 159,
+      "producer": {
+        "pc": 158,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.split_selection"
+      },
+      "consumers": [
+        161
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.10.mixer.C",
+      "offset": 172241,
+      "value_id": 160,
+      "producer": {
+        "pc": 159,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.split_selection"
+      },
+      "consumers": [
+        161
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.dt_pre_softplus",
+      "offset": 172257,
+      "value_id": 161,
+      "producer": {
+        "pc": 160,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.dt_proj"
+      },
+      "consumers": [
+        161
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.scan_output",
+      "offset": 173793,
+      "value_id": 162,
+      "producer": {
+        "pc": 161,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.selective_scan"
+      },
+      "consumers": [
+        163
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.activated_gate",
+      "offset": 175329,
+      "value_id": 163,
+      "producer": {
+        "pc": 162,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.gate_activation"
+      },
+      "consumers": [
+        163
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.10.mixer.gated_scan",
+      "offset": 176865,
+      "value_id": 164,
+      "producer": {
+        "pc": 163,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.gate_scan"
+      },
+      "consumers": [
+        164
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.10.mixer.output",
+      "offset": 178401,
+      "value_id": 165,
+      "producer": {
+        "pc": 164,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.mixer.out_proj"
+      },
+      "consumers": [
+        165
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.10.output",
+      "offset": 179169,
+      "value_id": 166,
+      "producer": {
+        "pc": 165,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.10.residual"
+      },
+      "consumers": [
+        166,
+        180
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.11.norm.hidden",
+      "offset": 179937,
+      "value_id": 167,
+      "producer": {
+        "pc": 166,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.norm"
+      },
+      "consumers": [
+        167
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.11.mixer.packed_xz",
+      "offset": 180705,
+      "value_id": 168,
+      "producer": {
+        "pc": 167,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.in_proj"
+      },
+      "consumers": [
+        168,
+        169
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.x",
+      "offset": 183777,
+      "value_id": 169,
+      "producer": {
+        "pc": 168,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.split_xz"
+      },
+      "consumers": [
+        170
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.gate",
+      "offset": 185313,
+      "value_id": 170,
+      "producer": {
+        "pc": 169,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.split_xz"
+      },
+      "consumers": [
+        177
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.convolved",
+      "offset": 186849,
+      "value_id": 171,
+      "producer": {
+        "pc": 170,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.causal_conv"
+      },
+      "consumers": [
+        171,
+        176
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.11.mixer.packed_selection",
+      "offset": 188385,
+      "value_id": 172,
+      "producer": {
+        "pc": 171,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.x_proj"
+      },
+      "consumers": [
+        172,
+        173,
+        174
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.11.mixer.dt_input",
+      "offset": 188465,
+      "value_id": 173,
+      "producer": {
+        "pc": 172,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.split_selection"
+      },
+      "consumers": [
+        175
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.11.mixer.B",
+      "offset": 188513,
+      "value_id": 174,
+      "producer": {
+        "pc": 173,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.split_selection"
+      },
+      "consumers": [
+        176
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.11.mixer.C",
+      "offset": 188529,
+      "value_id": 175,
+      "producer": {
+        "pc": 174,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.split_selection"
+      },
+      "consumers": [
+        176
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.dt_pre_softplus",
+      "offset": 188545,
+      "value_id": 176,
+      "producer": {
+        "pc": 175,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.dt_proj"
+      },
+      "consumers": [
+        176
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.scan_output",
+      "offset": 190081,
+      "value_id": 177,
+      "producer": {
+        "pc": 176,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.selective_scan"
+      },
+      "consumers": [
+        178
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.activated_gate",
+      "offset": 191617,
+      "value_id": 178,
+      "producer": {
+        "pc": 177,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.gate_activation"
+      },
+      "consumers": [
+        178
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.11.mixer.gated_scan",
+      "offset": 193153,
+      "value_id": 179,
+      "producer": {
+        "pc": 178,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.gate_scan"
+      },
+      "consumers": [
+        179
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.11.mixer.output",
+      "offset": 194689,
+      "value_id": 180,
+      "producer": {
+        "pc": 179,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.mixer.out_proj"
+      },
+      "consumers": [
+        180
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.11.output",
+      "offset": 195457,
+      "value_id": 181,
+      "producer": {
+        "pc": 180,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.11.residual"
+      },
+      "consumers": [
+        181,
+        195
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.12.norm.hidden",
+      "offset": 196225,
+      "value_id": 182,
+      "producer": {
+        "pc": 181,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.norm"
+      },
+      "consumers": [
+        182
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.12.mixer.packed_xz",
+      "offset": 196993,
+      "value_id": 183,
+      "producer": {
+        "pc": 182,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.in_proj"
+      },
+      "consumers": [
+        183,
+        184
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.x",
+      "offset": 200065,
+      "value_id": 184,
+      "producer": {
+        "pc": 183,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.split_xz"
+      },
+      "consumers": [
+        185
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.gate",
+      "offset": 201601,
+      "value_id": 185,
+      "producer": {
+        "pc": 184,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.split_xz"
+      },
+      "consumers": [
+        192
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.convolved",
+      "offset": 203137,
+      "value_id": 186,
+      "producer": {
+        "pc": 185,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.causal_conv"
+      },
+      "consumers": [
+        186,
+        191
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.12.mixer.packed_selection",
+      "offset": 204673,
+      "value_id": 187,
+      "producer": {
+        "pc": 186,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.x_proj"
+      },
+      "consumers": [
+        187,
+        188,
+        189
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.12.mixer.dt_input",
+      "offset": 204753,
+      "value_id": 188,
+      "producer": {
+        "pc": 187,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.split_selection"
+      },
+      "consumers": [
+        190
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.12.mixer.B",
+      "offset": 204801,
+      "value_id": 189,
+      "producer": {
+        "pc": 188,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.split_selection"
+      },
+      "consumers": [
+        191
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.12.mixer.C",
+      "offset": 204817,
+      "value_id": 190,
+      "producer": {
+        "pc": 189,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.split_selection"
+      },
+      "consumers": [
+        191
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.dt_pre_softplus",
+      "offset": 204833,
+      "value_id": 191,
+      "producer": {
+        "pc": 190,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.dt_proj"
+      },
+      "consumers": [
+        191
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.scan_output",
+      "offset": 206369,
+      "value_id": 192,
+      "producer": {
+        "pc": 191,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.selective_scan"
+      },
+      "consumers": [
+        193
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.activated_gate",
+      "offset": 207905,
+      "value_id": 193,
+      "producer": {
+        "pc": 192,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.gate_activation"
+      },
+      "consumers": [
+        193
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.12.mixer.gated_scan",
+      "offset": 209441,
+      "value_id": 194,
+      "producer": {
+        "pc": 193,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.gate_scan"
+      },
+      "consumers": [
+        194
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.12.mixer.output",
+      "offset": 210977,
+      "value_id": 195,
+      "producer": {
+        "pc": 194,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.mixer.out_proj"
+      },
+      "consumers": [
+        195
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.12.output",
+      "offset": 211745,
+      "value_id": 196,
+      "producer": {
+        "pc": 195,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.12.residual"
+      },
+      "consumers": [
+        196,
+        210
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.13.norm.hidden",
+      "offset": 212513,
+      "value_id": 197,
+      "producer": {
+        "pc": 196,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.norm"
+      },
+      "consumers": [
+        197
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.13.mixer.packed_xz",
+      "offset": 213281,
+      "value_id": 198,
+      "producer": {
+        "pc": 197,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.in_proj"
+      },
+      "consumers": [
+        198,
+        199
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.x",
+      "offset": 216353,
+      "value_id": 199,
+      "producer": {
+        "pc": 198,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.split_xz"
+      },
+      "consumers": [
+        200
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.gate",
+      "offset": 217889,
+      "value_id": 200,
+      "producer": {
+        "pc": 199,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.split_xz"
+      },
+      "consumers": [
+        207
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.convolved",
+      "offset": 219425,
+      "value_id": 201,
+      "producer": {
+        "pc": 200,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.causal_conv"
+      },
+      "consumers": [
+        201,
+        206
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.13.mixer.packed_selection",
+      "offset": 220961,
+      "value_id": 202,
+      "producer": {
+        "pc": 201,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.x_proj"
+      },
+      "consumers": [
+        202,
+        203,
+        204
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.13.mixer.dt_input",
+      "offset": 221041,
+      "value_id": 203,
+      "producer": {
+        "pc": 202,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.split_selection"
+      },
+      "consumers": [
+        205
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.13.mixer.B",
+      "offset": 221089,
+      "value_id": 204,
+      "producer": {
+        "pc": 203,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.split_selection"
+      },
+      "consumers": [
+        206
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.13.mixer.C",
+      "offset": 221105,
+      "value_id": 205,
+      "producer": {
+        "pc": 204,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.split_selection"
+      },
+      "consumers": [
+        206
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.dt_pre_softplus",
+      "offset": 221121,
+      "value_id": 206,
+      "producer": {
+        "pc": 205,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.dt_proj"
+      },
+      "consumers": [
+        206
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.scan_output",
+      "offset": 222657,
+      "value_id": 207,
+      "producer": {
+        "pc": 206,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.selective_scan"
+      },
+      "consumers": [
+        208
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.activated_gate",
+      "offset": 224193,
+      "value_id": 208,
+      "producer": {
+        "pc": 207,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.gate_activation"
+      },
+      "consumers": [
+        208
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.13.mixer.gated_scan",
+      "offset": 225729,
+      "value_id": 209,
+      "producer": {
+        "pc": 208,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.gate_scan"
+      },
+      "consumers": [
+        209
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.13.mixer.output",
+      "offset": 227265,
+      "value_id": 210,
+      "producer": {
+        "pc": 209,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.mixer.out_proj"
+      },
+      "consumers": [
+        210
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.13.output",
+      "offset": 228033,
+      "value_id": 211,
+      "producer": {
+        "pc": 210,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.13.residual"
+      },
+      "consumers": [
+        211,
+        225
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.14.norm.hidden",
+      "offset": 228801,
+      "value_id": 212,
+      "producer": {
+        "pc": 211,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.norm"
+      },
+      "consumers": [
+        212
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.14.mixer.packed_xz",
+      "offset": 229569,
+      "value_id": 213,
+      "producer": {
+        "pc": 212,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.in_proj"
+      },
+      "consumers": [
+        213,
+        214
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.x",
+      "offset": 232641,
+      "value_id": 214,
+      "producer": {
+        "pc": 213,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.split_xz"
+      },
+      "consumers": [
+        215
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.gate",
+      "offset": 234177,
+      "value_id": 215,
+      "producer": {
+        "pc": 214,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.split_xz"
+      },
+      "consumers": [
+        222
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.convolved",
+      "offset": 235713,
+      "value_id": 216,
+      "producer": {
+        "pc": 215,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.causal_conv"
+      },
+      "consumers": [
+        216,
+        221
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.14.mixer.packed_selection",
+      "offset": 237249,
+      "value_id": 217,
+      "producer": {
+        "pc": 216,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.x_proj"
+      },
+      "consumers": [
+        217,
+        218,
+        219
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.14.mixer.dt_input",
+      "offset": 237329,
+      "value_id": 218,
+      "producer": {
+        "pc": 217,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.split_selection"
+      },
+      "consumers": [
+        220
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.14.mixer.B",
+      "offset": 237377,
+      "value_id": 219,
+      "producer": {
+        "pc": 218,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.split_selection"
+      },
+      "consumers": [
+        221
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.14.mixer.C",
+      "offset": 237393,
+      "value_id": 220,
+      "producer": {
+        "pc": 219,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.split_selection"
+      },
+      "consumers": [
+        221
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.dt_pre_softplus",
+      "offset": 237409,
+      "value_id": 221,
+      "producer": {
+        "pc": 220,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.dt_proj"
+      },
+      "consumers": [
+        221
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.scan_output",
+      "offset": 238945,
+      "value_id": 222,
+      "producer": {
+        "pc": 221,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.selective_scan"
+      },
+      "consumers": [
+        223
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.activated_gate",
+      "offset": 240481,
+      "value_id": 223,
+      "producer": {
+        "pc": 222,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.gate_activation"
+      },
+      "consumers": [
+        223
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.14.mixer.gated_scan",
+      "offset": 242017,
+      "value_id": 224,
+      "producer": {
+        "pc": 223,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.gate_scan"
+      },
+      "consumers": [
+        224
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.14.mixer.output",
+      "offset": 243553,
+      "value_id": 225,
+      "producer": {
+        "pc": 224,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.mixer.out_proj"
+      },
+      "consumers": [
+        225
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.14.output",
+      "offset": 244321,
+      "value_id": 226,
+      "producer": {
+        "pc": 225,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.14.residual"
+      },
+      "consumers": [
+        226,
+        240
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.15.norm.hidden",
+      "offset": 245089,
+      "value_id": 227,
+      "producer": {
+        "pc": 226,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.norm"
+      },
+      "consumers": [
+        227
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.15.mixer.packed_xz",
+      "offset": 245857,
+      "value_id": 228,
+      "producer": {
+        "pc": 227,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.in_proj"
+      },
+      "consumers": [
+        228,
+        229
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.x",
+      "offset": 248929,
+      "value_id": 229,
+      "producer": {
+        "pc": 228,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.split_xz"
+      },
+      "consumers": [
+        230
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.gate",
+      "offset": 250465,
+      "value_id": 230,
+      "producer": {
+        "pc": 229,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.split_xz"
+      },
+      "consumers": [
+        237
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.convolved",
+      "offset": 252001,
+      "value_id": 231,
+      "producer": {
+        "pc": 230,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.causal_conv"
+      },
+      "consumers": [
+        231,
+        236
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.15.mixer.packed_selection",
+      "offset": 253537,
+      "value_id": 232,
+      "producer": {
+        "pc": 231,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.x_proj"
+      },
+      "consumers": [
+        232,
+        233,
+        234
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.15.mixer.dt_input",
+      "offset": 253617,
+      "value_id": 233,
+      "producer": {
+        "pc": 232,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.split_selection"
+      },
+      "consumers": [
+        235
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.15.mixer.B",
+      "offset": 253665,
+      "value_id": 234,
+      "producer": {
+        "pc": 233,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.split_selection"
+      },
+      "consumers": [
+        236
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.15.mixer.C",
+      "offset": 253681,
+      "value_id": 235,
+      "producer": {
+        "pc": 234,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.split_selection"
+      },
+      "consumers": [
+        236
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.dt_pre_softplus",
+      "offset": 253697,
+      "value_id": 236,
+      "producer": {
+        "pc": 235,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.dt_proj"
+      },
+      "consumers": [
+        236
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.scan_output",
+      "offset": 255233,
+      "value_id": 237,
+      "producer": {
+        "pc": 236,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.selective_scan"
+      },
+      "consumers": [
+        238
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.activated_gate",
+      "offset": 256769,
+      "value_id": 238,
+      "producer": {
+        "pc": 237,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.gate_activation"
+      },
+      "consumers": [
+        238
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.15.mixer.gated_scan",
+      "offset": 258305,
+      "value_id": 239,
+      "producer": {
+        "pc": 238,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.gate_scan"
+      },
+      "consumers": [
+        239
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.15.mixer.output",
+      "offset": 259841,
+      "value_id": 240,
+      "producer": {
+        "pc": 239,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.mixer.out_proj"
+      },
+      "consumers": [
+        240
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.15.output",
+      "offset": 260609,
+      "value_id": 241,
+      "producer": {
+        "pc": 240,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.15.residual"
+      },
+      "consumers": [
+        241,
+        255
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.16.norm.hidden",
+      "offset": 261377,
+      "value_id": 242,
+      "producer": {
+        "pc": 241,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.norm"
+      },
+      "consumers": [
+        242
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.16.mixer.packed_xz",
+      "offset": 262145,
+      "value_id": 243,
+      "producer": {
+        "pc": 242,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.in_proj"
+      },
+      "consumers": [
+        243,
+        244
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.x",
+      "offset": 265217,
+      "value_id": 244,
+      "producer": {
+        "pc": 243,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.split_xz"
+      },
+      "consumers": [
+        245
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.gate",
+      "offset": 266753,
+      "value_id": 245,
+      "producer": {
+        "pc": 244,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.split_xz"
+      },
+      "consumers": [
+        252
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.convolved",
+      "offset": 268289,
+      "value_id": 246,
+      "producer": {
+        "pc": 245,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.causal_conv"
+      },
+      "consumers": [
+        246,
+        251
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.16.mixer.packed_selection",
+      "offset": 269825,
+      "value_id": 247,
+      "producer": {
+        "pc": 246,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.x_proj"
+      },
+      "consumers": [
+        247,
+        248,
+        249
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.16.mixer.dt_input",
+      "offset": 269905,
+      "value_id": 248,
+      "producer": {
+        "pc": 247,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.split_selection"
+      },
+      "consumers": [
+        250
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.16.mixer.B",
+      "offset": 269953,
+      "value_id": 249,
+      "producer": {
+        "pc": 248,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.split_selection"
+      },
+      "consumers": [
+        251
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.16.mixer.C",
+      "offset": 269969,
+      "value_id": 250,
+      "producer": {
+        "pc": 249,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.split_selection"
+      },
+      "consumers": [
+        251
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.dt_pre_softplus",
+      "offset": 269985,
+      "value_id": 251,
+      "producer": {
+        "pc": 250,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.dt_proj"
+      },
+      "consumers": [
+        251
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.scan_output",
+      "offset": 271521,
+      "value_id": 252,
+      "producer": {
+        "pc": 251,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.selective_scan"
+      },
+      "consumers": [
+        253
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.activated_gate",
+      "offset": 273057,
+      "value_id": 253,
+      "producer": {
+        "pc": 252,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.gate_activation"
+      },
+      "consumers": [
+        253
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.16.mixer.gated_scan",
+      "offset": 274593,
+      "value_id": 254,
+      "producer": {
+        "pc": 253,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.gate_scan"
+      },
+      "consumers": [
+        254
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.16.mixer.output",
+      "offset": 276129,
+      "value_id": 255,
+      "producer": {
+        "pc": 254,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.mixer.out_proj"
+      },
+      "consumers": [
+        255
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.16.output",
+      "offset": 276897,
+      "value_id": 256,
+      "producer": {
+        "pc": 255,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.16.residual"
+      },
+      "consumers": [
+        256,
+        270
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.17.norm.hidden",
+      "offset": 277665,
+      "value_id": 257,
+      "producer": {
+        "pc": 256,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.norm"
+      },
+      "consumers": [
+        257
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.17.mixer.packed_xz",
+      "offset": 278433,
+      "value_id": 258,
+      "producer": {
+        "pc": 257,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.in_proj"
+      },
+      "consumers": [
+        258,
+        259
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.x",
+      "offset": 281505,
+      "value_id": 259,
+      "producer": {
+        "pc": 258,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.split_xz"
+      },
+      "consumers": [
+        260
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.gate",
+      "offset": 283041,
+      "value_id": 260,
+      "producer": {
+        "pc": 259,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.split_xz"
+      },
+      "consumers": [
+        267
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.convolved",
+      "offset": 284577,
+      "value_id": 261,
+      "producer": {
+        "pc": 260,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.causal_conv"
+      },
+      "consumers": [
+        261,
+        266
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.17.mixer.packed_selection",
+      "offset": 286113,
+      "value_id": 262,
+      "producer": {
+        "pc": 261,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.x_proj"
+      },
+      "consumers": [
+        262,
+        263,
+        264
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.17.mixer.dt_input",
+      "offset": 286193,
+      "value_id": 263,
+      "producer": {
+        "pc": 262,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.split_selection"
+      },
+      "consumers": [
+        265
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.17.mixer.B",
+      "offset": 286241,
+      "value_id": 264,
+      "producer": {
+        "pc": 263,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.split_selection"
+      },
+      "consumers": [
+        266
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.17.mixer.C",
+      "offset": 286257,
+      "value_id": 265,
+      "producer": {
+        "pc": 264,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.split_selection"
+      },
+      "consumers": [
+        266
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.dt_pre_softplus",
+      "offset": 286273,
+      "value_id": 266,
+      "producer": {
+        "pc": 265,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.dt_proj"
+      },
+      "consumers": [
+        266
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.scan_output",
+      "offset": 287809,
+      "value_id": 267,
+      "producer": {
+        "pc": 266,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.selective_scan"
+      },
+      "consumers": [
+        268
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.activated_gate",
+      "offset": 289345,
+      "value_id": 268,
+      "producer": {
+        "pc": 267,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.gate_activation"
+      },
+      "consumers": [
+        268
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.17.mixer.gated_scan",
+      "offset": 290881,
+      "value_id": 269,
+      "producer": {
+        "pc": 268,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.gate_scan"
+      },
+      "consumers": [
+        269
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.17.mixer.output",
+      "offset": 292417,
+      "value_id": 270,
+      "producer": {
+        "pc": 269,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.mixer.out_proj"
+      },
+      "consumers": [
+        270
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.17.output",
+      "offset": 293185,
+      "value_id": 271,
+      "producer": {
+        "pc": 270,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.17.residual"
+      },
+      "consumers": [
+        271,
+        285
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.18.norm.hidden",
+      "offset": 293953,
+      "value_id": 272,
+      "producer": {
+        "pc": 271,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.norm"
+      },
+      "consumers": [
+        272
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.18.mixer.packed_xz",
+      "offset": 294721,
+      "value_id": 273,
+      "producer": {
+        "pc": 272,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.in_proj"
+      },
+      "consumers": [
+        273,
+        274
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.x",
+      "offset": 297793,
+      "value_id": 274,
+      "producer": {
+        "pc": 273,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.split_xz"
+      },
+      "consumers": [
+        275
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.gate",
+      "offset": 299329,
+      "value_id": 275,
+      "producer": {
+        "pc": 274,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.split_xz"
+      },
+      "consumers": [
+        282
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.convolved",
+      "offset": 300865,
+      "value_id": 276,
+      "producer": {
+        "pc": 275,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.causal_conv"
+      },
+      "consumers": [
+        276,
+        281
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.18.mixer.packed_selection",
+      "offset": 302401,
+      "value_id": 277,
+      "producer": {
+        "pc": 276,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.x_proj"
+      },
+      "consumers": [
+        277,
+        278,
+        279
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.18.mixer.dt_input",
+      "offset": 302481,
+      "value_id": 278,
+      "producer": {
+        "pc": 277,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.split_selection"
+      },
+      "consumers": [
+        280
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.18.mixer.B",
+      "offset": 302529,
+      "value_id": 279,
+      "producer": {
+        "pc": 278,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.split_selection"
+      },
+      "consumers": [
+        281
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.18.mixer.C",
+      "offset": 302545,
+      "value_id": 280,
+      "producer": {
+        "pc": 279,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.split_selection"
+      },
+      "consumers": [
+        281
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.dt_pre_softplus",
+      "offset": 302561,
+      "value_id": 281,
+      "producer": {
+        "pc": 280,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.dt_proj"
+      },
+      "consumers": [
+        281
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.scan_output",
+      "offset": 304097,
+      "value_id": 282,
+      "producer": {
+        "pc": 281,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.selective_scan"
+      },
+      "consumers": [
+        283
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.activated_gate",
+      "offset": 305633,
+      "value_id": 283,
+      "producer": {
+        "pc": 282,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.gate_activation"
+      },
+      "consumers": [
+        283
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.18.mixer.gated_scan",
+      "offset": 307169,
+      "value_id": 284,
+      "producer": {
+        "pc": 283,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.gate_scan"
+      },
+      "consumers": [
+        284
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.18.mixer.output",
+      "offset": 308705,
+      "value_id": 285,
+      "producer": {
+        "pc": 284,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.mixer.out_proj"
+      },
+      "consumers": [
+        285
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.18.output",
+      "offset": 309473,
+      "value_id": 286,
+      "producer": {
+        "pc": 285,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.18.residual"
+      },
+      "consumers": [
+        286,
+        300
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.19.norm.hidden",
+      "offset": 310241,
+      "value_id": 287,
+      "producer": {
+        "pc": 286,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.norm"
+      },
+      "consumers": [
+        287
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.19.mixer.packed_xz",
+      "offset": 311009,
+      "value_id": 288,
+      "producer": {
+        "pc": 287,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.in_proj"
+      },
+      "consumers": [
+        288,
+        289
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.x",
+      "offset": 314081,
+      "value_id": 289,
+      "producer": {
+        "pc": 288,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.split_xz"
+      },
+      "consumers": [
+        290
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.gate",
+      "offset": 315617,
+      "value_id": 290,
+      "producer": {
+        "pc": 289,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.split_xz"
+      },
+      "consumers": [
+        297
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.convolved",
+      "offset": 317153,
+      "value_id": 291,
+      "producer": {
+        "pc": 290,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.causal_conv"
+      },
+      "consumers": [
+        291,
+        296
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.19.mixer.packed_selection",
+      "offset": 318689,
+      "value_id": 292,
+      "producer": {
+        "pc": 291,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.x_proj"
+      },
+      "consumers": [
+        292,
+        293,
+        294
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.19.mixer.dt_input",
+      "offset": 318769,
+      "value_id": 293,
+      "producer": {
+        "pc": 292,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.split_selection"
+      },
+      "consumers": [
+        295
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.19.mixer.B",
+      "offset": 318817,
+      "value_id": 294,
+      "producer": {
+        "pc": 293,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.split_selection"
+      },
+      "consumers": [
+        296
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.19.mixer.C",
+      "offset": 318833,
+      "value_id": 295,
+      "producer": {
+        "pc": 294,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.split_selection"
+      },
+      "consumers": [
+        296
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.dt_pre_softplus",
+      "offset": 318849,
+      "value_id": 296,
+      "producer": {
+        "pc": 295,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.dt_proj"
+      },
+      "consumers": [
+        296
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.scan_output",
+      "offset": 320385,
+      "value_id": 297,
+      "producer": {
+        "pc": 296,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.selective_scan"
+      },
+      "consumers": [
+        298
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.activated_gate",
+      "offset": 321921,
+      "value_id": 298,
+      "producer": {
+        "pc": 297,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.gate_activation"
+      },
+      "consumers": [
+        298
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.19.mixer.gated_scan",
+      "offset": 323457,
+      "value_id": 299,
+      "producer": {
+        "pc": 298,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.gate_scan"
+      },
+      "consumers": [
+        299
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.19.mixer.output",
+      "offset": 324993,
+      "value_id": 300,
+      "producer": {
+        "pc": 299,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.mixer.out_proj"
+      },
+      "consumers": [
+        300
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.19.output",
+      "offset": 325761,
+      "value_id": 301,
+      "producer": {
+        "pc": 300,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.19.residual"
+      },
+      "consumers": [
+        301,
+        315
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.20.norm.hidden",
+      "offset": 326529,
+      "value_id": 302,
+      "producer": {
+        "pc": 301,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.norm"
+      },
+      "consumers": [
+        302
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.20.mixer.packed_xz",
+      "offset": 327297,
+      "value_id": 303,
+      "producer": {
+        "pc": 302,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.in_proj"
+      },
+      "consumers": [
+        303,
+        304
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.x",
+      "offset": 330369,
+      "value_id": 304,
+      "producer": {
+        "pc": 303,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.split_xz"
+      },
+      "consumers": [
+        305
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.gate",
+      "offset": 331905,
+      "value_id": 305,
+      "producer": {
+        "pc": 304,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.split_xz"
+      },
+      "consumers": [
+        312
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.convolved",
+      "offset": 333441,
+      "value_id": 306,
+      "producer": {
+        "pc": 305,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.causal_conv"
+      },
+      "consumers": [
+        306,
+        311
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.20.mixer.packed_selection",
+      "offset": 334977,
+      "value_id": 307,
+      "producer": {
+        "pc": 306,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.x_proj"
+      },
+      "consumers": [
+        307,
+        308,
+        309
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.20.mixer.dt_input",
+      "offset": 335057,
+      "value_id": 308,
+      "producer": {
+        "pc": 307,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.split_selection"
+      },
+      "consumers": [
+        310
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.20.mixer.B",
+      "offset": 335105,
+      "value_id": 309,
+      "producer": {
+        "pc": 308,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.split_selection"
+      },
+      "consumers": [
+        311
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.20.mixer.C",
+      "offset": 335121,
+      "value_id": 310,
+      "producer": {
+        "pc": 309,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.split_selection"
+      },
+      "consumers": [
+        311
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.dt_pre_softplus",
+      "offset": 335137,
+      "value_id": 311,
+      "producer": {
+        "pc": 310,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.dt_proj"
+      },
+      "consumers": [
+        311
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.scan_output",
+      "offset": 336673,
+      "value_id": 312,
+      "producer": {
+        "pc": 311,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.selective_scan"
+      },
+      "consumers": [
+        313
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.activated_gate",
+      "offset": 338209,
+      "value_id": 313,
+      "producer": {
+        "pc": 312,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.gate_activation"
+      },
+      "consumers": [
+        313
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.20.mixer.gated_scan",
+      "offset": 339745,
+      "value_id": 314,
+      "producer": {
+        "pc": 313,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.gate_scan"
+      },
+      "consumers": [
+        314
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.20.mixer.output",
+      "offset": 341281,
+      "value_id": 315,
+      "producer": {
+        "pc": 314,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.mixer.out_proj"
+      },
+      "consumers": [
+        315
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.20.output",
+      "offset": 342049,
+      "value_id": 316,
+      "producer": {
+        "pc": 315,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.20.residual"
+      },
+      "consumers": [
+        316,
+        330
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.21.norm.hidden",
+      "offset": 342817,
+      "value_id": 317,
+      "producer": {
+        "pc": 316,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.norm"
+      },
+      "consumers": [
+        317
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.21.mixer.packed_xz",
+      "offset": 343585,
+      "value_id": 318,
+      "producer": {
+        "pc": 317,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.in_proj"
+      },
+      "consumers": [
+        318,
+        319
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.x",
+      "offset": 346657,
+      "value_id": 319,
+      "producer": {
+        "pc": 318,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.split_xz"
+      },
+      "consumers": [
+        320
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.gate",
+      "offset": 348193,
+      "value_id": 320,
+      "producer": {
+        "pc": 319,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.split_xz"
+      },
+      "consumers": [
+        327
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.convolved",
+      "offset": 349729,
+      "value_id": 321,
+      "producer": {
+        "pc": 320,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.causal_conv"
+      },
+      "consumers": [
+        321,
+        326
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.21.mixer.packed_selection",
+      "offset": 351265,
+      "value_id": 322,
+      "producer": {
+        "pc": 321,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.x_proj"
+      },
+      "consumers": [
+        322,
+        323,
+        324
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.21.mixer.dt_input",
+      "offset": 351345,
+      "value_id": 323,
+      "producer": {
+        "pc": 322,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.split_selection"
+      },
+      "consumers": [
+        325
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.21.mixer.B",
+      "offset": 351393,
+      "value_id": 324,
+      "producer": {
+        "pc": 323,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.split_selection"
+      },
+      "consumers": [
+        326
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.21.mixer.C",
+      "offset": 351409,
+      "value_id": 325,
+      "producer": {
+        "pc": 324,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.split_selection"
+      },
+      "consumers": [
+        326
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.dt_pre_softplus",
+      "offset": 351425,
+      "value_id": 326,
+      "producer": {
+        "pc": 325,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.dt_proj"
+      },
+      "consumers": [
+        326
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.scan_output",
+      "offset": 352961,
+      "value_id": 327,
+      "producer": {
+        "pc": 326,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.selective_scan"
+      },
+      "consumers": [
+        328
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.activated_gate",
+      "offset": 354497,
+      "value_id": 328,
+      "producer": {
+        "pc": 327,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.gate_activation"
+      },
+      "consumers": [
+        328
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.21.mixer.gated_scan",
+      "offset": 356033,
+      "value_id": 329,
+      "producer": {
+        "pc": 328,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.gate_scan"
+      },
+      "consumers": [
+        329
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.21.mixer.output",
+      "offset": 357569,
+      "value_id": 330,
+      "producer": {
+        "pc": 329,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.mixer.out_proj"
+      },
+      "consumers": [
+        330
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.21.output",
+      "offset": 358337,
+      "value_id": 331,
+      "producer": {
+        "pc": 330,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.21.residual"
+      },
+      "consumers": [
+        331,
+        345
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.22.norm.hidden",
+      "offset": 359105,
+      "value_id": 332,
+      "producer": {
+        "pc": 331,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.norm"
+      },
+      "consumers": [
+        332
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.22.mixer.packed_xz",
+      "offset": 359873,
+      "value_id": 333,
+      "producer": {
+        "pc": 332,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.in_proj"
+      },
+      "consumers": [
+        333,
+        334
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.x",
+      "offset": 362945,
+      "value_id": 334,
+      "producer": {
+        "pc": 333,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.split_xz"
+      },
+      "consumers": [
+        335
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.gate",
+      "offset": 364481,
+      "value_id": 335,
+      "producer": {
+        "pc": 334,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.split_xz"
+      },
+      "consumers": [
+        342
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.convolved",
+      "offset": 366017,
+      "value_id": 336,
+      "producer": {
+        "pc": 335,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.causal_conv"
+      },
+      "consumers": [
+        336,
+        341
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.22.mixer.packed_selection",
+      "offset": 367553,
+      "value_id": 337,
+      "producer": {
+        "pc": 336,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.x_proj"
+      },
+      "consumers": [
+        337,
+        338,
+        339
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.22.mixer.dt_input",
+      "offset": 367633,
+      "value_id": 338,
+      "producer": {
+        "pc": 337,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.split_selection"
+      },
+      "consumers": [
+        340
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.22.mixer.B",
+      "offset": 367681,
+      "value_id": 339,
+      "producer": {
+        "pc": 338,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.split_selection"
+      },
+      "consumers": [
+        341
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.22.mixer.C",
+      "offset": 367697,
+      "value_id": 340,
+      "producer": {
+        "pc": 339,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.split_selection"
+      },
+      "consumers": [
+        341
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.dt_pre_softplus",
+      "offset": 367713,
+      "value_id": 341,
+      "producer": {
+        "pc": 340,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.dt_proj"
+      },
+      "consumers": [
+        341
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.scan_output",
+      "offset": 369249,
+      "value_id": 342,
+      "producer": {
+        "pc": 341,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.selective_scan"
+      },
+      "consumers": [
+        343
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.activated_gate",
+      "offset": 370785,
+      "value_id": 343,
+      "producer": {
+        "pc": 342,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.gate_activation"
+      },
+      "consumers": [
+        343
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.22.mixer.gated_scan",
+      "offset": 372321,
+      "value_id": 344,
+      "producer": {
+        "pc": 343,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.gate_scan"
+      },
+      "consumers": [
+        344
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.22.mixer.output",
+      "offset": 373857,
+      "value_id": 345,
+      "producer": {
+        "pc": 344,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.mixer.out_proj"
+      },
+      "consumers": [
+        345
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.22.output",
+      "offset": 374625,
+      "value_id": 346,
+      "producer": {
+        "pc": 345,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.22.residual"
+      },
+      "consumers": [
+        346,
+        360
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.23.norm.hidden",
+      "offset": 375393,
+      "value_id": 347,
+      "producer": {
+        "pc": 346,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.norm"
+      },
+      "consumers": [
+        347
+      ]
+    },
+    {
+      "length": 3072,
+      "name": "layers.23.mixer.packed_xz",
+      "offset": 376161,
+      "value_id": 348,
+      "producer": {
+        "pc": 347,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.in_proj"
+      },
+      "consumers": [
+        348,
+        349
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.x",
+      "offset": 379233,
+      "value_id": 349,
+      "producer": {
+        "pc": 348,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.split_xz"
+      },
+      "consumers": [
+        350
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.gate",
+      "offset": 380769,
+      "value_id": 350,
+      "producer": {
+        "pc": 349,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.split_xz"
+      },
+      "consumers": [
+        357
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.convolved",
+      "offset": 382305,
+      "value_id": 351,
+      "producer": {
+        "pc": 350,
+        "kind": "causal-conv-silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.causal_conv"
+      },
+      "consumers": [
+        351,
+        356
+      ]
+    },
+    {
+      "length": 80,
+      "name": "layers.23.mixer.packed_selection",
+      "offset": 383841,
+      "value_id": 352,
+      "producer": {
+        "pc": 351,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.x_proj"
+      },
+      "consumers": [
+        352,
+        353,
+        354
+      ]
+    },
+    {
+      "length": 48,
+      "name": "layers.23.mixer.dt_input",
+      "offset": 383921,
+      "value_id": 353,
+      "producer": {
+        "pc": 352,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.split_selection"
+      },
+      "consumers": [
+        355
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.23.mixer.B",
+      "offset": 383969,
+      "value_id": 354,
+      "producer": {
+        "pc": 353,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.split_selection"
+      },
+      "consumers": [
+        356
+      ]
+    },
+    {
+      "length": 16,
+      "name": "layers.23.mixer.C",
+      "offset": 383985,
+      "value_id": 355,
+      "producer": {
+        "pc": 354,
+        "kind": "slice",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.split_selection"
+      },
+      "consumers": [
+        356
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.dt_pre_softplus",
+      "offset": 384001,
+      "value_id": 356,
+      "producer": {
+        "pc": 355,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.dt_proj"
+      },
+      "consumers": [
+        356
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.scan_output",
+      "offset": 385537,
+      "value_id": 357,
+      "producer": {
+        "pc": 356,
+        "kind": "selective-scan",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.selective_scan"
+      },
+      "consumers": [
+        358
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.activated_gate",
+      "offset": 387073,
+      "value_id": 358,
+      "producer": {
+        "pc": 357,
+        "kind": "silu",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.gate_activation"
+      },
+      "consumers": [
+        358
+      ]
+    },
+    {
+      "length": 1536,
+      "name": "layers.23.mixer.gated_scan",
+      "offset": 388609,
+      "value_id": 359,
+      "producer": {
+        "pc": 358,
+        "kind": "multiply",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.gate_scan"
+      },
+      "consumers": [
+        359
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.23.mixer.output",
+      "offset": 390145,
+      "value_id": 360,
+      "producer": {
+        "pc": 359,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.mixer.out_proj"
+      },
+      "consumers": [
+        360
+      ]
+    },
+    {
+      "length": 768,
+      "name": "layers.23.output",
+      "offset": 390913,
+      "value_id": 361,
+      "producer": {
+        "pc": 360,
+        "kind": "add",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/layers.23.residual"
+      },
+      "consumers": [
+        361
+      ]
+    },
+    {
+      "length": 768,
+      "name": "final.hidden",
+      "offset": 391681,
+      "value_id": 362,
+      "producer": {
+        "pc": 361,
+        "kind": "rms",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/final_norm"
+      },
+      "consumers": [
+        362
+      ]
+    },
+    {
+      "length": 32000,
+      "name": "logits",
+      "offset": 392449,
+      "value_id": 363,
+      "producer": {
+        "pc": 362,
+        "kind": "linear",
+        "source_ref": "mrun://ir/adbf6e42a5898dd9bd005a0af97671c7ab041aa7b416249c493c1bdb4a6efb9b/operation/lm_head"
+      },
+      "consumers": []
+    }
+  ],
+  "state_slots": [
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.0.conv_state",
+      "offset": 0,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.0.recurrent_state",
+      "offset": 6144,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.1.conv_state",
+      "offset": 30720,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.1.recurrent_state",
+      "offset": 36864,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.2.conv_state",
+      "offset": 61440,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.2.recurrent_state",
+      "offset": 67584,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.3.conv_state",
+      "offset": 92160,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.3.recurrent_state",
+      "offset": 98304,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.4.conv_state",
+      "offset": 122880,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.4.recurrent_state",
+      "offset": 129024,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.5.conv_state",
+      "offset": 153600,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.5.recurrent_state",
+      "offset": 159744,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.6.conv_state",
+      "offset": 184320,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.6.recurrent_state",
+      "offset": 190464,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.7.conv_state",
+      "offset": 215040,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.7.recurrent_state",
+      "offset": 221184,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.8.conv_state",
+      "offset": 245760,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.8.recurrent_state",
+      "offset": 251904,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.9.conv_state",
+      "offset": 276480,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.9.recurrent_state",
+      "offset": 282624,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.10.conv_state",
+      "offset": 307200,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.10.recurrent_state",
+      "offset": 313344,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.11.conv_state",
+      "offset": 337920,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.11.recurrent_state",
+      "offset": 344064,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.12.conv_state",
+      "offset": 368640,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.12.recurrent_state",
+      "offset": 374784,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.13.conv_state",
+      "offset": 399360,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.13.recurrent_state",
+      "offset": 405504,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.14.conv_state",
+      "offset": 430080,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.14.recurrent_state",
+      "offset": 436224,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.15.conv_state",
+      "offset": 460800,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.15.recurrent_state",
+      "offset": 466944,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.16.conv_state",
+      "offset": 491520,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.16.recurrent_state",
+      "offset": 497664,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.17.conv_state",
+      "offset": 522240,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.17.recurrent_state",
+      "offset": 528384,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.18.conv_state",
+      "offset": 552960,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.18.recurrent_state",
+      "offset": 559104,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.19.conv_state",
+      "offset": 583680,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.19.recurrent_state",
+      "offset": 589824,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.20.conv_state",
+      "offset": 614400,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.20.recurrent_state",
+      "offset": 620544,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.21.conv_state",
+      "offset": 645120,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.21.recurrent_state",
+      "offset": 651264,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.22.conv_state",
+      "offset": 675840,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.22.recurrent_state",
+      "offset": 681984,
+      "shape": [
+        1536,
+        16
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.23.conv_state",
+      "offset": 706560,
+      "shape": [
+        1536,
+        4
+      ]
+    },
+    {
+      "commit": "one-input-row",
+      "initialization": "zero",
+      "name": "layers.23.recurrent_state",
+      "offset": 712704,
+      "shape": [
+        1536,
+        16
+      ]
+    }
+  ],
+  "occurrence_key_fields": [
+    "program_bundle_digest",
+    "job_id",
+    "input_row",
+    "pc",
+    "value_id"
+  ],
+  "authority": {
+    "mechanics_status": "source-map-validated",
+    "instrument_status": "no-trace-supplied",
+    "trend_status": "not-analyzed",
+    "terminal_status": "no-learned-mathematical-role-claim"
+  },
+  "fingerprint": "744bd8d478a0f3dab1a98f2ddf45c1196e33731a67253594790c4d38f69ba71d"
+}

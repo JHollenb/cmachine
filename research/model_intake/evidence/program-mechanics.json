@@ -1,0 +1,54 @@
+{
+  "schema": "tcm-program-mechanics-v1",
+  "recorded_at": "2026-11-06T22:56:30.650139-08:00",
+  "scope": "tiny generated source/model mechanics and existing model-free runtime/client regressions; pretrained evidence recorded separately",
+  "checks": [
+    {
+      "command": "../common/bin/common exec python -m unittest discover -s research/model_intake -p 'test_*.py' -v",
+      "exit_code": 0,
+      "tests": 18,
+      "reported_seconds": 0.851
+    },
+    {
+      "command": "../common/bin/common exec python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests": 18,
+      "reported_seconds": 1.767
+    },
+    {
+      "command": "TCM_TEST_EXECUTABLE=build/tcm-sanitize ../common/bin/common exec python -m unittest discover -s research/model_intake -p test_program.py -v",
+      "exit_code": 0,
+      "tests": 9,
+      "reported_seconds": 1.027,
+      "instrument": "ASan/UBSan"
+    },
+    {
+      "command": "make sanitize state-mechanics bounded-mechanics operand-mechanics",
+      "exit_code": 0,
+      "scope": "existing C lifecycle/operand mechanics"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "Makefile": "eb2d4189c521fbc9a00fe732bc28d0dee4ac5e67481301b977e9b20861a6610d",
+    "src/program.c": "01bb8d62b75e6f12f772f0ba18782729e792f65a7bc3263cf491c086843d17ac",
+    "src/program.h": "8f185a147485098b2412253461627d809cf23fc0ba6b895c24bedf507dd85a91",
+    "src/main.c": "63623de425261bfb1fa1bf77d23455b4f795dc04e8336f2b7af3fdd3306ffc13",
+    "src/machine.h": "8adfd6800038b00732399efa2c8d94ba24603572580ec333c40c1e55d87ff16d",
+    "research/model_intake/intake.py": "56ce7d375e510c3e43588f2d9119e6c55a10219c0764a45fe62f85870b531e72",
+    "research/model_intake/test_intake.py": "e27946ab21d19559afc24fa280e235460d7ef645de639b1b0b4fed11e105c67b",
+    "research/model_intake/test_program.py": "b60cae4a586d4a3b1f6d7ba921eefdcc6cb48271d841a04ed22a9cb1ebc42895",
+    "tools/program.py": "8aa007ea647b6757243ce3accd96766f5d5c83309c32790021da7c404220e386",
+    "tools/program_chat.py": "8cf3fa3e710461fc6c73a57ef277b35ae7b87b8a4360f3a9e953008257061ac3",
+    "tools/inspect_program.py": "b0462eaf6fdb888077b142d4eb456c7238be32e593bf8b6da7703ff8ce48bb0c",
+    "tools/intake_worker.py": "f9d880ece31e651a40b04bc4acca0faa15fb4f85c4a390ab88c20c935029ef97",
+    "tools/intake_fleet.py": "4f1300080f61e336ac709a1d8cbc1e98dda1ef95bb97986414dee55531e46a55",
+    "tools/mamba_chat_source.py": "ce6aa8fe5b3785ed01cdf84539e2ce52fe26fcd67bd667c64f505589b419ef2f",
+    "tools/verify_intake.py": "271d36bfb413e86d742078b7f00e6802cf6aadbff3753126bace9162e1a29f59"
+  },
+  "semantic_discovery_claim": false,
+  "capability_improvement_claim": false
+}

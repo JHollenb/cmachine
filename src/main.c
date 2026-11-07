@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "program.h"
 #ifdef TCM_WITH_CUDA
 #include "qwen.h"
 #endif
@@ -27,6 +28,7 @@ static void heads(FILE *f,const IsaOutput *o){
     fputc('}',f);
 }
 int main(int argc,char **argv){
+    if(argc>=2&&!strcmp(argv[1],"program"))return tcm_program_main(argc,argv);
 #ifdef TCM_WITH_CUDA
     if(argc>=2&&!strcmp(argv[1],"qwen"))return qwen_main(argc,argv);
     if(argc>=2&&!strcmp(argv[1],"serve"))return qwen_serve_main(argc,argv);

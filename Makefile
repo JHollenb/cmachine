@@ -1,19 +1,21 @@
 CC ?= cc
 CFLAGS ?= -O3 -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off
 LDLIBS = -lm
-SRC = src/model.c src/isa.c src/main.c
+SRC = src/model.c src/isa.c src/program.c src/main.c
 CUDA_HOME ?= /usr/local/cuda
 NVCC ?= $(CUDA_HOME)/bin/nvcc
+BLAS_CPPFLAGS ?=
+BLAS_LDLIBS ?= -lopenblas
 
 all: build/tcm
 
-build/tcm: $(SRC) src/machine.h
+build/tcm: $(SRC) src/machine.h src/program.h
 	mkdir -p build
 	$(CC) $(CFLAGS) -Isrc $(SRC) $(LDLIBS) -o $@
 
 sanitize: build/tcm-sanitize
 
-build/tcm-sanitize: $(SRC) src/machine.h
+build/tcm-sanitize: $(SRC) src/machine.h src/program.h
 	mkdir -p build
 	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -ffp-contract=off -fsanitize=address,undefined -Isrc $(SRC) $(LDLIBS) -o $@
 
@@ -24,16 +26,24 @@ clean:
 
 cuda: build/tcm-cuda
 
-build/tcm-cuda: $(SRC) src/qwen.c src/qwen_operands.inc src/qwen_serve.c src/qwen_bounded_serve.c src/bounded_cache.h src/qwen_cuda.cu src/qwen_cache.inc src/qwen_weights.inc src/qwen.h src/gpu.h src/machine.h
+build/tcm-cuda: $(SRC) src/program.h src/qwen.c src/qwen_operands.inc src/qwen_serve.c src/qwen_bounded_serve.c src/bounded_cache.h src/qwen_cuda.cu src/qwen_cache.inc src/qwen_weights.inc src/qwen.h src/gpu.h src/machine.h
 	mkdir -p build
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/model.c -o build/model.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/isa.c -o build/isa.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/main.c -o build/main.o
+	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/program.c -o build/program.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/qwen.c -o build/qwen.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/qwen_serve.c -o build/qwen_serve.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/qwen_bounded_serve.c -o build/qwen_bounded_serve.o
 	$(NVCC) -O3 -std=c++17 --fmad=false -arch=sm_89 -Isrc -c src/qwen_cuda.cu -o build/qwen_cuda.o
-	$(NVCC) build/model.o build/isa.o build/main.o build/qwen.o build/qwen_serve.o build/qwen_bounded_serve.o build/qwen_cuda.o -lcublas -lm -o $@
+	$(NVCC) build/model.o build/isa.o build/program.o build/main.o build/qwen.o build/qwen_serve.o build/qwen_bounded_serve.o build/qwen_cuda.o -lcublas -lm -o $@
+
+# The same graph executor with an explicit CPU BLAS reduction profile.
+program-blas: build/tcm-blas
+build/tcm-blas: $(SRC) src/machine.h src/program.h
+	mkdir -p build
+	$(CC) $(CFLAGS) -DTCM_USE_CBLAS $(BLAS_CPPFLAGS) -Isrc $(SRC) $(BLAS_LDLIBS) $(LDLIBS) -o $@
+.PHONY: program-blas
 
 .PHONY: cuda
 

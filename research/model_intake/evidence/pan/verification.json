@@ -1,0 +1,20 @@
+{
+  "schema": "tcm-intake-verification-v1",
+  "job_id": "job-0143a2072cce",
+  "raw_files_checked": 9,
+  "retained_payload_checked": true,
+  "observations": {
+    "rows": 12769,
+    "native_correct": 7382,
+    "c_correct": 7382,
+    "top1_agreement_count": 12769,
+    "zero_gate_correct": 113,
+    "max_abs_logit_error": 9.1552734375e-05,
+    "mean_abs_logit_error": 4.779310984304175e-06,
+    "symbols": 20
+  },
+  "mechanics_status": "artifact-hashes-source-bindings-and-map-verified",
+  "instrument_status": "raw-logit-observations-recomputed",
+  "trend_status": "reported-without-a-score-threshold",
+  "terminal_status": "no-general-capability-or-speed-claim"
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "tcm-intake-verification-v1",
+  "job_id": "job-1b568233159e",
+  "raw_files_checked": 18,
+  "retained_payload_checked": true,
+  "observations": {
+    "symbols": 364,
+    "state_slots": 48,
+    "prompts": [
+      {
+        "name": "capital",
+        "common_generated_prefix": 6,
+        "comparable_rows": 39,
+        "max_abs_logit_error": 1.430511474609375e-05,
+        "mean_abs_logit_error": 1.803862346605456e-06,
+        "source_tokens": [
+          31601,
+          31609,
+          31609,
+          31600,
+          28621,
+          31999
+        ],
+        "c_tokens": [
+          31601,
+          31609,
+          31609,
+          31600,
+          28621,
+          31999
+        ]
+      },
+      {
+        "name": "addition",
+        "common_generated_prefix": 12,
+        "comparable_rows": 47,
+        "max_abs_logit_error": 1.3828277587890625e-05,
+        "mean_abs_logit_error": 1.9278049876447767e-06,
+        "source_tokens": [
+          31605,
+          28263,
+          26637,
+          28869,
+          26637,
+          28869,
+          26637,
+          28869,
+          26637,
+          28869,
+          26637,
+          28869
+        ],
+        "c_tokens": [
+          31605,
+          28263,
+          26637,
+          28869,
+          26637,
+          28869,
+          26637,
+          28869,
+          26637,
+          28869,
+          26637,
+          28869
+        ]
+      }
+    ]
+  },
+  "mechanics_status": "artifact-hashes-source-bindings-and-map-verified",
+  "instrument_status": "raw-logit-observations-recomputed",
+  "trend_status": "reported-without-a-score-threshold",
+  "terminal_status": "no-general-capability-or-speed-claim"
+}

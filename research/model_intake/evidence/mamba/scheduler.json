@@ -1,0 +1,529 @@
+{
+  "job_id": "job-1b568233159e",
+  "client_run_id": "aeefea0f3f3458a6",
+  "experiment": "cmachine-model-intake-mamba-chat",
+  "state": "succeeded",
+  "payload_kind": "shipped",
+  "env_alias": "mrun",
+  "timeout_s": 1800.0,
+  "priority": 0,
+  "assigned_host": "beast",
+  "lease_expires_ts": 1794034549.0526907,
+  "kill_requested": 0,
+  "created_ts": 1794034432.1728435,
+  "started_ts": 1794034432.352132,
+  "finished_ts": 1794034492.0009403,
+  "status_detail": null,
+  "external_rss_mb": null,
+  "external_vram_mb": null,
+  "needs": {
+    "host": "beast",
+    "prefer_host": "beast",
+    "payload_custody_v2": true
+  },
+  "reservation": {
+    "ram_mb": 2048.0,
+    "vram_mb": 0.0,
+    "cpu_threads": 2,
+    "disk_gb": 2.0,
+    "est_wall_s": null,
+    "source": "declared"
+  },
+  "cmd": [
+    "env",
+    "HF_HUB_OFFLINE=0",
+    "TRANSFORMERS_OFFLINE=0",
+    "HF_HUB_DOWNLOAD_TIMEOUT=60",
+    "uv",
+    "--cache-dir",
+    ".uv-cache",
+    "run",
+    "--project",
+    "{env}",
+    "--with",
+    "scipy-openblas32==0.3.34.481.3",
+    "python",
+    "tools/intake_worker.py",
+    "mamba-chat"
+  ],
+  "config": {
+    "schema": "tcm-model-intake-experiment-v1",
+    "mode": "mamba-chat",
+    "sources": {
+      "Makefile": "eb2d4189c521fbc9a00fe732bc28d0dee4ac5e67481301b977e9b20861a6610d",
+      "src/bounded_cache.h": "6a4d12b9b43a929bc6b142707327e73bb11aa58ddceead3ab2d419bb988222b9",
+      "src/byte_codec.h": "0cb77c293a384c131584dd919e68d4f15bf329f89dff46a25f5de72b95bc043f",
+      "src/gpu.h": "c4a4db8cbf3915ea0a654fd539a35f76609b0d5dcffb0851b958c2c10aa72e8c",
+      "src/isa.c": "03b37b1cb2e51aa9be04ce6b0302ef4ccd133fa1eb32e73f6a30b2e1c1306759",
+      "src/machine.h": "8adfd6800038b00732399efa2c8d94ba24603572580ec333c40c1e55d87ff16d",
+      "src/main.c": "63623de425261bfb1fa1bf77d23455b4f795dc04e8336f2b7af3fdd3306ffc13",
+      "src/model.c": "bbd2902e5464e4f44d80b82557597540447f4e4f9a0c8fa60d15a17aa1f6a16d",
+      "src/program.c": "01bb8d62b75e6f12f772f0ba18782729e792f65a7bc3263cf491c086843d17ac",
+      "src/program.h": "8f185a147485098b2412253461627d809cf23fc0ba6b895c24bedf507dd85a91",
+      "src/prototype_attention.h": "c1932bc889cb2504e4e4d1d1e631429440535f76fb4c0520fa5ad1b9dd41f840",
+      "src/qwen.c": "9860c088ac9a40374a3c756db054a9b2b5cf8553bb9345b18b40aaa5e98f6e59",
+      "src/qwen.h": "939b7599da46fd52f358d013b0fb4a5ba4940e665aef7ee8f33bc0b4c577dbb0",
+      "src/qwen_bounded_serve.c": "2418098f0b913062111b4e342522a8859b3617e342a75f0d5b7d4885978f1ed8",
+      "src/qwen_cache.inc": "f179bf4df9f4063f8d6dcb7b9ad65514befb2ca472e5364a8c11373dfa781cef",
+      "src/qwen_cuda.cu": "2f348b02909b19bb6e41a6ec7ad05f88b93288ad2d83a5596f87dd03f4ddc6cf",
+      "src/qwen_operands.inc": "8c3a91d345eb3fe58f25df9fd691e5e8b34a1fab3acdc7ca95fe56e66981f9aa",
+      "src/qwen_serve.c": "5b878c35a4cd71b6d3e64ad7b3a455cd89acdfd7d8388f6ba38da40b6d02d665",
+      "src/qwen_weights.inc": "cf66580fef71689de32d3ff5f4500c328fe76923fabe2758689f3a5841abd229",
+      "tools/bundle.py": "69ab26595551e67b8c559622916585ca05cffdc10e77254cc0283ef6f527ecfb",
+      "tools/inspect_program.py": "b0462eaf6fdb888077b142d4eb456c7238be32e593bf8b6da7703ff8ce48bb0c",
+      "tools/intake_worker.py": "f9d880ece31e651a40b04bc4acca0faa15fb4f85c4a390ab88c20c935029ef97",
+      "tools/mamba_chat_source.py": "ce6aa8fe5b3785ed01cdf84539e2ce52fe26fcd67bd667c64f505589b419ef2f",
+      "tools/program.py": "8aa007ea647b6757243ce3accd96766f5d5c83309c32790021da7c404220e386",
+      "tools/program_chat.py": "8cf3fa3e710461fc6c73a57ef277b35ae7b87b8a4360f3a9e953008257061ac3"
+    },
+    "device": "cpu",
+    "backend": "hf",
+    "candidate_backend": "c-openblas-fp32",
+    "dtype": "fp32",
+    "cpu_threads": 2,
+    "backend_options": {
+      "physical_batch_size": 1,
+      "full_prefill_logits": true
+    },
+    "seq_len": 64,
+    "physical_batch_size": 1,
+    "physical_work": "two native prefills, two cached own paths<=12tokens each and two full-prefix checks; release native bank; one C export; two C own paths plus suffix replay; one zero-writer arm plus replay; prefix+consumed<=64",
+    "max_retries": 0,
+    "source_repository": "loiccabannes/MambaSan-130m-instruct",
+    "source_revision": "b2eb0b6f88b5904a6166afc69e9bd7180920c63b",
+    "source_weights_sha256": "a33f55c181141bade9280388354751830a35204fcef0d3b3a9d7c2a05ad1e007",
+    "task_family": "decode",
+    "max_seq_len": 64,
+    "build_dependency": "scipy-openblas32==0.3.34.481.3",
+    "acquisition": {
+      "transport": "http-no-xet",
+      "no_write_timeout_s": 120,
+      "budget_s": 1200,
+      "preserved_stalled_job": "job-372c21791726"
+    },
+    "lifecycle": "acquire once; native FP32 bank then release; C compiler and executor sequential; never duplicate full banks",
+    "reservation_measurement": {
+      "floor_job": "job-7373b61f6362",
+      "floor_mb": 920.5,
+      "fp32_bank_mb": 460.38528,
+      "source_mmap_mb": 231.47204,
+      "workspace_mb": 64,
+      "factor": 1.2,
+      "round_mb": 64
+    },
+    "retry_on_kill": false,
+    "model": "cmachine-mambasan-130m-instruct",
+    "mrun_guarded_request_sha256": "255b6e871fe2a18b5a9ebb014ec1b483459bd6ff5f9c5fdc876a6f9fecbda26e"
+  },
+  "result": {
+    "status": "ok",
+    "returncode": 0,
+    "elapsed_s": 59.73,
+    "peak_rss_mb": 1849.1,
+    "peak_vram_mb": 0.0,
+    "executed_payload": {
+      "sha256": "40639a76518963eb2f89e06e1611a35177012197168ee419a2ae7d5c5d7c67ea",
+      "size_bytes": 67995,
+      "host": "beast"
+    },
+    "os_memory_limit_backend": "linux-cgroup-v2",
+    "payload_sandbox_backend": "off",
+    "payload_sandbox": {
+      "requested": false
+    },
+    "diagnostics": {
+      "phase": "finished",
+      "phases": [
+        {
+          "name": "payload.prepare",
+          "ts": 1794034432.3001053
+        },
+        {
+          "name": "dispatch.vram_guard",
+          "ts": 1794034432.3301315
+        },
+        {
+          "name": "process.launch",
+          "ts": 1794034432.3411195
+        },
+        {
+          "name": "process.monitor",
+          "ts": 1794034432.36775
+        },
+        {
+          "name": "process.finalize",
+          "ts": 1794034490.652106
+        },
+        {
+          "name": "finished",
+          "ts": 1794034490.8950062
+        }
+      ],
+      "command": [
+        "env",
+        "HF_HUB_OFFLINE=0",
+        "TRANSFORMERS_OFFLINE=0",
+        "HF_HUB_DOWNLOAD_TIMEOUT=60",
+        "uv",
+        "--cache-dir",
+        ".uv-cache",
+        "run",
+        "--project",
+        "/home/beast/domains/mrun",
+        "--with",
+        "scipy-openblas32==0.3.34.481.3",
+        "python",
+        "tools/intake_worker.py",
+        "mamba-chat"
+      ],
+      "cwd": "/mnt/hdd8tb/mrun-work/job-1b568233159e",
+      "log_path": "/mnt/hdd8tb/mrun-work/job-1b568233159e/job.log"
+    },
+    "failure": null,
+    "artifacts": {
+      "schema": "mrun.run-artifacts-v1",
+      "job_id": "job-1b568233159e",
+      "job_status": "ok",
+      "store": {
+        "endpoint": "http://192.168.68.202:9030",
+        "bucket": "mrun",
+        "cas_prefix": "cas/",
+        "runs_prefix": "runs/"
+      },
+      "runs_prefix": "s3://mrun/runs/job-1b568233159e/",
+      "rows": 0,
+      "objects": 0,
+      "objects_uploaded": 0,
+      "objects_already_remote": 0,
+      "objects_pending": 0,
+      "bytes_sent": 0,
+      "ledger": null,
+      "job_log": {
+        "sha256": "7b8a283f92d05bc2676f654e1cb5f14684a16d5b4af1c181d096b2e006db5303",
+        "bytes": 37366304
+      },
+      "status": "complete",
+      "errors": []
+    }
+  },
+  "plans": {
+    "beast": {
+      "model": "cmachine-mambasan-130m-instruct",
+      "backend": "hf",
+      "dtype": "float32",
+      "device": "cpu",
+      "max_batch": 1,
+      "threads": 4,
+      "ram_limit_mb": 3072.0,
+      "est_ram_mb": 1209.0,
+      "est_vram_mb": 0.0,
+      "est_wall_s": null,
+      "weights_gb": 0.6,
+      "engine_options": {
+        "physical_batch_size": 1,
+        "full_prefill_logits": true
+      },
+      "reasons": [
+        "host=beast ram=66513MB cuda=True mps=False ane=False task=decode",
+        "dtype=float32",
+        "device=cpu (explicit)",
+        "physical_batch_size=1 (declared HF worker geometry)",
+        "full_prefill_logits=True (declared HF output geometry)",
+        "task=decode rss factor x1.3",
+        "backend=hf (explicit)",
+        "max_batch=1 threads=4 ram_limit=3072MB (est x 1.3)",
+        "selector fallback: explicit backend has no matching local artifact",
+        "science runtime envelope: hf"
+      ],
+      "engine_profile": "hf-reference",
+      "artifact_id": null,
+      "artifact_kind": null,
+      "artifact_mount": null,
+      "artifact_locator": {}
+    },
+    "mbp1": {
+      "model": "cmachine-mambasan-130m-instruct",
+      "backend": "hf",
+      "dtype": "float32",
+      "device": "cpu",
+      "max_batch": 1,
+      "threads": 4,
+      "ram_limit_mb": 3072.0,
+      "est_ram_mb": 1209.0,
+      "est_vram_mb": 0.0,
+      "est_wall_s": null,
+      "weights_gb": 0.6,
+      "engine_options": {
+        "physical_batch_size": 1,
+        "full_prefill_logits": true
+      },
+      "reasons": [
+        "host=mbp1 ram=19327MB cuda=False mps=True ane=True task=decode",
+        "dtype=float32",
+        "device=cpu (explicit)",
+        "physical_batch_size=1 (declared HF worker geometry)",
+        "full_prefill_logits=True (declared HF output geometry)",
+        "task=decode rss factor x1.3",
+        "backend=hf (explicit)",
+        "max_batch=1 threads=4 ram_limit=3072MB (est x 1.3)",
+        "selector fallback: explicit backend has no matching local artifact",
+        "science runtime envelope: hf"
+      ],
+      "engine_profile": "hf-reference",
+      "artifact_id": null,
+      "artifact_kind": null,
+      "artifact_mount": null,
+      "artifact_locator": {}
+    }
+  },
+  "plan": {
+    "model": "cmachine-mambasan-130m-instruct",
+    "backend": "hf",
+    "dtype": "float32",
+    "device": "cpu",
+    "max_batch": 1,
+    "threads": 4,
+    "ram_limit_mb": 3072.0,
+    "est_ram_mb": 1209.0,
+    "est_vram_mb": 0.0,
+    "est_wall_s": null,
+    "weights_gb": 0.6,
+    "engine_options": {
+      "physical_batch_size": 1,
+      "full_prefill_logits": true
+    },
+    "reasons": [
+      "host=beast ram=66513MB cuda=True mps=False ane=False task=decode",
+      "dtype=float32",
+      "device=cpu (explicit)",
+      "physical_batch_size=1 (declared HF worker geometry)",
+      "full_prefill_logits=True (declared HF output geometry)",
+      "task=decode rss factor x1.3",
+      "backend=hf (explicit)",
+      "max_batch=1 threads=4 ram_limit=3072MB (est x 1.3)",
+      "selector fallback: explicit backend has no matching local artifact",
+      "science runtime envelope: hf"
+    ],
+    "engine_profile": "hf-reference",
+    "artifact_id": null,
+    "artifact_kind": null,
+    "artifact_mount": null,
+    "artifact_locator": {}
+  },
+  "meta": {
+    "queue_note": "MambaSan Japanese instruction checkpoint; boundedHTTP+normalization; two CPU FP32 native own<=12 paths/full-prefix checks, release bank; compile one C graph; two own C paths+one zero-writer arm/suffix replay; 2threads,seq<=64; noCUDA/training/retries; stop after panel",
+    "observed_peak_rss_mb": 1849.0,
+    "observed_peak_rss_ts": 1794034478.8889067
+  },
+  "admission": {
+    "claim_key": "mrun:255b6e871fe2a18b5a9ebb014ec1b483459bd6ff5f9c5fdc876a6f9fecbda26e",
+    "fencing_epoch": 1,
+    "idempotency_key": "mrun:255b6e871fe2a18b5a9ebb014ec1b483459bd6ff5f9c5fdc876a6f9fecbda26e",
+    "scope_sha256": "2ab9a9fd297822d9f66e4e6df70b2bc55c1698187ee32e04a55fb26a9ddf5851"
+  },
+  "submitted_request": {
+    "client_estimate": {
+      "cpu_threads": 4,
+      "ram_mb": 3072.0,
+      "source": "estimated",
+      "vram_mb": 0.0
+    },
+    "client_run_id": "aeefea0f3f3458a6",
+    "cmd": [
+      "env",
+      "HF_HUB_OFFLINE=0",
+      "TRANSFORMERS_OFFLINE=0",
+      "HF_HUB_DOWNLOAD_TIMEOUT=60",
+      "uv",
+      "--cache-dir",
+      ".uv-cache",
+      "run",
+      "--project",
+      "{env}",
+      "--with",
+      "scipy-openblas32==0.3.34.481.3",
+      "python",
+      "tools/intake_worker.py",
+      "mamba-chat"
+    ],
+    "config": {
+      "acquisition": {
+        "budget_s": 1200,
+        "no_write_timeout_s": 120,
+        "preserved_stalled_job": "job-372c21791726",
+        "transport": "http-no-xet"
+      },
+      "backend": "hf",
+      "backend_options": {
+        "full_prefill_logits": true,
+        "physical_batch_size": 1
+      },
+      "build_dependency": "scipy-openblas32==0.3.34.481.3",
+      "candidate_backend": "c-openblas-fp32",
+      "cpu_threads": 2,
+      "device": "cpu",
+      "dtype": "fp32",
+      "lifecycle": "acquire once; native FP32 bank then release; C compiler and executor sequential; never duplicate full banks",
+      "max_retries": 0,
+      "max_seq_len": 64,
+      "mode": "mamba-chat",
+      "model": "cmachine-mambasan-130m-instruct",
+      "mrun_guarded_request_sha256": "255b6e871fe2a18b5a9ebb014ec1b483459bd6ff5f9c5fdc876a6f9fecbda26e",
+      "physical_batch_size": 1,
+      "physical_work": "two native prefills, two cached own paths<=12tokens each and two full-prefix checks; release native bank; one C export; two C own paths plus suffix replay; one zero-writer arm plus replay; prefix+consumed<=64",
+      "reservation_measurement": {
+        "factor": 1.2,
+        "floor_job": "job-7373b61f6362",
+        "floor_mb": 920.5,
+        "fp32_bank_mb": 460.38528,
+        "round_mb": 64,
+        "source_mmap_mb": 231.47204,
+        "workspace_mb": 64
+      },
+      "retry_on_kill": false,
+      "schema": "tcm-model-intake-experiment-v1",
+      "seq_len": 64,
+      "source_repository": "loiccabannes/MambaSan-130m-instruct",
+      "source_revision": "b2eb0b6f88b5904a6166afc69e9bd7180920c63b",
+      "source_weights_sha256": "a33f55c181141bade9280388354751830a35204fcef0d3b3a9d7c2a05ad1e007",
+      "sources": {
+        "Makefile": "eb2d4189c521fbc9a00fe732bc28d0dee4ac5e67481301b977e9b20861a6610d",
+        "src/bounded_cache.h": "6a4d12b9b43a929bc6b142707327e73bb11aa58ddceead3ab2d419bb988222b9",
+        "src/byte_codec.h": "0cb77c293a384c131584dd919e68d4f15bf329f89dff46a25f5de72b95bc043f",
+        "src/gpu.h": "c4a4db8cbf3915ea0a654fd539a35f76609b0d5dcffb0851b958c2c10aa72e8c",
+        "src/isa.c": "03b37b1cb2e51aa9be04ce6b0302ef4ccd133fa1eb32e73f6a30b2e1c1306759",
+        "src/machine.h": "8adfd6800038b00732399efa2c8d94ba24603572580ec333c40c1e55d87ff16d",
+        "src/main.c": "63623de425261bfb1fa1bf77d23455b4f795dc04e8336f2b7af3fdd3306ffc13",
+        "src/model.c": "bbd2902e5464e4f44d80b82557597540447f4e4f9a0c8fa60d15a17aa1f6a16d",
+        "src/program.c": "01bb8d62b75e6f12f772f0ba18782729e792f65a7bc3263cf491c086843d17ac",
+        "src/program.h": "8f185a147485098b2412253461627d809cf23fc0ba6b895c24bedf507dd85a91",
+        "src/prototype_attention.h": "c1932bc889cb2504e4e4d1d1e631429440535f76fb4c0520fa5ad1b9dd41f840",
+        "src/qwen.c": "9860c088ac9a40374a3c756db054a9b2b5cf8553bb9345b18b40aaa5e98f6e59",
+        "src/qwen.h": "939b7599da46fd52f358d013b0fb4a5ba4940e665aef7ee8f33bc0b4c577dbb0",
+        "src/qwen_bounded_serve.c": "2418098f0b913062111b4e342522a8859b3617e342a75f0d5b7d4885978f1ed8",
+        "src/qwen_cache.inc": "f179bf4df9f4063f8d6dcb7b9ad65514befb2ca472e5364a8c11373dfa781cef",
+        "src/qwen_cuda.cu": "2f348b02909b19bb6e41a6ec7ad05f88b93288ad2d83a5596f87dd03f4ddc6cf",
+        "src/qwen_operands.inc": "8c3a91d345eb3fe58f25df9fd691e5e8b34a1fab3acdc7ca95fe56e66981f9aa",
+        "src/qwen_serve.c": "5b878c35a4cd71b6d3e64ad7b3a455cd89acdfd7d8388f6ba38da40b6d02d665",
+        "src/qwen_weights.inc": "cf66580fef71689de32d3ff5f4500c328fe76923fabe2758689f3a5841abd229",
+        "tools/bundle.py": "69ab26595551e67b8c559622916585ca05cffdc10e77254cc0283ef6f527ecfb",
+        "tools/inspect_program.py": "b0462eaf6fdb888077b142d4eb456c7238be32e593bf8b6da7703ff8ce48bb0c",
+        "tools/intake_worker.py": "f9d880ece31e651a40b04bc4acca0faa15fb4f85c4a390ab88c20c935029ef97",
+        "tools/mamba_chat_source.py": "ce6aa8fe5b3785ed01cdf84539e2ce52fe26fcd67bd667c64f505589b419ef2f",
+        "tools/program.py": "8aa007ea647b6757243ce3accd96766f5d5c83309c32790021da7c404220e386",
+        "tools/program_chat.py": "8cf3fa3e710461fc6c73a57ef277b35ae7b87b8a4360f3a9e953008257061ac3"
+      },
+      "task_family": "decode"
+    },
+    "env_alias": "mrun",
+    "experiment": "cmachine-model-intake-mamba-chat",
+    "needs": {
+      "host": "beast",
+      "payload_custody_v2": true,
+      "prefer_host": "beast"
+    },
+    "payload": {
+      "sha256": "40639a76518963eb2f89e06e1611a35177012197168ee419a2ae7d5c5d7c67ea",
+      "size_bytes": 67995
+    },
+    "payload_kind": "shipped",
+    "plans": {
+      "beast": {
+        "artifact_id": null,
+        "artifact_kind": null,
+        "artifact_locator": {},
+        "artifact_mount": null,
+        "backend": "hf",
+        "device": "cpu",
+        "dtype": "float32",
+        "engine_options": {
+          "full_prefill_logits": true,
+          "physical_batch_size": 1
+        },
+        "engine_profile": "hf-reference",
+        "est_ram_mb": 1209.0,
+        "est_vram_mb": 0.0,
+        "est_wall_s": null,
+        "max_batch": 1,
+        "model": "cmachine-mambasan-130m-instruct",
+        "ram_limit_mb": 3072.0,
+        "reasons": [
+          "host=beast ram=66513MB cuda=True mps=False ane=False task=decode",
+          "dtype=float32",
+          "device=cpu (explicit)",
+          "physical_batch_size=1 (declared HF worker geometry)",
+          "full_prefill_logits=True (declared HF output geometry)",
+          "task=decode rss factor x1.3",
+          "backend=hf (explicit)",
+          "max_batch=1 threads=4 ram_limit=3072MB (est x 1.3)",
+          "selector fallback: explicit backend has no matching local artifact",
+          "science runtime envelope: hf"
+        ],
+        "threads": 4,
+        "weights_gb": 0.6
+      },
+      "mbp1": {
+        "artifact_id": null,
+        "artifact_kind": null,
+        "artifact_locator": {},
+        "artifact_mount": null,
+        "backend": "hf",
+        "device": "cpu",
+        "dtype": "float32",
+        "engine_options": {
+          "full_prefill_logits": true,
+          "physical_batch_size": 1
+        },
+        "engine_profile": "hf-reference",
+        "est_ram_mb": 1209.0,
+        "est_vram_mb": 0.0,
+        "est_wall_s": null,
+        "max_batch": 1,
+        "model": "cmachine-mambasan-130m-instruct",
+        "ram_limit_mb": 3072.0,
+        "reasons": [
+          "host=mbp1 ram=19327MB cuda=False mps=True ane=True task=decode",
+          "dtype=float32",
+          "device=cpu (explicit)",
+          "physical_batch_size=1 (declared HF worker geometry)",
+          "full_prefill_logits=True (declared HF output geometry)",
+          "task=decode rss factor x1.3",
+          "backend=hf (explicit)",
+          "max_batch=1 threads=4 ram_limit=3072MB (est x 1.3)",
+          "selector fallback: explicit backend has no matching local artifact",
+          "science runtime envelope: hf"
+        ],
+        "threads": 4,
+        "weights_gb": 0.6
+      }
+    },
+    "priority": 0,
+    "reservation": {
+      "cpu_threads": 2,
+      "disk_gb": 2.0,
+      "ram_mb": 2048.0,
+      "vram_mb": 0.0
+    },
+    "schema": "mrun.normalized-job-request.v2",
+    "timeout_s": 1800.0
+  },
+  "submitted_request_sha256": "2a39a573c20808a97deccf01edf45f81a8fbd4a67dd11f69836acad2422e7f24",
+  "payload_custody": {
+    "required": true,
+    "declared": {
+      "sha256": "40639a76518963eb2f89e06e1611a35177012197168ee419a2ae7d5c5d7c67ea",
+      "size_bytes": 67995
+    },
+    "sealed": {
+      "sha256": "40639a76518963eb2f89e06e1611a35177012197168ee419a2ae7d5c5d7c67ea",
+      "size_bytes": 67995,
+      "sealed_ts": 1794034432.2266617
+    },
+    "executed": {
+      "sha256": "40639a76518963eb2f89e06e1611a35177012197168ee419a2ae7d5c5d7c67ea",
+      "size_bytes": 67995,
+      "reported_ts": 1794034432.3115487,
+      "host": "beast"
+    }
+  }
+}

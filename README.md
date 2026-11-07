@@ -2,7 +2,7 @@
 
 An explicit C model state machine for executing, inspecting and replacing neural computations.
 
-C owns the live state, the model equations, output selection and continuation. The prototype supports the R3 direct-effect ISA Mamba specimen on CPU and Qwen2.5-1.5B-Instruct through C, CUDA and cuBLAS. Python handles offline exports, optional tokenization and research analysis; it is outside the numerical serving executor.
+C owns the live state, the model equations, output selection and continuation. The prototype supports the R3 direct-effect ISA Mamba specimen on CPU and Qwen2.5-1.5B-Instruct through C, CUDA and cuBLAS. An [operator-driven intake path](research/model_intake/README.md) also compiles PAN and canonical Mamba1 graphs to CPU C programs with generated source maps. Python handles offline exports, optional tokenization and research analysis; it is outside the numerical serving executor.
 
 The goal is to turn understood computations into executable programs that can form their own operands, update consequential state and continue at lower cost. The current Qwen implementation still evaluates the dense model. Avoiding a framework `forward()` call does not remove that computation.
 
@@ -19,6 +19,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 - [Explicit query programs, lexical tables and compact-reader pullbacks](docs/QUERY-PROGRAMS.md)
 - [Import provenance](docs/PROVENANCE.md)
 - [Optional Saturn/mrun integration](docs/INTEGRATION.md)
+- [Automated model intake, C programs and execution evidence](research/model_intake/README.md)
 
 ## What works
 
@@ -32,6 +33,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 | Inspection | Selected read-only layer/token observations, including computed and consumed attention/MLP writes. |
 | Experimental operations | Anchored receiver-plane, live-receiver subspace, writer-projection and source-anchored gate-law APIs. |
 | ISA execution | Explicit Mamba equations, local state checkpoints and register/flag/instruction-length commits for the nominated specimen. |
+| Model intake | Trusted FX or canonical Mamba1 graph to a 14-op C program, source/consumer symbol table, owned recurrent state and bounded replay. |
 
 These are prototype execution boundaries. Compact sufficient chat state, arbitrary model support, general answer correctness and whole-model forward-pass elimination remain open. Experimental laws are explicitly selected; ordinary serving does not enable them automatically.
 
