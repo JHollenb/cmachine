@@ -1,0 +1,18 @@
+{
+  "scope": "generated model-free fixtures; frozen learned runs are separate mrun evidence",
+  "runtime_python_tests": 27,
+  "research_python_tests": 38,
+  "shared_choice_fixtures": 5,
+  "unique_python_tests": 60,
+  "math_ASan_UBSan_tests": 8,
+  "state_mechanics": "passed",
+  "bounded_mechanics": "passed",
+  "operand_mechanics": "passed",
+  "diff_check": "passed",
+  "commands": [
+    "rtk proxy ../common/bin/common exec python -m unittest discover -s tests -q",
+    "rtk proxy ../common/bin/common exec python -m unittest discover -s research/model_intake -p 'test_*.py' -q",
+    "rtk proxy env TCM_TEST_EXECUTABLE=/Users/jakeholl/domains/cmachine-intake-pan-mamba/build/tcm-sanitize ../common/bin/common exec python -m unittest research.model_intake.test_math -q",
+    "rtk proxy make sanitize state-mechanics bounded-mechanics operand-mechanics"
+  ]
+}

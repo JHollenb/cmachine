@@ -8,6 +8,8 @@ The [math extension](MATH.md) adds five learned matrix cells, two neural rewrite
 
 The [math choice debugger](MATH-CAUSAL.md) adds Saturn cuts over the original search, verified prefix reconstruction, single-choice/batch edits and unchanged suffix continuation. Its 117-branch panel repairs one scalar context from DAG cost 9 to 5, retains harmful later edits and verifies exact/C numerical consumers. This is a bounded decision repair, without retraining or a general reasoning claim.
 
+The [capability and efficiency panel](MATH-CAPABILITY.md) adds discovery-only frozen coordinate selection, canonical manalysis neuron unions, physical scorer pruning and bounded proposal unions. Global14 matches full V1 endpoint costs on all 30 cases with 56.2% fewer learned scorer coefficients. Its one-slot structural proposal union repairs both tested trinomial layouts; the specialist-neuron union harms two binomial layouts. The 602-arm panel retains native-scoring controls, numerical ranking sensitivity and scorer-only cost accounting.
+
 `intake.py` imports local declarative checkpoint sources through `mrun.decompiler`, validates coordinated IR, and uses `manalysis.decompiler_bridge` to produce an exact graph with stable source-bound references. Mathematical role priors remain a separate hypothesis-only artifact. That structural command performs no numerical execution. The new `tools/program.py` compiler and `tcm program` executor implement the next boundary; existing ISA and Qwen protocols retain their behavior.
 
 ## Use the prototype

@@ -164,6 +164,14 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
     def linear(node, x, w, bias=None):
         return p.emit("linear", p.weights[w].shape[0], a=value(x), w=w, bias=bias,
                       source=f"fx://{reference_identity}/{node.name}", name=node.name)
+    def matmul(node):
+        if len(node.args)!=2 or node.kwargs:
+            raise ValueError("matmul requires two positional arguments")
+        key=env[node.args[1]]
+        if not isinstance(key,str) or p.weights[key].ndim!=2:
+            raise ValueError("matmul requires a static right parameter")
+        weight=p.parameter(key+".linear",p.weights[key].T)
+        return linear(node,node.args[0],weight)
     for node in graph.graph.nodes:
         source = f"fx://{reference_identity}/{node.name}"
         target, args = node.target, node.args
@@ -186,6 +194,8 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
             if not isinstance(key,str) or p.weights[key].ndim!=2 or (target=="transpose" and tuple(args[1:]) not in ((0,1),(1,0))):
                 raise ValueError("only static matrix-parameter transpose supported")
             env[node]=p.parameter(key+".transpose",p.weights[key].T)
+        elif node.op == "call_method" and target == "matmul":
+            env[node]=matmul(node)
         elif node.op == "call_module" and isinstance(attr(target), torch.nn.Linear):
             layer = attr(target)
             w = p.parameter(str(target)+".weight", layer.weight)
@@ -214,10 +224,7 @@ def lower_fx(module, input_width, identity, destination, *, source_record=None):
                 if not isinstance(key,str) or p.weights[key].ndim!=2:raise ValueError("only matrix-parameter transpose supported")
                 env[node]=p.parameter(key+".transpose",p.weights[key].T)
             elif target in (operator.matmul,torch.matmul):
-                key=env[args[1]]
-                if not isinstance(key,str) or p.weights[key].ndim!=2:raise ValueError("matmul requires a static right parameter")
-                weight=p.parameter(key+".linear",p.weights[key].T)
-                env[node]=linear(node,args[0],weight)
+                env[node]=matmul(node)
             elif target in (torch._C._nn.linear, torch.nn.functional.linear):
                 if node.kwargs:
                     raise ValueError("keyword linear bindings require explicit lowering")

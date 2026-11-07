@@ -113,6 +113,20 @@ class MathMechanics(unittest.TestCase):
                 actual=self.executor().run(path,rows).reshape(-1)
                 np.testing.assert_allclose(actual,expected,rtol=2e-5,atol=2e-6)
 
+    def test_constant_left_matmul_method_uses_static_right_parameter(self):
+        class ConstantLeft(nn.Module):
+            def __init__(self):
+                super().__init__();self.register_buffer('constant',torch.tensor([[1.,0.,0.,1.]]))
+                self.weight=nn.Parameter(torch.arange(12,dtype=torch.float32).reshape(3,4))
+            def forward(self,x):return self.constant.matmul(self.weight.T)+x[:,:3]
+        with tempfile.TemporaryDirectory() as tmp:
+            model=ConstantLeft().eval();path=Path(tmp)/'constant-left.tcm'
+            mapping=lower_fx(model,4,'a'*64,path)
+            self.assertIn('call_method[target=matmul]',mapping['origin']['graph'])
+            rows=np.arange(20,dtype=np.float32).reshape(5,4)
+            with torch.no_grad():expected=model(torch.from_numpy(rows)).numpy()
+            np.testing.assert_array_equal(self.executor().run(path,rows),expected)
+
     def test_projected_read_namespace_arity_active_axes_mutation_and_memo(self):
         view=View();executor=self.executor()
         with tempfile.TemporaryDirectory() as tmp:

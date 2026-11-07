@@ -16,12 +16,16 @@ def submit(mode='math'):
         (stage/'tools').mkdir();(stage/'inputs').mkdir();(stage/'sources').mkdir()
         for name in ('bundle.py','program.py','inspect_program.py','intake_worker.py','program_chat.py','mamba_chat_source.py','math_program.py','math_worker.py'):
             shutil.copy2(ROOT/'tools'/name,stage/'tools'/name)
-        if mode=='math-causal':
+        if mode in ('math-causal','math-capability'):
             for name in ('math_debugger.py','math_causal_worker.py'):
                 shutil.copy2(ROOT/'tools'/name,stage/'tools'/name)
             public=stage/'public/saturn_pub';public.mkdir(parents=True)
             for name in ('__init__.py','core.py','contracts.py','values.py'):
                 shutil.copy2(DOMAINS/'saturn-pub/src/saturn_pub'/name,public/name)
+        if mode=='math-capability':
+            for name in ('math_capability.py','math_capability_worker.py'):
+                shutil.copy2(ROOT/'tools'/name,stage/'tools'/name)
+            shutil.copy2(DOMAINS/'manalysis/src/manalysis/bench/conditional_family.py',stage/'sources/conditional_family.py')
         experiments=DOMAINS/'model-experiments/experiments'
         shutil.copy2(experiments/'2026-10-16-learned-matrix-algorithm/law.py',stage/'sources/law.py')
         shutil.copy2(experiments/'2026-10-17-learned-matrix-c-scale/frozen-rules.json',stage/'inputs/exact-rules.json')
@@ -49,18 +53,22 @@ def submit(mode='math'):
             config.update(evidence_budget_bytes=256*1024**2,
                 geometry='3 goals;two frozen baselines each;all reached V2a choice cuts;V1 whole-batch swaps on recipient parent;scalar sham/untouched/A-B-A/permutation;<=64 donor-recipient single exchanges;alternative batch+8singleton controls;1/2/4/8 doses;reciprocal V1 suffix',
                 work_contract='Original search prefix recomputation, same caps, Saturn StateCut/choice Acts;exact executable+bundle+input C memo;all replay/native audit work charged;no training/retries/nested jobs')
+        if mode=='math-capability':
+            config.update(evidence_budget_bytes=256*1024**2,
+                geometry='12discoverygoals,32direct C neuronablations,discovery-only rankings;24testgoals x23policies;6fresh follow-up goals x7policies+2post-selection leads;6native tie-order controls;602arms;6rounds,8choices,48total,768nodes,1024matches;16numericalrows/program',
+                work_contract='Prepare frozen scorers once;original host DictIndex search;C scores and numerical consumers;Saturn first-choice reconstruction;canonical manalysis coalition catalog;no training/retries/nested jobs')
         (stage/'source-manifest.json').write_text(json.dumps(config,indent=2)+'\n')
-        worker='math_causal_worker.py' if mode=='math-causal' else 'math_worker.py'
+        worker={'math':'math_worker.py','math-causal':'math_causal_worker.py','math-capability':'math_capability_worker.py'}[mode]
         job=launch('env PYTHONHASHSEED=0 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 uv run --offline --project {env} python tools/'+worker+' '+mode,experiment='cmachine-model-intake-'+mode,payload=stage,
             config=config,needs={},model=None,prefer_host='beast',pin='beast',env_alias='mrun',timeout_s=600,detach=True,
             preflight=True,guarded=True,retry_on_kill=False,
-            note='Frozen same-parent causal audit:3goals,2baselines,6round scans,<=64singleton exchanges,alternativebatch+8singletons,sham/A-B-A/permutation/dose/reciprocal controls;original consumer prefix recomputation+native audit+stateless C memo;1CPU thread,48selections/6rounds/768nodes,600s lease;no training/CUDA/retries;stop after panel' if mode=='math-causal' else 'Frozen math integration:5 tiny cells,21/23-feature scorers,live FieldLM reads+18 bounded search arms;one CPU thread,48applications/6rounds/768nodes each;no training/CUDA/retries;stop after panel')
+            note='Frozen capability follow-up to job-2f36448406a4:repair constant-left matmul coverage;12discoverygoals+32Cablations;seal unchanged masks,23policies on24known-family assay rows,6fresh follow-up rows x7policies+2selected leads+6native tie-order controls;602arms;original DictIndex search,Cscoring+16row consumers,Saturn cuts;1CPUthread,6rounds/8choices/48total/768nodes;600s lease;no training/CUDA/retries;stop after panel' if mode=='math-capability' else 'Frozen same-parent causal audit:3goals,2baselines,6round scans,<=64singleton exchanges,alternativebatch+8singletons,sham/A-B-A/permutation/dose/reciprocal controls;original consumer prefix recomputation+native audit+stateless C memo;all replay/native audit work charged;1CPU thread,48selections/6rounds/768nodes,600s lease;no training/CUDA/retries;stop after panel' if mode=='math-causal' else 'Frozen math integration:5 tiny cells,21/23-feature scorers,live FieldLM reads+18 bounded search arms;one CPU thread,48applications/6rounds/768nodes each;no training/CUDA/retries;stop after panel')
         target=ROOT/'results'/job;target.mkdir(parents=True);shutil.copytree(stage,target/'payload')
         (target/'submission.json').write_text(json.dumps({'job_id':job,'config':config},indent=2)+'\n')
     print(json.dumps({'job_id':job,'result_directory':str(target)}))
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('action',choices=('submit','collect'));parser.add_argument('job',nargs='?');parser.add_argument('--mode',choices=('math','math-causal'),default='math');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('action',choices=('submit','collect'));parser.add_argument('job',nargs='?');parser.add_argument('--mode',choices=('math','math-causal','math-capability'),default='math');args=parser.parse_args()
     if args.action=='submit':submit(args.mode)
     else:
         import contextlib
@@ -70,6 +78,6 @@ if __name__=='__main__':
         target=ROOT/'results'/args.job;job=json.loads((target/'job.json').read_text())
         report=json.loads((target/'report.json').read_text()) if (target/'report.json').exists() else {}
         result=report.get('result',{})
-        keys=('branches','replays','physical_C_calls','logical_C_calls','field_all_equal','scorer_max_abs','potentially_clock_confounded_attempts') if report.get('mode')=='math-causal' else ('search_completed','search_errors','lookup_calls','lookup_all_equal','scorer_batches','scorer_max_abs','C_calls')
+        keys=('goals','variants','completed','errors','physical_C_calls','logical_C_calls','scorer_max_abs','clock_confounded') if report.get('mode')=='math-capability' else ('branches','replays','physical_C_calls','logical_C_calls','field_all_equal','scorer_max_abs','potentially_clock_confounded_attempts') if report.get('mode')=='math-causal' else ('search_completed','search_errors','lookup_calls','lookup_all_equal','scorer_batches','scorer_max_abs','C_calls')
         print(json.dumps({'job_id':args.job,'state':job['state'],'status':report.get('status'),'error':report.get('error'),
             'result_directory':str(target),'summary':{key:result.get(key) for key in keys}}))

@@ -1,0 +1,245 @@
+[
+  {
+    "job_id": "job-2f36448406a4",
+    "note": "Initial frozen 20-policy panel: 440/480 completed; two matrix cases blocked by constant-left FX matmul method coverage.",
+    "completed": 440,
+    "errors": 40,
+    "payload_custody": {
+      "required": true,
+      "declared": {
+        "sha256": "622736e1f79ea7c8e79926b5abfeb796775a5a62657969477a398d5156ad6462",
+        "size_bytes": 215976
+      },
+      "sealed": {
+        "sha256": "622736e1f79ea7c8e79926b5abfeb796775a5a62657969477a398d5156ad6462",
+        "size_bytes": 215976,
+        "sealed_ts": 1794043469.9695888
+      },
+      "executed": {
+        "sha256": "622736e1f79ea7c8e79926b5abfeb796775a5a62657969477a398d5156ad6462",
+        "size_bytes": 215976,
+        "reported_ts": 1794043470.0569985,
+        "host": "beast"
+      }
+    },
+    "rankings": {
+      "all": [
+        26,
+        18,
+        15,
+        2,
+        29,
+        7,
+        17,
+        6,
+        0,
+        1,
+        24,
+        5,
+        30,
+        20,
+        4,
+        25
+      ],
+      "binomial": [
+        2,
+        4,
+        18,
+        17,
+        6,
+        0,
+        7,
+        15,
+        24,
+        14,
+        1,
+        29,
+        12,
+        19,
+        20,
+        31
+      ],
+      "planted": [
+        26,
+        8,
+        24,
+        29,
+        7,
+        30,
+        2,
+        25,
+        17,
+        20,
+        4,
+        6,
+        5,
+        13,
+        0,
+        3
+      ]
+    },
+    "report_sha256": "0b6a86a53a3e4ea58ff0dd3387f05fa2ff7af062967d647548b99ab96ef3d3e5"
+  },
+  {
+    "job_id": "job-caafa654c726",
+    "note": "Expanded follow-up: 588/602 completed; new mixed/nested input trees used extractor n-ary syntax instead of native binary insertion API.",
+    "completed": 588,
+    "errors": 14,
+    "payload_custody": {
+      "required": true,
+      "declared": {
+        "sha256": "c65f5da7f906c9c4f559820c47e45b80a5b197842dae7bd5aa84503ae3561195",
+        "size_bytes": 217189
+      },
+      "sealed": {
+        "sha256": "c65f5da7f906c9c4f559820c47e45b80a5b197842dae7bd5aa84503ae3561195",
+        "size_bytes": 217189,
+        "sealed_ts": 1794044057.9757144
+      },
+      "executed": {
+        "sha256": "c65f5da7f906c9c4f559820c47e45b80a5b197842dae7bd5aa84503ae3561195",
+        "size_bytes": 217189,
+        "reported_ts": 1794044058.421242,
+        "host": "beast"
+      }
+    },
+    "rankings": {
+      "all": [
+        26,
+        18,
+        15,
+        2,
+        29,
+        7,
+        17,
+        6,
+        0,
+        1,
+        24,
+        5,
+        30,
+        20,
+        4,
+        25
+      ],
+      "binomial": [
+        2,
+        4,
+        18,
+        17,
+        6,
+        0,
+        7,
+        15,
+        24,
+        14,
+        1,
+        29,
+        12,
+        19,
+        20,
+        31
+      ],
+      "planted": [
+        26,
+        8,
+        24,
+        29,
+        7,
+        30,
+        2,
+        25,
+        17,
+        20,
+        4,
+        6,
+        5,
+        13,
+        0,
+        3
+      ]
+    },
+    "report_sha256": "4dda23b2176d8d2a4f643c79475e2b6916f342f34611ca15021fc7a03f6e7834"
+  },
+  {
+    "job_id": "job-4475f3386295",
+    "note": "Completed corrected panel:602/602;original discovery rankings unchanged;all prior outcomes/failures retained.",
+    "completed": 602,
+    "errors": 0,
+    "payload_custody": {
+      "required": true,
+      "declared": {
+        "sha256": "d96da0e9c1497dcbb063227628cabc3660b101862d7402163227a0ce81745bbb",
+        "size_bytes": 217337
+      },
+      "sealed": {
+        "sha256": "d96da0e9c1497dcbb063227628cabc3660b101862d7402163227a0ce81745bbb",
+        "size_bytes": 217337,
+        "sealed_ts": 1794044179.1154866
+      },
+      "executed": {
+        "sha256": "d96da0e9c1497dcbb063227628cabc3660b101862d7402163227a0ce81745bbb",
+        "size_bytes": 217337,
+        "reported_ts": 1794044179.2021048,
+        "host": "beast"
+      }
+    },
+    "rankings": {
+      "all": [
+        26,
+        18,
+        15,
+        2,
+        29,
+        7,
+        17,
+        6,
+        0,
+        1,
+        24,
+        5,
+        30,
+        20,
+        4,
+        25
+      ],
+      "binomial": [
+        2,
+        4,
+        18,
+        17,
+        6,
+        0,
+        7,
+        15,
+        24,
+        14,
+        1,
+        29,
+        12,
+        19,
+        20,
+        31
+      ],
+      "planted": [
+        26,
+        8,
+        24,
+        29,
+        7,
+        30,
+        2,
+        25,
+        17,
+        20,
+        4,
+        6,
+        5,
+        13,
+        0,
+        3
+      ]
+    },
+    "report_sha256": "b1505c91d48323dad2f6ddd065ed0b580bc111bf6d812ca5247a49bce914a9bf"
+  }
+]
