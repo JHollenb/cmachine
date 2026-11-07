@@ -1,0 +1,2471 @@
+{
+  "fresh": [
+    {
+      "arms": [
+        {
+          "actual_name": "c0-n128-arm0",
+          "answer_lengths": [
+            19,
+            19
+          ],
+          "arm": 0,
+          "candidate_seconds": 2.04165052,
+          "count": 193,
+          "future_kl": 0.0,
+          "future_native_top_agreement": 1.0,
+          "name": "c0-n128-arm0",
+          "per_turn_future_kl": [
+            0.0,
+            0.0
+          ],
+          "policy": -1,
+          "prototype_reads": 0,
+          "sampled_prefill_kl": 0.0,
+          "selected_program_macs": 0,
+          "session_gpu_bytes": 118251008,
+          "shadow_seconds": 2.22210679,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is in the silver box.",
+            "The compass is in the violet box, and the whistle is now in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n128-arm1",
+          "answer_lengths": [
+            19,
+            20
+          ],
+          "arm": 1,
+          "candidate_seconds": 2.06483708,
+          "count": 194,
+          "future_kl": 0.023875657911384792,
+          "future_native_top_agreement": 0.9743589743589743,
+          "name": "c0-n128-arm1",
+          "per_turn_future_kl": [
+            0.02231490243290348,
+            0.025436413389866103
+          ],
+          "policy": 0,
+          "prototype_reads": 194,
+          "sampled_prefill_kl": 0.0022105924011159854,
+          "selected_program_macs": 158924800,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 2.23723414,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is in the silver box.",
+            "The compass is now in the violet box, and the whistle is now in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n128-arm2",
+          "answer_lengths": [
+            19,
+            19
+          ],
+          "arm": 2,
+          "candidate_seconds": 2.05392948,
+          "count": 193,
+          "future_kl": 0.020889357266673587,
+          "future_native_top_agreement": 1.0,
+          "name": "c0-n128-arm2",
+          "per_turn_future_kl": [
+            0.016137203180143323,
+            0.02564151135320385
+          ],
+          "policy": 3,
+          "prototype_reads": 193,
+          "sampled_prefill_kl": 0.0018108097506903719,
+          "selected_program_macs": 158105600,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 2.46730351,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is in the silver box.",
+            "The compass is in the violet box, and the whistle is now in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n128-arm3",
+          "answer_lengths": [
+            20,
+            18
+          ],
+          "arm": 3,
+          "candidate_seconds": 2.05112899,
+          "count": 193,
+          "future_kl": 0.036365891942782926,
+          "future_native_top_agreement": 0.9210526315789473,
+          "name": "c0-n128-arm3",
+          "per_turn_future_kl": [
+            0.040200232215674425,
+            0.032531551669891426
+          ],
+          "policy": 4,
+          "prototype_reads": 193,
+          "sampled_prefill_kl": 0.0034676942246936104,
+          "selected_program_macs": 316211200,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 2.22176185,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is still in the amber box.",
+            "The compass is in the violet box, and the whistle is in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n128-arm4",
+          "answer_lengths": [
+            20,
+            20
+          ],
+          "arm": 4,
+          "candidate_seconds": 2.08980766,
+          "count": 195,
+          "future_kl": 0.03743205295599078,
+          "future_native_top_agreement": 0.925,
+          "name": "c0-n128-arm4",
+          "per_turn_future_kl": [
+            0.04910780731193741,
+            0.025756298600044143
+          ],
+          "policy": 5,
+          "prototype_reads": 390,
+          "sampled_prefill_kl": 0.0033235225463788542,
+          "selected_program_macs": 319488000,
+          "session_gpu_bytes": 109862912,
+          "shadow_seconds": 2.25348494,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is still in the amber box.",
+            "The compass is now in the violet box, and the whistle is now in the amber box."
+          ]
+        }
+      ],
+      "context_tokens": 128,
+      "kind": "update",
+      "later_memory_delta_kl": 0.0010661610132078544,
+      "later_qk_delta_kl": 0.015476534676109339,
+      "query_update_relative_change": -0.12507720858603977
+    },
+    {
+      "arms": [
+        {
+          "actual_name": "c1-n128-arm0",
+          "answer_lengths": [
+            32,
+            30
+          ],
+          "arm": 0,
+          "candidate_seconds": 2.27856326,
+          "count": 215,
+          "future_kl": 0.0,
+          "future_native_top_agreement": 1.0,
+          "name": "c1-n128-arm0",
+          "per_turn_future_kl": [
+            0.0,
+            0.0
+          ],
+          "policy": -1,
+          "prototype_reads": 0,
+          "sampled_prefill_kl": 0.0,
+          "selected_program_macs": 0,
+          "session_gpu_bytes": 118251008,
+          "shadow_seconds": 2.56827768,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the air movement helps to carry away the water vapor from the towel's surface. As the towel dries,",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the towel to lose water vapor through evaporation."
+          ]
+        },
+        {
+          "actual_name": "c1-n128-arm1",
+          "answer_lengths": [
+            32,
+            30
+          ],
+          "arm": 1,
+          "candidate_seconds": 2.3074317,
+          "count": 215,
+          "future_kl": 0.025253750171247615,
+          "future_native_top_agreement": 0.9516129032258065,
+          "name": "c1-n128-arm1",
+          "per_turn_future_kl": [
+            0.010882061441706592,
+            0.03962543890078864
+          ],
+          "policy": 0,
+          "prototype_reads": 215,
+          "sampled_prefill_kl": 0.003173363831549049,
+          "selected_program_macs": 176128000,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 2.57059161,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air increases the rate of evaporation. The water vapor near the towel is carried away by the",
+            "Humid air slows the process because it contains more water vapor, which reduces the rate of evaporation by increasing the saturation point of the air."
+          ]
+        },
+        {
+          "actual_name": "c1-n128-arm2",
+          "answer_lengths": [
+            32,
+            30
+          ],
+          "arm": 2,
+          "candidate_seconds": 2.29451062,
+          "count": 215,
+          "future_kl": 0.022193893119043944,
+          "future_native_top_agreement": 0.9516129032258065,
+          "name": "c1-n128-arm2",
+          "per_turn_future_kl": [
+            0.010504804909379868,
+            0.03388298132870802
+          ],
+          "policy": 3,
+          "prototype_reads": 215,
+          "sampled_prefill_kl": 0.002813199850709057,
+          "selected_program_macs": 176128000,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 2.56780929,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air increases the rate of evaporation. The water vapor near the towel is carried away by the",
+            "Humid air slows the process because it contains more water vapor, which reduces the rate of evaporation by increasing the saturation point of the air."
+          ]
+        },
+        {
+          "actual_name": "c1-n128-arm3",
+          "answer_lengths": [
+            32,
+            29
+          ],
+          "arm": 3,
+          "candidate_seconds": 2.28070764,
+          "count": 214,
+          "future_kl": 0.04547816385304851,
+          "future_native_top_agreement": 0.8852459016393442,
+          "name": "c1-n128-arm3",
+          "per_turn_future_kl": [
+            0.016630896918479052,
+            0.07432543078761797
+          ],
+          "policy": 4,
+          "prototype_reads": 214,
+          "sampled_prefill_kl": 0.010641597792557677,
+          "selected_program_macs": 350617600,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 2.55228813,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel more quickly. As the towel dries,",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water to evaporate from the towel."
+          ]
+        },
+        {
+          "actual_name": "c1-n128-arm4",
+          "answer_lengths": [
+            32,
+            29
+          ],
+          "arm": 4,
+          "candidate_seconds": 2.29680368,
+          "count": 214,
+          "future_kl": 0.04655749680380435,
+          "future_native_top_agreement": 0.8852459016393442,
+          "name": "c1-n128-arm4",
+          "per_turn_future_kl": [
+            0.01786634243744757,
+            0.07524865117016113
+          ],
+          "policy": 5,
+          "prototype_reads": 428,
+          "sampled_prefill_kl": 0.009802545049812705,
+          "selected_program_macs": 350617600,
+          "session_gpu_bytes": 109862912,
+          "shadow_seconds": 2.56058261,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel more quickly. As the towel dries,",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water to evaporate from the towel."
+          ]
+        }
+      ],
+      "context_tokens": 128,
+      "kind": "explanation",
+      "later_memory_delta_kl": 0.0010793329507558444,
+      "later_qk_delta_kl": 0.023284270734004565,
+      "query_update_relative_change": -0.1211644619691945
+    },
+    {
+      "arms": [
+        {
+          "actual_name": "c0-n1024-arm0",
+          "answer_lengths": [
+            19,
+            19
+          ],
+          "arm": 0,
+          "candidate_seconds": 11.7504618,
+          "count": 1089,
+          "future_kl": 0.0,
+          "future_native_top_agreement": 1.0,
+          "name": "c0-n1024-arm0",
+          "per_turn_future_kl": [
+            0.0,
+            0.0
+          ],
+          "policy": -1,
+          "prototype_reads": 0,
+          "sampled_prefill_kl": 0.0,
+          "selected_program_macs": 0,
+          "session_gpu_bytes": 118251008,
+          "shadow_seconds": 12.049943,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is in the silver box.",
+            "The compass is in the violet box, and the whistle is now in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n1024-arm1",
+          "answer_lengths": [
+            19,
+            20
+          ],
+          "arm": 1,
+          "candidate_seconds": 11.8307989,
+          "count": 1090,
+          "future_kl": 0.02551361146460202,
+          "future_native_top_agreement": 0.9743589743589743,
+          "name": "c0-n1024-arm1",
+          "per_turn_future_kl": [
+            0.02230592306414213,
+            0.028721299865061906
+          ],
+          "policy": 0,
+          "prototype_reads": 1090,
+          "sampled_prefill_kl": 0.0008089309714306008,
+          "selected_program_macs": 892928000,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 12.064864,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is in the silver box.",
+            "The compass is now in the violet box, and the whistle is now in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n1024-arm2",
+          "answer_lengths": [
+            19,
+            18
+          ],
+          "arm": 2,
+          "candidate_seconds": 11.802358,
+          "count": 1088,
+          "future_kl": 0.024241611867910823,
+          "future_native_top_agreement": 0.972972972972973,
+          "name": "c0-n1024-arm2",
+          "per_turn_future_kl": [
+            0.01897343682472254,
+            0.02950978691109911
+          ],
+          "policy": 3,
+          "prototype_reads": 1088,
+          "sampled_prefill_kl": 0.0007700411571078516,
+          "selected_program_macs": 891289600,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 12.0341644,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is in the silver box.",
+            "The compass is in the violet box, and the whistle is in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n1024-arm3",
+          "answer_lengths": [
+            20,
+            20
+          ],
+          "arm": 3,
+          "candidate_seconds": 11.8255145,
+          "count": 1091,
+          "future_kl": 0.06378876010214089,
+          "future_native_top_agreement": 0.925,
+          "name": "c0-n1024-arm3",
+          "per_turn_future_kl": [
+            0.10239247575414367,
+            0.0251850444501381
+          ],
+          "policy": 4,
+          "prototype_reads": 1091,
+          "sampled_prefill_kl": 0.001057938505307004,
+          "selected_program_macs": 1787494400,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 12.0866612,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is still in the amber box.",
+            "The compass is now in the violet box, and the whistle is now in the amber box."
+          ]
+        },
+        {
+          "actual_name": "c0-n1024-arm4",
+          "answer_lengths": [
+            20,
+            20
+          ],
+          "arm": 4,
+          "candidate_seconds": 11.8957559,
+          "count": 1091,
+          "future_kl": 0.08400732830647763,
+          "future_native_top_agreement": 0.925,
+          "name": "c0-n1024-arm4",
+          "per_turn_future_kl": [
+            0.13739250351787496,
+            0.03062215309508029
+          ],
+          "policy": 5,
+          "prototype_reads": 2182,
+          "sampled_prefill_kl": 0.0011126190603660132,
+          "selected_program_macs": 1787494400,
+          "session_gpu_bytes": 109862912,
+          "shadow_seconds": 12.0832206,
+          "source": false,
+          "stopped": [
+            true,
+            true
+          ],
+          "texts": [
+            "The compass is now in the violet box, and the whistle is still in the amber box.",
+            "The compass is now in the violet box, and the whistle is now in the amber box."
+          ]
+        }
+      ],
+      "context_tokens": 1024,
+      "kind": "update",
+      "later_memory_delta_kl": 0.020218568204336734,
+      "later_qk_delta_kl": 0.03954714823423007,
+      "query_update_relative_change": -0.04985572499040314
+    },
+    {
+      "arms": [
+        {
+          "actual_name": "c1-n1024-arm0",
+          "answer_lengths": [
+            32,
+            30
+          ],
+          "arm": 0,
+          "candidate_seconds": 12.003083,
+          "count": 1111,
+          "future_kl": 0.0,
+          "future_native_top_agreement": 1.0,
+          "name": "c1-n1024-arm0",
+          "per_turn_future_kl": [
+            0.0,
+            0.0
+          ],
+          "policy": -1,
+          "prototype_reads": 0,
+          "sampled_prefill_kl": 0.0,
+          "selected_program_macs": 0,
+          "session_gpu_bytes": 118251008,
+          "shadow_seconds": 12.4223075,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the air movement helps to carry away the water vapor from the towel's surface. As the towel dries,",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the towel to lose water vapor through evaporation."
+          ]
+        },
+        {
+          "actual_name": "c1-n1024-arm1",
+          "answer_lengths": [
+            32,
+            29
+          ],
+          "arm": 1,
+          "candidate_seconds": 12.0612196,
+          "count": 1110,
+          "future_kl": 0.0337764701623822,
+          "future_native_top_agreement": 0.9016393442622951,
+          "name": "c1-n1024-arm1",
+          "per_turn_future_kl": [
+            0.022791744107851203,
+            0.0447611962169132
+          ],
+          "policy": 0,
+          "prototype_reads": 1110,
+          "sampled_prefill_kl": 0.0011630608876271194,
+          "selected_program_macs": 909312000,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 12.3974535,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the water on the towel to evaporate."
+          ]
+        },
+        {
+          "actual_name": "c1-n1024-arm2",
+          "answer_lengths": [
+            32,
+            26
+          ],
+          "arm": 2,
+          "candidate_seconds": 12.0210772,
+          "count": 1107,
+          "future_kl": 0.026362420018375837,
+          "future_native_top_agreement": 0.9655172413793104,
+          "name": "c1-n1024-arm2",
+          "per_turn_future_kl": [
+            0.016391294088860205,
+            0.03633354594789147
+          ],
+          "policy": 3,
+          "prototype_reads": 1107,
+          "sampled_prefill_kl": 0.0011430071484954084,
+          "selected_program_macs": 906854400,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 12.348002,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the air movement helps to carry away the water vapor from the towel's surface. As the towel dries,",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the towel to lose moisture."
+          ]
+        },
+        {
+          "actual_name": "c1-n1024-arm3",
+          "answer_lengths": [
+            32,
+            31
+          ],
+          "arm": 3,
+          "candidate_seconds": 12.0684536,
+          "count": 1112,
+          "future_kl": 0.051927473079753664,
+          "future_native_top_agreement": 0.8571428571428571,
+          "name": "c1-n1024-arm3",
+          "per_turn_future_kl": [
+            0.0264293254933173,
+            0.07742562066619002
+          ],
+          "policy": 4,
+          "prototype_reads": 1112,
+          "sampled_prefill_kl": 0.005055168801507233,
+          "selected_program_macs": 1821900800,
+          "session_gpu_bytes": 114057216,
+          "shadow_seconds": 12.4261664,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel's surface. As the air moves over the",
+            "Humid air slows the drying process because it holds more water vapor, which makes it harder for the water to evaporate from the towel's surface."
+          ]
+        },
+        {
+          "actual_name": "c1-n1024-arm4",
+          "answer_lengths": [
+            32,
+            30
+          ],
+          "arm": 4,
+          "candidate_seconds": 12.1284062,
+          "count": 1111,
+          "future_kl": 0.03929565636812364,
+          "future_native_top_agreement": 0.9354838709677419,
+          "name": "c1-n1024-arm4",
+          "per_turn_future_kl": [
+            0.021647475637835964,
+            0.056943837098411325
+          ],
+          "policy": 5,
+          "prototype_reads": 2222,
+          "sampled_prefill_kl": 0.005561492754466262,
+          "selected_program_macs": 1820262400,
+          "session_gpu_bytes": 109862912,
+          "shadow_seconds": 12.4097604,
+          "source": false,
+          "stopped": [
+            false,
+            true
+          ],
+          "texts": [
+            "A wet towel dries faster in moving air because the movement of air helps to remove the water vapor from the towel more quickly. As the towel dries,",
+            "Humid air slows the drying process because it contains more water vapor, which makes it harder for the towel to lose water vapor through evaporation."
+          ]
+        }
+      ],
+      "context_tokens": 1024,
+      "kind": "explanation",
+      "later_memory_delta_kl": -0.012631816711630023,
+      "later_qk_delta_kl": 0.025565053061377827,
+      "query_update_relative_change": -0.21950340306026406
+    }
+  ],
+  "fresh_arm_mean_kl": [
+    0.0,
+    0.027104872427404156,
+    0.02342182056800105,
+    0.049390072244431496,
+    0.05182313360859911
+  ],
+  "fresh_query_update_relative_change": -0.135881541935589,
+  "observations": [
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.009372744734230911,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p0",
+      "native_top_agreement": 1.0,
+      "policy": 0,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 2.68889082883441e-05,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.05143278044032982,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p0",
+      "native_top_agreement": 0.96875,
+      "policy": 0,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 5.698862445607601e-06,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.004125266927573005,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p0",
+      "native_top_agreement": 1.0,
+      "policy": 0,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 8.831806713216434e-08,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 14,
+      "future_kl_nats": 0.09275573897522939,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p0",
+      "native_top_agreement": 0.8571428571428571,
+      "policy": 0,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.0035454818168072816,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p0",
+      "native_top_agreement": 0.9375,
+      "policy": 0,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 5.4251328172409824e-06,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.018485892954341693,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p0",
+      "native_top_agreement": 1.0,
+      "policy": 0,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 2.19339334809257e-07,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.010924459321353237,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p1",
+      "native_top_agreement": 1.0,
+      "policy": 1,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.000532921302336966,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.06305333591392924,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p1",
+      "native_top_agreement": 0.96875,
+      "policy": 1,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 8.370928433605842e-06,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 22,
+      "future_kl_nats": 0.005052614088041091,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p1",
+      "native_top_agreement": 0.9545454545454546,
+      "policy": 1,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.0006361142286844454,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 14,
+      "future_kl_nats": 0.14914676045883415,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p1",
+      "native_top_agreement": 0.8571428571428571,
+      "policy": 1,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.0023276486359671616,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p1",
+      "native_top_agreement": 0.9375,
+      "policy": 1,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.0008254870875739289,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.018567259053940417,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p1",
+      "native_top_agreement": 0.96875,
+      "policy": 1,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 1.9600126833975103e-07,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.008819989289264136,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p2",
+      "native_top_agreement": 1.0,
+      "policy": 2,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.0003158596308771512,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.04666251586555733,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p2",
+      "native_top_agreement": 0.96875,
+      "policy": 2,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 4.485024619917502e-06,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.003872871159230338,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p2",
+      "native_top_agreement": 1.0,
+      "policy": 2,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.00010529237652145657,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 14,
+      "future_kl_nats": 0.07446471398151723,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p2",
+      "native_top_agreement": 0.8571428571428571,
+      "policy": 2,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.0037927840116534655,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p2",
+      "native_top_agreement": 0.9375,
+      "policy": 2,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.0001740136171226129,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.01577140732044445,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p2",
+      "native_top_agreement": 1.0,
+      "policy": 2,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 1.803709077360439e-07,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.008435470946429678,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p3",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.0009748554972810514,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.04264094433860978,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s0-p3",
+      "native_top_agreement": 0.96875,
+      "policy": 3,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 3.4464303148755506e-06,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.004012388052982462,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p3",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.00027192317746491324,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 15,
+      "future_kl_nats": 0.04460621614681654,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s1-p3",
+      "native_top_agreement": 0.8666666666666667,
+      "policy": 3,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.004135440045261157,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p3",
+      "native_top_agreement": 0.9375,
+      "policy": 3,
+      "prefill_samples": 2,
+      "sampled_prefill_kl_nats": 0.0005897749487410724,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.01380817090614308,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "s2-p3",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 1.4987546411715471e-07,
+      "schema": "context-query-observation-v1",
+      "source": true,
+      "stopped": false,
+      "turn": 1
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.0,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.02231490243290348,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm1",
+      "native_top_agreement": 1.0,
+      "policy": 0,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.0022105924011159854,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.025436413389866103,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm1",
+      "native_top_agreement": 0.95,
+      "policy": 0,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.016137203180143323,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm2",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.0018108097506903719,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.02564151135320385,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm2",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.040200232215674425,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm3",
+      "native_top_agreement": 0.9,
+      "policy": 4,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.0034676942246936104,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 18,
+      "future_kl_nats": 0.032531551669891426,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm3",
+      "native_top_agreement": 0.9444444444444444,
+      "policy": 4,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.04910780731193741,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm4",
+      "native_top_agreement": 0.9,
+      "policy": 5,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.0033235225463788542,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.025756298600044143,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n128-arm4",
+      "native_top_agreement": 0.95,
+      "policy": 5,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.0,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 30,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 0.0,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.010882061441706592,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm1",
+      "native_top_agreement": 0.96875,
+      "policy": 0,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.003965551527079942,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 30,
+      "future_kl_nats": 0.03962543890078864,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm1",
+      "native_top_agreement": 0.9333333333333333,
+      "policy": 0,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 4.613049425477042e-06,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.010504804909379868,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm2",
+      "native_top_agreement": 0.96875,
+      "policy": 3,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.003516227298028874,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 30,
+      "future_kl_nats": 0.03388298132870802,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm2",
+      "native_top_agreement": 0.9333333333333333,
+      "policy": 3,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 1.090061429791368e-06,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.016630896918479052,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm3",
+      "native_top_agreement": 0.875,
+      "policy": 4,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.013301742009110398,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 29,
+      "future_kl_nats": 0.07432543078761797,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm3",
+      "native_top_agreement": 0.896551724137931,
+      "policy": 4,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 1.0209263467908184e-06,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.01786634243744757,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm4",
+      "native_top_agreement": 0.875,
+      "policy": 5,
+      "prefill_samples": 4,
+      "sampled_prefill_kl_nats": 0.012253022725640824,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 29,
+      "future_kl_nats": 0.07524865117016113,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n128-arm4",
+      "native_top_agreement": 0.896551724137931,
+      "policy": 5,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 6.343465002299275e-07,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.02230592306414213,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm1",
+      "native_top_agreement": 1.0,
+      "policy": 0,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0008089309714306008,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.028721299865061906,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm1",
+      "native_top_agreement": 0.95,
+      "policy": 0,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 19,
+      "future_kl_nats": 0.01897343682472254,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm2",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0007700411571078516,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 18,
+      "future_kl_nats": 0.02950978691109911,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm2",
+      "native_top_agreement": 0.9444444444444444,
+      "policy": 3,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.10239247575414367,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm3",
+      "native_top_agreement": 0.9,
+      "policy": 4,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.001057938505307004,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.0251850444501381,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm3",
+      "native_top_agreement": 0.95,
+      "policy": 4,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.13739250351787496,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm4",
+      "native_top_agreement": 0.9,
+      "policy": 5,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0011126190603660132,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 0
+    },
+    {
+      "future_decisions": 20,
+      "future_kl_nats": 0.03062215309508029,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c0-n1024-arm4",
+      "native_top_agreement": 0.95,
+      "policy": 5,
+      "prefill_samples": 0,
+      "sampled_prefill_kl_nats": null,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 30,
+      "future_kl_nats": 0.0,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm0",
+      "native_top_agreement": 1.0,
+      "policy": -1,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 0.0,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.022791744107851203,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm1",
+      "native_top_agreement": 0.875,
+      "policy": 0,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0011984182360290831,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 29,
+      "future_kl_nats": 0.0447611962169132,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm1",
+      "native_top_agreement": 0.9310344827586207,
+      "policy": 0,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 3.162573876427585e-05,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.016391294088860205,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm2",
+      "native_top_agreement": 1.0,
+      "policy": 3,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0011786227053498795,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 26,
+      "future_kl_nats": 0.03633354594789147,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm2",
+      "native_top_agreement": 0.9230769230769231,
+      "policy": 3,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 3.3093291523384787e-06,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.0264293254933173,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm3",
+      "native_top_agreement": 0.875,
+      "policy": 4,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.005212630244024038,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 31,
+      "future_kl_nats": 0.07742562066619002,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm3",
+      "native_top_agreement": 0.8387096774193549,
+      "policy": 4,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 1.6402640969447454e-05,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    },
+    {
+      "future_decisions": 32,
+      "future_kl_nats": 0.021647475637835964,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm4",
+      "native_top_agreement": 0.875,
+      "policy": 5,
+      "prefill_samples": 32,
+      "sampled_prefill_kl_nats": 0.0057352614686960665,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": false,
+      "turn": 0
+    },
+    {
+      "future_decisions": 30,
+      "future_kl_nats": 0.056943837098411325,
+      "model_id": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "name": "c1-n1024-arm4",
+      "native_top_agreement": 1.0,
+      "policy": 5,
+      "prefill_samples": 1,
+      "sampled_prefill_kl_nats": 8.938991125267952e-07,
+      "schema": "context-query-observation-v1",
+      "source": false,
+      "stopped": true,
+      "turn": 1
+    }
+  ],
+  "rows": [
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.62759273,
+      "count": 152,
+      "future_kl": 0.030402762587280363,
+      "future_native_top_agreement": 0.984375,
+      "name": "s0-p0",
+      "per_turn_future_kl": [
+        0.009372744734230911,
+        0.05143278044032982
+      ],
+      "policy": 0,
+      "prototype_reads": 152,
+      "sampled_prefill_kl": 1.98255596740986e-05,
+      "selected_program_macs": 124518400,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.90120891,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        14
+      ],
+      "candidate_seconds": 1.35764851,
+      "count": 118,
+      "future_kl": 0.0484405029514012,
+      "future_native_top_agreement": 0.9411764705882353,
+      "name": "s1-p0",
+      "per_turn_future_kl": [
+        0.004125266927573005,
+        0.09275573897522939
+      ],
+      "policy": 0,
+      "prototype_reads": 118,
+      "sampled_prefill_kl": 8.831806713216434e-08,
+      "selected_program_macs": 96665600,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.4075996,
+      "source": true,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.60630239,
+      "count": 150,
+      "future_kl": 0.011015687385574487,
+      "future_native_top_agreement": 0.96875,
+      "name": "s2-p0",
+      "per_turn_future_kl": [
+        0.0035454818168072816,
+        0.018485892954341693
+      ],
+      "policy": 0,
+      "prototype_reads": 150,
+      "sampled_prefill_kl": 3.689868323097074e-06,
+      "selected_program_macs": 122880000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.93317084,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 2.24814639,
+      "count": 152,
+      "future_kl": 0.036988897617641237,
+      "future_native_top_agreement": 0.984375,
+      "name": "s0-p1",
+      "per_turn_future_kl": [
+        0.010924459321353237,
+        0.06305333591392924
+      ],
+      "policy": 1,
+      "prototype_reads": 152,
+      "sampled_prefill_kl": 0.0003580711777025126,
+      "selected_program_macs": 124518400,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.89980725,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        22,
+        14
+      ],
+      "candidate_seconds": 1.28032711,
+      "count": 120,
+      "future_kl": 0.07709968727343762,
+      "future_native_top_agreement": 0.9166666666666666,
+      "name": "s1-p1",
+      "per_turn_future_kl": [
+        0.005052614088041091,
+        0.14914676045883415
+      ],
+      "policy": 1,
+      "prototype_reads": 120,
+      "sampled_prefill_kl": 0.0006361142286844454,
+      "selected_program_macs": 98304000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.4339763,
+      "source": true,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.60478571,
+      "count": 150,
+      "future_kl": 0.01044745384495379,
+      "future_native_top_agreement": 0.953125,
+      "name": "s2-p1",
+      "per_turn_future_kl": [
+        0.0023276486359671616,
+        0.018567259053940417
+      ],
+      "policy": 1,
+      "prototype_reads": 150,
+      "sampled_prefill_kl": 0.0005503900588053991,
+      "selected_program_macs": 122880000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.87920517,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.62585294,
+      "count": 152,
+      "future_kl": 0.02774125257741073,
+      "future_native_top_agreement": 0.984375,
+      "name": "s0-p2",
+      "per_turn_future_kl": [
+        0.008819989289264136,
+        0.04666251586555733
+      ],
+      "policy": 2,
+      "prototype_reads": 152,
+      "sampled_prefill_kl": 0.00021206809545807327,
+      "selected_program_macs": 124518400,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.9697444,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        14
+      ],
+      "candidate_seconds": 1.25925069,
+      "count": 118,
+      "future_kl": 0.039168792570373784,
+      "future_native_top_agreement": 0.9411764705882353,
+      "name": "s1-p2",
+      "per_turn_future_kl": [
+        0.003872871159230338,
+        0.07446471398151723
+      ],
+      "policy": 2,
+      "prototype_reads": 118,
+      "sampled_prefill_kl": 0.00010529237652145657,
+      "selected_program_macs": 96665600,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.40371694,
+      "source": true,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.60693166,
+      "count": 150,
+      "future_kl": 0.009782095666048958,
+      "future_native_top_agreement": 0.96875,
+      "name": "s2-p2",
+      "per_turn_future_kl": [
+        0.0037927840116534655,
+        0.01577140732044445
+      ],
+      "policy": 2,
+      "prototype_reads": 150,
+      "sampled_prefill_kl": 0.00011606920171765394,
+      "selected_program_macs": 122880000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 3.02942894,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.81978609,
+      "count": 152,
+      "future_kl": 0.02553820764251973,
+      "future_native_top_agreement": 0.984375,
+      "name": "s0-p3",
+      "per_turn_future_kl": [
+        0.008435470946429678,
+        0.04264094433860978
+      ],
+      "policy": 3,
+      "prototype_reads": 152,
+      "sampled_prefill_kl": 0.0006510524749589928,
+      "selected_program_macs": 124518400,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.87164412,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        15
+      ],
+      "candidate_seconds": 1.27669708,
+      "count": 119,
+      "future_kl": 0.024309302099899503,
+      "future_native_top_agreement": 0.9428571428571428,
+      "name": "s1-p3",
+      "per_turn_future_kl": [
+        0.004012388052982462,
+        0.04460621614681654
+      ],
+      "policy": 3,
+      "prototype_reads": 119,
+      "sampled_prefill_kl": 0.00027192317746491324,
+      "selected_program_macs": 97484800,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.42025731,
+      "source": true,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        32
+      ],
+      "candidate_seconds": 1.60496513,
+      "count": 150,
+      "future_kl": 0.00897180547570212,
+      "future_native_top_agreement": 0.96875,
+      "name": "s2-p3",
+      "per_turn_future_kl": [
+        0.004135440045261157,
+        0.01380817090614308
+      ],
+      "policy": 3,
+      "prototype_reads": 150,
+      "sampled_prefill_kl": 0.00039323325764875394,
+      "selected_program_macs": 122880000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 1.87903798,
+      "source": true,
+      "stopped": [
+        false,
+        false
+      ]
+    },
+    {
+      "answer_lengths": [
+        19,
+        19
+      ],
+      "candidate_seconds": 2.04165052,
+      "count": 193,
+      "future_kl": 0.0,
+      "future_native_top_agreement": 1.0,
+      "name": "c0-n128-arm0",
+      "per_turn_future_kl": [
+        0.0,
+        0.0
+      ],
+      "policy": -1,
+      "prototype_reads": 0,
+      "sampled_prefill_kl": 0.0,
+      "selected_program_macs": 0,
+      "session_gpu_bytes": 118251008,
+      "shadow_seconds": 2.22210679,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        19,
+        20
+      ],
+      "candidate_seconds": 2.06483708,
+      "count": 194,
+      "future_kl": 0.023875657911384792,
+      "future_native_top_agreement": 0.9743589743589743,
+      "name": "c0-n128-arm1",
+      "per_turn_future_kl": [
+        0.02231490243290348,
+        0.025436413389866103
+      ],
+      "policy": 0,
+      "prototype_reads": 194,
+      "sampled_prefill_kl": 0.0022105924011159854,
+      "selected_program_macs": 158924800,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.23723414,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        19,
+        19
+      ],
+      "candidate_seconds": 2.05392948,
+      "count": 193,
+      "future_kl": 0.020889357266673587,
+      "future_native_top_agreement": 1.0,
+      "name": "c0-n128-arm2",
+      "per_turn_future_kl": [
+        0.016137203180143323,
+        0.02564151135320385
+      ],
+      "policy": 3,
+      "prototype_reads": 193,
+      "sampled_prefill_kl": 0.0018108097506903719,
+      "selected_program_macs": 158105600,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.46730351,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        18
+      ],
+      "candidate_seconds": 2.05112899,
+      "count": 193,
+      "future_kl": 0.036365891942782926,
+      "future_native_top_agreement": 0.9210526315789473,
+      "name": "c0-n128-arm3",
+      "per_turn_future_kl": [
+        0.040200232215674425,
+        0.032531551669891426
+      ],
+      "policy": 4,
+      "prototype_reads": 193,
+      "sampled_prefill_kl": 0.0034676942246936104,
+      "selected_program_macs": 316211200,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.22176185,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        20
+      ],
+      "candidate_seconds": 2.08980766,
+      "count": 195,
+      "future_kl": 0.03743205295599078,
+      "future_native_top_agreement": 0.925,
+      "name": "c0-n128-arm4",
+      "per_turn_future_kl": [
+        0.04910780731193741,
+        0.025756298600044143
+      ],
+      "policy": 5,
+      "prototype_reads": 390,
+      "sampled_prefill_kl": 0.0033235225463788542,
+      "selected_program_macs": 319488000,
+      "session_gpu_bytes": 109862912,
+      "shadow_seconds": 2.25348494,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        30
+      ],
+      "candidate_seconds": 2.27856326,
+      "count": 215,
+      "future_kl": 0.0,
+      "future_native_top_agreement": 1.0,
+      "name": "c1-n128-arm0",
+      "per_turn_future_kl": [
+        0.0,
+        0.0
+      ],
+      "policy": -1,
+      "prototype_reads": 0,
+      "sampled_prefill_kl": 0.0,
+      "selected_program_macs": 0,
+      "session_gpu_bytes": 118251008,
+      "shadow_seconds": 2.56827768,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        30
+      ],
+      "candidate_seconds": 2.3074317,
+      "count": 215,
+      "future_kl": 0.025253750171247615,
+      "future_native_top_agreement": 0.9516129032258065,
+      "name": "c1-n128-arm1",
+      "per_turn_future_kl": [
+        0.010882061441706592,
+        0.03962543890078864
+      ],
+      "policy": 0,
+      "prototype_reads": 215,
+      "sampled_prefill_kl": 0.003173363831549049,
+      "selected_program_macs": 176128000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.57059161,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        30
+      ],
+      "candidate_seconds": 2.29451062,
+      "count": 215,
+      "future_kl": 0.022193893119043944,
+      "future_native_top_agreement": 0.9516129032258065,
+      "name": "c1-n128-arm2",
+      "per_turn_future_kl": [
+        0.010504804909379868,
+        0.03388298132870802
+      ],
+      "policy": 3,
+      "prototype_reads": 215,
+      "sampled_prefill_kl": 0.002813199850709057,
+      "selected_program_macs": 176128000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.56780929,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        29
+      ],
+      "candidate_seconds": 2.28070764,
+      "count": 214,
+      "future_kl": 0.04547816385304851,
+      "future_native_top_agreement": 0.8852459016393442,
+      "name": "c1-n128-arm3",
+      "per_turn_future_kl": [
+        0.016630896918479052,
+        0.07432543078761797
+      ],
+      "policy": 4,
+      "prototype_reads": 214,
+      "sampled_prefill_kl": 0.010641597792557677,
+      "selected_program_macs": 350617600,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 2.55228813,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        29
+      ],
+      "candidate_seconds": 2.29680368,
+      "count": 214,
+      "future_kl": 0.04655749680380435,
+      "future_native_top_agreement": 0.8852459016393442,
+      "name": "c1-n128-arm4",
+      "per_turn_future_kl": [
+        0.01786634243744757,
+        0.07524865117016113
+      ],
+      "policy": 5,
+      "prototype_reads": 428,
+      "sampled_prefill_kl": 0.009802545049812705,
+      "selected_program_macs": 350617600,
+      "session_gpu_bytes": 109862912,
+      "shadow_seconds": 2.56058261,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        19,
+        19
+      ],
+      "candidate_seconds": 11.7504618,
+      "count": 1089,
+      "future_kl": 0.0,
+      "future_native_top_agreement": 1.0,
+      "name": "c0-n1024-arm0",
+      "per_turn_future_kl": [
+        0.0,
+        0.0
+      ],
+      "policy": -1,
+      "prototype_reads": 0,
+      "sampled_prefill_kl": 0.0,
+      "selected_program_macs": 0,
+      "session_gpu_bytes": 118251008,
+      "shadow_seconds": 12.049943,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        19,
+        20
+      ],
+      "candidate_seconds": 11.8307989,
+      "count": 1090,
+      "future_kl": 0.02551361146460202,
+      "future_native_top_agreement": 0.9743589743589743,
+      "name": "c0-n1024-arm1",
+      "per_turn_future_kl": [
+        0.02230592306414213,
+        0.028721299865061906
+      ],
+      "policy": 0,
+      "prototype_reads": 1090,
+      "sampled_prefill_kl": 0.0008089309714306008,
+      "selected_program_macs": 892928000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 12.064864,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        19,
+        18
+      ],
+      "candidate_seconds": 11.802358,
+      "count": 1088,
+      "future_kl": 0.024241611867910823,
+      "future_native_top_agreement": 0.972972972972973,
+      "name": "c0-n1024-arm2",
+      "per_turn_future_kl": [
+        0.01897343682472254,
+        0.02950978691109911
+      ],
+      "policy": 3,
+      "prototype_reads": 1088,
+      "sampled_prefill_kl": 0.0007700411571078516,
+      "selected_program_macs": 891289600,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 12.0341644,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        20
+      ],
+      "candidate_seconds": 11.8255145,
+      "count": 1091,
+      "future_kl": 0.06378876010214089,
+      "future_native_top_agreement": 0.925,
+      "name": "c0-n1024-arm3",
+      "per_turn_future_kl": [
+        0.10239247575414367,
+        0.0251850444501381
+      ],
+      "policy": 4,
+      "prototype_reads": 1091,
+      "sampled_prefill_kl": 0.001057938505307004,
+      "selected_program_macs": 1787494400,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 12.0866612,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        20,
+        20
+      ],
+      "candidate_seconds": 11.8957559,
+      "count": 1091,
+      "future_kl": 0.08400732830647763,
+      "future_native_top_agreement": 0.925,
+      "name": "c0-n1024-arm4",
+      "per_turn_future_kl": [
+        0.13739250351787496,
+        0.03062215309508029
+      ],
+      "policy": 5,
+      "prototype_reads": 2182,
+      "sampled_prefill_kl": 0.0011126190603660132,
+      "selected_program_macs": 1787494400,
+      "session_gpu_bytes": 109862912,
+      "shadow_seconds": 12.0832206,
+      "source": false,
+      "stopped": [
+        true,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        30
+      ],
+      "candidate_seconds": 12.003083,
+      "count": 1111,
+      "future_kl": 0.0,
+      "future_native_top_agreement": 1.0,
+      "name": "c1-n1024-arm0",
+      "per_turn_future_kl": [
+        0.0,
+        0.0
+      ],
+      "policy": -1,
+      "prototype_reads": 0,
+      "sampled_prefill_kl": 0.0,
+      "selected_program_macs": 0,
+      "session_gpu_bytes": 118251008,
+      "shadow_seconds": 12.4223075,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        29
+      ],
+      "candidate_seconds": 12.0612196,
+      "count": 1110,
+      "future_kl": 0.0337764701623822,
+      "future_native_top_agreement": 0.9016393442622951,
+      "name": "c1-n1024-arm1",
+      "per_turn_future_kl": [
+        0.022791744107851203,
+        0.0447611962169132
+      ],
+      "policy": 0,
+      "prototype_reads": 1110,
+      "sampled_prefill_kl": 0.0011630608876271194,
+      "selected_program_macs": 909312000,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 12.3974535,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        26
+      ],
+      "candidate_seconds": 12.0210772,
+      "count": 1107,
+      "future_kl": 0.026362420018375837,
+      "future_native_top_agreement": 0.9655172413793104,
+      "name": "c1-n1024-arm2",
+      "per_turn_future_kl": [
+        0.016391294088860205,
+        0.03633354594789147
+      ],
+      "policy": 3,
+      "prototype_reads": 1107,
+      "sampled_prefill_kl": 0.0011430071484954084,
+      "selected_program_macs": 906854400,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 12.348002,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        31
+      ],
+      "candidate_seconds": 12.0684536,
+      "count": 1112,
+      "future_kl": 0.051927473079753664,
+      "future_native_top_agreement": 0.8571428571428571,
+      "name": "c1-n1024-arm3",
+      "per_turn_future_kl": [
+        0.0264293254933173,
+        0.07742562066619002
+      ],
+      "policy": 4,
+      "prototype_reads": 1112,
+      "sampled_prefill_kl": 0.005055168801507233,
+      "selected_program_macs": 1821900800,
+      "session_gpu_bytes": 114057216,
+      "shadow_seconds": 12.4261664,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    },
+    {
+      "answer_lengths": [
+        32,
+        30
+      ],
+      "candidate_seconds": 12.1284062,
+      "count": 1111,
+      "future_kl": 0.03929565636812364,
+      "future_native_top_agreement": 0.9354838709677419,
+      "name": "c1-n1024-arm4",
+      "per_turn_future_kl": [
+        0.021647475637835964,
+        0.056943837098411325
+      ],
+      "policy": 5,
+      "prototype_reads": 2222,
+      "sampled_prefill_kl": 0.005561492754466262,
+      "selected_program_macs": 1820262400,
+      "session_gpu_bytes": 109862912,
+      "shadow_seconds": 12.4097604,
+      "source": false,
+      "stopped": [
+        false,
+        true
+      ]
+    }
+  ],
+  "schema": "context-query-analysis-v1",
+  "scope": "Exploratory conditional fidelity, equally weighted conversations and turns; each policy supplies its own answer history. Different candidate domains prevent interpreting differences as isolated same-state causal effects. No task-truth, universal closure or speed certification.",
+  "selected_index": 3,
+  "source_direction_local_relative_change": -0.5308826229935466,
+  "source_feedback": [
+    {
+      "dose": 0.0,
+      "future_kl": 0.02995298430808535,
+      "index": 0,
+      "local_response_loss": 17.33720098841433,
+      "per_source": [
+        0.030402762587280363,
+        0.0484405029514012,
+        0.011015687385574487
+      ]
+    },
+    {
+      "dose": -1.0,
+      "future_kl": 0.04151201291201088,
+      "index": 1,
+      "local_response_loss": 38.67390096201892,
+      "per_source": [
+        0.036988897617641237,
+        0.07709968727343762,
+        0.01044745384495379
+      ]
+    },
+    {
+      "dose": 0.5,
+      "future_kl": 0.02556404693794449,
+      "index": 2,
+      "local_response_loss": 10.831109302712662,
+      "per_source": [
+        0.02774125257741073,
+        0.039168792570373784,
+        0.009782095666048958
+      ]
+    },
+    {
+      "dose": 1.0,
+      "future_kl": 0.01960643840604045,
+      "index": 3,
+      "local_response_loss": 8.13318225231862,
+      "per_source": [
+        0.02553820764251973,
+        0.024309302099899503,
+        0.00897180547570212
+      ]
+    }
+  ],
+  "source_relative_change": -0.3454262118132919
+}

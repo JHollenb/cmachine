@@ -247,6 +247,10 @@ The separate [weight-storage experiment](composition/weight_tiles/FINDINGS.md) r
 
 The [bounded-retention implementation](composition/bounded_retention/FINDINGS.md) now runs anchors16/recent64/reservoir32 beyond physical support with fixed score/decode scratch and three counted recovery snapshots. Its 9,279,620-byte tracked GPU state restores occupied sample replacement, RNG, addresses and logits exactly. Five own-state arms advance 2,626 main tokens; every bounded arm fails all four delayed questions, while native/full-byte recover the three facts but give40 instead of46 for the sum. Saved-only factoring separates omission, weighting, changed K/V and changed queries; Astra independently reproduces every signed term. Verification binds73 sources/1,060 raw files, and74 evidence rows verify. Bounded storage is implemented; sufficient chat and forward elimination remain open. [Protocol and review](composition/bounded_retention/README.md), [architectural explanation](../../obsidian/blog/2026-11-06-171900-what-bounded-memory-changes-in-the-c-state-machine.md).
 
+## Contextual queries through their own future
+
+The [context-query study](context_query/README.md) now uses the canonical runtime's public multilayer Q/K/V programs and compact cache callbacks. A source-only same-memory response update lowers mean fresh own-history KL 13.59% across 128/1024-token two-turn conversations without increasing serving work. A source-derived layer-18 Q/K bank increases error and loses an inventory binding even with full memory there. The shared API and first-layer atom subset qualify; general cross-layer relational closure remains open. [Findings, costs and audit scope](context_query/FINDINGS.md).
+
 ## Evidence verification
 
 `tools/verify.py RESULT_DIRECTORY` checks the report against the scheduler-sealed log, verifies copied source hashes and public receipt seals, and recomputes Qwen first-readout errors from retained raw arrays. It performs no model execution. Each successful main assay retains its raw outputs and source snapshot under its result directory.

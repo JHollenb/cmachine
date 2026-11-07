@@ -12,6 +12,8 @@
 | [qwen_cuda.cu](../src/qwen_cuda.cu) | cuBLAS maps, RMSNorm, RoPE, attention, SwiGLU, cache and top-two primitives. |
 | [qwen_serve.c](../src/qwen_serve.c) | Persistent single-session token protocol. |
 | [qwen.h](../src/qwen.h) | Session, checkpoint, observation and operation APIs. |
+| [qwen_operands.inc](../src/qwen_operands.inc) | Explicit model/layer-qualified Q/K/V programs and finite token-local first-layer tables. |
+| [prototype_attention.h](../src/prototype_attention.h) | Experimental bounded-memory law and streaming query-response pullback; caller owns rewind. |
 | [bundle.py](../tools/bundle.py) | Offline authenticated bundle export. |
 | [chat.py](../tools/chat.py) | Tokenization, transcript bookkeeping and prefix reuse outside numerical execution. |
 
@@ -61,6 +63,8 @@ The experimental APIs distinguish computed writes from the operands actually add
 - `QwenSubspace` binds a model/layer and frozen two- or three-column bank across changed receivers.
 - `QwenWriter` binds a supplied projector to one actual session/parent/clock and modifies selected writes.
 - `QwenGateLaw` binds frozen source coefficients; each invocation binds its actual parent and live dense operands.
+- `QwenQkvProgram` binds frozen basis/images to a model and layer; it encodes the actual live receiver once for selected Q/K/V maps.
+- `QwenLexicalProgram` binds a finite first-layer token table to a model; missing IDs refuse before input mutation.
 
 These APIs do not automatically route normal chat through a discovered law. Corrected modes may pay original projections, and every such call remains part of the computation cost.
 

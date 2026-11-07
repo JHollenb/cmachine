@@ -1,0 +1,20 @@
+{
+  "schema": "context-query-independent-saved-audit-v1",
+  "report_sha256": "d97a8dedb3a3e187e958c56ecf81bf59d8f2b45f3b69c4c27a76925507d9e9e2",
+  "retained_full_logit_pairs": 128,
+  "maximum_retained_kl_discrepancy": 4.900177486000246e-13,
+  "prototype_snapshots": 64,
+  "historical_actual_reads_exact": 420,
+  "source_response_losses_with_independent_fp32_output_rounding": [
+    17.33720097322685,
+    38.67390101174135,
+    10.831109304715238,
+    8.133182249631997
+  ],
+  "maximum_relative_smooth_vs_rounded_loss_difference": 1.2856843861219365e-09,
+  "later_basis_source_rows": 421,
+  "later_basis_source_energy": 0.9522263760795968,
+  "later_basis_orthogonality_spectral_error": 5.0235033880951277e-08,
+  "new_model_calls": 0,
+  "scope": "Independent saved arrays, memory law and retained logits. Does not replay discarded streams, compile original layer18 weight images again, or certify general chat."
+}

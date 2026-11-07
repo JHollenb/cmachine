@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"kind":"update","text":"The inventory says the amber box holds a compass and the silver box holds a whistle. The compass is moved to the violet box. State where the compass and whistle are now in one sentence.","followup":"The whistle is now moved to the amber box. State both current locations in one sentence."},
+    {"kind":"explanation","text":"Explain in two short sentences why a wet towel dries faster in moving air. Include what happens to the water vapor near the towel.","followup":"Now explain why humid air slows the same process. Use one short sentence."}
+  ],
+  "context_lengths": [128,1024],
+  "padding":"Archive entry: routine supplies were checked and the filing date was recorded. ",
+  "answer_budget_per_turn":32
+}

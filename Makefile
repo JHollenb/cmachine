@@ -24,7 +24,7 @@ clean:
 
 cuda: build/tcm-cuda
 
-build/tcm-cuda: $(SRC) src/qwen.c src/qwen_serve.c src/qwen_bounded_serve.c src/bounded_cache.h src/qwen_cuda.cu src/qwen_cache.inc src/qwen_weights.inc src/qwen.h src/gpu.h src/machine.h
+build/tcm-cuda: $(SRC) src/qwen.c src/qwen_operands.inc src/qwen_serve.c src/qwen_bounded_serve.c src/bounded_cache.h src/qwen_cuda.cu src/qwen_cache.inc src/qwen_weights.inc src/qwen.h src/gpu.h src/machine.h
 	mkdir -p build
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/model.c -o build/model.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/isa.c -o build/isa.o
@@ -48,16 +48,25 @@ build/gpu-mechanics: build/tcm-cuda tests/gpu_mechanics.c
 state-mechanics: build/state-mechanics
 	./build/state-mechanics
 
-build/state-mechanics: src/model.c src/qwen.c src/qwen.h src/gpu.h tests/gpu_stub.c tests/state_mechanics.c tests/writer_mechanics.h tests/gate_mechanics.h
+build/state-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h src/gpu.h tests/gpu_stub.c tests/state_mechanics.c tests/writer_mechanics.h tests/gate_mechanics.h
 	mkdir -p build
 	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c tests/gpu_stub.c tests/state_mechanics.c -lm -o $@
 
 .PHONY: state-mechanics
 
+operand-mechanics: build/operand-mechanics
+	./build/operand-mechanics
+
+build/operand-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h src/prototype_attention.h src/gpu.h tests/gpu_stub.c tests/operand_mechanics.c tests/state_mechanics.c tests/writer_mechanics.h tests/gate_mechanics.h
+	mkdir -p build
+	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c tests/gpu_stub.c tests/operand_mechanics.c -lm -o $@
+
+.PHONY: operand-mechanics
+
 bounded-mechanics: build/bounded-mechanics
 	./build/bounded-mechanics
 
-build/bounded-mechanics: src/model.c src/qwen.c src/qwen.h src/bounded_cache.h src/byte_codec.h tests/bounded_mechanics.c tests/gpu_stub.c
+build/bounded-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h src/bounded_cache.h src/byte_codec.h tests/bounded_mechanics.c tests/gpu_stub.c
 	mkdir -p build
 	$(CC) -O1 -g -std=c11 -Wall -Wextra -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c tests/gpu_stub.c tests/bounded_mechanics.c -lm -o $@
 

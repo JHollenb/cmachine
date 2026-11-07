@@ -14,6 +14,14 @@ The bounded policy retains 9,279,620 tracked GPU state bytes at 112 physical row
 
 The tested version is installed at `/mnt/big/cmachine/current`; both old current aliases resolve to it. No background service was started. The [proof bundle](evidence/integration-7a6824d/README.md) joins 120 shipped source files, 36 raw artifacts, sealed scheduler payload, installed binary and commit. An independent Astra saved-evidence audit found no material blocker. Offline evidence run/verify both return 0 with `target-streams-only` coverage; they do not certify semantic claims. The model-free lane also passes 18 Python tests and the sanitizer/lifecycle fixtures.
 
+## Contextual operand programs and a later-layer gap
+
+The [operand interfaces](QUERY-PROGRAMS.md) now support immutable Q/K/V programs at several model-qualified layers, finite first-layer token tables, and the shared prototype-reader law/covariance pullback. Native remains the default. These newer sources were tested by guarded job `job-fe51e7f4f0ee`; they have not replaced the separately installed `7a6824d` release.
+
+The new interfaces replay 420 archived source clocks exactly at Q/K/V/attention and token choice. A 15-token atom subset reproduces 16 steps of full logits exactly. A source-only same-memory response direction then lowers mean own-history source KL 34.54% and fresh two-turn KL 13.59% across two task families at 128/1024 prompt tokens, with no extra serving maps or state. Two inventory followup means worsen slightly despite all four conversation means improving.
+
+A recipient-specific rank-128 layer-18 Q/K program raises fresh error even with full layer-18 memory and misplaces the whistle in both initial inventory replies. Its source receiver basis retains 95.22% energy; this does not establish future relational sufficiency. Prototype memory there partly compensates in one case and worsens three. The next gap is distinguishing Q versus K error and selecting consumer-relevant coordinates under subsequent writes. Full residual formation, other learned maps and readout remain dense. See [findings](../research/context_query/FINDINGS.md) and the [portable result record](evidence/context-query-20261106/README.md).
+
 ## Execution and source gate law
 
 The C executor owns incremental input, greedy outputs, persistent cache, nested continuations and later user/header ingestion. B3 replacement runs through complete correction and question episodes on its own generated IDs. All tested short badge answers also survive deletion, so those answers do not establish semantic necessity.

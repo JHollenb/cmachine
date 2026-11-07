@@ -1,0 +1,15 @@
+{
+  "analysis_sha256": "b515dd01255012ae4df25ef1ff080b169b7a9dcf0849fbd212c57d5087f4462d",
+  "exact_declared_updates": 4,
+  "exact_image_restorations": 4,
+  "native_identity_paths": 4,
+  "new_model_calls": 0,
+  "own_token_turns": 64,
+  "qualification": "Runtime assertions and in-worker C/Python sampled-stream checks are hash-bound. This verifier independently recomputes saved aggregations and image bytes, not discarded full streams or a model forward.",
+  "raw_files": 490,
+  "report_sha256": "d97a8dedb3a3e187e958c56ecf81bf59d8f2b45f3b69c4c27a76925507d9e9e2",
+  "scheduler_log_seal": true,
+  "schema": "context-query-verification-v1",
+  "source_files": 100,
+  "terminal_status": "not-requested"
+}

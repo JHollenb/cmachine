@@ -1,0 +1,8 @@
+{
+  "basis18_sha256": "536d322e532e207b05206bc0702a6f8aad41326a6727fced08142feb181aec9b",
+  "fresh_spec_sha256": "9dea9a771a356938cd2cc271ecaedd9b3af570b3b2cf4a44ed13e140a6fd9844",
+  "key18_sha256": "96c071f3d49554115820b62726c699bcb2481f8d6a338ad3edded67f7ca56d6e",
+  "phase": "all source choices and later-layer program sealed before parsing fresh.json",
+  "query18_sha256": "118b57ae8bd5f15c7cfaa0434e8a87f291ea25dea41acf91915be38d5da1892b",
+  "selection_sha256": "70bf82a96c9401bddefd87ae5cd3e79a2dcf6700e136029e452ffe18cafc62cc"
+}

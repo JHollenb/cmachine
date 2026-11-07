@@ -17,6 +17,32 @@ typedef struct {
     unsigned allocation_count;
     size_t weight_bytes;
 } QwenModel;
+/* Explicit immutable, model/layer-qualified operand programs. Inputs are the
+ * actual learned RMS-normalized receiver; original bias and RoPE follow once.
+ * Callers retain program lifetime until every attached session is detached. */
+enum { QWEN_QKV_Q=1,QWEN_QKV_K=2,QWEN_QKV_V=4 };
+typedef struct {
+    const QwenModel *model;
+    int layer,rank,mask,ready;
+    float *basis,*image[3];
+    size_t gpu_bytes;
+    char fingerprint[65];
+} QwenQkvProgram;
+typedef struct {
+    uint64_t applications,code_calls,compiled_calls,native_calls,linear_macs;
+    uint64_t lexical_hits,lexical_transfer_bytes;
+} QwenOperandWork;
+/* Finite token-local first-layer program. Values include original biases and
+ * exclude RoPE. Missing IDs refuse before token mutation; no online fill. */
+typedef struct {
+    const QwenModel *model;
+    size_t rows,host_bytes;
+    int *ids;
+    float *values;
+    int ready;
+    uint64_t compile_linear_macs;
+    char fingerprint[65];
+} QwenLexicalProgram;
 typedef struct {
     char model_digest[65];
     int position,pending,capacity,delivered;
@@ -65,7 +91,21 @@ typedef struct {
     void *cache_context;
     QwenCheckpoint token_parent;
     int token_parent_valid;
+    const QwenQkvProgram *qkv_programs[64];
+    const QwenLexicalProgram *lexical_program;
+    float *qkv_code;
+    size_t qkv_code_capacity;
+    int current_token;
+    QwenOperandWork operand_work; /* Physical work: deliberately not rewound. */
 } QwenSession;
+int qwen_qkv_program_init(QwenQkvProgram *,const QwenModel *,int,int,int,const float *,const float *,const float *,const float *);
+void qwen_qkv_program_free(QwenQkvProgram *);
+int qwen_qkv_bind(QwenSession *,int,const QwenQkvProgram *);
+int qwen_lexical_compile(QwenLexicalProgram *,const QwenModel *,const int *,size_t);
+void qwen_lexical_free(QwenLexicalProgram *);
+int qwen_lexical_bind(QwenSession *,const QwenLexicalProgram *);
+int qwen_lexical_save(const QwenLexicalProgram *,const char *);
+int qwen_lexical_load(QwenLexicalProgram *,const QwenModel *,const char *);
 /* A frozen program for one model/session/epoch/token/layer and exactly guarded
  * live operands. The numerical basis is immutable after compilation. rho is
  * execution scratch, excluded from the frozen program. No policy enters cuts. */

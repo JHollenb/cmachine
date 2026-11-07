@@ -15,6 +15,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 - [Architecture and state contracts](docs/ARCHITECTURE.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)
 - [Current evidence and limitations](docs/STATUS.md)
+- [Explicit query programs, lexical tables and compact-reader pullbacks](docs/QUERY-PROGRAMS.md)
 - [Import provenance](docs/PROVENANCE.md)
 - [Optional Saturn/mrun integration](docs/INTEGRATION.md)
 
@@ -44,6 +45,7 @@ python3 -m unittest discover -s tests -v
 make sanitize
 make state-mechanics
 make bounded-mechanics
+make operand-mechanics
 ```
 
 `make state-mechanics` executes the Qwen lifecycle and operation checks against a model-free GPU stub under ASan/UBSan. It does not load a pretrained model or qualify CUDA numerical parity. `make sanitize` builds the separate ISA sanitizer executable. The GitHub workflow runs this model-free lane.

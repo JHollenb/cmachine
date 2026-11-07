@@ -103,6 +103,8 @@ The current full head costs 233,373,696 nominal MACs per call, about 15.12% of t
 
 The major gaps are economical operand formation; query-qualified memory under updates; bootstrap from genuinely new inputs; composition across remaining layers and readout; and useful long continuation under the candidate's own history.
 
+The [contextual query experiment](../research/context_query/FINDINGS.md) advances one of these boundaries: a source-only response update reduces mean fresh own-history KL 13.59% through two turns at 128/1024 prompt tokens without extra serving work. A layer-18 Q/K extension still corrupts an inventory binding with full memory there. We should preserve the shared multilayer program interface while loosening the assumption that receiver-energy PCA identifies the necessary query/key coordinates. A same-parent Q/K cross at the first wrong binding is a sharper next cut than widening every bank. Neither the positive layer-17 trend nor the later-layer counterexample settles universal cheap operand closure.
+
 Local error and carried error interact. Returning to native equations on an approximate cache does not restore the native same-text state. Exact restoration needs a compatible ancestor and replay or an exact shadow, with their costs explicit. Preserve diverged branches as evidence rather than silently replacing them.
 
 An independently justified infinity-norm logit error bound ε and a native top-two margin above 2ε preserve one greedy choice. A measured average error or the candidate's margin alone does not provide that bound. After token divergence, both branches must consume their own actual choices.

@@ -1,0 +1,49 @@
+{
+  "schema": "context-query-source-proposals-v1",
+  "source_target_manifest_sha256": "27f271f667c8c5de48846b37909485f86eb128b30fc7041f09dd88af84ed329c",
+  "source_rows": 162,
+  "source_clock_reads": 420,
+  "teacher": "paid source-native Q through unchanged actual compact memory",
+  "objective": "equal source/turn mean squared same-memory attention response",
+  "baseline_loss": 17.33720098841433,
+  "ridge": 38.372776032295064,
+  "gradient_dot_direction": -2.086212588638041,
+  "curvature": 0.1282604623789089,
+  "alpha": 8.132718960870896,
+  "query_step_relative_cap": 0.15,
+  "finite_difference": -2.0862123897348868,
+  "derivative_relative_discrepancy": 9.534174775604634e-08,
+  "proposals": [
+    {
+      "index": 0,
+      "dose": 0.0,
+      "step": 0.0,
+      "local_source_loss": 17.33720098841433,
+      "sha256": "7b0d047635f17effc91f408ca3b8691269169a0709ffd2fa78fd55623a9f005f"
+    },
+    {
+      "index": 1,
+      "dose": -1.0,
+      "step": -8.132718960870896,
+      "local_source_loss": 38.67390096201892,
+      "sha256": "a816c2e692db036114c6c743e55dd4daf132e41fe189bfcad839f8e9be339864"
+    },
+    {
+      "index": 2,
+      "dose": 0.5,
+      "step": 4.066359480435448,
+      "local_source_loss": 10.831109302712662,
+      "sha256": "9a10cb7979d68e5c210f9e906943beb1c3f1ec040f5e819e1ad9987d89fc7d76"
+    },
+    {
+      "index": 3,
+      "dose": 1.0,
+      "step": 8.132718960870896,
+      "local_source_loss": 8.13318225231862,
+      "sha256": "954910820f564e2f463b7365418ce3ce6b5ff35ac5592054711a0a088237703a"
+    }
+  ],
+  "target_inputs_read": false,
+  "selection": "later source-only own-token native-suffix KL, equally weighted sources and turns",
+  "mutable_closure": "query image only; exact Saturn parent restoration for each proposal; no optimizer or training RNG"
+}

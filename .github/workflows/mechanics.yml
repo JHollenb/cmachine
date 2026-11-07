@@ -27,3 +27,4 @@ jobs:
       - run: make sanitize
       - run: make state-mechanics
       - run: make bounded-mechanics
+      - run: make operand-mechanics

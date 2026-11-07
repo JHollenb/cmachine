@@ -11,6 +11,7 @@
 static _Atomic uint64_t next_session_id=1;
 static _Atomic uint64_t next_frame_id=1;
 static _Atomic uint64_t next_lineage_id=1;
+#include "qwen_operands.inc"
 static int fresh_lineage(uint64_t *id){
     uint64_t next=atomic_load(&next_lineage_id);
     do{if(next==UINT64_MAX)return -1;}while(!atomic_compare_exchange_weak(&next_lineage_id,&next,next+1));
@@ -59,7 +60,7 @@ int qwen_session_init_layout(QwenSession *s,const QwenModel *m,int capacity,uint
 }
 void qwen_session_free(QwenSession *s){
 #define FREE(field) gpu_free(s->field)
-    FREE(keys);FREE(values);FREE(x);FREE(norm);FREE(q);FREE(k);FREE(v);FREE(attention);FREE(projected);FREE(gate);FREE(up);FREE(logits);FREE(scores);
+    FREE(keys);FREE(values);FREE(x);FREE(norm);FREE(q);FREE(k);FREE(v);FREE(attention);FREE(projected);FREE(gate);FREE(up);FREE(logits);FREE(scores);FREE(qkv_code);
 #undef FREE
     memset(s,0,sizeof(*s));
 }
@@ -73,9 +74,10 @@ static void observe(QwenSession *s,QwenPort port,const float *data,size_t count)
 }
 int qwen_begin_token(QwenSession *s,int token){
     const QwenModel *m=s->model;if(token<0||token>=m->vocab||s->position>=s->capacity||s->phase==2)return -1;
+    if(s->lexical_program&&(!s->lexical_program->ready||s->lexical_program->model!=m||lexical_index(s->lexical_program,token)<0))return -1;
     if(s->cache_guard&&s->cache_guard(s->cache_context,0,s->position,s->session_id,s->epoch,s->lineage_id))return -1;
     snapshot(s,&s->token_parent);s->token_parent_valid=1;
-    s->phase=2;s->layer=0;gpu_owned_embedding(s->x,m->embedding,token,m->hidden);return 0;
+    s->phase=2;s->layer=0;s->current_token=token;gpu_owned_embedding(s->x,m->embedding,token,m->hidden);return 0;
 }
 int qwen_plane_init(QwenPlane *p,const QwenModel *m){
     if(!p||!m||m->hidden<1||m->intermediate<1)return -1;
@@ -216,6 +218,7 @@ static int advance_layer(QwenSession *s,QwenPlane *compile,const QwenPlane *p,Qw
     if(work)memset(work,0,sizeof(*work));
     const QwenModel *m=s->model;if(s->phase!=2||s->layer>=m->layers)return -1;
     int i=s->layer,d=m->hidden,k=m->kvheads*m->head;const QwenLayer *l=&m->layer[i];
+        if(!qkv_valid(s,i))return -1;
         if(writer){
             if(!writer->ready||writer->model!=m||writer->session_id!=s->session_id||writer->epoch!=s->epoch||writer->parent_lineage_id!=s->lineage_id||writer->position!=s->position||writer->layer!=i||policy>QWEN_WRITER_BOTH)return -1;
             if(policy){if(!gpu_identical_finite(m->gpu,s->x,s->x,d))return -2;gpu_copy(writer->entry,s->x,(size_t)d*4);}
@@ -243,10 +246,8 @@ static int advance_layer(QwenSession *s,QwenPlane *compile,const QwenPlane *p,Qw
             if(!gpu_identical_finite(m->gpu,s->x,p->basis[2],d))return -1;
         }
         observe(s,QWEN_INPUT,s->x,(size_t)d);
-        gpu_rms(s->norm,s->x,l->input_norm,d,m->epsilon);
-        gpu_matvec(m->gpu,l->q,d,d,s->norm,s->q);gpu_bias(s->q,l->qb,d);
-        gpu_matvec(m->gpu,l->k,d,k,s->norm,s->k);gpu_bias(s->k,l->kb,k);
-        gpu_matvec(m->gpu,l->v,d,k,s->norm,s->v);gpu_bias(s->v,l->vb,k);
+        if(i||!s->lexical_program)gpu_rms(s->norm,s->x,l->input_norm,d,m->epsilon);
+        qkv_apply(s,i);
         gpu_rope(s->q,m->qheads,m->head,s->position,m->theta);gpu_rope(s->k,m->kvheads,m->head,s->position,m->theta);
         observe(s,QWEN_QUERY,s->q,(size_t)d);observe(s,QWEN_KEY,s->k,(size_t)k);observe(s,QWEN_VALUE,s->v,(size_t)k);
         if(s->cache_slots[i]<0){
