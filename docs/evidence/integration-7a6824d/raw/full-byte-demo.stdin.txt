@@ -1,0 +1,19 @@
+/save
+Explain why bread rises when yeast is added. Use two short sentences.
+/state
+/push
+Compute 17 + 29. Reply with only the integer.
+/state
+/rollback
+/push
+Remember: Eno's number is 17. Reply only OK.
+/push
+/push
+What is Eno's number? Reply with only the number.
+/state
+/rollback
+What is Eno's number? Reply with only the number.
+/state
+/commit
+/state
+/quit

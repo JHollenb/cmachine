@@ -34,6 +34,7 @@ __pycache__/
 *.log
 /validation/staged/
 /validation/runs/
+/validation/index/
 /research/composition/mechanics/import-check
 /research/composition/mechanics/state-check
 *.dSYM/

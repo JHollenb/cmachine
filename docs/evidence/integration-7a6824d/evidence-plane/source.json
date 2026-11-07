@@ -1,0 +1,7 @@
+{
+  "job": "job-f645fcd76a75",
+  "report_sha256": "82ec2e64dbcd41b40279dd8f1fe73765752b356028eecdcd5e4870bad91a27f9",
+  "verification_sha256": "a9e37643a5d5cbab132ca1caf49856459783bae6b77c4fb55cb40b9021bb99d2",
+  "observations_sha256": "0f9ada5d555674582c4813647fd1ac4d20ea2b1698b2642be4f73cfae2c46471",
+  "scope": "whole-turn source-bound observations; stream coverage only; no automatic semantic admission"
+}

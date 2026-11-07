@@ -1,0 +1,26 @@
+{"event": "ready", "model_identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee", "model_digest": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc", "capacity": 768, "cache_policy": "full-byte", "anchors": 0, "recent": 768, "reservoir": 0, "resident_capacity": 768, "stack_limit": 2, "legacy_checkpoint": false, "weight_storage": "source-BF16 matrices / FP32 tile1024", "weight_profile": 2, "gpu_weight_bytes": 3087718400, "gpu_session_bytes": 48781316, "tracked_gpu_bytes": 3173216280}
+[experimental full-byte memory; /state reports the live allocation]
+you> model> OK
+you> {'event': 'pushed', 'frame': 1, 'depth': 1, 'position': 77}
+you> model> 17
+you> {'event': 'rolled_back', 'frame': 1, 'depth': 0, 'position': 77, 'pending_token': 151645}
+you> model> OK
+you> model> OK
+you> {'event': 'state', 'cache_policy': 'full-byte', 'position': 363, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 0, 'top_frame': 0, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 768, 'resident_rows': 363, 'evictions': 0, 'rng': 7, 'cache_sha256': '331f273bbad5f61d0774d4e4da21de6b00b8836c68e110fb5b399b1e7cee5042', 'logits_sha256': '9e697f7f0806681d618d7df051d9a3cf08750cdb2e55ca38487d4c3bf20a9ae2', 'gpu_state_bytes': 48781316, 'tracked_gpu_bytes': 3173216280}
+you> {'event': 'pushed', 'frame': 2, 'depth': 1, 'position': 363}
+you> model> 17
+you> {'event': 'state', 'cache_policy': 'full-byte', 'position': 393, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 1, 'top_frame': 2, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 768, 'resident_rows': 393, 'evictions': 0, 'rng': 7, 'cache_sha256': '3dd5b565e26a7dde2434b2329055ecbe0d3986888930b0ada9aa4f693395f2bd', 'logits_sha256': 'b7bd115caf334663d561f105e62fc59dc4d94994e94f98c34073f768ca86363a', 'gpu_state_bytes': 48781316, 'tracked_gpu_bytes': 3173216280}
+you> {'event': 'rolled_back', 'frame': 2, 'depth': 0, 'position': 363, 'pending_token': 151645}
+you> {'event': 'pushed', 'frame': 3, 'depth': 1, 'position': 363}
+you> model> 29
+you> {'event': 'state', 'cache_policy': 'full-byte', 'position': 394, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 1, 'top_frame': 3, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 768, 'resident_rows': 394, 'evictions': 0, 'rng': 7, 'cache_sha256': '76b985f6d7fcd9a54da6d8dde1f90a7e550ddbcdc1454e4fbfb289cb06a02903', 'logits_sha256': '62b64d7f6e3789ac48d9c7ae33e7caa5535e60fe7cb53c3eaf77a9999d2d8a8b', 'gpu_state_bytes': 48781316, 'tracked_gpu_bytes': 3173216280}
+you> {'event': 'rolled_back', 'frame': 3, 'depth': 0, 'position': 363, 'pending_token': 151645}
+you> {'event': 'pushed', 'frame': 4, 'depth': 1, 'position': 363}
+you> model> amber
+you> {'event': 'state', 'cache_policy': 'full-byte', 'position': 392, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 1, 'top_frame': 4, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 768, 'resident_rows': 392, 'evictions': 0, 'rng': 7, 'cache_sha256': '3837239e1481faf3e79c4f29ce34f7e2e352af525b68ed85819e83dda28d02a6', 'logits_sha256': '8a392284614ed3a6cf9c05de9cb8f89ac4f99a3e7303d0afd29a3829ef823a0b', 'gpu_state_bytes': 48781316, 'tracked_gpu_bytes': 3173216280}
+you> {'event': 'rolled_back', 'frame': 4, 'depth': 0, 'position': 363, 'pending_token': 151645}
+you> {'event': 'pushed', 'frame': 5, 'depth': 1, 'position': 363}
+you> model> 40
+you> {'event': 'state', 'cache_policy': 'full-byte', 'position': 397, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 1, 'top_frame': 5, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 768, 'resident_rows': 397, 'evictions': 0, 'rng': 7, 'cache_sha256': '9e5dfd6d127b77186565c5c0c53fced9414abdeb7254fb336f9bccd6f10c90a9', 'logits_sha256': 'febf381cbf4f6915683882565f8a29e6aeec74b60eedfc30dda1c4caae6dcbc0', 'gpu_state_bytes': 48781316, 'tracked_gpu_bytes': 3173216280}
+you> {'event': 'rolled_back', 'frame': 5, 'depth': 0, 'position': 363, 'pending_token': 151645}
+you> 

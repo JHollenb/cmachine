@@ -1,6 +1,18 @@
 # Evidence status
 
-This is a bounded research inventory as of November 6, 2026, including the completed attention-read and nonlinear quotient studies. The source runtime is captured independently here; the original model banks, raw results, historical payloads and custody records remain in the Saturn workspace. Run IDs and report digests identify that evidence. This document does not claim that those raw archives are included in this repository or that extraction reran the pretrained models.
+This is a bounded research inventory as of November 6, 2026. This checkout now owns both the integrated runtime and the relocated research tree. Large original model banks, raw results and historical payloads live locally under `research` and are ignored by Git. Research sources, protocols and findings are tracked. The old `saturn/cmachine` address is a compatibility link. A separate tracked proof bundle below records the fresh integration run; migration did not rerun every historical experiment.
+
+## Verified canonical integration
+
+Source commit `7a6824dd9b640cfa785fa56cc4e7cfae14193f1c` integrates compressed append, bounded retention, overwritten-row recovery, source-BF16 weight tiling and persistent serving into `build/tcm-cuda`. Native remains the default. The original writer, gate-law, observation and parent-lineage APIs remain available. Research runtime paths resolve to these same canonical sources.
+
+Guarded CUDA job `job-f645fcd76a75` built exact Git objects and ran twelve sequential model processes on Qwen2.5-1.5B-Instruct. All 84 protocol entries match a separately built original `b81e928` native core exactly. Three encoded-memory/weight profiles reproduce eight historical turns and sixteen full-logit hashes each, plus their delayed-root cache state. Native lifecycle checks, bounded occupied-sample abort, exact replay and a post-cache refusal/retry comparison pass. The retry test covers a merge-time bug fixed by sourcing evicted rows from the immutable pre-token snapshot.
+
+Five actual text-client processes reproduce prior output with zero prefix recomputations. Short prose, explicit addition and recent recall work on the tested inputs. Bounded delayed replies remain `3`, `1234567890`, `Green`, `15`; the full-byte reference returns `17`, `29`, `amber`, `40`, with the correct sum being 46. This verifies preservation rather than new answer quality.
+
+The bounded policy retains 9,279,620 tracked GPU state bytes at 112 physical rows, including its fixed recovery copies; model/helpers/tile bring the total to 3,133,714,584 bytes. These are requested allocation bytes, distinct from the entire validation job's measured peaks of 4,206.6 MB RSS and 6,396 MB VRAM, which include the larger reference/control processes and CUDA overhead. Logical context is qualified at 768, two bounded parents are available, and sessions last within their running process. Full parameters and dense learned computation remain.
+
+The tested version is installed at `/mnt/big/cmachine/current`; both old current aliases resolve to it. No background service was started. The [proof bundle](evidence/integration-7a6824d/README.md) joins 120 shipped source files, 36 raw artifacts, sealed scheduler payload, installed binary and commit. An independent Astra saved-evidence audit found no material blocker. Offline evidence run/verify both return 0 with `target-streams-only` coverage; they do not certify semantic claims. The model-free lane also passes 18 Python tests and the sanitizer/lifecycle fixtures.
 
 ## Execution and source gate law
 

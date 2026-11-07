@@ -1,0 +1,16 @@
+{
+  "schema": "cmachine-install-v1",
+  "path": "/mnt/big/cmachine/builds/7a6824dd9b640cfa-8e608af7734c",
+  "git_commit": "7a6824dd9b640cfa785fa56cc4e7cfae14193f1c",
+  "binary_sha256": "8e608af7734ce351a3572f705fbcb21a84d37ba6fe8d2d4cb6532c5ae7860db0",
+  "client_sha256": "61ad59f7d7bcc3ac478be051d3d4ab4037c60d5682a5436366cdce796bd5cca3",
+  "manifest_sha256": "a7daa99a1b80eafcfb2eca745675e9c73d85dd583819feed70fe32f7b0da466f",
+  "file_count": 124,
+  "previous_aliases": {
+    "/mnt/big/cmachine/current": null,
+    "/mnt/big/saturn-cmachine/current": "/mnt/big/saturn-cmachine/builds/d4ba05c0161a737d",
+    "/mnt/big/saturn-cmachine/bounded-current": "/mnt/big/saturn-cmachine/experimental/bounded-chat-bcf17701b893fe1b"
+  },
+  "published": true,
+  "service_started": false
+}

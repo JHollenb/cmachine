@@ -1,0 +1,21 @@
+{"event": "ready", "model_identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee", "model_digest": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc", "capacity": 768, "cache_policy": "bounded", "anchors": 16, "recent": 64, "reservoir": 32, "resident_capacity": 112, "stack_limit": 2, "legacy_checkpoint": false, "weight_storage": "source-BF16 matrices / FP32 tile1024", "weight_profile": 2, "gpu_weight_bytes": 3087718400, "gpu_session_bytes": 9279620, "tracked_gpu_bytes": 3133714584}
+[experimental bounded memory; /state reports the live allocation]
+you> This memory policy uses /push and /rollback; legacy /save is unavailable.
+you> model> When yeast is added to dough, it consumes the sugars in the dough, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise
+you> {'event': 'state', 'cache_policy': 'bounded', 'position': 75, 'pending_token': 10000, 'delivered': 1, 'stack_depth': 0, 'top_frame': 0, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 112, 'resident_rows': 75, 'evictions': 0, 'rng': 7, 'cache_sha256': '139a3861a8e5964c407f3f8af0cb5c80788a52bf54d2f83b60c312d951d46ad7', 'logits_sha256': '7f1c88fecde18584cb543df9398f6635458fb391264270b305bd4420c50b36a1', 'gpu_state_bytes': 9279620, 'tracked_gpu_bytes': 3133714584}
+you> {'event': 'pushed', 'frame': 1, 'depth': 1, 'position': 75}
+you> model> 46
+you> {'event': 'state', 'cache_policy': 'bounded', 'position': 103, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 1, 'top_frame': 1, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 112, 'resident_rows': 103, 'evictions': 23, 'rng': 7, 'cache_sha256': '6cb824c256927bf75d3e187c853f6c2603004b9da65dfcdd83feafd74c87a923', 'logits_sha256': '31d73746f6d1d5b99a254147fa4fd80e87c156b7d932ad1b3f480b3b01f09b87', 'gpu_state_bytes': 9279620, 'tracked_gpu_bytes': 3133714584}
+you> {'event': 'rolled_back', 'frame': 1, 'depth': 0, 'position': 75, 'pending_token': 10000}
+you> {'event': 'pushed', 'frame': 2, 'depth': 1, 'position': 75}
+you> model> OK
+you> {'event': 'pushed', 'frame': 3, 'depth': 2, 'position': 102}
+you> Nested frame limit reached; current state is preserved.
+you> model> 17
+you> {'event': 'state', 'cache_policy': 'bounded', 'position': 127, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 2, 'top_frame': 3, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 112, 'resident_rows': 112, 'evictions': 47, 'rng': 4990025626462012738, 'cache_sha256': '3e2f7a6a25f2f5f16afe5b3d24f2e15ef2fa9c4245821ab47b0bbe3faf66cef4', 'logits_sha256': '37dbd9086c6df215fbe909fc9e86486180d3e4b4c537a60d3452cd662e22331b', 'gpu_state_bytes': 9279620, 'tracked_gpu_bytes': 3133714584}
+you> {'event': 'rolled_back', 'frame': 3, 'depth': 1, 'position': 102, 'pending_token': 151645}
+you> model> 17
+you> {'event': 'state', 'cache_policy': 'bounded', 'position': 127, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 1, 'top_frame': 2, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 112, 'resident_rows': 112, 'evictions': 47, 'rng': 4990025626462012738, 'cache_sha256': '3e2f7a6a25f2f5f16afe5b3d24f2e15ef2fa9c4245821ab47b0bbe3faf66cef4', 'logits_sha256': '37dbd9086c6df215fbe909fc9e86486180d3e4b4c537a60d3452cd662e22331b', 'gpu_state_bytes': 9279620, 'tracked_gpu_bytes': 3133714584}
+you> {'event': 'committed', 'frame': 2, 'depth': 0, 'position': 127, 'pending_token': 151645}
+you> {'event': 'state', 'cache_policy': 'bounded', 'position': 127, 'pending_token': 151645, 'delivered': 1, 'stack_depth': 0, 'top_frame': 0, 'epoch': 1, 'logical_capacity': 768, 'resident_capacity': 112, 'resident_rows': 112, 'evictions': 47, 'rng': 4990025626462012738, 'cache_sha256': '3e2f7a6a25f2f5f16afe5b3d24f2e15ef2fa9c4245821ab47b0bbe3faf66cef4', 'logits_sha256': '37dbd9086c6df215fbe909fc9e86486180d3e4b4c537a60d3452cd662e22331b', 'gpu_state_bytes': 9279620, 'tracked_gpu_bytes': 3133714584}
+you> 

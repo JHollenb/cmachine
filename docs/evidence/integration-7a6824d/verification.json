@@ -1,0 +1,36 @@
+{
+  "schema": "cmachine-commit-verification-v1",
+  "source_commit": "7a6824dd9b640cfa785fa56cc4e7cfae14193f1c",
+  "source_tree": "84a224b896b33d4240cc8581b14f5463831f5f9f",
+  "native_reference_commit": "b81e9286a3e8bd9e25172fdd3969bdad4ca5430a",
+  "report_sha256": "82ec2e64dbcd41b40279dd8f1fe73765752b356028eecdcd5e4870bad91a27f9",
+  "source_manifest_sha256": "2423e227e116d03be5a89bd1a0b411248def088c17534b3bdedc9a33e016d7cd",
+  "source_files_verified": 120,
+  "raw_files_verified": 36,
+  "raw_bytes_verified": 331685,
+  "every_source_matches_git_object": true,
+  "guarded_payload_declared_sealed_executed_exact": true,
+  "payload_custody": {
+    "required": true,
+    "declared": {
+      "sha256": "95b9937e040c13cd798b1af20d984d220d68f1ee174b1c36bcda9938a3ecb461",
+      "size_bytes": 334555
+    },
+    "sealed": {
+      "sha256": "95b9937e040c13cd798b1af20d984d220d68f1ee174b1c36bcda9938a3ecb461",
+      "size_bytes": 334555,
+      "sealed_ts": 1794020673.3214786
+    },
+    "executed": {
+      "sha256": "95b9937e040c13cd798b1af20d984d220d68f1ee174b1c36bcda9938a3ecb461",
+      "size_bytes": 334555,
+      "reported_ts": 1794020673.4823823,
+      "host": "beast"
+    }
+  },
+  "scheduler_log_sha256": "6e3e7116db5f5094c57246efc2147edb3c615c3c91954d9bb9bf2c54850895bc",
+  "saturn_receipt_fingerprint": "9dab7f8692f0609836e8d2fe6cef27f0f84098eefd63eca4810e983ba53ee40c",
+  "analysis_recomputed_without_model": true,
+  "models_evaluated_by_verifier": 0,
+  "scope": "bounded integration engineering parity; historical bounded-memory quality failures remain"
+}

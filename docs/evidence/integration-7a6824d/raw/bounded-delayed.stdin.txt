@@ -1,0 +1,24 @@
+We are keeping a small ledger for later questions. Please remember the following independent facts carefully. Eno's number is 17. Tavi's number is 23. Luma's color is amber. Reply only OK.
+/push
+According to our ledger, what is Eno's number? Reply with only the number.
+/rollback
+Update the ledger: Tavi's number is now 29, replacing 23. Reply only OK.
+For an unrelated reading exercise, read the following passage and reply only OK. A path crosses a quiet field beside a stream. The morning light reaches the trees, and a wooden bridge leads toward a distant hill. A traveler walks slowly, listening to the wind and watching clouds move across the sky. Near the bridge, smooth stones line the bank and tall grass moves in gentle waves. The path continues past a garden, a gate and a small house. A path crosses a quiet field beside a stream. The morning light reaches the trees, and a wooden bridge leads toward a distant hill. A traveler walks slowly, listening to the wind and watching clouds move across the sky. Near the bridge, smooth stones line the bank and tall grass moves in gentle waves. The path continues past a garden, a gate and a small house. A path crosses a quiet field beside a stream. The morning light reaches the trees, and a wooden bridge leads toward a distant hill. A traveler walks slowly, listening to the wind and watching clouds move across the sky. Near the bridge, smooth stones line the bank and tall grass moves in gentle waves. The path continues past a garden, a gate and a small house. 
+/state
+/push
+According to our ledger, what is Eno's number? Reply with only the number.
+/state
+/rollback
+/push
+According to our ledger, what is Tavi's current number? Reply with only the number.
+/state
+/rollback
+/push
+According to our ledger, what is Luma's color? Reply with only the color.
+/state
+/rollback
+/push
+What is Eno's number plus Tavi's current number in our ledger? Reply with only the sum.
+/state
+/rollback
+/quit

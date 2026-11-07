@@ -1,0 +1,1327 @@
+{
+  "predecessor_report_sha256": "eb72cf9b4111d5e3f9310ee3886add6d86eff7d0bfe643ea5848b64c70726df6",
+  "chat_report_sha256": "d20748bc4b9f95ac2ea9ea610bcc6d04b276724119263b16f6c6ef97b6ab041f",
+  "model": {
+    "architecture": 2,
+    "bytes": 3087469344,
+    "content_sha256": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc",
+    "identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "native_eos_token_ids": [
+      151645,
+      151643
+    ],
+    "numerical_contract": "original tensor bytes; C widens BF16 to FP32 once on GPU; FP32 execution",
+    "path": "/mnt/big/llm-models/tcm/qwen25-1.5b-fp32-execution-v2.tcm",
+    "profile_version": "qwen25-fp32-execution-v2",
+    "source_weights_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "tensor_count": 338,
+    "tokenizer_files": {
+      "config.json": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    }
+  },
+  "inputs": [
+    {
+      "budget": 8,
+      "fact_spans": [
+        {
+          "clause": "Eno's number is 17.",
+          "token_indices": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "clause": "Tavi's number is 23.",
+          "token_indices": [
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59
+          ]
+        },
+        {
+          "clause": "Luma's color is amber.",
+          "token_indices": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66
+          ]
+        }
+      ],
+      "file": "input-0.txt",
+      "ids": [
+        151644,
+        8948,
+        198,
+        2610,
+        525,
+        1207,
+        16948,
+        11,
+        3465,
+        553,
+        54364,
+        14817,
+        13,
+        1446,
+        525,
+        264,
+        10950,
+        17847,
+        13,
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        1654,
+        525,
+        10282,
+        264,
+        2613,
+        46933,
+        369,
+        2937,
+        4755,
+        13,
+        5209,
+        6099,
+        279,
+        2701,
+        9489,
+        13064,
+        15516,
+        13,
+        468,
+        2152,
+        594,
+        1372,
+        374,
+        220,
+        16,
+        22,
+        13,
+        350,
+        6190,
+        594,
+        1372,
+        374,
+        220,
+        17,
+        18,
+        13,
+        444,
+        13416,
+        594,
+        1894,
+        374,
+        67605,
+        13,
+        17841,
+        1172,
+        10402,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "source",
+      "text": "We are keeping a small ledger for later questions. Please remember the following independent facts carefully. Eno's number is 17. Tavi's number is 23. Luma's color is amber. Reply only OK."
+    },
+    {
+      "budget": 8,
+      "fact_spans": [
+        {
+          "clause": "Tavi's number is now 29, replacing 23.",
+          "token_indices": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ]
+        }
+      ],
+      "file": "input-1.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        4289,
+        279,
+        46933,
+        25,
+        350,
+        6190,
+        594,
+        1372,
+        374,
+        1431,
+        220,
+        17,
+        24,
+        11,
+        24891,
+        220,
+        17,
+        18,
+        13,
+        17841,
+        1172,
+        10402,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "correction",
+      "text": "Update the ledger: Tavi's number is now 29, replacing 23. Reply only OK."
+    },
+    {
+      "budget": 8,
+      "fact_spans": [],
+      "file": "input-2.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        2461,
+        458,
+        45205,
+        5290,
+        10158,
+        11,
+        1349,
+        279,
+        2701,
+        21085,
+        323,
+        9851,
+        1172,
+        10402,
+        13,
+        362,
+        1815,
+        49435,
+        264,
+        11340,
+        2070,
+        29388,
+        264,
+        4269,
+        13,
+        576,
+        6556,
+        3100,
+        24491,
+        279,
+        12408,
+        11,
+        323,
+        264,
+        22360,
+        14164,
+        11508,
+        8841,
+        264,
+        28727,
+        23946,
+        13,
+        362,
+        62765,
+        22479,
+        13970,
+        11,
+        14289,
+        311,
+        279,
+        9956,
+        323,
+        10099,
+        29514,
+        3271,
+        3941,
+        279,
+        12884,
+        13,
+        30394,
+        279,
+        14164,
+        11,
+        10876,
+        26210,
+        1555,
+        279,
+        6073,
+        323,
+        16217,
+        16359,
+        10797,
+        304,
+        21700,
+        16876,
+        13,
+        576,
+        1815,
+        9539,
+        3267,
+        264,
+        13551,
+        11,
+        264,
+        18126,
+        323,
+        264,
+        2613,
+        3753,
+        13,
+        362,
+        1815,
+        49435,
+        264,
+        11340,
+        2070,
+        29388,
+        264,
+        4269,
+        13,
+        576,
+        6556,
+        3100,
+        24491,
+        279,
+        12408,
+        11,
+        323,
+        264,
+        22360,
+        14164,
+        11508,
+        8841,
+        264,
+        28727,
+        23946,
+        13,
+        362,
+        62765,
+        22479,
+        13970,
+        11,
+        14289,
+        311,
+        279,
+        9956,
+        323,
+        10099,
+        29514,
+        3271,
+        3941,
+        279,
+        12884,
+        13,
+        30394,
+        279,
+        14164,
+        11,
+        10876,
+        26210,
+        1555,
+        279,
+        6073,
+        323,
+        16217,
+        16359,
+        10797,
+        304,
+        21700,
+        16876,
+        13,
+        576,
+        1815,
+        9539,
+        3267,
+        264,
+        13551,
+        11,
+        264,
+        18126,
+        323,
+        264,
+        2613,
+        3753,
+        13,
+        362,
+        1815,
+        49435,
+        264,
+        11340,
+        2070,
+        29388,
+        264,
+        4269,
+        13,
+        576,
+        6556,
+        3100,
+        24491,
+        279,
+        12408,
+        11,
+        323,
+        264,
+        22360,
+        14164,
+        11508,
+        8841,
+        264,
+        28727,
+        23946,
+        13,
+        362,
+        62765,
+        22479,
+        13970,
+        11,
+        14289,
+        311,
+        279,
+        9956,
+        323,
+        10099,
+        29514,
+        3271,
+        3941,
+        279,
+        12884,
+        13,
+        30394,
+        279,
+        14164,
+        11,
+        10876,
+        26210,
+        1555,
+        279,
+        6073,
+        323,
+        16217,
+        16359,
+        10797,
+        304,
+        21700,
+        16876,
+        13,
+        576,
+        1815,
+        9539,
+        3267,
+        264,
+        13551,
+        11,
+        264,
+        18126,
+        323,
+        264,
+        2613,
+        3753,
+        13,
+        220,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "delay",
+      "text": "For an unrelated reading exercise, read the following passage and reply only OK. A path crosses a quiet field beside a stream. The morning light reaches the trees, and a wooden bridge leads toward a distant hill. A traveler walks slowly, listening to the wind and watching clouds move across the sky. Near the bridge, smooth stones line the bank and tall grass moves in gentle waves. The path continues past a garden, a gate and a small house. A path crosses a quiet field beside a stream. The morning light reaches the trees, and a wooden bridge leads toward a distant hill. A traveler walks slowly, listening to the wind and watching clouds move across the sky. Near the bridge, smooth stones line the bank and tall grass moves in gentle waves. The path continues past a garden, a gate and a small house. A path crosses a quiet field beside a stream. The morning light reaches the trees, and a wooden bridge leads toward a distant hill. A traveler walks slowly, listening to the wind and watching clouds move across the sky. Near the bridge, smooth stones line the bank and tall grass moves in gentle waves. The path continues past a garden, a gate and a small house. "
+    },
+    {
+      "budget": 8,
+      "expected": "17",
+      "fact_spans": [],
+      "file": "input-3.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        11190,
+        311,
+        1039,
+        46933,
+        11,
+        1128,
+        374,
+        468,
+        2152,
+        594,
+        1372,
+        30,
+        17841,
+        448,
+        1172,
+        279,
+        1372,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "early",
+      "text": "According to our ledger, what is Eno's number? Reply with only the number."
+    },
+    {
+      "budget": 8,
+      "expected": "17",
+      "fact_spans": [],
+      "file": "input-4.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        11190,
+        311,
+        1039,
+        46933,
+        11,
+        1128,
+        374,
+        468,
+        2152,
+        594,
+        1372,
+        30,
+        17841,
+        448,
+        1172,
+        279,
+        1372,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "late0",
+      "text": "According to our ledger, what is Eno's number? Reply with only the number."
+    },
+    {
+      "budget": 8,
+      "expected": "29",
+      "fact_spans": [],
+      "file": "input-5.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        11190,
+        311,
+        1039,
+        46933,
+        11,
+        1128,
+        374,
+        350,
+        6190,
+        594,
+        1482,
+        1372,
+        30,
+        17841,
+        448,
+        1172,
+        279,
+        1372,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "late1",
+      "text": "According to our ledger, what is Tavi's current number? Reply with only the number."
+    },
+    {
+      "budget": 8,
+      "expected": "amber",
+      "fact_spans": [],
+      "file": "input-6.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        11190,
+        311,
+        1039,
+        46933,
+        11,
+        1128,
+        374,
+        444,
+        13416,
+        594,
+        1894,
+        30,
+        17841,
+        448,
+        1172,
+        279,
+        1894,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "late2",
+      "text": "According to our ledger, what is Luma's color? Reply with only the color."
+    },
+    {
+      "budget": 16,
+      "expected": "46",
+      "fact_spans": [],
+      "file": "input-7.txt",
+      "ids": [
+        151645,
+        198,
+        151644,
+        872,
+        198,
+        3838,
+        374,
+        468,
+        2152,
+        594,
+        1372,
+        5519,
+        350,
+        6190,
+        594,
+        1482,
+        1372,
+        304,
+        1039,
+        46933,
+        30,
+        17841,
+        448,
+        1172,
+        279,
+        2629,
+        13,
+        151645,
+        198,
+        151644,
+        77091,
+        198
+      ],
+      "name": "late3",
+      "text": "What is Eno's number plus Tavi's current number in our ledger? Reply with only the sum."
+    }
+  ],
+  "historical": {
+    "native": {
+      "root_position": 364,
+      "root_sha256": "548b361e24882239115184b37ed72334f6247928a8f459bb09e356ecc88a7904",
+      "state_gpu_bytes": 44789248,
+      "tracked_model_state_gpu_bytes": 3169224212,
+      "turns": [
+        {
+          "input_index": 0,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -0.409215927,
+            "runner_up": 11578,
+            "sha256": "624188aca9dd55cd9ff2e58364e97e45e39ec80a16d14aed7056c1b31e17327c",
+            "top": 3925,
+            "top_margin": 10.7865944,
+            "top_value": 34.4640388
+          },
+          "final": {
+            "red_minus_blue": 1.91401207,
+            "runner_up": 151643,
+            "sha256": "383589a679c0ddb93999068dab497b13143cc782dc75649f1d26342c04929032",
+            "top": 198,
+            "top_margin": 13.5502892,
+            "top_value": 31.8605804
+          },
+          "final_position": 78
+        },
+        {
+          "input_index": 3,
+          "answer_ids": [
+            16,
+            22,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.325799227,
+            "runner_up": 785,
+            "sha256": "2bd8e628bf7ec4e0ed31697c31ad764bc573526de80cd1561d92677e9589c926",
+            "top": 16,
+            "top_margin": 12.0563812,
+            "top_value": 35.0837708
+          },
+          "final": {
+            "red_minus_blue": 0.258424997,
+            "runner_up": 151643,
+            "sha256": "611f0455b1ead81d9c5c6dd3c1af28b6ad1a9803b576c030c0d1885d3af30ea4",
+            "top": 198,
+            "top_margin": 15.4074059,
+            "top_value": 35.1448669
+          },
+          "final_position": 108
+        },
+        {
+          "input_index": 1,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.706066608,
+            "runner_up": 11578,
+            "sha256": "d6c1e73d322bef77b94473d16807529dd94c190c729025d75defe45257babfe0",
+            "top": 3925,
+            "top_margin": 12.5664082,
+            "top_value": 34.0565491
+          },
+          "final": {
+            "red_minus_blue": 1.09685206,
+            "runner_up": 151643,
+            "sha256": "a5ecd15c73949dc00a07502444adc657a5abeb3672017a3a67b45a9786c58f79",
+            "top": 198,
+            "top_margin": 16.1686764,
+            "top_value": 34.3668861
+          },
+          "final_position": 112
+        },
+        {
+          "input_index": 2,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 1.09379196,
+            "runner_up": 11578,
+            "sha256": "b06b2712c5495bbe9da1e508ade7c12553f14c5ea21565fe47986cdd98a4feb3",
+            "top": 3925,
+            "top_margin": 11.0815907,
+            "top_value": 31.4017811
+          },
+          "final": {
+            "red_minus_blue": 2.08354092,
+            "runner_up": 151643,
+            "sha256": "d499d3fee0277b8a13f0c9aee804d42daac1533285e666750de339c71d106f5a",
+            "top": 198,
+            "top_margin": 15.5463333,
+            "top_value": 33.4906158
+          },
+          "final_position": 364
+        },
+        {
+          "input_index": 4,
+          "answer_ids": [
+            16,
+            22,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.488941193,
+            "runner_up": 785,
+            "sha256": "8c5de0cad5c3e800ec2d8a1aba643b0b1eae7b3e58486b495ce92128cb2f474b",
+            "top": 16,
+            "top_margin": 13.0273781,
+            "top_value": 35.4565392
+          },
+          "final": {
+            "red_minus_blue": 0.658081532,
+            "runner_up": 151643,
+            "sha256": "c6616e7ee7c6fca9f76ddee8a2404594b9743824bcb606f3cb98bd692292241c",
+            "top": 198,
+            "top_margin": 15.0575142,
+            "top_value": 35.8508987
+          },
+          "final_position": 394
+        },
+        {
+          "input_index": 5,
+          "answer_ids": [
+            17,
+            24,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -3.48520327,
+            "runner_up": 51,
+            "sha256": "c0a141faedd4f4816a84ca83d99c1bc25c4bb6a71cb5c4736e87e1053993da23",
+            "top": 17,
+            "top_margin": 13.2035809,
+            "top_value": 34.8809967
+          },
+          "final": {
+            "red_minus_blue": 1.18296552,
+            "runner_up": 151643,
+            "sha256": "d959b4ed2393cf21309d328f0994bb101d9f6238ef48bd620316e96d2693c324",
+            "top": 198,
+            "top_margin": 15.4930248,
+            "top_value": 35.9874916
+          },
+          "final_position": 395
+        },
+        {
+          "input_index": 6,
+          "answer_ids": [
+            15221,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 2.07302475,
+            "runner_up": 6091,
+            "sha256": "8bf19d85df1665098f052a94254a5ec746bf7df9571101c0cae515c8e1b1d607",
+            "top": 15221,
+            "top_margin": 2.3865242,
+            "top_value": 29.8899994
+          },
+          "final": {
+            "red_minus_blue": 0.26957655,
+            "runner_up": 151643,
+            "sha256": "34fc656a5edc1bb9ced5bf4efbb685cea95b8ab9d32eaff16cf57350d8052107",
+            "top": 198,
+            "top_margin": 14.9401817,
+            "top_value": 35.1132774
+          },
+          "final_position": 393
+        },
+        {
+          "input_index": 7,
+          "answer_ids": [
+            19,
+            15,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -3.51506519,
+            "runner_up": 18,
+            "sha256": "d366b34180b3c9796878fb2c6bcaba6d19938b8d9406b90f79853bfc0a20d017",
+            "top": 19,
+            "top_margin": 5.66316032,
+            "top_value": 26.3035507
+          },
+          "final": {
+            "red_minus_blue": 0.643117428,
+            "runner_up": 151643,
+            "sha256": "db5f7f71ef030ed939c5d76939e23e05c6bce4822c1a03a3fb3cfabdef12c713",
+            "top": 198,
+            "top_margin": 14.5722122,
+            "top_value": 35.5994835
+          },
+          "final_position": 398
+        }
+      ]
+    },
+    "full-byte": {
+      "root_position": 364,
+      "root_sha256": "522ce3fbc2411271d7a68ca3b6674affe6d11f7982b4fe40645111624ef85799",
+      "state_gpu_bytes": 48781316,
+      "tracked_model_state_gpu_bytes": 3173216280,
+      "turns": [
+        {
+          "input_index": 0,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.054202199,
+            "runner_up": 11578,
+            "sha256": "04ec27fc03e23b8021679a56c843ba6334f5c369b436b6446b6b7daac508533d",
+            "top": 3925,
+            "top_margin": 10.2029705,
+            "top_value": 34.6226845
+          },
+          "final": {
+            "red_minus_blue": 1.42280853,
+            "runner_up": 151643,
+            "sha256": "65fddf97aff00fc0a600c700137b503e99be352b2da303e8f853265afa8a54bf",
+            "top": 198,
+            "top_margin": 13.3159885,
+            "top_value": 31.0796871
+          },
+          "final_position": 78
+        },
+        {
+          "input_index": 3,
+          "answer_ids": [
+            16,
+            22,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.334685326,
+            "runner_up": 785,
+            "sha256": "9b302f73f97bed4a3cc7c38f623b567f5f414b38cfc6c4266f624eb7a98efa55",
+            "top": 16,
+            "top_margin": 12.9234848,
+            "top_value": 35.4402313
+          },
+          "final": {
+            "red_minus_blue": -0.301253557,
+            "runner_up": 151643,
+            "sha256": "3c1e593fc2d73da3bb16d8cd85e7210d6abdd00aa037a85ff1bced1efba5feef",
+            "top": 198,
+            "top_margin": 14.6220551,
+            "top_value": 34.8052368
+          },
+          "final_position": 108
+        },
+        {
+          "input_index": 1,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.527894258,
+            "runner_up": 11578,
+            "sha256": "d2974d344990dfcab31048e255d3d532a596da7add5a5f0aa6f21175b32352a2",
+            "top": 3925,
+            "top_margin": 12.7774963,
+            "top_value": 33.9568825
+          },
+          "final": {
+            "red_minus_blue": 0.529351592,
+            "runner_up": 151643,
+            "sha256": "d44e65d33db4d811d25627c5b097aa60a84e0eebae835875cd13ef8c5162caec",
+            "top": 198,
+            "top_margin": 15.5000839,
+            "top_value": 33.8172073
+          },
+          "final_position": 112
+        },
+        {
+          "input_index": 2,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 1.19721484,
+            "runner_up": 11578,
+            "sha256": "c52162aaee6c9fc83b4f56ff3719354d9a21e2e67c70ba07f971eb0fdedd61d7",
+            "top": 3925,
+            "top_margin": 11.2372169,
+            "top_value": 31.3770943
+          },
+          "final": {
+            "red_minus_blue": 1.39026499,
+            "runner_up": 151643,
+            "sha256": "2157f4fba2bdc57a0b22de2b3222408d67e946a119a5984a4519ae4d2e53bb45",
+            "top": 198,
+            "top_margin": 15.2601662,
+            "top_value": 33.5584908
+          },
+          "final_position": 364
+        },
+        {
+          "input_index": 4,
+          "answer_ids": [
+            16,
+            22,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.120323181,
+            "runner_up": 785,
+            "sha256": "97f5c83aef90fd8467fe9e8cd134471c5695ad9a725ea6d5544ca0db0c7eebf1",
+            "top": 16,
+            "top_margin": 12.8337631,
+            "top_value": 35.7169647
+          },
+          "final": {
+            "red_minus_blue": 0.308876038,
+            "runner_up": 151643,
+            "sha256": "faa72d67d3f4c9b7064085368d06110b2ae61b9b32553851c4798dd361f2f7cb",
+            "top": 198,
+            "top_margin": 14.3698196,
+            "top_value": 35.0960274
+          },
+          "final_position": 394
+        },
+        {
+          "input_index": 5,
+          "answer_ids": [
+            17,
+            24,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -3.34538269,
+            "runner_up": 51,
+            "sha256": "e1a033f151e24518ec1ae863b47b060aa31034e4a654612d5223a9cce765058b",
+            "top": 17,
+            "top_margin": 12.8549652,
+            "top_value": 35.3805847
+          },
+          "final": {
+            "red_minus_blue": 0.781694174,
+            "runner_up": 151643,
+            "sha256": "9f54e4e8f2753b24c3303f53c3d1229895edc96d162944beb0d7f02a22f36ae7",
+            "top": 198,
+            "top_margin": 15.3958302,
+            "top_value": 35.3019943
+          },
+          "final_position": 395
+        },
+        {
+          "input_index": 6,
+          "answer_ids": [
+            15221,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 2.17948151,
+            "runner_up": 6091,
+            "sha256": "89cd81b5432636cc2fd093d5b787b3e1c8a6d7aa789f70ef58e231c0dabcd193",
+            "top": 15221,
+            "top_margin": 1.43837738,
+            "top_value": 29.6939735
+          },
+          "final": {
+            "red_minus_blue": -0.516610861,
+            "runner_up": 151643,
+            "sha256": "765d2732644e39b095c95ea089a70e416395527e9caa85493b200fa87e106995",
+            "top": 198,
+            "top_margin": 14.2922401,
+            "top_value": 35.2012024
+          },
+          "final_position": 393
+        },
+        {
+          "input_index": 7,
+          "answer_ids": [
+            19,
+            15,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -3.31767631,
+            "runner_up": 18,
+            "sha256": "536a2272034fc195573909d30fc4dbd767a4568325e04756c952a48ae3321bf0",
+            "top": 19,
+            "top_margin": 5.43052673,
+            "top_value": 26.3466263
+          },
+          "final": {
+            "red_minus_blue": 0.159551144,
+            "runner_up": 151643,
+            "sha256": "39be9aa7520dba08e68bdce44f8b3f8293695cee1d0bbce6a6e23b443c91264e",
+            "top": 198,
+            "top_margin": 14.2828903,
+            "top_value": 35.2265396
+          },
+          "final_position": 398
+        }
+      ]
+    },
+    "bounded": {
+      "root_position": 364,
+      "root_sha256": "5484dfdfd6ca51f2375758ffef832aef72a6bf22939862143c7fe0931ed2adc1",
+      "state_gpu_bytes": 9279620,
+      "tracked_model_state_gpu_bytes": 3133714584,
+      "turns": [
+        {
+          "input_index": 0,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.054202199,
+            "runner_up": 11578,
+            "sha256": "04ec27fc03e23b8021679a56c843ba6334f5c369b436b6446b6b7daac508533d",
+            "top": 3925,
+            "top_margin": 10.2029705,
+            "top_value": 34.6226845
+          },
+          "final": {
+            "red_minus_blue": 1.42280853,
+            "runner_up": 151643,
+            "sha256": "65fddf97aff00fc0a600c700137b503e99be352b2da303e8f853265afa8a54bf",
+            "top": 198,
+            "top_margin": 13.3159885,
+            "top_value": 31.0796871
+          },
+          "final_position": 78
+        },
+        {
+          "input_index": 3,
+          "answer_ids": [
+            16,
+            22,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.334685326,
+            "runner_up": 785,
+            "sha256": "9b302f73f97bed4a3cc7c38f623b567f5f414b38cfc6c4266f624eb7a98efa55",
+            "top": 16,
+            "top_margin": 12.9234848,
+            "top_value": 35.4402313
+          },
+          "final": {
+            "red_minus_blue": -0.301253557,
+            "runner_up": 151643,
+            "sha256": "3c1e593fc2d73da3bb16d8cd85e7210d6abdd00aa037a85ff1bced1efba5feef",
+            "top": 198,
+            "top_margin": 14.6220551,
+            "top_value": 34.8052368
+          },
+          "final_position": 108
+        },
+        {
+          "input_index": 1,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": 0.527894258,
+            "runner_up": 11578,
+            "sha256": "d2974d344990dfcab31048e255d3d532a596da7add5a5f0aa6f21175b32352a2",
+            "top": 3925,
+            "top_margin": 12.7774963,
+            "top_value": 33.9568825
+          },
+          "final": {
+            "red_minus_blue": 0.529351592,
+            "runner_up": 151643,
+            "sha256": "d44e65d33db4d811d25627c5b097aa60a84e0eebae835875cd13ef8c5162caec",
+            "top": 198,
+            "top_margin": 15.5000839,
+            "top_value": 33.8172073
+          },
+          "final_position": 112
+        },
+        {
+          "input_index": 2,
+          "answer_ids": [
+            3925,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -0.309942961,
+            "runner_up": 32313,
+            "sha256": "8ef92a770a13897770f53f90010f88b16405bcb1992aeefc76596a29ef017352",
+            "top": 3925,
+            "top_margin": 10.3678284,
+            "top_value": 29.0985413
+          },
+          "final": {
+            "red_minus_blue": -0.496207595,
+            "runner_up": 151643,
+            "sha256": "db731e161f0f331bbe47e7cba76a6aef5ad44092579fbfc21c7ee502eb39e2d5",
+            "top": 198,
+            "top_margin": 13.6291256,
+            "top_value": 30.5229702
+          },
+          "final_position": 364
+        },
+        {
+          "input_index": 4,
+          "answer_ids": [
+            18,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -0.514997482,
+            "runner_up": 16,
+            "sha256": "7dd6b7ba76def9a667cc2feea4aa7aef3a244a1a504830c85b40a4d7234f3a9c",
+            "top": 18,
+            "top_margin": 0.0462684631,
+            "top_value": 25.0084152
+          },
+          "final": {
+            "red_minus_blue": -0.306280375,
+            "runner_up": 151643,
+            "sha256": "50eb6ad08e15aa4749f606f28f156bed712197ba60f9c655fce8bbcbd349ebb9",
+            "top": 198,
+            "top_margin": 11.6612244,
+            "top_value": 34.1095123
+          },
+          "final_position": 393
+        },
+        {
+          "input_index": 5,
+          "answer_ids": [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "prefill": {
+            "red_minus_blue": -1.48520088,
+            "runner_up": 18,
+            "sha256": "fb08d848571d04169611780eeee603998ac8b682a26f3f961f1dd16ee7ce0ae7",
+            "top": 16,
+            "top_margin": 0.0997009277,
+            "top_value": 24.9858131
+          },
+          "final": {
+            "red_minus_blue": -1.68002546,
+            "runner_up": 151645,
+            "sha256": "3d37a7a22302952ac0ca2115ac3c3ced6c0caf62b6311c02abb3418f97cd2fce",
+            "top": 24,
+            "top_margin": 5.88079834,
+            "top_value": 22.5152893
+          },
+          "final_position": 400
+        },
+        {
+          "input_index": 6,
+          "answer_ids": [
+            19576,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -3.39698601,
+            "runner_up": 43,
+            "sha256": "166409f0a5bbcf9cc15ad977c215b7221592768bde7fd076120622642a151573",
+            "top": 19576,
+            "top_margin": 0.150226593,
+            "top_value": 24.8652153
+          },
+          "final": {
+            "red_minus_blue": -0.855049729,
+            "runner_up": 151643,
+            "sha256": "5ccd273993486d8940c4c0d6e74b061a404f5afb7e371735791b08fb90500758",
+            "top": 198,
+            "top_margin": 10.7167435,
+            "top_value": 33.5029373
+          },
+          "final_position": 393
+        },
+        {
+          "input_index": 7,
+          "answer_ids": [
+            16,
+            20,
+            151645
+          ],
+          "prefill": {
+            "red_minus_blue": -1.34150457,
+            "runner_up": 18,
+            "sha256": "7ad18bb1f5312beeba944b9dd242bceb408013f20583a462f6e0f706687d3734",
+            "top": 16,
+            "top_margin": 0.955709457,
+            "top_value": 24.7792072
+          },
+          "final": {
+            "red_minus_blue": -0.00669705868,
+            "runner_up": 151643,
+            "sha256": "accf47584cf85e959f4712f62369d599eb4a272ead19904d53ea3c57c75981ff",
+            "top": 198,
+            "top_margin": 11.1658363,
+            "top_value": 34.111618
+          },
+          "final_position": 398
+        }
+      ]
+    }
+  },
+  "client_answers": {
+    "full-byte-demo": [
+      "When yeast is added to dough, it consumes the sugars in the dough, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise\n",
+      "46\n",
+      "OK\n",
+      "17\n",
+      "17\n"
+    ],
+    "full-byte-delayed": [
+      "OK\n",
+      "17\n",
+      "OK\n",
+      "OK\n",
+      "17\n",
+      "29\n",
+      "amber\n",
+      "40\n"
+    ],
+    "bounded-demo": [
+      "When yeast is added to dough, it consumes the sugars in the dough, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise\n",
+      "46\n",
+      "OK\n",
+      "17\n",
+      "17\n"
+    ],
+    "bounded-delayed": [
+      "OK\n",
+      "17\n",
+      "OK\n",
+      "OK\n",
+      "3\n",
+      "1234567890\n",
+      "Green\n",
+      "15\n"
+    ],
+    "native-demo": [
+      "When yeast is added to dough, it consumes the sugars present, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise.\n"
+    ]
+  }
+}

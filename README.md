@@ -10,6 +10,8 @@ This is now the canonical working repository. The complete former `saturn/cmachi
 
 The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches, bounded anchors/recent/reservoir retention, overwritten-row recovery, source-BF16 weight tiling and persistent bounded chat to the existing writer/lineage core. Native remains the default. [Commit verification](validation/README.md) builds exact Git objects, compares the original and integrated native cores, and authenticates historical compressed-cache behavior through a guarded Beast lease.
 
+**Verified integration:** source commit `7a6824dd9b640cfa785fa56cc4e7cfae14193f1c` passed guarded Beast job `job-f645fcd76a75`. The [tracked proof bundle](docs/evidence/integration-7a6824d/README.md) contains the exact executed sources, raw results and receipts, with an offline verifier. All 84 native/reference protocol entries agree, compressed profiles reproduce historical behavior, and real overwrite/abort/retry checks pass. The tested build is installed at `/mnt/big/cmachine/current`; bounded delayed-recall failures remain.
+
 - [Architecture and state contracts](docs/ARCHITECTURE.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)
 - [Current evidence and limitations](docs/STATUS.md)
@@ -94,7 +96,7 @@ The direct protocol accepts token IDs:
 | `Z` | Reset history and invalidate retained parents. |
 | `Q` | Exit. |
 
-When a delivered pending token belongs in a subsequent supplied history, the caller must include it. The text client maintains this invariant. Context is bounded; there is no silent eviction or automatic summary replacement.
+When a delivered pending token belongs in a subsequent supplied history, the caller must include it. The text client maintains this invariant. Native and full-byte modes retain their complete valid prefix up to the configured context limit. Explicit bounded mode evicts according to its declared policy; it still enforces the logical context limit and does not construct an automatic semantic summary.
 
 ## Research direction
 

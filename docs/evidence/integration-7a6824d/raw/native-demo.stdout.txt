@@ -1,0 +1,4 @@
+{"event": "ready", "model_identity": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee", "model_digest": "8b0589b6f367c42e457d53f22af32882f4f0d807803481cdd65c675e33f12fbc", "capacity": 768, "gpu_weight_bytes": 6174857216, "gpu_session_bytes": 44789248}
+you> model> When yeast is added to dough, it consumes the sugars present, producing carbon dioxide gas. This gas creates bubbles in the dough, causing it to rise.
+you> {'event': 'state', 'position': 75, 'pending_token': 151645, 'delivered': 1, 'checkpoint_serial': 0, 'stack_depth': 0, 'top_frame': 0, 'epoch': 1, 'cache_sha256': '09ccbe24644bd9f490f33561794f5b0f8c199a441e086885242123ce667f8bc8', 'logits_sha256': '8d1518e7312625bbee7673d31813dfa5c9db77cf5d2a0f2d4cf08d0d5424ed1e', 'logits_valid': True}
+you> 

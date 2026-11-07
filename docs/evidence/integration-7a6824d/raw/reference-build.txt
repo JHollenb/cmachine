@@ -1,0 +1,4 @@
+src/qwen_serve.c: In function ‘qwen_serve_main’:
+src/qwen_serve.c:42:11: warning: implicit declaration of function ‘getline’ [-Wimplicit-function-declaration]
+   42 |     while(getline(&line,&bytes,stdin)>=0){
+      |           ^~~~~~~
