@@ -1,0 +1,7 @@
+# Executed sources and the shared working area
+
+The completed thirteen-cut assay is job `job-eb06becf984f`, report SHA256 `5ceab12e2ab62d20978269df55702bb4a26376d0db79752270df9ac5b74eaa0f`. Its authoritative executed sources, inputs and source manifest are under `runs/job-eb06becf984f/payload/`. The report, raw arrays, executable and verification receipts remain unchanged.
+
+During final packaging, the archive's source-change check detected concurrent edits to the shared top-level implementation and general documentation. In particular, top-level `PLAN.md`, `driver.c`, `Makefile`, `analysis.py`, `worker.py`, `run.py`, `test_analysis.py` and `evidence.py` no longer identify the completed thirteen-cut implementation. Those edits were preserved. The delivery capsule uses the collected run's complete executed payload and excludes these mutable top-level program files. This prevents a later working implementation from being presented as the code that produced these results.
+
+Result-specific prose, independent saved-array scripts, audits, evidence projection and figures are packaged as additive interpretation. General documentation is a dated snapshot. Each capsule member is copied into a fixed snapshot before its manifest and archive are constructed; the archive is then independently read and checked against every recorded byte count and hash. The snapshot step makes packaging internally consistent even if the shared checkout continues changing. The snapshot does not rerun a model or alter scientific evidence.

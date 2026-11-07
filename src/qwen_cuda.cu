@@ -10,8 +10,13 @@
 struct TcmGpu { cublasHandle_t blas; float *partial_values; int *partial_ids,*invalid; TcmTop2 *result; };
 extern "C" TcmGpu *gpu_open(void){TcmGpu *g=(TcmGpu*)calloc(1,sizeof(*g));if(!g)exit(2);BLAS(cublasCreate(&g->blas));BLAS(cublasSetMathMode(g->blas,CUBLAS_PEDANTIC_MATH));g->partial_values=(float*)gpu_alloc(2*1024*sizeof(float));g->partial_ids=(int*)gpu_alloc(2*1024*sizeof(int));g->invalid=(int*)gpu_alloc(sizeof(int));g->result=(TcmTop2*)gpu_alloc(sizeof(TcmTop2));return g;}
 extern "C" void gpu_close(TcmGpu *g){if(g){gpu_free(g->partial_values);gpu_free(g->partial_ids);gpu_free(g->invalid);gpu_free(g->result);BLAS(cublasDestroy(g->blas));free(g);}}
-extern "C" void *gpu_alloc(size_t n){void *p=NULL;CUDA(cudaMalloc(&p,n));return p;}
-extern "C" void gpu_free(void *p){if(p)CUDA(cudaFree(p));}
+struct Allocation {void *pointer;size_t bytes;Allocation *next;};
+static Allocation *allocations;
+static size_t live_allocation_bytes,peak_allocation_bytes;
+extern "C" size_t gpu_live_bytes(void){return live_allocation_bytes;}
+extern "C" size_t gpu_peak_bytes(void){return peak_allocation_bytes;}
+extern "C" void *gpu_alloc(size_t n){void *p=NULL;CUDA(cudaMalloc(&p,n));Allocation *r=(Allocation*)malloc(sizeof(*r));if(!r)exit(2);*r={p,n,allocations};allocations=r;live_allocation_bytes+=n;if(live_allocation_bytes>peak_allocation_bytes)peak_allocation_bytes=live_allocation_bytes;return p;}
+extern "C" void gpu_free(void *p){if(p){Allocation **r=&allocations;while(*r&&(*r)->pointer!=p)r=&(*r)->next;if(!*r)exit(2);Allocation *old=*r;CUDA(cudaFree(p));live_allocation_bytes-=old->bytes;*r=old->next;free(old);}}
 extern "C" void gpu_zero(void *p,size_t n){CUDA(cudaMemset(p,0,n));}
 extern "C" void gpu_copy(void *d,const void *s,size_t n){CUDA(cudaMemcpy(d,s,n,cudaMemcpyDeviceToDevice));}
 extern "C" void gpu_read(void *d,const void *s,size_t n){CUDA(cudaMemcpy(d,s,n,cudaMemcpyDeviceToHost));}
@@ -25,7 +30,8 @@ extern "C" float *gpu_weight(const void *data,uint32_t dtype,size_t n){
     else if(dtype==2){void *raw=gpu_alloc(n*2);CUDA(cudaMemcpy(raw,data,n*2,cudaMemcpyHostToDevice));widen<<<(unsigned)((n+255)/256),256>>>(out,(const unsigned short*)raw,n);CUDA(cudaGetLastError());gpu_free(raw);}
     else{fprintf(stderr,"unsupported GPU weight dtype\n");exit(2);}return out;
 }
-extern "C" void gpu_matvec(TcmGpu *g,const float *w,int in,int out,const float *x,float *y){const float one=1,zero=0;BLAS(cublasSgemv(g->blas,CUBLAS_OP_T,in,out,&one,w,in,x,1,&zero,y,1));}
+
+static void gpu_base_matvec(TcmGpu *g,const float *w,int in,int out,const float *x,float *y){const float one=1,zero=0;BLAS(cublasSgemv(g->blas,CUBLAS_OP_T,in,out,&one,w,in,x,1,&zero,y,1));}
 __global__ static void rms_kernel(float *out,const float *x,const float *w,int n,float epsilon,float *export_scale){
     __shared__ float sums[256];float sum=0;for(int i=threadIdx.x;i<n;i+=blockDim.x)sum+=x[i]*x[i];sums[threadIdx.x]=sum;__syncthreads();
     for(int stride=128;stride;stride/=2){if(threadIdx.x<stride)sums[threadIdx.x]+=sums[threadIdx.x+stride];__syncthreads();}
@@ -110,3 +116,7 @@ extern "C" TcmTop2 gpu_top2(TcmGpu *g,const float *x,int n){
     int blocks=(n+255)/256;if(blocks>1024){fprintf(stderr,"top2 vocabulary exceeds adapter capacity\n");exit(2);}gpu_zero(g->invalid,sizeof(int));top_kernel<<<blocks,256>>>(x,n,g->partial_values,g->partial_ids,g->invalid);CUDA(cudaGetLastError());
     finish_top<<<1,256>>>(g->partial_values,g->partial_ids,2*blocks,g->result);CUDA(cudaGetLastError());TcmTop2 result;gpu_read(&result,g->result,sizeof(result));int invalid;gpu_read(&invalid,g->invalid,sizeof(int));if(invalid){fprintf(stderr,"non-finite Qwen logits\n");exit(2);}return result;
 }
+
+/* These extensions consume the already-defined GEMV and softmax primitives. */
+#include "qwen_weights.inc"
+#include "qwen_cache.inc"

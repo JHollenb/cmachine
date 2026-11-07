@@ -16,7 +16,8 @@ import tempfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-DOMAINS=ROOT.parents[1]
+DOMAINS=ROOT.parent
+RESEARCH=ROOT/'research'
 CUDA_MODES=("qwen","continuation","client","stack","plane","reuse","enrich","components","formation","writer","lineage")
 ASSAY_MODES=("plane","reuse","enrich","components","formation","writer","lineage")
 
@@ -39,13 +40,13 @@ def submit(mode):
                 shutil.copy2(DOMAINS/"isa/outputs/direct-effect-v2/r3-mamba/source"/package/name,target/name)
         if mode in ("continuation","stack")+ASSAY_MODES:
             shutil.copytree(DOMAINS/"saturn-pub/src/saturn_pub",staging/"public/saturn_pub",ignore=shutil.ignore_patterns("__pycache__",*( ["trial_data"] if mode in ASSAY_MODES else [])))
-        if mode=="plane":shutil.copy2(ROOT/"PLANE_EXPERIMENT.md",staging/"PLANE_EXPERIMENT.md")
-        if mode in ("reuse","enrich","components","formation","writer"):shutil.copy2(ROOT/"REUSE_EXPERIMENT.md",staging/"REUSE_EXPERIMENT.md")
-        if mode in ("enrich","components","formation","writer"):shutil.copy2(ROOT/"ENRICH_EXPERIMENT.md",staging/"ENRICH_EXPERIMENT.md")
-        if mode in ("components","formation"):shutil.copy2(ROOT/"CARRY_READ_EXPERIMENT.md",staging/"CARRY_READ_EXPERIMENT.md")
-        if mode=="formation":shutil.copy2(ROOT/"CARRY_FORMATION_EXPERIMENT.md",staging/"CARRY_FORMATION_EXPERIMENT.md")
-        if mode=="writer":shutil.copy2(ROOT/"WRITER_INTERVENTION_EXPERIMENT.md",staging/"WRITER_INTERVENTION_EXPERIMENT.md")
-        if mode=="lineage":shutil.copy2(ROOT/"PARENT_LINEAGE.md",staging/"PARENT_LINEAGE.md")
+        if mode=="plane":shutil.copy2(RESEARCH/"PLANE_EXPERIMENT.md",staging/"PLANE_EXPERIMENT.md")
+        if mode in ("reuse","enrich","components","formation","writer"):shutil.copy2(RESEARCH/"REUSE_EXPERIMENT.md",staging/"REUSE_EXPERIMENT.md")
+        if mode in ("enrich","components","formation","writer"):shutil.copy2(RESEARCH/"ENRICH_EXPERIMENT.md",staging/"ENRICH_EXPERIMENT.md")
+        if mode in ("components","formation"):shutil.copy2(RESEARCH/"CARRY_READ_EXPERIMENT.md",staging/"CARRY_READ_EXPERIMENT.md")
+        if mode=="formation":shutil.copy2(RESEARCH/"CARRY_FORMATION_EXPERIMENT.md",staging/"CARRY_FORMATION_EXPERIMENT.md")
+        if mode=="writer":shutil.copy2(RESEARCH/"WRITER_INTERVENTION_EXPERIMENT.md",staging/"WRITER_INTERVENTION_EXPERIMENT.md")
+        if mode=="lineage":shutil.copy2(RESEARCH/"PARENT_LINEAGE.md",staging/"PARENT_LINEAGE.md")
         sources={str(p.relative_to(staging)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(staging.rglob("*")) if p.is_file()}
         config={"schema":"tcm-fleet-v1","mode":mode,"sources":sources,"backend":"hf" if mode=="qwen" else "c-fp32-cpu","candidate_backend":"c-cublas-fp32" if mode=="qwen" else "c-fp32-cpu","dtype":"fp32","device":"cuda" if mode=="qwen" else "cpu",
                 "physical_work":"26 native calls; 52 C full instruction calls plus 16 row-31 checkpoint suffix replays" if mode=="isa" else "environment inventory only",

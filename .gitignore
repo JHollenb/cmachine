@@ -1,6 +1,8 @@
 /build/
 /models/
 /results/
+/models
+/results
 /artifacts/
 __pycache__/
 *.py[cod]
@@ -10,3 +12,28 @@ __pycache__/
 *.tcm
 *.safetensors
 .DS_Store
+# Local research evidence and weights stay under this checkout, outside Git.
+/research/**/runs/
+/research/**/staged/
+/research/**/results/
+/research/**/index/
+/research/**/custody/
+/research/**/artifacts/
+/research/**/models/
+/research/**/build/
+/research/**/bank/
+/research/migration/
+*.f32
+*.f64
+*.npz
+*.npy
+*.bin
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+/validation/staged/
+/validation/runs/
+/research/composition/mechanics/import-check
+/research/composition/mechanics/state-check
+*.dSYM/

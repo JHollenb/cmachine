@@ -1,0 +1,11 @@
+# Lossless source weight storage with matched tiled computation
+
+The [completed findings](FINDINGS.md) compare original FP32 residence, tiled FP32 residence and original BF16 matrix residence. All profiles independently construct all 28 byte caches from token zero through five linked turns. Original BF16 matrices decode into one shared 36,700,160-byte FP32 tile, while norm/bias vectors remain FP32. No additional parameter quantization or full-model FP32 shadow is used.
+
+The [runtime transform](runtime_patch.py) adds owned-weight loading and embedding dispatch. [weight_cuda.cu](weight_cuda.cu) binds all 197 matrices to shape/dtype/storage records, decodes tied embeddings correctly and executes matching 1024-row FP32 GEMVs. Three sequential processes avoid overlapping parameter banks. The [panel bridge](panel_bridge.py) binds all three complete commands through the public Saturn Session and declares its three-process horizon. Installed serving is unchanged.
+
+The ordinary profile reproduces 258 historical all-byte artifacts. Tiled BF16 and tiled FP32 reproduce every captured own row/query, sparse port, full readout, encoded snapshot, lifecycle result and token exactly. Ordinary versus tiled geometry changes logits 1.334–4.147% on matching histories; that numerical-profile effect is retained separately from the exact storage comparison.
+
+Tracked model-plus-state allocation is 6,183,704,088 bytes for ordinary FP32/all-byte caches, 6,220,404,248 for tiled FP32, and 3,133,265,432 for tiled BF16. The resource result changes residence while retaining learned parameters and dense forward computation. Full retention remains linear; general chat fidelity and speedup are not established.
+
+Read the [plan](PLAN.md), [Astra review](REVIEW.md), [report](runs/job-02559c65b72e/report.json), [verification](runs/job-02559c65b72e/verification.json) and [evidence sweep](index/job-02559c65b72e/evidence-verify.json). Eleven local checks pass, including actual transformed-runtime ASAN/UBSAN, exhaustive BF16 bit widening, public panel-command receipt binding and inherited token authority. C/Python syntax passes. `run.py` stages/submits/collects/verifies the finite experiment; `evidence.py JOB_ID` indexes only verified observation rows.

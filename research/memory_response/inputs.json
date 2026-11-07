@@ -1,0 +1,26 @@
+{
+  "schema": "tcm-memory-response-text-v1",
+  "capacity": 512,
+  "ack_budget": 4,
+  "answer_budget": 8,
+  "initial_template": "Remember this badge record for later questions. Mira has a {mira} badge. Niko has a {niko} badge. Reply only OK.",
+  "updates": [
+    "Update: Mira and Niko retain their badges. The badge record otherwise stays the same. Reply only OK.",
+    "Update: Mira and Niko exchange their badges. The badge record otherwise stays the same. Reply only OK."
+  ],
+  "distractor": "Unrelated note: a quiet library opens in the morning. Its shelves contain books about rivers, mountains, music, gardens, and weather. A wooden table stands beside a window. The librarian arranges pencils, closes a notebook, and checks the wall clock. This note changes nothing in the earlier record. Reply only OK.",
+  "questions": [
+    "What color is Mira's current badge? Reply with only the color.",
+    "What color is Niko's current badge? Reply with only the color."
+  ],
+  "cases": [
+    {"id": 0, "initial_bit": 0, "update_bit": 0, "mira": "red", "niko": "blue", "expected": ["red", "blue"]},
+    {"id": 1, "initial_bit": 0, "update_bit": 1, "mira": "red", "niko": "blue", "expected": ["blue", "red"]},
+    {"id": 2, "initial_bit": 1, "update_bit": 0, "mira": "blue", "niko": "red", "expected": ["blue", "red"]},
+    {"id": 3, "initial_bit": 1, "update_bit": 1, "mira": "blue", "niko": "red", "expected": ["red", "blue"]}
+  ],
+  "policies": ["native", "byte_full", "byte_top4", "byte_recent4", "history_deleted"],
+  "support_size": 4,
+  "diagnostic_layers": [17, 18],
+  "tokenizer_path": "/mnt/big/llm-models/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+}

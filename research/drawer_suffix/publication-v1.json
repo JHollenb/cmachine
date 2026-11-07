@@ -1,0 +1,118 @@
+{
+  "schema": "drawer-suffix-audit-publication-v1",
+  "primary_job": "job-935667de6e2f",
+  "primary_report_sha256": "1bea48aa514dc43437390d7f2c76a5782542e2405fd17668b5fee9c6aa122846",
+  "source_target_job": "job-47cc27324445",
+  "new_model_calls": 0,
+  "new_fitted_images": 0,
+  "scope": "Independent audit of an already-completed exact experiment plus cached source-only target preparation. No duplicate scientific model run, optimizer or serving change. Canonical prose/matrix and linked research plan updated.",
+  "checks": {
+    "target_rebuild_all_five_outputs_byte_exact": true,
+    "target_overwrite_refused": true,
+    "owned_document_links_exist": true,
+    "prior_audit_custody_unchanged": true,
+    "astra_independent_target_regeneration": true
+  },
+  "files": {
+    "artifacts/qwen-relational-reader-cut-20261106/evidence-v1/run.json": {
+      "bytes": 1759,
+      "sha256": "7aa1b285691b482664bf1b7e3cf9f2665e154fc553707123cb86ae3546038ecc"
+    },
+    "artifacts/qwen-relational-reader-cut-20261106/evidence-v1/verify.json": {
+      "bytes": 962,
+      "sha256": "e78901e1c796cbcf6e4d0c65282f2fb5d97414ac321c8438428f2e0e0d5d7584"
+    },
+    "cmachine/research/FINDINGS.md": {
+      "bytes": 102992,
+      "sha256": "d5a5ca7f37501258cf32d3717ddf65eac5980c906ad3d2b85a95b7cc6f1c403e"
+    },
+    "cmachine/research/README.md": {
+      "bytes": 45095,
+      "sha256": "1795625b9a636246a9c6954688cd87bb6f60d3e61ea02003927f5ca0a04bd2c5"
+    },
+    "cmachine/research/STACKED_STATE_PLAN.md": {
+      "bytes": 65543,
+      "sha256": "92a9525fc3e911a42d7bce6c4ab8d01bf6f8b6a8dc07aed4c7409761cad99740"
+    },
+    "cmachine/research/drawer_suffix/FINDINGS.md": {
+      "bytes": 6621,
+      "sha256": "c3af964cff645a1e87d8a1740d6c1e97071e1b58268ca445fcac0cd51dae25f5"
+    },
+    "cmachine/research/drawer_suffix/MATH.md": {
+      "bytes": 4790,
+      "sha256": "d8d66814b69e946e980083f341c58cdca4cb919692a64534ddb8ec317f4ac941"
+    },
+    "cmachine/research/drawer_suffix/PLAN.md": {
+      "bytes": 2504,
+      "sha256": "d10a324b2d51fc6ecfda72fff597ca3129ecd3a953bd2c826a27df161a775e78"
+    },
+    "cmachine/research/drawer_suffix/REVIEW.md": {
+      "bytes": 3084,
+      "sha256": "b011d7e8f691d2869d4f184738aa80101243113d950b08bef62e6d82199be66d"
+    },
+    "cmachine/research/drawer_suffix/analysis-error-v1.json": {
+      "bytes": 492,
+      "sha256": "61e7d0960403be116a1be84045270f657f25eadbebb6f0b621cf767ce6aac5f9"
+    },
+    "cmachine/research/drawer_suffix/audit-v1/audit.json": {
+      "bytes": 50030,
+      "sha256": "7ca6b266096f3f3afe3124e6107c81831f970d499e78ed9b8467bb1cc8aa6eb1"
+    },
+    "cmachine/research/drawer_suffix/audit-v1/custody.json": {
+      "bytes": 1303,
+      "sha256": "54f4752c3dd734c7f817c49453969814938985ab1d4039c51f6671e4e34b2ab9"
+    },
+    "cmachine/research/drawer_suffix/audit.py": {
+      "bytes": 15970,
+      "sha256": "5f105e950526f7bd96fda13a0c8e5180ecd043a48539b84264257ce39fc3e525"
+    },
+    "cmachine/research/drawer_suffix/response_targets.py": {
+      "bytes": 7731,
+      "sha256": "d6dedaf86e031082f6fc72a9fe0a9775674790ae49d86b8268c33a533eb8411f"
+    },
+    "cmachine/research/drawer_suffix/source-targets-v1/baseline-compact-response.f32": {
+      "bytes": 995328,
+      "sha256": "45e8c37e260f43195e09031e93aba121a7d1dd93253e384834c8ff79c1e46115"
+    },
+    "cmachine/research/drawer_suffix/source-targets-v1/manifest.json": {
+      "bytes": 95962,
+      "sha256": "27f271f667c8c5de48846b37909485f86eb128b30fc7041f09dd88af84ed329c"
+    },
+    "cmachine/research/drawer_suffix/source-targets-v1/native-full-response.f32": {
+      "bytes": 995328,
+      "sha256": "870d577cdc11475b9c29ada926423e40c8483490db84f083c9767749abf38a63"
+    },
+    "cmachine/research/drawer_suffix/source-targets-v1/native-q-compact-memory.f32": {
+      "bytes": 995328,
+      "sha256": "dbece2f259b89029b042a37c412a138c2fd1f61d6bc22abda1fdb9b52ebbd3fd"
+    },
+    "cmachine/research/drawer_suffix/source-targets-v1/profile.json": {
+      "bytes": 3777,
+      "sha256": "9c890f2de0ca3b88d0d5a45171f32167875957898e7d6de2e71b30e1a0aedf0e"
+    },
+    "cmachine/research/drawer_suffix/source-targets-v1/receiver-coeff.f32": {
+      "bytes": 82944,
+      "sha256": "d4ca359bca024d68fa82e24f658b2be54304794ab60dd158ff38d58a60ae416d"
+    },
+    "cmachine/research/query_own_history/NEXT.md": {
+      "bytes": 4149,
+      "sha256": "1b05b83e6d9d5ca5f64c1eae77ecda85c7ada90515a87cb166bd7e49204d1f00"
+    },
+    "obsidian/blog/2026-08-14-what-saturn-can-actually-do.md": {
+      "bytes": 501940,
+      "sha256": "967c0f2a1c7c6c6dec3fc2d65bb34beea78d1fd2e063266163e1f6cf6c6b07d4"
+    },
+    "obsidian/blog/2026-11-06-184252-the-same-query-program-visits-a-different-future.md": {
+      "bytes": 16485,
+      "sha256": "41b14c2d17001de28c46f5f84d5400fd1ab48d5431d981242244713dbb8165ef"
+    },
+    "saturn/docs/CAPABILITY-MACHINE.md": {
+      "bytes": 81420,
+      "sha256": "dd32b7cb342f52cdbdf94bd0fffb328ee7ba91a0f6505a04bb033d457dd6ec5b"
+    }
+  },
+  "mechanics_status": "verified",
+  "instrument_status": "actual reader replay verified; target is a local hypothesis",
+  "trend_status": "paid-query rescue and consequential historical consumer; later task failures retained",
+  "terminal_status": "not-requested"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "composition-import-mechanics-v1",
+  "asan_ubsan": true,
+  "frozen_operand_bytes_roundtrip": 276536,
+  "owned_bank_hash_matches": true,
+  "models_evaluated": 0,
+  "bank_sha256": "3d4ca7bdb6c9afb5ce0768a4fad77b9893d714006091b9097d8db3bb08c4735c"
+}

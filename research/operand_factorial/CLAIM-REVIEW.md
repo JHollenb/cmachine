@@ -1,0 +1,17 @@
+# Astra: final read-only findings and blog review
+
+2026-11-06. Reviewed `FINDINGS.md` and `obsidian/blog/2026-11-06-151646-restoring-the-current-write-leaves-the-conversation-state-different.md` against the independent raw-array summary for job `job-eb06becf984f`. No native execution and no edits to the reviewed files or original evidence.
+
+**No substantive correction is required.** The numerical and mathematical claims checked below agree with the independently recomputed arrays and maintain the intended scope.
+
+- Fixed12 pooled write/logit errors, restoration improvement counts and12/12 both-native immediate greedy agreement match the independent summary. The predecessor all-step error1.008661 is correctly distinguished from the new selected-clock error1.027882.
+- The common-nine future account uses the same eligible cuts at all three horizons: C−L .257578/.163168/.085935 and L−H .209023/.269531/.289319. It explicitly retains each horizon's H energy and does not claim general contraction.
+- Immediate fixed-panel C−L/L−H norms and the total error use the same denominator. The six positive/six negative cross-term count is correct. The texts do not add error magnitudes or turn norm ratios into causal shares.
+- The interaction/native-write norm range .853486–1.020656 and projected-interaction relative remainder8.17e−7–1.10e−6 match raw recomputation. Both gate–interaction and up–interaction cross terms are negative at all twelve fixed cuts, not merely in their aggregate. The displayed interaction is correctly restricted to write space; nonlinear suffix effects are separately measured.
+- The retrospective digit statements match actual full-vocabulary choices and margins. All local arms and H choose5, and restoring both improves vector fidelity while making6-minus5 more negative. Native fidelity, task truth and forced-history continuation remain explicitly separate.
+- Cache timing counts are consistent: thirteen intervention clocks and twenty available future clocks. C/L first new-row difference is layer17 immediately and layer18 later. L/H first new-row difference is layer18 at all33 clocks. The texts correctly distinguish newly appended rows from the retained full prefix.
+- Y11/H post-MLP16 exits are byte-identical at all thirteen cuts. Within the declared deterministic native boundary, their differing retained K/V is therefore a justified explanation of the remaining suffix difference. This is not presented as an arbitrary-model universal statement or as a captured-query claim independent of the architecture.
+- The proposed layer17 historical key/value factorial fixes the already native-equal current state/query and all other cache layers. It is clearly labeled unexecuted and paid. The texts retain the possibility that higher historical layers still carry error after the first read is restored.
+- The fixed-query attention quotient identity `(ΔN−aΔZ)/(Z+ΔZ)` is algebraically correct for the positive softmax denominator. It is used as an explanation of dependence, not as an experimentally fitted predictor or a new result of this panel.
+
+The principal remaining limitation is already stated appropriately: these are correlated known-context observations and paid diagnostic restorations. They do not provide an inexpensive operand algorithm, autonomous rescue, compact state closure or whole-model forward-pass-free inference. No additional warning, qualification gate or experimental scope expansion is needed for these documents.

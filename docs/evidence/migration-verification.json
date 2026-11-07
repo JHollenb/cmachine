@@ -1,0 +1,9 @@
+{
+  "schema": "cmachine-migration-verification-v1",
+  "manifest_sha256": "253dca98644133a57f04f2c561571173af13bc83e74dedea0602246a6a04afd2",
+  "inventory_records": 63626,
+  "protected_files_verified": 61732,
+  "protected_bytes_verified": 3929990544,
+  "legacy_address_resolves_to_canonical_research": true,
+  "scope": "pre-move frozen payload,raw,and historical report bytes; live plans and new evidence are outside this check"
+}

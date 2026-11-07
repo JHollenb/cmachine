@@ -1,0 +1,10 @@
+{
+  "documents_read_back": 4,
+  "links_resolve": true,
+  "study_source_snapshots_verified": 3,
+  "original_reports_unchanged": true,
+  "raw_records_verified": 1968,
+  "native_runs": 2,
+  "total_scheduler_seconds": 42.19,
+  "terminal_status": "not-requested"
+}

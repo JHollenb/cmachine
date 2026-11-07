@@ -6,6 +6,10 @@ C owns the live state, the model equations, output selection and continuation. T
 
 The goal is to turn understood computations into executable programs that can form their own operands, update consequential state and continue at lower cost. The current Qwen implementation still evaluates the dense model. Avoiding a framework `forward()` call does not remove that computation.
 
+This is now the canonical working repository. The complete former `saturn/cmachine` research tree lives under [research/](research/README.md), including its local raw evidence. A compatibility link preserves the old workspace address. Research `src`, `tests`, `tools` and `Makefile` resolve to this repository's canonical runtime. Large raw/model archives remain local and ignored by Git; research sources, protocols and findings are tracked here.
+
+The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches, bounded anchors/recent/reservoir retention, overwritten-row recovery, source-BF16 weight tiling and persistent bounded chat to the existing writer/lineage core. Native remains the default. [Commit verification](validation/README.md) builds exact Git objects, compares the original and integrated native cores, and authenticates historical compressed-cache behavior through a guarded Beast lease.
+
 - [Architecture and state contracts](docs/ARCHITECTURE.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)
 - [Current evidence and limitations](docs/STATUS.md)
@@ -19,6 +23,8 @@ The goal is to turn understood computations into executable programs that can fo
 | Qwen execution | Incremental token ingestion, full attention/SwiGLU/readout, greedy selection and persistent all-layer K/V. |
 | Conversation state | Pending versus consumed token ownership, exact token-prefix reuse and explicit reset on a changed prefix. |
 | Continuations | Session-local checkpoints and up to 64 nested token-boundary parents with rollback, commit and parent-lineage checks. |
+| Compressed memory | Full-byte or fixed anchors/recent/reservoir support, immediate encoded append/read, two complete snapshot-backed parents and token-abort recovery. |
+| Weight residence | Explicit native FP32, tiled FP32 and source-BF16/FP32-tile profiles; all learned parameters remain. |
 | Inspection | Selected read-only layer/token observations, including computed and consumed attention/MLP writes. |
 | Experimental operations | Anchored receiver-plane, live-receiver subspace, writer-projection and source-anchored gate-law APIs. |
 | ISA execution | Explicit Mamba equations, local state checkpoints and register/flag/instruction-length commits for the nominated specimen. |
@@ -35,6 +41,7 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -v
 make sanitize
 make state-mechanics
+make bounded-mechanics
 ```
 
 `make state-mechanics` executes the Qwen lifecycle and operation checks against a model-free GPU stub under ASan/UBSan. It does not load a pretrained model or qualify CUDA numerical parity. `make sanitize` builds the separate ISA sanitizer executable. The GitHub workflow runs this model-free lane.
@@ -64,7 +71,9 @@ python3 tools/chat.py \
   --new-tokens 128
 ```
 
-The exporter supports the pinned geometry and refuses unsupported configurations. It preserves original BF16/FP32 parameter bytes; the CUDA backend widens BF16 once to FP32. The sidecar binds tokenizer/configuration hashes. `chat.py` uses the native tokenizer outside C inference and requires its assets to be available locally.
+The exporter supports the pinned geometry and refuses unsupported configurations. It preserves original BF16/FP32 parameter bytes. Default native execution widens BF16 once to FP32; explicitly selected compressed-cache modes retain source BF16 matrices and widen a shared tile for FP32 computation. The sidecar binds tokenizer/configuration hashes. `chat.py` uses the native tokenizer outside C inference and requires its assets to be available locally.
+
+Add `--cache-policy bounded --context 768` to use the tested 16-anchor/64-recent/32-sampled policy with the same `build/tcm-cuda` executable. `--cache-policy full-byte` retains the complete byte-encoded prefix. `/state` reports the active bounded allocation and memory hashes. These experimental policies preserve the previous measured delayed-recall failures; bounded storage does not establish sufficient chat memory.
 
 Interactive commands include `/save`, `/rewind`, `/push`, `/rollback`, `/commit` and `/quit`. `--prompt TEXT` runs one request. `--memory FILE` visibly inserts ordinary text; it is an assisted input with explicit provenance.
 
@@ -93,4 +102,4 @@ The latest work supports retaining C as the state owner and reference executor w
 
 State compression and computation replacement are separate objectives. A full-state program may become cheaper by replacing particular maps. A compact state may execute perfectly while discarding useful selective information. [The vision](docs/VISION.md) explains this distinction mathematically; [the status](docs/STATUS.md) records both positive results and counterexamples, including the completed attention trace and nonlinear quotient study.
 
-This repository captures the runtime, model-free tests and original helper sources independently of the Saturn research workspace. The active experiment directories, model banks, raw results and fleet installation remain there. Workspace-specific helpers in `tools/` retain their original assumptions; see [integration boundaries](docs/INTEGRATION.md) before using them.
+This repository owns runtime development and the relocated research sources/evidence. Saturn and mrun remain external execution/evidence dependencies for fleet campaigns. See [integration boundaries](docs/INTEGRATION.md) and the [migration receipt](docs/evidence/research-migration.json).

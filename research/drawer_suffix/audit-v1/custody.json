@@ -1,0 +1,19 @@
+{
+  "schema": "drawer-suffix-independent-custody-v1",
+  "report_sha256": "1bea48aa514dc43437390d7f2c76a5782542e2405fd17668b5fee9c6aa122846",
+  "primary_analysis_comparison_max_abs": {
+    "margin": 0,
+    "kl": 1.865174681370263e-14,
+    "l2": 0
+  },
+  "primary_analysis_answers_exact": 36,
+  "files": {
+    "cmachine/research/drawer_suffix/audit.py": "5f105e950526f7bd96fda13a0c8e5180ecd043a48539b84264257ce39fc3e525",
+    "cmachine/research/drawer_suffix/audit-v1/audit.json": "7ca6b266096f3f3afe3124e6107c81831f970d499e78ed9b8467bb1cc8aa6eb1",
+    "artifacts/qwen-relational-reader-cut-20261106/analysis-v2/analysis.json": "63b2f188df7a3aff15fc2df4cff63c8e253f0f9dec1b76b7e9f95dbe1d341c07",
+    "artifacts/qwen-relational-reader-cut-20261106/runs/job-935667de6e2f/job.json": "8dbe26f8ac9f2ae61600cae5a718070a3f5fef10980319f8e70757ec8b5cbdf3",
+    "artifacts/qwen-relational-reader-cut-20261106/runs/job-935667de6e2f/submission.json": "3f6a575b6dce6278109822ae1675f7f281d8dcffd3d03ce58d35a98f2f8b51a1",
+    "artifacts/qwen-relational-reader-cut-20261106/runs/job-935667de6e2f/payload/source-manifest.json": "4680db40ff000818171385f919c4d7e14ad94f9036b98e7605064048ff74bfda"
+  },
+  "scope": "Additive independent check against primary analysis-v2. Original raw/log/payload unchanged; no model runs."
+}

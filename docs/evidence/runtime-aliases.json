@@ -1,0 +1,25 @@
+{
+  "schema": "cmachine-canonical-runtime-aliases-v1",
+  "aliases": [
+    {
+      "legacy": "research/src",
+      "target": "../src",
+      "original_preserved": "research/migration/baseline/src"
+    },
+    {
+      "legacy": "research/tests",
+      "target": "../tests",
+      "original_preserved": "research/migration/baseline/tests"
+    },
+    {
+      "legacy": "research/tools",
+      "target": "../tools",
+      "original_preserved": "research/migration/baseline/tools"
+    },
+    {
+      "legacy": "research/Makefile",
+      "target": "../Makefile",
+      "original_preserved": "research/migration/baseline/Makefile"
+    }
+  ]
+}

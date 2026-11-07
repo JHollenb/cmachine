@@ -19,7 +19,7 @@ static int fresh_lineage(uint64_t *id){
 
 static float *weight(QwenModel *m,const TcmModel *b,const char *name,int rank,int a,int c){
     const TcmTensor *t=tcm_tensor(b,name);if(!t||t->rank!=(unsigned)rank||t->dim[0]!=(uint64_t)a||(rank==2&&t->dim[1]!=(uint64_t)c)||(t->dtype!=TCM_F32&&t->dtype!=TCM_BF16))return NULL;
-    size_t count=t->bytes/(t->dtype==TCM_F32?4:2);float *p=gpu_weight(t->data,t->dtype,count);m->allocations[m->allocation_count++]=p;m->weight_bytes+=count*4;return p;
+    size_t count=t->bytes/(t->dtype==TCM_F32?4:2);float *p=gpu_owned_weight(m->gpu,t->data,t->dtype,count,rank,a,c);m->allocations[m->allocation_count++]=p;m->weight_bytes+=gpu_owned_weight_bytes(p,count);return p;
 }
 int qwen_model_init(QwenModel *m,const TcmModel *b,char *error,size_t cap){
     memset(m,0,sizeof(*m));
@@ -43,10 +43,16 @@ int qwen_model_init(QwenModel *m,const TcmModel *b,char *error,size_t cap){
     if(bad||m->allocation_count!=338){snprintf(error,cap,"Qwen tensor names/shapes differ");qwen_model_free(m);return -1;}return 0;
 }
 void qwen_model_free(QwenModel *m){for(unsigned i=0;i<m->allocation_count;i++)gpu_free(m->allocations[i]);free(m->allocations);free(m->layer);gpu_close(m->gpu);memset(m,0,sizeof(*m));}
-int qwen_session_init(QwenSession *s,const QwenModel *m,int capacity){
+static void snapshot(const QwenSession *,QwenCheckpoint *);
+static void restore(QwenSession *,const QwenCheckpoint *);
+int qwen_session_init(QwenSession *s,const QwenModel *m,int capacity){return qwen_session_init_layout(s,m,capacity,0,NULL,NULL,NULL);}
+int qwen_session_init_layout(QwenSession *s,const QwenModel *m,int capacity,uint64_t mask,QwenCacheStep step,QwenCacheRewind rewind,void *context){
     memset(s,0,sizeof(*s));uint64_t lineage;if(capacity<1||capacity>m->max_position||fresh_lineage(&lineage))return -1;s->model=m;s->capacity=capacity;s->pending=-1;s->session_id=atomic_fetch_add(&next_session_id,1);s->epoch=1;s->lineage_id=lineage;s->observe_position=s->observe_layer=-1;
-    size_t kv=(size_t)m->layers*m->kvheads*capacity*m->head;
-#define ALLOC(field,n) s->field=gpu_alloc((size_t)(n)*sizeof(float));s->allocated_bytes+=(size_t)(n)*sizeof(float)
+    if(m->layers<1||m->layers>64||(m->layers<64&&(mask>>m->layers))||(mask&&(!step||!rewind)))return -1;
+    s->cache_mask=mask;s->cache_step=step;s->cache_rewind=rewind;s->cache_context=context;
+    for(int i=0;i<m->layers;i++)s->cache_slots[i]=(mask&(UINT64_C(1)<<i))?-1:s->dense_layers++;
+    size_t kv=(size_t)s->dense_layers*m->kvheads*capacity*m->head;
+#define ALLOC(field,n) s->field=(size_t)(n)?gpu_alloc((size_t)(n)*sizeof(float)):NULL;s->allocated_bytes+=(size_t)(n)*sizeof(float)
     ALLOC(keys,kv);ALLOC(values,kv);ALLOC(x,m->hidden);ALLOC(norm,m->hidden);ALLOC(q,m->hidden);ALLOC(k,m->kvheads*m->head);ALLOC(v,m->kvheads*m->head);ALLOC(attention,m->hidden);ALLOC(projected,m->hidden);ALLOC(gate,m->intermediate);ALLOC(up,m->intermediate);ALLOC(logits,m->vocab);ALLOC(scores,(size_t)m->qheads*capacity);
 #undef ALLOC
     return 0;
@@ -67,7 +73,9 @@ static void observe(QwenSession *s,QwenPort port,const float *data,size_t count)
 }
 int qwen_begin_token(QwenSession *s,int token){
     const QwenModel *m=s->model;if(token<0||token>=m->vocab||s->position>=s->capacity||s->phase==2)return -1;
-    s->phase=2;s->layer=0;gpu_copy(s->x,m->embedding+(size_t)token*m->hidden,(size_t)m->hidden*4);return 0;
+    if(s->cache_guard&&s->cache_guard(s->cache_context,0,s->position,s->session_id,s->epoch,s->lineage_id))return -1;
+    snapshot(s,&s->token_parent);s->token_parent_valid=1;
+    s->phase=2;s->layer=0;gpu_owned_embedding(s->x,m->embedding,token,m->hidden);return 0;
 }
 int qwen_plane_init(QwenPlane *p,const QwenModel *m){
     if(!p||!m||m->hidden<1||m->intermediate<1)return -1;
@@ -241,14 +249,19 @@ static int advance_layer(QwenSession *s,QwenPlane *compile,const QwenPlane *p,Qw
         gpu_matvec(m->gpu,l->v,d,k,s->norm,s->v);gpu_bias(s->v,l->vb,k);
         gpu_rope(s->q,m->qheads,m->head,s->position,m->theta);gpu_rope(s->k,m->kvheads,m->head,s->position,m->theta);
         observe(s,QWEN_QUERY,s->q,(size_t)d);observe(s,QWEN_KEY,s->k,(size_t)k);observe(s,QWEN_VALUE,s->v,(size_t)k);
-        size_t base=(size_t)i*m->kvheads*s->capacity*m->head;
-        gpu_cache(s->keys+base,s->k,m->kvheads,m->head,s->capacity,s->position);gpu_cache(s->values+base,s->v,m->kvheads,m->head,s->capacity,s->position);
-        gpu_attention(m->gpu,s->attention,s->q,s->keys+base,s->values+base,s->scores,m->qheads,m->kvheads,m->head,s->capacity,s->position+1);
+        if(s->cache_slots[i]<0){
+            if(!s->cache_step)return -1;
+            int error=s->cache_step(s->cache_context,i,s->position,s->q,s->k,s->v,s->attention,s->scores);if(error)return error;
+        }else{
+            size_t base=(size_t)s->cache_slots[i]*m->kvheads*s->capacity*m->head;
+            gpu_cache(s->keys+base,s->k,m->kvheads,m->head,s->capacity,s->position);gpu_cache(s->values+base,s->v,m->kvheads,m->head,s->capacity,s->position);
+            gpu_attention(m->gpu,s->attention,s->q,s->keys+base,s->values+base,s->scores,m->qheads,m->kvheads,m->head,s->capacity,s->position+1);
+        }
         observe(s,QWEN_ATTENTION,s->attention,(size_t)d);
         gpu_matvec(m->gpu,l->o,d,d,s->attention,s->projected);
-        /* A read-guard refusal can have written the current token's KV row, but
-         * never retained history. The token is still partial; reset or recompute
-         * this ordinary layer before continuing. There is no fallback claim. */
+        /* A read-guard refusal can have updated current cache and retention
+         * slots. Cache callbacks must be idempotent within this token or require
+         * a complete token abort. The layer clock and receiver remain retryable. */
         if(p&&!gpu_identical_finite(m->gpu,s->projected,p->basis[1],d))return -2;
         if(compile){
             if(!gpu_identical_finite(m->gpu,s->projected,s->projected,d))return -2;
@@ -369,7 +382,7 @@ int qwen_advance_layer_gate(QwenSession *s,const QwenGateLaw *law,QwenGateMode m
 int qwen_finish_token(QwenSession *s){
     const QwenModel *m=s->model;uint64_t lineage;if(s->phase!=2||s->layer!=m->layers||fresh_lineage(&lineage))return -1;int d=m->hidden;
     gpu_rms(s->norm,s->x,m->norm,d,m->epsilon);gpu_matvec(m->gpu,m->embedding,d,m->vocab,s->norm,s->logits);s->top=gpu_top2(m->gpu,s->logits,m->vocab);
-    s->pending=s->top.first;s->delivered=0;s->position++;s->layer=m->layers;s->phase=1;s->lineage_id=lineage;return 0;
+    s->pending=s->top.first;s->delivered=0;s->position++;s->layer=m->layers;s->phase=1;s->lineage_id=lineage;s->token_parent_valid=0;return 0;
 }
 int qwen_push(QwenSession *s,int token){
     if(qwen_begin_token(s,token))return -1;
@@ -382,13 +395,21 @@ static void snapshot(const QwenSession *s,QwenCheckpoint *c){
     memset(c,0,sizeof(*c));memcpy(c->model_digest,s->model->digest,65);c->position=s->position;c->pending=s->pending;c->capacity=s->capacity;c->delivered=s->delivered;c->top=s->top;c->session_id=s->session_id;c->epoch=s->epoch;c->lineage_id=s->lineage_id;
 }
 static void restore(QwenSession *s,const QwenCheckpoint *c){
+    if(s->cache_rewind)s->cache_rewind(s->cache_context,c->position,s->session_id,s->epoch);
+    s->token_parent_valid=0;
     s->position=c->position;s->pending=c->pending;s->delivered=c->delivered;s->top=c->top;s->phase=0;s->layer=0;s->lineage_id=c->lineage_id;
+}
+int qwen_abort_token(QwenSession *s){
+    if(!s||s->phase!=2||!s->token_parent_valid||s->token_parent.session_id!=s->session_id||s->token_parent.epoch!=s->epoch)return -1;
+    if(s->cache_guard&&s->cache_guard(s->cache_context,1,s->token_parent.position,s->session_id,s->epoch,s->token_parent.lineage_id))return -1;
+    restore(s,&s->token_parent);return 0;
 }
 int qwen_checkpoint(QwenSession *s,QwenCheckpoint *c){
     if(!at_boundary(s))return -1;snapshot(s,c);c->serial=++s->checkpoint_serial;s->checkpoint_position=s->position;return 0;
 }
 int qwen_restore(QwenSession *s,const QwenCheckpoint *c){
     if(s->phase==2||s->depth||strcmp(c->model_digest,s->model->digest)||c->session_id!=s->session_id||c->epoch!=s->epoch||c->capacity!=s->capacity||c->serial!=s->checkpoint_serial||c->position!=s->checkpoint_position||c->position<1||c->position>s->position||c->pending<0||c->pending>=s->model->vocab)return -1;
+    if(s->cache_guard&&s->cache_guard(s->cache_context,1,c->position,s->session_id,s->epoch,c->lineage_id))return -1;
     restore(s,c);return 0;
 }
 int qwen_stack_push(QwenSession *s,uint64_t *id){
@@ -402,6 +423,7 @@ static int valid_top(const QwenSession *s,uint64_t id){
 }
 int qwen_stack_rollback(QwenSession *s,uint64_t id){
     if(!valid_top(s,id))return -1;
+    if(s->cache_guard&&s->cache_guard(s->cache_context,1,s->frames[s->depth-1].state.position,s->session_id,s->epoch,s->frames[s->depth-1].state.lineage_id))return -1;
     restore(s,&s->frames[--s->depth].state);s->checkpoint_serial++;s->checkpoint_position=0;return 0;
 }
 int qwen_stack_commit(QwenSession *s,uint64_t id){
@@ -409,7 +431,8 @@ int qwen_stack_commit(QwenSession *s,uint64_t id){
 }
 int qwen_reset(QwenSession *s){
     uint64_t lineage;if(s->epoch==UINT64_MAX||fresh_lineage(&lineage))return -1;
-    s->position=0;s->pending=-1;s->delivered=0;s->phase=0;s->layer=0;s->depth=0;s->epoch++;s->checkpoint_serial++;s->checkpoint_position=0;s->lineage_id=lineage;return 0;
+    s->position=0;s->pending=-1;s->delivered=0;s->phase=0;s->layer=0;s->depth=0;s->epoch++;s->checkpoint_serial++;s->checkpoint_position=0;s->lineage_id=lineage;s->token_parent_valid=0;
+    if(s->cache_rewind)s->cache_rewind(s->cache_context,0,s->session_id,s->epoch);return 0;
 }
 static double now(void){struct timespec t;clock_gettime(CLOCK_MONOTONIC,&t);return t.tv_sec+t.tv_nsec*1e-9;}
 static int integer(const char *text,int *out){char *end;errno=0;long x=strtol(text,&end,10);if(errno||end==text||*end||x<0||x>1000000)return -1;*out=(int)x;return 0;}

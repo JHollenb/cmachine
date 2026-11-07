@@ -55,3 +55,6 @@ TcmTop2 gpu_top2(TcmGpu *g,const float *p,int n){
 }
 void gpu_sync(void){}
 size_t gpu_free_bytes(void){return 0;}
+float *gpu_owned_weight(TcmGpu *g,const void *p,uint32_t type,size_t n,int rank,int a,int b){(void)g;(void)rank;(void)a;(void)b;return gpu_weight(p,type,n);}
+size_t gpu_owned_weight_bytes(const float *p,size_t n){(void)p;return n*4;}
+void gpu_owned_embedding(float *out,const float *p,int token,int width){gpu_copy(out,p+(size_t)token*width,(size_t)width*4);}

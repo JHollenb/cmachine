@@ -1,0 +1,9 @@
+{
+  "schema": "drawer-suffix-posthoc-instrument-error-v1",
+  "stage": "saved-only independent audit before result output",
+  "error": "Reader reconstruction compared a flat 1536-value consumed vector with a 12-by-128 predicted array.",
+  "correction": "Flatten the predicted reader return for both the norm comparison and byte check; values and scientific evidence are unchanged.",
+  "new_model_calls": 0,
+  "scientific_outcome": "not-assigned",
+  "original_report_and_raw_unchanged": true
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "tcm-new-native-consumer-selection-cases-v1",
+  "scope": "New prospective cases parsed only after source-KL selection seals. No target outcomes select the query image.",
+  "cases": [
+    ["fresh-recall", "Nora has a paper ticket and Elias has a plastic ticket. What material is Elias's ticket? Reply with only the material.", "Nora replaces her paper ticket with a metal ticket. What material is Nora's ticket now? Reply with only the material.", 8],
+    ["fresh-math", "Compute 17 * 24. Reply with only the integer.", "Subtract 19 from your previous answer. Reply with the integer, then one short sentence explaining the calculation.", 16],
+    ["fresh-prose", "Explain in one short sentence why campers should label storage boxes.", "Now give one practical example of a useful camping storage label, in one short sentence.", 32]
+  ]
+}

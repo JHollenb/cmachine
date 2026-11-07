@@ -1,0 +1,9 @@
+{
+  "schema": "tcm-prospective-query-transfer-inputs-v1",
+  "scope": "Prospective query-program transfer cases. Compiler never reads this file. No feedback or factor selection uses these outcomes; no terminal generalization claim.",
+  "cases": [
+    ["fresh-recall", "Mina carries a copper token and Oren carries a silver token. What material is Oren's token? Reply with only the material.", "Mina exchanges her copper token for a wooden token. What material is Mina's token now? Reply with only the material.", 8],
+    ["fresh-math", "Compute 16 * 27. Reply with only the integer.", "Subtract 18 from your previous answer. Reply with the integer, then one short sentence explaining the calculation.", 16],
+    ["fresh-prose", "Explain in one short sentence why a kitchen should label containers.", "Now give one practical example of a useful container label, in one short sentence.", 32]
+  ]
+}

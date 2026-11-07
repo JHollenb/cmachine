@@ -1,0 +1,70 @@
+{
+  "schema": "tcm-operand-composition-input-v1",
+  "scope": "Six fresh two-turn conversations for a frozen rank-64 MLP16 plus rank-128 query composition. Prompts and budgets are sealed before the native process; no target text is used to construct either program.",
+  "model_profile": "qwen2.5-1.5b-instruct-fp32-execution-v2",
+  "layer": 16,
+  "cases": [
+    {
+      "id": 0,
+      "name": "binding-reassignment-plain",
+      "family": "binding",
+      "format": "plain",
+      "budget": 8,
+      "prompt": "Remember this record: Mira has a red badge, and Niko has a blue badge. Acknowledge with OK.",
+      "followup": "Mira trades her red badge for a green badge. What color does Mira have now? Reply with only the color."
+    },
+    {
+      "id": 1,
+      "name": "binding-reassignment-list",
+      "family": "binding",
+      "format": "labeled-list",
+      "budget": 8,
+      "prompt": "Store these records exactly:\n- owner: Ada; card: yellow\n- owner: Bo; card: purple\nReply OK.",
+      "followup": "Update the records: Ada gives her yellow card to Bo, and Bo gives his purple card to Ada. Which card does Bo have now? Reply with one color.",
+      "expected": "yellow"
+    },
+    {
+      "id": 2,
+      "name": "arithmetic-multiply-add",
+      "family": "arithmetic",
+      "format": "short-answer",
+      "budget": 16,
+      "prompt": "Compute 17 * 23. Reply with only the integer.",
+      "followup": "Add 19 to your previous answer. Reply with the integer, then one short sentence explaining the calculation."
+    },
+    {
+      "id": 3,
+      "name": "arithmetic-subtract-check",
+      "family": "arithmetic",
+      "format": "equation",
+      "budget": 16,
+      "prompt": "Calculate 31 * 14 and keep the result. Give only the integer.",
+      "followup": "Subtract 27 from the result you kept. Give the integer followed by a short check in parentheses."
+    },
+    {
+      "id": 4,
+      "name": "prose-label-example",
+      "family": "prose",
+      "format": "sentence",
+      "budget": 32,
+      "prompt": "In one short sentence, explain why labels help someone find information in a notebook.",
+      "followup": "Give one practical example of a useful notebook label in one short sentence."
+    },
+    {
+      "id": 5,
+      "name": "prose-contrast-format",
+      "family": "prose",
+      "format": "two-sentence",
+      "budget": 32,
+      "prompt": "Explain briefly how a heading and a date make a note easier to revisit. Use at most two sentences.",
+      "followup": "Now write one example note title and date that would make a recipe easy to find. Use at most two sentences."
+    }
+  ],
+  "budgets": [8, 8, 16, 16, 32, 32],
+  "answer_policy": {
+    "native_eos_token_ids": [151645, 151643],
+    "consume_eos_once_at_turn_boundary": true,
+    "preserve_answer_ids_and_truncation": true,
+    "correctness_is_diagnostic": true
+  }
+}

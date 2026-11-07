@@ -1,0 +1,22 @@
+{
+  "schema": "tcm-operand-basis-figures-v1",
+  "report_sha256": "e5d23802467bd705ef6e1d9ea7e3dd8925f52589d0dd2942c325404e171a59b7",
+  "summary_sha256": "0723d4dcd006e314ecb0396db5367b4de59c797b214637d402067ec6c72b6fd2",
+  "bank_manifest_sha256": "5cb3cca39740c50f7f87ff4d5b5d64b386ef4cd18f7e1b4990207e79f4991953",
+  "plot_source_sha256": "e811a19592985a061d37b1bd0e936cd2325ec7bee613394a0b64522d142ed9d6",
+  "native_models_evaluated": 0,
+  "figures": [
+    {
+      "file": "job-51df6b792d28-energy-and-write.png",
+      "sha256": "958ed760b18ef4f71c2365b06ea0378609fd347e9b592693e4f1448ab62d5866",
+      "bytes": 125272,
+      "blog_copy_sha256": "958ed760b18ef4f71c2365b06ea0378609fd347e9b592693e4f1448ab62d5866"
+    },
+    {
+      "file": "job-51df6b792d28-readout-clocks.png",
+      "sha256": "db9efca5a24312a0c37926b553934670613e4bebc62106360384efb8e889359d",
+      "bytes": 152512,
+      "blog_copy_sha256": "db9efca5a24312a0c37926b553934670613e4bebc62106360384efb8e889359d"
+    }
+  ]
+}

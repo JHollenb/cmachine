@@ -1,0 +1,9 @@
+{
+  "schema": "tcm-prospective-query-response-inputs-v1",
+  "scope": "New prospective response-query transfer cases. Compiler never parses this file; no target outcomes enter fit or image selection. Not a terminal generalization test.",
+  "cases": [
+    ["fresh-recall", "Lena carries a wool scarf and Hugo carries a silk scarf. What material is Hugo's scarf? Reply with only the material.", "Lena exchanges her wool scarf for a cotton scarf. What material is Lena's scarf now? Reply with only the material.", 8],
+    ["fresh-math", "Compute 23 * 18. Reply with only the integer.", "Add 27 to your previous answer. Reply with the integer, then one short sentence explaining the calculation.", 16],
+    ["fresh-prose", "Explain in one short sentence why a gardener should label seed packets.", "Now give one practical example of a useful seed packet label, in one short sentence.", 32]
+  ]
+}

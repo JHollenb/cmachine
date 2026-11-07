@@ -1,0 +1,1539 @@
+{
+  "schema": "drawer-suffix-independent-audit-v1",
+  "report_sha256": "1bea48aa514dc43437390d7f2c76a5782542e2405fd17668b5fee9c6aa122846",
+  "primary_run": "/Users/jakeholl/domains/artifacts/qwen-relational-reader-cut-20261106/runs/job-935667de6e2f",
+  "source_files_verified": 99,
+  "raw_files_verified": 510,
+  "scheduler_log_seal": true,
+  "whole_invocation_receipt": true,
+  "models_evaluated_by_this_audit": 0,
+  "generated_token_decisions_verified": 1278,
+  "controls": [
+    {
+      "task": 4,
+      "history": 0,
+      "baseline": 6,
+      "other_arm": 7,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "baseline": 6,
+      "other_arm": 0,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "baseline": 6,
+      "other_arm": 7,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "baseline": 6,
+      "other_arm": 5,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "baseline": 6,
+      "other_arm": 7,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "baseline": 6,
+      "other_arm": 0,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "baseline": 6,
+      "other_arm": 7,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "baseline": 6,
+      "other_arm": 5,
+      "all_boundaries_tokens_and_valid_caches_exact": true
+    }
+  ],
+  "reader_reconstructions": [
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 0,
+      "native_full_vs_cpu64_relative": 2.0210120938580806e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 1,
+      "native_full_vs_cpu64_relative": 1.6870686361333651e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 2,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 3,
+      "native_full_vs_cpu64_relative": 2.279493376108524e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 4,
+      "native_full_vs_cpu64_relative": 2.5230978536101876e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 5,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 4,
+      "history": 0,
+      "arm": 8,
+      "native_full_vs_cpu64_relative": 2.970811644164125e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 0,
+      "native_full_vs_cpu64_relative": 2.0210120938580806e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 1,
+      "native_full_vs_cpu64_relative": 1.6870686361333651e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 2,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 3,
+      "native_full_vs_cpu64_relative": 2.279493376108524e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 4,
+      "native_full_vs_cpu64_relative": 2.5230978536101876e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 5,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "arm": 8,
+      "native_full_vs_cpu64_relative": 2.970811644164125e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 0,
+      "native_full_vs_cpu64_relative": 1.6997447328474514e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 1,
+      "native_full_vs_cpu64_relative": 1.6810694789283152e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 2,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 3,
+      "native_full_vs_cpu64_relative": 2.1910590943117407e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 4,
+      "native_full_vs_cpu64_relative": 1.8501677180220832e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 5,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "arm": 8,
+      "native_full_vs_cpu64_relative": 2.6977364749976813e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 0,
+      "native_full_vs_cpu64_relative": 1.6997447328474514e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 1,
+      "native_full_vs_cpu64_relative": 1.6810694789283152e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 2,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 3,
+      "native_full_vs_cpu64_relative": 2.1910590943117407e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 4,
+      "native_full_vs_cpu64_relative": 1.8501677180220832e-07,
+      "bounded_read_exact": false
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 5,
+      "native_full_vs_cpu64_relative": null,
+      "bounded_read_exact": true
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "arm": 8,
+      "native_full_vs_cpu64_relative": 2.6977364749976813e-07,
+      "bounded_read_exact": false
+    }
+  ],
+  "results": [
+    {
+      "name": "case4-h0-arm0",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 0,
+      "query": "native",
+      "reader": "native-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they might not be accurate",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.0,
+      "native_logit_relative_l2": 0.0,
+      "Willow_first_token_probability": 0.8503128368327083,
+      "Cobalt_first_token_probability": 0.11073635286842475,
+      "Willow_minus_Cobalt_first_token_logit": 2.0384521484375
+    },
+    {
+      "name": "case4-h0-arm1",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 1,
+      "query": "native",
+      "reader": "compiled-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they might not be accurate",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.024678557863231754,
+      "native_logit_relative_l2": 0.06508341650766784,
+      "Willow_first_token_probability": 0.8994903946897996,
+      "Cobalt_first_token_probability": 0.08613053058572433,
+      "Willow_minus_Cobalt_first_token_logit": 2.3459644317626953
+    },
+    {
+      "name": "case4-h0-arm2",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 2,
+      "query": "native",
+      "reader": "compiled-bounded",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they might not be accurate",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.05989842416511744,
+      "native_logit_relative_l2": 0.08764433994663379,
+      "Willow_first_token_probability": 0.9392024579175667,
+      "Cobalt_first_token_probability": 0.04860050370159473,
+      "Willow_minus_Cobalt_first_token_logit": 2.961397171020508
+    },
+    {
+      "name": "case4-h0-arm3",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 3,
+      "query": "compiled",
+      "reader": "native-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Cobalt: The spare batteries\n- Cedar: The measuring tape\n\nOne mistake that stale notes could cause is that they might not be",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 1.3837080296621047,
+      "native_logit_relative_l2": 0.12421454605879445,
+      "Willow_first_token_probability": 0.13345537319165748,
+      "Cobalt_first_token_probability": 0.848262036681905,
+      "Willow_minus_Cobalt_first_token_logit": -1.8494224548339844
+    },
+    {
+      "name": "case4-h0-arm4",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 4,
+      "query": "compiled",
+      "reader": "compiled-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Cobalt: The spare batteries\n- Cedar: The measuring tape\n\nOne mistake that stale notes could cause is that they might not be",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.7732328795065964,
+      "native_logit_relative_l2": 0.13471599881601984,
+      "Willow_first_token_probability": 0.2816453824007344,
+      "Cobalt_first_token_probability": 0.7005872500583495,
+      "Willow_minus_Cobalt_first_token_logit": -0.9112701416015625
+    },
+    {
+      "name": "case4-h0-arm5",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 5,
+      "query": "compiled",
+      "reader": "compiled-bounded",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Cobalt: The spare batteries\n- Cedar: The measuring tape\n\nOne mistake that stale notes could cause is that they might not be",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.6112179614791425,
+      "native_logit_relative_l2": 0.13649369072349937,
+      "Willow_first_token_probability": 0.3422227872359782,
+      "Cobalt_first_token_probability": 0.6364459976319238,
+      "Willow_minus_Cobalt_first_token_logit": -0.6204376220703125
+    },
+    {
+      "name": "case4-h0-arm6",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 6,
+      "query": "untouched",
+      "reader": "control",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they might not be accurate",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.0,
+      "native_logit_relative_l2": 0.0,
+      "Willow_first_token_probability": 0.8503128368327083,
+      "Cobalt_first_token_probability": 0.11073635286842475,
+      "Willow_minus_Cobalt_first_token_logit": 2.0384521484375
+    },
+    {
+      "name": "case4-h0-arm7",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 7,
+      "query": "sham",
+      "reader": "control",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they might not be accurate",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.0,
+      "native_logit_relative_l2": 0.0,
+      "Willow_first_token_probability": 0.8503128368327083,
+      "Cobalt_first_token_probability": 0.11073635286842475,
+      "Willow_minus_Cobalt_first_token_logit": 2.0384521484375
+    },
+    {
+      "name": "case4-h0-arm8",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 0,
+      "arm": 8,
+      "query": "earlier-compiled",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Cobalt: The spare batteries\n- Cedar: The measuring tape\n\nOne mistake that stale notes could cause is that they might not be",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 2.6777628847640886,
+      "native_logit_relative_l2": 0.20447347573876742,
+      "Willow_first_token_probability": 0.030122554079081227,
+      "Cobalt_first_token_probability": 0.9607394445905717,
+      "Willow_minus_Cobalt_first_token_logit": -3.4624290466308594
+    },
+    {
+      "name": "case4-h1-arm0",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 0,
+      "query": "native",
+      "reader": "native-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.6610301951562856,
+      "native_logit_relative_l2": 0.13287103158426417,
+      "Willow_first_token_probability": 0.31089786104589395,
+      "Cobalt_first_token_probability": 0.3680964145115971,
+      "Willow_minus_Cobalt_first_token_logit": -0.16888046264648438
+    },
+    {
+      "name": "case4-h1-arm1",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 1,
+      "query": "native",
+      "reader": "compiled-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they can lead to confusion",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.19245678782679154,
+      "native_logit_relative_l2": 0.14777859906790486,
+      "Willow_first_token_probability": 0.5735972110549827,
+      "Cobalt_first_token_probability": 0.3353544652770525,
+      "Willow_minus_Cobalt_first_token_logit": 0.5367393493652344
+    },
+    {
+      "name": "case4-h1-arm2",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 2,
+      "query": "native",
+      "reader": "compiled-bounded",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they can lead to confusion",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.019641210886768404,
+      "native_logit_relative_l2": 0.1280758627799848,
+      "Willow_first_token_probability": 0.8167146581841848,
+      "Cobalt_first_token_probability": 0.12099827687063781,
+      "Willow_minus_Cobalt_first_token_logit": 1.9095134735107422
+    },
+    {
+      "name": "case4-h1-arm3",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 3,
+      "query": "compiled",
+      "reader": "native-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 4.2575455931404385,
+      "native_logit_relative_l2": 0.23252361955028675,
+      "Willow_first_token_probability": 0.004463526623894213,
+      "Cobalt_first_token_probability": 0.9422209680242433,
+      "Willow_minus_Cobalt_first_token_logit": -5.352300643920898
+    },
+    {
+      "name": "case4-h1-arm4",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 4,
+      "query": "compiled",
+      "reader": "compiled-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 3.187857311743731,
+      "native_logit_relative_l2": 0.2427625789105752,
+      "Willow_first_token_probability": 0.015670163971450334,
+      "Cobalt_first_token_probability": 0.9413785063097133,
+      "Willow_minus_Cobalt_first_token_logit": -4.095586776733398
+    },
+    {
+      "name": "case4-h1-arm5",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 5,
+      "query": "compiled",
+      "reader": "compiled-bounded",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 2.6812187820053848,
+      "native_logit_relative_l2": 0.24006816286698437,
+      "Willow_first_token_probability": 0.028160449028512818,
+      "Cobalt_first_token_probability": 0.9107698600543114,
+      "Willow_minus_Cobalt_first_token_logit": -3.4763717651367188
+    },
+    {
+      "name": "case4-h1-arm6",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 6,
+      "query": "untouched",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 2.6812187820053848,
+      "native_logit_relative_l2": 0.24006816286698437,
+      "Willow_first_token_probability": 0.028160449028512818,
+      "Cobalt_first_token_probability": 0.9107698600543114,
+      "Willow_minus_Cobalt_first_token_logit": -3.4763717651367188
+    },
+    {
+      "name": "case4-h1-arm7",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 7,
+      "query": "sham",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 2.6812187820053848,
+      "native_logit_relative_l2": 0.24006816286698437,
+      "Willow_first_token_probability": 0.028160449028512818,
+      "Cobalt_first_token_probability": 0.9107698600543114,
+      "Willow_minus_Cobalt_first_token_logit": -3.4763717651367188
+    },
+    {
+      "name": "case4-h1-arm8",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 8,
+      "query": "earlier-compiled",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 5.057941939363294,
+      "native_logit_relative_l2": 0.29395385585875844,
+      "Willow_first_token_probability": 0.0018072398072792929,
+      "Cobalt_first_token_probability": 0.9716298681246949,
+      "Willow_minus_Cobalt_first_token_logit": -6.287174224853516
+    },
+    {
+      "name": "case5-h0-arm0",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 0,
+      "query": "native",
+      "reader": "native-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.0,
+      "native_logit_relative_l2": 0.0,
+      "Willow_first_token_probability": 0.9355729950820744,
+      "Cobalt_first_token_probability": 0.02001065259227222,
+      "Willow_minus_Cobalt_first_token_logit": 3.8448944091796875
+    },
+    {
+      "name": "case5-h0-arm1",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 1,
+      "query": "native",
+      "reader": "compiled-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.02488622242419176,
+      "native_logit_relative_l2": 0.06746891484044719,
+      "Willow_first_token_probability": 0.960240728302593,
+      "Cobalt_first_token_probability": 0.024197448611342837,
+      "Willow_minus_Cobalt_first_token_logit": 3.680936813354492
+    },
+    {
+      "name": "case5-h0-arm2",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 2,
+      "query": "native",
+      "reader": "compiled-bounded",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.03575129497154701,
+      "native_logit_relative_l2": 0.08274082710699145,
+      "Willow_first_token_probability": 0.9759068684236659,
+      "Cobalt_first_token_probability": 0.011792841312738877,
+      "Willow_minus_Cobalt_first_token_logit": 4.415874481201172
+    },
+    {
+      "name": "case5-h0-arm3",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 3,
+      "query": "compiled",
+      "reader": "native-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.3471215601973041,
+      "native_logit_relative_l2": 0.10125488742666558,
+      "Willow_first_token_probability": 0.6202402615708684,
+      "Cobalt_first_token_probability": 0.34862938826981305,
+      "Willow_minus_Cobalt_first_token_logit": 0.5760974884033203
+    },
+    {
+      "name": "case5-h0-arm4",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 4,
+      "query": "compiled",
+      "reader": "compiled-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.23471806379732024,
+      "native_logit_relative_l2": 0.11920520768243004,
+      "Willow_first_token_probability": 0.7196329480253668,
+      "Cobalt_first_token_probability": 0.25746517309220573,
+      "Willow_minus_Cobalt_first_token_logit": 1.0278568267822266
+    },
+    {
+      "name": "case5-h0-arm5",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 5,
+      "query": "compiled",
+      "reader": "compiled-bounded",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.263711950084369,
+      "native_logit_relative_l2": 0.1338602916559581,
+      "Willow_first_token_probability": 0.6962719029831671,
+      "Cobalt_first_token_probability": 0.2804155337340124,
+      "Willow_minus_Cobalt_first_token_logit": 0.9094676971435547
+    },
+    {
+      "name": "case5-h0-arm6",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 6,
+      "query": "untouched",
+      "reader": "control",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.0,
+      "native_logit_relative_l2": 0.0,
+      "Willow_first_token_probability": 0.9355729950820744,
+      "Cobalt_first_token_probability": 0.02001065259227222,
+      "Willow_minus_Cobalt_first_token_logit": 3.8448944091796875
+    },
+    {
+      "name": "case5-h0-arm7",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 7,
+      "query": "sham",
+      "reader": "control",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations are:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that the information in",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.0,
+      "native_logit_relative_l2": 0.0,
+      "Willow_first_token_probability": 0.9355729950820744,
+      "Cobalt_first_token_probability": 0.02001065259227222,
+      "Willow_minus_Cobalt_first_token_logit": 3.8448944091796875
+    },
+    {
+      "name": "case5-h0-arm8",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 0,
+      "arm": 8,
+      "query": "earlier-compiled",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The current storage locations for the items are:\n- Cobalt: Spare batteries\n- Cedar: Measuring tape\n\nOne mistake that stale notes could cause is that",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 1.27896289469502,
+      "native_logit_relative_l2": 0.17731338254241089,
+      "Willow_first_token_probability": 0.22946852265026188,
+      "Cobalt_first_token_probability": 0.7466655763006198,
+      "Willow_minus_Cobalt_first_token_logit": -1.1798515319824219
+    },
+    {
+      "name": "case5-h1-arm0",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 0,
+      "query": "native",
+      "reader": "native-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations for the spare batteries and the measuring tape are:\n\n- Spare batteries: Drawer Cobalt\n- Measuring tape: Drawer Willow\n\nOne mistake",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.32904880219725396,
+      "native_logit_relative_l2": 0.11365940719386984,
+      "Willow_first_token_probability": 0.5961649333062745,
+      "Cobalt_first_token_probability": 0.05392209786132599,
+      "Willow_minus_Cobalt_first_token_logit": 2.4029769897460938
+    },
+    {
+      "name": "case5-h1-arm1",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 1,
+      "query": "native",
+      "reader": "compiled-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations for the spare batteries and the measuring tape are:\n\n- Spare batteries: Drawer Cobalt\n- Measuring tape: Drawer Willow\n\nOne mistake",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.05605660201668545,
+      "native_logit_relative_l2": 0.11908285407978027,
+      "Willow_first_token_probability": 0.836880004068387,
+      "Cobalt_first_token_probability": 0.06919988443452962,
+      "Willow_minus_Cobalt_first_token_logit": 2.4926815032958984
+    },
+    {
+      "name": "case5-h1-arm2",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 2,
+      "query": "native",
+      "reader": "compiled-bounded",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "The current storage locations for the spare batteries and the measuring tape are:\n\n- Spare batteries: Drawer Cobalt\n- Measuring tape: Drawer Willow\n\nOne mistake",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.01467776926550035,
+      "native_logit_relative_l2": 0.11246801482014321,
+      "Willow_first_token_probability": 0.9223845806596286,
+      "Cobalt_first_token_probability": 0.020881964660297233,
+      "Willow_minus_Cobalt_first_token_logit": 3.788076400756836
+    },
+    {
+      "name": "case5-h1-arm3",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 3,
+      "query": "compiled",
+      "reader": "native-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The original storage locations for the spare batteries and the measuring tape were in drawers Cobalt and Willow, respectively. One mistake that stale notes could cause is that they",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 1.9519001902718296,
+      "native_logit_relative_l2": 0.19520496363467607,
+      "Willow_first_token_probability": 0.10553608359310379,
+      "Cobalt_first_token_probability": 0.7883859456744959,
+      "Willow_minus_Cobalt_first_token_logit": -2.010934829711914
+    },
+    {
+      "name": "case5-h1-arm4",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 4,
+      "query": "compiled",
+      "reader": "compiled-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The current storage locations for the items are:\n- The spare batteries are in drawer Cobalt.\n- The measuring tape is in drawer Willow.\n\nOne mistake that stale",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 1.1864434595115536,
+      "native_logit_relative_l2": 0.19629295575097483,
+      "Willow_first_token_probability": 0.24141209551600457,
+      "Cobalt_first_token_probability": 0.6839190518221665,
+      "Willow_minus_Cobalt_first_token_logit": -1.0413341522216797
+    },
+    {
+      "name": "case5-h1-arm5",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 5,
+      "query": "compiled",
+      "reader": "compiled-bounded",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The current storage locations for the items are:\n- The spare batteries are in drawer Cobalt.\n- The measuring tape is in drawer Willow.\n\nOne mistake that stale",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.9229663143981772,
+      "native_logit_relative_l2": 0.2020972489891557,
+      "Willow_first_token_probability": 0.3220413244824083,
+      "Cobalt_first_token_probability": 0.6022046326560463,
+      "Willow_minus_Cobalt_first_token_logit": -0.6259174346923828
+    },
+    {
+      "name": "case5-h1-arm6",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 6,
+      "query": "untouched",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The current storage locations for the items are:\n- The spare batteries are in drawer Cobalt.\n- The measuring tape is in drawer Willow.\n\nOne mistake that stale",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.9229663143981772,
+      "native_logit_relative_l2": 0.2020972489891557,
+      "Willow_first_token_probability": 0.3220413244824083,
+      "Cobalt_first_token_probability": 0.6022046326560463,
+      "Willow_minus_Cobalt_first_token_logit": -0.6259174346923828
+    },
+    {
+      "name": "case5-h1-arm7",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 7,
+      "query": "sham",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The current storage locations for the items are:\n- The spare batteries are in drawer Cobalt.\n- The measuring tape is in drawer Willow.\n\nOne mistake that stale",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.9229663143981772,
+      "native_logit_relative_l2": 0.2020972489891557,
+      "Willow_first_token_probability": 0.3220413244824083,
+      "Cobalt_first_token_probability": 0.6022046326560463,
+      "Willow_minus_Cobalt_first_token_logit": -0.6259174346923828
+    },
+    {
+      "name": "case5-h1-arm8",
+      "task": 5,
+      "context_tokens": 1024,
+      "history": 1,
+      "arm": 8,
+      "query": "earlier-compiled",
+      "reader": "control",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "The original storage locations for the spare batteries and the measuring tape were in drawers Cobalt and Willow, respectively. One mistake that stale notes could cause is that they",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 3.1382459244983125,
+      "native_logit_relative_l2": 0.26283708008304396,
+      "Willow_first_token_probability": 0.030833434896774557,
+      "Cobalt_first_token_probability": 0.9069043177398753,
+      "Willow_minus_Cobalt_first_token_logit": -3.381437301635742
+    }
+  ],
+  "history_comparisons": [
+    {
+      "task": 4,
+      "arm": 0,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -2.2073326110839844,
+      "native_kl_nats": 0.6610301951562856,
+      "native_logit_relative_l2": 0.13287103158426417,
+      "Willow_first_token_probability": 0.31089786104589395,
+      "Cobalt_first_token_probability": 0.3680964145115971,
+      "Willow_minus_Cobalt_first_token_logit": -0.16888046264648438
+    },
+    {
+      "task": 4,
+      "arm": 1,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -1.809225082397461,
+      "native_kl_nats": 0.26947081677895557,
+      "native_logit_relative_l2": 0.13701702688243822,
+      "Willow_first_token_probability": 0.5735972110549827,
+      "Cobalt_first_token_probability": 0.3353544652770525,
+      "Willow_minus_Cobalt_first_token_logit": 0.5367393493652344
+    },
+    {
+      "task": 4,
+      "arm": 2,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -1.0518836975097656,
+      "native_kl_nats": 0.07318803912662239,
+      "native_logit_relative_l2": 0.11656063924200315,
+      "Willow_first_token_probability": 0.8167146581841848,
+      "Cobalt_first_token_probability": 0.12099827687063781,
+      "Willow_minus_Cobalt_first_token_logit": 1.9095134735107422
+    },
+    {
+      "task": 4,
+      "arm": 3,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -3.502878189086914,
+      "native_kl_nats": 0.35852195181975444,
+      "native_logit_relative_l2": 0.14270104922979993,
+      "Willow_first_token_probability": 0.004463526623894213,
+      "Cobalt_first_token_probability": 0.9422209680242433,
+      "Willow_minus_Cobalt_first_token_logit": -5.352300643920898
+    },
+    {
+      "task": 4,
+      "arm": 4,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -3.184316635131836,
+      "native_kl_nats": 0.6068947049378504,
+      "native_logit_relative_l2": 0.1459277816162303,
+      "Willow_first_token_probability": 0.015670163971450334,
+      "Cobalt_first_token_probability": 0.9413785063097133,
+      "Willow_minus_Cobalt_first_token_logit": -4.095586776733398
+    },
+    {
+      "task": 4,
+      "arm": 5,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -2.8559341430664062,
+      "native_kl_nats": 0.6213752524213515,
+      "native_logit_relative_l2": 0.13998140735244632,
+      "Willow_first_token_probability": 0.028160449028512818,
+      "Cobalt_first_token_probability": 0.9107698600543114,
+      "Willow_minus_Cobalt_first_token_logit": -3.4763717651367188
+    },
+    {
+      "task": 4,
+      "arm": 8,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -2.8247451782226562,
+      "native_kl_nats": 0.07041381607454558,
+      "native_logit_relative_l2": 0.13284569249541214,
+      "Willow_first_token_probability": 0.0018072398072792929,
+      "Cobalt_first_token_probability": 0.9716298681246949,
+      "Willow_minus_Cobalt_first_token_logit": -6.287174224853516
+    },
+    {
+      "task": 5,
+      "arm": 0,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -1.4419174194335938,
+      "native_kl_nats": 0.32904880219725396,
+      "native_logit_relative_l2": 0.11365940719386984,
+      "Willow_first_token_probability": 0.5961649333062745,
+      "Cobalt_first_token_probability": 0.05392209786132599,
+      "Willow_minus_Cobalt_first_token_logit": 2.4029769897460938
+    },
+    {
+      "task": 5,
+      "arm": 1,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -1.1882553100585938,
+      "native_kl_nats": 0.08595325686638976,
+      "native_logit_relative_l2": 0.1152073519138667,
+      "Willow_first_token_probability": 0.836880004068387,
+      "Cobalt_first_token_probability": 0.06919988443452962,
+      "Willow_minus_Cobalt_first_token_logit": 2.4926815032958984
+    },
+    {
+      "task": 5,
+      "arm": 2,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -0.6277980804443359,
+      "native_kl_nats": 0.03471460384770517,
+      "native_logit_relative_l2": 0.0995213723507459,
+      "Willow_first_token_probability": 0.9223845806596286,
+      "Cobalt_first_token_probability": 0.020881964660297233,
+      "Willow_minus_Cobalt_first_token_logit": 3.788076400756836
+    },
+    {
+      "task": 5,
+      "arm": 3,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -2.5870323181152344,
+      "native_kl_nats": 0.7976154075406507,
+      "native_logit_relative_l2": 0.13594304816351177,
+      "Willow_first_token_probability": 0.10553608359310379,
+      "Cobalt_first_token_probability": 0.7883859456744959,
+      "Willow_minus_Cobalt_first_token_logit": -2.010934829711914
+    },
+    {
+      "task": 5,
+      "arm": 4,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -2.0691909790039062,
+      "native_kl_nats": 0.520348120392466,
+      "native_logit_relative_l2": 0.12745622233864665,
+      "Willow_first_token_probability": 0.24141209551600457,
+      "Cobalt_first_token_probability": 0.6839190518221665,
+      "Willow_minus_Cobalt_first_token_logit": -1.0413341522216797
+    },
+    {
+      "task": 5,
+      "arm": 5,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -1.5353851318359375,
+      "native_kl_nats": 0.3065999943000919,
+      "native_logit_relative_l2": 0.1148835466201774,
+      "Willow_first_token_probability": 0.3220413244824083,
+      "Cobalt_first_token_probability": 0.6022046326560463,
+      "Willow_minus_Cobalt_first_token_logit": -0.6259174346923828
+    },
+    {
+      "task": 5,
+      "arm": 8,
+      "norm_attention_and_post_MLP_residual_byte_exact": true,
+      "later_history_margin_shift": -2.2015857696533203,
+      "native_kl_nats": 0.30774788290348126,
+      "native_logit_relative_l2": 0.12479468319367025,
+      "Willow_first_token_probability": 0.030833434896774557,
+      "Cobalt_first_token_probability": 0.9069043177398753,
+      "Willow_minus_Cobalt_first_token_logit": -3.381437301635742
+    }
+  ],
+  "factorials": [
+    {
+      "task": 4,
+      "history": 0,
+      "ordered_query_margin": -3.8878746032714844,
+      "ordered_key_margin": 0.9381523132324219,
+      "ordered_aggregation_margin": 0.29083251953125,
+      "joint_margin": -2.6588897705078125,
+      "ordered_vector_identity_max_abs": 0.0,
+      "Q_key_margin_interaction": 0.6306400299072266,
+      "Q_aggregation_margin_interaction": -0.3246002197265625
+    },
+    {
+      "task": 4,
+      "history": 1,
+      "ordered_query_margin": -5.183420181274414,
+      "ordered_key_margin": 1.2567138671875,
+      "ordered_aggregation_margin": 0.6192150115966797,
+      "joint_margin": -3.3074913024902344,
+      "ordered_vector_identity_max_abs": 0.0,
+      "Q_key_margin_interaction": 0.5510940551757812,
+      "Q_aggregation_margin_interaction": -0.7535591125488281
+    },
+    {
+      "task": 5,
+      "history": 0,
+      "ordered_query_margin": -3.268796920776367,
+      "ordered_key_margin": 0.45175933837890625,
+      "ordered_aggregation_margin": -0.11838912963867188,
+      "joint_margin": -2.935426712036133,
+      "ordered_vector_identity_max_abs": 0.0,
+      "Q_key_margin_interaction": 0.6157169342041016,
+      "Q_aggregation_margin_interaction": -0.8533267974853516
+    },
+    {
+      "task": 5,
+      "history": 1,
+      "ordered_query_margin": -4.413911819458008,
+      "ordered_key_margin": 0.9696006774902344,
+      "ordered_aggregation_margin": 0.4154167175292969,
+      "joint_margin": -3.0288944244384766,
+      "ordered_vector_identity_max_abs": 0.0,
+      "Q_key_margin_interaction": 0.8798961639404297,
+      "Q_aggregation_margin_interaction": -0.8799781799316406
+    }
+  ],
+  "requested_subset": [
+    {
+      "name": "case4-h1-arm0",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 0,
+      "query": "native",
+      "reader": "native-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.6610301951562856,
+      "native_logit_relative_l2": 0.13287103158426417,
+      "Willow_first_token_probability": 0.31089786104589395,
+      "Cobalt_first_token_probability": 0.3680964145115971,
+      "Willow_minus_Cobalt_first_token_logit": -0.16888046264648438
+    },
+    {
+      "name": "case4-h1-arm1",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 1,
+      "query": "native",
+      "reader": "compiled-full",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they can lead to confusion",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.19245678782679154,
+      "native_logit_relative_l2": 0.14777859906790486,
+      "Willow_first_token_probability": 0.5735972110549827,
+      "Cobalt_first_token_probability": 0.3353544652770525,
+      "Willow_minus_Cobalt_first_token_logit": 0.5367393493652344
+    },
+    {
+      "name": "case4-h1-arm2",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 2,
+      "query": "native",
+      "reader": "compiled-bounded",
+      "answer": "Willow",
+      "correct_initial_binding": true,
+      "followup": "Current storage locations:\n- Cobalt: Spare batteries\n- Willow: Measuring tape\n\nOne mistake that stale notes could cause is that they can lead to confusion",
+      "answer_lengths": [
+        3,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 0.019641210886768404,
+      "native_logit_relative_l2": 0.1280758627799848,
+      "Willow_first_token_probability": 0.8167146581841848,
+      "Cobalt_first_token_probability": 0.12099827687063781,
+      "Willow_minus_Cobalt_first_token_logit": 1.9095134735107422
+    },
+    {
+      "name": "case4-h1-arm3",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 3,
+      "query": "compiled",
+      "reader": "native-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 4.2575455931404385,
+      "native_logit_relative_l2": 0.23252361955028675,
+      "Willow_first_token_probability": 0.004463526623894213,
+      "Cobalt_first_token_probability": 0.9422209680242433,
+      "Willow_minus_Cobalt_first_token_logit": -5.352300643920898
+    },
+    {
+      "name": "case4-h1-arm4",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 4,
+      "query": "compiled",
+      "reader": "compiled-full",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 3.187857311743731,
+      "native_logit_relative_l2": 0.2427625789105752,
+      "Willow_first_token_probability": 0.015670163971450334,
+      "Cobalt_first_token_probability": 0.9413785063097133,
+      "Willow_minus_Cobalt_first_token_logit": -4.095586776733398
+    },
+    {
+      "name": "case4-h1-arm5",
+      "task": 4,
+      "context_tokens": 256,
+      "history": 1,
+      "arm": 5,
+      "query": "compiled",
+      "reader": "compiled-bounded",
+      "answer": "Cobalt",
+      "correct_initial_binding": false,
+      "followup": "Current storage locations:\n- Drawer Cobalt: The spare batteries.\n- Drawer Willow: The measuring tape.\n\nOne mistake that stale notes could cause is that they might",
+      "answer_lengths": [
+        4,
+        32
+      ],
+      "truncated": [
+        false,
+        true
+      ],
+      "native_kl_nats": 2.6812187820053848,
+      "native_logit_relative_l2": 0.24006816286698437,
+      "Willow_first_token_probability": 0.028160449028512818,
+      "Cobalt_first_token_probability": 0.9107698600543114,
+      "Willow_minus_Cobalt_first_token_logit": -3.4763717651367188
+    }
+  ],
+  "cost": {
+    "broader_run_physical_advances": 5238,
+    "prefix_advances": 2556,
+    "broader_run_branches": 36,
+    "nominal_model_linear_calls": 1034509,
+    "nominal_model_linear_macs": 8079114076160,
+    "worker_seconds": 85.61612270912156,
+    "runner_seconds": 97.72,
+    "peak_rss_mb": 3834.7,
+    "peak_vram_mb": 6470.0,
+    "diagnostic_attention_and_operand_acquisition_in_linear_ledger": false
+  },
+  "mechanics_status": "verified",
+  "instrument_status": "verified-with-paid-operands-and-known-case-scope",
+  "terminal_status": "not-requested",
+  "scope": "Saved-only independent audit of reused concurrent job. Primary question is256-token compact-parent sixbranch subset; all completed parent/length controls retained. One current read, original future policy, no new model calls or fitted program. First-token contrast is not complete-label likelihood; later cross-parent futures also change recurring policy."
+}

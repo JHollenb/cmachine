@@ -35,6 +35,12 @@ typedef enum {
 /* Observers may read the device pointer during this call only. They are not cuts
  * or mutation callbacks. No observer, transfer or synchronization runs by default. */
 typedef void (*QwenObserver)(void *,int,int,QwenPort,const float *,size_t);
+/* Explicit cache backend. A selected layer publishes its current K/V and reads
+ * its own memory before returning attention. Guards run before begin/restore;
+ * rewind restores backend-owned bytes. Callers own the context lifetime. */
+typedef int (*QwenCacheStep)(void *,int,int,const float *,const float *,const float *,float *,float *);
+typedef int (*QwenCacheGuard)(void *,int,int,uint64_t,uint64_t,uint64_t);
+typedef void (*QwenCacheRewind)(void *,int,uint64_t,uint64_t);
 typedef struct {
     const QwenModel *model;
     int position,capacity,pending,layer,phase,delivered;
@@ -51,6 +57,14 @@ typedef struct {
     QwenObserver observer;
     void *observer_context;
     int observe_position,observe_layer;
+    uint64_t cache_mask;
+    int cache_slots[64],dense_layers;
+    QwenCacheStep cache_step;
+    QwenCacheRewind cache_rewind;
+    QwenCacheGuard cache_guard;
+    void *cache_context;
+    QwenCheckpoint token_parent;
+    int token_parent_valid;
 } QwenSession;
 /* A frozen program for one model/session/epoch/token/layer and exactly guarded
  * live operands. The numerical basis is immutable after compilation. rho is
@@ -130,6 +144,8 @@ int qwen_advance_layer_gate(QwenSession *,const QwenGateLaw *,QwenGateMode,uint6
 int qwen_model_init(QwenModel *,const TcmModel *,char *,size_t);
 void qwen_model_free(QwenModel *);
 int qwen_session_init(QwenSession *,const QwenModel *,int);
+int qwen_session_init_layout(QwenSession *,const QwenModel *,int,uint64_t,QwenCacheStep,QwenCacheRewind,void *);
+int qwen_abort_token(QwenSession *);
 void qwen_session_free(QwenSession *);
 int qwen_push(QwenSession *,int);
 int qwen_begin_token(QwenSession *,int);
@@ -145,4 +161,5 @@ int qwen_reset(QwenSession *);
 const char *qwen_port_name(QwenPort);
 int qwen_main(int,char **);
 int qwen_serve_main(int,char **);
+int qwen_bounded_serve_main(int,char **);
 #endif

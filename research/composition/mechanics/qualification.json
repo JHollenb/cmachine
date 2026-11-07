@@ -1,0 +1,10 @@
+{
+  "schema": "composition-preflight-mechanics-v1",
+  "model_free_lifecycle": "ASan/UBSan all reported lifecycle contracts passed",
+  "token_authority_unit_tests": 6,
+  "native_profile": "unchanged authenticated formation runtime",
+  "source_manifest_sha256": "dae95c01def66aa3ceb89c4502dba0bde4c8be9eced6ac44b988548399e38e16",
+  "source_files": 63,
+  "compiler": "local Clang; C11; ffp-contract=off; address and undefined sanitizers",
+  "scope": "instrument mechanics; no answer quality or speed claim"
+}

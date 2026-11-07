@@ -1,0 +1,22 @@
+# One runtime with explicit memory and weight policies
+
+The canonical C/CUDA executor combines the public writer/lineage implementation with the cache and weight-storage work previously isolated in experiments. The same `build/tcm-cuda` executable supports native serving, full byte memory and bounded memory. All retained learned maps still execute. Research programs and their evidence live in `research`; their original working address remains a compatibility link.
+
+| Selection | Weight arithmetic/storage | Memory and recovery |
+|---|---|---|
+| Default/native | Native FP32 maps, BF16 widened at load | Full FP32 prefix, legacy checkpoint and 64 cursor-based parents |
+| `--cache-policy full-byte` | Source BF16 matrices, FP32 tile1024 | Entire encoded prefix, two complete parents plus token-abort snapshot |
+| `--cache-policy bounded` | Same source BF16/tiled computation | Anchors/recent/reservoir support, same fixed recovery budget |
+| Direct serve `--weight-profile tiled-fp32` with a compressed policy | Permanently widened matrices consumed through the same tile geometry | Matched arithmetic control for source-BF16 storage |
+
+The text client defaults to native. Both compressed modes are explicitly selected and experimental. Default bounded support is 16 anchors, 64 recent rows and 32 sampled evicted rows at every layer. Physical support C uses `2,535,428 + 60,216 C` tracked GPU-state bytes for this specimen, including recovery. At C=112 this is 9,279,620 bytes. Parameters/helpers/tile add 3,124,434,964 bytes. Logical context is separate; the qualification uses 768 tokens. Host transcript storage and CUDA library overhead are additional.
+
+The legacy executable name `tcm-bounded-chat` is a symlink to the unified binary. When invoked by that name without an explicit policy, it preserves the previous bounded default. Explicit policy flags take precedence. The matched tiled-FP32 verification arm exercises this legacy default through an actual process.
+
+`src/qwen.c` remains the single model/state executor. `QwenCacheStep` encodes the current actual K/V and computes attention before its consumer continues. A masked layer receives no dense cache allocation. `QwenCacheGuard` validates owner, epoch, cursor and parent lineage before mutation or restoration; `QwenCacheRewind` restores the backend's bytes and sampling state. The existing writer, source gate-law, observation and parent-lineage APIs remain available. The bounded backend's snapshots count overwritten rows, absolute addresses, eviction population, RNG and logits. It has two recoverable parents rather than native's 64 prefix markers.
+
+`src/qwen_weights.inc` supplies the explicit storage profile and shared tile. Profile selection precedes model loading; a tiled profile owns one model per process and its tile must be released after model destruction. Native execution retains its original GEMV geometry. A source-storage claim is compared with the same tiled FP32 arithmetic, since changing geometry can change finite results. Derived FP32 factors use the ordinary matvec path. `src/qwen_cache.inc` retains the executed byte codec and gathered/weighted attention kernels. Detailed hashes and transfers run only when state inspection is requested.
+
+`src/qwen_bounded_serve.c` handles snapshot-backed policy serving; `src/qwen_serve.c` retains native serving and dispatches explicitly selected policies. Delivered and consumed tokens remain separate. Native cursor rollback restores pending/top metadata and valid K/V; its full vocabulary vector is reported valid only after a newly completed token. Complete bounded snapshots restore that vector too. Neither stack provides disk-restorable sessions.
+
+The [commit protocol](../validation/README.md) compares the original Git native core and integrated native core through the same reporting-only view. Compressed profiles must reproduce historical own IDs, prefill/final logits and delayed-root encoded bytes exactly. Real-model lifecycle assays exercise both the old writer/lineage behavior and an occupied-reservoir last-layer abort with exact cache/logit/RNG/lineage restoration. A separate refusal/retry comparison verifies that snapshot-sourced eviction remains idempotent when the existing experimental layer APIs retry. Actual clients preserve their previous prose, arithmetic, recent recall and delayed failures. No new task-quality or speed claim is implied by this integration.

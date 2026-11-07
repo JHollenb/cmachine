@@ -1,0 +1,5 @@
+# Execution attempts
+
+The first submitted payload was staged at20261106T214303.644700Z. Job [job-1cb280cb2c0d](runs/job-1cb280cb2c0d/report.json) stopped while importing the receipt bridge before compilation or model execution. The stage keep set omitted top-level saturn_bridge.py. Scheduler elapsed6.35seconds, worker4.194787seconds, RSS884.0MB,VRAM0.0MB. The collected report SHA is eb0b461dd4ce437542f0c28d0d6d7e39822dbade32ce22cc4ac403a291c67fe4. This is incomplete instrument evidence with no model result; original payload, logs, report and scheduler metadata remain.
+
+The stager now copies the authenticated predecessor bridge. A new model-free test imports that actual frozen module and its public dependencies; all14math/token/import tests pass in the corrected20261106T214617.424019Zpayload. The new finite submission is job-812a0486995d, with the same scientific policies and numerical contract. Automatic retries are disabled for each lease. This explicit source correction and separate submission do not rewrite the earlier failed attempt into a scientific result.

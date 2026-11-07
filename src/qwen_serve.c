@@ -14,10 +14,25 @@ static int frame_id(const char *line,uint64_t *id){
     while(*end==' '||*end=='\t'||*end=='\r'||*end=='\n')end++;
     if(errno||*end||!value)return -1;*id=(uint64_t)value;return 0;
 }
+static void state_hashes(const QwenSession *s,char cache[65],char logits[65]){
+    const QwenModel *m=s->model;size_t row=(size_t)s->position*m->head,n=(size_t)2*m->layers*m->kvheads*row,offset=0;
+    float *host=malloc((n?n:1)*4);if(!host)exit(2);
+    for(int kind=0;kind<2;kind++)for(int l=0;l<m->layers;l++)for(int h=0;h<m->kvheads;h++){
+        size_t address=((size_t)l*m->kvheads+h)*s->capacity*m->head;
+        if(row)gpu_read(host+offset,(kind?s->values:s->keys)+address,row*4);offset+=row;
+    }
+    unsigned char digest[32];tcm_sha256(host,n*4,digest);tcm_hex(digest,32,cache);free(host);
+    if(s->phase!=1){logits[0]=0;return;}
+    host=malloc((size_t)m->vocab*4);if(!host)exit(2);gpu_read(host,s->logits,(size_t)m->vocab*4);tcm_sha256(host,(size_t)m->vocab*4,digest);tcm_hex(digest,32,logits);free(host);
+}
 int qwen_serve_main(int argc,char **argv){
-    if(argc!=3&&argc!=5){fprintf(stderr,"usage: tcm-cuda serve MODEL [--context N]\n");return 2;}
+    int explicit_policy=0;
+    for(int i=3;i+1<argc;i+=2)if(!strcmp(argv[i],"--cache-policy")){explicit_policy=1;if(strcmp(argv[i+1],"native"))return qwen_bounded_serve_main(argc,argv);}
+    const char *name=strrchr(argv[0],'/');name=name?name+1:argv[0];
+    if(!explicit_policy&&!strcmp(name,"tcm-bounded-chat"))return qwen_bounded_serve_main(argc,argv);
+    if(argc<3||!(argc%2)){fprintf(stderr,"usage: tcm-cuda serve MODEL [--context N] [--cache-policy native|full-byte|bounded]\n");return 2;}
     int capacity=4096;
-    if(argc==5){if(strcmp(argv[3],"--context"))return 2;char *end;long value=strtol(argv[4],&end,10);if(*end||value<1||value>32768)return 2;capacity=(int)value;}
+    for(int i=3;i<argc;i+=2){if(!strcmp(argv[i],"--cache-policy")&&!strcmp(argv[i+1],"native"))continue;if(strcmp(argv[i],"--context"))return 2;char *end;errno=0;long value=strtol(argv[i+1],&end,10);if(errno||end==argv[i+1]||*end||value<1||value>32768)return 2;capacity=(int)value;}
     TcmModel bundle;QwenModel model;QwenSession session;QwenCheckpoint checkpoint;int have_checkpoint=0;char error[256];
     if(tcm_load(&bundle,argv[2],error,sizeof(error))){fprintf(stderr,"%s\n",error);return 2;}
     if(qwen_model_init(&model,&bundle,error,sizeof(error))){fprintf(stderr,"%s\n",error);tcm_unload(&bundle);return 2;}tcm_unload(&bundle);
@@ -43,7 +58,8 @@ int qwen_serve_main(int argc,char **argv){
             }
             printf("],\"count\":%d,\"position\":%d,\"pending_token\":%d}\n",count,session.position,session.pending);
         }else if(line[0]=='S'){
-            printf("{\"event\":\"state\",\"position\":%d,\"pending_token\":%d,\"delivered\":%d,\"checkpoint_serial\":%llu,\"stack_depth\":%u,\"top_frame\":%llu,\"epoch\":%llu}\n",session.position,session.pending,session.delivered,(unsigned long long)session.checkpoint_serial,session.depth,(unsigned long long)(session.depth?session.frames[session.depth-1].id:0),(unsigned long long)session.epoch);
+            char cache[65],logits[65];state_hashes(&session,cache,logits);
+            printf("{\"event\":\"state\",\"position\":%d,\"pending_token\":%d,\"delivered\":%d,\"checkpoint_serial\":%llu,\"stack_depth\":%u,\"top_frame\":%llu,\"epoch\":%llu,\"cache_sha256\":\"%s\",\"logits_sha256\":\"%s\",\"logits_valid\":%s}\n",session.position,session.pending,session.delivered,(unsigned long long)session.checkpoint_serial,session.depth,(unsigned long long)(session.depth?session.frames[session.depth-1].id:0),(unsigned long long)session.epoch,cache,logits,session.phase==1?"true":"false");
         }else if(line[0]=='C'){
             if(qwen_checkpoint(&session,&checkpoint))puts("{\"error\":\"checkpoint requires a token boundary\"}");
             else{have_checkpoint=1;printf("{\"event\":\"checkpoint\",\"position\":%d,\"serial\":%llu}\n",session.position,(unsigned long long)checkpoint.serial);}

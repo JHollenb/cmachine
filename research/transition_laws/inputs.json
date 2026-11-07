@@ -1,0 +1,24 @@
+{
+  "schema": "transition-laws-input-v1",
+  "source": [
+    {"id":"s0","family":"binding","budget":8,"prompt":"Keep this ledger for the next question. Ada owns a silver key, Bex owns a brass key, and Cato owns an iron key. These are separate people and each owns exactly the key stated. When I ask for a material, reply with only that material. What material is Bex's key?","followup":"Update the ledger: Bex replaces the brass key with a copper key. Ada and Cato keep their keys. What material is Bex's key now?"},
+    {"id":"s1","family":"binding","budget":8,"prompt":"Remember this small inventory for our conversation. The north box holds a red scarf, the south box holds a blue scarf, and the west box holds a green scarf. The labels identify different boxes. Answer color questions using one color word. What color scarf is in the west box?","followup":"The scarves in the north and west boxes are exchanged. The south box is unchanged. What color scarf is in the north box now?"},
+    {"id":"s2","family":"arithmetic","budget":8,"prompt":"We are maintaining a running calculation. The initial calculation is 18 multiplied by 21. Please calculate the exact integer product, keep that result available for the next question, and answer only with the integer rather than an explanation. What is the initial product?","followup":"Continue the same running calculation. Add 14 to the product you just calculated. Reply only with the new integer."},
+    {"id":"s3","family":"arithmetic","budget":8,"prompt":"Consider a rectangular tray with 26 rows and exactly 12 small tiles in each row. Every row is full, with no missing or extra tiles. Work out the total number of tiles and keep it for a follow-up. Reply with only the total integer.","followup":"Now remove 25 tiles from that original full tray. How many tiles remain? Reply only with the integer."},
+    {"id":"s4","family":"prose","budget":8,"prompt":"Explain one practical reason people put a lid on a cooking pot. Use ordinary everyday language suitable for a beginner who has never cooked. Focus on the effect of the lid rather than naming many kitchen tools. Give one short sentence and keep the explanation factual.","followup":"Give one different practical example of conserving heat, in one short sentence."},
+    {"id":"s5","family":"prose","budget":8,"prompt":"Describe why a library might arrange its books into sections. Imagine explaining it to a child visiting a library for the first time. Use familiar words and give a clear practical reason. Please answer in a single short sentence without a heading or a numbered list.","followup":"Now suggest a useful label for a section of books about animals. Reply with just that label."}
+  ],
+  "monitor": [
+    {"id":"m0","family":"binding","budget":16,"prompt":"Remember: Pina's notebook is orange and Rafi's notebook is violet. Reply with only Pina's notebook color.","followup":"Pina changes her notebook to white. Rafi keeps his notebook. Reply with only Rafi's notebook color."},
+    {"id":"m1","family":"arithmetic","budget":16,"prompt":"What is 16 times 24? Reply with only the integer.","followup":"Subtract 19 from that product. Reply with only the integer."},
+    {"id":"m2","family":"prose","budget":16,"prompt":"In one short sentence, explain why a bicycle needs brakes.","followup":"Give one practical example of when the rider would use them."}
+  ],
+  "heldout": [
+    {"id":"h0","family":"binding","budget":8,"prompt":"Remember: Neri's cup is teal, Ova's cup is amber, and Pavo's cup is pink. Reply with only Ova's cup color.","followup":"Ova replaces her cup with a black cup. Neri and Pavo keep theirs. Reply with only Ova's current cup color.","expected":["amber","black"],"format":"word"},
+    {"id":"h1","family":"binding","budget":8,"prompt":"In this ledger, Dena has a red ticket and Fenn has a blue ticket. Reply with only Dena's ticket color.","followup":"Dena and Fenn exchange tickets. Reply with only Fenn's ticket color.","expected":["red","red"],"format":"word"},
+    {"id":"h2","family":"arithmetic","budget":16,"prompt":"What is 19 multiplied by 24? Reply with only the integer.","followup":"Add 18 to that product. Reply with only the new integer.","expected":[456,474],"format":"integer"},
+    {"id":"h3","family":"arithmetic","budget":16,"prompt":"What is 27 multiplied by 13? Reply with only the integer.","followup":"Subtract 26 from that product. Reply with only the resulting integer.","expected":[351,325],"format":"integer"},
+    {"id":"h4","family":"prose","budget":32,"prompt":"In two short sentences, explain why wet clothes dry faster in a breeze.","followup":"Give a different everyday example of moving air being useful.","format":"prose"},
+    {"id":"h5","family":"prose","budget":32,"prompt":"Give a short, practical explanation of why a gardener puts mulch on soil.","followup":"Suggest one material that could be used and explain why.","format":"prose"}
+  ]
+}

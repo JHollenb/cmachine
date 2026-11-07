@@ -18,7 +18,11 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--model",type=Path,required=True)
     parser.add_argument("--tokenizer",type=Path,required=True)
-    parser.add_argument("--binary",type=Path,default=Path(__file__).resolve().parents[1]/"build/tcm-cuda")
+    parser.add_argument("--binary",type=Path)
+    parser.add_argument("--cache-policy",choices=("native","full-byte","bounded"),default="native")
+    parser.add_argument("--anchors",type=int,default=16)
+    parser.add_argument("--recent",type=int,default=64)
+    parser.add_argument("--reservoir",type=int,default=32)
     parser.add_argument("--context",type=int,default=4096)
     parser.add_argument("--new-tokens",type=int,default=128)
     parser.add_argument("--memory",type=Path)
@@ -26,6 +30,8 @@ def main():
     args=parser.parse_args()
     if not 1<=args.context<=32768 or not 1<=args.new_tokens<=4096:
         parser.error("context must be 1..32768 and new-tokens must be 1..4096")
+    if args.cache_policy=="bounded" and (args.anchors<0 or args.recent<1 or args.reservoir<0 or args.anchors+args.recent+args.reservoir>args.context):
+        parser.error("bounded support needs nonnegative anchors/reservoir, positive recent rows, and total support <= context")
     from transformers import AutoTokenizer
     tokenizer=AutoTokenizer.from_pretrained(args.tokenizer,local_files_only=True)
     metadata_path=args.model.with_suffix(".json")
@@ -36,7 +42,10 @@ def main():
                 raise ValueError("tokenizer/template configuration differs from model bundle")
     if args.prompt is not None and args.prompt.startswith("/"):
         raise ValueError("one-shot mode expects a prompt, not an interactive command")
-    machine=subprocess.Popen([str(args.binary),"serve",str(args.model),"--context",str(args.context)],stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True,bufsize=1)
+    binary=args.binary or Path(__file__).resolve().parents[1]/"build/tcm-cuda"
+    command=[str(binary),"serve",str(args.model),"--context",str(args.context)]
+    if args.cache_policy!="native":command += ["--cache-policy",args.cache_policy,"--anchors",str(args.anchors),"--recent",str(args.recent),"--reservoir",str(args.reservoir)]
+    machine=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True,bufsize=1)
     def receive():
         line=machine.stdout.readline()
         if not line:raise RuntimeError(f"C machine exited: {machine.poll()}")
@@ -46,6 +55,12 @@ def main():
     def send(command):
         machine.stdin.write(command+"\n");machine.stdin.flush();return receive()
     ready=receive();print(json.dumps(ready),flush=True)
+    if ready.get("cache_policy","native")!=args.cache_policy:
+        machine.terminate();machine.wait(timeout=10);raise RuntimeError("C machine did not activate the requested cache policy")
+    if args.cache_policy=="bounded" and any(ready.get(k)!=getattr(args,k) for k in ("anchors","recent","reservoir")):
+        machine.terminate();machine.wait(timeout=10);raise RuntimeError("C machine did not activate the requested bounded support")
+    if args.cache_policy!="native":print("[experimental "+args.cache_policy+" memory; /state reports the live allocation]",flush=True)
+    stack_limit=ready.get("stack_limit",64);legacy_checkpoint=ready.get("legacy_checkpoint",True)
     messages=[];processed=[];saved=None;frames=[]
     memory=args.memory.read_text() if args.memory else None
     if memory:print("Explicit memory context:\n"+memory,flush=True)
@@ -53,16 +68,19 @@ def main():
         while True:
             text=args.prompt if args.prompt is not None else input("you> ")
             if text in ("/quit","/exit"):break
+            if text=="/state":print(send("S"));continue
             if text=="/save":
+                if not legacy_checkpoint:print("This memory policy uses /push and /rollback; legacy /save is unavailable.");continue
                 if not processed:print("Send a message before saving a parent.");continue
                 print(send("C"));saved=(messages,processed);continue
             if text=="/rewind":
+                if not legacy_checkpoint:print("This memory policy uses /push and /rollback; legacy /rewind is unavailable.");continue
                 if saved is None:print("No saved parent.");continue
                 if frames:print("Commit or roll back the nested frames before rewinding the saved parent.");continue
                 print(send("R"));messages,processed=saved;continue
             if text=="/push":
                 if not processed:print("Send a message before pushing a frame.");continue
-                if len(frames)>=64:print("Nested frame limit reached; current state is preserved.");continue
+                if len(frames)>=stack_limit:print("Nested frame limit reached; current state is preserved.");continue
                 result=send("P");frames.append((result["frame"],messages,processed));print(result);continue
             if text in ("/rollback","/commit"):
                 if not frames:print("No nested frame.");continue

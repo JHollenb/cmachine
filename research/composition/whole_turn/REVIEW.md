@@ -1,0 +1,15 @@
+# Astra review and author assessment
+
+2026-11-06. Existing user-authorized `gpt-6-astra` advisor reviewed the proposed whole-turn design, the staged implementation and the completed result. No separate model run was launched by the advisor.
+
+Before launch, Astra endorsed the complete ingestion boundary, independent reader siblings, authoritative generated IDs, explicit151645closure, paid CORRECT arm and sealed forced diagnostics. The staged driver/worker/analyzer review found no execution blocker. The review required an archive budget including replay captures and full readouts, and emphasized that an incorrect acknowledgment or truncation must not become a semantic stopping gate.
+
+The implementation review clarified that the pre-diagnostic seal covers primary JSON and its boundary hashes, while per-token tensor files are hashed afterward. It also distinguished final post-consumed-EOS logits from the logits that selected the delivered answer. Both qualifications appear in the findings. The suggested direct question-file/template join was added as a separate saved-only audit without changing executed evidence.
+
+For report SHA `cda1042c01e53762643245f13573431e2f17983e46934a69cb6bf7a8e88ed444`, Astra independently checked all4215raw files/51,165,949bytes and67source hashes, primary JSON seal,21turn histories, greedy authority and independent correction-parent joins. All258candidate/dense lower-port comparisons are exact; dense diagnostics reproduce native's six captured fields on every compared step. Independent fsum arithmetic reproduces B3 mean write error101.8513%, range62.3014–118.2179%,69/86worse than zero and the boundary-logit differences.
+
+The advisor's interpretation is retained: this closes a missing execution boundary, but zero's matching answers prevent a semantic-usefulness or compact-state-sufficiency claim. PROJECT's pre-answer numerical advantage and post-EOS reversal both matter. The post-EOS differences are continuing-state observations, not incorrect delivered answers.
+
+Astra proposed the signed complete-policy error account and a subsequent correction-episode × read-episode factorial. I applied the account to saved arrays, preserved the earlier audit/source and published [audit v2](runs/job-a071c7a43a38/additive-audit-v2.json). All six cross terms oppose zero's error; after EOS that cancellation is too small to offset the added effect power. I retained the factorial as the next proposal, rather than launching more similar color questions or increasing rank without localizing the observed effect.
+
+The current panel does not remove weights/cache, infer semantic variables or test long context. It does establish that the frozen computation can be applied throughout changed user ingestion and later own-state reads, with a qualified same-text diagnostic reference. [Findings](FINDINGS.md), [prospective plan](PLAN.md), [original report](runs/job-a071c7a43a38/report.json), [verification](runs/job-a071c7a43a38/verification.json), [initial audit](runs/job-a071c7a43a38/additive-audit.json), and [initial audit source](runs/job-a071c7a43a38/audit-source-v1.py) preserve the distinction.

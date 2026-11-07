@@ -37,6 +37,17 @@ void gpu_gate_anchor(const float *,float *,float *,float *,float *,int);
 void gpu_gate_swiglu(float *,const float *,const float *,const float *,const float *,const float *,const float *,int);
 TcmTop2 gpu_top2(TcmGpu *,const float *,int);
 void gpu_sync(void);
+/* Explicit process-wide weight profile: 0 native FP32, 1 tiled FP32,
+ * 2 source BF16 with FP32 tiles. Tiled profiles own one loaded model; release
+ * their shared tile after model destruction before selecting another profile. */
+void gpu_weight_configure(int);
+float *gpu_owned_weight(TcmGpu *,const void *,uint32_t,size_t,int,int,int);
+size_t gpu_owned_weight_bytes(const float *,size_t);
+void gpu_owned_embedding(float *,const float *,int,int);
+void gpu_weight_release(void);
+void gpu_weight_info(size_t *,size_t *,size_t *,int *,unsigned long long *,unsigned long long *,unsigned long long *);
+size_t gpu_live_bytes(void);
+size_t gpu_peak_bytes(void);
 size_t gpu_free_bytes(void);
 #ifdef __cplusplus
 }

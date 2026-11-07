@@ -1,0 +1,9 @@
+{
+  "schema": "tcm-query-horizon-prospective-inputs-v1",
+  "scope": "Three new conversations, parsed only after future-focused source selection. No target fitting or image choice.",
+  "cases": [
+    ["fresh-recall", "Jules has a glass cup and Mira has a ceramic cup. What material is Mira's cup? Reply with only the material.", "Jules exchanges the glass cup for a steel cup. What material is Jules's cup now? Reply with only the material.", 8],
+    ["fresh-math", "Compute 19 * 22. Reply with only the integer.", "Subtract 17 from your previous answer. Reply with the integer, then one short sentence explaining the calculation.", 16],
+    ["fresh-prose", "Explain in one short sentence why a museum should label storage drawers.", "Now give one practical example of a useful drawer label, in one short sentence.", 32]
+  ]
+}

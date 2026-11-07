@@ -1,0 +1,14 @@
+{
+  "schema": "cmachine-research-migration-v1",
+  "source": "/Users/jakeholl/domains/saturn/cmachine",
+  "destination": "/Users/jakeholl/domains/cmachine/research",
+  "legacy_link": "../cmachine/research",
+  "atomic_same_filesystem_rename": true,
+  "same_directory_inode": true,
+  "files_and_links": 63626,
+  "file_bytes": 9807398925,
+  "manifest": "research/migration/tree.jsonl.gz",
+  "manifest_sha256": "253dca98644133a57f04f2c561571173af13bc83e74dedea0602246a6a04afd2",
+  "uncompressed_manifest_sha256": "6193469f31b3c7295a9d2e9311e5edfa93840d2e30d157417ff19e4c28097bb6",
+  "historical_bytes_rewritten": false
+}

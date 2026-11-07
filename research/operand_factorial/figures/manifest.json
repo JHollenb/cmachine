@@ -1,0 +1,15 @@
+{
+  "report_sha256": "5ceab12e2ab62d20978269df55702bb4a26376d0db79752270df9ac5b74eaa0f",
+  "results_source_sha256": "25a31a54f83d68af017a6be1960c1eeb23cab8bbe06a9a545ada6da2c7f5de02",
+  "summary_sha256": "a7b8f69070a5a74fdcb2a6399ac4d1aeab5ac08ffe7c2c659ed4c0887dde1678",
+  "figures": [
+    {
+      "file": "job-eb06becf984f-restoration.png",
+      "sha256": "624579c12f79f1bc8eae6a4df122e39ecf8f11ac65af32a2cff0469de3743ed8"
+    },
+    {
+      "file": "job-eb06becf984f-memory-clock.png",
+      "sha256": "c007da2d855f3813b6550f37e2e5820f07b8603648fa876b5afa09f213dba050"
+    }
+  ]
+}

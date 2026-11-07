@@ -1,0 +1,21 @@
+{
+  "schema": "tcm-memory-response-resource-plan-v1",
+  "geometry": {"layers": 28, "kv_heads": 2, "query_heads": 12, "head_dim": 128, "capacity": 512, "physical_batch_size": 1, "resident_models": 1, "primary_sessions_concurrent": 1, "maximum_allocated_sessions_in_callback_control": 2},
+  "measured_ancestor": {"job_id": "job-2a28feeb7e5b", "peak_rss_mb": 4060.1, "peak_vram_mb": 6378, "model_gpu_bytes": 6174873620, "native_session_gpu_bytes": 30096896},
+  "native_cache_gpu_bytes": 29360128,
+  "byte_full_arena_gpu_bytes": 7569408,
+  "recent4_arena_gpu_bytes": 59136,
+  "maximum_decode_workspace_gpu_bytes": 1048576,
+  "status_gpu_bytes": 4,
+  "non_cache_session_gpu_bytes": 736768,
+  "maximum_planned_fp32_callback_state_gpu_bytes": 31145476,
+  "maximum_callback_control_two_session_gpu_bytes": 61242372,
+  "maximum_increment_over_ancestor_state_gpu_bytes": 31145476,
+  "ring_snapshot_numerical_bytes_each": 59136,
+  "audit_own_original_history_host_bytes_per_session": 2097152,
+  "raw_and_payload_collection_bound_bytes": 268435456,
+  "declared_reservation_mb": 6144,
+  "scheduler_guard_factor": 1.1,
+  "declared_guard_ceiling_mb": 6758.4,
+  "qualification": "Analytical cudaMalloc request extents are checked against actual allocations. The measured ancestor includes CUDA/cuBLAS initialization beyond tracked model/session bytes. Host audit data are separate from serving state and never available to the reader. No timing or process-memory speedup is claimed."
+}

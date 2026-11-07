@@ -1,0 +1,116 @@
+{
+  "schema": "tcm-source-response-profile-v1",
+  "manifest_sha256": "27f271f667c8c5de48846b37909485f86eb128b30fc7041f09dd88af84ed329c",
+  "all_four_target_array_hashes_verified": true,
+  "source_turn_profile": [
+    {
+      "source": 0,
+      "turn": 0,
+      "decisions": 32,
+      "weight_mass": 0.16666666666666666,
+      "mean_losses": {
+        "same_memory_squared_response": 14.356078843721345,
+        "cross_term": -1.6284479406974526,
+        "teacher_displacement_squared": 33.07970685876071,
+        "full_native_squared_response": 45.8073377617846
+      },
+      "mean_squared_response_energy": {
+        "target": 170.5842626330161,
+        "baseline": 160.0724733725482,
+        "native": 199.92309024003197
+      },
+      "negative_cross_terms": 21
+    },
+    {
+      "source": 0,
+      "turn": 1,
+      "decisions": 32,
+      "weight_mass": 0.16666666666666666,
+      "mean_losses": {
+        "same_memory_squared_response": 14.29222343318933,
+        "cross_term": 15.018629925526378,
+        "teacher_displacement_squared": 63.10929313768391,
+        "full_native_squared_response": 92.42014649639962
+      },
+      "mean_squared_response_energy": {
+        "target": 146.92065432980405,
+        "baseline": 127.07627942311534,
+        "native": 225.65109768442517
+      },
+      "negative_cross_terms": 7
+    },
+    {
+      "source": 1,
+      "turn": 0,
+      "decisions": 20,
+      "weight_mass": 0.16666666666666666,
+      "mean_losses": {
+        "same_memory_squared_response": 22.183173750644276,
+        "cross_term": 1.3530345794760241,
+        "teacher_displacement_squared": 25.56520373106998,
+        "full_native_squared_response": 49.10141206119028
+      },
+      "mean_squared_response_energy": {
+        "target": 223.36120937875293,
+        "baseline": 171.3779531559413,
+        "native": 236.6333760310347
+      },
+      "negative_cross_terms": 12
+    },
+    {
+      "source": 1,
+      "turn": 1,
+      "decisions": 14,
+      "weight_mass": 0.16666666666666666,
+      "mean_losses": {
+        "same_memory_squared_response": 34.89623399679595,
+        "cross_term": 33.64211470749306,
+        "teacher_displacement_squared": 71.27888941088274,
+        "full_native_squared_response": 139.81723811517176
+      },
+      "mean_squared_response_energy": {
+        "target": 155.7227135264918,
+        "baseline": 104.22824477016755,
+        "native": 288.3407357873098
+      },
+      "negative_cross_terms": 2
+    },
+    {
+      "source": 2,
+      "turn": 0,
+      "decisions": 32,
+      "weight_mass": 0.16666666666666666,
+      "mean_losses": {
+        "same_memory_squared_response": 6.51561115705887,
+        "cross_term": 2.5553194243286304,
+        "teacher_displacement_squared": 23.02179998523706,
+        "full_native_squared_response": 32.09273056662456
+      },
+      "mean_squared_response_energy": {
+        "target": 130.36021624407442,
+        "baseline": 113.95020525660601,
+        "native": 146.78542287482952
+      },
+      "negative_cross_terms": 15
+    },
+    {
+      "source": 2,
+      "turn": 1,
+      "decisions": 32,
+      "weight_mass": 0.16666666666666666,
+      "mean_losses": {
+        "same_memory_squared_response": 11.779884657951314,
+        "cross_term": 2.2144351565205844,
+        "teacher_displacement_squared": 61.95477193854544,
+        "full_native_squared_response": 75.94909175301734
+      },
+      "mean_squared_response_energy": {
+        "target": 124.65316671867564,
+        "baseline": 111.6856234756522,
+        "native": 212.6125704494222
+      },
+      "negative_cross_terms": 15
+    }
+  ],
+  "scope": "Saved-only unnormalized squared response units. Equal probability mass does not equalize response energy or gradient magnitude. No fit, new model calls or downstream consumer evaluation."
+}
