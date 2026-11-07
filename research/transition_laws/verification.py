@@ -114,7 +114,35 @@ def _verify_logits(root: Path, record: Mapping[str, Any]) -> dict[str, Any]:
     return result
 
 
-def _verify_turns(record: Mapping[str, Any]) -> dict[str, Any]:
+def _input_budget(root: Path, case_id: Any, turn_index: int) -> int | None:
+    case = str(case_id)
+    candidates = [root / "raw" / "source-inputs.json", root / "raw" / "monitor-inputs.json", root / "raw" / "heldout-inputs.json", root / "payload" / "inputs.json", root / "inputs.json"]
+    for path in candidates:
+        if not path.is_file():
+            continue
+        try:
+            value = _load(path)
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(value, Mapping):
+            groups = value.values()
+        elif isinstance(value, list):
+            groups = (value,)
+        else:
+            continue
+        for group in groups:
+            if not isinstance(group, list):
+                continue
+            for item in group:
+                if isinstance(item, Mapping) and str(item.get("id")) == case:
+                    try:
+                        return int(item.get("budget"))
+                    except (TypeError, ValueError):
+                        pass
+    return None
+
+
+def _verify_turns(root: Path, record: Mapping[str, Any]) -> dict[str, Any]:
     answers, _, positions = _turn_answers(record)
     turns = record.get("turns", [])
     if isinstance(turns, Mapping):
@@ -141,6 +169,11 @@ def _verify_turns(record: Mapping[str, Any]) -> dict[str, Any]:
         if prefill_int is None:
             errors.append(f"turn {turn_index} has no prefill position")
         budget = turn.get("budget", record.get("budget"))
+        # Older C labels left TurnInfo.budget at zero even though the RUN
+        # command carried the correct case budget.  Derive that declared
+        # input budget for verification; never rewrite the raw label.
+        if budget in (None, 0):
+            budget = _input_budget(root, record.get("case_id", record.get("case")), turn_index)
         if budget is not None and len(ids) > int(budget):
             errors.append(f"turn {turn_index} exceeds budget")
         if turn.get("stopped") is True and turn.get("truncated") is True:
@@ -148,7 +181,7 @@ def _verify_turns(record: Mapping[str, Any]) -> dict[str, Any]:
         clock_count += len(ids)
     if clock_count != len(answers):
         errors.append("flattened answer count differs")
-    return {"turn_count": len(turns) if isinstance(turns, list) else 0, "answer_count": len(answers), "decision_count": len(positions), "errors": errors, "status": "valid" if not errors else "invalid"}
+    return {"turn_count": len(turns) if isinstance(turns, list) else 0, "answer_count": len(answers), "decision_count": len(positions), "errors": errors, "status": "valid" if not errors else "invalid", "budget_source": "turn-label-or-input-manifest"}
 
 
 def _verify_token_files(root: Path, record: Mapping[str, Any]) -> dict[str, Any]:
@@ -271,13 +304,17 @@ def _verify_counters(record: Mapping[str, Any]) -> dict[str, Any]:
 def _receipt_status(receipt: Any) -> dict[str, Any]:
     if not isinstance(receipt, Mapping):
         return {"status": "missing"}
-    if "fingerprint" not in receipt:
+    body = receipt.get("receipt") if isinstance(receipt.get("receipt"), Mapping) else receipt
+    if not isinstance(body, Mapping) or "fingerprint" not in body:
         return {"status": "present", "fingerprint_checked": False}
-    copy_value = dict(receipt)
+    copy_value = dict(body)
     wanted = copy_value.pop("fingerprint")
-    encoded = json.dumps(copy_value, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode()
+    encoded = json.dumps(copy_value, sort_keys=True, separators=(",", ":"), ensure_ascii=True, allow_nan=False).encode()
     actual = hashlib.sha256(encoded).hexdigest()
-    return {"status": "valid" if actual == wanted else "invalid", "fingerprint_checked": True, "expected": wanted, "actual": actual}
+    boundary_ok = True
+    if isinstance(receipt.get("before"), str) or isinstance(receipt.get("after"), str):
+        boundary_ok = body.get("parent") == receipt.get("before") and body.get("result") == receipt.get("after")
+    return {"status": "valid" if actual == wanted and boundary_ok else "invalid", "fingerprint_checked": True, "boundary_matches": boundary_ok, "expected": wanted, "actual": actual}
 
 
 def _verify_source_manifest(root: Path, report: Mapping[str, Any]) -> dict[str, Any]:
@@ -356,7 +393,7 @@ def verify(target: str | os.PathLike[str]) -> dict[str, Any]:
         if profile_errors:
             failures.append(f"run group {group_label} profile: {'; '.join(profile_errors)}")
         for label, record, _group_metrics in _path_records(str(group_label), value):
-            turn_check = _verify_turns(record)
+            turn_check = _verify_turns(root, record)
             logits_check = _verify_logits(root, record)
             authority = token_authority(record, root)
             token_files = _verify_token_files(root, record)

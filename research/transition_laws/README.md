@@ -2,6 +2,8 @@
 
 This finite experiment replaces gate/up construction across all28 Qwen2.5-1.5B MLPs with rank256 shared input factors. It compares a native-receiver compiler against exactly one receiver refresh using the first candidate's own states, with equal factor budget and randomized-SVD dimensions. Full candidate residual/memory, native attention/down/SiLU and vocabulary computation remain.
 
+Completed job `job-a6811af393aa`: physical counters verify 40.895% nominal whole-token linear omission. The refresh improves source coverage and local writes, but both all-layer programs lose useful conversation behavior (0/8 strict structured answers). Read [FINDINGS.md](FINDINGS.md), [ASTRA_REVIEW.md](ASTRA_REVIEW.md) and the [qualified audit](runs/job-a6811af393aa/verification.json), including the preserved frozen-verifier refusal and raw budget-metadata correction. The artifact-only tokenizer audit independently reconstructs all84 answer decodes.
+
 Read [PLAN.md](PLAN.md), [MATH.md](MATH.md) and [REVIEW.md](REVIEW.md) before interpreting results. Prior multi-layer/all-layer pruning is already implemented; the new comparison is substantial factor-map replacement with controlled state-coverage refresh.
 
 From the domains workspace:

@@ -12,7 +12,7 @@ Related evidence:
 - [`compact_all/FINDINGS.md`](../composition/compact_all/FINDINGS.md) records exact all-layer
   callback and byte-cache execution, but also shows that dense weights and linear work remained
   paid.
-- [`contextual-union/FINDINGS.md`](../../experiments/2026-11-06-contextual-union/FINDINGS.md)
+- [`contextual-union/FINDINGS.md`](../../../saturn/experiments/2026-11-06-contextual-union/FINDINGS.md)
   records rank-64/128 receiver-aware factors at a selected MLP layer, including own-state drift
   and the difference between selected-layer MAC savings and whole-model cost.
 - [`operand_composition/analysis.py`](../operand_composition/analysis.py) defines the recent
@@ -116,9 +116,9 @@ For the pinned dimensions,
  \end{array}
 \]
 
-Thus the factor graph is 45.39% of the selected MLP linear work and saves 54.61% of that
-selected work, before accounting for memory traffic, launch overhead, attention, normalization,
-and the retained down projection. Per layer the factor coefficients contain
+Thus the factor graph is 45.40% of the selected MLP linear work and saves 54.60% of that
+selected work. The retained down projection is included; memory traffic, launch overhead,
+attention and normalization are additional costs. Per layer the factor coefficients contain
 \(rd+2rh=4{,}980{,}736\) FP32 values, or 19,922,944 bytes. Across 28 layers that is
 139,460,608 FP32 values, or 557,842,432 bytes before metadata. These are storage arithmetic, not
 a measured latency claim.
@@ -145,7 +145,7 @@ For layer \(\ell\), define
 \]
 
 Let \(Q_{0,\ell}\in\mathbb R^{d\times r}\) be the rank-\(r\) basis returned by the fixed
-uncentered randomized SVD of \(R_{\rm nat,\ell}\), with oversampling \(q=272\), two power
+uncentered randomized SVD of \(R_{\rm nat,\ell}\), with search width \(q=272\) (16 extra directions), two power
 iterations, a fixed per-layer seed, and max-pivot-positive row signs. It approximates the top
 right singular subspace; it is not the exact optimum of a full SVD. Then
 \(E_{0,\ell}=Q_{0,\ell}^{\mathsf T}\), up to the declared sign/order convention. Its source projection is

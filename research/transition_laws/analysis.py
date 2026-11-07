@@ -330,7 +330,11 @@ def token_authority(record: Mapping[str, Any], root: Path | None = None) -> dict
         turn_ids.extend(_as_ints(turn.get("answer_ids", turn.get("generated_ids"))))
     status = "unavailable"
     if consumed and turn_ids:
-        status = "exact" if consumed == turn_ids else "mismatch"
+        # C labels expose the complete consumed array separately; turn JSON
+        # normally carries only answer IDs.  A shorter turn reconstruction is
+        # therefore an authority limitation, not a token mismatch.  The
+        # verifier joins the consumed file to prefill/final boundaries.
+        status = "exact" if consumed == turn_ids else ("declared_only" if len(turn_ids) < len(consumed) else "mismatch")
     elif consumed:
         status = "declared_only"
     return {

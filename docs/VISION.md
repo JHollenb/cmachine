@@ -20,6 +20,22 @@ or a measured approximate version for a declared consumer, input domain and hori
 
 Closure alone does not establish a saving: C=identity and G=F already works. A useful program must account for its bootstrap, operand resolution, updates, reads, stored coefficients and original operations still called. It may retain full state while replacing some operators. Compact whole-chat state is not a prerequisite for every useful replacement.
 
+## Agreed storage constraint
+
+The practical chat target is bounded active working memory with total retained storage allowed to grow. We do not require an entire conversation and every recoverable detail to fit inside one fixed-size state. The closed compact encoding above remains a stronger research question, rather than a prerequisite for useful persistent chat. This constraint was explicitly relaxed on November 6, 2026. Database integration is on hold; this decision does not select or implement a backing-store mechanism.
+
+Let c be active working state and A retained backing information. A permitted future design has the form
+
+\[
+r_t=\operatorname{read}(A_t,c_t,u_t),\qquad
+(c_{t+1},y_t)=G_\theta(c_t,u_t,r_t),\qquad
+A_{t+1}=\operatorname{write}(A_t,c_t,u_t,r_t,y_t).
+\]
+
+Active state, staged reads, hot indexes, attention scratch and recovery buffers must fit the declared working budget. Backing information may grow within deployment limits. Report parameter/program bytes, active bytes, backing bytes, reads/writes, transfers, encoding and replay separately. Small resident state does not imply small total storage, cheap retrieval or a serving speedup. A growing archive permits retention beyond the active window; it does not by itself guarantee correct selection or use of a fact.
+
+Any future branch/rollback contract must identify the visible backing revision as well as the model state. Arbitrary exact recall is constrained by total retained information, rather than by active storage alone. Existing numerical and execution-preservation checks keep their stated scope, and native fidelity remains separate from task correctness. The current bounded cache still discards evicted rows without an archival read path; no new persistence, retrieval or context-limit capability is claimed by this design change.
+
 ## The simplifying assumption
 
 Search for a **bounded-cost family of representations and operations closed under the reads, writes and queries actually admitted by the program**. Discarded information must either remain irrelevant to those consumers or have an explicit, measured approximation effect. One fixed tiny subspace for all possible conversations is not supported by current evidence.

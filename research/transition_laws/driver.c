@@ -773,6 +773,7 @@ static void run_case(PathInfo *r) {
     double started = clock_seconds();
 
     TurnInfo *t0 = &r->turns[0];
+    t0->budget = r->budget;
     t0->start = 0;
     t0->skipped = 0;
     t0->ingested = prompt_count;
@@ -795,6 +796,7 @@ static void run_case(PathInfo *r) {
     save_boundary(r, t0, "final", 0, r->count);
 
     TurnInfo *t1 = &r->turns[1];
+    t1->budget = r->budget;
     t1->start = r->count;
     t1->skipped = r->ids[r->count - 1] == follow[0];
     t1->ingested = follow_count - t1->skipped;
