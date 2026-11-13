@@ -145,3 +145,12 @@ build/reuse-experiment: build/tcm-cuda tests/reuse_experiment.c tests/assay_io.h
 	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/reuse_experiment.o -lcublas -lm -o $@
 
 .PHONY: reuse-experiment
+
+# Analysis-overhead timing driver (research/overhead_timing).
+overhead-run: build/overhead-run
+
+build/overhead-run: build/tcm-cuda tests/overhead_run.c
+	$(CC) $(CFLAGS) -Isrc -c tests/overhead_run.c -o build/overhead_run.o
+	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/overhead_run.o -lcublas -lm -o $@
+
+.PHONY: overhead-run

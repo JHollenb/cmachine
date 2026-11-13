@@ -1,0 +1,1 @@
+{"steps": 64, "warmup_steps": 8, "smoke_steps": 4, "c_deadline_s": 200, "torch_deadline_s": 240, "sample_interval_s": 0.5}
