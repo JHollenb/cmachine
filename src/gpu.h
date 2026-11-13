@@ -41,6 +41,7 @@ void gpu_sync(void);
  * 2 source BF16 with FP32 tiles. Tiled profiles own one loaded model; release
  * their shared tile after model destruction before selecting another profile. */
 void gpu_weight_configure(int);
+int gpu_weight_profile(void);
 float *gpu_owned_weight(TcmGpu *,const void *,uint32_t,size_t,int,int,int);
 size_t gpu_owned_weight_bytes(const float *,size_t);
 void gpu_owned_embedding(float *,const float *,int,int);

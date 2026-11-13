@@ -17,6 +17,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 **Verified integration:** source commit `7a6824dd9b640cfa785fa56cc4e7cfae14193f1c` passed guarded Beast job `job-f645fcd76a75`. The [tracked proof bundle](docs/evidence/integration-7a6824d/README.md) contains the exact executed sources, raw results and receipts, with an offline verifier. All 84 native/reference protocol entries agree, compressed profiles reproduce historical behavior, and real overwrite/abort/retry checks pass. The tested build is installed at `/mnt/big/cmachine/current`; bounded delayed-recall failures remain.
 
 - [Architecture and state contracts](docs/ARCHITECTURE.md)
+- [Native circuit inspection and finite-response mathematics](docs/CIRCUIT-MATH.md) · [proposal](docs/CIRCUIT-MATH-PROPOSAL.md) (model-free verification complete; pretrained CUDA qualification pending).
 - [Supported models, numerical profiles and measured logit error](docs/SUPPORTED-MODELS.md)
 - [Supported capabilities and model computations](docs/CAPABILITIES.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)

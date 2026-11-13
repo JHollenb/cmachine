@@ -1,0 +1,17 @@
+make: Nothing to be done for `all'.
+mkdir -p build
+cc -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c src/circuit_math.c src/qwen_circuit.c tests/gpu_stub.c tests/circuit_mechanics.c -lm -o build/circuit-mechanics
+./build/circuit-mechanics
+{"schema":"tcm-circuit-inspection-v1","model_digest":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","session_id":1,"epoch":2,"parent_lineage":6,"result_lineage":11,"position":3,"consumed_token":9,"consumer":{"token":3,"contrast":4,"native_margin":0.7815396785736084},"layer":1,"head":2,"kv_group":1,"source":1,"probability":0.2480766773223877,"routing_partial":0.011758054430213282,"source_value_dot":0.091256054761726407,"native_return_dot":0.04385919925268103,"centered_value_dot":0.047396855509045377,"payload_gradient_norm":0.29350727456832781,"probability_sum":1.0000000149011612,"routing_gauge_rounding_residual":1.3251886497867016e-09,"neuron":3,"gate":-0.18738730251789093,"up":0.55575305223464966,"native_product":-0.047206081449985504,"product_partial":-0.69811030168796218,"parameter_refs":["model.layers.1.mlp.gate_proj.weight[3,:]","model.layers.1.mlp.up_proj.weight[3,:]","model.layers.1.mlp.down_proj.weight[:,3]"],"attention_parameter_refs":["model.layers.1.self_attn.q_proj.weight[4:6,:]","model.layers.1.self_attn.k_proj.weight[2:4,:]","model.layers.1.self_attn.v_proj.weight[2:4,:]","model.layers.1.self_attn.o_proj.weight[:,4:6]"],"numerical_profile":"native-FP32-ports/FP64-smooth-linearization","derivative_scope":"fixed-prior-KV-first-readout","mechanics_status":"captured","terminal_status":"no-semantic-certification"}
+{"check":"native-tiny-consumer-central-difference","max_absolute_error":0.00025065756268305428,"capture_host_bytes":3184,"adjoint_host_bytes":2208}
+{"check":"consumer-source-frequency","coefficient_sum":0.043859201231422673,"native_scalar":0.04385919925268103,"native_remainder":-1.9787416427607951e-09}
+{"check":"shared-KV-source-to-consumer","max_absolute_error":1.336324285816648e-05}
+{"check":"finite-native-MLP","gate":0.027799880369095097,"up":-0.26137026093995935,"interaction":0.13067075913363924,"arithmetic_remainder":-7.7229145562798931e-09,"total":-0.10289962916013955,"normalization_remainder_max_abs":1.9615693714475357e-07,"projection_remainder_max_abs":6.9529293211800791e-08,"product_secant_remainder_max_abs":2.0236397946238327e-08}
+circuit mechanics: passed
+./build/state-mechanics
+{"scope":"model-free toy lifecycle","nested_replay":true,"pending_policy":true,"foreign_stale_handles":true,"overflow_atomic":true,"step_and_observation_parity":true,"partial_reset":true,"valid_kv_and_full_logits_exact":true,"plane_guards_and_work_counts":true,"plane_max_write_relative_error":1.42807967e-07,"subspace_lifecycle_and_work_counts":true,"subspace_arithmetic_control_max_relative_error":2.64744473e-07,"writer_checks":true,"writer_parent_lineage_checks":true,"stack_limit":64,"host_marker_bytes":9216}
+./build/operand-mechanics
+operand programs: multilayer parity, rewind, binding, lexical parity/coverage/tamper and covariance VJP pass
+./build/bounded-mechanics
+bounded allocation, own current rows, nested overwrite/replay, accepted-sample abort/RNG/logit restoration, refusals and reset pass
+make: Nothing to be done for `sanitize'.

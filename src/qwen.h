@@ -56,10 +56,13 @@ typedef enum {
     QWEN_MLP_INPUT,QWEN_MLP_GATE,QWEN_MLP_UP,QWEN_MLP_RETURN,QWEN_OUTPUT,
     QWEN_ATTENTION_WRITE,QWEN_RAW_RECEIVER,
     QWEN_CONSUMED_ATTENTION_WRITE,QWEN_CONSUMED_MLP_WRITE,
+    QWEN_ATTENTION_PROBABILITIES,QWEN_MLP_PRODUCT,
     QWEN_PORT_COUNT
 } QwenPort;
 /* Observers may read the device pointer during this call only. They are not cuts
- * or mutation callbacks. No observer, transfer or synchronization runs by default. */
+ * or mutation callbacks. No observer, transfer or synchronization runs by default.
+ * An attached observer with observe_layer=-1 sees every layer at its selected
+ * position. Probability rows are packed [qheads,position+1], native cache only. */
 typedef void (*QwenObserver)(void *,int,int,QwenPort,const float *,size_t);
 /* Explicit cache backend. A selected layer publishes its current K/V and reads
  * its own memory before returning attention. Guards run before begin/restore;

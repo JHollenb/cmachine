@@ -1,0 +1,11 @@
+{
+  "base": "8822497",
+  "base_source_sha256": {
+    "src/qwen.c": "9860c088ac9a40374a3c756db054a9b2b5cf8553bb9345b18b40aaa5e98f6e59",
+    "tests/gpu_stub.c": "97f59a40db88a12f8c04f36f8a5a4a2301e00f38acf48ef63d2dae588a2cb547"
+  },
+  "observations": "eight native steps: full logits, valid all-layer KV, position and pending token",
+  "bytes": 4032,
+  "byte_identical": true,
+  "sha256": "819e7acd26b552fdafe83c0ecda19034a61f4b89533d0ace4ae085691bf2d1cf"
+}

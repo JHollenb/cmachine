@@ -1,6 +1,7 @@
 /* Tiny CPU implementation for model-free state-lifecycle tests. This does not
  * qualify CUDA numerical behavior and is never linked into the real executor. */
 #include "gpu.h"
+int gpu_weight_profile(void){return 0;}
 #include <assert.h>
 #include <math.h>
 #include <stdlib.h>
@@ -40,10 +41,13 @@ void gpu_cache(float *cache,const float *row,int heads,int d,int capacity,int po
 }
 void gpu_attention(TcmGpu *g,float *out,const float *q,const float *k,const float *v,float *scores,int qheads,int kvheads,int d,int capacity,int n){
     (void)g;for(int h=0;h<qheads;h++){
-        int group=h/(qheads/kvheads);float *p=scores+h*capacity,max=-INFINITY,sum=0;
+        int group=h/(qheads/kvheads);float *p=scores+h*n,max=-INFINITY,sum=0;
         for(int t=0;t<n;t++){float dot=0;for(int i=0;i<d;i++)dot+=q[h*d+i]*k[((size_t)group*capacity+t)*d+i];p[t]=dot/sqrtf((float)d);if(p[t]>max)max=p[t];}
         for(int t=0;t<n;t++){p[t]=expf(p[t]-max);sum+=p[t];}
         for(int i=0;i<d;i++){float a=0;for(int t=0;t<n;t++)a+=p[t]/sum*v[((size_t)group*capacity+t)*d+i];out[h*d+i]=a;}
+        /* Match CUDA's published packed, normalized score scratch. Preserve
+         * the stub's historical return arithmetic above. */
+        for(int t=0;t<n;t++)p[t]/=sum;
     }
 }
 void gpu_swiglu(float *gate,const float *up,int n){for(int i=0;i<n;i++)gate[i]=gate[i]/(1+expf(-gate[i]))*up[i];}

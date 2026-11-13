@@ -1,0 +1,136 @@
+{
+  "mechanics_status": "locally-qualified",
+  "instrument_status": "tiny-native-equations-and-independent-numerics",
+  "terminal_status": "pretrained-CUDA-and-semantics-unqualified",
+  "checks": [
+    {
+      "name": "native-and-sanitizers",
+      "command": [
+        "rtk",
+        "proxy",
+        "make",
+        "all",
+        "circuit-mechanics",
+        "state-mechanics",
+        "operand-mechanics",
+        "bounded-mechanics",
+        "sanitize"
+      ],
+      "exit_code": 0,
+      "seconds": 2.9021819999907166
+    },
+    {
+      "name": "python-suite",
+      "command": [
+        "rtk",
+        "proxy",
+        "/Users/jakeholl/domains/common/bin/common",
+        "exec",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.6833899999037385
+    },
+    {
+      "name": "frontend-build",
+      "command": [
+        "rtk",
+        "proxy",
+        "cc",
+        "-O1",
+        "-g",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-ffp-contract=off",
+        "-fsanitize=address,undefined",
+        "-Isrc",
+        "src/model.c",
+        "src/qwen.c",
+        "src/circuit_math.c",
+        "src/qwen_circuit.c",
+        "tests/gpu_stub.c",
+        "tools/circuit_inspect.c",
+        "-lm",
+        "-o",
+        "build/tcm-circuit-frontend"
+      ],
+      "exit_code": 0,
+      "seconds": 1.9681145418435335
+    },
+    {
+      "name": "original-core",
+      "command": [
+        "rtk",
+        "proxy",
+        "/Users/jakeholl/domains/common/bin/common",
+        "exec",
+        "python",
+        "qualification/circuit-math-20261112/verify_native_reference.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.0675280410796404
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "rtk",
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.16857450013048947
+    },
+    {
+      "name": "frontend-malformed",
+      "command": [
+        "rtk",
+        "proxy",
+        "build/tcm-circuit-frontend"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "name": "frontend-malformed",
+      "command": [
+        "rtk",
+        "proxy",
+        "build/tcm-circuit-frontend",
+        "bad",
+        "--target",
+        "x",
+        "--tokens",
+        "1"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "name": "frontend-malformed",
+      "command": [
+        "rtk",
+        "proxy",
+        "build/tcm-circuit-frontend",
+        "bad",
+        "--target",
+        "1",
+        "--unknown",
+        "2",
+        "--tokens",
+        "1"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2
+    }
+  ]
+}

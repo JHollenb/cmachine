@@ -7,6 +7,7 @@ static const size_t tile_bytes=(size_t)1024*8960*4;
 static size_t permanent_matrix_bytes,rank1_bytes;
 static unsigned long long matvec_calls,tile_calls,embedding_calls;
 extern "C" void gpu_weight_configure(int mode){if(mode<0||mode>2||weight_count||weight_tile)exit(2);weight_mode=mode;}
+extern "C" int gpu_weight_profile(void){return weight_mode;}
 extern "C" float *gpu_owned_weight(TcmGpu *g,const void *data,uint32_t dtype,size_t count,int rank,int rows,int columns){
     (void)g;
     if(!weight_mode)return gpu_weight(data,dtype,count);

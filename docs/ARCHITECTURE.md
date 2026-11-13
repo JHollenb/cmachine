@@ -63,6 +63,8 @@ This cursor stack does not restore arbitrarily overwritten old cache rows or ser
 
 ## Observation and replacement
 
+The optional [circuit inspector](CIRCUIT-MATH.md) captures original native operands and connects finite-response, writer/reader, attention, curvature and frequency mathematics to a first-readout consumer. It adds no trained predictor or serving replacement. The [proposal](CIRCUIT-MATH-PROPOSAL.md) separates implemented APIs from remaining MDB UI and pretrained qualification work.
+
 Observers receive selected borrowed device pointers during callbacks. They are read-only ports, not mutation callbacks or resumable StateCuts. Tracing is off by default. Captures add synchronization and transfer cost and are not neutral timing instrumentation.
 
 The experimental APIs distinguish computed writes from the operands actually added to the residual. Their binding scopes differ:

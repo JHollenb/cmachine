@@ -65,11 +65,11 @@ void qwen_session_free(QwenSession *s){
     memset(s,0,sizeof(*s));
 }
 const char *qwen_port_name(QwenPort port){
-    static const char *names[]={"input","query","key","value","attention","mlp_input","mlp_gate","mlp_up","mlp_return","output","attention_write","raw_receiver","consumed_attention_write","consumed_mlp_write"};
+    static const char *names[]={"input","query","key","value","attention","mlp_input","mlp_gate","mlp_up","mlp_return","output","attention_write","raw_receiver","consumed_attention_write","consumed_mlp_write","attention_probabilities","mlp_product"};
     return port>=0&&port<QWEN_PORT_COUNT?names[port]:NULL;
 }
 static void observe(QwenSession *s,QwenPort port,const float *data,size_t count){
-    if(s->observer&&s->position==s->observe_position&&s->layer==s->observe_layer)
+    if(s->observer&&s->position==s->observe_position&&(s->layer==s->observe_layer||s->observe_layer==-1))
         s->observer(s->observer_context,s->position,s->layer,port,data,count);
 }
 int qwen_begin_token(QwenSession *s,int token){
@@ -259,6 +259,7 @@ static int advance_layer(QwenSession *s,QwenPlane *compile,const QwenPlane *p,Qw
             gpu_attention(m->gpu,s->attention,s->q,s->keys+base,s->values+base,s->scores,m->qheads,m->kvheads,m->head,s->capacity,s->position+1);
         }
         observe(s,QWEN_ATTENTION,s->attention,(size_t)d);
+        if(s->cache_slots[i]>=0)observe(s,QWEN_ATTENTION_PROBABILITIES,s->scores,(size_t)m->qheads*(s->position+1));
         gpu_matvec(m->gpu,l->o,d,d,s->attention,s->projected);
         /* A read-guard refusal can have updated current cache and retention
          * slots. Cache callbacks must be idempotent within this token or require
@@ -327,6 +328,7 @@ static int advance_layer(QwenSession *s,QwenPlane *compile,const QwenPlane *p,Qw
                 gate->work->polynomial_swiglu++;
                 if(!gpu_identical_finite(m->gpu,s->gate,s->gate,m->intermediate))return -2;
             }else{gpu_swiglu(s->gate,s->up,m->intermediate);if(gate)gate->work->native_swiglu++;}
+            observe(s,QWEN_MLP_PRODUCT,s->gate,(size_t)m->intermediate);
             gpu_matvec(m->gpu,l->down,m->intermediate,d,s->gate,s->projected);
             if(work)work->down_matvecs++;
             if(gate&&!gpu_identical_finite(m->gpu,s->projected,s->projected,d))return -2;

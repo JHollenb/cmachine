@@ -73,6 +73,24 @@ build/operand-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h
 
 .PHONY: operand-mechanics
 
+# Optional circuit inspection; no model download, CUDA, or learned dictionary.
+circuit-mechanics: build/circuit-mechanics
+	./build/circuit-mechanics
+
+build/circuit-mechanics: src/circuit_math.c src/circuit_math.h src/qwen_circuit.c src/qwen_circuit.h src/model.c src/qwen.c src/qwen.h src/gpu.h src/machine.h src/qwen_operands.inc tests/gpu_stub.c tests/circuit_mechanics.c tests/state_mechanics.c tests/writer_mechanics.h tests/gate_mechanics.h
+	mkdir -p build
+	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c src/circuit_math.c src/qwen_circuit.c tests/gpu_stub.c tests/circuit_mechanics.c -lm -o $@
+.PHONY: circuit-mechanics
+
+# Standalone opt-in native inspector. Original serving executable stays native.
+circuit-cuda: build/tcm-circuit
+build/tcm-circuit: build/tcm-cuda src/circuit_math.c src/circuit_math.h src/qwen_circuit.c src/qwen_circuit.h tools/circuit_inspect.c
+	$(CC) $(CFLAGS) -Isrc -c src/circuit_math.c -o build/circuit_math.o
+	$(CC) $(CFLAGS) -Isrc -c src/qwen_circuit.c -o build/qwen_circuit.o
+	$(CC) $(CFLAGS) -Isrc -c tools/circuit_inspect.c -o build/circuit_inspect.o
+	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/circuit_math.o build/qwen_circuit.o build/circuit_inspect.o -lcublas -lm -o $@
+.PHONY: circuit-cuda
+
 bounded-mechanics: build/bounded-mechanics
 	./build/bounded-mechanics
 

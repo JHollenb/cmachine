@@ -1,0 +1,39 @@
+{
+  "schema": "cmachine-circuit-source-seal-v1",
+  "base": "882249783613f3350a9f11641c23b022b54dd929",
+  "source_sha256": {
+    "Makefile": "c0903f6b8b73e59526244ba407b210f3254d64100a6851aac8f47100b16fe127",
+    "README.md": "99a35ccc87832413751a610a939a1fbf271de8046a1df4576da7f7f66120ad5a",
+    "docs/ARCHITECTURE.md": "14777b39f7bcfb3d662469df1fdfde97a65afec9a5fefad27ab4ed755a9b4559",
+    "docs/CIRCUIT-MATH-PROPOSAL.md": "6cfa93b56458194069b9016bb0a5a1b323f2afb5db85e8d76b03e095df017b84",
+    "docs/CIRCUIT-MATH.md": "21f4a951872d91204f124452db40da7dc0d7c40d4fadd277acc9db4de12ab140",
+    "src/gpu.h": "94aae11523975e6b3654a534ed3bfa9f1f7a8eadef580a0a24f8b94009d66218",
+    "src/qwen.c": "b510ac8bad50a4776e54984042a15c0bda0284131a3c4cb2621a2cfa6472c7f1",
+    "src/qwen.h": "be5bceacb2a9d1ba3c44ef9743b1fd509eeb383ff9c68cb29d9ff04440a783df",
+    "src/qwen_weights.inc": "281d72b22d01a9a526e74093bcfcd29a06d37324e9bb172891ab62ce4adb2369",
+    "src/circuit_math.c": "bc0ae68cc5d004cd07c5770ff549c9e67d105cc9f91327d67683fec4909f52ee",
+    "src/circuit_math.h": "3b7cc627158a71fe9684c9add8c8412a9d55eb11e16f7dee55b1fe49352abe6d",
+    "src/qwen_circuit.c": "f778afce23252eb80ad204c1678e5330ee85e67f8aaaf903d594c18011cffc05",
+    "src/qwen_circuit.h": "b554c2fedceb6cb84fed519ad53f5438a457086a20275bf01a9559bd5cc08973",
+    "tests/gpu_stub.c": "aa5cbc8f28388d51637973569375d62f3a361589cad6083724a9e1e02ab71bc5",
+    "tests/circuit_mechanics.c": "a4a0892f79ef7e036b23413a44c74efdd7d11934a24bbec377421ebc1ece6515",
+    "tests/test_circuit_math.py": "5ad9d2767b090de5a328535150e4a35fae2486660b2cab0db56aa5812208ee35",
+    "tools/circuit_inspect.c": "32372f71321061e804c53a3623b0cfbb29974a3352bff6a0d0c9971a55d86c4f",
+    "qualification/circuit-math-20261112/verify_native_reference.py": "0fc807933fac456048ff49934c23f8a4c80b8cbc3a5bfc9d4358be171f8cf61a",
+    "qualification/circuit-math-20261112/README.md": "28be06a0ec15aeca5d1cc76e23902dda2cf5692ecdb89774fb037d3949ec92e6"
+  },
+  "evidence_sha256": {
+    "checks.json": "372d70afec8a276d7fc1f8f21ca61aec04709deba2b592b5655c42e6721d0b2b",
+    "diff-check.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diff-check.stdout.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "frontend-build.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frontend-build.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-and-sanitizers.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-and-sanitizers.stdout.txt": "fff1e5b0ba1b8a33ca2fc99eea4b0b8b6b1779472efafd25cfee652b367aaeb2",
+    "original-core.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-core.stdout.txt": "97b844258fe5dfc27612d603b932c163b7d90b5b03b5d966f9d865b5d2dc25a5",
+    "python-suite.stderr.txt": "22e2cf15752274fa9c567e9f3e731aa653fc84135e6ecd6e642c8369e7e9382a",
+    "python-suite.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results.json": "a11a76cc387583e3e9a2c4d29b52081001264763dcbedc114ba35a4f2f76b910"
+  }
+}
