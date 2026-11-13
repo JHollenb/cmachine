@@ -72,6 +72,13 @@ static void linear(const IsaLinear *l,const float *x,float *y) {
 static float gelu(float x){return 0.5f*x*(1.0f+erff(x*0.7071067811865475244f));}
 static float silu(float x){return x/(1.0f+expf(-x));}
 static float softplus(float x){return x>20.0f?x:log1pf(expf(x));}
+const char *isa_port_name(IsaPort port){
+    static const char *names[]={"mix_input","mix_u","selection","timestep","retention","injection","scan_state","scan_read","output_gate","gated","post_input","post_normalized","post_pre","post_activation","post_write","block_output"};
+    return port>=0&&port<ISA_PORT_COUNT?names[port]:NULL;
+}
+static void isa_observe(IsaSession *s,unsigned layer,IsaPort port,const float *data,size_t count){
+    if(s&&s->observer)s->observer(s->observer_context,s->state.row,layer,port,data,count);
+}
 static void softmax(float *x,unsigned n){float max=x[0],sum=0;for(unsigned i=1;i<n;i++)if(x[i]>max)max=x[i];for(unsigned i=0;i<n;i++){x[i]=expf(x[i]-max);sum+=x[i];}for(unsigned i=0;i<n;i++)x[i]/=sum;}
 unsigned isa_argmax(const float *x,unsigned n){unsigned k=0;for(unsigned i=1;i<n;i++)if(x[i]>x[k])k=i;return k;}
 uint64_t isa_bits(const float *x){uint64_t v=0;for(unsigned i=0;i<64;i++)if(x[i]>0)v|=UINT64_C(1)<<i;return v;}
@@ -104,6 +111,8 @@ int isa_begin(IsaSession *s,const unsigned char *window,size_t n) {
 }
 static void mixer(IsaSession *s,float hidden[48],unsigned layer) {
     IsaState *v=&s->state;const IsaMixer *m=&s->model->mixer[layer];float norm[48],p[192],u[96],sel[9],dt[96],gated[96],out[48];
+    float retention[96][4],injection[96][4],steps[96],reads[96],gates[96];
+    isa_observe(s,layer,ISA_MIX_INPUT,hidden,48);
     float sq=0;for(unsigned i=0;i<48;i++)sq+=hidden[i]*hidden[i];float scale=1.0f/sqrtf(sq/48+1e-5f);
     for(unsigned i=0;i<48;i++)norm[i]=hidden[i]*scale;linear(&m->input,norm,p);
     for(unsigned i=0;i<96;i++){
@@ -111,23 +120,34 @@ static void mixer(IsaSession *s,float hidden[48],unsigned layer) {
         v->conv[layer][0][i]=v->conv[layer][1][i];v->conv[layer][1][i]=p[i];u[i]=silu(c);
     }
     linear(&m->select,u,sel);linear(&m->dt,sel,dt);
+    isa_observe(s,layer,ISA_MIX_U,u,96);isa_observe(s,layer,ISA_SELECTION,sel,9);
     for(unsigned i=0;i<96;i++){
         float d=softplus(dt[i]),read=0;
         for(unsigned j=0;j<4;j++){
             float decay=expf(d*-expf(m->a_log[i*4+j]));float writer=(d*u[i])*sel[1+j];
+            if(s->observer){retention[i][j]=decay;injection[i][j]=writer;}
             v->scan[layer][i][j]=decay*v->scan[layer][i][j]+writer;read+=v->scan[layer][i][j]*sel[5+j];
         }
         gated[i]=(read+m->d[i]*u[i])*silu(p[96+i]);
+        if(s->observer){steps[i]=d;reads[i]=read;gates[i]=silu(p[96+i]);}
+    }
+    if(s->observer){
+        isa_observe(s,layer,ISA_TIMESTEP,steps,96);isa_observe(s,layer,ISA_RETENTION,&retention[0][0],384);
+        isa_observe(s,layer,ISA_INJECTION,&injection[0][0],384);isa_observe(s,layer,ISA_SCAN_STATE,&v->scan[layer][0][0],384);
+        isa_observe(s,layer,ISA_SCAN_READ,reads,96);isa_observe(s,layer,ISA_OUTPUT_GATE,gates,96);isa_observe(s,layer,ISA_GATED,gated,96);
     }
     linear(&m->output,gated,out);for(unsigned i=0;i<48;i++)hidden[i]+=out[i];
 }
-static void post(const IsaModel *model,unsigned layer,const float x[48],float branch[48]) {
+static void post(const IsaModel *model,unsigned layer,const float x[48],float branch[48],IsaSession *observer) {
     const IsaMixer *m=&model->mixer[layer];float mean=0,var=0,norm[48],ff[96];
     for(unsigned i=0;i<48;i++)mean+=x[i];mean/=48;
     for(unsigned i=0;i<48;i++){float c=x[i]-mean;var+=c*c;}
     float inv=1.0f/sqrtf(var/48+model->post_epsilon);
     for(unsigned i=0;i<48;i++)norm[i]=(x[i]-mean)*inv*m->gamma[i]+m->beta[i];
-    linear(&m->post1,norm,ff);for(unsigned i=0;i<96;i++)ff[i]=gelu(ff[i]);linear(&m->post2,ff,branch);
+    isa_observe(observer,layer,ISA_POST_INPUT,x,48);isa_observe(observer,layer,ISA_POST_NORMALIZED,norm,48);
+    linear(&m->post1,norm,ff);isa_observe(observer,layer,ISA_POST_PRE,ff,96);
+    for(unsigned i=0;i<96;i++)ff[i]=gelu(ff[i]);isa_observe(observer,layer,ISA_POST_ACTIVATION,ff,96);
+    linear(&m->post2,ff,branch);isa_observe(observer,layer,ISA_POST_WRITE,branch,48);
 }
 static double dot(const double *a,const double *b){double sum=0,c=0;for(unsigned i=0;i<48;i++){double y=a[i]*b[i]-c,t=sum+y;c=(t-sum)-y;sum=t;}return sum;}
 static void law_post(IsaSession *s,float hidden[48],unsigned layer) {
@@ -139,7 +159,7 @@ static void law_post(IsaSession *s,float hidden[48],unsigned layer) {
     v->off_plane_norm=sqrt(v->off_plane_norm);
     if(s->policy.quadratic){
         for(unsigned i=0;i<48;i++){double sum=0;for(unsigned k=0;k<5;k++)sum+=terms[k]*law->coeff[k*48+i];branch[i]=(float)((double)law->p0[i]+sum);}v->law_rows++;
-    }else{post(s->model,layer,hidden,branch);v->dense_post_rows++;}
+    }else{post(s->model,layer,hidden,branch,s);v->dense_post_rows++;}
     for(unsigned i=0;i<48;i++){v->law_branch[i]=branch[i];hidden[i]+=branch[i];v->law_hidden[i]=hidden[i];}
 }
 int isa_advance(IsaSession *s) {
@@ -153,7 +173,8 @@ int isa_advance(IsaSession *s) {
     for(unsigned l=0;l<3;l++){
         mixer(s,hidden,l);
         if(s->policy.enabled&&v->arch.instruction==s->policy.instruction&&l==s->law->layer&&r==s->law->row)law_post(s,hidden,l);
-        else{float branch[48];post(m,l,hidden,branch);for(unsigned i=0;i<48;i++)hidden[i]+=branch[i];v->dense_post_rows++;}
+        else{float branch[48];post(m,l,hidden,branch,s);for(unsigned i=0;i<48;i++)hidden[i]+=branch[i];v->dense_post_rows++;}
+        isa_observe(s,l,ISA_BLOCK_OUTPUT,hidden,48);
     }
     float reg[8],store[2];linear(&m->reg,hidden,reg);linear(&m->imm,hidden,&v->output.imm[r]);linear(&m->store,hidden,store);
     for(unsigned i=0;i<8;i++)v->output.regs[i][r]=v->before[i][r]*8-4+reg[i];

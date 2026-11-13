@@ -10,11 +10,12 @@ static int number(const char *text,int *out){
     *out=(int)v;return 0;
 }
 int main(int argc,char **argv){
-    if(argc<5){fprintf(stderr,"usage: tcm-circuit BUNDLE --target ID [--contrast ID] [--layer L] [--head H] [--source S] [--neuron N] [--frequency] --tokens ID ...\n");return 2;}
-    int target=-1,contrast=-1,layer=0,head=0,source=0,neuron=0,start=-1,frequency=0;
+    if(argc<5){fprintf(stderr,"usage: tcm-circuit BUNDLE --target ID [--contrast ID] [--layer L] [--head H] [--source S] [--neuron N] [--frequency] [--readout-lines NEW_FILE] --tokens ID ...\n");return 2;}
+    int target=-1,contrast=-1,layer=0,head=0,source=0,neuron=0,start=-1,frequency=0;const char *readout_lines=NULL;
     for(int i=2;i<argc;i++){
         if(!strcmp(argv[i],"--tokens")){start=i+1;break;}
         if(!strcmp(argv[i],"--frequency")){frequency=1;continue;}
+        if(!strcmp(argv[i],"--readout-lines")){if(++i>=argc||readout_lines)return 2;readout_lines=argv[i];continue;}
         int *dest=NULL;
         if(!strcmp(argv[i],"--target"))dest=&target;
         else if(!strcmp(argv[i],"--contrast"))dest=&contrast;
@@ -51,6 +52,10 @@ int main(int argc,char **argv){
             if(i<shown)printf("%s{\"k\":%d,\"re\":%.17g,\"im\":%.17g}",i?",":"",i,bins[i].re,bins[i].im);
             else{re+=bins[i].re;im+=bins[i].im;}
         }printf("],\"unlisted_sum\":{\"re\":%.17g,\"im\":%.17g}}\n",re,im);free(bins);
+    }
+    if(readout_lines){
+        FILE *f=fopen(readout_lines,"wx");if(!f)goto done;
+        int error=cm_qwen_write_readout_lines(f,&capture);if(fclose(f))error=-1;if(error)goto done;
     }
     status=0;
 done:

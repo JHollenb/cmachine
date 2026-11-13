@@ -73,11 +73,22 @@ typedef struct {
     double law_coordinates[2], off_plane_norm;
     float law_input[48], law_branch[48], law_hidden[48];
 } IsaState;
+typedef enum {
+    ISA_MIX_INPUT,ISA_MIX_U,ISA_SELECTION,ISA_TIMESTEP,ISA_RETENTION,
+    ISA_INJECTION,ISA_SCAN_STATE,ISA_SCAN_READ,ISA_OUTPUT_GATE,ISA_GATED,
+    ISA_POST_INPUT,ISA_POST_NORMALIZED,ISA_POST_PRE,ISA_POST_ACTIVATION,
+    ISA_POST_WRITE,ISA_BLOCK_OUTPUT,ISA_PORT_COUNT
+} IsaPort;
+/* Borrowed read-only host pointers, valid only during callback. This is an
+ * observation surface, not a mutation or checkpoint interface. */
+typedef void (*IsaObserver)(void *,unsigned,unsigned,IsaPort,const float *,size_t);
 typedef struct {
     const IsaModel *model;
     const IsaLaw *law;
     IsaLawPolicy policy;
     IsaState state;
+    IsaObserver observer;
+    void *observer_context;
 } IsaSession;
 typedef struct {
     char model_digest[65], law_digest[65];
@@ -95,5 +106,6 @@ void isa_checkpoint(const IsaSession *, IsaCheckpoint *);
 int isa_restore(IsaSession *, const IsaCheckpoint *);
 unsigned isa_argmax(const float *, unsigned);
 uint64_t isa_bits(const float *);
+const char *isa_port_name(IsaPort);
 
 #endif

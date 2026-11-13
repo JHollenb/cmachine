@@ -45,6 +45,21 @@ static void native_checks(void){
     QwenCheckpoint parent;assert(!qwen_checkpoint(&b,&parent));
     CmQwenCapture capture={0};assert(!cm_qwen_capture_token(&capture,&a,9));assert(!qwen_push(&b,9));equal(&a,&b);
     CmQwenAdjoint adjoint={0};assert(!cm_qwen_consumer(&adjoint,&capture,3,4));assert(adjoint.ready);
+    double intercept[16],slope[16];CmReadoutNorm readout_norm;assert(!cm_qwen_final_readout_lines(&capture,intercept,slope,&readout_norm));
+    const CmQwenLayer *last=capture.layer+m.layers-1;
+    for(int token=0;token<16;token++){
+        double a0=0,b0=0;for(int i=0;i<8;i++){a0+=(double)m.embedding[token*8+i]*m.norm[i]*last->receiver[i];b0+=(double)m.embedding[token*8+i]*m.norm[i]*last->write[i];}
+        close_to(intercept[token],a0,1e-14);close_to(slope[token],b0,1e-14);
+    }
+    assert(readout_norm.A>0&&readout_norm.C>=0);
+    const char *line_path=getenv("CM_READOUT_LINES");
+    if(line_path){FILE *f=fopen(line_path,"wx");assert(f);assert(!cm_qwen_write_readout_lines(f,&capture));assert(!fclose(f));}
+    const double *lambda=adjoint.layer[0].input;double orthogonal[8]={0},parallel[8];double length=0;
+    for(int i=0;i<8;i++)length=hypot(length,lambda[i]);assert(length>0);
+    orthogonal[0]=10*lambda[1];orthogonal[1]=-10*lambda[0];for(int i=0;i<8;i++)parallel[i]=.01*lambda[i]/length;
+    CmOmissionMetric orth,along;assert(!cm_qwen_omission(&capture,&adjoint,0,"input",orthogonal,8,&orth));assert(!cm_qwen_omission(&capture,&adjoint,0,"input",parallel,8,&along));
+    close_to(orth.signed_effect,0,1e-14);close_to(along.signed_effect,.01*length,1e-14);
+    printf("{\"check\":\"consumer-weighted-omissions\",\"orthogonal_l2\":%.17g,\"orthogonal_signed_effect\":%.17g,\"parallel_l2\":%.17g,\"parallel_signed_effect\":%.17g}\n",orth.omission_l2,orth.signed_effect,along.omission_l2,along.signed_effect);
     for(int layer=0;layer<m.layers;layer++)for(int neuron=0;neuron<m.intermediate;neuron++){
         double column[8];assert(!cm_qwen_parameter(&m,layer,"down",(size_t)neuron,1,column,8));close_to(dot(column,adjoint.layer[layer].output,8),adjoint.layer[layer].product[neuron],1e-14);
     }

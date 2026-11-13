@@ -1,0 +1,110 @@
+{
+  "mechanics_status": "locally-qualified",
+  "instrument_status": "supplied-organisms-and-retained-coefficient-arithmetic",
+  "terminal_status": "no-new-pretrained-or-semantic-certification",
+  "checks": [
+    {
+      "name": "C-checks",
+      "command": [
+        "rtk",
+        "proxy",
+        "make",
+        "all",
+        "expansion-mechanics",
+        "circuit-mechanics",
+        "state-mechanics",
+        "operand-mechanics",
+        "bounded-mechanics",
+        "sanitize",
+        "isa-circuit"
+      ],
+      "exit_code": 0,
+      "seconds": 2.2563649998046458
+    },
+    {
+      "name": "python-suite",
+      "command": [
+        "rtk",
+        "proxy",
+        "/Users/jakeholl/domains/common/bin/common",
+        "exec",
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 4.56837512482889
+    },
+    {
+      "name": "isa-reference",
+      "command": [
+        "rtk",
+        "proxy",
+        "/Users/jakeholl/domains/common/bin/common",
+        "exec",
+        "python",
+        "qualification/expanded-inspection-20261112/verify_isa_reference.py"
+      ],
+      "exit_code": 0,
+      "seconds": 2.8880239161662757
+    },
+    {
+      "name": "frontend-build",
+      "command": [
+        "rtk",
+        "proxy",
+        "cc",
+        "-O1",
+        "-g",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-ffp-contract=off",
+        "-fsanitize=address,undefined",
+        "-Isrc",
+        "src/model.c",
+        "src/qwen.c",
+        "src/circuit_math.c",
+        "src/circuit_expansions.c",
+        "src/qwen_circuit.c",
+        "tests/gpu_stub.c",
+        "tools/circuit_inspect.c",
+        "-lm",
+        "-o",
+        "build/tcm-circuit-frontend"
+      ],
+      "exit_code": 0,
+      "seconds": 3.3815077911131084
+    },
+    {
+      "name": "translation-envelope",
+      "command": [
+        "rtk",
+        "proxy",
+        "/Users/jakeholl/domains/common/bin/common",
+        "exec",
+        "python",
+        "tools/decision_envelope.py",
+        "tests/fixtures/translation-envelope.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1705944580025971
+    },
+    {
+      "name": "native-capture-to-exact-envelope",
+      "vocabulary_size": 16,
+      "status": "passed",
+      "scope": "supplied-tiny-Qwen-coefficients-only"
+    },
+    {
+      "name": "frontend-refusals",
+      "status": "passed"
+    }
+  ]
+}

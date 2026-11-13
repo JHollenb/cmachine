@@ -1,0 +1,104 @@
+{
+  "schema": "tcm-decision-envelope-v1",
+  "arithmetic": "exact-rational-supplied-coefficients",
+  "coverage": "provided-lines-only",
+  "vocabulary_size": null,
+  "input_rows": 3,
+  "domain": [
+    "0",
+    "1"
+  ],
+  "segments": [
+    {
+      "left": "0",
+      "right": "324474813684256/4315771582720603",
+      "winner": 220,
+      "tied_line_ids": [
+        220
+      ],
+      "intercept": "1374276990478221/35184372088832",
+      "slope": "-5033023153243141/562949953421312",
+      "probe": {
+        "exact_midpoint": "162237406842128/4315771582720603",
+        "binary64_dose": 0.0625,
+        "binary64_exact": "1/16"
+      }
+    },
+    {
+      "left": "324474813684256/4315771582720603",
+      "right": "207832459388728/939467298396787",
+      "winner": 650,
+      "tied_line_ids": [
+        650
+      ],
+      "intercept": "1353997314622955/35184372088832",
+      "slope": "-358625785261269/281474976710656",
+      "probe": {
+        "exact_midpoint": "600895449403277442309107224228/4054526269316150448333653902561",
+        "binary64_dose": 0.125,
+        "binary64_exact": "1/8"
+      }
+    },
+    {
+      "left": "207832459388728/939467298396787",
+      "right": "1",
+      "winner": 6236,
+      "tied_line_ids": [
+        6236
+      ],
+      "intercept": "1250081084928591/35184372088832",
+      "slope": "3399243408325879/281474976710656",
+      "probe": {
+        "exact_midpoint": "1147299757785515/1878934596793574",
+        "binary64_dose": 0.5,
+        "binary64_exact": "1/2"
+      }
+    }
+  ],
+  "points": [
+    {
+      "dose": "0",
+      "tied_token_ids": [
+        220
+      ],
+      "winner": 220
+    },
+    {
+      "dose": "324474813684256/4315771582720603",
+      "tied_token_ids": [
+        220,
+        650
+      ],
+      "winner": 220
+    },
+    {
+      "dose": "207832459388728/939467298396787",
+      "tied_token_ids": [
+        650,
+        6236
+      ],
+      "winner": 650
+    },
+    {
+      "dose": "1",
+      "tied_token_ids": [
+        6236
+      ],
+      "winner": 6236
+    }
+  ],
+  "operator_contract": "fixed-additive-final-readout/common-positive-RMS/bias-free-head",
+  "native_measurement": false,
+  "limitations": [
+    "Coefficient provenance and operator contract are caller declarations.",
+    "Native arithmetic may shift decisions near boundaries.",
+    "Nonlinear suffixes and sampled decoding do not obey this affine ranking law."
+  ],
+  "source": {
+    "workspace_path": "saturn-pub/packages/mdb/qualification/qwen-prompt-generalization-20261030.json",
+    "sha256": "a17ff994eef95d7c3d5a24387bfd0a00be57b9b5f25634b9b370bb0b9ce94f98",
+    "pointer": "/panels/language-a/publication/envelopes/translation/envelope/segments",
+    "coverage": "retained-winning-lines-only",
+    "native_new_probe_executed": false
+  }
+}

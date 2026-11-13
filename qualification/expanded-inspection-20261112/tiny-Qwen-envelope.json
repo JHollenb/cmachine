@@ -1,0 +1,60 @@
+{
+  "schema": "tcm-decision-envelope-v1",
+  "arithmetic": "exact-rational-supplied-coefficients",
+  "coverage": "all-supplied-vocabulary-rows",
+  "vocabulary_size": 16,
+  "input_rows": 16,
+  "domain": [
+    "0",
+    "1"
+  ],
+  "segments": [
+    {
+      "left": "0",
+      "right": "1",
+      "winner": 9,
+      "tied_line_ids": [
+        9
+      ],
+      "intercept": "1471521320251837/18014398509481984",
+      "slope": "-1603911509715765/576460752303423488",
+      "probe": {
+        "exact_midpoint": "1/2",
+        "binary64_dose": 0.5,
+        "binary64_exact": "1/2"
+      }
+    }
+  ],
+  "points": [
+    {
+      "dose": "0",
+      "tied_token_ids": [
+        9
+      ],
+      "winner": 9
+    },
+    {
+      "dose": "1",
+      "tied_token_ids": [
+        9
+      ],
+      "winner": 9
+    }
+  ],
+  "operator_contract": "fixed-additive-final-readout/common-positive-RMS/bias-free-head",
+  "native_measurement": false,
+  "limitations": [
+    "Coefficient provenance and operator contract are caller declarations.",
+    "Native arithmetic may shift decisions near boundaries.",
+    "Nonlinear suffixes and sampled decoding do not obey this affine ranking law."
+  ],
+  "source": {
+    "model_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "position": 3,
+    "result_lineage": 11,
+    "layer": 2,
+    "base_port": "receiver",
+    "direction_port": "write",
+    "operator_contract": "fixed-additive-final-readout/common-positive-RMS/bias-free-head"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "base": "c4e366d",
+  "base_isa_sha256": "03b37b1cb2e51aa9be04ce6b0302ef4ccd133fa1eb32e73f6a30b2e1c1306759",
+  "scope": "three supplied instructions, every full bit-row state and architectural commit",
+  "state_byte_identical": true,
+  "observed_port_calls": 9216,
+  "bytes_compared": 3368040,
+  "state_stream_sha256": "9f2a74ee06d821f9a869b6bb2e73b73bd416a25e06666b0d99679b37a3156962"
+}

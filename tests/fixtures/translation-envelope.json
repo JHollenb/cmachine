@@ -1,0 +1,26 @@
+{
+  "source": {
+    "workspace_path": "saturn-pub/packages/mdb/qualification/qwen-prompt-generalization-20261030.json",
+    "sha256": "a17ff994eef95d7c3d5a24387bfd0a00be57b9b5f25634b9b370bb0b9ce94f98",
+    "pointer": "/panels/language-a/publication/envelopes/translation/envelope/segments",
+    "coverage": "retained-winning-lines-only",
+    "native_new_probe_executed": false
+  },
+  "lines": [
+    {
+      "token_id": 220,
+      "intercept": 39.05930130026209,
+      "slope": -8.940445101123268
+    },
+    {
+      "token_id": 650,
+      "intercept": 38.48291824576094,
+      "slope": -1.2740947328682815
+    },
+    {
+      "token_id": 6236,
+      "intercept": 35.52944136028461,
+      "slope": 12.076538554331787
+    }
+  ]
+}

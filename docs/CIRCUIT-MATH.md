@@ -2,6 +2,8 @@
 
 The optional C circuit inspector expands native computations without fitting an auxiliary model. It implements the six families in [the proposal](CIRCUIT-MATH-PROPOSAL.md). The mathematical kernels are framework-free. A Qwen adapter connects them to actual native ports and a first-readout vocabulary consumer. Pretrained CUDA qualification remains pending; the completed verification uses the existing tiny native C executor with a CPU GPU stub.
 
+The [expanded inspection tools](EXPANDED-CIRCUIT-INSPECTION.md) add exact decision envelopes/probe selection, native ISA selective-memory and GELU accounts, consumer-weighted omission diagnostics and a standalone polyphase audit.
+
 ## Run the completed local demonstration
 
 ```sh

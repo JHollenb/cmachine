@@ -18,6 +18,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 
 - [Architecture and state contracts](docs/ARCHITECTURE.md)
 - [Native circuit inspection and finite-response mathematics](docs/CIRCUIT-MATH.md) · [proposal](docs/CIRCUIT-MATH-PROPOSAL.md) (model-free verification complete; pretrained CUDA qualification pending).
+- [Decision envelopes, selective memory, GELU and spatial-phase inspection](docs/EXPANDED-CIRCUIT-INSPECTION.md) (exact coefficient tools and native ISA observation; supplied-model checks).
 - [Supported models, numerical profiles and measured logit error](docs/SUPPORTED-MODELS.md)
 - [Supported capabilities and model computations](docs/CAPABILITIES.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)

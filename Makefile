@@ -77,19 +77,33 @@ build/operand-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h
 circuit-mechanics: build/circuit-mechanics
 	./build/circuit-mechanics
 
-build/circuit-mechanics: src/circuit_math.c src/circuit_math.h src/qwen_circuit.c src/qwen_circuit.h src/model.c src/qwen.c src/qwen.h src/gpu.h src/machine.h src/qwen_operands.inc tests/gpu_stub.c tests/circuit_mechanics.c tests/state_mechanics.c tests/writer_mechanics.h tests/gate_mechanics.h
+build/circuit-mechanics: src/circuit_math.c src/circuit_math.h src/circuit_expansions.c src/circuit_expansions.h src/qwen_circuit.c src/qwen_circuit.h src/model.c src/qwen.c src/qwen.h src/gpu.h src/machine.h src/qwen_operands.inc tests/gpu_stub.c tests/circuit_mechanics.c tests/state_mechanics.c tests/writer_mechanics.h tests/gate_mechanics.h
 	mkdir -p build
-	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c src/circuit_math.c src/qwen_circuit.c tests/gpu_stub.c tests/circuit_mechanics.c -lm -o $@
+	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c src/circuit_math.c src/circuit_expansions.c src/qwen_circuit.c tests/gpu_stub.c tests/circuit_mechanics.c -lm -o $@
 .PHONY: circuit-mechanics
 
 # Standalone opt-in native inspector. Original serving executable stays native.
 circuit-cuda: build/tcm-circuit
-build/tcm-circuit: build/tcm-cuda src/circuit_math.c src/circuit_math.h src/qwen_circuit.c src/qwen_circuit.h tools/circuit_inspect.c
+build/tcm-circuit: build/tcm-cuda src/circuit_math.c src/circuit_math.h src/circuit_expansions.c src/circuit_expansions.h src/qwen_circuit.c src/qwen_circuit.h tools/circuit_inspect.c
 	$(CC) $(CFLAGS) -Isrc -c src/circuit_math.c -o build/circuit_math.o
 	$(CC) $(CFLAGS) -Isrc -c src/qwen_circuit.c -o build/qwen_circuit.o
+	$(CC) $(CFLAGS) -Isrc -c src/circuit_expansions.c -o build/circuit_expansions.o
 	$(CC) $(CFLAGS) -Isrc -c tools/circuit_inspect.c -o build/circuit_inspect.o
-	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/circuit_math.o build/qwen_circuit.o build/circuit_inspect.o -lcublas -lm -o $@
+	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/circuit_math.o build/circuit_expansions.o build/qwen_circuit.o build/circuit_inspect.o -lcublas -lm -o $@
 .PHONY: circuit-cuda
+
+expansion-mechanics: build/expansion-mechanics
+	./build/expansion-mechanics
+build/expansion-mechanics: src/circuit_math.c src/circuit_math.h src/circuit_expansions.c src/circuit_expansions.h src/isa.c src/isa_circuit.c src/isa_circuit.h src/model.c src/machine.h tests/expansion_mechanics.c tests/isa_fixture.h
+	mkdir -p build
+	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/isa.c src/circuit_math.c src/circuit_expansions.c src/isa_circuit.c tests/expansion_mechanics.c -lm -o $@
+.PHONY: expansion-mechanics
+
+isa-circuit: build/tcm-isa-circuit
+build/tcm-isa-circuit: src/model.c src/isa.c src/isa_circuit.c src/isa_circuit.h src/machine.h src/circuit_math.c src/circuit_math.h src/circuit_expansions.c src/circuit_expansions.h tools/isa_circuit_inspect.c
+	mkdir -p build
+	$(CC) $(CFLAGS) -Isrc src/model.c src/isa.c src/circuit_math.c src/circuit_expansions.c src/isa_circuit.c tools/isa_circuit_inspect.c -lm -o $@
+.PHONY: isa-circuit
 
 bounded-mechanics: build/bounded-mechanics
 	./build/bounded-mechanics

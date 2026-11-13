@@ -325,3 +325,45 @@ int cm_qwen_report(FILE *f,const CmQwenCapture *c,const CmQwenAdjoint *a,int lay
     fputs("\"numerical_profile\":\"native-FP32-ports/FP64-smooth-linearization\",\"derivative_scope\":\"fixed-prior-KV-first-readout\",\"mechanics_status\":\"captured\",\"terminal_status\":\"no-semantic-certification\"}\n",f);
     return ferror(f)?-1:0;
 }
+int cm_qwen_final_readout_lines(const CmQwenCapture *c,double *intercept,double *slope,CmReadoutNorm *out){
+    if(!live(c)||!intercept||!slope||!out)return -1;
+    const QwenModel *m=c->model;size_t d=m->hidden;
+    const CmQwenLayer *last=c->layer+m->layers-1;
+    double *buf=malloc(2*d*sizeof(double));if(!buf)return -1;
+    double *gain=buf,*row=buf+d;CmReadoutNorm norm={m->epsilon,0,0};
+    if(vector_read(m->norm,gain,d))goto fail;
+    for(size_t i=0;i<d;i++){norm.A+=last->receiver[i]*last->receiver[i]/d;norm.B+=last->receiver[i]*last->write[i]/d;norm.C+=last->write[i]*last->write[i]/d;}
+    for(int token=0;token<m->vocab;token++){
+        if(vector_read(m->embedding+(size_t)token*d,row,d))goto fail;
+        double a=0,b=0;for(size_t i=0;i<d;i++){a+=row[i]*gain[i]*last->receiver[i];b+=row[i]*gain[i]*last->write[i];}
+        if(!isfinite(a)||!isfinite(b))goto fail;
+        intercept[token]=a;slope[token]=b;
+    }free(buf);*out=norm;return 0;
+fail:free(buf);return -2;
+}
+int cm_qwen_omission(const CmQwenCapture *c,const CmQwenAdjoint *a,int layer,const char *port,const double *error,size_t count,CmOmissionMetric *out){
+    if(!live(c)||!a||!a->ready||a->capture!=c||!port||!error||!out||layer<0||layer>=c->model->layers)return -1;
+    const CmQwenLayerAdjoint *r=a->layer+layer;const double *lambda=NULL;size_t n=c->model->hidden;
+    if(!strcmp(port,"input"))lambda=r->input;
+    else if(!strcmp(port,"output"))lambda=r->output;
+    else if(!strcmp(port,"receiver"))lambda=r->receiver;
+    else if(!strcmp(port,"attention"))lambda=r->attention;
+    else if(!strcmp(port,"product")){lambda=r->product;n=c->model->intermediate;}
+    else if(!strcmp(port,"gate")){lambda=r->gate;n=c->model->intermediate;}
+    else if(!strcmp(port,"up")){lambda=r->up;n=c->model->intermediate;}
+    if(!lambda||count!=n)return -1;
+    CmOmissionMetric value={0};double weight=1;
+    if(cm_consumer_metric(1,n,lambda,error,&weight,&value.signed_effect,&value.squared_effect))return -1;
+    for(size_t i=0;i<n;i++){value.omission_l2=hypot(value.omission_l2,error[i]);value.adjoint_l2=hypot(value.adjoint_l2,lambda[i]);}
+    if(!isfinite(value.omission_l2)||!isfinite(value.adjoint_l2))return -1;
+    *out=value;return 0;
+}
+int cm_qwen_write_readout_lines(FILE *f,const CmQwenCapture *c){
+    if(!f||!live(c))return -1;
+    for(int i=0;i<64;i++){char x=c->model->digest[i];if(!((x>='a'&&x<='f')||(x>='0'&&x<='9')))return -1;}
+    size_t n=c->model->vocab;double *buf=malloc(2*n*sizeof(double));if(!buf)return -2;
+    CmReadoutNorm norm;if(cm_qwen_final_readout_lines(c,buf,buf+n,&norm)){free(buf);return -2;}
+    fprintf(f,"{\"schema\":\"tcm-final-readout-lines-v1\",\"vocabulary_size\":%zu,\"source\":{\"model_digest\":\"%.64s\",\"position\":%d,\"result_lineage\":%llu,\"layer\":%d,\"base_port\":\"receiver\",\"direction_port\":\"write\",\"operator_contract\":\"fixed-additive-final-readout/common-positive-RMS/bias-free-head\"},\"normalization\":{\"A\":%.17g,\"B\":%.17g,\"C\":%.17g},\"lines\":[",n,c->model->digest,c->position,(unsigned long long)c->result_lineage_id,c->model->layers-1,norm.A,norm.B,norm.C);
+    for(size_t token=0;token<n;token++)fprintf(f,"%s{\"token_id\":%zu,\"intercept\":%.17g,\"slope\":%.17g}",token?",":"",token,buf[token],buf[n+token]);
+    fputs("]}\n",f);free(buf);return ferror(f)?-2:0;
+}

@@ -2,6 +2,7 @@
 #define TCM_QWEN_CIRCUIT_H
 #include "qwen.h"
 #include "circuit_math.h"
+#include "circuit_expansions.h"
 #include <stdio.h>
 /* Temporary native operand cache. Original weights stay in QwenModel.
  * init/free ownership: zero initialize, do not shallow-copy, free before reuse.
@@ -64,4 +65,14 @@ int cm_qwen_source_frequency(const CmQwenCapture *,const CmQwenAdjoint *,int,int
 /* Compact JSON metadata + bounded requested source/neuron observations.
  * No weight/activation array export. Consumer and occurrence links included. */
 int cm_qwen_report(FILE *,const CmQwenCapture *,const CmQwenAdjoint *,int,int,int,int);
+typedef struct { double A,B,C; } CmReadoutNorm;
+/* Full vocabulary a,b for final state r+alpha*m: logits=(a+alpha*b)/sqrt(q).
+ * Uses final-layer captured receiver/write, tied bias-free head and gain.
+ * Caller owns arrays [vocab]; no persistent coefficient/weight bank. */
+int cm_qwen_final_readout_lines(const CmQwenCapture *,double *,double *,CmReadoutNorm *);
+int cm_qwen_write_readout_lines(FILE *,const CmQwenCapture *);
+typedef struct { double signed_effect,squared_effect,omission_l2,adjoint_l2; } CmOmissionMetric;
+/* Local predicted effect from a declared original port's full omission vector.
+ * Supports input, output, receiver, attention, product, gate and up. */
+int cm_qwen_omission(const CmQwenCapture *,const CmQwenAdjoint *,int,const char *,const double *,size_t,CmOmissionMetric *);
 #endif

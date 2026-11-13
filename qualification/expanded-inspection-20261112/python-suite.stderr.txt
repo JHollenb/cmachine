@@ -1,0 +1,45 @@
+test_bounded_client_enforces_snapshot_budget_and_legacy_commands (test_chat.Client) ... ok
+test_explicit_binary_cannot_silently_activate_bounded_under_native (test_chat.Client) ... ok
+test_invalid_bounded_geometry_refuses_before_tokenizer_or_process (test_chat.Client) ... ok
+test_native_remains_default_and_legacy_ready_is_accepted (test_chat.Client) ... ok
+test_wrong_activated_policy_refuses (test_chat.Client) ... ok
+test_consumer_metric_is_not_activation_energy (test_circuit_expansions.Expansions) ... ok
+test_finite_scan_terms_retain_all_producer_changes (test_circuit_expansions.Expansions) ... ok
+test_gelu_derivatives_secant_and_symmetry (test_circuit_expansions.Expansions) ... ok
+test_polyphase_matches_numpy_spatial_dft_and_keeps_statistics (test_circuit_expansions.Expansions) ... ok
+test_scan_kernel_factorization_and_zero_retention (test_circuit_expansions.Expansions) ... ok
+test_two_dimensional_transform_inverse (test_circuit_expansions.Expansions) ... ok
+test_attention_full_vjp_and_curvature (test_circuit_math.CircuitMathTests) ... ok
+test_finite_attention_extremes_and_cancellation (test_circuit_math.CircuitMathTests) ... ok
+test_frequency_commutator_identity (test_circuit_math.CircuitMathTests) ... ok
+test_neuron_curvature (test_circuit_math.CircuitMathTests) ... ok
+test_prompt_free_read_geometry_and_even_odd_split (test_circuit_math.CircuitMathTests) ... ok
+test_raw_normalization_curvature_keeps_radial_terms (test_circuit_math.CircuitMathTests) ... ok
+test_rms_finite_and_adjoint (test_circuit_math.CircuitMathTests) ... ok
+test_silu_secants_and_exact_finite_factorization (test_circuit_math.CircuitMathTests) ... ok
+test_different_parent_or_clock_is_rejected (test_consumer_contrasts.ConsumerContrastMechanics) ... ok
+test_harmful_isolated_read_can_help_conditionally (test_consumer_contrasts.ConsumerContrastMechanics) ... ok
+test_invalid_arrays_are_mechanics_errors (test_consumer_contrasts.ConsumerContrastMechanics) ... ok
+test_nonzero_effects_survive_cancelling_joint (test_consumer_contrasts.ConsumerContrastMechanics) ... ok
+test_zero_response_stays_undefined (test_consumer_contrasts.ConsumerContrastMechanics) ... ok
+test_degenerate_interval_and_full_vocabulary_contract (test_decision_envelope.DecisionEnvelopes) ... ok
+test_equivalent_and_dominated_parallel_lines (test_decision_envelope.DecisionEnvelopes) ... ok
+test_narrow_regions_remain_even_without_binary64_interior (test_decision_envelope.DecisionEnvelopes) ... ok
+test_point_only_tie_survives_hull_pruning (test_decision_envelope.DecisionEnvelopes) ... ok
+test_random_hulls_against_full_line_competition (test_decision_envelope.DecisionEnvelopes) ... ok
+test_retained_translation_regime_and_probe (test_decision_envelope.DecisionEnvelopes) ... ok
+test_native_and_full_carried_are_distinct_references (test_formation_analysis.FormationAnalysisMechanics) ... ok
+test_roundoff_contract_scales_but_rejects_wrong_identity (test_formation_analysis.FormationAnalysisMechanics) ... ok
+test_full_native_cli_root_recipe_and_account (test_isa_circuit_cli.IsaCircuitCli) ... ok
+test_invalid_cli_inputs_refuse_before_loading_model (test_isa_circuit_cli.IsaCircuitCli) ... ok
+test_atomic_commit_and_phase_contract (test_mechanics.Mechanics) ... ok
+test_checksum_and_extent_validation (test_mechanics.Mechanics) ... ok
+test_negative_cross_effect_is_retained (test_writer_analysis.WriterAnalysisTests) ... ok
+test_projector_uses_all_three_columns (test_writer_analysis.WriterAnalysisTests) ... ok
+test_sequential_policy_interaction (test_writer_analysis.WriterAnalysisTests) ... ok
+test_trace_contract_rejects_missing_or_duplicate_consumed_port (test_writer_analysis.WriterAnalysisTests) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 4.266s
+
+OK
