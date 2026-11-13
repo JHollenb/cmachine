@@ -64,9 +64,9 @@ Use sanitizer-backed model-free native-executor fixtures, independent directiona
 
 ## Mathematical sources
 
-- [Expanded native chain](../../../obsidian/blog/2026-11-12-152729-expanding-native-computation-without-dropping-variables.md)
-- [Native read geometry](../../../obsidian/blog/2026-11-12-161144-causal-attention-and-native-mlp-read-geometry.md)
-- [Finite changes and systems/signals proofs](../../../obsidian/blog/2026-11-12-165523-when-circuits-mix-frequencies-and-how-finite-edits-propagate.md)
-- [Composition and semantic proof requirements](../../../obsidian/blog/2026-11-12-172148-composing-native-mathematics-into-semantic-circuit-proofs.md)
+- [Expanded native chain](../../obsidian/blog/2026-11-12-152729-expanding-native-computation-without-dropping-variables.md)
+- [Native read geometry](../../obsidian/blog/2026-11-12-161144-causal-attention-and-native-mlp-read-geometry.md)
+- [Finite changes and systems/signals proofs](../../obsidian/blog/2026-11-12-165523-when-circuits-mix-frequencies-and-how-finite-edits-propagate.md)
+- [Composition and semantic proof requirements](../../obsidian/blog/2026-11-12-172148-composing-native-mathematics-into-semantic-circuit-proofs.md)
 - [Existing state-interface mathematics](../research/closure/MATH.md)
 - [Existing attention response mathematics](../research/query_response/MATH.md)
