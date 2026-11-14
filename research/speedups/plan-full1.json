@@ -1,0 +1,1 @@
+{"prompts": 16, "steps": 64, "warmup_steps": 8, "smoke_steps": 4, "hash_prompts": 8, "c_timeout_s": 720, "sample_interval_s": 0.5}

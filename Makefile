@@ -154,3 +154,13 @@ build/overhead-run: build/tcm-cuda tests/overhead_run.c
 	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/overhead_run.o -lcublas -lm -o $@
 
 .PHONY: overhead-run
+
+# Opt-in speedup arms: batched prefill/decode, CUDA graphs, incremental hashing, BF16/INT8 lanes (research/speedups).
+speedups-run: build/speedups-run
+
+build/speedups-run: build/tcm-cuda src/qwen_fast.cu src/qwen_fast.h tests/speedups_run.c
+	$(NVCC) -O3 -std=c++17 --fmad=false -arch=sm_89 -Isrc -c src/qwen_fast.cu -o build/qwen_fast.o
+	$(CC) $(CFLAGS) -Isrc -c tests/speedups_run.c -o build/speedups_run.o
+	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/qwen_fast.o build/speedups_run.o -lcublas -lpthread -lm -o $@
+
+.PHONY: speedups-run
