@@ -31,6 +31,8 @@ Effective GB/s is 6,174,857,216 weight bytes divided by ms/token. Prefill median
 - At batch 1 the lean C path is 1.13× faster than lean HF Transformers.
 - C5, the writer and guard path with a no-op edit, was not measured. Wiring it needs a `QwenSubspace` and projector.
 
+Follow-up: [SPEEDUPS.md](SPEEDUPS.md) implements the speedups proposed here. It includes an incremental state digest at +0.07 ms/token (worker thread) or +0.13 ms/token (GPU leaves), constant in position, measured in `job-1d03b313def2`.
+
 ## Resources over the run
 
 The job sampled every 0.5 s (361 samples) with `nvidia-smi` and `/proc`. Times are seconds since worker start.

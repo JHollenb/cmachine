@@ -21,6 +21,7 @@ The [integrated runtime](docs/INTEGRATED-RUNTIME.md) adds all-layer byte caches,
 - [Decision envelopes, selective memory, GELU and spatial-phase inspection](docs/EXPANDED-CIRCUIT-INSPECTION.md) (exact coefficient tools and native ISA observation; supplied-model checks).
 - [Supported models, numerical profiles and measured logit error](docs/SUPPORTED-MODELS.md)
 - [Analysis overhead: per-token cost of logits download, layer capture and state hashing, with a resource timeline](docs/ANALYSIS-OVERHEAD.md)
+- [Speedups: batched prefill (18×) and decode (52× aggregate at B=64), CUDA graphs, constant-cost incremental hashing, BF16 (1.97×) and INT8 (3.43×) lanes, with exactness gates](docs/SPEEDUPS.md)
 - [Supported capabilities and model computations](docs/CAPABILITIES.md)
 - [Vision, simplifying assumption and research gaps](docs/VISION.md)
 - [Current evidence and limitations](docs/STATUS.md)
