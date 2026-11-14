@@ -30,6 +30,7 @@ struct QwenFast {
     Mat mb[QF_MAX_LAYERS][M_COUNT], mq[QF_MAX_LAYERS][M_COUNT], eb, eq;
     size_t lane_bytes[3];
     cudaGraph_t graph; cudaGraphExec_t exec; int graph_B;
+    unsigned long long *inexact; unsigned long long bf16_inexact, bf16_total;
 };
 
 static void *fast_alloc(QwenFast *f, size_t n) { void *p = gpu_alloc(n); f->bytes += n; return p; }
@@ -178,7 +179,11 @@ __global__ static void wmv(const void *W, const float *S, const float *X, int in
         else Y2[(size_t)b * (out - n2) + row - n2] = v;
     }
 }
-__global__ static void to_bf16(__nv_bfloat16 *dst, const float *src, size_t n) { size_t i = (size_t)blockIdx.x * blockDim.x + threadIdx.x; if (i < n) dst[i] = __float2bfloat16_rn(src[i]); }
+__global__ static void to_bf16(__nv_bfloat16 *dst, const float *src, size_t n, unsigned long long *inexact) {
+    size_t i = (size_t)blockIdx.x * blockDim.x + threadIdx.x; if (i >= n) return;
+    __nv_bfloat16 b = __float2bfloat16_rn(src[i]); dst[i] = b;
+    if (__float_as_uint(__bfloat162float(b)) != __float_as_uint(src[i])) atomicAdd(inexact, 1ull);
+}
 /* Symmetric per-row int8: scale = max|w|/127, code = rint(w/scale) clamped to +-127. */
 __global__ static void quant_rows(int8_t *codes, float *scales, const float *src, int in) {
     __shared__ float red[256]; const float *x = src + (size_t)blockIdx.x * in; float m = 0;
@@ -355,7 +360,7 @@ extern "C" void qf_read_logits(QwenFast *f, int row, float *host) { CK(cudaStrea
 static void *lp_alloc(QwenFast *f, size_t n) { void *p = fast_alloc(f, n); f->lp_alloc[f->lp_count++] = p; return p; }
 static void convert_into(QwenFast *f, const float *src, int rows, int in, __nv_bfloat16 *b, int8_t *q, float *s) {
     size_t n = (size_t)rows * in;
-    to_bf16<<<(unsigned)((n + 255) / 256), 256, 0, f->st>>>(b, src, n); LAUNCHED();
+    to_bf16<<<(unsigned)((n + 255) / 256), 256, 0, f->st>>>(b, src, n, f->inexact); LAUNCHED(); f->bf16_total += n;
     quant_rows<<<rows, 256, 0, f->st>>>(q, s, src, in); LAUNCHED();
 }
 static void build_mat(QwenFast *f, Mat *mb, Mat *mq, int in, const float *const *src, const int *rows, int parts) {
@@ -367,6 +372,7 @@ static void build_mat(QwenFast *f, Mat *mb, Mat *mq, int in, const float *const 
 }
 extern "C" int qf_build_low_precision(QwenFast *f, void (*free_matrix)(void *, float *), void *ctx) {
     if (f->lp_ready) return 0;
+    f->inexact = (unsigned long long *)fast_alloc(f, 8); CK(cudaMemsetAsync(f->inexact, 0, 8, f->st));
     QfWeights &w = f->w; int d = w.hidden, k = w.kvheads * w.head, h = w.intermediate;
     for (int l = 0; l < w.layers; l++) {
         const float *qkv[] = {w.q[l], w.k[l], w.v[l]}; int qkv_rows[] = {d, k, k};
@@ -382,6 +388,7 @@ extern "C" int qf_build_low_precision(QwenFast *f, void (*free_matrix)(void *, f
     }
     const float *e[] = {w.embedding}; int e_rows[] = {w.vocab}; build_mat(f, &f->eb, &f->eq, d, e, e_rows, 1);
     CK(cudaStreamSynchronize(f->st));
+    CK(cudaMemcpy(&f->bf16_inexact, f->inexact, 8, cudaMemcpyDeviceToHost)); gpu_free(f->inexact); f->bytes -= 8; f->inexact = NULL;
     if (free_matrix) { free_matrix(ctx, w.embedding); w.embedding = NULL; f->fp32_freed = 1; }
     f->lp_ready = 1; qf_graph_free(f); return 0;
 }
@@ -427,3 +434,4 @@ extern "C" void qf_sha_leaves(const void *data, size_t bytes, size_t leaf, unsig
     size_t leaves = (bytes + leaf - 1) / leaf;
     sha_leaves_kernel<<<(unsigned)((leaves + 127) / 128), 128>>>((const unsigned char *)data, bytes, leaf, out, leaves); LAUNCHED();
 }
+extern "C" void qf_bf16_exactness(const QwenFast *f, unsigned long long *inexact, unsigned long long *total) { *inexact = f->bf16_inexact; *total = f->bf16_total; }

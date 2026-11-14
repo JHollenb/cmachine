@@ -44,7 +44,7 @@ static QwenModel M; static QwenSession S; static QwenFast *F; static FILE *OUT; 
 /* ---------------- output ---------------- */
 typedef struct {
     const char *arm, *lane, *prefill_mode; int B, graph, tf32, forced, steps, nseq;
-    int prompt[64]; double prefill_ms[64]; int *ids[64]; double *ms; double t_start, t_end; double extra_ms;
+    int prompt[128]; double prefill_ms[128]; int *ids[128]; double *ms; double t_start, t_end; double extra_ms;
     const char *hash_mode; char chain[65]; int verify_ok;
 } Run;
 static void emit(const char *type, const Run *r) {
@@ -316,7 +316,7 @@ int main(int argc, char **argv) {
         w.input_norm[l] = L->input_norm; w.post_norm[l] = L->post_norm; w.q[l] = L->q; w.k[l] = L->k; w.v[l] = L->v; w.qb[l] = L->qb; w.kb[l] = L->kb; w.vb[l] = L->vb;
         w.o[l] = L->o; w.gate[l] = L->gate; w.up[l] = L->up; w.down[l] = L->down;
     }
-    int BMAX = 64; F = qf_open(&w, BMAX, capacity, longest > BMAX ? longest : BMAX, STEPS + 8); if (!F) die("qf_open", 0);
+    int BMAX = 128; F = qf_open(&w, BMAX, capacity, longest > BMAX ? longest : BMAX, STEPS + 8); if (!F) die("qf_open", 0);
     fprintf(OUT, "{\"type\":\"header\",\"model_identity\":\"%s\",\"model_digest\":\"%s\",\"vocab\":%d,\"layers\":%d,\"capacity\":%d,\"steps\":%d,\"prompts\":%d,\"hash_prompts\":%d,\"load_s\":%.3f,"
                  "\"gpu_weight_bytes\":%zu,\"lean_session_bytes\":%zu,\"fast_device_bytes\":%zu,\"lane_weight_bytes\":{\"fp32\":%zu,\"bf16\":%zu,\"int8\":%zu},\"kv_bytes_per_token\":%zu,\"leaf_bytes\":%d}\n",
             M.identity, M.digest, V, M.layers, capacity, STEPS, NP, hash_prompts, load_s, M.weight_bytes, S.allocated_bytes, qf_device_bytes(F),
@@ -368,8 +368,8 @@ int main(int argc, char **argv) {
         }
     }
     /* ================= FP32 batched decode ================= */
-    static const int BS[] = {8, 32, 64};
-    for (int bi = 0; bi < 3; bi++) {
+    static const int BS[] = {8, 16, 32, 64, 128};
+    for (int bi = 0; bi < 5; bi++) {
         int B = BS[bi], reps = B < NP ? (NP + B - 1) / B : 2;
         char *an = malloc(16), *gn = malloc(16), *fan = malloc(32), *fgn = malloc(32);
         snprintf(an, 16, "B%d", B); snprintf(gn, 16, "G%d", B); snprintf(fan, 32, "final_B%d", B); snprintf(fgn, 32, "final_G%d", B);
@@ -382,12 +382,12 @@ int main(int argc, char **argv) {
         }
     }
     phase("FORCE_fp32");
-    { int B = NP < BMAX ? NP : BMAX; emit_free("run", fast_run("FORCE_B16", "fp32", B, 0, 0, 1, 1, STEPS, NULL, "final_FORCE_fp32")); }
+    { int B = NP < 64 ? NP : 64; emit_free("run", fast_run("FORCE_B16", "fp32", B, 0, 0, 1, 1, STEPS, NULL, "final_FORCE_fp32")); }
     emit_free("run", fast_run("FORCE_B1", "fp32", 1, 0, 0, 1, 1, STEPS, NULL, NULL));
     /* ================= TF32 ================= */
     qf_set_tf32(F, 1);
     phase("TF32");
-    { int B = NP < BMAX ? NP : BMAX;
+    { int B = NP < 64 ? NP : 64;
       emit_free("run", fast_run("TF32_B16", "fp32", B, 0, 0, 1, 0, STEPS, "first_TF32", "final_TF32_B16"));
       emit_free("run", fast_run("TF32_FORCE_B16", "fp32", B, 0, 0, 1, 1, STEPS, NULL, "final_FORCE_tf32"));
       for (int rep = 0; rep < 2; rep++) for (int k = 0; k < 2; k++) {
@@ -395,6 +395,7 @@ int main(int argc, char **argv) {
           emit_free("run", fast_run(graph ? "TF32_G64" : "TF32_B64", "fp32", 64, 0, graph, 1, 0, STEPS, NULL, graph ? "final_TF32_G64" : "final_TF32_B64"));
       }
       emit_free("run", fast_run("TF32_B32", "fp32", 32, 0, 0, 1, 0, STEPS, NULL, NULL));
+      emit_free("run", fast_run("TF32_B128", "fp32", 128, 0, 0, 1, 0, STEPS, NULL, NULL));
     }
     qf_set_tf32(F, 0);
     /* ================= hashing (lean path), rotated ================= */
@@ -406,7 +407,8 @@ int main(int argc, char **argv) {
     /* ================= reduced precision ================= */
     phase("convert");
     double a = mono(); qf_build_low_precision(F, free_matrix, &M); gpu_sync(); double convert_s = mono() - a;
-    fprintf(OUT, "{\"type\":\"convert\",\"seconds\":%.3f,\"live_gpu_bytes\":%zu,\"peak_gpu_bytes\":%zu}\n", convert_s, gpu_live_bytes(), gpu_peak_bytes()); fflush(OUT);
+    unsigned long long inexact, total; qf_bf16_exactness(F, &inexact, &total);
+    fprintf(OUT, "{\"type\":\"convert\",\"seconds\":%.3f,\"bf16_inexact_elements\":%llu,\"bf16_total_elements\":%llu,\"live_gpu_bytes\":%zu,\"peak_gpu_bytes\":%zu}\n", convert_s, inexact, total, gpu_live_bytes(), gpu_peak_bytes()); fflush(OUT);
     static const char *LANES[] = {"bf16", "int8"}; static const int LANE_ID[] = {QF_BF16, QF_INT8};
     int lp_ok = 1;
     for (int li = 0; li < 2; li++) {
@@ -428,7 +430,7 @@ int main(int argc, char **argv) {
             emit_free("run", fast_run(graph ? g8 : b8, lane, 8, rep * 8, graph, 1, 0, STEPS, NULL, NULL));
         }
         emit_free("run", fast_run(b64, lane, 64, 0, 0, 1, 0, STEPS, NULL, NULL));
-        phase("%s", fr); { int B = NP < BMAX ? NP : BMAX; emit_free("run", fast_run(fr, lane, B, 0, 0, 1, 1, STEPS, NULL, ff)); }
+        phase("%s", fr); { int B = NP < 64 ? NP : 64; emit_free("run", fast_run(fr, lane, B, 0, 0, 1, 1, STEPS, NULL, ff)); }
     }
     phase("c_done");
     banks_save();

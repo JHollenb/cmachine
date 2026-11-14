@@ -288,7 +288,7 @@ def analyze(out, rows, samples):
             "top1_same": f"{sum(s['top1_same'] for s in valid)}/{len(valid)}", "bit_identical": f"{sum(s['bit_identical'] for s in valid)}/{len(valid)}",
             "per_prompt": per}
     # graph vs non-graph bitwise
-    pairs = [("final_G1", "final_F1"), ("final_G8", "final_B8"), ("final_G32", "final_B32"), ("final_G64", "final_B64"), ("final_TF32_G64", "final_TF32_B64"),
+    pairs = [("final_G1", "final_F1"), ("final_G8", "final_B8"), ("final_G16", "final_B16"), ("final_G128", "final_B128"), ("final_G32", "final_B32"), ("final_G64", "final_B64"), ("final_TF32_G64", "final_TF32_B64"),
              ("final_bf16_G1", "final_bf16_F1"), ("final_int8_G1", "final_int8_F1")]
     graph_bitwise = {}
     for g, n in pairs:
@@ -296,7 +296,7 @@ def analyze(out, rows, samples):
             (A, fa), (B, fb) = banks[g], banks[n]
             ps = [p for p in range(NP) if fa[p] and fb[p]]
             graph_bitwise[f"{g}_vs_{n}"] = f"{sum(np.array_equal(A[p].view(np.uint32), B[p].view(np.uint32)) for p in ps)}/{len(ps)}"
-    for g, n in [("G1", "F1"), ("G8", "B8"), ("G32", "B32"), ("G64", "B64"), ("TF32_G64", "TF32_B64"), ("bf16_G1", "bf16_F1"), ("bf16_G8", "bf16_B8"), ("int8_G1", "int8_F1"), ("int8_G8", "int8_B8")]:
+    for g, n in [("G1", "F1"), ("G8", "B8"), ("G16", "B16"), ("G128", "B128"), ("G32", "B32"), ("G64", "B64"), ("TF32_G64", "TF32_B64"), ("bf16_G1", "bf16_F1"), ("bf16_G8", "bf16_B8"), ("int8_G1", "int8_F1"), ("int8_G8", "int8_B8")]:
         ga = {(tuple(r["prompts"]), b): ids for r in runs if r["arm"] == g for b, ids in enumerate(r["ids"])}
         na = {(tuple(r["prompts"]), b): ids for r in runs if r["arm"] == n for b, ids in enumerate(r["ids"])}
         ks = sorted(set(ga) & set(na))

@@ -43,6 +43,8 @@ size_t qf_lane_weight_bytes(const QwenFast *, int lane);
  * free_fp32 != 0 frees each FP32 matrix after conversion through free_matrix;
  * afterwards only the BF16/INT8 lanes can run. */
 int qf_build_low_precision(QwenFast *, void (*free_matrix)(void *ctx, float *p), void *ctx);
+/* Matrix elements whose FP32 value is not exactly representable in BF16 (counted during the build). */
+void qf_bf16_exactness(const QwenFast *, unsigned long long *inexact, unsigned long long *total);
 int qf_set_lane(QwenFast *, int lane);
 void qf_set_tf32(QwenFast *, int on);
 void qf_reset(QwenFast *);
