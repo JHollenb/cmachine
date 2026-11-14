@@ -3,6 +3,7 @@
  * copied from the lean path produce the same bits. */
 #include "gpu.h"
 #include "qwen_fast.h"
+#include "qwen_ledger.h"
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 #include <cuda_bf16.h>
@@ -31,6 +32,12 @@ struct QwenFast {
     size_t lane_bytes[3];
     cudaGraph_t graph; cudaGraphExec_t exec; int graph_B;
     unsigned long long *inexact; unsigned long long bf16_inexact, bf16_total;
+    /* Ledger (qwen_ledger.h). Device rows lg[max_rows][stride]; retained writes
+     * lg_keep[max_rows][slots][hidden] (slot 0 = h_0, 1+2l = attention write of
+     * layer l, 2+2l = MLP write of layer l); SwiGLU chunk partials and counters.
+     * lg_rows = rows written by the last pass (host bookkeeping only). */
+    int lg_on, lg_rows, lg_stride, lg_slots, lg_chunks, graph_lg, lg_skip;
+    float *lg, *lg_keep, *lg_host; double *lg_part; unsigned *lg_count;
 };
 
 static void *fast_alloc(QwenFast *f, size_t n) { void *p = gpu_alloc(n); f->bytes += n; return p; }
@@ -132,6 +139,220 @@ __global__ static void prepare_decode(const int *tok, const int *pos, int *row_t
     int b = blockIdx.x * blockDim.x + threadIdx.x; if (b < B) { row_tok[b] = tok[b]; row_seq[b] = b; row_pos[b] = pos[b]; }
 }
 
+/* ---------------- ledger kernels (qwen_ledger.h); launched only while the ledger is on ----------------
+ * The *_lg kernels repeat the native statements of rms_rows, attention_rows,
+ * swiglu_rows and argmax_update in the same order with the same operands (the
+ * file is built with --fmad=false), so every native output is bit-identical;
+ * the ledger part only reads native values and accumulates in double. With the
+ * ledger off, forward()/finish() launch the original kernels unchanged. */
+#define LG_CHUNK 1024 /* SwiGLU neurons per ledger block */
+__device__ static int lg_layer(int l, int qheads) { return QL_HEAD + l * (QL_LAYER + QL_PER_HEAD * qheads); }
+/* Zero row r, then set token, position, sources. Readout fields stay 0 unless a readout runs. */
+__global__ static void lg_row_init(float *lg, int stride, const int *row_tok, const int *row_pos) {
+    float *row = lg + (size_t)blockIdx.x * stride;
+    for (int i = threadIdx.x; i < stride; i += blockDim.x) row[i] = 0.0f;
+    __syncthreads();
+    if (!threadIdx.x) { int p = row_pos[blockIdx.x]; row[QL_TOKEN] = (float)row_tok[blockIdx.x]; row[QL_POSITION] = (float)p; row[QL_SOURCES] = (float)(p + 1); }
+}
+/* Ledger arguments of one rms_rows_lg launch. Offsets are within a row; -1 = not written.
+ * keep: retained-write base (row r at keep + r*slots*n); keep_x retains x itself
+ * (used for h_0 when there is no add); keep_add retains the added write; rows < keep_from are not retained. */
+struct LgRms { float *row; int stride, rho, dot; float *keep; int slots, keep_x, keep_add, keep_from; };
+__global__ static void rms_rows_lg(float *out, float *x0, const float *add0, const float *w, int n, float epsilon, LgRms g) {
+    int r = blockIdx.x, t = threadIdx.x;
+    float *x = x0 + (size_t)r * n; float *o = out + (size_t)r * n;
+    bool keep = g.keep && r >= g.keep_from;
+    float *kx = keep && g.keep_x >= 0 ? g.keep + ((size_t)r * g.slots + g.keep_x) * n : NULL;
+    float *ka = keep && g.keep_add >= 0 ? g.keep + ((size_t)r * g.slots + g.keep_add) * n : NULL;
+    double dot = 0, nn = 0;
+    if (add0) {
+        const float *y = add0 + (size_t)r * n;
+        for (int i = t; i < n; i += blockDim.x) {
+            float xv = x[i], yv = y[i];                          /* x = residual BEFORE the write is added */
+            dot += (double)xv * (double)yv; nn += (double)yv * (double)yv;
+            if (ka) ka[i] = yv;
+            x[i] = xv + yv;                                      /* native: x[i] += y[i] */
+        }
+    } else if (kx) for (int i = t; i < n; i += blockDim.x) kx[i] = x[i];
+    __shared__ float sums[256]; __shared__ double d1[256], d2[256];
+    float sum = 0; for (int i = t; i < n; i += blockDim.x) sum += x[i] * x[i]; sums[t] = sum; d1[t] = dot; d2[t] = nn; __syncthreads();
+    for (int stride = 128; stride; stride /= 2) { if (t < stride) { sums[t] += sums[t + stride]; d1[t] += d1[t + stride]; d2[t] += d2[t + stride]; } __syncthreads(); }
+    float scale = rsqrtf(sums[0] / n + epsilon); for (int i = t; i < n; i += blockDim.x) o[i] = (x[i] * scale) * w[i];
+    if (!t) {
+        float *row = g.row + (size_t)r * g.stride;
+        if (g.rho >= 0) row[g.rho] = scale;
+        if (add0 && g.dot >= 0) { row[g.dot] = (float)d1[0]; row[g.dot + 1] = (float)d2[0]; }
+    }
+}
+/* Last-layer MLP dot/norm2 for rows that get no final norm (non-final prefill rows):
+ * same per-thread order and tree as rms_rows_lg, so a row gives the same values either way. */
+__global__ static void lg_tail(const float *X, const float *P, int n, float *lg, int stride, int dot) {
+    const float *x = X + (size_t)blockIdx.x * n, *y = P + (size_t)blockIdx.x * n; int t = threadIdx.x;
+    double a = 0, b = 0;
+    for (int i = t; i < n; i += blockDim.x) { float xv = x[i], yv = y[i]; a += (double)xv * (double)yv; b += (double)yv * (double)yv; }
+    __shared__ double d1[256], d2[256]; d1[t] = a; d2[t] = b; __syncthreads();
+    for (int s = 128; s; s /= 2) { if (t < s) { d1[t] += d1[t + s]; d2[t] += d2[t + s]; } __syncthreads(); }
+    if (!t) { float *row = lg + (size_t)blockIdx.x * stride; row[dot] = (float)d1[0]; row[dot + 1] = (float)d2[0]; }
+}
+/* attention_rows plus the per-head softmax fields, taken inside the softmax pass:
+ * logZ = max + log(sum of the native exp terms, in double); probabilities are the native ones. */
+__global__ static void attention_rows_lg(float *out, const float *Q, const float *keys, const float *values, const int *row_seq, const int *row_pos,
+                                         int qheads, int kvheads, int head, int cap, float scale, float *lg, int lstride, int hoff) {
+    extern __shared__ float sc[];
+    __shared__ float qs[128], red[128];
+    __shared__ double rd[128]; __shared__ int ri[128];
+    int r = blockIdx.x / qheads, h = blockIdx.x % qheads, kh = h / (qheads / kvheads), tid = threadIdx.x, lane = tid & 31, warp = tid >> 5, warps = blockDim.x >> 5;
+    int seq = row_seq[r], L = row_pos[r] + 1;
+    const float *Kc = keys + ((size_t)seq * kvheads + kh) * cap * head, *Vc = values + ((size_t)seq * kvheads + kh) * cap * head;
+    qs[tid] = Q[(size_t)r * qheads * head + h * head + tid]; __syncthreads();
+    for (int j = warp; j < L; j += warps) {
+        float dot = 0; for (int i = lane; i < head; i += 32) dot += qs[i] * Kc[(size_t)j * head + i];
+        for (int off = 16; off; off >>= 1) dot += __shfl_down_sync(0xffffffffu, dot, off);
+        if (!lane) sc[j] = dot * scale;
+    }
+    __syncthreads();
+    float m = -INFINITY; for (int j = tid; j < L; j += blockDim.x) m = fmaxf(m, sc[j]); red[tid] = m; __syncthreads();
+    for (int stride = 64; stride; stride /= 2) { if (tid < stride) red[tid] = fmaxf(red[tid], red[tid + stride]); __syncthreads(); }
+    m = red[0]; __syncthreads();
+    float s = 0; double sd = 0;
+    for (int j = tid; j < L; j += blockDim.x) { float e = expf(sc[j] - m); sc[j] = e; s += e; sd += (double)e; }
+    red[tid] = s; rd[tid] = sd; __syncthreads();
+    for (int stride = 64; stride; stride /= 2) { if (tid < stride) { red[tid] += red[tid + stride]; rd[tid] += rd[tid + stride]; } __syncthreads(); }
+    s = red[0]; double z = rd[0];
+    for (int j = tid; j < L; j += blockDim.x) sc[j] /= s;
+    __syncthreads();
+    /* every thread has read red[0]/rd[0] before the barrier above; reuse them */
+    double ent = 0; float pm = -1.0f; int pi = 2147483647; /* entropy terms in FP32 (logf), summed in FP64 */
+    for (int j = tid; j < L; j += blockDim.x) { float p = sc[j]; if (p > 0.0f) ent -= (double)(p * logf(p)); if (p > pm) { pm = p; pi = j; } }
+    rd[tid] = ent; red[tid] = pm; ri[tid] = pi; __syncthreads();
+    for (int stride = 64; stride; stride /= 2) {
+        if (tid < stride) {
+            rd[tid] += rd[tid + stride];
+            float b = red[tid + stride]; int bj = ri[tid + stride];
+            if (b > red[tid] || (b == red[tid] && bj < ri[tid])) { red[tid] = b; ri[tid] = bj; }
+        }
+        __syncthreads();
+    }
+    if (!tid) {
+        float *o = lg + (size_t)r * lstride + hoff + h;
+        o[QL_H_LOGZ * qheads] = (float)((double)m + log(z)); o[QL_H_PFIRST * qheads] = sc[0]; o[QL_H_ENTROPY * qheads] = (float)rd[0];
+        o[QL_H_PMAX * qheads] = red[0]; o[QL_H_ARGMAX * qheads] = (float)ri[0];
+    }
+    float acc = 0; for (int j = 0; j < L; j++) acc += sc[j] * Vc[(size_t)j * head + tid];
+    out[(size_t)r * qheads * head + h * head + tid] = acc;
+}
+/* swiglu_rows plus the gate census, grid (chunks, rows). Per-element terms are FP32
+ * (tanhf; FP64 tanh per neuron cost 0.43 ms/token at B=1 and 2.8 ms/step at B=64,
+ * job-8d3e1f797eac); each thread sums its <= LG_CHUNK/256 elements in FP32, then the
+ * block tree and the cross-block sum are FP64. The last block of a row (threadfence +
+ * counter) sums the chunk partials in chunk order, writes the fields, resets the counter. */
+__global__ static void swiglu_rows_lg(float *gate, const float *up, int h, int chunks, double *part, unsigned *count, float *lg, int lstride, int loff) {
+    int r = blockIdx.y, c = blockIdx.x, t = threadIdx.x;
+    float *g0 = gate + (size_t)r * h; const float *u0 = up + (size_t)r * h;
+    int lo = c * LG_CHUNK, hi = lo + LG_CHUNK < h ? lo + LG_CHUNK : h;
+    float v[7] = {0, 0, 0, 0, 0, 0, 0}; /* small, off, on, even2, odd2, even_odd, prod2 */
+    for (int i = lo + t; i < hi; i += blockDim.x) {
+        float g = g0[i], u = u0[i];
+        float prod = (g / (1.0f + expf(-g))) * u;                /* native: gate[i] = (gate[i] / (1.0f + expf(-gate[i]))) * up[i] */
+        g0[i] = prod;
+        if (fabsf(g) < 1.0f) v[0] += 1.0f;
+        if (g <= -5.0f) v[1] += 1.0f;
+        if (g >= 5.0f) v[2] += 1.0f;
+        float even = (g * u) * 0.5f, odd = even * tanhf(g * 0.5f);
+        v[3] += even * even; v[4] += odd * odd; v[5] += even * odd; v[6] += prod * prod;
+    }
+    __shared__ double red[7][256]; __shared__ int last;
+    for (int k = 0; k < 7; k++) red[k][t] = (double)v[k];
+    __syncthreads();
+    for (int s = 128; s; s /= 2) { if (t < s) for (int k = 0; k < 7; k++) red[k][t] += red[k][t + s]; __syncthreads(); }
+    if (!t) {
+        double *p = part + ((size_t)r * chunks + c) * 8;
+        for (int k = 0; k < 7; k++) p[k] = red[k][0];
+        __threadfence();
+        last = atomicAdd(count + r, 1u) == (unsigned)(chunks - 1);
+    }
+    __syncthreads();
+    if (last && !t) {
+        __threadfence();
+        volatile const double *p = part + (size_t)r * chunks * 8; double sum[7] = {0, 0, 0, 0, 0, 0, 0};
+        for (int cc = 0; cc < chunks; cc++) for (int k = 0; k < 7; k++) sum[k] += p[(size_t)cc * 8 + k];
+        float *o = lg + (size_t)r * lstride + loff;
+        o[QL_GATE_SMALL] = (float)sum[0]; o[QL_GATE_OFF] = (float)sum[1]; o[QL_GATE_ON] = (float)sum[2];
+        o[QL_EVEN2] = (float)sum[3]; o[QL_ODD2] = (float)sum[4]; o[QL_EVEN_ODD] = (float)sum[5]; o[QL_PROD2] = (float)sum[6];
+        count[r] = 0;
+    }
+}
+/* gpu_top2's insert rule (ties -> smaller id; the runner-up is a different id). */
+__device__ static void lg_insert(float v, int i, float &a, int &ai, float &b, int &bi) {
+    if (better(v, i, a, ai)) { b = a; bi = ai; a = v; ai = i; } else if (i != ai && better(v, i, b, bi)) { b = v; bi = i; }
+}
+/* argmax_update with the runner-up tracked alongside. The winner is the unique
+ * maximum of the same total order (value, then smaller id), so it equals
+ * argmax_update's id; the sequence update statements are the same. */
+__global__ static void argmax_update_lg(const float *logits, int V, const int *row_seq, const int *row_pos, int *tok, int *pos, int *ids, int *idsn, int stride, int *invalid,
+                                        float *lg, int lstride) {
+    __shared__ float bv[1024], sv[1024]; __shared__ int bi[1024], si[1024];
+    const float *x = logits + (size_t)blockIdx.x * V; float best = -INFINITY, second = -INFINITY; int id = 2147483647, id2 = 2147483647, bad = 0, t = threadIdx.x;
+    for (int i = t; i < V; i += blockDim.x) { float v = x[i]; if (!isfinite(v)) bad = 1; lg_insert(v, i, best, id, second, id2); }
+    if (bad) atomicExch(invalid, 1);
+    bv[t] = best; bi[t] = id; sv[t] = second; si[t] = id2; __syncthreads();
+    for (int s = blockDim.x / 2; s; s /= 2) {
+        if (t < s) {
+            float a = bv[t], b = sv[t]; int ai = bi[t], bj = si[t];
+            lg_insert(bv[t + s], bi[t + s], a, ai, b, bj); lg_insert(sv[t + s], si[t + s], a, ai, b, bj);
+            bv[t] = a; bi[t] = ai; sv[t] = b; si[t] = bj;
+        }
+        __syncthreads();
+    }
+    if (!t) {
+        int seq = row_seq[blockIdx.x], n = idsn[seq];
+        tok[seq] = bi[0]; pos[seq] = row_pos[blockIdx.x] + 1;
+        if (n < stride) ids[(size_t)seq * stride + n] = bi[0];
+        idsn[seq] = n + 1;
+        float *row = lg + (size_t)blockIdx.x * lstride;
+        row[QL_HAS_READOUT] = 1.0f; row[QL_TOP1] = (float)bi[0]; row[QL_TOP2] = (float)si[0];
+        row[QL_MARGIN] = (float)((double)bv[0] - (double)sv[0]);
+    }
+}
+/* Margin split for one readout row: c = gamma (.) (W_a - W_b) in double from the
+ * resident tied rows (FP32, or BF16 widened exactly); one warp per retained write
+ * (plus ||c||^2), thread 0 sums in fixed order: h_0, then attention and MLP of each layer. */
+__global__ static void lg_margin(float *lg, int lstride, const float *keep, int slots, int d, int layers, int qheads, int V,
+                                 const float *gamma, const float *Wf, const __nv_bfloat16 *Wb) {
+    extern __shared__ double c[];
+    __shared__ double res[2 * QF_MAX_LAYERS + 2];
+    int r = blockIdx.x, t = threadIdx.x, lane = t & 31, warp = t >> 5, warps = blockDim.x >> 5;
+    float *row = lg + (size_t)r * lstride;
+    int a = (int)row[QL_TOP1], b = (int)row[QL_TOP2];
+    if (a < 0 || a >= V || b < 0 || b >= V) return; /* same for every thread of the block */
+    for (int i = t; i < d; i += blockDim.x) {
+        double wa = Wf ? (double)Wf[(size_t)a * d + i] : (double)__bfloat162float(Wb[(size_t)a * d + i]);
+        double wb = Wf ? (double)Wf[(size_t)b * d + i] : (double)__bfloat162float(Wb[(size_t)b * d + i]);
+        c[i] = (double)gamma[i] * (wa - wb);
+    }
+    __syncthreads();
+    const float *k0 = keep + (size_t)r * slots * d;
+    for (int task = warp; task <= slots; task += warps) {
+        double acc = 0;
+        if (task < slots) { const float *wv = k0 + (size_t)task * d; for (int i = lane; i < d; i += 32) acc += c[i] * (double)wv[i]; }
+        else for (int i = lane; i < d; i += 32) acc += c[i] * c[i];
+        for (int off = 16; off; off >>= 1) acc += __shfl_down_sync(0xffffffffu, acc, off);
+        if (!lane) res[task] = acc;
+    }
+    __syncthreads();
+    if (!t) {
+        double rho = (double)row[QL_RHO_FINAL], emb = rho * res[0], sum = emb;
+        row[QL_C_NORM] = (float)sqrt(res[slots]); row[QL_MARGIN_EMBED] = (float)emb;
+        for (int l = 0; l < layers; l++) {
+            double ma = rho * res[1 + 2 * l], mm = rho * res[2 + 2 * l];
+            float *blk = row + lg_layer(l, qheads);
+            blk[QL_MARGIN_ATTN] = (float)ma; blk[QL_MARGIN_MLP] = (float)mm;
+            sum += ma; sum += mm;
+        }
+        row[QL_MARGIN_SUM] = (float)sum;
+    }
+}
+
 /* ---------------- low-precision matvec: one warp per output row ---------------- */
 template <int KIND>
 __global__ static void wmv(const void *W, const float *S, const float *X, int in, int out, int nb, int n1, int n2, float *Y0, float *Y1, float *Y2) {
@@ -223,11 +444,13 @@ extern "C" QwenFast *qf_open(const QfWeights *w, int max_seqs, int capacity, int
 }
 extern "C" size_t qf_device_bytes(const QwenFast *f) { return f->bytes; }
 extern "C" size_t qf_lane_weight_bytes(const QwenFast *f, int lane) { return f->lane_bytes[lane]; }
-extern "C" void qf_graph_free(QwenFast *f) { if (f->exec) CK(cudaGraphExecDestroy(f->exec)); if (f->graph) CK(cudaGraphDestroy(f->graph)); f->exec = NULL; f->graph = NULL; f->graph_B = 0; }
+extern "C" void qf_graph_free(QwenFast *f) { if (f->exec) CK(cudaGraphExecDestroy(f->exec)); if (f->graph) CK(cudaGraphDestroy(f->graph)); f->exec = NULL; f->graph = NULL; f->graph_B = 0; f->graph_lg = 0; }
 extern "C" void qf_close(QwenFast *f) {
     if (!f) return; qf_graph_free(f);
-    void *all[] = {f->workspace, f->tok, f->pos, f->idsn, f->ids, f->invalid, f->row_tok, f->row_seq, f->row_pos, f->X, f->N, f->Q, f->K, f->V, f->A, f->P, f->G, f->U, f->logits, f->keys, f->values};
+    void *all[] = {f->workspace, f->tok, f->pos, f->idsn, f->ids, f->invalid, f->row_tok, f->row_seq, f->row_pos, f->X, f->N, f->Q, f->K, f->V, f->A, f->P, f->G, f->U, f->logits, f->keys, f->values,
+                   f->lg, f->lg_keep, f->lg_part, f->lg_count};
     for (unsigned i = 0; i < sizeof(all) / sizeof(all[0]); i++) gpu_free(all[i]);
+    if (f->lg_host) CK(cudaFreeHost(f->lg_host));
     for (int i = 0; i < f->lp_count; i++) gpu_free(f->lp_alloc[i]);
     BK(cublasDestroy(f->blas)); CK(cudaStreamDestroy(f->st)); free(f->hpos); free(f);
 }
@@ -236,6 +459,7 @@ extern "C" void qf_reset(QwenFast *f) {
     CK(cudaMemsetAsync(f->pos, 0, f->max_seqs * 4, f->st)); CK(cudaMemsetAsync(f->idsn, 0, f->max_seqs * 4, f->st));
     CK(cudaMemsetAsync(f->tok, 0, f->max_seqs * 4, f->st)); CK(cudaMemsetAsync(f->invalid, 0, 4, f->st));
     memset(f->hpos, 0, f->max_seqs * sizeof(int));
+    f->lg_rows = 0;
 }
 extern "C" int qf_position(const QwenFast *f, int seq) { return f->hpos[seq]; }
 extern "C" void qf_set_tf32(QwenFast *f, int on) { f->tf32 = on; BK(cublasSetMathMode(f->blas, on ? CUBLAS_TF32_TENSOR_OP_MATH : CUBLAS_PEDANTIC_MATH)); }
@@ -243,6 +467,7 @@ extern "C" int qf_set_lane(QwenFast *f, int lane) {
     if (lane < QF_FP32 || lane > QF_INT8) return -1;
     if (lane == QF_FP32 && f->fp32_freed) return -1;
     if (lane != QF_FP32 && !f->lp_ready) return -1;
+    if (lane == QF_INT8 && f->lg_on) return -1; /* the ledger covers exact-in-weights lanes only */
     if (lane != f->lane) qf_graph_free(f);
     f->lane = lane; return 0;
 }
@@ -265,35 +490,69 @@ static void mm(QwenFast *f, const Mat &m, const float *X, int R, float *Y0, floa
 }
 static Mat single(const float *p, int in, int out) { Mat m; memset(&m, 0, sizeof(m)); m.in = in; m.out = out; m.n1 = m.n2 = out; m.f = p; return m; }
 
-static void forward(QwenFast *f, int R) {
+/* keep_from: with the ledger on, rows >= keep_from retain their writes for the margin split
+ * (decode: 0; batched prefill: the last row only). Ignored with the ledger off. */
+static void forward(QwenFast *f, int R, int keep_from) {
     const QfWeights &w = f->w; int d = w.hidden, k = w.kvheads * w.head, h = w.intermediate;
+    const int lg = f->lg_on, H = w.qheads, ls = f->lg_stride, slots = f->lg_slots;
+    /* profiling only (qf_ledger_profile_skip): a skipped piece runs the native kernel instead */
+    const int lg_rms = lg && !(f->lg_skip & QF_SKIP_RMS), lg_att = lg && !(f->lg_skip & QF_SKIP_ATTENTION), lg_glu = lg && !(f->lg_skip & QF_SKIP_SWIGLU);
+    if (lg) { lg_row_init<<<R, 256, 0, f->st>>>(f->lg, ls, f->row_tok, f->row_pos); LAUNCHED(); f->lg_rows = R; }
     const Mat *emb = f->lane == QF_BF16 ? &f->eb : f->lane == QF_INT8 ? &f->eq : NULL;
     embed_rows<<<R, 256, 0, f->st>>>(f->X, emb ? NULL : w.embedding, f->lane == QF_BF16 ? f->eb.b : NULL, f->lane == QF_INT8 ? f->eq.q : NULL, f->eq.s, f->row_tok, d); LAUNCHED();
     float scale = 1.0f / sqrtf((float)w.head);
     size_t layer_kv = (size_t)f->max_seqs * k * f->cap;
     int post_threads = w.qheads * (w.head / 2) + w.kvheads * (w.head / 2) + k;
     for (int l = 0; l < w.layers; l++) {
-        rms_rows<<<R, 256, 0, f->st>>>(f->N, f->X, l ? f->P : NULL, w.input_norm[l], d, w.epsilon); LAUNCHED();
+        int lay = lg ? ql_layer_offset(l, H) : 0;
+        if (lg_rms) {
+            /* layer l input norm: adds the MLP write of layer l-1 (slot 2l); layer 0 retains h_0 (slot 0) */
+            LgRms g = {f->lg, ls, lay + QL_RHO_IN, l ? ql_layer_offset(l - 1, H) + QL_MLP_DOT : -1, f->lg_keep, slots, l ? -1 : 0, l ? 2 * l : -1, keep_from};
+            rms_rows_lg<<<R, 256, 0, f->st>>>(f->N, f->X, l ? f->P : NULL, w.input_norm[l], d, w.epsilon, g); LAUNCHED();
+        } else { rms_rows<<<R, 256, 0, f->st>>>(f->N, f->X, l ? f->P : NULL, w.input_norm[l], d, w.epsilon); LAUNCHED(); }
         if (f->lane == QF_FP32) { mm(f, single(w.q[l], d, d), f->N, R, f->Q, NULL, NULL); mm(f, single(w.k[l], d, k), f->N, R, f->K, NULL, NULL); mm(f, single(w.v[l], d, k), f->N, R, f->V, NULL, NULL); }
         else mm(f, (f->lane == QF_BF16 ? f->mb : f->mq)[l][M_QKV], f->N, R, f->Q, f->K, f->V);
         float *keys = f->keys + l * layer_kv, *values = f->values + l * layer_kv;
         qkv_post<<<dim3((post_threads + 127) / 128, R), 128, 0, f->st>>>(f->Q, f->K, f->V, w.qb[l], w.kb[l], w.vb[l], keys, values, f->row_seq, f->row_pos, w.qheads, w.kvheads, w.head, f->cap, w.theta); LAUNCHED();
-        attention_rows<<<R * w.qheads, w.head, (size_t)f->cap * 4, f->st>>>(f->A, f->Q, keys, values, f->row_seq, f->row_pos, w.qheads, w.kvheads, w.head, f->cap, scale); LAUNCHED();
+        if (lg_att) { attention_rows_lg<<<R * w.qheads, w.head, (size_t)f->cap * 4, f->st>>>(f->A, f->Q, keys, values, f->row_seq, f->row_pos, w.qheads, w.kvheads, w.head, f->cap, scale, f->lg, ls, lay + QL_LAYER); LAUNCHED(); }
+        else { attention_rows<<<R * w.qheads, w.head, (size_t)f->cap * 4, f->st>>>(f->A, f->Q, keys, values, f->row_seq, f->row_pos, w.qheads, w.kvheads, w.head, f->cap, scale); LAUNCHED(); }
         if (f->lane == QF_FP32) mm(f, single(w.o[l], d, d), f->A, R, f->P, NULL, NULL); else mm(f, (f->lane == QF_BF16 ? f->mb : f->mq)[l][M_O], f->A, R, f->P, NULL, NULL);
-        rms_rows<<<R, 256, 0, f->st>>>(f->N, f->X, f->P, w.post_norm[l], d, w.epsilon); LAUNCHED();
+        if (lg_rms) {
+            /* post-attention norm: adds the attention write of layer l (slot 1+2l) */
+            LgRms g = {f->lg, ls, lay + QL_RHO_MID, lay + QL_ATTN_DOT, f->lg_keep, slots, -1, 1 + 2 * l, keep_from};
+            rms_rows_lg<<<R, 256, 0, f->st>>>(f->N, f->X, f->P, w.post_norm[l], d, w.epsilon, g); LAUNCHED();
+        } else { rms_rows<<<R, 256, 0, f->st>>>(f->N, f->X, f->P, w.post_norm[l], d, w.epsilon); LAUNCHED(); }
         if (f->lane == QF_FP32) { mm(f, single(w.gate[l], d, h), f->N, R, f->G, NULL, NULL); mm(f, single(w.up[l], d, h), f->N, R, f->U, NULL, NULL); }
         else mm(f, (f->lane == QF_BF16 ? f->mb : f->mq)[l][M_GATEUP], f->N, R, f->G, f->U, NULL);
-        size_t n = (size_t)R * h; swiglu_rows<<<(unsigned)((n + 255) / 256), 256, 0, f->st>>>(f->G, f->U, n); LAUNCHED();
+        if (lg_glu) { swiglu_rows_lg<<<dim3(f->lg_chunks, R), 256, 0, f->st>>>(f->G, f->U, h, f->lg_chunks, f->lg_part, f->lg_count, f->lg, ls, lay); LAUNCHED(); }
+        else { size_t n = (size_t)R * h; swiglu_rows<<<(unsigned)((n + 255) / 256), 256, 0, f->st>>>(f->G, f->U, n); LAUNCHED(); }
         if (f->lane == QF_FP32) mm(f, single(w.down[l], h, d), f->G, R, f->P, NULL, NULL); else mm(f, (f->lane == QF_BF16 ? f->mb : f->mq)[l][M_DOWN], f->G, R, f->P, NULL, NULL);
     }
+}
+/* Ledger, rows 0..count-1 that get no final norm: the last layer's MLP write is never
+ * added to X, so take its dot/norm2 directly. */
+static void lg_no_readout(QwenFast *f, int count) {
+    if (!f->lg_on || count < 1) return;
+    lg_tail<<<count, 256, 0, f->st>>>(f->X, f->P, f->w.hidden, f->lg, f->lg_stride, ql_layer_offset(f->w.layers - 1, f->w.qheads) + QL_MLP_DOT); LAUNCHED();
 }
 /* Final norm (with the last layer's residual add) and logits for rows first..first+count-1. */
 static void finish(QwenFast *f, int first, int count) {
     const QfWeights &w = f->w; int d = w.hidden;
-    rms_rows<<<count, 256, 0, f->st>>>(f->N, f->X + (size_t)first * d, f->P + (size_t)first * d, w.norm, d, w.epsilon); LAUNCHED();
+    const int lg = f->lg_on && !(f->lg_skip & QF_SKIP_READOUT);
+    if (lg) {
+        lg_no_readout(f, first);
+        int ls = f->lg_stride, slots = f->lg_slots;
+        LgRms g = {f->lg + (size_t)first * ls, ls, QL_RHO_FINAL, ql_layer_offset(w.layers - 1, w.qheads) + QL_MLP_DOT, f->lg_keep + (size_t)first * slots * d, slots, -1, 2 * w.layers, 0};
+        rms_rows_lg<<<count, 256, 0, f->st>>>(f->N, f->X + (size_t)first * d, f->P + (size_t)first * d, w.norm, d, w.epsilon, g); LAUNCHED();
+    } else { rms_rows<<<count, 256, 0, f->st>>>(f->N, f->X + (size_t)first * d, f->P + (size_t)first * d, w.norm, d, w.epsilon); LAUNCHED(); }
     if (f->lane == QF_FP32) mm(f, single(w.embedding, d, w.vocab), f->N, count, f->logits, NULL, NULL);
     else mm(f, f->lane == QF_BF16 ? f->eb : f->eq, f->N, count, f->logits, NULL, NULL);
-    argmax_update<<<count, 1024, 0, f->st>>>(f->logits, w.vocab, f->row_seq + first, f->row_pos + first, f->tok, f->pos, f->ids, f->idsn, f->ids_stride, f->invalid); LAUNCHED();
+    if (lg) {
+        int ls = f->lg_stride, slots = f->lg_slots;
+        argmax_update_lg<<<count, 1024, 0, f->st>>>(f->logits, w.vocab, f->row_seq + first, f->row_pos + first, f->tok, f->pos, f->ids, f->idsn, f->ids_stride, f->invalid, f->lg + (size_t)first * ls, ls); LAUNCHED();
+        lg_margin<<<count, 256, (size_t)d * 8, f->st>>>(f->lg + (size_t)first * ls, ls, f->lg_keep + (size_t)first * slots * d, slots, d, w.layers, w.qheads, w.vocab,
+                                                       w.norm, f->lane == QF_FP32 ? w.embedding : NULL, f->lane == QF_BF16 ? f->eb.b : NULL); LAUNCHED();
+    } else { argmax_update<<<count, 1024, 0, f->st>>>(f->logits, w.vocab, f->row_seq + first, f->row_pos + first, f->tok, f->pos, f->ids, f->idsn, f->ids_stride, f->invalid); LAUNCHED(); }
 }
 extern "C" int qf_prefill(QwenFast *f, int seq, const int *tokens, int n, int batched) {
     if (seq < 0 || seq >= f->max_seqs || n < 1 || f->hpos[seq] + n > f->cap || (batched && n > f->max_rows)) return -1;
@@ -302,14 +561,14 @@ extern "C" int qf_prefill(QwenFast *f, int seq, const int *tokens, int n, int ba
         int *rt = (int *)malloc(n * 3 * sizeof(int)); if (!rt) exit(2); int *rs = rt + n, *rp = rt + 2 * n;
         for (int i = 0; i < n; i++) { rt[i] = tokens[i]; rs[i] = seq; rp[i] = p0 + i; }
         CK(cudaMemcpyAsync(f->row_tok, rt, n * 4, cudaMemcpyHostToDevice, f->st)); CK(cudaMemcpyAsync(f->row_seq, rs, n * 4, cudaMemcpyHostToDevice, f->st)); CK(cudaMemcpyAsync(f->row_pos, rp, n * 4, cudaMemcpyHostToDevice, f->st));
-        forward(f, n); finish(f, n - 1, 1);
+        forward(f, n, n - 1); finish(f, n - 1, 1);
         CK(cudaStreamSynchronize(f->st)); free(rt);
     } else {
         for (int i = 0; i < n; i++) {
             int row[3] = {tokens[i], seq, p0 + i};
             CK(cudaMemcpyAsync(f->row_tok, row, 4, cudaMemcpyHostToDevice, f->st)); CK(cudaMemcpyAsync(f->row_seq, row + 1, 4, cudaMemcpyHostToDevice, f->st)); CK(cudaMemcpyAsync(f->row_pos, row + 2, 4, cudaMemcpyHostToDevice, f->st));
-            forward(f, 1);
-            if (i == n - 1) finish(f, 0, 1);
+            forward(f, 1, i == n - 1 ? 0 : 1);
+            if (i == n - 1) finish(f, 0, 1); else lg_no_readout(f, 1);
             CK(cudaStreamSynchronize(f->st));
         }
     }
@@ -322,7 +581,7 @@ static int decode_check(QwenFast *f, int B) {
 }
 static void decode_body(QwenFast *f, int B) {
     prepare_decode<<<(B + 63) / 64, 64, 0, f->st>>>(f->tok, f->pos, f->row_tok, f->row_seq, f->row_pos, B); LAUNCHED();
-    forward(f, B); finish(f, 0, B);
+    forward(f, B, 0); finish(f, 0, B);
 }
 extern "C" int qf_decode(QwenFast *f, int B, const int *forced) {
     if (decode_check(f, B)) return -1;
@@ -338,12 +597,13 @@ extern "C" int qf_graph_capture(QwenFast *f, int B) {
     decode_body(f, B);
     CK(cudaStreamEndCapture(f->st, &f->graph));
     CK(cudaGraphInstantiateWithFlags(&f->exec, f->graph, 0));
-    f->graph_B = B; return 0;
+    f->graph_B = B; f->graph_lg = f->lg_on; return 0;
 }
 extern "C" int qf_graph_step(QwenFast *f) {
     if (!f->exec || decode_check(f, f->graph_B)) return -1;
     CK(cudaGraphLaunch(f->exec, f->st));
     for (int b = 0; b < f->graph_B; b++) f->hpos[b]++;
+    if (f->graph_lg) f->lg_rows = f->graph_B;
     return 0;
 }
 extern "C" int qf_read_ids(QwenFast *f, int seq, int *out, int n) {
@@ -355,6 +615,43 @@ extern "C" int qf_read_ids(QwenFast *f, int seq, int *out, int n) {
     CK(cudaMemcpy(out, f->ids + (size_t)seq * f->ids_stride, (size_t)n * 4, cudaMemcpyDeviceToHost)); return 0;
 }
 extern "C" void qf_read_logits(QwenFast *f, int row, float *host) { CK(cudaStreamSynchronize(f->st)); CK(cudaMemcpy(host, f->logits + (size_t)row * f->w.vocab, (size_t)f->w.vocab * 4, cudaMemcpyDeviceToHost)); }
+
+/* ---------------- ledger API (qwen_ledger.h) ---------------- */
+extern "C" int qf_ledger_row_floats(const QwenFast *f) { return ql_row_floats(f->w.layers, f->w.qheads); }
+extern "C" int qf_ledger_enable(QwenFast *f, int on) {
+    if (!f) return -1;
+    on = on ? 1 : 0;
+    if (on) {
+        const QfWeights &w = f->w;
+        if (f->lane == QF_INT8) return -1;                                   /* refused: approximate lane */
+        if ((size_t)f->cap * 4 + 4096 > 48 * 1024 || (size_t)w.hidden * 8 > 40 * 1024 || w.head != 128) return -1; /* shared-memory limits of the _lg kernels */
+        if (!f->lg) {
+            int R = f->max_rows;
+            f->lg_stride = ql_row_floats(w.layers, w.qheads); f->lg_slots = 2 * w.layers + 1; f->lg_chunks = (w.intermediate + LG_CHUNK - 1) / LG_CHUNK;
+            f->lg = (float *)fast_alloc(f, (size_t)R * f->lg_stride * 4);
+            f->lg_keep = (float *)fast_alloc(f, (size_t)R * f->lg_slots * w.hidden * 4);
+            f->lg_part = (double *)fast_alloc(f, (size_t)R * f->lg_chunks * 8 * sizeof(double));
+            f->lg_count = (unsigned *)fast_alloc(f, (size_t)R * sizeof(unsigned));
+            CK(cudaMemsetAsync(f->lg, 0, (size_t)R * f->lg_stride * 4, f->st));
+            CK(cudaMemsetAsync(f->lg_keep, 0, (size_t)R * f->lg_slots * w.hidden * 4, f->st));
+            CK(cudaMemsetAsync(f->lg_count, 0, (size_t)R * sizeof(unsigned), f->st));
+            CK(cudaMallocHost((void **)&f->lg_host, (size_t)R * f->lg_stride * 4));
+            CK(cudaStreamSynchronize(f->st));
+        }
+    }
+    if (on != f->lg_on) qf_graph_free(f); /* a captured graph holds the other kernel set: recapture */
+    f->lg_on = on; f->lg_rows = 0; return 0;
+}
+/* Rows first..first+count-1 of the last pass, one device-to-host copy (pinned staging). */
+extern "C" int qf_ledger_read_rows(QwenFast *f, int first, int count, float *host) {
+    if (!f || !host || !f->lg_on || first < 0 || count < 1 || first + count > f->lg_rows) return -1;
+    size_t n = (size_t)count * f->lg_stride * 4;
+    CK(cudaMemcpyAsync(f->lg_host, f->lg + (size_t)first * f->lg_stride, n, cudaMemcpyDeviceToHost, f->st));
+    CK(cudaStreamSynchronize(f->st));
+    memcpy(host, f->lg_host, n); return 0;
+}
+extern "C" int qf_ledger_read(QwenFast *f, int row, float *host_row) { return qf_ledger_read_rows(f, row, 1, host_row); }
+extern "C" void qf_ledger_profile_skip(QwenFast *f, int mask) { if (mask != f->lg_skip) qf_graph_free(f); f->lg_skip = mask; }
 
 /* ---------------- low-precision weight build ---------------- */
 static void *lp_alloc(QwenFast *f, size_t n) { void *p = fast_alloc(f, n); f->lp_alloc[f->lp_count++] = p; return p; }

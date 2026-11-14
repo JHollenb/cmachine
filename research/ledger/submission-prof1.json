@@ -1,0 +1,8 @@
+{
+ "job": "job-8d3e1f797eac",
+ "reservation": {
+  "ram_mb": 6000,
+  "vram_mb": 8600,
+  "cpu_threads": 4
+ }
+}

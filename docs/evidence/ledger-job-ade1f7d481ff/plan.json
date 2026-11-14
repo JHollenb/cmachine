@@ -1,0 +1,1 @@
+{"prompts": 2, "steps": 8, "warmup_steps": 2, "smoke_steps": 4, "g3_prompts": 2, "g3_tokens": 2, "batches": [8, 64], "bf16": 1, "c_timeout_s": 360, "sample_interval_s": 0.5, "part4": true, "part4_ks": [32, 64, 128, 256, 512]}

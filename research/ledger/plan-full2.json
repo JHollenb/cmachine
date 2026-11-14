@@ -1,0 +1,18 @@
+{"prompts": 16, "steps": 64, "warmup_steps": 8, "smoke_steps": 4, "g3_prompts": 4, "g3_tokens": 16, "batches": [8, 64], "bf16": 1, "c_timeout_s": 600, "sample_interval_s": 0.5, "part4": true, "part4_ks": [32, 64, 128, 256, 512],
+ "criteria": {
+  "written": "2026-11-13, before job full2 was staged; thresholds from field semantics (FP32 storage ~6e-8, FP32 terms ~1e-7, cross-executor FP32 activation divergence), not fitted to full2",
+  "normalization": "normalized error = |a-b|/s, s fixed by field meaning: positive magnitudes |a|; dots their Cauchy-Schwarz bound; margin fields the row's sum |terms|; logZ/entropy max(|a|,1); probabilities 1",
+  "argmax_tie_prob": 1e-5,
+  "top12_tie_logit": 1e-4,
+  "G1": "ids and every logit bank (first and final step, every arm) bitwise equal on vs off and onnr vs off",
+  "determinism": "F1/on vs G1/on rows (all prefill and decode rows) and on vs onnr rows bitwise equal",
+  "G2": {"what": "lean vs fast teacher-forced: different executors, so fields inherit FP32 activation divergence",
+         "exact": ["token", "position", "sources", "top1", "top2"], "count_abs_max": 2,
+         "continuous_p99_norm": 1e-4, "continuous_max_norm": 1e-2,
+         "argmax_mismatch_frac_max": 1e-4, "argmax_pmax_agree_abs": 1e-3},
+  "G3_lean": {"what": "lean ledger vs float64 recomputation from the same run's ports (ledger arithmetic only)",
+              "exact": ["token", "position", "sources"], "count_abs_max": 0,
+              "continuous_p99_norm": 1e-5, "continuous_max_norm": 1e-4},
+  "G3_top12": "ledger top1/top2 equal the float64 top-1/top-2 ids from dumped states x readout, except where the float64 gap (top1-top2 for top1, top2-top3 for top2) < top12_tie_logit",
+  "G4": {"abs_remainder_max": 1e-4, "split_vs_float64_norm_max": 1e-5}
+ }}

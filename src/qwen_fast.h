@@ -19,6 +19,7 @@
  * with an FP32 row scale), activations stay FP32, accumulation is FP32. */
 #include <stddef.h>
 #include <stdint.h>
+#include "qwen_ledger.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -64,6 +65,22 @@ int qf_read_ids(QwenFast *, int seq, int *out, int n);
 /* Logits rows of the last final stage: decode row b = sequence b; prefill row 0. */
 void qf_read_logits(QwenFast *, int row, float *host);
 int qf_position(const QwenFast *, int seq);
+
+/* Per-token ledger (src/qwen_ledger.h, docs/LEDGER.md). qf_ledger_enable and
+ * qf_ledger_read are declared in qwen_ledger.h. FP32 and BF16 lanes; the INT8
+ * lane is refused (enable fails on INT8, and qf_set_lane(INT8) fails while on).
+ * Enable before qf_prefill / qf_graph_capture; toggling frees a captured graph.
+ * Rows are written on the device by the pass's own kernels (no sync inside a
+ * pass) and stay valid until the next pass: decode row b = sequence b; batched
+ * prefill row r = r-th token of the block, only the last with a readout; a
+ * sequential prefill keeps only its last one-row pass. Ledger on = the same
+ * native arithmetic as off (bit-identical logits and ids per arm). */
+int qf_ledger_read_rows(QwenFast *, int first, int count, float *host); /* one copy for count rows */
+int qf_ledger_row_floats(const QwenFast *);
+/* Profiling only: skipped ledger pieces run their native kernel (rows then incomplete).
+ * Changing the mask frees a captured graph. 0 = full ledger. */
+enum { QF_SKIP_RMS = 1, QF_SKIP_ATTENTION = 2, QF_SKIP_SWIGLU = 4, QF_SKIP_READOUT = 8 };
+void qf_ledger_profile_skip(QwenFast *, int mask);
 
 /* Hashing helpers (incremental state digest, docs/SPEEDUPS.md). */
 /* Copy K then V row `position` of every layer/kv-head of a lean session cache

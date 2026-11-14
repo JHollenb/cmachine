@@ -36,6 +36,25 @@ void gpu_swiglu(float *,const float *,int);
 void gpu_gate_anchor(const float *,float *,float *,float *,float *,int);
 void gpu_gate_swiglu(float *,const float *,const float *,const float *,const float *,const float *,const float *,int);
 TcmTop2 gpu_top2(TcmGpu *,const float *,int);
+/* Per-token ledger (src/qwen_ledger.h). Read-only reductions of native values;
+ * every native output is produced by the same arithmetic as the plain calls.
+ * gpu_attention_ledger: gpu_attention plus per-head softmax fields written to
+ *   ledger[field*qheads+head] (field = QL_H_*), from the softmax's own pass.
+ * gpu_ledger_dot(dot,norm2,x,w,n,retain): dot=x.w, norm2=w.w in double, stored
+ *   as float; dot/x and norm2 and retain may be NULL; retain gets a copy of w.
+ * gpu_ledger_gate(out,g,u,n,scratch): out[0..5] = |g|<1, g<=-5, g>=5 counts, sum
+ *   even^2, sum odd^2, sum even*odd (QL_GATE_SMALL..QL_EVEN_ODD); call before
+ *   swiglu. Per-element terms FP32 (tanhf), sums double.
+ *   scratch: device, >= 6*((n+255)/256) doubles, owned by the caller.
+ * gpu_ledger_margin(row,embedding,gamma,writes,layers,block_floats,n,a,b,scratch):
+ *   margin decomposition of a ledger row from writes[(2*layers+1)*n] = h_0, then the
+ *   attention and MLP write of each layer; rho_F is read from row[QL_RHO_FINAL].
+ *   embedding is the model's owned handle under the active weight profile.
+ *   scratch: device, >= 2*layers+2 doubles (may be the gate scratch). */
+void gpu_attention_ledger(TcmGpu *,float *,const float *,const float *,const float *,float *,int,int,int,int,int,float *);
+void gpu_ledger_dot(float *,float *,const float *,const float *,int,float *);
+void gpu_ledger_gate(float *,const float *,const float *,int,double *);
+void gpu_ledger_margin(float *,const float *,const float *,const float *,int,int,int,int,int,double *);
 void gpu_sync(void);
 /* Explicit process-wide weight profile: 0 native FP32, 1 tiled FP32,
  * 2 source BF16 with FP32 tiles. Tiled profiles own one loaded model; release

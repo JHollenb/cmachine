@@ -26,7 +26,7 @@ clean:
 
 cuda: build/tcm-cuda
 
-build/tcm-cuda: $(SRC) src/program.h src/qwen.c src/qwen_operands.inc src/qwen_serve.c src/qwen_bounded_serve.c src/bounded_cache.h src/qwen_cuda.cu src/qwen_cache.inc src/qwen_weights.inc src/qwen.h src/gpu.h src/machine.h
+build/tcm-cuda: $(SRC) src/program.h src/qwen.c src/qwen_operands.inc src/qwen_serve.c src/qwen_bounded_serve.c src/bounded_cache.h src/qwen_cuda.cu src/qwen_cache.inc src/qwen_weights.inc src/qwen.h src/gpu.h src/machine.h src/qwen_ledger.h
 	mkdir -p build
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/model.c -o build/model.o
 	$(CC) $(CFLAGS) -DTCM_WITH_CUDA -Isrc -c src/isa.c -o build/isa.o
@@ -114,6 +114,17 @@ build/bounded-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h
 
 .PHONY: bounded-mechanics
 
+# Per-token ledger (src/qwen_ledger.h) on the CPU stub: on/off bit identity,
+# double recomputation of every field, margin closure, lifecycle. Model-free.
+ledger-mechanics: build/ledger-mechanics
+	./build/ledger-mechanics
+
+build/ledger-mechanics: src/model.c src/qwen.c src/qwen_operands.inc src/qwen.h src/qwen_ledger.h src/gpu.h tests/gpu_stub.c tests/ledger_mechanics.c
+	mkdir -p build
+	$(CC) -O1 -g -std=c11 -Wall -Wextra -Wpedantic -Werror -ffp-contract=off -fsanitize=address,undefined -Isrc src/model.c src/qwen.c tests/gpu_stub.c tests/ledger_mechanics.c -lm -o $@
+
+.PHONY: ledger-mechanics
+
 bounded-gpu-mechanics: build/bounded-gpu-mechanics
 
 build/bounded-gpu-mechanics: build/tcm-cuda tests/bounded_gpu_mechanics.c src/bounded_cache.h
@@ -164,3 +175,13 @@ build/speedups-run: build/tcm-cuda src/qwen_fast.cu src/qwen_fast.h tests/speedu
 	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/qwen_fast.o build/speedups_run.o -lcublas -lpthread -lm -o $@
 
 .PHONY: speedups-run
+
+# Per-token ledger arms and gates, lean + fast executors (research/ledger, docs/LEDGER.md).
+ledger-run: build/ledger-run
+
+build/ledger-run: build/tcm-cuda src/qwen_fast.cu src/qwen_fast.h src/qwen_ledger.h tests/ledger_run.c
+	$(NVCC) -O3 -std=c++17 --fmad=false -arch=sm_89 -Isrc -c src/qwen_fast.cu -o build/qwen_fast_ledger.o
+	$(CC) $(CFLAGS) -Isrc -c tests/ledger_run.c -o build/ledger_run.o
+	$(NVCC) build/model.o build/qwen.o build/qwen_cuda.o build/qwen_fast_ledger.o build/ledger_run.o -lcublas -lpthread -lm -o $@
+
+.PHONY: ledger-run

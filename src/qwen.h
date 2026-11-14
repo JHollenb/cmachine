@@ -2,6 +2,7 @@
 #define TCM_QWEN_H
 #include "machine.h"
 #include "gpu.h"
+#include "qwen_ledger.h"
 
 typedef struct {
     float *input_norm,*post_norm,*q,*k,*v,*qb,*kb,*vb,*o,*gate,*up,*down;
@@ -70,7 +71,7 @@ typedef void (*QwenObserver)(void *,int,int,QwenPort,const float *,size_t);
 typedef int (*QwenCacheStep)(void *,int,int,const float *,const float *,const float *,float *,float *);
 typedef int (*QwenCacheGuard)(void *,int,int,uint64_t,uint64_t,uint64_t);
 typedef void (*QwenCacheRewind)(void *,int,uint64_t,uint64_t);
-typedef struct {
+typedef struct QwenSession { /* tag: qwen_ledger.h declares struct QwenSession */
     const QwenModel *model;
     int position,capacity,pending,layer,phase,delivered;
     float *keys,*values,*x,*norm,*q,*k,*v,*attention,*projected,*gate,*up,*logits,*scores;
@@ -100,6 +101,12 @@ typedef struct {
     size_t qkv_code_capacity;
     int current_token;
     QwenOperandWork operand_work; /* Physical work: deliberately not rewound. */
+    /* Ledger (qwen_ledger.h). status: 0 no valid row, 1 recording the current
+     * token, 2 row of the last finished token valid. Rewinds invalidate it. */
+    int ledger_on,ledger_status,ledger_token,ledger_position,ledger_readout;
+    TcmTop2 ledger_top;
+    float *ledger_row,*ledger_writes; /* device: one row; h_0 + 2*layers writes */
+    double *ledger_scratch; /* device: gate-census block partials */
 } QwenSession;
 int qwen_qkv_program_init(QwenQkvProgram *,const QwenModel *,int,int,int,const float *,const float *,const float *,const float *);
 void qwen_qkv_program_free(QwenQkvProgram *);

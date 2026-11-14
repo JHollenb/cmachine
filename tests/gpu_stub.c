@@ -1,6 +1,7 @@
 /* Tiny CPU implementation for model-free state-lifecycle tests. This does not
  * qualify CUDA numerical behavior and is never linked into the real executor. */
 #include "gpu.h"
+#include "qwen_ledger.h"
 int gpu_weight_profile(void){return 0;}
 #include <assert.h>
 #include <math.h>
@@ -39,16 +40,54 @@ void gpu_rope(float *q,int heads,int d,int position,float theta){
 void gpu_cache(float *cache,const float *row,int heads,int d,int capacity,int position){
     for(int h=0;h<heads;h++)memcpy(cache+((size_t)h*capacity+position)*d,row+h*d,(size_t)d*4);
 }
-void gpu_attention(TcmGpu *g,float *out,const float *q,const float *k,const float *v,float *scores,int qheads,int kvheads,int d,int capacity,int n){
-    (void)g;for(int h=0;h<qheads;h++){
-        int group=h/(qheads/kvheads);float *p=scores+h*n,max=-INFINITY,sum=0;
+static void attention(float *out,const float *q,const float *k,const float *v,float *scores,int qheads,int kvheads,int d,int capacity,int n,float *ledger){
+    for(int h=0;h<qheads;h++){
+        int group=h/(qheads/kvheads);float *p=scores+h*n,max=-INFINITY,sum=0;double partition=0;
         for(int t=0;t<n;t++){float dot=0;for(int i=0;i<d;i++)dot+=q[h*d+i]*k[((size_t)group*capacity+t)*d+i];p[t]=dot/sqrtf((float)d);if(p[t]>max)max=p[t];}
-        for(int t=0;t<n;t++){p[t]=expf(p[t]-max);sum+=p[t];}
+        for(int t=0;t<n;t++){if(ledger)partition+=exp((double)p[t]-(double)max);p[t]=expf(p[t]-max);sum+=p[t];}
         for(int i=0;i<d;i++){float a=0;for(int t=0;t<n;t++)a+=p[t]/sum*v[((size_t)group*capacity+t)*d+i];out[h*d+i]=a;}
         /* Match CUDA's published packed, normalized score scratch. Preserve
          * the stub's historical return arithmetic above. */
         for(int t=0;t<n;t++)p[t]/=sum;
+        if(ledger){
+            /* Ledger fields from this pass's own max/partition and native probabilities. */
+            double entropy=0;float best=-1;int index=0;
+            for(int t=0;t<n;t++){float x=p[t];if(x>0.0f)entropy-=(double)(x*logf(x));if(p[t]>best){best=p[t];index=t;}}
+            ledger[QL_H_LOGZ*qheads+h]=(float)((double)max+log(partition));ledger[QL_H_PFIRST*qheads+h]=p[0];
+            ledger[QL_H_ENTROPY*qheads+h]=(float)entropy;ledger[QL_H_PMAX*qheads+h]=best;ledger[QL_H_ARGMAX*qheads+h]=(float)index;
+        }
     }
+}
+void gpu_attention(TcmGpu *g,float *out,const float *q,const float *k,const float *v,float *scores,int qheads,int kvheads,int d,int capacity,int n){
+    (void)g;attention(out,q,k,v,scores,qheads,kvheads,d,capacity,n,NULL);
+}
+void gpu_attention_ledger(TcmGpu *g,float *out,const float *q,const float *k,const float *v,float *scores,int qheads,int kvheads,int d,int capacity,int n,float *ledger){
+    (void)g;attention(out,q,k,v,scores,qheads,kvheads,d,capacity,n,ledger);
+}
+void gpu_ledger_dot(float *dot,float *norm2,const float *x,const float *w,int n,float *retain){
+    double a=0,b=0;for(int i=0;i<n;i++){double v=w[i];if(x)a+=(double)x[i]*v;b+=v*v;if(retain)retain[i]=w[i];}
+    if(dot)*dot=(float)a;if(norm2)*norm2=(float)b;
+}
+void gpu_ledger_gate(float *out,const float *g,const float *u,int n,double *scratch){
+    (void)scratch;int small=0,off=0,on=0;double even2=0,odd2=0,cross=0;
+    for(int i=0;i<n;i++){
+        float gi=g[i];if(fabsf(gi)<1.0f)small++;if(gi<=-5.0f)off++;if(gi>=5.0f)on++;
+        float even=(gi*u[i])*0.5f,odd=even*tanhf(gi*0.5f);even2+=(double)(even*even);odd2+=(double)(odd*odd);cross+=(double)(even*odd); /* FP32 terms, double sums (as the GPU) */
+    }
+    out[0]=(float)small;out[1]=(float)off;out[2]=(float)on;out[3]=(float)even2;out[4]=(float)odd2;out[5]=(float)cross;
+}
+void gpu_ledger_margin(float *row,const float *embedding,const float *gamma,const float *writes,int layers,int block_floats,int n,int a,int b,double *scratch){
+    (void)scratch;
+    /* Stub weight profile is native FP32 only. */
+    double rho=row[QL_RHO_FINAL],total=0,norm=0;
+    for(int i=0;i<n;i++){double c=(double)gamma[i]*((double)embedding[(size_t)a*n+i]-(double)embedding[(size_t)b*n+i]);norm+=c*c;}
+    row[QL_C_NORM]=(float)sqrt(norm);
+    for(int j=0;j<2*layers+1;j++){
+        double dot=0;for(int i=0;i<n;i++){double c=(double)gamma[i]*((double)embedding[(size_t)a*n+i]-(double)embedding[(size_t)b*n+i]);dot+=c*(double)writes[(size_t)j*n+i];}
+        double term=rho*dot;total+=term;
+        if(!j)row[QL_MARGIN_EMBED]=(float)term;else row[QL_HEAD+(size_t)((j-1)/2)*block_floats+((j-1)%2?QL_MARGIN_MLP:QL_MARGIN_ATTN)]=(float)term;
+    }
+    row[QL_MARGIN_SUM]=(float)total;
 }
 void gpu_swiglu(float *gate,const float *up,int n){for(int i=0;i<n;i++)gate[i]=gate[i]/(1+expf(-gate[i]))*up[i];}
 void gpu_gate_anchor(const float *g,float *p,float *first,float *second,float *s,int n){for(int i=0;i<n;i++){float denominator=1.0f+expf(-g[i]);p[i]=1.0f/denominator;first[i]=p[i]*(1.0f-p[i]);second[i]=(0.5f*first[i])*(1.0f-2.0f*p[i]);s[i]=g[i]/denominator;}}
